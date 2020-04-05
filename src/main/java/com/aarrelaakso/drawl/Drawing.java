@@ -6,6 +6,6 @@ public class Drawing {
     }
 
     public String toSVG() {
-        
+        return("");
     }
 }

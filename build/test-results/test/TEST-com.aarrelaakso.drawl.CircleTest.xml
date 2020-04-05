@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.aarrelaakso.drawl.CircleTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-05T22:59:45" hostname="NILE" time="0.15">
+  <properties/>
+  <testcase name="ToSVG" classname="com.aarrelaakso.drawl.CircleTest" time="0.15"/>
+  <system-out><![CDATA[ToSVG
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
