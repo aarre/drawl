@@ -8,7 +8,9 @@ public class Drawl {
         Drawing drawing = new Drawing();
         Circle circle = new Circle();
         drawing.add(circle);
-        String svg = drawing.getSVG(100, 100);
+        Circle circle2 = new Circle();
+        drawing.add(circle2);
+        String svg = drawing.getSVG(200, 200);
         System.out.println(svg);
     }
 }

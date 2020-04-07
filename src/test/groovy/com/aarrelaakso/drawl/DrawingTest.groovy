@@ -1,6 +1,7 @@
 package com.aarrelaakso.drawl
 
 import spock.lang.Specification
+import org.apache.commons.lang3.StringUtils
 
 class DrawingTest extends Specification {
     void setup() {
@@ -70,5 +71,23 @@ class DrawingTest extends Specification {
         then:
             def svg = drawing.getSVG(100,100)
             svg.indexOf("circle") < 0
+    }
+
+    def "You can add two Circles to a drawing"() {
+        when:
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        String svg = drawing.getSVG(100,100)
+        int count = StringUtils.countMatches(svg, "circle")
+
+        then:
+        count == 2
+
+
+
+        System.out.println("Total occurrences: " + count);
     }
 }
