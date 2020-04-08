@@ -129,4 +129,13 @@ class CircleTest extends Specification {
         then:
         radius != null
     }
+
+    def "You can set the position of one circle relative to another"() {
+        when:
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+
+        then:
+        circle2.rightOf(circle1)
+    }
 }

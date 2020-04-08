@@ -80,14 +80,13 @@ class DrawingTest extends Specification {
         Circle circle2 = new Circle()
         drawing.add(circle1)
         drawing.add(circle2)
-        String svg = drawing.getSVG(100,100)
+        String svg = drawing.getSVG(100, 100)
         int count = StringUtils.countMatches(svg, "circle")
 
         then:
         count == 2
-
-
-
-        System.out.println("Total occurrences: " + count);
     }
+
+
+
 }

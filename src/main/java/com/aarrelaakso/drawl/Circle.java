@@ -56,6 +56,10 @@ public class Circle {
         return svg;
     }
 
+    public void rightOf(Circle circle) {
+
+    }
+
     public void setRadius(int radius) {
         this.radius = new Measurement(radius);
     }
