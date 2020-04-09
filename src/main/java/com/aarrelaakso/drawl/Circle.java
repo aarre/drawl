@@ -3,14 +3,14 @@ package com.aarrelaakso.drawl;
 public class Circle {
 
     private Measurement radius;
-    private Integer x;
-    private Integer y;
+    private Integer x = 0;
+    private Integer y = 0;
 
     /**
      * Construct a circle with an implicit radius.
      */
     public Circle() {
-        radius = new Measurement();
+        radius = new Measurement(0.5);
     }
 
     /**
@@ -31,16 +31,26 @@ public class Circle {
         this.radius = radius;
     }
 
+    /**
+     * Get the implicit width of this Circle
+     * 
+     * @return the implicit width of this Circle
+     */
+    public Double getImplicitWidth() {
+        Double width = 2 * this.radius.getImplicitValue();
+        return width;
+    }
+    
     public Measurement getRadius() {
         return this.radius;
     }
 
     public String getSVG() {
-        int radiusValue = this.radius.getValue();
+        Measurement radius = this.radius;
         String svg;
         svg = "<circle ";
         svg += "r=\"";
-        svg += this.radius.getValue();
+        svg += this.radius.getFixedValue();
         svg += "\"";
         if (this.x != null) {
             svg += " cx=\"";
@@ -56,19 +66,32 @@ public class Circle {
         return svg;
     }
 
+    public Integer getX() {
+        return this.x;
+    }
+
+    public Integer getY() {
+        return this.y;
+    }
+
     public void rightOf(Circle circle) {
 
     }
 
-    public void setRadius(int radius) {
-        this.radius = new Measurement(radius);
+    /**
+     * Set the radius to a fixed value
+     *
+     * @param radius the fixed value
+     */
+    public void setRadiusFixed(Integer radius) {
+        this.radius.setFixedValue(radius);
     }
 
-    public void setX(int x) {
-        this.x = new Integer(x);
+    public void setX(Integer x) {
+        this.x = x;
     }
 
-    public void setY(int y) {
-        this.y = new Integer(y);
+    public void setY(Integer y) {
+        this.y = y;
     }
 }

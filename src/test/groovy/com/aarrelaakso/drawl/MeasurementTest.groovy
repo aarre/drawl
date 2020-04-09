@@ -22,10 +22,10 @@ class MeasurementTest extends Specification {
         constraintType == "implicit"
     }
 
-    def "Measurement.getValue() throws an error if its value is undefined"() {
+    def "Measurement.getFixedValue() throws an error if its value is undefined"() {
         when:
         Measurement measurement = new Measurement()
-        int value = measurement.getValue()
+        int value = measurement.getFixedValue()
 
         then:
         def exception = thrown(java.lang.UnsupportedOperationException)
@@ -37,7 +37,8 @@ class MeasurementTest extends Specification {
         Measurement measurement = new Measurement(100)
 
         then:
-        measurement.getValue() == 100
+        measurement.getFixedValue() == 100
+        measurement.getImplicitValue() == 1.0
     }
 
     def "You can create a Measurement with an implicit value"() {
@@ -46,6 +47,34 @@ class MeasurementTest extends Specification {
 
         then:
         measurement != null
+    }
+
+    def "You can set a Measurement to a fixed value"() {
+        when:
+        Measurement measurement = new Measurement()
+        measurement.setFixedValue(100)
+
+        then:
+        measurement.getFixedValue() == 100
+        noExceptionThrown()
+    }
+
+    def "You can set a Measurement to an implicit value"() {
+        when:
+        Measurement measurement = new Measurement()
+        measurement.setImplicitValue(3.14)
+
+        then:
+        measurement.getImplicitValue() == 3.14
+        noExceptionThrown()
+    }
+
+    def "The implicit value of a new Measurement is 1.0"() {
+        when:
+        Measurement measurement = new Measurement()
+
+        then:
+        measurement.getImplicitValue() == new Double(1.0)
     }
 
 }
