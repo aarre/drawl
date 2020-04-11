@@ -3,7 +3,8 @@ package com.aarrelaakso.drawl;
 public class Circle {
 
     private Measurement radius;
-    private Circle rightOf = null;           // The circle right of this one, if any
+    private Circle neighbor = null;           // A circle adjacent to this one, if any
+    private Double angleToNeighbor = null;
     private Integer x = 0;
     private Integer y = 0;
 
@@ -75,8 +76,22 @@ public class Circle {
         return this.y;
     }
 
+    /**
+     * Get this Circle's neighbor to the left (this Circle is to the right of that one), if any.
+     *
+     * @return the Circle to the left of this one, if any;
+     *         <code>null</code> otherwise.
+     */
     public Circle getRightOf() {
-        return this.rightOf;
+        Circle returnValue = null;
+        if (this.angleToNeighbor == null) {
+            returnValue = null;
+        } else if (this.angleToNeighbor.equals(Double.valueOf(270))) {
+            returnValue = this.neighbor;
+        } else {
+             returnValue = null;
+        }
+        return returnValue;
     }
 
     /**
@@ -88,8 +103,14 @@ public class Circle {
         this.radius.setFixedValue(radius);
     }
 
+    /**
+     * Set this Circle's neighbor to the left (this Circle is to the right of that one).
+     *
+     * @param circle the Circle to the left of this one
+     */
     public void setRightOf(Circle circle) {
-        this.rightOf = circle;
+        this.neighbor = circle;
+        this.angleToNeighbor = Double.valueOf(270);
     }
     public void setX(Integer x) {
         this.x = x;
