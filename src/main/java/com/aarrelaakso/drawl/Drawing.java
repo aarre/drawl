@@ -56,15 +56,22 @@ public class Drawing {
         svg += "\"";
         svg += ">";
         Integer radius = Math.min(this.getExplicitWidth(),this.getExplicitHeight())/2;
-        logger.info("radius = " + radius.toString());
         int drawingCenterY = this.getExplicitHeight()/2;
 
-        Integer widthPerObject = this.getExplicitWidthPerObject();
-        int count = 1;
+        Integer explicitWidthPerObject = this.getExplicitWidthPerObject();
+        int count = 0;
+        int xPosition;
         for (Circle content : this.contents) {
             content.setRadiusFixed(radius);
-            int x = (int) Math.round((widthPerObject * count) - radius);
-            content.setX(x);
+            if (count == 0) {
+                xPosition = (int) Math.round(explicitWidthPerObject - radius);
+                if (content.getRightOf() != null) {
+                    count++;
+                }
+            } else {
+                xPosition = (int) Math.round((explicitWidthPerObject * count) - radius);
+            }
+            content.setX(xPosition);
             content.setY(drawingCenterY);
             svg += content.getSVG();
             count++;
@@ -98,11 +105,41 @@ public class Drawing {
      */
     private Double getImplicitWidth() {
         Double width = new Double(0.0);
+        int count = 0;
         for (Circle content : this.contents) {
-            width += content.getImplicitWidth();
+            if (count == 0) {
+                width += content.getImplicitWidth();
+            }
+            Circle objectToLeft = content.getRightOf();
+            if (objectToLeft != null) {
+                    width += objectToLeft.getImplicitWidth();
+            }
+            count++;
         }
         return width;
     }
+
+    /**
+     * Get the implicit total width of all contents in the drawing
+     *
+     * @return the implicit total width of all contents in this drawing
+     */
+    private Double getImplicitWidthOfContents() {
+        Double implicitWidthOfContents = new Double(0.0);
+        int count = 0;
+        for (Circle content : this.contents) {
+            if (count == 0) {
+                implicitWidthOfContents += content.getImplicitWidth();
+            } else {
+                if (content.getRightOf() != null) {
+                    implicitWidthOfContents += content.getImplicitWidth();
+                }
+            }
+            count++;
+        }
+        return implicitWidthOfContents;
+    }
+
 
     /**
      * Set the explicit height of this Drawing

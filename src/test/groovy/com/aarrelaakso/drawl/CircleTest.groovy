@@ -82,6 +82,16 @@ class CircleTest extends Specification {
         svg.indexOf("cy=\"50\"") > -1
     }
 
+    def "When you set a Circle rightOf another circle, you can recall that information"() {
+        when:
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        circle1.setRightOf(circle2)
+
+        then:
+        circle1.getRightOf() == circle2
+    }
+
     def "You can construct a circle with a given radius"() {
         when:
         int radius = 100;
@@ -181,12 +191,4 @@ class CircleTest extends Specification {
         radius != null
     }
 
-    def "You can set the position of one circle relative to another"() {
-        when:
-        Circle circle1 = new Circle()
-        Circle circle2 = new Circle()
-
-        then:
-        circle2.rightOf(circle1)
-    }
 }

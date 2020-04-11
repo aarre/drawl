@@ -3,6 +3,7 @@ package com.aarrelaakso.drawl;
 public class Circle {
 
     private Measurement radius;
+    private Circle rightOf = null;           // The circle right of this one, if any
     private Integer x = 0;
     private Integer y = 0;
 
@@ -74,8 +75,8 @@ public class Circle {
         return this.y;
     }
 
-    public void rightOf(Circle circle) {
-
+    public Circle getRightOf() {
+        return this.rightOf;
     }
 
     /**
@@ -87,6 +88,9 @@ public class Circle {
         this.radius.setFixedValue(radius);
     }
 
+    public void setRightOf(Circle circle) {
+        this.rightOf = circle;
+    }
     public void setX(Integer x) {
         this.x = x;
     }
