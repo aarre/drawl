@@ -65,6 +65,9 @@ public class Drawing {
             content.setRadiusFixed(radius);
             if (count == 0) {
                 xPosition = (int) Math.round(explicitWidthPerObject - radius);
+                if (content.getLeftOf() != null) {
+                    count++;
+                }
                 if (content.getRightOf() != null) {
                     count++;
                 }

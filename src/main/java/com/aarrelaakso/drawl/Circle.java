@@ -34,6 +34,15 @@ public class Circle {
     }
 
     /**
+     * Get the implicit height of this Circle
+     *
+     * @return the implicit height of this Circle
+     */
+    public Double getImplicitHeight() {
+        Double height = 2 * this.radius.getImplicitValue();
+        return height;
+    }
+    /**
      * Get the implicit width of this Circle
      * 
      * @return the implicit width of this Circle
@@ -42,7 +51,25 @@ public class Circle {
         Double width = 2 * this.radius.getImplicitValue();
         return width;
     }
-    
+
+    /**
+     * Get this Circle's neighbor to the right (this Circle is to the left of that one), if any.
+     *
+     * @return the Circle to the right of this one, if any;
+     *         <code>null</code> otherwise.
+     */
+    public Circle getLeftOf() {
+        Circle returnValue = null;
+        if (this.angleToNeighbor == null) {
+            returnValue = null;
+        } else if (this.angleToNeighbor.equals(Double.valueOf(90))) {
+            returnValue = this.neighbor;
+        } else {
+            returnValue = null;
+        }
+        return returnValue;
+    }
+
     public Measurement getRadius() {
         return this.radius;
     }
@@ -68,14 +95,6 @@ public class Circle {
         return svg;
     }
 
-    public Integer getX() {
-        return this.x;
-    }
-
-    public Integer getY() {
-        return this.y;
-    }
-
     /**
      * Get this Circle's neighbor to the left (this Circle is to the right of that one), if any.
      *
@@ -94,6 +113,14 @@ public class Circle {
         return returnValue;
     }
 
+    public Integer getX() {
+        return this.x;
+    }
+
+    public Integer getY() {
+        return this.y;
+    }
+
     /**
      * Set the radius to a fixed value
      *
@@ -104,6 +131,19 @@ public class Circle {
     }
 
     /**
+     * Set this Circle's neighbor to the right (this Circle is to the left of that one).
+     *
+     * @param circle the Circle to the right of this one
+     */
+    public void setLeftOf(Circle circle) {
+        this.neighbor = circle;
+        this.angleToNeighbor = Double.valueOf(90);
+        if (circle.getRightOf() != this) {
+            circle.setRightOf(this);
+        }
+    }
+
+    /**
      * Set this Circle's neighbor to the left (this Circle is to the right of that one).
      *
      * @param circle the Circle to the left of this one
@@ -111,7 +151,11 @@ public class Circle {
     public void setRightOf(Circle circle) {
         this.neighbor = circle;
         this.angleToNeighbor = Double.valueOf(270);
+        if (circle.getLeftOf() != this) {
+            circle.setLeftOf(this);
+        }
     }
+
     public void setX(Integer x) {
         this.x = x;
     }

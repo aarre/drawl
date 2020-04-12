@@ -84,21 +84,7 @@ class DrawingTest extends Specification {
             svg.indexOf("circle") < 0
     }
 
-    def "You can add two Circles to a drawing"() {
-        when:
-        Drawing drawing = new Drawing()
-        Circle circle1 = new Circle()
-        Circle circle2 = new Circle()
-        drawing.add(circle1)
-        drawing.add(circle2)
-        String svg = drawing.getSVG(100, 100)
-        int count = StringUtils.countMatches(svg, "circle")
-
-        then:
-        count == 2
-    }
-
-    def "When you add two adjacent Circles to a drawing, the drawing is twice as wide"() {
+    def "When you add two horizontally adjacent Circles to a drawing, the drawing is twice as wide"() {
         when:
         Drawing drawing = new Drawing()
         Circle circle1 = new Circle()
@@ -111,7 +97,7 @@ class DrawingTest extends Specification {
         drawing.getImplicitWidth() == new Double(2.0)
     }
 
-    def "When you add two adjacent Circles to a drawing (in the other order), the drawing is twice as wide"() {
+    def "When you add two horizontally adjacent Circles to a drawing (in the other order), the drawing is twice as wide"() {
         when:
         Drawing drawing = new Drawing()
         Circle circle1 = new Circle()
@@ -228,6 +214,111 @@ class DrawingTest extends Specification {
         svg.contains("circle r=\"50\" cx=\"50\" cy=\"50\"")
     }
 
+    def "When a drawing has one circle, the explicit width per object is the explicit width of the drawing"() {
+        when:
+        Circle circle = new Circle()
+        Drawing drawing = new Drawing()
+        drawing.add(circle)
+        drawing.setExplicitWidth(100)
+        drawing.setExplicitHeight(100)
+        Integer widthPerObject = drawing.getExplicitWidthPerObject()
+
+        then:
+        widthPerObject == 100
+    }
+
+    def "When a drawing has one default Circle, its implicit width is 1.0"() {
+        when:
+        Circle circle = new Circle()
+        Drawing drawing = new Drawing()
+        drawing.add(circle)
+        Double implicitWidth = drawing.getImplicitWidth()
+
+        then:
+        implicitWidth == 1.0
+    }
+
+    def "When a drawing has one default Circle, the implicit width of its contents is 1.0"() {
+        when:
+        Circle circle = new Circle()
+        Drawing drawing = new Drawing()
+        drawing.add(circle)
+        Double implicitWidthOfContents = drawing.getImplicitWidthOfContents()
+
+        then:
+        implicitWidthOfContents == 1.0
+    }
+
+    def "When a drawing has two default Circles, the implicit width of the contents is the same as when it has one"() {
+        when:
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        Drawing drawing = new Drawing()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        Double implicitWidthOfContents = drawing.getImplicitWidthOfContents()
+
+        then:
+        implicitWidthOfContents == 1.0
+    }
+
+    def "When a drawing has two default Circles, they are the same in the SVG"() {
+        when:
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        Drawing drawing = new Drawing()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        String svg = drawing.getSVG(200,200)
+
+        then:
+        svg == "<svg width=\"200\" height=\"200\"><circle r=\"100\" cx=\"100\" cy=\"100\" /><circle r=\"100\" cx=\"100\" cy=\"100\" /></svg>"
+    }
+
+    def "When a drawing has two default Circles, the SVG contains two circles"() {
+        when:
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        String svg = drawing.getSVG(100, 100)
+        int count = StringUtils.countMatches(svg, "circle")
+
+        then:
+        count == 2
+    }
+
+    def "When you set the position of one circle relative to another, they are placed accordingly in the SVG"() {
+        when:
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        circle2.setRightOf(circle1)
+        Drawing drawing = new Drawing()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        String svg = drawing.getSVG(200,100)
+
+        then:
+        svg.contains("circle r=\"50\" cx=\"50\" cy=\"50\"")
+        svg.contains("circle r=\"50\" cx=\"150\" cy=\"50\"")
+    }
+
+    def "When you set the position of one circle relative to another, they are placed accordingly in the SVG (other order)"() {
+        when:
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        circle1.setRightOf(circle2)
+        Drawing drawing = new Drawing()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        String svg = drawing.getSVG(200,100)
+
+        then:
+        svg.contains("circle r=\"50\" cx=\"50\" cy=\"50\"")
+        svg.contains("circle r=\"50\" cx=\"150\" cy=\"50\"")
+    }
+
     def "You can set and get the explicit width of a Drawing"() {
         when:
         Drawing drawing = new Drawing()
@@ -311,97 +402,6 @@ class DrawingTest extends Specification {
 
         then:
         implicitWidth == 2.0
-    }
-
-    def "When a drawing has one circle, the explicit width per object is the explicit width of the drawing"() {
-        when:
-        Circle circle = new Circle()
-        Drawing drawing = new Drawing()
-        drawing.add(circle)
-        drawing.setExplicitWidth(100)
-        drawing.setExplicitHeight(100)
-        Integer widthPerObject = drawing.getExplicitWidthPerObject()
-
-        then:
-        widthPerObject == 100
-    }
-
-    def "When a drawing has one default Circle, its implicit width is 1.0"() {
-        when:
-        Circle circle = new Circle()
-        Drawing drawing = new Drawing()
-        drawing.add(circle)
-        Double implicitWidth = drawing.getImplicitWidth()
-
-        then:
-        implicitWidth == 1.0
-    }
-
-    def "When a drawing has one default Circle, the implicit width of its contents is 1.0"() {
-        when:
-        Circle circle = new Circle()
-        Drawing drawing = new Drawing()
-        drawing.add(circle)
-        Double implicitWidthOfContents = drawing.getImplicitWidthOfContents()
-
-        then:
-        implicitWidthOfContents == 1.0
-    }
-
-    def "When a drawing has two default Circles, the implicit width of the contents is the same as when it has one"() {
-        when:
-        Circle circle1 = new Circle()
-        Circle circle2 = new Circle()
-        Drawing drawing = new Drawing()
-        drawing.add(circle1)
-        drawing.add(circle2)
-        Double implicitWidthOfContents = drawing.getImplicitWidthOfContents()
-
-        then:
-        implicitWidthOfContents == 1.0
-    }
-
-    def "When a drawing has two default Circles, they are the same in the SVG"() {
-        when:
-        Circle circle1 = new Circle()
-        Circle circle2 = new Circle()
-        Drawing drawing = new Drawing()
-        drawing.add(circle1)
-        drawing.add(circle2)
-        String svg = drawing.getSVG(200,200)
-
-        then:
-        svg == "<svg width=\"200\" height=\"200\"><circle r=\"100\" cx=\"100\" cy=\"100\" /><circle r=\"100\" cx=\"100\" cy=\"100\" /></svg>"
-    }
-
-    def "When you set the position of one circle relative to another, they are placed accordingly in the SVG"() {
-        when:
-        Circle circle1 = new Circle()
-        Circle circle2 = new Circle()
-        circle2.setRightOf(circle1)
-        Drawing drawing = new Drawing()
-        drawing.add(circle1)
-        drawing.add(circle2)
-        String svg = drawing.getSVG(200,100)
-
-        then:
-        svg.contains("circle r=\"50\" cx=\"50\" cy=\"50\"")
-        svg.contains("circle r=\"50\" cx=\"150\" cy=\"50\"")
-    }
-
-    def "When you set the position of one circle relative to another, they are placed accordingly in the SVG (other order)"() {
-        when:
-        Circle circle1 = new Circle()
-        Circle circle2 = new Circle()
-        circle1.setRightOf(circle2)
-        Drawing drawing = new Drawing()
-        drawing.add(circle1)
-        drawing.add(circle2)
-        String svg = drawing.getSVG(200,100)
-
-        then:
-        svg.contains("circle r=\"50\" cx=\"50\" cy=\"50\"")
-        svg.contains("circle r=\"50\" cx=\"150\" cy=\"50\"")
     }
 
 }

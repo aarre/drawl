@@ -4,8 +4,6 @@ import spock.lang.Specification
 
 class CircleTest extends Specification {
 
-
-
     def "Circle throws an error if SVG requested without a radius"() {
         when:
         Circle circle = new Circle()
@@ -13,6 +11,15 @@ class CircleTest extends Specification {
 
         then:
         def exception = thrown(java.lang.UnsupportedOperationException)
+    }
+
+    def "The implicit height of a Circle is 1.0 by default"() {
+        when:
+        Circle circle = new Circle()
+        Double implicitHeight = circle.getImplicitHeight()
+
+        then:
+        implicitHeight.equals(Double.valueOf(1.0))
     }
 
     def "The implicit width of a Circle is 1.0 by default"() {
@@ -90,6 +97,16 @@ class CircleTest extends Specification {
 
         then:
         circle1.getRightOf() == circle2
+    }
+
+    def "When you set a Circle rightOf another circle, the other Circle is leftOf the original"() {
+        when:
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        circle1.setRightOf(circle2)
+
+        then:
+        circle2.getLeftOf() == circle1
     }
 
     def "You can construct a circle with a given radius"() {
