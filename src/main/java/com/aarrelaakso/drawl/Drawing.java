@@ -74,8 +74,8 @@ public class Drawing {
             } else {
                 xPosition = (int) Math.round((explicitWidthPerObject * count) - radius);
             }
-            content.setX(xPosition);
-            content.setY(drawingCenterY);
+            content.setExplicitXPosition(xPosition);
+            content.setExplicitYPosition(drawingCenterY);
             svg += content.getSVG();
             count++;
         }

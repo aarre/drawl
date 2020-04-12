@@ -78,8 +78,8 @@ class CircleTest extends Specification {
         int x = 50
         int y = 50
         Circle circle = new Circle(radius);
-        circle.setX(x)
-        circle.setY(y)
+        circle.setExplicitXPosition(x)
+        circle.setExplicitYPosition(y)
 
         when:
         def svg = circle.getSVG()
@@ -137,20 +137,32 @@ class CircleTest extends Specification {
         radius != null
     }
 
-    def "You can get the default x-coordinate of a Circle"() {
+    def "When you create a circle rightOf a default Circle, its implicit x-coordinate is 1"() {
+        when:
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        circle1.setRightOf(circle2)
+        Double implicitX1 = circle1.getImplicitXPosition()
+        Double implicitX2 = circle2.getImplicitXPosition()
+
+        then:
+        implicitX1.equals(implicitX2)
+    }
+
+    def "When you create a default Circle, its implicit x-coordinate is 0"() {
         when:
         Circle circle = new Circle()
-        int x = circle.getX()
+        int x = circle.getExplicitXPosition()
 
         then:
         x == 0
         x.toString() == "0"
     }
 
-    def "You can get the default y-coordinate of a Circle"() {
+    def "When you create a default Circle, its implicit y-coordinate is 0"() {
         when:
         Circle circle = new Circle()
-        Integer y = circle.getY()
+        Integer y = circle.getExplicitYPosition()
 
         then:
         y == 0
@@ -160,8 +172,8 @@ class CircleTest extends Specification {
     def "You can set the x-coordinate of a Circle and get it back"() {
         when:
         Circle circle = new Circle()
-        circle.setX(100)
-        Integer x = circle.getX()
+        circle.setExplicitXPosition(100)
+        Integer x = circle.getExplicitXPosition()
 
         then:
         x == 100

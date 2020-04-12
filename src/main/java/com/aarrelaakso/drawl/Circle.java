@@ -5,8 +5,9 @@ public class Circle {
     private Measurement radius;
     private Circle neighbor = null;           // A circle adjacent to this one, if any
     private Double angleToNeighbor = null;
-    private Integer x = 0;
-    private Integer y = 0;
+    private Integer explicitXPosition = 0;
+    private Integer explicitYPosition = 0;
+    private Double implicitXPosition = new Double(0.0);
 
     /**
      * Construct a circle with an implicit radius.
@@ -81,14 +82,14 @@ public class Circle {
         svg += "r=\"";
         svg += this.radius.getFixedValue();
         svg += "\"";
-        if (this.x != null) {
+        if (this.explicitXPosition != null) {
             svg += " cx=\"";
-            svg += this.x.toString();
+            svg += this.explicitXPosition.toString();
             svg += "\"";
         }
-        if (this.y != null) {
+        if (this.explicitYPosition != null) {
             svg += " cy=\"";
-            svg += this.y.toString();
+            svg += this.explicitYPosition.toString();
             svg += "\"";
         }
         svg += " />";
@@ -113,14 +114,18 @@ public class Circle {
         return returnValue;
     }
 
-    public Integer getX() {
-        return this.x;
+    public Integer getExplicitXPosition() {
+        return this.explicitXPosition;
     }
 
-    public Integer getY() {
-        return this.y;
+    public Integer getExplicitYPosition() {
+        return this.explicitYPosition;
     }
 
+    public Double getImplicitXPosition() {
+        return this.implicitXPosition;
+    }
+    
     /**
      * Set the radius to a fixed value
      *
@@ -156,11 +161,11 @@ public class Circle {
         }
     }
 
-    public void setX(Integer x) {
-        this.x = x;
+    public void setExplicitXPosition(Integer x) {
+        this.explicitXPosition = x;
     }
 
-    public void setY(Integer y) {
-        this.y = y;
+    public void setExplicitYPosition(Integer y) {
+        this.explicitYPosition = y;
     }
 }
