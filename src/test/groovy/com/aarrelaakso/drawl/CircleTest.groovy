@@ -89,6 +89,48 @@ class CircleTest extends Specification {
         svg.indexOf("cy=\"50\"") > -1
     }
 
+    def "When you create a default Circle, its explicit x-coordinate is 0"() {
+        when:
+        Circle circle = new Circle()
+        int x = circle.getExplicitXPosition()
+
+        then:
+        x == 0
+        x.toString() == "0"
+    }
+
+    def "When you create a default Circle, its explicit y-coordinate is 0"() {
+        when:
+        Circle circle = new Circle()
+        Integer y = circle.getExplicitYPosition()
+
+        then:
+        y == 0
+        y.toString() == "0"
+    }
+
+    def "When you create a default Circle, its implicit x-coordinate is 0"() {
+        when:
+        Circle circle = new Circle()
+        Double x = circle.getImplicitXPosition()
+
+        then:
+        x.equals(Double.valueOf(0.0))
+    }
+
+    def "When you set a Circle rightOf another Circle, its implicit x-coordinate is 1.0"() {
+        when:
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        circle1.setRightOf(circle2);
+        Double x1 = circle1.getImplicitXPosition()
+        Double x2 = circle2.getImplicitXPosition()
+
+        then:
+        x1.equals(Double.valueOf(1.0))
+        x2.equals(Double.valueOf(0.0))
+    }
+
     def "When you set a Circle rightOf another circle, you can recall that information"() {
         when:
         Circle circle1 = new Circle()
@@ -135,38 +177,6 @@ class CircleTest extends Specification {
 
         then:
         radius != null
-    }
-
-    def "When you create a circle rightOf a default Circle, its implicit x-coordinate is 1"() {
-        when:
-        Circle circle1 = new Circle()
-        Circle circle2 = new Circle()
-        circle1.setRightOf(circle2)
-        Double implicitX1 = circle1.getImplicitXPosition()
-        Double implicitX2 = circle2.getImplicitXPosition()
-
-        then:
-        implicitX1.equals(implicitX2)
-    }
-
-    def "When you create a default Circle, its implicit x-coordinate is 0"() {
-        when:
-        Circle circle = new Circle()
-        int x = circle.getExplicitXPosition()
-
-        then:
-        x == 0
-        x.toString() == "0"
-    }
-
-    def "When you create a default Circle, its implicit y-coordinate is 0"() {
-        when:
-        Circle circle = new Circle()
-        Integer y = circle.getExplicitYPosition()
-
-        then:
-        y == 0
-        y.toString() == "0"
     }
 
     def "You can set the x-coordinate of a Circle and get it back"() {

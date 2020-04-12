@@ -125,7 +125,7 @@ public class Circle {
     public Double getImplicitXPosition() {
         return this.implicitXPosition;
     }
-    
+
     /**
      * Set the radius to a fixed value
      *
@@ -159,6 +159,7 @@ public class Circle {
         if (circle.getLeftOf() != this) {
             circle.setLeftOf(this);
         }
+        this.setImplicitXPosition(circle.getImplicitXPosition() + circle.getImplicitWidth()/2 + this.getImplicitWidth()/2);
     }
 
     public void setExplicitXPosition(Integer x) {
@@ -167,5 +168,9 @@ public class Circle {
 
     public void setExplicitYPosition(Integer y) {
         this.explicitYPosition = y;
+    }
+
+    public void setImplicitXPosition(Double x) {
+        this.implicitXPosition = x;
     }
 }
