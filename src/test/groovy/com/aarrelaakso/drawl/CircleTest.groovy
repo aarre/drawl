@@ -1,6 +1,7 @@
 package com.aarrelaakso.drawl
 
 import spock.lang.Specification
+import sun.security.x509.OtherName
 
 class CircleTest extends Specification {
 
@@ -99,6 +100,15 @@ class CircleTest extends Specification {
         x.toString() == "0"
     }
 
+    def "When you create a default Circle, its explicit width is null"() {
+        when:
+        Circle circle = new Circle()
+        Double width = circle.getExplicitWidth()
+
+        then:
+        width == null
+    }
+
     def "When you create a default Circle, its explicit y-coordinate is 0"() {
         when:
         Circle circle = new Circle()
@@ -109,7 +119,16 @@ class CircleTest extends Specification {
         y.toString() == "0"
     }
 
-    def "When you create a default Circle, its implicit x-coordinate is 0"() {
+    def "When you create a default Circle, its implicit width is 1.0"() {
+        when:
+        Circle circle = new Circle()
+        Double width = circle.getImplicitWidth()
+
+        then:
+        width == Double.valueOf(1.0)
+    }
+
+    def "When you create a default Circle, its implicit x-coordinate is 0.0"() {
         when:
         Circle circle = new Circle()
         Double x = circle.getImplicitXPosition()
@@ -151,6 +170,57 @@ class CircleTest extends Specification {
         circle2.getLeftOf() == circle1
     }
 
+    def "When you set the explicit width of a Circle, you get the same value back"() {
+        when:
+        Circle circle = new Circle()
+        Random random = new Random()
+        Integer width = random.nextInt(Integer.MAX_VALUE.intValue())
+        circle.setExplicitWidth(width)
+        Integer newWidth = circle.getExplicitWidth()
+
+        then:
+        newWidth == width
+    }
+
+    def "When you set the explicit width of a Circle to 137930687, you get the same value back"() {
+        when:
+        Circle circle = new Circle()
+        Random random = new Random()
+        Integer width = Integer.valueOf(137930687)
+        circle.setExplicitWidth(width)
+        Integer newWidth = circle.getExplicitWidth()
+
+        then:
+        newWidth == width
+        // newWidth has come back as 137930686 instead of 137930687
+    }
+
+    def "When you set the explicit width of a Circle to 175332073, you get the same value back"() {
+        when:
+        Circle circle = new Circle()
+        Random random = new Random()
+        Integer width = Integer.valueOf(175332073)
+        circle.setExplicitWidth(width)
+        Integer newWidth = circle.getExplicitWidth()
+
+        then:
+        newWidth == width
+        // newWidth has come back as 175332072 instead of 175332073.
+    }
+
+    def "When you set the explicit width of a Circle to 64201805, you get the same value back"() {
+        when:
+        Circle circle = new Circle()
+        Random random = new Random()
+        Integer width = Integer.valueOf(64201805)
+        circle.setExplicitWidth(width)
+        Integer newWidth = circle.getExplicitWidth()
+
+        then:
+        newWidth == width
+        // newWidth has come back as 64201804 instead of 64201805
+    }
+
     def "You can construct a circle with a given radius"() {
         when:
         int radius = 100;
@@ -164,7 +234,7 @@ class CircleTest extends Specification {
         int radius = 100
         Circle circle = new Circle(radius)
         Measurement radiusMeasurement = circle.getRadius()
-        int radiusValue = radiusMeasurement.getFixedValue()
+        int radiusValue = radiusMeasurement.getExplicitValue()
 
         then:
         radiusValue == 100
@@ -194,10 +264,10 @@ class CircleTest extends Specification {
         when:
         Circle circle1 = new Circle(100)
         Measurement radius = circle1.getRadius()
-        Integer radiusValue = radius.getFixedValue()
+        Integer radiusValue = radius.getExplicitValue()
         Circle circle2 = new Circle(radiusValue)
         Measurement radius2 = circle2.getRadius()
-        int radiusValue2 = radius2.getFixedValue()
+        int radiusValue2 = radius2.getExplicitValue()
 
         then:
         radiusValue2 == radiusValue
@@ -218,7 +288,7 @@ class CircleTest extends Specification {
         Circle circle = new Circle()
 
         then:
-        circle.setRadiusFixed(radius)
+        circle.setExplicitRadius(radius)
     }
 
     def "You can construct a Circle with an implicit radius"() {

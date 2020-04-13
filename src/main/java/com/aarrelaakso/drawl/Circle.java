@@ -34,6 +34,37 @@ public class Circle {
         this.radius = radius;
     }
 
+    /** Get the explicit height of this Circle.
+     *
+     * @return the explicit height of this Circle
+     */
+    public Integer getExplicitHeight() {
+        Integer height = 2 * this.radius.getExplicitValue();
+        return height;
+    }
+
+    /** Get the explicit width of this Circle.
+     *
+     * @return the explicit width of this Circle,
+     *         or null if the explicit width of this Circle has not been set.
+     */
+    public Integer getExplicitWidth() {
+        Integer result = null;
+        Integer radiusExplicitValue = this.radius.getExplicitValue();
+        if (radiusExplicitValue != null) {
+            result = 2 * radiusExplicitValue;
+        }
+        return result;
+    }
+
+    public Integer getExplicitXPosition() {
+        return this.explicitXPosition;
+    }
+
+    public Integer getExplicitYPosition() {
+        return this.explicitYPosition;
+    }
+
     /**
      * Get the implicit height of this Circle
      *
@@ -43,6 +74,7 @@ public class Circle {
         Double height = 2 * this.radius.getImplicitValue();
         return height;
     }
+
     /**
      * Get the implicit width of this Circle
      * 
@@ -51,6 +83,10 @@ public class Circle {
     public Double getImplicitWidth() {
         Double width = 2 * this.radius.getImplicitValue();
         return width;
+    }
+
+    public Double getImplicitXPosition() {
+        return this.implicitXPosition;
     }
 
     /**
@@ -75,12 +111,34 @@ public class Circle {
         return this.radius;
     }
 
+    /**
+     * Get this Circle's neighbor to the left (this Circle is to the right of that one), if any.
+     *
+     * @return the Circle to the left of this one, if any;
+     *         <code>null</code> otherwise.
+     */
+    public Circle getRightOf() {
+        Circle returnValue = null;
+        if (this.angleToNeighbor == null) {
+            returnValue = null;
+        } else if (this.angleToNeighbor.equals(Double.valueOf(270))) {
+            returnValue = this.neighbor;
+        } else {
+            returnValue = null;
+        }
+        return returnValue;
+    }
+
     public String getSVG() {
         Measurement radius = this.radius;
+        Integer radiusExplicitValue = radius.getExplicitValue();
+        if (radiusExplicitValue == null) {
+            throw new UnsupportedOperationException("Cannot draw a Circle with no radius");
+        }
         String svg;
         svg = "<circle ";
         svg += "r=\"";
-        svg += this.radius.getFixedValue();
+        svg += radiusExplicitValue;
         svg += "\"";
         if (this.explicitXPosition != null) {
             svg += " cx=\"";
@@ -97,33 +155,16 @@ public class Circle {
     }
 
     /**
-     * Get this Circle's neighbor to the left (this Circle is to the right of that one), if any.
+     * Set the width of this Circle to a fixed value
      *
-     * @return the Circle to the left of this one, if any;
-     *         <code>null</code> otherwise.
+     * @param width the new width of this Circle
      */
-    public Circle getRightOf() {
-        Circle returnValue = null;
-        if (this.angleToNeighbor == null) {
-            returnValue = null;
-        } else if (this.angleToNeighbor.equals(Double.valueOf(270))) {
-            returnValue = this.neighbor;
+    public void setExplicitWidth(Integer width) {
+        if (width == null) {
+            this.setExplicitRadius(null);
         } else {
-             returnValue = null;
+            this.setExplicitRadius(width / 2); // TODO: What if width is odd?
         }
-        return returnValue;
-    }
-
-    public Integer getExplicitXPosition() {
-        return this.explicitXPosition;
-    }
-
-    public Integer getExplicitYPosition() {
-        return this.explicitYPosition;
-    }
-
-    public Double getImplicitXPosition() {
-        return this.implicitXPosition;
     }
 
     /**
@@ -131,8 +172,8 @@ public class Circle {
      *
      * @param radius the fixed value
      */
-    public void setRadiusFixed(Integer radius) {
-        this.radius.setFixedValue(radius);
+    public void setExplicitRadius(Integer radius) {
+        this.radius.setExplicitValue(radius);
     }
 
     /**

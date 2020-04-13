@@ -22,13 +22,13 @@ class MeasurementTest extends Specification {
         constraintType == "implicit"
     }
 
-    def "Measurement.getFixedValue() throws an error if its value is undefined"() {
+    def "Measurement.getFixedValue() returns null if its value is undefined"() {
         when:
         Measurement measurement = new Measurement()
-        int value = measurement.getFixedValue()
+        Integer value = measurement.getExplicitValue()
 
         then:
-        def exception = thrown(java.lang.UnsupportedOperationException)
+        value == null
     }
 
 
@@ -37,7 +37,7 @@ class MeasurementTest extends Specification {
         Measurement measurement = new Measurement(100)
 
         then:
-        measurement.getFixedValue() == 100
+        measurement.getExplicitValue() == 100
         measurement.getImplicitValue() == 1.0
     }
 
@@ -52,10 +52,10 @@ class MeasurementTest extends Specification {
     def "You can set a Measurement to a fixed value"() {
         when:
         Measurement measurement = new Measurement()
-        measurement.setFixedValue(100)
+        measurement.setExplicitValue(100)
 
         then:
-        measurement.getFixedValue() == 100
+        measurement.getExplicitValue() == 100
         noExceptionThrown()
     }
 

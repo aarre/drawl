@@ -22,8 +22,14 @@ public class Drawing {
 
     }
 
+    /**
+     * Add a circle to this drawing
+     *
+     * @param circle The circle to add
+     */
     public void add(Circle circle) {
         contents.add(circle);
+        circle.setExplicitWidth(this.getExplicitWidth());    // TODO: What if the drawing has other contents?
     }
 
     /**
@@ -55,14 +61,16 @@ public class Drawing {
         svg += this.getExplicitHeight();
         svg += "\"";
         svg += ">";
-        Integer radius = Math.min(this.getExplicitWidth(),this.getExplicitHeight())/2;
+
         int drawingCenterY = this.getExplicitHeight()/2;
 
         Integer explicitWidthPerObject = this.getExplicitWidthPerObject();
+        Integer radius = Math.min(explicitWidthPerObject,this.getExplicitHeight())/2;
+
         int count = 0;
         int xPosition;
         for (Circle content : this.contents) {
-            content.setRadiusFixed(radius);
+            content.setExplicitRadius(radius);
             if (count == 0) {
                 xPosition = (int) Math.round(explicitWidthPerObject - radius);
                 if (content.getLeftOf() != null) {
@@ -134,7 +142,7 @@ public class Drawing {
             if (count == 0) {
                 implicitWidthOfContents += content.getImplicitWidth();
             } else {
-                if (content.getRightOf() != null) {
+                if ((content.getRightOf() != null)  || (content.getLeftOf() != null)) {    // TODO: What if we are counting twice left and right?
                     implicitWidthOfContents += content.getImplicitWidth();
                 }
             }
@@ -160,6 +168,15 @@ public class Drawing {
      */
     public void setExplicitWidth(Integer width) {
         this.explicitWidth = width;
+        Double implicitWidthOfContents = this.getImplicitWidthOfContents();
+        Double explicitWidthPerImplicitWidth = this.explicitWidth / implicitWidthOfContents;
+        Double implicitWidthOfThisCircle = null;
+        Integer explicitWidthOfThisCircle = null;
+        for (Circle content : this.contents) {
+                implicitWidthOfThisCircle = content.getImplicitWidth();
+                explicitWidthOfThisCircle = new Integer((int) Math.round(implicitWidthOfThisCircle * explicitWidthPerImplicitWidth));
+                content.setExplicitWidth(explicitWidthOfThisCircle);
+        }
     }
 
     /**
@@ -167,7 +184,7 @@ public class Drawing {
      *
      * @return the number of items in this Drawing
      */
-    public Integer size() {
+    public Integer length() {
         final Integer integer = new Integer(1);
         return integer;
     }
