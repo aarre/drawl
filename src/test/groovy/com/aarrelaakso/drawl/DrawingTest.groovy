@@ -58,7 +58,7 @@ class DrawingTest extends Specification {
         when:
         Drawing drawing = new Drawing()
         int radius = 4000
-        Circle circle = new Circle(radius)
+        Circle circle = new Circle(radius, ConstraintType.EXPLICIT)
         drawing.add(circle)
         then:
         def svg = drawing.getSVG(100, 100)
@@ -345,8 +345,8 @@ class DrawingTest extends Specification {
         circle2.setRightOf(circle1);
         drawing.setExplicitHeight(100)
         drawing.setExplicitWidth(100)
-        Double explicitRadius1 = circle1.getRadius().getExplicitValue()
-        Double explicitRadius2 = circle2.getRadius().getExplicitValue()
+        Double explicitRadius1 = circle1.getExplicitRadius()
+        Double explicitRadius2 = circle2.getExplicitRadius()
 
         then:
         explicitRadius1.equals(Double.valueOf(25))
@@ -364,8 +364,8 @@ class DrawingTest extends Specification {
         circle2.setRightOf(circle1);
         drawing.setExplicitHeight(100)
         drawing.setExplicitWidth(100)
-        Double implicitRadius1 = circle1.getRadius().getImplicitValue()
-        Double implicitRadius2 = circle2.getRadius().getImplicitValue()
+        Double implicitRadius1 = circle1.getImplicitRadius()
+        Double implicitRadius2 = circle2.getImplicitRadius()
 
         then:
         implicitRadius1.equals(Double.valueOf(0.5))

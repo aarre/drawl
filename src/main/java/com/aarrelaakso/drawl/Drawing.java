@@ -11,8 +11,8 @@ import java.util.logging.Logger;
 public class Drawing {
 
     private Set<Circle> contents;
-    private Integer explicitHeight;
-    private Integer explicitWidth;
+    private Double explicitHeight;
+    private Double explicitWidth;
     private Logger logger;
 
     public Drawing() {
@@ -39,9 +39,15 @@ public class Drawing {
      * @param drawingHeight The desired height of the output (in pixels).
      * @return A string of valid SVG that depicts the drawing within the bounds of x and y.
      */
-    public String getSVG(Integer drawingWidth, Integer drawingHeight) {
+    public String getSVG(Double drawingWidth, Double drawingHeight) {
         this.setExplicitWidth(drawingWidth);
         this.setExplicitHeight(drawingHeight);
+        return this.getSVG();
+    }
+
+    public String getSVG(Integer drawingWidth, Integer drawingHeight) {
+        this.setExplicitWidth(new Double(drawingWidth));
+        this.setExplicitHeight(new Double(drawingHeight));
         return this.getSVG();
     }
 
@@ -53,26 +59,29 @@ public class Drawing {
      * @return A string of valid SVG that depicts the drawing within the bounds of the explicit width and height
      */
     private String getSVG() {
+        String height = SVG.toString(this.getExplicitHeight());
+        String width = SVG.toString(this.getExplicitWidth());
+
         String svg = new String("<svg");
         svg += " width=\"";
-        svg += this.getExplicitWidth();
+        svg += width;
         svg += "\"";
         svg += " height=\"";
-        svg += this.getExplicitHeight();
+        svg += height;
         svg += "\"";
         svg += ">";
 
-        int drawingCenterY = this.getExplicitHeight()/2;
+        Double drawingCenterY = this.getExplicitHeight()/2;
 
-        Integer explicitWidthPerObject = this.getExplicitWidthPerObject();
-        Integer radius = Math.min(explicitWidthPerObject,this.getExplicitHeight())/2;
+        Double explicitWidthPerObject = this.getExplicitWidthPerObject();
+        Double radius = Math.min(explicitWidthPerObject,this.getExplicitHeight())/2;
 
         int count = 0;
-        int xPosition;
+        Double xPosition;
         for (Circle content : this.contents) {
             content.setExplicitRadius(radius);
             if (count == 0) {
-                xPosition = (int) Math.round(explicitWidthPerObject - radius);
+                xPosition = explicitWidthPerObject - radius;
                 if (content.getLeftOf() != null) {
                     count++;
                 }
@@ -80,7 +89,7 @@ public class Drawing {
                     count++;
                 }
             } else {
-                xPosition = (int) Math.round((explicitWidthPerObject * count) - radius);
+                xPosition = (explicitWidthPerObject * count) - radius;
             }
             content.setExplicitXPosition(xPosition);
             content.setExplicitYPosition(drawingCenterY);
@@ -91,11 +100,11 @@ public class Drawing {
         return(svg);
     }
 
-    public Integer getExplicitHeight() {
+    public Double getExplicitHeight() {
         return this.explicitHeight;
     }
 
-    public Integer getExplicitWidth(){
+    public Double getExplicitWidth(){
         return this.explicitWidth;
     }
 
@@ -105,8 +114,8 @@ public class Drawing {
      * @return the explicit width per object in this Drawing, in pixels
      */
     @NotNull
-    private Integer getExplicitWidthPerObject() {
-       return (int)Math.round(this.getExplicitWidth().doubleValue() / this.getImplicitWidth());
+    private Double getExplicitWidthPerObject() {
+       return this.getExplicitWidth() / this.getImplicitWidth();
     }
 
     /**
@@ -155,9 +164,9 @@ public class Drawing {
     /**
      * Set the explicit height of this Drawing
      *
-     * @param height the explicit width of the Drawing, in pixels
+     * @param height the explicit width of the Drawing
      */
-    public void setExplicitHeight(Integer height) {
+    public void setExplicitHeight(Double height) {
         this.explicitHeight = height;
     }
 
@@ -166,15 +175,15 @@ public class Drawing {
      *
      * @param width the explicit width of the Drawing, in pixels
      */
-    public void setExplicitWidth(Integer width) {
+    public void setExplicitWidth(Double width) {
         this.explicitWidth = width;
         Double implicitWidthOfContents = this.getImplicitWidthOfContents();
         Double explicitWidthPerImplicitWidth = this.explicitWidth / implicitWidthOfContents;
         Double implicitWidthOfThisCircle = null;
-        Integer explicitWidthOfThisCircle = null;
+        Double explicitWidthOfThisCircle = null;
         for (Circle content : this.contents) {
                 implicitWidthOfThisCircle = content.getImplicitWidth();
-                explicitWidthOfThisCircle = new Integer((int) Math.round(implicitWidthOfThisCircle * explicitWidthPerImplicitWidth));
+                explicitWidthOfThisCircle = implicitWidthOfThisCircle * explicitWidthPerImplicitWidth;
                 content.setExplicitWidth(explicitWidthOfThisCircle);
         }
     }

@@ -16,12 +16,12 @@ public class Measurement {
     }
 
     /**
-     * Create a measurement with a fixed value
+     * Create a measurement with an explicit value
      *
      * @param value The fixed value to which the measurement will be set
      */
     public Measurement(Integer value) {
-        this.explicitValue = new Integer(value);
+        this.explicitValue = value;
         this.implicitValue = new Double(1.0);
         this.constraintType = "fixed";
     }

@@ -2,45 +2,58 @@ package com.aarrelaakso.drawl;
 
 public class Circle {
 
-    private Measurement radius;
+    private ConstraintType constraint;
+    private Double implicitRadius;
+    private Double explicitRadius;
     private Circle neighbor = null;           // A circle adjacent to this one, if any
     private Double angleToNeighbor = null;
-    private Integer explicitXPosition = 0;
-    private Integer explicitYPosition = 0;
-    private Double implicitXPosition = new Double(0.0);
+    private Double explicitXPosition = Double.valueOf(0.0);
+    private Double explicitYPosition = Double.valueOf(0.0);
+    private Double implicitXPosition = Double.valueOf(0.0);
 
     /**
      * Construct a circle with an implicit radius.
      */
     public Circle() {
-        radius = new Measurement(0.5);
+        this.implicitRadius = Double.valueOf(0.5);
     }
 
     /**
-     * Construct a circle with a fixed radius.
+     * Construct a circle given a radius.
      *
-     * @param radius The radius of the circle to be constructed (in pixels).
+     * @param radius The radius of the circle to be constructed.
+     * @param constraintType Whether the given radius is explicit or implicit.
      */
-    public Circle(int radius) {
-        this.radius = new Measurement(radius);
+    public Circle(Double radius, ConstraintType constraintType) {
+        this.constraint = constraintType;
+        if (constraintType == ConstraintType.EXPLICIT) {
+            this.explicitRadius = radius;
+            this.implicitRadius = Double.valueOf(0.5);
+        } else {
+            this.implicitRadius = radius;
+        }
     }
 
     /**
-     * Construct a circle with an implicit radius matching another measurement.
+     * Construct a circle given an Integer radius.
      *
-     * @param radius The radius of the circle to be constructed (as a Measurement object).
+     * @param radius The radius of the circle to be constructed.
+     * @param constraintType Whether the given radius is explicit or implicit.
      */
-    public Circle(Measurement radius) {
-        this.radius = radius;
+    public Circle(Integer radius, ConstraintType constraintType) {
+        this(Double.valueOf(radius), constraintType);
     }
 
     /** Get the explicit height of this Circle.
      *
      * @return the explicit height of this Circle
      */
-    public Integer getExplicitHeight() {
-        Integer height = 2 * this.radius.getExplicitValue();
-        return height;
+    public Double getExplicitHeight() {
+        return 2 * this.getExplicitRadius();
+    }
+
+    public Double getExplicitRadius() {
+        return this.explicitRadius;
     }
 
     /** Get the explicit width of this Circle.
@@ -48,20 +61,20 @@ public class Circle {
      * @return the explicit width of this Circle,
      *         or null if the explicit width of this Circle has not been set.
      */
-    public Integer getExplicitWidth() {
-        Integer result = null;
-        Integer radiusExplicitValue = this.radius.getExplicitValue();
+    public Double getExplicitWidth() {
+        Double result = null;
+        Double radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue != null) {
             result = 2 * radiusExplicitValue;
         }
         return result;
     }
 
-    public Integer getExplicitXPosition() {
+    public Double getExplicitXPosition() {
         return this.explicitXPosition;
     }
 
-    public Integer getExplicitYPosition() {
+    public Double getExplicitYPosition() {
         return this.explicitYPosition;
     }
 
@@ -71,8 +84,11 @@ public class Circle {
      * @return the implicit height of this Circle
      */
     public Double getImplicitHeight() {
-        Double height = 2 * this.radius.getImplicitValue();
-        return height;
+        return 2 * this.getImplicitRadius();
+    }
+
+    public Double getImplicitRadius() {
+        return this.implicitRadius;
     }
 
     /**
@@ -81,8 +97,7 @@ public class Circle {
      * @return the implicit width of this Circle
      */
     public Double getImplicitWidth() {
-        Double width = 2 * this.radius.getImplicitValue();
-        return width;
+        return 2 * this.getImplicitRadius();
     }
 
     public Double getImplicitXPosition() {
@@ -107,10 +122,6 @@ public class Circle {
         return returnValue;
     }
 
-    public Measurement getRadius() {
-        return this.radius;
-    }
-
     /**
      * Get this Circle's neighbor to the left (this Circle is to the right of that one), if any.
      *
@@ -130,24 +141,26 @@ public class Circle {
     }
 
     public String getSVG() {
-        Measurement radius = this.radius;
-        Integer radiusExplicitValue = radius.getExplicitValue();
+        String radiusStringValue;
+        Double radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue == null) {
             throw new UnsupportedOperationException("Cannot draw a Circle with no radius");
+        } else {
+            radiusStringValue = SVG.toString(radiusExplicitValue);
         }
         String svg;
         svg = "<circle ";
         svg += "r=\"";
-        svg += radiusExplicitValue;
+        svg += radiusStringValue;
         svg += "\"";
         if (this.explicitXPosition != null) {
             svg += " cx=\"";
-            svg += this.explicitXPosition.toString();
+            svg += SVG.toString(this.explicitXPosition);
             svg += "\"";
         }
         if (this.explicitYPosition != null) {
             svg += " cy=\"";
-            svg += this.explicitYPosition.toString();
+            svg += SVG.toString(this.explicitYPosition);
             svg += "\"";
         }
         svg += " />";
@@ -159,11 +172,11 @@ public class Circle {
      *
      * @param width the new width of this Circle
      */
-    public void setExplicitWidth(Integer width) {
+    public void setExplicitWidth(Double width) {
         if (width == null) {
             this.setExplicitRadius(null);
         } else {
-            this.setExplicitRadius(width / 2); // TODO: What if width is odd?
+            this.setExplicitRadius(width / 2);
         }
     }
 
@@ -172,8 +185,8 @@ public class Circle {
      *
      * @param radius the fixed value
      */
-    public void setExplicitRadius(Integer radius) {
-        this.radius.setExplicitValue(radius);
+    public void setExplicitRadius(Double radius) {
+        this.explicitRadius = radius;
     }
 
     /**
@@ -203,11 +216,11 @@ public class Circle {
         this.setImplicitXPosition(circle.getImplicitXPosition() + circle.getImplicitWidth()/2 + this.getImplicitWidth()/2);
     }
 
-    public void setExplicitXPosition(Integer x) {
+    public void setExplicitXPosition(Double x) {
         this.explicitXPosition = x;
     }
 
-    public void setExplicitYPosition(Integer y) {
+    public void setExplicitYPosition(Double y) {
         this.explicitYPosition = y;
     }
 
