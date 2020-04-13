@@ -15,13 +15,24 @@ repositories {
 apply plugin: 'groovy'
 
 dependencies {
+
+    // Groovy
     // https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.10', ext: 'pom'
 
+    // Apache Commons
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
 
+    // JetBrains Annotations
     compile 'org.jetbrains:annotations:16.0.2'
+
+    // JUnit 4
     compile 'junit:junit:4.12'
+
+    // Spock
     compile 'org.spockframework:spock-core:1.3-groovy-2.5'
+
+    // Google Guava libraries
+    implementation("com.google.guava:guava:28.2-jre")
 }
