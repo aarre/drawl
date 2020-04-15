@@ -1,10 +1,17 @@
 package com.aarrelaakso.drawl
 
+import java.util.concurrent.ThreadLocalRandom
+
 import spock.lang.Specification
 import org.apache.commons.lang3.StringUtils
+import com.google.common.math.DoubleMath
 
 class DrawingTest extends Specification {
+
+    Double epsilon
+
     void setup() {
+        epsilon = 0.00000001 // Tolerance for comparing Double values
     }
 
     void cleanup() {
@@ -265,6 +272,108 @@ class DrawingTest extends Specification {
 
         then:
         implicitWidthOfContents == 1.0
+    }
+
+    def "When a drawing has two adjacent default Circles, then their explicit x-positions are correct (fixed)"() {
+        when:
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        circle2.setRightOf(circle1)
+        Double width = 100
+        Double height = 100
+        drawing.setExplicitWidth(width)
+        drawing.setExplicitHeight(height)
+
+        then:
+        circle1.getExplicitXPosition() == width/4
+        circle2.getExplicitXPosition() == (3*width)/4
+    }
+
+    def "When a drawing has two adjacent default Circles, then their implicit x-positions are correct (fixed)"() {
+        when:
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        circle2.setRightOf(circle1)
+
+        then:
+        circle1.getImplicitXPosition() == 0.0
+        circle2.getImplicitXPosition() == 1.0
+    }
+
+    def "When a drawing has three adjacent default Circles, then their x-positions are correct (fixed)"() {
+        when:
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        Circle circle3 = new Circle()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        drawing.add(circle3)
+        circle2.setRightOf(circle1)
+        circle3.setRightOf(circle2)
+        Double width = 100
+        Double height = 100
+        drawing.setExplicitWidth(width)
+        drawing.setExplicitHeight(height)
+
+        then:
+        DoubleMath.fuzzyEquals(circle1.getExplicitXPosition(), width/6, epsilon)
+        DoubleMath.fuzzyEquals(circle2.getExplicitXPosition(), width/2, epsilon)
+        DoubleMath.fuzzyEquals(circle3.getExplicitXPosition(), (5*width)/6, epsilon)
+    }
+
+    def "When a drawing has three adjacent default Circles, then their x-positions are correct (huge)"() {
+        when:
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        Circle circle3 = new Circle()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        drawing.add(circle3)
+        circle2.setRightOf(circle1)
+        circle3.setRightOf(circle2)
+        Double width = Double.valueOf(6.639268145875023E307)
+        Double height = Double.valueOf(1.5225010628307084E308)
+        drawing.setExplicitWidth(width)
+        drawing.setExplicitHeight(height)
+
+        then:
+        DoubleMath.fuzzyEquals(circle1.getExplicitXPosition(), width/6, epsilon)
+        DoubleMath.fuzzyEquals(circle2.getExplicitXPosition(), width/2, epsilon)
+        DoubleMath.fuzzyEquals(circle3.getExplicitXPosition(), width*(5/6), epsilon)
+
+    }
+
+    def "When a drawing has three adjacent default Circles, then their x-positions are correct (random)"() {
+        when:
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        Circle circle3 = new Circle()
+        drawing.add(circle1)
+        drawing.add(circle2)
+        drawing.add(circle3)
+        circle2.setRightOf(circle1)
+        circle3.setRightOf(circle2)
+        Double width = ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
+        System.out.println("width: " + width)
+        Double height = ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
+        System.out.println("height: " + height)
+        drawing.setExplicitWidth(width)
+        drawing.setExplicitHeight(height)
+
+        then:
+        DoubleMath.fuzzyEquals(circle1.getExplicitXPosition(), width/6, epsilon)
+        DoubleMath.fuzzyEquals(circle2.getExplicitXPosition(), width/2, epsilon)
+        DoubleMath.fuzzyEquals(circle3.getExplicitXPosition(), (5*width)/6, epsilon)
+
     }
 
     def "When a square (100) drawing has two adjacent Circles, then the SVG is correct"() {

@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.lang.Math;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Logger;
@@ -181,12 +182,16 @@ public class Drawing {
         Double explicitWidthPerImplicitWidth = this.explicitWidth / implicitWidthOfContents;
         Double implicitWidthOfThisCircle = null;
         Double explicitWidthOfThisCircle = null;
-        for (Circle content : this.contents) {
-                implicitWidthOfThisCircle = content.getImplicitWidth();
-                explicitWidthOfThisCircle = implicitWidthOfThisCircle * explicitWidthPerImplicitWidth;
-                content.setExplicitWidth(explicitWidthOfThisCircle);
+        Double currentXPosition = Double.valueOf(0.0);
+        for (Circle circle : this.contents) {
+            implicitWidthOfThisCircle = circle.getImplicitWidth();
+            explicitWidthOfThisCircle = implicitWidthOfThisCircle * explicitWidthPerImplicitWidth;
+            circle.setExplicitWidth(explicitWidthOfThisCircle);
+            Double implicitXPositionOfThisCircle = circle.getImplicitXPosition() + 0.5;
+            circle.setExplicitXPosition(implicitXPositionOfThisCircle * explicitWidthPerImplicitWidth);
         }
     }
+
 
     /**
      * Get the number of items in this Drawing

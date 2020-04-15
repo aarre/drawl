@@ -118,6 +118,15 @@ class CircleTest extends Specification {
         y.toString() == "0"
     }
 
+    def "When you create a default Circle, then its implicit radius is 0.5"() {
+        when:
+        Circle circle = new Circle()
+        Double radius = circle.getImplicitRadius()
+
+        then:
+        radius == Double.valueOf(0.5)
+    }
+
     def "When you create a default Circle, its implicit width is 1.0"() {
         when:
         Circle circle = new Circle()
@@ -220,6 +229,18 @@ class CircleTest extends Specification {
         // newWidth has come back as 64201804 instead of 64201805
     }
 
+    def "When you set three default Circles adjacent to one another, no StackOverflowError is thrown"() {
+        when:
+        Circle circle1 = new Circle()
+        Circle circle2 = new Circle()
+        Circle circle3 = new Circle()
+        circle2.setRightOf(circle1)
+        circle3.setRightOf(circle2)
+
+        then:
+        notThrown(java.lang.StackOverflowError)
+    }
+
     def "You can construct a circle with an explicit radius"() {
         when:
         int radius = 100;
@@ -237,15 +258,6 @@ class CircleTest extends Specification {
 
         then:
         outputRadius == Double.valueOf(100)
-    }
-
-    def "When you create a default Circle, then its implicit radius is 0.5"() {
-        when:
-        Circle circle = new Circle()
-        Double radius = circle.getImplicitRadius()
-
-        then:
-        radius == Double.valueOf(0.5)
     }
 
     def "You can set the x-coordinate of a Circle and get it back"() {
@@ -297,4 +309,12 @@ class CircleTest extends Specification {
         radius == 0.5
     }
 
+    def "You cannot create a circular adjacency"() {
+        when:
+        Circle circle = new Circle()
+        circle.setRightOf(circle)
+
+        then:
+        thrown(UnsupportedOperationException)
+    }
 }

@@ -195,6 +195,9 @@ public class Circle {
      * @param circle the Circle to the right of this one
      */
     public void setLeftOf(Circle circle) {
+        if (circle == this) {
+            throw new UnsupportedOperationException("A circle cannot be adjacent to itself");
+        }
         this.neighbor = circle;
         this.angleToNeighbor = Double.valueOf(90);
         if (circle.getRightOf() != this) {
@@ -208,6 +211,9 @@ public class Circle {
      * @param circle the Circle to the left of this one
      */
     public void setRightOf(Circle circle) {
+        if (circle == this) {
+            throw new UnsupportedOperationException("A circle cannot be adjacent to itself");
+        }
         this.neighbor = circle;
         this.angleToNeighbor = Double.valueOf(270);
         if (circle.getLeftOf() != this) {
