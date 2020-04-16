@@ -1,6 +1,7 @@
 package com.aarrelaakso.drawl;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 
 
@@ -11,8 +12,12 @@ import java.math.RoundingMode;
  */
 public class BigDecimalMath {
 
-    public static int SCALE = 8;
+    public static int SCALE = 32;
+
     public static RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
+
+    public static MathContext mathContext = new MathContext(32, RoundingMode.HALF_UP);
+
 
     /**
      * Test whether a BigDecimal is a mathematical integer.
