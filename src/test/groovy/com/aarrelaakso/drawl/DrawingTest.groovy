@@ -325,7 +325,7 @@ class DrawingTest extends Specification {
         BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, BigDecimalMath.mathContext)
         BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, BigDecimalMath.mathContext)
         BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), BigDecimalMath.mathContext)
-        BigDecimal bigX3 = bigWidth.multiply(fraction)
+        BigDecimal bigX3 = bigWidth.multiply(fraction, BigDecimalMath.mathContext)
 
         then:
         circle1.getExplicitXPosition().compareTo(bigX1) == 0

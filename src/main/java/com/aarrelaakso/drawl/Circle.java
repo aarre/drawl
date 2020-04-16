@@ -134,7 +134,7 @@ public class Circle {
         Circle returnValue = null;
         if (this.angleToNeighbor == null) {
             returnValue = null;
-        } else if (this.angleToNeighbor.equals(BigDecimal.valueOf(270))) {
+        } else if (this.angleToNeighbor.compareTo(BigDecimal.valueOf(270)) == 0) {
             returnValue = this.neighbor;
         } else {
             returnValue = null;
@@ -223,7 +223,7 @@ public class Circle {
         }
         BigDecimal circleImplicitRadius = circle.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
         BigDecimal thisImplicitRadius =  this.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
-        BigDecimal thisImplicitXPosition = circle.getImplicitXPosition().add(circleImplicitRadius).add(thisImplicitRadius);
+        BigDecimal thisImplicitXPosition = circle.getImplicitXPosition().add(circleImplicitRadius, BigDecimalMath.mathContext).add(thisImplicitRadius, BigDecimalMath.mathContext);
         this.setImplicitXPosition(thisImplicitXPosition);
     }
 

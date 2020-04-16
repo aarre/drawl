@@ -18,7 +18,7 @@ dependencies {
 
     // Groovy
     // https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all
-    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.10', ext: 'pom'
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.3', ext: 'pom'
 
     // Apache Commons
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
