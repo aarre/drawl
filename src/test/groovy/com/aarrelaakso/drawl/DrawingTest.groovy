@@ -322,9 +322,10 @@ class DrawingTest extends Specification {
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
         BigDecimal bigWidth = BigDecimal.valueOf(width)
-        BigDecimal bigX1 = bigWidth.divide(6, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
-        BigDecimal bigX2 = bigWidth.divide(2, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
-        BigDecimal bigX3 = bigX1.multiply(5)
+        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), BigDecimalMath.mathContext)
+        BigDecimal bigX3 = bigWidth.multiply(fraction)
 
         then:
         circle1.getExplicitXPosition().compareTo(bigX1) == 0
@@ -347,9 +348,9 @@ class DrawingTest extends Specification {
         BigDecimal height = BigDecimal.valueOf(1.5225010628307084E308)
         drawing.setExplicitWidth(bigWidth)
         drawing.setExplicitHeight(height)
-        BigDecimal bigX1 = bigWidth.divide(6, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
-        BigDecimal bigX2 = bigWidth.divide(2, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
-        BigDecimal bigX3 = bigX1.multiply(5)
+        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal bigX3 = bigX1.multiply(5 as BigDecimal, BigDecimalMath.mathContext)
 
         then:
         circle1.getExplicitXPosition().compareTo(bigX1) == 0
@@ -369,15 +370,16 @@ class DrawingTest extends Specification {
         drawing.add(circle3)
         circle2.setRightOf(circle1)
         circle3.setRightOf(circle2)
-        BigDecimal width = ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
+        BigDecimal width = BigDecimal.valueOf(ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE))
         System.out.println("width: " + width)
         Double height = ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
         System.out.println("height: " + height)
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
-        BigDecimal bigX1 = width.divide(6, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
-        BigDecimal bigX2 = width.divide(2, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
-        BigDecimal bigX3 = bigX1.multiply(5)
+        BigDecimal bigX1 = width.divide(6 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal bigX2 = width.divide(2 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), BigDecimalMath.mathContext)
+        BigDecimal bigX3 = width.multiply(fraction, BigDecimalMath.mathContext)
 
         then:
         circle1.getExplicitXPosition().compareTo(bigX1) == 0

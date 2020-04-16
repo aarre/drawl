@@ -9,9 +9,9 @@ public class Circle {
     private BigDecimal explicitRadius;
     private Circle neighbor = null;           // A circle adjacent to this one, if any
     private BigDecimal angleToNeighbor = null;
-    private BigDecimal explicitXPosition = BigDecimal.valueOf(0);
-    private BigDecimal explicitYPosition = BigDecimal.valueOf(0);
-    private BigDecimal implicitXPosition = BigDecimal.valueOf(0);
+    private BigDecimal explicitXPosition = BigDecimal.ZERO;
+    private BigDecimal explicitYPosition = BigDecimal.ZERO;
+    private BigDecimal implicitXPosition = BigDecimal.ZERO;
 
     /**
      * Construct a circle with an implicit radius.
@@ -51,7 +51,7 @@ public class Circle {
      * @return the explicit height of this Circle
      */
     public BigDecimal getExplicitHeight() {
-        return this.getExplicitRadius().multiply(BigDecimal.valueOf(2));
+        return this.getExplicitRadius().multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
     }
 
     public BigDecimal getExplicitRadius() {
@@ -67,7 +67,7 @@ public class Circle {
         BigDecimal result = null;
         BigDecimal radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue != null) {
-            result = radiusExplicitValue.multiply(BigDecimal.valueOf(2));
+            result = radiusExplicitValue.multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
         }
         return result;
     }
@@ -86,7 +86,7 @@ public class Circle {
      * @return the implicit height of this Circle
      */
     public BigDecimal getImplicitHeight() {
-        return this.getImplicitRadius().multiply(BigDecimal.valueOf(2));
+        return this.getImplicitRadius().multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
     }
 
     public BigDecimal getImplicitRadius() {
@@ -99,7 +99,7 @@ public class Circle {
      * @return the implicit width of this Circle
      */
     public BigDecimal getImplicitWidth() {
-        return this.getImplicitRadius().multiply(BigDecimal.valueOf(2));
+        return this.getImplicitRadius().multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
     }
 
     public BigDecimal getImplicitXPosition() {
@@ -178,7 +178,7 @@ public class Circle {
         if (width == null) {
             this.setExplicitRadius(null);
         } else {
-            this.setExplicitRadius(width.divide(BigDecimal.valueOf(2), BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE));
+            this.setExplicitRadius(width.divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext));
         }
     }
 
@@ -221,8 +221,8 @@ public class Circle {
         if (circle.getLeftOf() != this) {
             circle.setLeftOf(this);
         }
-        BigDecimal circleImplicitRadius = circle.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE);
-        BigDecimal thisImplicitRadius =  this.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE);
+        BigDecimal circleImplicitRadius = circle.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+        BigDecimal thisImplicitRadius =  this.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
         BigDecimal thisImplicitXPosition = circle.getImplicitXPosition().add(circleImplicitRadius).add(thisImplicitRadius);
         this.setImplicitXPosition(thisImplicitXPosition);
     }

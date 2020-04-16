@@ -70,10 +70,10 @@ public class Drawing {
         svg += "\"";
         svg += ">";
 
-        BigDecimal drawingCenterY = this.getExplicitHeight().divide(BigDecimal.valueOf(2), BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE);
+        BigDecimal drawingCenterY = this.getExplicitHeight().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
 
         BigDecimal explicitWidthPerObject = this.getExplicitWidthPerObject();
-        BigDecimal radius = explicitWidthPerObject.min(this.getExplicitHeight()).divide(BigDecimal.valueOf(2), BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE);
+        BigDecimal radius = explicitWidthPerObject.min(this.getExplicitHeight()).divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
 
         int count = 0;
         BigDecimal xPosition;
@@ -89,7 +89,7 @@ public class Drawing {
                         count++;
                     }
                 } else {
-                    xPosition = explicitWidthPerObject.multiply(BigDecimal.valueOf(count)).subtract(radius);
+                    xPosition = explicitWidthPerObject.multiply(BigDecimal.valueOf(count), BigDecimalMath.mathContext).subtract(radius);
                 }
                 content.setExplicitXPosition(xPosition);
                 content.setExplicitYPosition(drawingCenterY);
@@ -119,7 +119,7 @@ public class Drawing {
             // The drawing has no contents
             return BigDecimal.ZERO;
         } else {
-            return this.getExplicitWidth().divide(this.getImplicitWidth(), BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE);
+            return this.getExplicitWidth().divide(this.getImplicitWidth(), BigDecimalMath.mathContext);
         }
     }
 
@@ -183,23 +183,20 @@ public class Drawing {
     public void setExplicitWidth(BigDecimal width) {
         this.explicitWidth = width;
         BigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
-        if (!implicitWidthOfContents.equals(BigDecimal.ZERO)) {
-            BigDecimal explicitWidthPerImplicitWidth = this.explicitWidth.divide(implicitWidthOfContents,
-                    BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE);
+        if (implicitWidthOfContents.compareTo(BigDecimal.ZERO) != 0) {
+            BigDecimal explicitWidthPerImplicitWidth = this.explicitWidth.divide(implicitWidthOfContents, BigDecimalMath.mathContext);
             BigDecimal implicitWidthOfThisCircle = null;
             BigDecimal explicitWidthOfThisCircle = null;
-            BigDecimal currentXPosition = BigDecimal.ZERO;
             for (Circle circle : this.contents) {
                 implicitWidthOfThisCircle = circle.getImplicitWidth();
-                explicitWidthOfThisCircle = implicitWidthOfThisCircle.multiply(explicitWidthPerImplicitWidth);
+                explicitWidthOfThisCircle = implicitWidthOfThisCircle.multiply(explicitWidthPerImplicitWidth, BigDecimalMath.mathContext);
                 circle.setExplicitWidth(explicitWidthOfThisCircle);
                 BigDecimal implicitXPositionOfThisCircle = circle.getImplicitXPosition();
                 implicitXPositionOfThisCircle = implicitXPositionOfThisCircle.add(BigDecimal.valueOf(0.5));
-                circle.setExplicitXPosition(implicitXPositionOfThisCircle.multiply(explicitWidthPerImplicitWidth));
+                circle.setExplicitXPosition(implicitXPositionOfThisCircle.multiply(explicitWidthPerImplicitWidth, BigDecimalMath.mathContext));
             }
         }
     }
-
 
     /**
      * Get the number of items in this Drawing
@@ -207,7 +204,6 @@ public class Drawing {
      * @return the number of items in this Drawing
      */
     public Integer length() {
-        final Integer integer = new Integer(1);
-        return integer;
+        return Integer.valueOf(contents.size());
     }
 }
