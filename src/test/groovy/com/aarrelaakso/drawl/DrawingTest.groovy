@@ -282,14 +282,14 @@ class DrawingTest extends Specification {
         drawing.add(circle1)
         drawing.add(circle2)
         circle2.setRightOf(circle1)
-        Double width = 100
-        Double height = 100
+        int width = 100
+        int height = 100
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
 
         then:
-        circle1.getExplicitXPosition() == width/4
-        circle2.getExplicitXPosition() == (3*width)/4
+        circle1.getExplicitXPosition().compareTo(BigDecimal.valueOf(width/4)) == 0
+        circle2.getExplicitXPosition().compareTo(BigDecimal.valueOf((3*width)/4)) == 0
     }
 
     def "When a drawing has two adjacent default Circles, then their implicit x-positions are correct (fixed)"() {
@@ -321,11 +321,15 @@ class DrawingTest extends Specification {
         Double height = 100
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
+        BigDecimal bigWidth = BigDecimal.valueOf(width)
+        BigDecimal bigX1 = bigWidth.divide(6, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
+        BigDecimal bigX2 = bigWidth.divide(2, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
+        BigDecimal bigX3 = bigX1.multiply(5)
 
         then:
-        DoubleMath.fuzzyEquals(circle1.getExplicitXPosition(), width/6, epsilon)
-        DoubleMath.fuzzyEquals(circle2.getExplicitXPosition(), width/2, epsilon)
-        DoubleMath.fuzzyEquals(circle3.getExplicitXPosition(), (5*width)/6, epsilon)
+        circle1.getExplicitXPosition().compareTo(bigX1) == 0
+        circle2.getExplicitXPosition().compareTo(bigX2) == 0
+        circle3.getExplicitXPosition().compareTo(bigX3) == 0
     }
 
     def "When a drawing has three adjacent default Circles, then their x-positions are correct (huge)"() {
@@ -339,15 +343,18 @@ class DrawingTest extends Specification {
         drawing.add(circle3)
         circle2.setRightOf(circle1)
         circle3.setRightOf(circle2)
-        Double width = Double.valueOf(6.639268145875023E307)
-        Double height = Double.valueOf(1.5225010628307084E308)
-        drawing.setExplicitWidth(width)
+        BigDecimal bigWidth = BigDecimal.valueOf(6.639268145875023E307)
+        BigDecimal height = BigDecimal.valueOf(1.5225010628307084E308)
+        drawing.setExplicitWidth(bigWidth)
         drawing.setExplicitHeight(height)
+        BigDecimal bigX1 = bigWidth.divide(6, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
+        BigDecimal bigX2 = bigWidth.divide(2, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
+        BigDecimal bigX3 = bigX1.multiply(5)
 
         then:
-        DoubleMath.fuzzyEquals(circle1.getExplicitXPosition(), width/6, epsilon)
-        DoubleMath.fuzzyEquals(circle2.getExplicitXPosition(), width/2, epsilon)
-        DoubleMath.fuzzyEquals(circle3.getExplicitXPosition(), width*(5/6), epsilon)
+        circle1.getExplicitXPosition().compareTo(bigX1) == 0
+        circle2.getExplicitXPosition().compareTo(bigX2) == 0
+        circle3.getExplicitXPosition().compareTo(bigX3) == 0
 
     }
 
@@ -370,9 +377,9 @@ class DrawingTest extends Specification {
         drawing.setExplicitHeight(height)
 
         then:
-        DoubleMath.fuzzyEquals(circle1.getExplicitXPosition(), width/6, epsilon)
-        DoubleMath.fuzzyEquals(circle2.getExplicitXPosition(), width/2, epsilon)
-        DoubleMath.fuzzyEquals(circle3.getExplicitXPosition(), (5*width)/6, epsilon)
+        circle1.getExplicitXPosition().compareTo(BigDecimal.valueOf(width/6)) == 0
+        circle2.getExplicitXPosition().compareTo(BigDecimal.valueOf(width/2)) == 0
+        circle3.getExplicitXPosition().compareTo(BigDecimal.valueOf((5*width)/6)) == 0
 
     }
 

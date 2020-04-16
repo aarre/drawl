@@ -1,21 +1,23 @@
 package com.aarrelaakso.drawl;
 
+import java.math.BigDecimal;
+
 public class Circle {
 
     private ConstraintType constraint;
-    private Double implicitRadius;
-    private Double explicitRadius;
+    private BigDecimal implicitRadius;
+    private BigDecimal explicitRadius;
     private Circle neighbor = null;           // A circle adjacent to this one, if any
-    private Double angleToNeighbor = null;
-    private Double explicitXPosition = Double.valueOf(0.0);
-    private Double explicitYPosition = Double.valueOf(0.0);
-    private Double implicitXPosition = Double.valueOf(0.0);
+    private BigDecimal angleToNeighbor = null;
+    private BigDecimal explicitXPosition = BigDecimal.valueOf(0);
+    private BigDecimal explicitYPosition = BigDecimal.valueOf(0);
+    private BigDecimal implicitXPosition = BigDecimal.valueOf(0);
 
     /**
      * Construct a circle with an implicit radius.
      */
     public Circle() {
-        this.implicitRadius = Double.valueOf(0.5);
+        this.implicitRadius = BigDecimal.valueOf(0.5);
     }
 
     /**
@@ -24,11 +26,11 @@ public class Circle {
      * @param radius The radius of the circle to be constructed.
      * @param constraintType Whether the given radius is explicit or implicit.
      */
-    public Circle(Double radius, ConstraintType constraintType) {
+    public Circle(BigDecimal radius, ConstraintType constraintType) {
         this.constraint = constraintType;
         if (constraintType == ConstraintType.EXPLICIT) {
             this.explicitRadius = radius;
-            this.implicitRadius = Double.valueOf(0.5);
+            this.implicitRadius = BigDecimal.valueOf(0.5);
         } else {
             this.implicitRadius = radius;
         }
@@ -41,18 +43,18 @@ public class Circle {
      * @param constraintType Whether the given radius is explicit or implicit.
      */
     public Circle(Integer radius, ConstraintType constraintType) {
-        this(Double.valueOf(radius), constraintType);
+        this(BigDecimal.valueOf(radius), constraintType);
     }
 
     /** Get the explicit height of this Circle.
      *
      * @return the explicit height of this Circle
      */
-    public Double getExplicitHeight() {
-        return 2 * this.getExplicitRadius();
+    public BigDecimal getExplicitHeight() {
+        return this.getExplicitRadius().multiply(BigDecimal.valueOf(2));
     }
 
-    public Double getExplicitRadius() {
+    public BigDecimal getExplicitRadius() {
         return this.explicitRadius;
     }
 
@@ -61,20 +63,20 @@ public class Circle {
      * @return the explicit width of this Circle,
      *         or null if the explicit width of this Circle has not been set.
      */
-    public Double getExplicitWidth() {
-        Double result = null;
-        Double radiusExplicitValue = this.getExplicitRadius();
+    public BigDecimal getExplicitWidth() {
+        BigDecimal result = null;
+        BigDecimal radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue != null) {
-            result = 2 * radiusExplicitValue;
+            result = radiusExplicitValue.multiply(BigDecimal.valueOf(2));
         }
         return result;
     }
 
-    public Double getExplicitXPosition() {
+    public BigDecimal getExplicitXPosition() {
         return this.explicitXPosition;
     }
 
-    public Double getExplicitYPosition() {
+    public BigDecimal getExplicitYPosition() {
         return this.explicitYPosition;
     }
 
@@ -83,11 +85,11 @@ public class Circle {
      *
      * @return the implicit height of this Circle
      */
-    public Double getImplicitHeight() {
-        return 2 * this.getImplicitRadius();
+    public BigDecimal getImplicitHeight() {
+        return this.getImplicitRadius().multiply(BigDecimal.valueOf(2));
     }
 
-    public Double getImplicitRadius() {
+    public BigDecimal getImplicitRadius() {
         return this.implicitRadius;
     }
 
@@ -96,11 +98,11 @@ public class Circle {
      * 
      * @return the implicit width of this Circle
      */
-    public Double getImplicitWidth() {
-        return 2 * this.getImplicitRadius();
+    public BigDecimal getImplicitWidth() {
+        return this.getImplicitRadius().multiply(BigDecimal.valueOf(2));
     }
 
-    public Double getImplicitXPosition() {
+    public BigDecimal getImplicitXPosition() {
         return this.implicitXPosition;
     }
 
@@ -114,7 +116,7 @@ public class Circle {
         Circle returnValue = null;
         if (this.angleToNeighbor == null) {
             returnValue = null;
-        } else if (this.angleToNeighbor.equals(Double.valueOf(90))) {
+        } else if (this.angleToNeighbor.equals(BigDecimal.valueOf(90))) {
             returnValue = this.neighbor;
         } else {
             returnValue = null;
@@ -132,7 +134,7 @@ public class Circle {
         Circle returnValue = null;
         if (this.angleToNeighbor == null) {
             returnValue = null;
-        } else if (this.angleToNeighbor.equals(Double.valueOf(270))) {
+        } else if (this.angleToNeighbor.equals(BigDecimal.valueOf(270))) {
             returnValue = this.neighbor;
         } else {
             returnValue = null;
@@ -142,7 +144,7 @@ public class Circle {
 
     public String getSVG() {
         String radiusStringValue;
-        Double radiusExplicitValue = this.getExplicitRadius();
+        BigDecimal radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue == null) {
             throw new UnsupportedOperationException("Cannot draw a Circle with no radius");
         } else {
@@ -172,11 +174,11 @@ public class Circle {
      *
      * @param width the new width of this Circle
      */
-    public void setExplicitWidth(Double width) {
+    public void setExplicitWidth(BigDecimal width) {
         if (width == null) {
             this.setExplicitRadius(null);
         } else {
-            this.setExplicitRadius(width / 2);
+            this.setExplicitRadius(width.divide(BigDecimal.valueOf(2), BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE));
         }
     }
 
@@ -185,7 +187,7 @@ public class Circle {
      *
      * @param radius the fixed value
      */
-    public void setExplicitRadius(Double radius) {
+    public void setExplicitRadius(BigDecimal radius) {
         this.explicitRadius = radius;
     }
 
@@ -199,7 +201,7 @@ public class Circle {
             throw new UnsupportedOperationException("A circle cannot be adjacent to itself");
         }
         this.neighbor = circle;
-        this.angleToNeighbor = Double.valueOf(90);
+        this.angleToNeighbor = BigDecimal.valueOf(90);
         if (circle.getRightOf() != this) {
             circle.setRightOf(this);
         }
@@ -215,22 +217,25 @@ public class Circle {
             throw new UnsupportedOperationException("A circle cannot be adjacent to itself");
         }
         this.neighbor = circle;
-        this.angleToNeighbor = Double.valueOf(270);
+        this.angleToNeighbor = BigDecimal.valueOf(270);
         if (circle.getLeftOf() != this) {
             circle.setLeftOf(this);
         }
-        this.setImplicitXPosition(circle.getImplicitXPosition() + circle.getImplicitWidth()/2 + this.getImplicitWidth()/2);
+        BigDecimal circleImplicitRadius = circle.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE);
+        BigDecimal thisImplicitRadius =  this.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE);
+        BigDecimal thisImplicitXPosition = circle.getImplicitXPosition().add(circleImplicitRadius).add(thisImplicitRadius);
+        this.setImplicitXPosition(thisImplicitXPosition);
     }
 
-    public void setExplicitXPosition(Double x) {
+    public void setExplicitXPosition(BigDecimal x) {
         this.explicitXPosition = x;
     }
 
-    public void setExplicitYPosition(Double y) {
+    public void setExplicitYPosition(BigDecimal y) {
         this.explicitYPosition = y;
     }
 
-    public void setImplicitXPosition(Double x) {
+    public void setImplicitXPosition(BigDecimal x) {
         this.implicitXPosition = x;
     }
 }
