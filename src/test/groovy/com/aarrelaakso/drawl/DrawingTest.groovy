@@ -369,17 +369,20 @@ class DrawingTest extends Specification {
         drawing.add(circle3)
         circle2.setRightOf(circle1)
         circle3.setRightOf(circle2)
-        Double width = ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
+        BigDecimal width = BigThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
         System.out.println("width: " + width)
         Double height = ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
         System.out.println("height: " + height)
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
+        BigDecimal bigX1 = bigWidth.divide(6, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
+        BigDecimal bigX2 = bigWidth.divide(2, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
+        BigDecimal bigX3 = bigX1.multiply(5)
 
         then:
-        circle1.getExplicitXPosition().compareTo(BigDecimal.valueOf(width/6)) == 0
-        circle2.getExplicitXPosition().compareTo(BigDecimal.valueOf(width/2)) == 0
-        circle3.getExplicitXPosition().compareTo(BigDecimal.valueOf((5*width)/6)) == 0
+        circle1.getExplicitXPosition().compareTo(bigX1) == 0
+        circle2.getExplicitXPosition().compareTo(bigX2) == 0
+        circle3.getExplicitXPosition().compareTo(bigX3) == 0
 
     }
 
