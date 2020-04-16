@@ -375,8 +375,8 @@ class DrawingTest extends Specification {
         System.out.println("height: " + height)
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
-        BigDecimal bigX1 = bigWidth.divide(6, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
-        BigDecimal bigX2 = bigWidth.divide(2, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
+        BigDecimal bigX1 = width.divide(6, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
+        BigDecimal bigX2 = width.divide(2, BigDecimalMath.SCALE, BigDecimalMath.ROUNDING_MODE)
         BigDecimal bigX3 = bigX1.multiply(5)
 
         then:
