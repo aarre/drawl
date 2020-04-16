@@ -369,7 +369,7 @@ class DrawingTest extends Specification {
         drawing.add(circle3)
         circle2.setRightOf(circle1)
         circle3.setRightOf(circle2)
-        BigDecimal width = BigThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
+        BigDecimal width = ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
         System.out.println("width: " + width)
         Double height = ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
         System.out.println("height: " + height)
