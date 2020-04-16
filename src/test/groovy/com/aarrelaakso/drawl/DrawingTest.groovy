@@ -317,8 +317,8 @@ class DrawingTest extends Specification {
         drawing.add(circle3)
         circle2.setRightOf(circle1)
         circle3.setRightOf(circle2)
-        Double width = 100
-        Double height = 100
+        Integer width = 100
+        Integer height = 100
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
         BigDecimal bigWidth = BigDecimal.valueOf(width)
@@ -333,7 +333,7 @@ class DrawingTest extends Specification {
         circle3.getExplicitXPosition().compareTo(bigX3) == 0
     }
 
-    def "When a drawing has three adjacent default Circles, then their x-positions are correct (huge)"() {
+    def "When a drawing has three adjacent default Circles, then their x-positions are correct (max size)"() {
         when:
         Drawing drawing = new Drawing()
         Circle circle1 = new Circle()
@@ -344,18 +344,27 @@ class DrawingTest extends Specification {
         drawing.add(circle3)
         circle2.setRightOf(circle1)
         circle3.setRightOf(circle2)
-        BigDecimal bigWidth = BigDecimal.valueOf(6.639268145875023E307)
-        BigDecimal height = BigDecimal.valueOf(1.5225010628307084E308)
-        drawing.setExplicitWidth(bigWidth)
+        Float width = Float.MAX_VALUE
+        System.out.println("width: " + width)
+        Float height = Float.MAX_VALUE
+        System.out.println("height: " + height)
+        drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
-        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal bigX3 = bigX1.multiply(5 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal bigX1 = BigDecimal.valueOf(width).divide(6 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal bigX2 = BigDecimal.valueOf(width).divide(2 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), BigDecimalMath.mathContext)
+        BigDecimal bigX3 = BigDecimal.valueOf(width).multiply(fraction, BigDecimalMath.mathContext)
+        float bigX1f = bigX1.floatValue()
+        float bigX2f = bigX2.floatValue()
+        float bigX3f = bigX3.floatValue()
 
         then:
-        circle1.getExplicitXPosition().compareTo(bigX1) == 0
-        circle2.getExplicitXPosition().compareTo(bigX2) == 0
-        circle3.getExplicitXPosition().compareTo(bigX3) == 0
+        bigX1f <= Float.MAX_VALUE
+        bigX2f <= Float.MAX_VALUE
+        bigX3f <= Float.MAX_VALUE
+        circle1.getExplicitXPosition().floatValue() == bigX1f
+        circle2.getExplicitXPosition().floatValue() == bigX2f
+        circle3.getExplicitXPosition().floatValue() == bigX3f
 
     }
 
@@ -370,21 +379,25 @@ class DrawingTest extends Specification {
         drawing.add(circle3)
         circle2.setRightOf(circle1)
         circle3.setRightOf(circle2)
-        BigDecimal width = BigDecimal.valueOf(ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE))
+        Float width = ThreadLocalRandom.current().nextDouble(0, Float.MAX_VALUE)
         System.out.println("width: " + width)
-        Double height = ThreadLocalRandom.current().nextDouble(0, Double.MAX_VALUE);
+        Float height = ThreadLocalRandom.current().nextDouble(0, Float.MAX_VALUE);
         System.out.println("height: " + height)
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
-        BigDecimal bigX1 = width.divide(6 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal bigX2 = width.divide(2 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal bigWidth = BigDecimal.valueOf(width)
+        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, BigDecimalMath.mathContext)
         BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), BigDecimalMath.mathContext)
-        BigDecimal bigX3 = width.multiply(fraction, BigDecimalMath.mathContext)
+        BigDecimal bigX3 = bigWidth.multiply(fraction, BigDecimalMath.mathContext)
+        float bigX1f = bigX1.floatValue()
+        float bigX2f = bigX2.floatValue()
+        float bigX3f = bigX3.floatValue()
 
         then:
-        circle1.getExplicitXPosition().compareTo(bigX1) == 0
-        circle2.getExplicitXPosition().compareTo(bigX2) == 0
-        circle3.getExplicitXPosition().compareTo(bigX3) == 0
+        circle1.getExplicitXPosition().floatValue() == bigX1f
+        circle2.getExplicitXPosition().floatValue() == bigX2f
+        circle3.getExplicitXPosition().floatValue() == bigX3f
 
     }
 

@@ -223,7 +223,8 @@ public class Circle {
         }
         BigDecimal circleImplicitRadius = circle.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
         BigDecimal thisImplicitRadius =  this.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
-        BigDecimal thisImplicitXPosition = circle.getImplicitXPosition().add(circleImplicitRadius, BigDecimalMath.mathContext).add(thisImplicitRadius, BigDecimalMath.mathContext);
+        BigDecimal rightBoundaryOfCircle = circle.getImplicitXPosition().add(circleImplicitRadius, BigDecimalMath.mathContext);
+        BigDecimal thisImplicitXPosition = rightBoundaryOfCircle.add(thisImplicitRadius, BigDecimalMath.mathContext);
         this.setImplicitXPosition(thisImplicitXPosition);
     }
 
