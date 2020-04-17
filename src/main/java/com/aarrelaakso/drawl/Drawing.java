@@ -1,5 +1,7 @@
 package com.aarrelaakso.drawl;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.lang.Math;
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -66,11 +68,11 @@ public class Drawing {
      *
      * @return A string of valid SVG that depicts the drawing within the bounds of the explicit width and height
      */
-    private String getSVG() {
+    private @NotNull String getSVG() {
         String height = SVG.toString(this.getExplicitHeight());
         String width = SVG.toString(this.getExplicitWidth());
 
-        String svg = new String("<svg");
+        String svg = new String("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\"");
         svg += " width=\"";
         svg += width;
         svg += "\"";
