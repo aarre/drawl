@@ -2,6 +2,9 @@ package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.lang.Math;
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -218,5 +221,18 @@ public class Drawing {
      */
     public Integer length() {
         return Integer.valueOf(contents.size());
+    }
+
+    /**
+     * Write SVG representing this drawing to a file.
+     *
+     * @param filename The name of the file to which to write.
+     * @throws IOException
+     */
+    public void writeToFile(String filename) throws IOException {
+        String str = this.getSVG();
+        BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+        writer.write(str);
+        writer.close();
     }
 }

@@ -306,7 +306,34 @@ class DrawingTest extends Specification {
         circle2.getImplicitXPosition() == 1.0
     }
 
-    def "When a drawing has three adjacent default Circles, then their x-positions are correct (fixed)"() {
+    def "When a drawing has three adjacent default circles added sequentially, then their explicit x-positions are correct (fixed)"() {
+        when:
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        drawing.add(circle1)
+        Circle circle2 = new Circle()
+        drawing.add(circle2)
+        circle2.setRightOf(circle1)
+        Circle circle3 = new Circle()
+        drawing.add(circle3)
+        circle3.setRightOf(circle2)
+        Integer width = 100
+        Integer height = 100
+        drawing.setExplicitWidth(width)
+        drawing.setExplicitHeight(height)
+        BigDecimal bigWidth = BigDecimal.valueOf(width)
+        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, BigDecimalMath.mathContext)
+        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), BigDecimalMath.mathContext)
+        BigDecimal bigX3 = bigWidth.multiply(fraction, BigDecimalMath.mathContext)
+
+        then:
+        circle1.getExplicitXPosition().compareTo(bigX1) == 0
+        circle2.getExplicitXPosition().compareTo(bigX2) == 0
+        circle3.getExplicitXPosition().compareTo(bigX3) == 0
+    }
+
+    def "When a drawing has three adjacent default Circles, then their explicit x-positions are correct (fixed)"() {
         when:
         Drawing drawing = new Drawing()
         Circle circle1 = new Circle()
