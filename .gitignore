@@ -45,3 +45,5 @@ build/
 .idea/drawl.iml
 
 .idea/
+
+Doxygen/html/
