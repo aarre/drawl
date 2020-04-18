@@ -349,9 +349,9 @@ class DrawingTest extends Specification {
         String svg = drawing.getSVG(width, height)
 
         then:
-        svg.contains("cx=\"16.666\"")
-        svg.contains("cx=\"50\"")
-        svg.contains("cx=\"83.333\"")
+        svg.contains("cx=\"16.666666\"")
+        svg.contains("cx=\"50.0\"")
+        svg.contains("cx=\"83.333336\"")
     }
 
     def "When a drawing has three adjacent default Circles, then their explicit x-positions are correct (fixed)"() {
