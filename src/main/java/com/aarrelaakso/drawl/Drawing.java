@@ -124,38 +124,51 @@ public class Drawing {
     }
 
     /**
-     * Get the explicit width per object in this Drawing
+     * Get the explicit width per object in this Drawing.
      *
-     * @return the explicit width per object in this Drawing, in pixels
+     * @return the explicit width per object in this Drawing.
      */
     private BigDecimal getExplicitWidthPerObject() {
-        if (this.getImplicitWidth().equals(BigDecimal.ZERO)) {
+        BigDecimal implicitWidth = this.getImplicitWidth();
+        if ((implicitWidth == null) || implicitWidth.equals(BigDecimal.ZERO)) {
             // The drawing has no contents
             return BigDecimal.ZERO;
         } else {
-            return this.getExplicitWidth().divide(this.getImplicitWidth(), BigDecimalMath.mathContext);
+            return this.getExplicitWidth().divide(implicitWidth, BigDecimalMath.mathContext);
         }
     }
 
     /**
-     * Get the implicit width of this Drawing
+     * Get the implicit width of this Drawing.
+     *
+     * This means the total implicit width subtended by all items in the Drawing.
      *
      * @return the implicit width of this Drawing
      */
     private BigDecimal getImplicitWidth() {
-        BigDecimal width = new BigDecimal(0);
-        int count = 0;
+        BigDecimal xMaximum = null;
+        BigDecimal xMinimum = null;
+        BigDecimal xMaximumCurrent = null;
+        BigDecimal xMinimumCurrent = null;
         for (Circle content : this.contents) {
-            if (count == 0) {
-                width = width.add(content.getImplicitWidth());
+           xMaximumCurrent = content.getImplicitXMaximum();
+           xMinimumCurrent = content.getImplicitXMinimum();
+            if (xMaximum == null) {
+                xMaximum = xMaximumCurrent;
+            } else if (xMaximumCurrent.compareTo(xMaximum) > 0) {
+                xMaximum = xMaximumCurrent;
             }
-            Circle objectToLeft = content.getRightOf();
-            if (objectToLeft != null) {
-                width = width.add(objectToLeft.getImplicitWidth());
+            if (xMinimum == null) {
+                xMinimum = xMinimumCurrent;
+            } else if (xMinimumCurrent.compareTo(xMinimum) < 0) {
+                xMinimum = xMinimumCurrent;
             }
-            count++;
         }
-        return width;
+        if (xMaximum != null && xMinimum != null) {
+            return xMaximum.subtract(xMinimum);
+        } else {
+            return null;
+        }
     }
 
     /**

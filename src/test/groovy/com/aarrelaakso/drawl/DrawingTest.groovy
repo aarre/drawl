@@ -101,7 +101,7 @@ class DrawingTest extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == new Double(2.0)
+        drawing.getImplicitWidth() == new BigDecimal(2.0)
     }
 
     def "When you add two horizontally adjacent Circles to a drawing (in the other order), the drawing is twice as wide"() {
@@ -114,7 +114,7 @@ class DrawingTest extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == new Double(2.0)
+        drawing.getImplicitWidth() == new BigDecimal(2.0)
     }
 
     def "When you add two default Circles to a drawing, the drawing stays the same width"() {
@@ -331,6 +331,27 @@ class DrawingTest extends Specification {
         circle1.getExplicitXPosition().compareTo(bigX1) == 0
         circle2.getExplicitXPosition().compareTo(bigX2) == 0
         circle3.getExplicitXPosition().compareTo(bigX3) == 0
+    }
+
+    def "When a drawing has three adjacent default circles added sequentially, then the generated SVG is correct"() {
+        when:
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        drawing.add(circle1)
+        Circle circle2 = new Circle()
+        drawing.add(circle2)
+        circle2.setRightOf(circle1)
+        Circle circle3 = new Circle()
+        drawing.add(circle3)
+        circle3.setRightOf(circle2)
+        Integer width = 100
+        Integer height = 100
+        String svg = drawing.getSVG(width, height)
+
+        then:
+        svg.contains("cx=\"16.666\"")
+        svg.contains("cx=\"50\"")
+        svg.contains("cx=\"83.333\"")
     }
 
     def "When a drawing has three adjacent default Circles, then their explicit x-positions are correct (fixed)"() {
