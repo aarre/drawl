@@ -25,11 +25,11 @@ hs_err_pid*
 # Temporary build files
 build/
 
-# Gradle cruft
+# Gradle configuration cruft
 .gradle/
 
-# Necessary for Travis CI
-!.gradle/wrapper/*
+# Needed for Travis CI
+!gradle/wrapper/*
 
 # Random binaries
 *.bin
