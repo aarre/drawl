@@ -2,19 +2,27 @@ language: java
 
 env:
   global:
-    # COVERITY_SCAN_TOKEN
-    # ** specific to your project **
-    - secure: "x15c0Hfg8ANvR5Xd27sUBw&project=aarre%2Fdrawl"
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "psK6o+cnxleoMn5fjnS0xnjqDoDlbrqsROyqtsE8gqY9fGW5hDmHqoiwSGy//nMPSgsgHWdkXdgHY6O58KzX7Gvw/xPdKQvyvLnA7KgDlSVJHLTXe+GNl0FGWIznsnNAuUaNBAtavbaEcqae/+sR7rED5VcF0nHgNgeu9cP31Pu0DRwUQmQWogVjtSsrXO1p7DIy/GoawlYq9bm/UN2kyZd/bsYstyHpV98f7SQo0S0HNNKOWU4mjEZkq96oUAeZP2KRu2fFm73y3UwWoIc6b6OxbkXdFp9PWPkslAhIjeJ5izOhzNknpkzuLs+Rnb5IoCB2X2qd1NJecrvLsoRuzHNtImt4EjsIGhfUri5/1IiC+Ya3rgqq8/WTmwXGLWh1Jvvz524XBgIiwLjL/oqzrgawIAlWznq46RsrCANTGMGwyhSuHX3MT9b2ZaJhVfGfXv7ehiNXFZHDurelvkoIOi2fSdKsKd/vBoBi52Af+wbTgEQcAmXEJZTixZvsswLCM4hI9MTxtYOUypZifyFEsGN9u1rC9NVHS65QGO8Jgqsc+CFid4qerfwwU8xIl0h4Jgts0iYR1X/KbzA8l+knBT/4ik+AsPO3C9KJ/zVWgVxIfEWS/ZvmS0ESBS6wXBH+4fAMkRHyczFTBGwQjWXpKu5fLixn9SzGkbCmclQ6BZI="
+
+before_install:
+  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 
 addons:
+
   coverity_scan:
 
-    # GitHub project metadata
-    # ** specific to your project **
+      # GitHub project metadata
+      # ** specific to your project **
+
     project:
-      name: aarre/drawl
-      version: 0.1
-      description: My Project
+
+      name: "aarre/drawl"
+
+      version: "0.1"
+
+      description: "The world's best drawing language"
 
     # Where email notification of build analysis results will be sent
     notification_email: aarre.laakso@gmail.com
