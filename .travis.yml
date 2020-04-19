@@ -4,17 +4,17 @@ env:
   global:
     # COVERITY_SCAN_TOKEN
     # ** specific to your project **
-    - secure: "token=x15c0Hfg8ANvR5Xd27sUBw&project=aarre%2Fdrawl"
+    - secure: "x15c0Hfg8ANvR5Xd27sUBw&project=aarre%2Fdrawl"
 
 addons:
   coverity_scan:
 
     # GitHub project metadata
     # ** specific to your project **
-    #project:
-    #  name: my_github/my_project
-    #  version: 1.0
-    #  description: My Project
+    project:
+      name: aarre/drawl
+      version: 0.1
+      description: My Project
 
     # Where email notification of build analysis results will be sent
     notification_email: aarre.laakso@gmail.com
@@ -25,7 +25,7 @@ addons:
 
     # The command that will be added as an argument to "cov-build" to compile your project for analysis,
     # ** likely specific to your build **
-    #build_command: make
+    build_command: gradle
 
     # Pattern to match selecting branches that will run analysis. We recommend leaving this set to 'coverity_scan'.
     # Take care in resource usage, and consider the build frequency allowances per
