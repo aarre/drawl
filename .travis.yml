@@ -1,6 +1,4 @@
 language: java
-jdk:
-  #- oraclejdk11
 
 env:
   global:
@@ -12,46 +10,34 @@ before_install:
   - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 
 addons:
-  apt:
-    packages:
-      # Install the latest Oracle 8 JDK
-      #- oracle-java11-installer
-
   coverity_scan:
-
-      # GitHub project metadata
-      # ** specific to your project **
-
+    # GitHub project metadata specific to your project **
     project:
-
       name: "aarre/drawl"
-
       version: "0.1"
-
       description: "The world's best drawing language"
-
     # Where email notification of build analysis results will be sent
     notification_email: aarre.laakso@gmail.com
-
     # Commands to prepare for build_command
     # ** likely specific to your build **
-    build_command_prepend: "./gradlew clean"
-
+    build_command_prepend: "./gradlew --no-daemon clean"
     # The command that will be added as an argument to "cov-build" to compile your project for analysis,
     # ** likely specific to your build **
     build_command: "./gradlew --no-daemon build"
-
     # Pattern to match selecting branches that will run analysis. We recommend leaving this set to 'coverity_scan'.
-    # Take care in resource usage, and consider the build frequency allowances per
-    #   https://scan.coverity.com/faq#frequency
+    # Take care in resource usage, and consider the build frequency allowances per https://scan.coverity.com/faq#frequency
     branch_pattern: coverity_scan
 
-#A peculiarity of dependency caching in Gradle means that to avoid uploading the cache after every build you need to add the following lines to your .travis.yml:
-
+# A peculiarity of dependency caching in Gradle means that to avoid uploading the cache after every build
+# you need to add the following lines to your .travis.yml:
+# see https://docs.travis-ci.com/user/languages/java/#Projects-Using-Gradle
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  - rm -f  $HOME/.cache/pip/log/debug.log
+
 cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
+    - $HOME/.cache/pip
