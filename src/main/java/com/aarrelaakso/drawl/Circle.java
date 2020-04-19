@@ -5,54 +5,84 @@ import java.math.BigDecimal;
 public class Circle {
 
     private BigDecimal angleToNeighbor = null;
-    private ConstraintType constraint;
-    private BigDecimal explicitRadius;
+    private BigDecimal explicitRadius = BigDecimal.valueOf(0.5);    // By default, the explicit radius is the same as the implicit radius
     private BigDecimal explicitXPosition = BigDecimal.ZERO;
     private BigDecimal explicitYPosition = BigDecimal.ZERO;
-    private BigDecimal implicitRadius;
+    private BigDecimal implicitRadius = BigDecimal.valueOf(0.5);
     private BigDecimal implicitXPosition = BigDecimal.ZERO;
+    private BigDecimal implicitYPosition = BigDecimal.ZERO;
     private Circle neighbor = null;           // A circle adjacent to this one, if any
+
+    private static final String CANNOT_BE_ADJACENT_TO_ITSELF = "A circle cannot be adjacent to itself";
+
+    /**
+     * Construct a circle with a default implicit radius.
+     *
+     */
+    public Circle() {
+
+    }
 
     /**
      * Construct a circle with an implicit radius.
+     *
+     * @param implicitRadius The implicit radius of the new circle.
      */
-    public Circle() {
-        this.implicitRadius = BigDecimal.valueOf(0.5);
+    public Circle(BigDecimal implicitRadius) {
+        this.implicitRadius = implicitRadius;
     }
 
     /**
-     * Construct a circle given a radius.
+     * Get this Circle's neighbor above (this Circle is below that one), if any.
      *
-     * @param radius         The radius of the circle to be constructed.
-     * @param constraintType Whether the given radius is explicit or implicit.
+     * @return the Circle to the right of this one, if any;
+     * <code>null</code> otherwise.
      */
-    public Circle(BigDecimal radius, ConstraintType constraintType) {
-        this.constraint = constraintType;
-        if (constraintType == ConstraintType.EXPLICIT) {
-            this.explicitRadius = radius;
-            this.implicitRadius = BigDecimal.valueOf(0.5);
-        } else {
-            this.implicitRadius = radius;
+    public Circle getAbove() {
+        Circle returnValue = null;
+        if (this.angleToNeighbor.equals(BigDecimal.valueOf(0))) {
+            returnValue = this.neighbor;
         }
+        return returnValue;
     }
 
     /**
-     * Construct a circle given an Integer radius.
+     * Get this Circle's neighbor below (this Circle is below that one), if any.
      *
-     * @param radius         The radius of the circle to be constructed.
-     * @param constraintType Whether the given radius is explicit or implicit.
+     * @return the Circle to below this one, if any;
+     * <code>null</code> otherwise.
      */
-    public Circle(Integer radius, ConstraintType constraintType) {
-        this(BigDecimal.valueOf(radius), constraintType);
+    public Circle getBelow() {
+        Circle returnValue = null;
+        if (this.angleToNeighbor.equals(BigDecimal.valueOf(180))) {
+            returnValue = this.neighbor;
+        }
+        return returnValue;
     }
 
+    /**
+     * Get the explicit diameter of this Circle.
+     *
+     * @return The explicit diameter of this Circle, or <code>null</code> if the explicit diameter of this Circle has
+     * not been set.
+     */
+
+    private BigDecimal getExplicitDiameter() {
+        BigDecimal result = null;
+        BigDecimal radiusExplicitValue = this.getExplicitRadius();
+        if (radiusExplicitValue != null) {
+            result = radiusExplicitValue.multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+        }
+        return result;
+    }
     /**
      * Get the explicit height of this Circle.
      *
-     * @return the explicit height of this Circle
+     * @return the explicit height of this Circle,
+     * or null if the explicit height of this Circle has not been set.
      */
     public BigDecimal getExplicitHeight() {
-        return this.getExplicitRadius().multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+        return this.getExplicitDiameter();
     }
 
     public BigDecimal getExplicitRadius() {
@@ -66,12 +96,7 @@ public class Circle {
      * or null if the explicit width of this Circle has not been set.
      */
     public BigDecimal getExplicitWidth() {
-        BigDecimal result = null;
-        BigDecimal radiusExplicitValue = this.getExplicitRadius();
-        if (radiusExplicitValue != null) {
-            result = radiusExplicitValue.multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
-        }
-        return result;
+        return this.getExplicitDiameter();
     }
 
     public BigDecimal getExplicitXPosition() {
@@ -101,7 +126,9 @@ public class Circle {
      * @return the implicit width of this Circle
      */
     public BigDecimal getImplicitWidth() {
-        return this.getImplicitRadius().multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+        BigDecimal implicitRadius = this.getImplicitRadius();
+        assert implicitRadius.compareTo(BigDecimal.ZERO) != 0 : "Implicit radius cannot be zero.";
+        return implicitRadius.multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
     }
 
     /**
@@ -124,6 +151,28 @@ public class Circle {
 
     public BigDecimal getImplicitXPosition() {
         return this.implicitXPosition;
+    }
+
+    /**
+     * Get the implicit maximum (topmost) y-position of this Circle.
+     *
+     * @return The implicit maximum (topmost) x-position of this Circle.
+     */
+    protected BigDecimal getImplicitYMaximum() {
+        return this.getImplicitYPosition().add(this.getImplicitRadius());
+    }
+
+    /**
+     * Get the implicit minimum (bottommost) y-position of this Circle.
+     *
+     * @return The implicit minimum (bottommost) y-position of this Circle.
+     */
+    protected BigDecimal getImplicitYMinimum() {
+        return this.getImplicitYPosition().subtract(this.getImplicitRadius());
+    }
+
+    public BigDecimal getImplicitYPosition() {
+        return this.implicitYPosition;
     }
 
     /**
@@ -170,24 +219,57 @@ public class Circle {
         } else {
             radiusStringValue = SVG.toString(radiusExplicitValue);
         }
-        String svg;
-        svg = "<circle ";
-        svg += "r=\"";
-        svg += radiusStringValue;
-        svg += "\"";
+        StringBuilder svgBuilder = new StringBuilder();
+        svgBuilder.append("<circle ");
+        svgBuilder.append("r=\"");
+        svgBuilder.append(radiusStringValue);
+        svgBuilder.append("\"");
         if (this.explicitXPosition != null) {
-            svg += " cx=\"";
-            svg += SVG.toString(this.explicitXPosition);
-            svg += "\"";
+            svgBuilder.append(" cx=\"");
+            svgBuilder.append(SVG.toString(this.explicitXPosition));
+            svgBuilder.append("\"");
         }
         if (this.explicitYPosition != null) {
-            svg += " cy=\"";
-            svg += SVG.toString(this.explicitYPosition);
-            svg += "\"";
+            svgBuilder.append(" cy=\"");
+            svgBuilder.append(SVG.toString(this.explicitYPosition));
+            svgBuilder.append("\"");
         }
-        svg += " />";
-        return svg;
+        svgBuilder.append(" />");
+        return svgBuilder.toString();
     }
+
+    /**
+     * Set this circle above another circle.
+     *
+     * @param circle The circle that will be below this one.
+     */
+    public void setAbove(Circle circle) {
+        if (circle == this) {
+            throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
+        }
+        this.neighbor = circle;
+        this.angleToNeighbor = BigDecimal.valueOf(0);
+        BigDecimal topBoundaryOfCircle = circle.getImplicitYMaximum();
+        BigDecimal thisImplicitYPosition = topBoundaryOfCircle.add(this.getImplicitRadius(), BigDecimalMath.mathContext);
+        this.setImplicitYPosition(thisImplicitYPosition);
+    }
+
+    /**
+     * Set this circle below another circle.
+     *
+     * @param circle The circle that will be above this one.
+     */
+    public void setBelow(Circle circle) {
+        if (circle == this) {
+            throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
+        }
+        this.neighbor = circle;
+        this.angleToNeighbor = BigDecimal.valueOf(180);
+        BigDecimal bottomBoundaryOfCircle = circle.getImplicitYMinimum();
+        BigDecimal thisImplicitYPosition = bottomBoundaryOfCircle.subtract(this.getImplicitRadius(), BigDecimalMath.mathContext);
+        this.setImplicitYPosition(thisImplicitYPosition);
+    }
+
 
     /**
      * Set the radius to a fixed value
@@ -198,6 +280,18 @@ public class Circle {
         this.explicitRadius = radius;
     }
 
+    /**
+     * Set the height of this Circle to a fixed value
+     *
+     * @param height The new height of this Circle.
+     */
+    public void setExplicitHeight(BigDecimal height) {
+        if (height == null) {
+            this.setExplicitRadius(null);
+        } else {
+            this.setExplicitRadius(height.divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext));
+        }
+    }
     /**
      * Set the width of this Circle to a fixed value
      *
@@ -224,19 +318,31 @@ public class Circle {
     }
 
     /**
+     * Set the implicit y position of this circle.
+     *
+     * The y position is the vertical position of the circle's center. In the implicit coordinate system, higher values
+     * of y are upward whereas lower values of y are downward.
+     *
+     * @param y The implicit y position of this circle.
+     */
+    public void setImplicitYPosition(BigDecimal y) {
+        this.implicitYPosition = y;
+    }
+
+    /**
      * Set this Circle's neighbor to the right (this Circle is to the left of that one).
      *
      * @param circle the Circle to the right of this one
      */
     public void setLeftOf(Circle circle) {
         if (circle == this) {
-            throw new UnsupportedOperationException("A circle cannot be adjacent to itself");
+            throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = circle;
         this.angleToNeighbor = BigDecimal.valueOf(90);
-        if (circle.getRightOf() != this) {
-            circle.setRightOf(this);
-        }
+        BigDecimal leftBoundaryOfCircle = circle.getImplicitXMinimum();
+        BigDecimal thisImplicitXPosition = leftBoundaryOfCircle.subtract(this.getImplicitRadius(), BigDecimalMath.mathContext);
+        this.setImplicitXPosition(thisImplicitXPosition);
     }
 
     /**
@@ -246,17 +352,12 @@ public class Circle {
      */
     public void setRightOf(Circle circle) {
         if (circle == this) {
-            throw new UnsupportedOperationException("A circle cannot be adjacent to itself");
+            throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = circle;
         this.angleToNeighbor = BigDecimal.valueOf(270);
-        if (circle.getLeftOf() != this) {
-            circle.setLeftOf(this);
-        }
-        BigDecimal circleImplicitRadius = circle.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
-        BigDecimal thisImplicitRadius = this.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
-        BigDecimal rightBoundaryOfCircle = circle.getImplicitXPosition().add(circleImplicitRadius, BigDecimalMath.mathContext);
-        BigDecimal thisImplicitXPosition = rightBoundaryOfCircle.add(thisImplicitRadius, BigDecimalMath.mathContext);
+        BigDecimal rightBoundaryOfCircle = circle.getImplicitXMaximum();
+        BigDecimal thisImplicitXPosition = rightBoundaryOfCircle.add(this.getImplicitRadius(), BigDecimalMath.mathContext);
         this.setImplicitXPosition(thisImplicitXPosition);
     }
 }

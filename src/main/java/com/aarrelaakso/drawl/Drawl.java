@@ -58,11 +58,11 @@ public class Drawl {
         drawing.add(circle1);
         Circle circle2 = new Circle();
         drawing.add(circle2);
-        circle2.setRightOf(circle1);
-        Circle circle3 = new Circle();
-        drawing.add(circle3);
-        circle3.setRightOf(circle2);
-        String svg = drawing.getSVG(100, 100);
+        //circle2.setRightOf(circle1);
+        //Circle circle3 = new Circle();
+        //drawing.add(circle3);
+        //circle3.setRightOf(circle2);
+        String svg = drawing.getSVG(110, 110);
         System.out.println(svg);
         drawing.writeToFile("test.svg");
     }
