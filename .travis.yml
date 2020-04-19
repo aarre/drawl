@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - oraclejdk11
+  #- oraclejdk11
 
 env:
   global:
@@ -15,7 +15,7 @@ addons:
   apt:
     packages:
       # Install the latest Oracle 8 JDK
-      - oracle-java11-installer
+      #- oracle-java11-installer
 
   coverity_scan:
 
