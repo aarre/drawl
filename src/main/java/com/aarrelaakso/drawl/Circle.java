@@ -126,9 +126,9 @@ public class Circle {
      * @return the implicit width of this Circle
      */
     public BigDecimal getImplicitWidth() {
-        BigDecimal implicitRadius = this.getImplicitRadius();
-        assert implicitRadius.compareTo(BigDecimal.ZERO) != 0 : "Implicit radius cannot be zero.";
-        return implicitRadius.multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+        BigDecimal myImplicitRadius = this.getImplicitRadius();
+        assert myImplicitRadius.compareTo(BigDecimal.ZERO) != 0 : "Implicit radius cannot be zero.";
+        return myImplicitRadius.multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
     }
 
     /**
