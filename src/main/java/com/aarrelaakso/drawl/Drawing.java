@@ -117,12 +117,12 @@ public class Drawing {
      * <p>
      * The maximum x-coordinate is the right edge of the drawing.
      */
+    @NotNull
     private BigDecimal getImplicitXMaximum() {
-        BigDecimal xMaximum = null;
-        BigDecimal xMaximumCurrent = null;
+        BigDecimal xMaximum = BigDecimal.valueOf(Double.MIN_VALUE);
         for (Circle content : this.contents) {
-            xMaximumCurrent = content.getImplicitXMaximum();
-            if (xMaximum == null || (xMaximumCurrent.compareTo(xMaximum) > 0)) {
+            BigDecimal xMaximumCurrent = content.getImplicitXMaximum();
+            if (xMaximumCurrent.compareTo(xMaximum) > 0) {
                 xMaximum = xMaximumCurrent;
             }
         }
@@ -134,12 +134,12 @@ public class Drawing {
      * <p>
      * The minimum x-coordinate is the leftmost edge of the drawing.
      */
+    @NotNull
     private BigDecimal getImplicitXMinimum() {
-        BigDecimal xMinimum = null;
-        BigDecimal xMinimumCurrent = null;
+        BigDecimal xMinimum = BigDecimal.valueOf(Double.MAX_VALUE);
         for (Circle content : this.contents) {
-            xMinimumCurrent = content.getImplicitXMinimum();
-            if (xMinimum == null || (xMinimumCurrent.compareTo(xMinimum) < 0)) {
+            BigDecimal xMinimumCurrent = content.getImplicitXMinimum();
+            if (xMinimumCurrent.compareTo(xMinimum) < 0) {
                 xMinimum = xMinimumCurrent;
             }
         }
@@ -151,12 +151,12 @@ public class Drawing {
      * <p>
      * The maximum y-coordinate is the top edge of the drawing.
      */
+    @NotNull
     private BigDecimal getImplicitYMaximum() {
-        BigDecimal yMaximum = null;
-        BigDecimal yMaximumCurrent = null;
+        BigDecimal yMaximum = BigDecimal.valueOf(Double.MIN_VALUE);
         for (Circle content : this.contents) {
-            yMaximumCurrent = content.getImplicitYMaximum();
-            if (yMaximum == null || (yMaximumCurrent.compareTo(yMaximum) > 0)) {
+            BigDecimal yMaximumCurrent = content.getImplicitYMaximum();
+            if (yMaximumCurrent.compareTo(yMaximum) > 0) {
                 yMaximum = yMaximumCurrent;
             }
         }
@@ -168,12 +168,12 @@ public class Drawing {
      * <p>
      * The minimum y-coordinate is the leftmost edge of the drawing.
      */
+    @NotNull
     private BigDecimal getImplicitYMinimum() {
-        BigDecimal yMinimum = null;
-        BigDecimal yMinimumCurrent = null;
+        BigDecimal yMinimum = BigDecimal.valueOf(Double.MAX_VALUE);
         for (Circle content : this.contents) {
-            yMinimumCurrent = content.getImplicitXMinimum();
-            if (yMinimum == null || (yMinimumCurrent.compareTo(yMinimum) < 0)) {
+            BigDecimal yMinimumCurrent = content.getImplicitXMinimum();
+            if (yMinimumCurrent.compareTo(yMinimum) < 0) {
                 yMinimum = yMinimumCurrent;
             }
         }
