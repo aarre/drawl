@@ -28,6 +28,9 @@ build/
 # Gradle cruft
 .gradle/
 
+# Necessary for Travis CI
+!.gradle/wrapper/*
+
 # Random binaries
 *.bin
 
