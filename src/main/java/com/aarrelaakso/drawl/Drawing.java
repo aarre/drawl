@@ -93,14 +93,10 @@ public class Drawing {
      *
      * @return the implicit width of this Drawing
      */
-    private @Nullable BigDecimal getImplicitWidth() {
+    private @NotNull BigDecimal getImplicitWidth() {
         BigDecimal xMaximum = this.getImplicitXMaximum();
         BigDecimal xMinimum = this.getImplicitXMinimum();
-        if (xMaximum != null && xMinimum != null) {
-            return xMaximum.subtract(xMinimum);
-        } else {
-            return null;
-        }
+        return xMaximum.subtract(xMinimum);
     }
 
     /**
