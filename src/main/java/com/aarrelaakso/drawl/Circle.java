@@ -44,13 +44,19 @@ public class Circle extends Shape {
     /**
      * Get the explicit height of this Circle.
      *
-     * @return the explicit height of this Circle,
-     * or null if the explicit height of this Circle has not been set.
+     * @return the explicit height of this Circle.
      */
+    @NotNull
     public BigDecimal getExplicitHeight() {
         return this.getExplicitDiameter();
     }
 
+    /**
+     * Get the explicit radius of this Circle.
+     *
+     * @return The explicit radius of this Circle.
+     */
+    @NotNull
     public BigDecimal getExplicitRadius() {
         return this.explicitRadius;
     }

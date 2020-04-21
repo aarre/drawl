@@ -207,8 +207,10 @@ public class Drawing {
      * Assumes that the explicit width and height have been set
      *
      * @return A string of valid SVG that depicts the drawing within the bounds of the explicit width and height
+     *
+     * @todo Make this method protected and adjust unit tests accordingly.
      */
-    private @NotNull String getSVG() {
+    public @NotNull String getSVG() {
 
         BigDecimal bdHeight = this.getExplicitHeight();
         if (bdHeight == null) {
