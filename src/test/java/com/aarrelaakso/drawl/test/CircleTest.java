@@ -1,6 +1,7 @@
 package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.Drawing;
 import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
@@ -85,6 +86,5 @@ public class CircleTest extends ShapeTest {
             Circle circle2 = new Circle(shape.getImplicitRadius());
             assertEquals(shape.getImplicitRadius(), circle2.getImplicitRadius());
         }
-
     }
 }

@@ -10,6 +10,7 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@DisplayName("Unit tests of Shape (abstract)")
 public abstract class ShapeTest {
 
     Shape shape;

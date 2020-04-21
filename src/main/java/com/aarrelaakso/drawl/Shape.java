@@ -1,6 +1,7 @@
 package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.math.BigDecimal;
 
@@ -56,6 +57,8 @@ public class Shape {
      * Get the explicit height of this Shape.
      *
      * @return the explicit height of this Shape
+     *
+     * @todo Make this method protected and adjust unit tests accordingly.
      */
     @NotNull
     public BigDecimal getExplicitHeight() {
@@ -63,19 +66,37 @@ public class Shape {
     }
 
     /**
-     * Get the explicit width of this Circle.
+     * Get the explicit width of this Shape.
      *
-     * @return the explicit width of this Circle,
-     * or null if the explicit width of this Circle has not been set.
+     * @return the explicit width of this Shape,
+     *
+     * @todo Make this method protected and adjust unit tests accordingly.
      */
+    @NotNull
     public BigDecimal getExplicitWidth() {
         return this.explicitWidth;
     }
 
+    /**
+     * Get the explicit x-position of this Shape.
+     *
+     * @return the explicit x-position of this Shape.
+     *
+     * @todo Make this method protected and adjust unit tests accordingly.
+     */
+    @NotNull
     public BigDecimal getExplicitXPosition() {
         return this.explicitXPosition;
     }
 
+    /**
+     * Get the explicit y-position of this Shape.
+     *
+     * @return the explicit y-position of this Shape.
+     *
+     * @todo Make this method protected and adjust unit tests accordingly.
+     */
+    @NotNull
     public BigDecimal getExplicitYPosition() {
         return this.explicitYPosition;
     }
@@ -258,7 +279,7 @@ public class Shape {
         this.explicitYPosition = BigDecimal.valueOf(y);
     }
 
-    protected void setImplicitXPosition(BigDecimal x) {
+    public void setImplicitXPosition(BigDecimal x) {
         this.implicitXPosition = x;
     }
 
