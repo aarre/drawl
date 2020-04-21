@@ -6,27 +6,7 @@ import spock.lang.Specification
 import org.apache.commons.lang3.StringUtils
 import com.google.common.math.DoubleMath
 
-class DrawingTestHeightExplicit extends Specification {
 
-    def "HEIGHT - EXPLICIT: When a square (100) drawing has two adjacent Circles, then their explicit heights are correct"() {
-        when:
-        Drawing drawing = new Drawing();
-        Circle circle1 = new Circle();
-        drawing.add(circle1);
-        Circle circle2 = new Circle();
-        drawing.add(circle2);
-        circle2.setRightOf(circle1);
-        drawing.setExplicitHeight(100)
-        drawing.setExplicitWidth(100)
-        Integer explicitHeight1 = circle1.getExplicitHeight()
-        Integer explicitHeight2 = circle2.getExplicitHeight()
-
-        then:
-        explicitHeight1.equals(Integer.valueOf(50))
-        explicitHeight2.equals(Integer.valueOf(50))
-    }
-
-}
 
 class DrawingTestOverall extends Specification {
 
