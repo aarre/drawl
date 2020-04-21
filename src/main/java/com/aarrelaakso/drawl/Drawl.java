@@ -54,9 +54,9 @@ public class Drawl {
      */
     public static void main(String[] args) throws IOException {
         Drawing drawing = new Drawing();
-        Circle circle1 = new Circle();
+        Shape circle1 = new Circle();
         drawing.add(circle1);
-        Circle circle2 = new Circle();
+        Shape circle2 = new Circle();
         drawing.add(circle2);
         String svg = drawing.getSVG(110, 110);
         System.out.println(svg);

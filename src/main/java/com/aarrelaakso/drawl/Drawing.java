@@ -1,7 +1,6 @@
 package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -13,7 +12,7 @@ import java.util.logging.Logger;
 
 public class Drawing {
 
-    private HashSet<Circle> contents;
+    private HashSet<Shape> contents;
     private BigDecimal explicitHeight;
     private BigDecimal explicitWidth;
     private Logger logger;
@@ -28,10 +27,10 @@ public class Drawing {
     /**
      * Add a circle to this drawing
      *
-     * @param circle The circle to add
+     * @param shape The circle to add
      */
-    public void add(Circle circle) {
-        contents.add(circle);
+    public void add(Shape shape) {
+        contents.add(shape);
     }
 
     /**
@@ -116,7 +115,7 @@ public class Drawing {
     @NotNull
     private BigDecimal getImplicitXMaximum() {
         BigDecimal xMaximum = BigDecimal.valueOf(Double.MIN_VALUE);
-        for (Circle content : this.contents) {
+        for (Shape content : this.contents) {
             BigDecimal xMaximumCurrent = content.getImplicitXMaximum();
             if (xMaximumCurrent.compareTo(xMaximum) > 0) {
                 xMaximum = xMaximumCurrent;
@@ -133,7 +132,7 @@ public class Drawing {
     @NotNull
     private BigDecimal getImplicitXMinimum() {
         BigDecimal xMinimum = BigDecimal.valueOf(Double.MAX_VALUE);
-        for (Circle content : this.contents) {
+        for (Shape content : this.contents) {
             BigDecimal xMinimumCurrent = content.getImplicitXMinimum();
             if (xMinimumCurrent.compareTo(xMinimum) < 0) {
                 xMinimum = xMinimumCurrent;
@@ -150,7 +149,7 @@ public class Drawing {
     @NotNull
     private BigDecimal getImplicitYMaximum() {
         BigDecimal yMaximum = BigDecimal.valueOf(Double.MIN_VALUE);
-        for (Circle content : this.contents) {
+        for (Shape content : this.contents) {
             BigDecimal yMaximumCurrent = content.getImplicitYMaximum();
             if (yMaximumCurrent.compareTo(yMaximum) > 0) {
                 yMaximum = yMaximumCurrent;
@@ -167,7 +166,7 @@ public class Drawing {
     @NotNull
     private BigDecimal getImplicitYMinimum() {
         BigDecimal yMinimum = BigDecimal.valueOf(Double.MAX_VALUE);
-        for (Circle content : this.contents) {
+        for (Shape content : this.contents) {
             BigDecimal yMinimumCurrent = content.getImplicitXMinimum();
             if (yMinimumCurrent.compareTo(yMinimum) < 0) {
                 yMinimum = yMinimumCurrent;
@@ -233,7 +232,7 @@ public class Drawing {
         svgBuilder.append(">");
 
         if (this.contents != null) {
-            for (Circle content : this.contents) {
+            for (Shape content : this.contents) {
                 svgBuilder.append(content.getSVG());
             }
         }
@@ -314,17 +313,17 @@ public class Drawing {
             BigDecimal implicitHeightOfCircle;
             BigDecimal explicitHeightOfCircle;
             // Set the explicit y positions of all contents
-            for (Circle circle : this.contents) {
-                implicitHeightOfCircle = circle.getImplicitHeight();
+            for (Shape shape : this.contents) {
+                implicitHeightOfCircle = shape.getImplicitHeight();
                 explicitHeightOfCircle = implicitHeightOfCircle.multiply(explicitHeightPerImplicitHeight, BigDecimalMath.mathContext);
-                circle.setExplicitHeight(explicitHeightOfCircle);
-                BigDecimal implicitYPositionOfCircle = circle.getImplicitYPosition();
+                shape.setExplicitHeight(explicitHeightOfCircle);
+                BigDecimal implicitYPositionOfCircle = shape.getImplicitYPosition();
                 // The fudge factor is to shift the diagram down so that all y-coordinates are positive
                 BigDecimal fudgeFactor = this.getImplicitYMaximum();
                 BigDecimal fudgedImplicitYPositionOfCircle = implicitYPositionOfCircle.subtract(fudgeFactor);
                 fudgedImplicitYPositionOfCircle = fudgedImplicitYPositionOfCircle.multiply(BigDecimal.valueOf(-1));
                 assert fudgedImplicitYPositionOfCircle.compareTo(BigDecimal.ZERO) >= 0 : "All y-coordinates must be positive.";
-                circle.setExplicitYPosition(fudgedImplicitYPositionOfCircle.multiply(explicitHeightPerImplicitHeight, BigDecimalMath.mathContext));
+                shape.setExplicitYPosition(fudgedImplicitYPositionOfCircle.multiply(explicitHeightPerImplicitHeight, BigDecimalMath.mathContext));
             }
         }
     }
@@ -332,10 +331,19 @@ public class Drawing {
     /**
      * Set the explicit height of this Drawing
      *
-     * @param height the explicit width of the Drawing; it is a Float to match
+     * @param height the explicit height of the Drawing; it is a Float to match
      *               the precision allowed by the SVG spec.
      */
     public void setExplicitHeight(Float height) {
+        this.setExplicitHeight(BigDecimal.valueOf(height));
+    }
+
+    /**
+     * Set the explicit height of this Drawing.
+     *
+     * @param height The explicit height of the Drawing; it is an Integer to allow for common use cases.
+     */
+    public void setExplicitHeight(Integer height) {
         this.setExplicitHeight(BigDecimal.valueOf(height));
     }
 
@@ -352,23 +360,21 @@ public class Drawing {
             BigDecimal implicitWidthOfCircle;
             BigDecimal explicitWidthOfCircle;
             // Set the explicit x positions of all contents
-            for (Circle circle : this.contents) {
-                implicitWidthOfCircle = circle.getImplicitWidth();
+            for (Shape shape : this.contents) {
+                implicitWidthOfCircle = shape.getImplicitWidth();
                 explicitWidthOfCircle = implicitWidthOfCircle.multiply(explicitWidthPerImplicitWidth, BigDecimalMath.mathContext);
-                circle.setExplicitWidth(explicitWidthOfCircle);
-                BigDecimal implicitXPositionOfCircle = circle.getImplicitXPosition();
+                shape.setExplicitWidth(explicitWidthOfCircle);
+                BigDecimal implicitXPositionOfCircle = shape.getImplicitXPosition();
                 // The fudge factor is to shift the diagram right so that all x-coordinates are positive
                 BigDecimal fudgeFactor = BigDecimal.ZERO.subtract(this.getImplicitXMinimum());
                 BigDecimal fudgedImplicitXPositionOfCircle = implicitXPositionOfCircle.add(fudgeFactor);
-                circle.setExplicitXPosition(fudgedImplicitXPositionOfCircle.multiply(explicitWidthPerImplicitWidth, BigDecimalMath.mathContext));
+                shape.setExplicitXPosition(fudgedImplicitXPositionOfCircle.multiply(explicitWidthPerImplicitWidth, BigDecimalMath.mathContext));
             }
         }
     }
 
     /**
      * Set the explicit width of this Drawing.
-     * <p>
-     * This has the side effect of setting the explicit x positions of all the contents.
      *
      * @param width the explicit width of the Drawing; it is a Float
      *              to match the precision allowed by the SVG spec.
@@ -376,6 +382,15 @@ public class Drawing {
     public void setExplicitWidth(Float width) {
         this.setExplicitWidth(BigDecimal.valueOf(width));
 
+    }
+
+    /**
+     * Set the explicit width of this Drawing.
+     *
+     * @param width The explicit width of the Drawing; it is an Integer to allow for common use cases.
+     */
+    public void setExplicitWidth(Integer width) {
+        this.setExplicitWidth(BigDecimal.valueOf(width));
     }
 
     /**
