@@ -1,3 +1,22 @@
+/*
+ * Drawl, the world's best drawing language.
+ *
+ * Copyright (c) 2020 Aarre Laakso
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+ * Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
+ * OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
@@ -6,28 +25,61 @@ import org.jetbrains.annotations.Nullable;
 import java.math.BigDecimal;
 
 public class Shape {
+
     private static final String CANNOT_BE_ADJACENT_TO_ITSELF = "A circle cannot be adjacent to itself";
-    private BigDecimal angleToNeighbor = null;
-    /**
-     * The explicit height of a default Shape is 1 in both explicit and implicit coordinates.
-     */
-    private BigDecimal explicitHeight = BigDecimal.ONE;
-    private BigDecimal explicitWidth = BigDecimal.ONE;
-    private BigDecimal implicitHeight = BigDecimal.ONE;
-    private BigDecimal implicitWidth = BigDecimal.ONE;
-    private BigDecimal implicitXPosition = BigDecimal.ZERO;
-    private BigDecimal implicitYPosition = BigDecimal.ZERO;
-    private Shape neighbor = null;           // A shape adjacent to this one, if any
+
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
     protected BigDecimal explicitXPosition = BigDecimal.ZERO;
+
+    /**
+     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
+     */
     protected BigDecimal explicitYPosition = BigDecimal.ZERO;
 
     /**
-     * Get this Circle's neighbor above (this Circle is below that one), if any.
+     * The angle, in degrees, to a neighbor. 0 represents up, and 90 degrees represents to the right.
+     */
+    private BigDecimal angleToNeighbor;
+
+    /**
+     * The explicit height of a Shape defaults to <code>null</code> to indicate it that has not yet been set.
+     */
+    private BigDecimal explicitHeight;
+
+    /**
+     * The explicit width of a Shape defaults to <code>null</code> to indicate that it has not yet been set.
+     */
+    private BigDecimal explicitWidth;
+
+    /**
+     * The implicit height of a default Shape is 1.
+     */
+    private BigDecimal implicitHeight = BigDecimal.ONE;
+
+    /**
+     * The implicit width of a default Shape is 1.
+     */
+    private BigDecimal implicitWidth = BigDecimal.ONE;
+
+    /**
+     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
+     */
+    private BigDecimal implicitXPosition = BigDecimal.ZERO;
+    /**
+     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
+     */
+    private BigDecimal implicitYPosition = BigDecimal.ZERO;
+    /**
+     * A shape adjacent to this one, if any
+     */
+    private Shape neighbor;
+
+    /**
+     * Get this Shape's neighbor above (this Shape is below that one), if any.
      *
-     * @return the Circle to the right of this one, if any;
+     * @return the Shape to the right of this one, if any;
      * <code>null</code> otherwise.
      */
     public Shape getAbove() {
@@ -39,9 +91,9 @@ public class Shape {
     }
 
     /**
-     * Get this Circle's neighbor below (this Circle is below that one), if any.
+     * Get this Shape's neighbor below (this Shape is below that one), if any.
      *
-     * @return the Circle to below this one, if any;
+     * @return the Shape to below this one, if any;
      * <code>null</code> otherwise.
      */
     public Shape getBelow() {
@@ -56,11 +108,11 @@ public class Shape {
     /**
      * Get the explicit height of this Shape.
      *
-     * @return the explicit height of this Shape
-     *
+     * @return the explicit height of this Shape, or <code>null</code> if this Shape has not yet been assigned an
+     * explicit height.
      * @todo Make this method protected and adjust unit tests accordingly.
      */
-    @NotNull
+    @Nullable
     public BigDecimal getExplicitHeight() {
         return this.explicitHeight;
     }
@@ -68,11 +120,11 @@ public class Shape {
     /**
      * Get the explicit width of this Shape.
      *
-     * @return the explicit width of this Shape,
-     *
+     * @return the explicit width of this Shape, or <code>null</code> if this Shape has not yet been assigned an
+     * explicit width.
      * @todo Make this method protected and adjust unit tests accordingly.
      */
-    @NotNull
+    @Nullable
     public BigDecimal getExplicitWidth() {
         return this.explicitWidth;
     }
@@ -81,7 +133,6 @@ public class Shape {
      * Get the explicit x-position of this Shape.
      *
      * @return the explicit x-position of this Shape.
-     *
      * @todo Make this method protected and adjust unit tests accordingly.
      */
     @NotNull
@@ -93,7 +144,6 @@ public class Shape {
      * Get the explicit y-position of this Shape.
      *
      * @return the explicit y-position of this Shape.
-     *
      * @todo Make this method protected and adjust unit tests accordingly.
      */
     @NotNull
@@ -119,9 +169,9 @@ public class Shape {
     }
 
     /**
-     * Get the implicit width of this Circle
+     * Get the implicit width of this Shape
      *
-     * @return the implicit width of this Circle
+     * @return the implicit width of this Shape
      */
     public BigDecimal getImplicitWidth() {
         return this.getImplicitHeight();
@@ -159,9 +209,9 @@ public class Shape {
     }
 
     /**
-     * Get the implicit minimum (bottommost) y-position of this Circle.
+     * Get the implicit minimum (bottommost) y-position of this Shape.
      *
-     * @return The implicit minimum (bottommost) y-position of this Circle.
+     * @return The implicit minimum (bottommost) y-position of this Shape.
      */
     protected BigDecimal getImplicitYMinimum() {
         return this.getImplicitYPosition().subtract(this.getImplicitHalfHeight());
@@ -172,9 +222,9 @@ public class Shape {
     }
 
     /**
-     * Get this Circle's neighbor to the right (this Circle is to the left of that one), if any.
+     * Get this Shape's neighbor to the right (this Shape is to the left of that one), if any.
      *
-     * @return the Circle to the right of this one, if any;
+     * @return the Shape to the right of this one, if any;
      * <code>null</code> otherwise.
      */
     public Shape getLeftOf() {
@@ -190,9 +240,9 @@ public class Shape {
     }
 
     /**
-     * Get this Circle's neighbor to the left (this Circle is to the right of that one), if any.
+     * Get this Shape's neighbor to the left (this Shape is to the right of that one), if any.
      *
-     * @return the Circle to the left of this one, if any;
+     * @return the Shape to the left of this one, if any;
      * <code>null</code> otherwise.
      */
     public Shape getRightOf() {
@@ -222,8 +272,9 @@ public class Shape {
         }
         this.neighbor = shape;
         this.angleToNeighbor = BigDecimal.valueOf(0);
-        BigDecimal topBoundaryOfCircle = shape.getImplicitYMaximum();
-        BigDecimal thisImplicitYPosition = topBoundaryOfCircle.add(this.getImplicitHalfHeight(), BigDecimalMath.mathContext);
+        BigDecimal topBoundaryOfShape = shape.getImplicitYMaximum();
+        BigDecimal thisImplicitYPosition = topBoundaryOfShape.add(this.getImplicitHalfHeight(),
+                BigDecimalMath.mathContext);
         this.setImplicitYPosition(thisImplicitYPosition);
     }
 
@@ -238,28 +289,33 @@ public class Shape {
         }
         this.neighbor = shape;
         this.angleToNeighbor = BigDecimal.valueOf(180);
-        BigDecimal bottomBoundaryOfCircle = shape.getImplicitYMinimum();
-        BigDecimal thisImplicitYPosition = bottomBoundaryOfCircle.subtract(this.getImplicitHalfHeight(), BigDecimalMath.mathContext);
+        BigDecimal bottomBoundaryOfShape = shape.getImplicitYMinimum();
+        BigDecimal thisImplicitYPosition = bottomBoundaryOfShape.subtract(this.getImplicitHalfHeight(),
+                BigDecimalMath.mathContext);
         this.setImplicitYPosition(thisImplicitYPosition);
     }
 
     /**
-     * Set the height of this Circle to a fixed value
+     * Set the height of this Shape to an explicit value.
+     * <p>
+     * TODO: Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
      *
-     * @param height The new height of this Circle.
+     * @param height The new height of this Shape. Can be <code>null</code> to indicate that this Shape has not yet
+     *               been assigned an explicit height.
      */
-    protected void setExplicitHeight(BigDecimal height) {
+    public void setExplicitHeight(@Nullable BigDecimal height) {
         this.explicitHeight = height;
     }
 
     /**
-     * Set the width of this Circle to an explicit value.
+     * Set the width of this Shape to an explicit value.
+     * <p>
+     * TODO: Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
      *
-     * This method is protected because API users should not be able to set explicit dimensions.
-     *
-     * @param width the new width of this Circle
+     * @param width the new width of this Shape. Can be <code>null</code> to indicate that this Shape has not yet
+     *              been assigned an explicit width.
      */
-    protected void setExplicitWidth(BigDecimal width) {
+    public void setExplicitWidth(@Nullable BigDecimal width) {
         this.explicitWidth = width;
     }
 
@@ -296,9 +352,9 @@ public class Shape {
     }
 
     /**
-     * Set this Circle's neighbor to the right (this Circle is to the left of that one).
+     * Set this Shape's neighbor to the right (this Shape is to the left of that one).
      *
-     * @param shape the Circle to the right of this one
+     * @param shape the Shape to the right of this one
      */
     public void setLeftOf(Shape shape) {
         if (shape == this) {
@@ -307,14 +363,15 @@ public class Shape {
         this.neighbor = shape;
         this.angleToNeighbor = BigDecimal.valueOf(90);
         BigDecimal leftBoundaryOfShape = shape.getImplicitXMinimum();
-        BigDecimal thisImplicitXPosition = leftBoundaryOfShape.subtract(this.getImplicitHalfWidth(), BigDecimalMath.mathContext);
+        BigDecimal thisImplicitXPosition = leftBoundaryOfShape.subtract(this.getImplicitHalfWidth(),
+                BigDecimalMath.mathContext);
         this.setImplicitXPosition(thisImplicitXPosition);
     }
 
     /**
-     * Set this Circle's neighbor to the left (this Circle is to the right of that one).
+     * Set this Shape's neighbor to the left (this Shape is to the right of that one).
      *
-     * @param shape the Circle to the left of this one
+     * @param shape the Shape to the left of this one
      */
     public void setRightOf(Shape shape) {
         if (shape == this) {
@@ -323,7 +380,8 @@ public class Shape {
         this.neighbor = shape;
         this.angleToNeighbor = BigDecimal.valueOf(270);
         BigDecimal rightBoundaryOfShape = shape.getImplicitXMaximum();
-        BigDecimal thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(), BigDecimalMath.mathContext);
+        BigDecimal thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(),
+                BigDecimalMath.mathContext);
         this.setImplicitXPosition(thisImplicitXPosition);
     }
 }

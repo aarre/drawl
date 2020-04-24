@@ -1,14 +1,14 @@
 package com.aarrelaakso.drawl.test;
 
+import com.aarrelaakso.drawl.Circle;
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Shape;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Unit tests of Drawing without any shapes")
 public class DrawingTest {
 

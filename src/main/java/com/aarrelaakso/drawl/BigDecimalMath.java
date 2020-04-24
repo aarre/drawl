@@ -14,6 +14,9 @@ public class BigDecimalMath {
 
     public static int SCALE = 32;
 
+    public static final BigDecimal HALF = BigDecimal.valueOf(0.5);
+    public static final BigDecimal TWO = BigDecimal.valueOf(2);
+
     public static RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
 
     public static MathContext mathContext = new MathContext(32, RoundingMode.HALF_UP);
