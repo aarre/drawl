@@ -1,13 +1,21 @@
 package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.math.BigDecimal;
 
 public class Circle extends Shape {
 
-    private BigDecimal explicitRadius = BigDecimal.valueOf(0.5);    // By default, the explicit radius is the same as the implicit radius
-    private BigDecimal implicitRadius = BigDecimal.valueOf(0.5);
+    /**
+     * The explicit radius of a Circle is null by default.
+     */
+    private BigDecimal explicitRadius;
+
+    /**
+     * The implicit radius of a Circle is 0.5 by default, giving the default Circle an implicit diameter of 1.
+     */
+    private BigDecimal implicitRadius = BigDecimalMath.HALF;
 
     /**
      * Construct a circle with a default implicit radius.
@@ -28,15 +36,15 @@ public class Circle extends Shape {
     /**
      * Get the explicit diameter of this Circle.
      *
-     * @return The explicit diameter of this Circle, or <code>null</code> if the explicit diameter of this Circle has
+     * @return The explicit diameter of this Circle, or <code>null</code> if the explicit radius of this Circle has
      * not been set.
      */
-
+    @Nullable
     private BigDecimal getExplicitDiameter() {
         BigDecimal result = null;
         BigDecimal radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue != null) {
-            result = radiusExplicitValue.multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+            result = radiusExplicitValue.multiply(BigDecimalMath.TWO, BigDecimalMath.mathContext);
         }
         return result;
     }
@@ -44,9 +52,10 @@ public class Circle extends Shape {
     /**
      * Get the explicit height of this Circle.
      *
-     * @return the explicit height of this Circle.
+     * @return the explicit height of this Circle, or <code>null</code> if the explicit radius of this Circle has
+     * not been set.
      */
-    @NotNull
+    @Nullable
     public BigDecimal getExplicitHeight() {
         return this.getExplicitDiameter();
     }
@@ -54,20 +63,46 @@ public class Circle extends Shape {
     /**
      * Get the explicit radius of this Circle.
      *
-     * @return The explicit radius of this Circle.
+     * @return The explicit radius of this Circle, or <code>null</code> if the explicit radius of this Circle has
+     * not been set.
      */
-    @NotNull
+    @Nullable
     public BigDecimal getExplicitRadius() {
         return this.explicitRadius;
     }
 
     /**
+     * Get the explicit width of this Circle.
+     *
+     * @return The explicit width of this circle, or <code>null</code> if the explicit radius of this
+     * Circle has not been set.
+     */
+    @Nullable
+    @Override
+    public BigDecimal getExplicitWidth() {
+        return this.getExplicitDiameter();
+    }
+
+    /**
+     * Get the implicit diameter of this Circle
+     * @return
+     */
+    private BigDecimal getImplicitDiameter() {
+        BigDecimal myImplicitRadius = this.getImplicitRadius();
+        assert myImplicitRadius.compareTo(BigDecimal.ZERO) != 0 : "Implicit radius cannot be zero.";
+        return myImplicitRadius.multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+    }
+
+    /**
      * Get the implicit height of this Circle
      *
-     * @return the implicit height of this Circle
+     * @return the implicit height of this Circle, or <code>null</code> if the implicit radius of this Circle has
+     * not been set.
      */
+    @Nullable
+    @Override
     public BigDecimal getImplicitHeight() {
-        return this.getImplicitRadius().multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+        return this.getImplicitDiameter();
     }
 
     public BigDecimal getImplicitRadius() {
@@ -79,10 +114,9 @@ public class Circle extends Shape {
      *
      * @return the implicit width of this Circle
      */
+    @Override
     public BigDecimal getImplicitWidth() {
-        BigDecimal myImplicitRadius = this.getImplicitRadius();
-        assert myImplicitRadius.compareTo(BigDecimal.ZERO) != 0 : "Implicit radius cannot be zero.";
-        return myImplicitRadius.multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+        return this.getImplicitDiameter();
     }
 
     /**
@@ -90,6 +124,7 @@ public class Circle extends Shape {
      *
      * @return The implicit maximum (rightmost) x-position of this Circle.
      */
+    @Override
     protected BigDecimal getImplicitXMaximum() {
         return this.getImplicitXPosition().add(this.getImplicitRadius());
     }
@@ -99,6 +134,7 @@ public class Circle extends Shape {
      *
      * @return The implicit minimum (leftmost) x-position of this Circle.
      */
+    @Override
     protected BigDecimal getImplicitXMinimum() {
         return this.getImplicitXPosition().subtract(this.getImplicitRadius());
     }
@@ -108,18 +144,27 @@ public class Circle extends Shape {
      *
      * @return The implicit maximum (topmost) x-position of this Circle.
      */
+    @Override
     protected BigDecimal getImplicitYMaximum() {
         return this.getImplicitYPosition().add(this.getImplicitRadius());
     }
 
+    /**
+     * Get SVG representing this Circle.
+     *
+     * @return A string containing SVG representing this Circle.
+     */
+    @Override
     public String getSVG() {
+
         String radiusStringValue;
         BigDecimal radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue == null) {
-            throw new UnsupportedOperationException("Cannot draw a Circle with no radius");
-        } else {
-            radiusStringValue = SVG.toString(radiusExplicitValue);
+            // If the explicit radius has not been set, use the implicit radius
+            this.setExplicitRadius(this.getImplicitRadius());
         }
+        radiusStringValue = SVG.toString(this.getExplicitRadius());
+
         StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<circle ");
         svgBuilder.append("r=\"");
@@ -142,20 +187,27 @@ public class Circle extends Shape {
     /**
      * Set the height of this Circle to a fixed value
      *
-     * @param height The new height of this Circle.
+     * @param height The new height of this Circle. This value can be <code>null</code> to indicate that the explict
+     *               height has not yet been determined.
+     * @todo Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
      */
-    protected void setExplicitHeight(@NotNull BigDecimal height) {
-            this.setExplicitRadius(height.divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext));
+    @Override
+    public void setExplicitHeight(@Nullable BigDecimal height) {
+        if (height == null) {
+            this.setExplicitRadiusToNull();
+        } else {
+            this.setExplicitRadius(height.divide(BigDecimalMath.TWO, BigDecimalMath.mathContext));
+        }
     }
 
     /**
      * Set the radius to a fixed value
-     *
+     * <p>
      * This is a protected method because users of the API should not have to deal with BigDecimal.
      *
      * @param radius the fixed value
      */
-    protected void setExplicitRadius(BigDecimal radius) {
+    protected void setExplicitRadius(@NotNull BigDecimal radius) {
         this.explicitRadius = radius;
     }
 
@@ -165,17 +217,27 @@ public class Circle extends Shape {
      * @param radius The fixed value for the radius of this Circle. This method allows providing the value as an
      *               Integer to support common use cases.
      */
-    public void setExplicitRadius(Integer radius) {
+    public void setExplicitRadius(@NotNull Integer radius) {
         this.explicitRadius = BigDecimal.valueOf(radius);
+    }
+
+    private void setExplicitRadiusToNull() {
+        this.explicitRadius = null;
     }
 
     /**
      * Set the width of this Circle to a fixed value
      *
      * @param width the new width of this Circle
+     * @todo Make this method protected because API users cannot set explicit directions. Adjust unit tests.
      */
-    protected void setExplicitWidth(@NotNull BigDecimal width) {
-            this.setExplicitRadius(width.divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext));
+    @Override
+    public void setExplicitWidth(@Nullable BigDecimal width) {
+        if (width == null) {
+            this.setExplicitRadiusToNull();
+        } else {
+            this.setExplicitRadius(width.divide(BigDecimalMath.TWO, BigDecimalMath.mathContext));
+        }
     }
 
 }

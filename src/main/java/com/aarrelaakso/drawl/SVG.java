@@ -16,7 +16,9 @@ public class SVG {
      */
     public static String toString(BigDecimal number) {
         String result;
-        if (BigDecimalMath.isIntegerValue(number)) {
+        if (number == null) {
+            result = "";
+        } else if (BigDecimalMath.isIntegerValue(number)) {
             result = String.valueOf(number.intValue());
         } else {
             result = String.valueOf(number.floatValue());

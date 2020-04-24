@@ -1,23 +1,19 @@
 package com.aarrelaakso.drawl.test;
 
-import com.aarrelaakso.drawl.Circle;
 import com.aarrelaakso.drawl.Shape;
-
 import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
-import java.util.Random;
 
+import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Unit tests of Shape (abstract)")
 public abstract class ShapeTest {
 
-    Shape shape;
     Shape shape1;
     Shape shape2;
     Shape shape3;
-    String svg;
 
     @Nested
     @DisplayName("Given one default Shape SVG")
@@ -27,6 +23,7 @@ public abstract class ShapeTest {
         @Test
         @DisplayName("Then the SVG is not null")
         void thenSVGIsNotNull() {
+            String svg = shape1.getSVG();
             assertNotNull(svg);
         }
     }
@@ -112,16 +109,16 @@ public abstract class ShapeTest {
     class GivenOneDefaultShape {
 
         @Test
-        @DisplayName("Then its explicit width is 1")
-        void thenExplicitWidthIs1() {
-            BigDecimal width = shape.getExplicitWidth();
-            assertEquals(0, BigDecimal.ONE.compareTo(width));
+        @DisplayName("Then its explicit width is null")
+        void thenExplicitWidthIsNull() {
+            BigDecimal width = shape1.getExplicitWidth();
+            assertEquals(null, width, "The explicit width of a default Shape should be null.");
         }
 
         @Test
         @DisplayName("Then its explicit x-coordinate is 0")
         void thenExplicitXCoordinateIs0() {
-            BigDecimal x = shape.getExplicitXPosition();
+            BigDecimal x = shape1.getExplicitXPosition();
             assertAll("The result should be exactly 0",
                     () -> assertEquals(BigDecimal.ZERO, x),
                     () -> assertEquals("0", x.toString())
@@ -131,7 +128,7 @@ public abstract class ShapeTest {
         @Test
         @DisplayName("Then its explicit y-coordinate is 0")
         void thenExplicitYCoordinateIs0() {
-            BigDecimal y = shape.getExplicitYPosition();
+            BigDecimal y = shape1.getExplicitYPosition();
             assertAll("The y-coordinate of a default Circle should be exactly 0",
                     () -> assertEquals(BigDecimal.ZERO, y),
                     () -> assertEquals("0", y.toString())
@@ -141,29 +138,49 @@ public abstract class ShapeTest {
         @Test
         @DisplayName("Then its implicit height is 1")
         void thenImplicitHeightIs1() {
-            BigDecimal implicitHeight = shape.getImplicitHeight();
+            BigDecimal implicitHeight = shape1.getImplicitHeight();
             assertEquals(1, implicitHeight.compareTo(BigDecimal.ZERO));
         }
 
         @Test
         @DisplayName("Then its implicit width is 1")
         void thenImplicitWidthIs1() {
-            BigDecimal width = shape.getImplicitWidth();
+            BigDecimal width = shape1.getImplicitWidth();
             assertEquals(0, width.compareTo(BigDecimal.ONE));
         }
 
         @Test
         @DisplayName("Then its implicit x-coordinate is 0")
         void thenImplicitXPositionIs0() {
-            BigDecimal x = shape.getImplicitXPosition();
+            BigDecimal x = shape1.getImplicitXPosition();
             assertEquals(0, x.compareTo(BigDecimal.ZERO));
         }
 
         @Test
         @DisplayName("Then its implicit y-coordinate is 0")
         void thenImplicitYPositionIs0() {
-            BigDecimal x = shape.getImplicitYPosition();
+            BigDecimal x = shape1.getImplicitYPosition();
             assertEquals(0, x.compareTo(BigDecimal.ZERO));
+        }
+
+        @Test
+        @DisplayName("Then setting the height and then getting the height give the same result")
+        void thenSettingTheHeightAndGettingTheHeightGiveTheSameResult() {
+            BigDecimal EXPECTED = BigDecimal.valueOf(100);
+            shape1.setExplicitHeight(EXPECTED);
+            BigDecimal ACTUAL = shape1.getExplicitHeight();
+
+            then(EXPECTED).isEqualByComparingTo(ACTUAL);
+        }
+
+        @Test
+        @DisplayName("Then setting the width and then getting the width give the same result")
+        void thenSettingTheWidthAndGettingTheWidthGiveTheSameResult() {
+            BigDecimal EXPECTED = BigDecimal.valueOf(100);
+            shape1.setExplicitWidth(EXPECTED);
+            BigDecimal ACTUAL = shape1.getExplicitWidth();
+
+            then(EXPECTED).isEqualByComparingTo(ACTUAL);
         }
 
         @Test
@@ -171,9 +188,9 @@ public abstract class ShapeTest {
         void thenTheSVGGeneratedByACircleContainsXAndYCoordinates() {
             int x = 50;
             int y = 50;
-            shape.setExplicitXPosition(x);
-            shape.setExplicitYPosition(y);
-            String svg = shape.getSVG();
+            shape1.setExplicitXPosition(x);
+            shape1.setExplicitYPosition(y);
+            String svg = shape1.getSVG();
             assertTrue(svg.indexOf("cx=\"50\"") > -1);
             assertTrue(svg.indexOf("cy=\"50\"") > -1);
         }
@@ -181,8 +198,8 @@ public abstract class ShapeTest {
         @Test
         @DisplayName("Then you can set its x-coordinate and get it back")
         void thenYouCanSetItsXCoordinateAndGetItBack() {
-            shape.setExplicitXPosition(100);
-            BigDecimal x = shape.getExplicitXPosition();
+            shape1.setExplicitXPosition(100);
+            BigDecimal x = shape1.getExplicitXPosition();
             assertEquals(0, x.compareTo(BigDecimal.valueOf(100)));
         }
 
@@ -190,7 +207,7 @@ public abstract class ShapeTest {
         @DisplayName("Then you cannot make it adjacent to itself")
         void thenYouCannotMakeItAdjacentToItself() {
             assertThrows(UnsupportedOperationException.class, () -> {
-                shape.setRightOf(shape);
+                shape1.setRightOf(shape1);
             });
         }
     }

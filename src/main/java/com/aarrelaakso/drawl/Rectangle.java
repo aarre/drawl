@@ -8,7 +8,7 @@ public class Rectangle extends Shape {
         String radiusStringValue;
         BigDecimal radiusExplicitValue = this.getImplicitHalfHeight();
         if (radiusExplicitValue == null) {
-            throw new UnsupportedOperationException("Cannot draw a Square with no height");
+            throw new UnsupportedOperationException("Cannot draw a Rectangle with no height");
         } else {
             radiusStringValue = SVG.toString(radiusExplicitValue);
         }

@@ -2,15 +2,17 @@ package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Circle;
 import com.aarrelaakso.drawl.Drawing;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+
+import org.assertj.core.api.BDDSoftAssertions;
+import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Unit tests of Drawing with Circle shapes")
 public class DrawingTestCircle extends DrawingTestShape {
 
@@ -69,4 +71,18 @@ public class DrawingTestCircle extends DrawingTestShape {
         assertTrue(svg.contains("circle r=\"50\""));
     }
 
+
+    @Test
+    @DisplayName("SVG: When a square (100) drawing has two adjacent Circles, then the SVG is correct")
+    void svgWhenASquare100DrawingHasTwoAdjacentCirclesThenTheSVGIsCorrect(BDDSoftAssertions softly) {
+        drawing.add(shape1);
+        drawing.add(shape2);
+        shape2.setRightOf(shape1);
+        String svg = drawing.getSVG(100, 100);
+
+       softly.then(svg).contains("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">")
+               .contains("<circle r=\"25\" cx=\"25\" cy=\"50\" />")
+               .contains("<circle r=\"25\" cx=\"75\" cy=\"50\" />")
+               .contains("</svg>");
+    }
 }
