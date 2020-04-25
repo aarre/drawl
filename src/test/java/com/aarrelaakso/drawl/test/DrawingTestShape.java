@@ -242,12 +242,12 @@ public abstract class DrawingTestShape {
 
         drawing.setExplicitHeight(SIZE);
         softly.then(drawing.getExplicitToImplicitRatio())
-                .as("The explicit to implicit ratio should be %d", SIZE)
+                .as("After setExplicitHeight, the explicit to implicit ratio should be %d", SIZE)
                 .isEqualByComparingTo(BigDecimal.valueOf(SIZE));
 
         drawing.setExplicitWidth(SIZE);
         softly.then(drawing.getExplicitToImplicitRatio())
-                .as("The explicit to implicit ratio should still be %d", SIZE)
+                .as("After setExplicitWidth, the explicit to implicit ratio should still be %d", SIZE)
                 .isEqualByComparingTo(BigDecimal.valueOf(SIZE));
 
         BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
