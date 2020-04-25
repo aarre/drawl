@@ -210,8 +210,8 @@ public class Circle extends Shape
      *
      * @param height The new height of this Circle. This value can be <code>null</code> to indicate that the explict
      *               height has not yet been determined.
-     * @todo Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
      */
+    // TODO [Issue #1] Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
     @Override
     public void setExplicitHeight(@Nullable BigDecimal height)
     {
@@ -257,8 +257,8 @@ public class Circle extends Shape
      * Set the width of this Circle to a fixed value
      *
      * @param width the new width of this Circle
-     * @todo Make this method protected because API users cannot set explicit directions. Adjust unit tests.
      */
+    // TODO [Issue #1] Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
     @Override
     public void setExplicitWidth(@Nullable BigDecimal width)
     {

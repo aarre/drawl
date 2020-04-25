@@ -163,14 +163,14 @@ public abstract class DrawingTestShape {
     }
 
     @Test
-    @DisplayName("WIDTH - EXPLICIT: When a drawing has one default Shape, the explicit width per object is the explicit width of the drawing")
+    @DisplayName("WIDTH - EXPLICIT: When a drawing has one default Shape, the explicit width per implicit width is the explicit width of the drawing")
     void widthExplicitWhenADrawingHasOneDefaultShapeThenTheExplicitWidthPerObjectIsTheExplicitWidthOfTheDrawing() {
         Integer size = 100;
         BigDecimal EXPECTED = BigDecimal.valueOf(size);
         drawing.add(shape1);
         drawing.setExplicitWidth(size);
         drawing.setExplicitHeight(size);
-        BigDecimal widthPerObject = drawing.getExplicitWidthPerObject();
+        BigDecimal widthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then(widthPerObject).isEqualByComparingTo(EXPECTED);
     }
@@ -247,8 +247,8 @@ public abstract class DrawingTestShape {
 
         drawing.setExplicitWidth(SIZE);
         softly.then(drawing.getExplicitToImplicitRatio())
-                .as("After setExplicitWidth, the explicit to implicit ratio should still be %d", SIZE)
-                .isEqualByComparingTo(BigDecimal.valueOf(SIZE));
+                .as("After setExplicitWidth, the explicit to implicit ratio should be %d", SIZE/2.0)
+                .isEqualByComparingTo(BigDecimal.valueOf(SIZE/2.0));
 
         BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
         softly.then(explicitYPosition1)
