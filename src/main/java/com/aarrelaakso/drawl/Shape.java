@@ -110,8 +110,8 @@ public class Shape {
      *
      * @return the explicit height of this Shape, or <code>null</code> if this Shape has not yet been assigned an
      * explicit height.
-     * @todo Make this method protected and adjust unit tests accordingly.
      */
+    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @Nullable
     public BigDecimal getExplicitHeight() {
         return this.explicitHeight;
@@ -122,8 +122,8 @@ public class Shape {
      *
      * @return the explicit width of this Shape, or <code>null</code> if this Shape has not yet been assigned an
      * explicit width.
-     * @todo Make this method protected and adjust unit tests accordingly.
      */
+    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @Nullable
     public BigDecimal getExplicitWidth() {
         return this.explicitWidth;
@@ -133,8 +133,8 @@ public class Shape {
      * Get the explicit x-position of this Shape.
      *
      * @return the explicit x-position of this Shape.
-     * @todo Make this method protected and adjust unit tests accordingly.
      */
+    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
     public BigDecimal getExplicitXPosition() {
         return this.explicitXPosition;
@@ -144,8 +144,8 @@ public class Shape {
      * Get the explicit y-position of this Shape.
      *
      * @return the explicit y-position of this Shape.
-     * @todo Make this method protected and adjust unit tests accordingly.
      */
+    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
     public BigDecimal getExplicitYPosition() {
         return this.explicitYPosition;
@@ -298,11 +298,11 @@ public class Shape {
     /**
      * Set the height of this Shape to an explicit value.
      * <p>
-     * TODO: Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
      *
      * @param height The new height of this Shape. Can be <code>null</code> to indicate that this Shape has not yet
      *               been assigned an explicit height.
      */
+    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     public void setExplicitHeight(@Nullable BigDecimal height) {
         this.explicitHeight = height;
     }
@@ -310,11 +310,11 @@ public class Shape {
     /**
      * Set the width of this Shape to an explicit value.
      * <p>
-     * TODO: Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
      *
      * @param width the new width of this Shape. Can be <code>null</code> to indicate that this Shape has not yet
      *              been assigned an explicit width.
      */
+    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     public void setExplicitWidth(@Nullable BigDecimal width) {
         this.explicitWidth = width;
     }

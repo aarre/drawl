@@ -253,20 +253,20 @@ class DrawingTestWidthExplicit extends Specification {
         explicitWidth == 100
     }
 
-    def "WIDTH - EXPLICIT: You can get the explicit width per object for a drawing with one Circle"() {
+    def "WIDTH - EXPLICIT: You can get the explicit width per implicit width for a drawing with one Circle"() {
         when:
         Circle circle = new Circle()
         Drawing drawing = new Drawing()
         drawing.add(circle)
         drawing.setExplicitWidth(100)
         drawing.setExplicitHeight(100)
-        Integer explicitWidthPerObject = drawing.getExplicitWidthPerObject();
+        Integer explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then:
         explicitWidthPerObject == 100
     }
 
-    def "WIDTH - EXPLICIT: You can get the explicit width per object for a drawing with two adjacent Circles"() {
+    def "WIDTH - EXPLICIT: You can get the explicit width per implicit width for a drawing with two adjacent Circles"() {
         when:
         Circle circle1 = new Circle()
         Circle circle2 = new Circle()
@@ -276,13 +276,13 @@ class DrawingTestWidthExplicit extends Specification {
         drawing.add(circle2)
         drawing.setExplicitWidth(100)
         drawing.setExplicitHeight(100)
-        Integer explicitWidthPerObject = drawing.getExplicitWidthPerObject();
+        Integer explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then:
         explicitWidthPerObject == 50
     }
 
-    def "WIDTH - EXPLICIT: You can get the explicit width per object for a drawing with two adjacent Circles (other order)"() {
+    def "WIDTH - EXPLICIT: You can get the explicit width per implicit width for a drawing with two adjacent Circles (other order)"() {
         when:
         Circle circle1 = new Circle()
         Circle circle2 = new Circle()
@@ -292,7 +292,7 @@ class DrawingTestWidthExplicit extends Specification {
         drawing.add(circle2)
         drawing.setExplicitWidth(100)
         drawing.setExplicitHeight(100)
-        Integer explicitWidthPerObject = drawing.getExplicitWidthPerObject();
+        Integer explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then:
         explicitWidthPerObject == 50

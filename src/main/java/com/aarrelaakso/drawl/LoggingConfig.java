@@ -16,8 +16,8 @@ public class LoggingConfig {
 
             //System.setProperty("java.util.logging.config.file", path);
 
-            Level consoleLevel = Level.WARNING;
-            Level loggerLevel = Level.WARNING;
+            Level consoleLevel = Level.FINE;
+            Level loggerLevel = consoleLevel;
 
             final ConsoleHandler consoleHandler = new ConsoleHandler();
             consoleHandler.setLevel(consoleLevel);
