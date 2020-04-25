@@ -4,8 +4,6 @@ import java.util.concurrent.ThreadLocalRandom
 
 import spock.lang.Specification
 import org.apache.commons.lang3.StringUtils
-import com.google.common.math.DoubleMath
-
 
 class DrawingTestSVG extends Specification {
 
@@ -315,7 +313,7 @@ class DrawingTestWidthImplicit extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == new BigDecimal(2.0)
+        drawing.getImplicitWidth() == BigDecimal.valueOf(2)
     }
 
     def "WIDTH - IMPLICIT: When you add two horizontally adjacent Circles to a drawing (in the other order), the drawing is twice as wide"() {
@@ -328,7 +326,7 @@ class DrawingTestWidthImplicit extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == new BigDecimal(2.0)
+        drawing.getImplicitWidth() == BigDecimal.valueOf(2)
     }
 
     def "WIDTH - IMPLICIT: When you add two default Circles to a drawing, the drawing stays the same width"() {
@@ -455,10 +453,10 @@ class DrawingTestXPositionExplicit extends Specification {
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
         BigDecimal bigWidth = BigDecimal.valueOf(width)
-        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), BigDecimalMath.mathContext)
-        BigDecimal bigX3 = bigWidth.multiply(fraction, BigDecimalMath.mathContext)
+        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, SisuBigDecimal.mcOperations)
+        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, SisuBigDecimal.mcOperations)
+        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations)
+        BigDecimal bigX3 = bigWidth.multiply(fraction, SisuBigDecimal.mcOperations)
 
         then:
         circle1.getExplicitXPosition().compareTo(bigX1) == 0
@@ -482,10 +480,10 @@ class DrawingTestXPositionExplicit extends Specification {
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
         BigDecimal bigWidth = BigDecimal.valueOf(width)
-        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), BigDecimalMath.mathContext)
-        BigDecimal bigX3 = bigWidth.multiply(fraction, BigDecimalMath.mathContext)
+        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, SisuBigDecimal.mcOperations)
+        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, SisuBigDecimal.mcOperations)
+        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations)
+        BigDecimal bigX3 = bigWidth.multiply(fraction, SisuBigDecimal.mcOperations)
 
         then:
         circle1.getExplicitXPosition().compareTo(bigX1) == 0
@@ -510,10 +508,10 @@ class DrawingTestXPositionExplicit extends Specification {
         System.out.println("height: " + height)
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
-        BigDecimal bigX1 = BigDecimal.valueOf(width).divide(6 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal bigX2 = BigDecimal.valueOf(width).divide(2 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), BigDecimalMath.mathContext)
-        BigDecimal bigX3 = BigDecimal.valueOf(width).multiply(fraction, BigDecimalMath.mathContext)
+        BigDecimal bigX1 = BigDecimal.valueOf(width).divide(6 as BigDecimal, SisuBigDecimal.mcOperations)
+        BigDecimal bigX2 = BigDecimal.valueOf(width).divide(2 as BigDecimal, SisuBigDecimal.mcOperations)
+        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations)
+        BigDecimal bigX3 = BigDecimal.valueOf(width).multiply(fraction, SisuBigDecimal.mcOperations)
         float bigX1f = bigX1.floatValue()
         float bigX2f = bigX2.floatValue()
         float bigX3f = bigX3.floatValue()
@@ -546,10 +544,10 @@ class DrawingTestXPositionExplicit extends Specification {
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
         BigDecimal bigWidth = BigDecimal.valueOf(width)
-        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, BigDecimalMath.mathContext)
-        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), BigDecimalMath.mathContext)
-        BigDecimal bigX3 = bigWidth.multiply(fraction, BigDecimalMath.mathContext)
+        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, SisuBigDecimal.mcOperations)
+        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, SisuBigDecimal.mcOperations)
+        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations)
+        BigDecimal bigX3 = bigWidth.multiply(fraction, SisuBigDecimal.mcOperations)
         float bigX1f = bigX1.floatValue()
         float bigX2f = bigX2.floatValue()
         float bigX3f = bigX3.floatValue()
@@ -599,35 +597,6 @@ class DrawingTestXPositionImplicit extends Specification {
         then:
         circle1.getExplicitXPosition().compareTo(BigDecimal.valueOf(width / 4)) == 0
         circle2.getExplicitXPosition().compareTo(BigDecimal.valueOf((3 * width) / 4)) == 0
-    }
-
-}
-
-class DrawingTestYPositionExplicit extends Specification {
-
-
-
-
-
-    def "Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Circles, then their explicit y positions are correct (with setExplicitDimensions)"() {
-        when:
-        Drawing drawing = new Drawing()
-        Circle circle1 = new Circle()
-        drawing.add(circle1)
-        Circle circle2 = new Circle()
-        drawing.add(circle2)
-        circle2.setRightOf(circle1)
-        drawing.setExplicitDimensions(100, 100)
-        Integer explicitYPosition1 = circle1.getExplicitYPosition()
-
-        then:
-        explicitYPosition1 == Integer.valueOf(50)
-
-        when:
-        Integer explicitYPosition2 = circle2.getExplicitYPosition()
-
-        then:
-        explicitYPosition2 == Integer.valueOf(50)
     }
 
 }

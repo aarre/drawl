@@ -152,11 +152,11 @@ public class Shape {
     }
 
     protected BigDecimal getImplicitHalfHeight() {
-        return this.getImplicitHeight().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+        return this.getImplicitHeight().divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
     }
 
     protected BigDecimal getImplicitHalfWidth() {
-        return this.getImplicitWidth().divide(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+        return this.getImplicitWidth().divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
     }
 
     /**
@@ -274,7 +274,7 @@ public class Shape {
         this.angleToNeighbor = BigDecimal.valueOf(0);
         BigDecimal topBoundaryOfShape = shape.getImplicitYMaximum();
         BigDecimal thisImplicitYPosition = topBoundaryOfShape.add(this.getImplicitHalfHeight(),
-                BigDecimalMath.mathContext);
+                SisuBigDecimal.mcOperations);
         this.setImplicitYPosition(thisImplicitYPosition);
     }
 
@@ -291,7 +291,7 @@ public class Shape {
         this.angleToNeighbor = BigDecimal.valueOf(180);
         BigDecimal bottomBoundaryOfShape = shape.getImplicitYMinimum();
         BigDecimal thisImplicitYPosition = bottomBoundaryOfShape.subtract(this.getImplicitHalfHeight(),
-                BigDecimalMath.mathContext);
+                SisuBigDecimal.mcOperations);
         this.setImplicitYPosition(thisImplicitYPosition);
     }
 
@@ -341,9 +341,9 @@ public class Shape {
 
     /**
      * Set the implicit y position of this circle.
-     * <p>
-     * The y position is the vertical position of the circle's center. In the implicit coordinate system, higher values
-     * of y are upward whereas lower values of y are downward.
+     *
+     * The y position marks the vertical position of the circle's center. In the implicit coordinate system, higher
+     * values of y are upward whereas lower values of y are downward.
      *
      * @param y The implicit y position of this circle.
      */
@@ -364,7 +364,7 @@ public class Shape {
         this.angleToNeighbor = BigDecimal.valueOf(90);
         BigDecimal leftBoundaryOfShape = shape.getImplicitXMinimum();
         BigDecimal thisImplicitXPosition = leftBoundaryOfShape.subtract(this.getImplicitHalfWidth(),
-                BigDecimalMath.mathContext);
+                SisuBigDecimal.mcOperations);
         this.setImplicitXPosition(thisImplicitXPosition);
     }
 
@@ -381,7 +381,10 @@ public class Shape {
         this.angleToNeighbor = BigDecimal.valueOf(270);
         BigDecimal rightBoundaryOfShape = shape.getImplicitXMaximum();
         BigDecimal thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(),
-                BigDecimalMath.mathContext);
+                SisuBigDecimal.mcOperations);
         this.setImplicitXPosition(thisImplicitXPosition);
+
+        // Set the y position of this shape to match the one it is to the right of
+        this.setImplicitYPosition(shape.getImplicitYPosition());
     }
 }

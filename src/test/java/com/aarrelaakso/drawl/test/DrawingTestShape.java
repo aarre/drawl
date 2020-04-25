@@ -1,6 +1,6 @@
 package com.aarrelaakso.drawl.test;
 
-import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.SisuBigDecimal;
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Shape;
 import org.assertj.core.api.BDDSoftAssertions;
@@ -62,12 +62,23 @@ public abstract class DrawingTestShape {
         BigDecimal explicitHeightOfShape = shape1.getExplicitHeight();
         BigDecimal explicitWidthOfShape = shape1.getExplicitWidth();
 
-        softly.then(explicitHeightOfDrawing).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitWidthOfDrawing).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitHeightOfShape).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitWidthOfShape).isEqualByComparingTo(EXPECTED);
+        softly.then(explicitHeightOfDrawing)
+                .as("Expecting explicit height of drawing to be %s but got %s",
+                        EXPECTED.toPlainString(), explicitHeightOfDrawing.toPlainString())
+                .isEqualByComparingTo(EXPECTED);
+        softly.then(explicitWidthOfDrawing)
+                .as("Expecting explicit width of drawing to be %s but got %s",
+                        EXPECTED.toPlainString(), explicitWidthOfDrawing.toPlainString())
+                .isEqualByComparingTo(EXPECTED);
+        softly.then(explicitHeightOfShape)
+                .as("Expecting explicit height of shape to be %s but got %s",
+                        EXPECTED.toPlainString(), explicitHeightOfShape.toPlainString())
+                .isEqualByComparingTo(EXPECTED);
+        softly.then(explicitWidthOfShape)
+                .as("Expecting explicit width of shape to be %s but got %s",
+                        EXPECTED.toPlainString(), explicitWidthOfShape.toPlainString())
+                .isEqualByComparingTo(EXPECTED);
     }
-
 
     /**
      * This version of the test sets height first, then width second.
@@ -197,13 +208,132 @@ public abstract class DrawingTestShape {
     @Test
     @Tag("explicit")
     @Tag("y-position")
-    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct")
-    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect (@NotNull BDDSoftAssertions softly) {
+    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has a default Shape, then its explicit y position is correct")
+    void yPositionExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitYPositionIsCorrect() {
+        Integer size = 100;
+        drawing.add(shape1);
+        drawing.setExplicitDimensions(size, size);
+        BigDecimal yPosition = shape1.getExplicitYPosition();
+        BigDecimal EXPECTED = BigDecimal.valueOf(50);
+
+        then(yPosition).isEqualByComparingTo(EXPECTED);
+    }
+
+    /**
+     * This variant tests the effect of this order:
+     *     1. Adding the shapes to the drawing.
+     *     2. Setting the shapes adjacent to one another.
+     *     3. Setting the size of the drawing (height first).
+     *
+     * @param softly
+     */
+    @Test
+    @Tag("explicit")
+    @Tag("y-position")
+    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #1a")
+    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01a(@NotNull BDDSoftAssertions softly) {
+
+        Integer SIZE = 100;
+        BigDecimal EXPECTED_Y_POS = BigDecimal.valueOf(SIZE).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
+
         drawing.add(shape1);
         drawing.add(shape2);
         shape2.setRightOf(shape1);
+
+        drawing.setExplicitHeight(SIZE);
+        softly.then(drawing.getExplicitToImplicitRatio())
+                .as("The explicit to implicit ratio should be %d", SIZE)
+                .isEqualByComparingTo(BigDecimal.valueOf(SIZE));
+
+        drawing.setExplicitWidth(SIZE);
+        softly.then(drawing.getExplicitToImplicitRatio())
+                .as("The explicit to implicit ratio should still be %d", SIZE)
+                .isEqualByComparingTo(BigDecimal.valueOf(SIZE));
+
+        BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
+        softly.then(explicitYPosition1)
+                .as("The y position of shape1 should be %s", EXPECTED_Y_POS.toPlainString())
+                .isEqualByComparingTo(EXPECTED_Y_POS);
+
+        BigDecimal explicitYPosition2 = shape2.getExplicitYPosition();
+        softly.then(explicitYPosition2)
+                .as("The y position of shape2 should be %s", EXPECTED_Y_POS.toPlainString())
+                .isEqualByComparingTo(EXPECTED_Y_POS);
+    }
+
+    /**
+     * This variant tests the effect of this order:
+     *     1. Adding the shapes to the drawing.
+     *     2. Setting the shapes adjacent to one another.
+     *     3. Setting the size of the drawing (width first).
+     *
+     * @param softly
+     */
+    @Test
+    @Tag("explicit")
+    @Tag("y-position")
+    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #1b")
+    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01b(@NotNull BDDSoftAssertions softly) {
+        drawing.add(shape1);
+        drawing.add(shape2);
+        shape2.setRightOf(shape1);
+        drawing.setExplicitWidth(100);
+        drawing.setExplicitHeight(100);
+        BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
+        BigDecimal explicitYPosition2 = shape2.getExplicitYPosition();
+        BigDecimal EXPECTED = BigDecimal.valueOf(50);
+
+        softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
+        softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
+    }
+
+    /**
+     * This variant tests the effect of this order:
+     *     1. Setting the size of the drawing.
+     *     2. Adding the shapes to the drawing.
+     *     3. Setting the shapes adjacent to each other.
+     *
+     * @param softly
+     */
+    @Test
+    @Tag("explicit")
+    @Tag("y-position")
+    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #2")
+    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect02(@NotNull BDDSoftAssertions softly) {
         drawing.setExplicitHeight(100);
         drawing.setExplicitWidth(100);
+        drawing.add(shape1);
+        drawing.add(shape2);
+        shape2.setRightOf(shape1);
+        BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
+        BigDecimal explicitYPosition2 = shape2.getExplicitYPosition();
+        BigDecimal EXPECTED = BigDecimal.valueOf(50);
+
+        softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
+        softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
+    }
+
+    /**
+     * This variant tests the effect of this order:
+     *     1. Setting the size of the drawing.
+     *     2. Setting the shapes adjacent to each other.
+     *     3. Adding the shapes to the drawing.
+     *
+     * @param softly
+     */
+    @Test
+    @Tag("explicit")
+    @Tag("y-position")
+    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #3")
+    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect03(@NotNull BDDSoftAssertions softly) {
+        drawing.setExplicitHeight(100);
+        drawing.setExplicitWidth(100);
+
+        shape2.setRightOf(shape1);
+
+        drawing.add(shape1);
+        drawing.add(shape2);
+
         BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
         BigDecimal explicitYPosition2 = shape2.getExplicitYPosition();
         BigDecimal EXPECTED = BigDecimal.valueOf(50);
@@ -215,15 +345,19 @@ public abstract class DrawingTestShape {
     @Test
     @Tag("explicit")
     @Tag("y-position")
-    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has a default Shape, then its explicit y position is correct")
-    void yPositionExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitYPositionIsCorrect() {
-        Integer size = 100;
+    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct (with setExplicitDimensions)")
+    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrectWithSetExplicitDimensions(@NotNull BDDSoftAssertions softly) {
+        Integer sizeOfDrawing = 100;
+        BigDecimal EXPECTED = BigDecimal.valueOf(sizeOfDrawing).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
         drawing.add(shape1);
-        drawing.setExplicitDimensions(size,size);
-        BigDecimal yPosition = shape1.getExplicitYPosition();
-        BigDecimal EXPECTED = BigDecimal.valueOf(50);
+        drawing.add(shape1);
+        shape2.setRightOf(shape1);
+        drawing.setExplicitDimensions(sizeOfDrawing, sizeOfDrawing);
+        BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
+        BigDecimal explicitYPosition2 = shape2.getExplicitYPosition();
 
-        then(yPosition).isEqualByComparingTo(EXPECTED);
+        softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
+        softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
     }
 
 }
