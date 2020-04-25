@@ -15,7 +15,7 @@ public class Circle extends Shape {
     /**
      * The implicit radius of a Circle is 0.5 by default, giving the default Circle an implicit diameter of 1.
      */
-    private BigDecimal implicitRadius = BigDecimalMath.HALF;
+    private BigDecimal implicitRadius = SisuBigDecimal.HALF;
 
     /**
      * Construct a circle with a default implicit radius.
@@ -44,7 +44,7 @@ public class Circle extends Shape {
         BigDecimal result = null;
         BigDecimal radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue != null) {
-            result = radiusExplicitValue.multiply(BigDecimalMath.TWO, BigDecimalMath.mathContext);
+            result = radiusExplicitValue.multiply(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
         }
         return result;
     }
@@ -90,7 +90,7 @@ public class Circle extends Shape {
     private BigDecimal getImplicitDiameter() {
         BigDecimal myImplicitRadius = this.getImplicitRadius();
         assert myImplicitRadius.compareTo(BigDecimal.ZERO) != 0 : "Implicit radius cannot be zero.";
-        return myImplicitRadius.multiply(BigDecimal.valueOf(2), BigDecimalMath.mathContext);
+        return myImplicitRadius.multiply(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
     }
 
     /**
@@ -196,7 +196,7 @@ public class Circle extends Shape {
         if (height == null) {
             this.setExplicitRadiusToNull();
         } else {
-            this.setExplicitRadius(height.divide(BigDecimalMath.TWO, BigDecimalMath.mathContext));
+            this.setExplicitRadius(height.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations));
         }
     }
 
@@ -236,7 +236,7 @@ public class Circle extends Shape {
         if (width == null) {
             this.setExplicitRadiusToNull();
         } else {
-            this.setExplicitRadius(width.divide(BigDecimalMath.TWO, BigDecimalMath.mathContext));
+            this.setExplicitRadius(width.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations));
         }
     }
 

@@ -1,7 +1,10 @@
 package com.aarrelaakso.drawl;
 
-
-import java.util.logging.*;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class LoggingConfig {
 
@@ -13,19 +16,20 @@ public class LoggingConfig {
 
             //System.setProperty("java.util.logging.config.file", path);
 
-            Level consoleLevel = Level.INFO;
+            Level consoleLevel = Level.WARNING;
+            Level loggerLevel = Level.WARNING;
 
             final ConsoleHandler consoleHandler = new ConsoleHandler();
             consoleHandler.setLevel(consoleLevel);
             consoleHandler.setFormatter(new SimpleFormatter());
 
-            Logger root = Logger.getLogger("");
-            Level loggerLevel = Level.INFO;
+            final Logger root = Logger.getLogger("");
+
             root.setLevel(loggerLevel);
             for (Handler handler : root.getHandlers()) {
                 handler.setLevel(loggerLevel);
             }
-            System.out.println("level set: " + loggerLevel.getName());
+            //root.log("Logging level set: " + loggerLevel.getName());
 
         } catch (Exception e) {
             // The runtime won't show stack traces if the exception is thrown

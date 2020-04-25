@@ -1,7 +1,5 @@
 package com.aarrelaakso.drawl;
 
-import com.google.common.math.DoubleMath;
-
 import java.math.BigDecimal;
 
 public class SVG {
@@ -18,7 +16,7 @@ public class SVG {
         String result;
         if (number == null) {
             result = "";
-        } else if (BigDecimalMath.isIntegerValue(number)) {
+        } else if (SisuBigDecimal.isIntegerValue(number)) {
             result = String.valueOf(number.intValue());
         } else {
             result = String.valueOf(number.floatValue());

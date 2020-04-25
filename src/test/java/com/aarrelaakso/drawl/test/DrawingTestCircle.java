@@ -1,14 +1,13 @@
 package com.aarrelaakso.drawl.test;
 
+import com.aarrelaakso.drawl.SisuBigDecimal;
 import com.aarrelaakso.drawl.Circle;
-import com.aarrelaakso.drawl.Drawing;
 
 import org.assertj.core.api.BDDSoftAssertions;
 import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -56,7 +55,7 @@ public class DrawingTestCircle extends DrawingTestShape {
         drawing.setExplicitWidth(100);
         BigDecimal actualImplicitRadius1 = shape1.getImplicitRadius();
         BigDecimal actualImplicitRadius2 = shape2.getImplicitRadius();
-        BigDecimal expectedValue = BigDecimal.valueOf(0.5);
+        BigDecimal expectedValue = SisuBigDecimal.HALF;
 
         assertEquals(0, expectedValue.compareTo(actualImplicitRadius1));
         assertEquals(0, expectedValue.compareTo(actualImplicitRadius2));
