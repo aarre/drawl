@@ -25,6 +25,9 @@ hs_err_pid*
 # Temporary build files
 build/
 
+# Coverage test results
+coverage/
+
 # Gradle configuration cruft
 .gradle/
 
