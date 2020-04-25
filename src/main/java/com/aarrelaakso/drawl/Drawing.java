@@ -41,7 +41,7 @@ public class Drawing
 
     }
 
-    private HashSet<Shape> contents;
+    private final HashSet<Shape> contents;
     private BigDecimal explicitHeight;
     private BigDecimal explicitWidth;
 
@@ -86,22 +86,22 @@ public class Drawing
         {
             if (this.getExplicitHeight() == null)
             {
-                // If the explicit height is null, try to calculate using the explicit width
+                // If the explicit height has no value, try to calculate using the explicit width
                 if (this.getExplicitWidth() == null)
                 {
-                    // If the explicit width is also null, the ratio is 0
+                    // If the explicit width also has no value, the ratio is 0
                     explicitHeightPerImplicitHeight = BigDecimal.ZERO;
                 }
                 else
                 {
-                    // The explicit width is not 0, so use it to calculate the ratio
+                    // The explicit width exceeds 0, so use it to calculate the ratio
                     explicitHeightPerImplicitHeight = this.getExplicitWidth().divide(this.getImplicitWidthOfContents(),
                             SisuBigDecimal.mcOperations);
                 }
             }
             else
             {
-                // The explicit height is not null, so calculate using the explicit height
+                // The explicit height has a value, so calculate using the explicit height
                 explicitHeightPerImplicitHeight = this.getExplicitHeight().divide(implicitHeightOfContents,
                         SisuBigDecimal.mcOperations);
             }
@@ -418,8 +418,7 @@ public class Drawing
             }
         }
         svgBuilder.append("</svg>");
-        String svg = svgBuilder.toString();
-        return (svg);
+        return svgBuilder.toString();
     }
 
     /**
@@ -429,7 +428,7 @@ public class Drawing
      */
     public Integer length()
     {
-        return Integer.valueOf(contents.size());
+        return contents.size();
     }
 
     /**
@@ -515,23 +514,18 @@ public class Drawing
      */
     private void setExplicitHeight(@NotNull BigDecimal drawingExplicitHeight)
     {
-        // Note that this line can change the explicit to implicit ratio
+        // Note that this line, by changing this.explicitWidth, can change the explicit to implicit ratio
         this.explicitHeight = drawingExplicitHeight;
         if (this.getExplicitWidth() == null)
         {
             // If this Drawing does not have an explicit width, make the explicit width of the Drawing as wide as it
             // needs to be to accommodate the contents.
-            this.explicitWidth = this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio());
+            this.explicitWidth = this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio(),
+                    SisuBigDecimal.mcOperations);
         }
-        BigDecimal explicitToImplicitRatio = this.getExplicitToImplicitRatio();
-        assert explicitToImplicitRatio != null : "The explicit to implicit ratio of a drawing cannot be null.";
-        if (this.length() > 0)
+        for (Shape shape : this.contents)
         {
-            // Set the heights and explicit y positions of all contents
-            for (Shape shape : this.contents)
-            {
-                updateShape(shape);
-            }
+            updateShape(shape);
         }
     }
 
@@ -565,7 +559,7 @@ public class Drawing
      */
     private void setExplicitWidth(@NotNull BigDecimal drawingExplicitWidth)
     {
-        // Note that this line can change the explicit to implicit ratio
+        // Note that this line, by changing this.explicitWidth, can change the explicit to implicit ratio
         this.explicitWidth = drawingExplicitWidth;
         if (this.getExplicitHeight() == null)
         {
@@ -574,13 +568,9 @@ public class Drawing
             this.explicitHeight = this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio(),
                     SisuBigDecimal.mcOperations);
         }
-        if (this.length() > 0)
+        for (Shape shape : this.contents)
         {
-            // Set the explicit widths and x positions of all contents
-            for (Shape shape : this.contents)
-            {
-                this.updateShape(shape);
-            }
+            this.updateShape(shape);
         }
     }
 
