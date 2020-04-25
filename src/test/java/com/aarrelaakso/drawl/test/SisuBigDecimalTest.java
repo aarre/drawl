@@ -15,7 +15,6 @@ import com.aarrelaakso.drawl.SisuBigDecimalRemainderPair;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import org.assertj.core.api.BDDSoftAssertions;
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -296,9 +295,9 @@ public class SisuBigDecimalTest
     @Test
     public void testMul()
     {
-        assertEquals(SisuBigDecimal.create(6), SisuBigDecimal.create(3).mul(SisuBigDecimal.create(2)));
+        assertEquals(SisuBigDecimal.create(6), SisuBigDecimal.create(3).multiply(SisuBigDecimal.create(2)));
         // double version
-        assertEquals(SisuBigDecimal.create(6), SisuBigDecimal.create(3).mul(2));
+        assertEquals(SisuBigDecimal.create(6), SisuBigDecimal.create(3).multiply(2));
     }
 
     /**

@@ -30,11 +30,13 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.logging.Level;
 
-public class Drawing {
+public class Drawing
+{
 
     private static final FluentLogger logger;
 
-    static {
+    static
+    {
         logger = FluentLogger.forEnclosingClass();
 
     }
@@ -43,7 +45,8 @@ public class Drawing {
     private BigDecimal explicitHeight;
     private BigDecimal explicitWidth;
 
-    public Drawing() {
+    public Drawing()
+    {
         contents = new HashSet<>();
         LoggingConfig loggingConfig = new LoggingConfig();
     }
@@ -53,7 +56,8 @@ public class Drawing {
      *
      * @param shape The shape to add
      */
-    public void add(Shape shape) {
+    public void add(Shape shape)
+    {
         contents.add(shape);
     }
 
@@ -64,7 +68,8 @@ public class Drawing {
      * dimensions have not been set.
      */
     @Nullable
-    public BigDecimal getExplicitHeight() {
+    public BigDecimal getExplicitHeight()
+    {
         return this.explicitHeight;
     }
 
@@ -73,26 +78,36 @@ public class Drawing {
      *
      * @return The ratio of the explicit height of this Drawing to the implicit height of its contents
      */
-    private BigDecimal getExplicitHeightPerImplicitHeight() {
+    private BigDecimal getExplicitHeightPerImplicitHeight()
+    {
         BigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
         BigDecimal explicitHeightPerImplicitHeight;
-        if (implicitHeightOfContents.compareTo(BigDecimal.ZERO) != 0) {
-            if (this.getExplicitHeight() == null) {
+        if (implicitHeightOfContents.compareTo(BigDecimal.ZERO) != 0)
+        {
+            if (this.getExplicitHeight() == null)
+            {
                 // If the explicit height is null, try to calculate using the explicit width
-                if (this.getExplicitWidth() == null) {
+                if (this.getExplicitWidth() == null)
+                {
                     // If the explicit width is also null, the ratio is 0
                     explicitHeightPerImplicitHeight = BigDecimal.ZERO;
-                } else {
+                }
+                else
+                {
                     // The explicit width is not 0, so use it to calculate the ratio
                     explicitHeightPerImplicitHeight = this.getExplicitWidth().divide(this.getImplicitWidthOfContents(),
                             SisuBigDecimal.mcOperations);
                 }
-            } else {
+            }
+            else
+            {
                 // The explicit height is not null, so calculate using the explicit height
                 explicitHeightPerImplicitHeight = this.getExplicitHeight().divide(implicitHeightOfContents,
                         SisuBigDecimal.mcOperations);
             }
-        } else {
+        }
+        else
+        {
             // The implicit height of the contents is 0, so the ratio is 0
             explicitHeightPerImplicitHeight = BigDecimal.ZERO;
         }
@@ -110,13 +125,17 @@ public class Drawing {
      * @return The ratio of explicit measures to implicit measures for this diagram as a whole.
      * @todo Make private and refactor test cases accordingly.
      */
-    public BigDecimal getExplicitToImplicitRatio() {
+    public BigDecimal getExplicitToImplicitRatio()
+    {
         BigDecimal explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
         BigDecimal explicitWidthPerImplicitWidth = this.getExplicitWidthPerImplicitWidth();
-        if (explicitHeightPerImplicitHeight.compareTo(explicitWidthPerImplicitWidth) <= 0) {
+        if (explicitHeightPerImplicitHeight.compareTo(explicitWidthPerImplicitWidth) <= 0)
+        {
             logger.at(Level.FINE).log("Setting explicitToImplicitRatio based on height");
             return explicitHeightPerImplicitHeight;
-        } else {
+        }
+        else
+        {
             logger.at(Level.FINE).log("Setting explicitToImplicitRatio based on width");
             return explicitWidthPerImplicitWidth;
         }
@@ -129,7 +148,8 @@ public class Drawing {
      * dimensions have not been set.
      */
     @Nullable
-    public BigDecimal getExplicitWidth() {
+    public BigDecimal getExplicitWidth()
+    {
         return this.explicitWidth;
     }
 
@@ -140,30 +160,40 @@ public class Drawing {
      * @todo Make private and factor out of unit tests.
      */
     @NotNull
-    public BigDecimal getExplicitWidthPerImplicitWidth() {
+    public BigDecimal getExplicitWidthPerImplicitWidth()
+    {
         BigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
         assert implicitWidthOfContents != null :
                 "The implicit width of the contents of a drawing cannot be null.";
         assert implicitWidthOfContents.compareTo(BigDecimal.ZERO) >= 0 :
                 "The implicit width of the contents of a drawing must be positive (or zero).";
         BigDecimal explicitWidthPerImplicitWidth;
-        if (implicitWidthOfContents.compareTo(BigDecimal.ZERO) != 0) {
-            if (this.getExplicitWidth() == null) {
+        if (implicitWidthOfContents.compareTo(BigDecimal.ZERO) != 0)
+        {
+            if (this.getExplicitWidth() == null)
+            {
                 // If the explicit width is null, try to use it to calculate using the explicit height
-                if (this.getExplicitHeight() == null) {
+                if (this.getExplicitHeight() == null)
+                {
                     // The explicit height is also null, so the ratio is 0
                     explicitWidthPerImplicitWidth = BigDecimal.ZERO;
-                } else {
+                }
+                else
+                {
                     // Use the explicit height to calculate the ratio
                     explicitWidthPerImplicitWidth = this.getExplicitHeight().divide(this.getImplicitHeightOfContents(),
                             SisuBigDecimal.mcOperations);
                 }
-            } else {
+            }
+            else
+            {
                 // The explicit width is not null, so calculate using the explicit width
                 explicitWidthPerImplicitWidth = this.getExplicitWidth().divide(implicitWidthOfContents,
                         SisuBigDecimal.mcOperations);
             }
-        } else {
+        }
+        else
+        {
             // The implicit width of the contents is 0, so the ratio is 0
             explicitWidthPerImplicitWidth = BigDecimal.ZERO;
         }
@@ -178,12 +208,16 @@ public class Drawing {
      * @return the explicit width per object in this Drawing.
      * @todo Make this method private and adjust unit tests accordingly
      */
-    public BigDecimal getExplicitWidthPerObject() {
+    public BigDecimal getExplicitWidthPerObject()
+    {
         BigDecimal implicitWidth = this.getImplicitWidthOfContents();
-        if ((implicitWidth == null) || implicitWidth.equals(BigDecimal.ZERO)) {
+        if ((implicitWidth == null) || implicitWidth.equals(BigDecimal.ZERO))
+        {
             // The drawing has no contents
             return BigDecimal.ZERO;
-        } else {
+        }
+        else
+        {
             return this.getExplicitWidth().divide(implicitWidth, SisuBigDecimal.mcOperations);
         }
     }
@@ -195,7 +229,8 @@ public class Drawing {
      *
      * @todo Remove this function and factor out of test cases.
      */
-    public BigDecimal getImplicitHeight() {
+    public BigDecimal getImplicitHeight()
+    {
         return this.getImplicitHeightOfContents();
     }
 
@@ -204,7 +239,8 @@ public class Drawing {
      *
      * @return the implicit total height of all contents in this drawing
      */
-    private BigDecimal getImplicitHeightOfContents() {
+    private BigDecimal getImplicitHeightOfContents()
+    {
         return this.getImplicitYMaximum().subtract(this.getImplicitYMinimum());
     }
 
@@ -215,7 +251,8 @@ public class Drawing {
      *
      * @todo Remove this function and factor out of test cases.
      */
-    public BigDecimal getImplicitWidth() {
+    public BigDecimal getImplicitWidth()
+    {
         return this.getImplicitWidthOfContents();
     }
 
@@ -224,7 +261,8 @@ public class Drawing {
      *
      * @return the implicit total width of all contents in this drawing
      */
-    private BigDecimal getImplicitWidthOfContents() {
+    private BigDecimal getImplicitWidthOfContents()
+    {
         assert this.getImplicitXMaximum().compareTo(this.getImplicitXMinimum()) >= 0 :
                 "The implicit x-coordinate maximum must be greater than or equal to the implicit x-coordinate minimum.";
         return this.getImplicitXMaximum().subtract(this.getImplicitXMinimum());
@@ -236,11 +274,14 @@ public class Drawing {
      * The maximum x-coordinate is the right edge of the drawing.
      */
     @NotNull
-    private BigDecimal getImplicitXMaximum() {
+    private BigDecimal getImplicitXMaximum()
+    {
         BigDecimal xMaximum = BigDecimal.ZERO;
-        for (Shape content : this.contents) {
+        for (Shape content : this.contents)
+        {
             BigDecimal xMaximumCurrent = content.getImplicitXMaximum();
-            if (xMaximumCurrent.compareTo(xMaximum) > 0) {
+            if (xMaximumCurrent.compareTo(xMaximum) > 0)
+            {
                 xMaximum = xMaximumCurrent;
             }
         }
@@ -253,11 +294,14 @@ public class Drawing {
      * The minimum x-coordinate is the leftmost edge of the drawing.
      */
     @NotNull
-    private BigDecimal getImplicitXMinimum() {
+    private BigDecimal getImplicitXMinimum()
+    {
         BigDecimal xMinimum = BigDecimal.ZERO;
-        for (Shape content : this.contents) {
+        for (Shape content : this.contents)
+        {
             BigDecimal xMinimumCurrent = content.getImplicitXMinimum();
-            if (xMinimumCurrent.compareTo(xMinimum) < 0) {
+            if (xMinimumCurrent.compareTo(xMinimum) < 0)
+            {
                 xMinimum = xMinimumCurrent;
             }
         }
@@ -270,11 +314,14 @@ public class Drawing {
      * The maximum y-coordinate is the top edge of the drawing.
      */
     @NotNull
-    private BigDecimal getImplicitYMaximum() {
+    private BigDecimal getImplicitYMaximum()
+    {
         BigDecimal yMaximum = BigDecimal.ZERO;
-        for (Shape content : this.contents) {
+        for (Shape content : this.contents)
+        {
             BigDecimal yMaximumCurrent = content.getImplicitYMaximum();
-            if (yMaximumCurrent.compareTo(yMaximum) > 0) {
+            if (yMaximumCurrent.compareTo(yMaximum) > 0)
+            {
                 yMaximum = yMaximumCurrent;
             }
         }
@@ -287,11 +334,14 @@ public class Drawing {
      * The minimum y-coordinate is the leftmost edge of the drawing.
      */
     @NotNull
-    private BigDecimal getImplicitYMinimum() {
+    private BigDecimal getImplicitYMinimum()
+    {
         BigDecimal yMinimum = BigDecimal.valueOf(Double.MAX_VALUE);
-        for (Shape content : this.contents) {
+        for (Shape content : this.contents)
+        {
             BigDecimal yMinimumCurrent = content.getImplicitXMinimum();
-            if (yMinimumCurrent.compareTo(yMinimum) < 0) {
+            if (yMinimumCurrent.compareTo(yMinimum) < 0)
+            {
                 yMinimum = yMinimumCurrent;
             }
         }
@@ -307,7 +357,8 @@ public class Drawing {
      *                      the type is Float to match the SVG spec for numeric precision.
      * @return A string of valid SVG that depicts the drawing within the bounds of drawingWidth and drawingHeight.
      */
-    public String getSVG(Float drawingWidth, Float drawingHeight) {
+    public String getSVG(Float drawingWidth, Float drawingHeight)
+    {
         this.setExplicitDimensions(drawingWidth, drawingHeight);
         return this.getSVG();
     }
@@ -319,7 +370,8 @@ public class Drawing {
      * @param drawingHeight The desired height of the output; the type is Integer to allow for common use cases.
      * @return A string of valid SVG that depicts the drawing within the bounds of drawingWidth and drawingHeight.
      */
-    public String getSVG(Integer drawingWidth, Integer drawingHeight) {
+    public String getSVG(Integer drawingWidth, Integer drawingHeight)
+    {
         this.setExplicitDimensions(drawingWidth.floatValue(), drawingHeight.floatValue());
         return this.getSVG();
     }
@@ -332,13 +384,15 @@ public class Drawing {
      * @return A string of valid SVG that depicts the drawing within the bounds of the explicit width and height
      * @todo Make this method protected and adjust unit tests accordingly.
      */
-    public @NotNull String getSVG() {
+    public @NotNull String getSVG()
+    {
 
         StringBuilder svgBuilder = new StringBuilder("<?xml version=\"1.0\" standalone=\"no\"?>");
         svgBuilder.append("<svg xmlns=\"http://www.w3.org/2000/svg\"");
 
         BigDecimal bdWidth = this.getExplicitWidth();
-        if (bdWidth != null) {
+        if (bdWidth != null)
+        {
             svgBuilder.append(" width=\"");
             String width = SVG.toString(this.getExplicitWidth());
             svgBuilder.append(width);
@@ -346,7 +400,8 @@ public class Drawing {
         }
 
         BigDecimal bdHeight = this.getExplicitHeight();
-        if (bdHeight != null) {
+        if (bdHeight != null)
+        {
             svgBuilder.append(" height=\"");
             String height = SVG.toString(this.getExplicitHeight());
             svgBuilder.append(height);
@@ -355,8 +410,10 @@ public class Drawing {
 
         svgBuilder.append(">");
 
-        if (this.contents != null) {
-            for (Shape content : this.contents) {
+        if (this.contents != null)
+        {
+            for (Shape content : this.contents)
+            {
                 svgBuilder.append(content.getSVG());
             }
         }
@@ -370,7 +427,8 @@ public class Drawing {
      *
      * @return the number of items in this Drawing
      */
-    public Integer length() {
+    public Integer length()
+    {
         return Integer.valueOf(contents.size());
     }
 
@@ -382,12 +440,14 @@ public class Drawing {
      * @param explicitWidthOfDrawingFloat  The explicit width of the Drawing.
      * @param explicitHeightOfDrawingFloat The explicit height of the Drawing.
      */
-    public void setExplicitDimensions(Float explicitWidthOfDrawingFloat, Float explicitHeightOfDrawingFloat) {
+    public void setExplicitDimensions(Float explicitWidthOfDrawingFloat, Float explicitHeightOfDrawingFloat)
+    {
 
         this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
         this.setExplicitWidth(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
 
-        if (this.length() > 0) {
+        if (this.length() > 0)
+        {
 
             BigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
             assert implicitHeightOfContents.compareTo(BigDecimal.ZERO) > 0 :
@@ -402,7 +462,8 @@ public class Drawing {
             BigDecimal explicitAspectRatio = this.getExplicitWidth().divide(this.getExplicitHeight(),
                     SisuBigDecimal.mcOperations);
 
-            if (implicitAspectRatio.compareTo(explicitAspectRatio) > 0) {
+            if (implicitAspectRatio.compareTo(explicitAspectRatio) > 0)
+            {
                 // The implicit aspect ratio is greater than the explicit aspect ratio.
                 // Therefore, we are constrained by width.
                 BigDecimal adjustedHeight = this.getExplicitWidth().divide(explicitAspectRatio,
@@ -410,14 +471,18 @@ public class Drawing {
                 this.setExplicitHeight(adjustedHeight);
                 this.setExplicitWidth(this.getExplicitWidth());
 
-            } else {
+            }
+            else
+            {
                 // The implicit aspect ratio is less than or equal to the explicit aspect ratio
                 // Therefore, we are constrained by height
                 BigDecimal adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio);
                 this.setExplicitWidth(adjustedWidth);
                 this.setExplicitHeight(this.getExplicitHeight());
             }
-        } else {
+        }
+        else
+        {
             // The drawing has no contents, so just set its dimensions
             this.setExplicitWidth(this.getExplicitWidth());
             this.setExplicitHeight(this.getExplicitHeight());
@@ -434,7 +499,8 @@ public class Drawing {
      * @param explicitWidthOfDrawing  The explicit width of the Drawing.
      * @param explicitHeightOfDrawing The explicit height of the Drawing.
      */
-    public void setExplicitDimensions(Integer explicitWidthOfDrawing, Integer explicitHeightOfDrawing) {
+    public void setExplicitDimensions(Integer explicitWidthOfDrawing, Integer explicitHeightOfDrawing)
+    {
         this.setExplicitDimensions(explicitWidthOfDrawing.floatValue(), explicitHeightOfDrawing.floatValue());
     }
 
@@ -447,70 +513,24 @@ public class Drawing {
      *
      * @param drawingExplicitHeight The explicit height of the drawing.
      */
-    private void setExplicitHeight(@NotNull BigDecimal drawingExplicitHeight) {
+    private void setExplicitHeight(@NotNull BigDecimal drawingExplicitHeight)
+    {
+        // Note that this line can change the explicit to implicit ratio
         this.explicitHeight = drawingExplicitHeight;
-        if (this.getExplicitWidth() == null) {
+        if (this.getExplicitWidth() == null)
+        {
             // If this Drawing does not have an explicit width, make the explicit width of the Drawing as wide as it
             // needs to be to accommodate the contents.
             this.explicitWidth = this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio());
         }
         BigDecimal explicitToImplicitRatio = this.getExplicitToImplicitRatio();
         assert explicitToImplicitRatio != null : "The explicit to implicit ratio of a drawing cannot be null.";
-        if (this.length() > 0) {
-            BigDecimal explicitHeightOfShape;
-            BigDecimal explicitWidthOfShape;
-            BigDecimal implicitHeightOfShape;
-            BigDecimal implicitWidthOfShape;
+        if (this.length() > 0)
+        {
             // Set the heights and explicit y positions of all contents
-            for (Shape shape : this.contents) {
-
-                implicitHeightOfShape = shape.getImplicitHeight();
-                assert implicitHeightOfShape != null : "The implicit height of a shape cannot be null.";
-                explicitHeightOfShape = implicitHeightOfShape.multiply(this.getExplicitToImplicitRatio(),
-                        SisuBigDecimal.mcOperations);
-                shape.setExplicitHeight(explicitHeightOfShape);
-
-                implicitWidthOfShape = shape.getImplicitWidth();
-                explicitWidthOfShape = implicitWidthOfShape.multiply(this.getExplicitToImplicitRatio(),
-                        SisuBigDecimal.mcOperations);
-                assert explicitWidthOfShape != null :
-                        "The explicit width of a shape should not be null after it has been set";
-                shape.setExplicitWidth(explicitWidthOfShape);
-                assert shape.getExplicitWidth() != null :
-                        "The explicit width of a shape should not be null after it has been set";
-                assert shape.getExplicitWidth().doubleValue() == explicitWidthOfShape.doubleValue() :
-                        "A shape should not change width for no reason. Was " + explicitWidthOfShape.toPlainString() +
-                                ", now " + shape.getExplicitWidth().toPlainString();
-
-                BigDecimal implicitYPositionOfShape = shape.getImplicitYPosition();
-                // The fudge factor is to shift the diagram down so that all y-coordinates are positive
-                BigDecimal fudgeFactorY = this.getImplicitYMaximum();
-                BigDecimal fudgedImplicitYPositionOfShape = implicitYPositionOfShape.subtract(fudgeFactorY);
-                fudgedImplicitYPositionOfShape = fudgedImplicitYPositionOfShape.negate();
-                assert fudgedImplicitYPositionOfShape.compareTo(BigDecimal.ZERO) >= 0 :
-                        "All y-coordinates must be positive.";
-                BigDecimal explicitYPositionOfShape =
-                        fudgedImplicitYPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
-                                SisuBigDecimal.mcOperations);
-                shape.setExplicitYPosition(explicitYPositionOfShape);
-                assert SisuBigDecimal.create(shape.getExplicitWidth())
-                        .compareToFuzzy(SisuBigDecimal.create(explicitWidthOfShape),
-                                SisuBigDecimal.mcComparisons) == 0:
-                        "A shape should not change width for no reason. Was " + explicitWidthOfShape.toPlainString() +
-                                ", now " + shape.getExplicitWidth().toPlainString();
-
-                BigDecimal implicitXPositionOfShape = shape.getImplicitXPosition();
-                BigDecimal fudgeFactorX = this.getImplicitXMinimum();
-                BigDecimal fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX);
-                assert fudgedImplicitXPositionOfShape.compareTo(BigDecimal.ZERO) >= 0 :
-                        "All x-coordinates must be positive.";
-                shape.setExplicitXPosition(fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
-                        SisuBigDecimal.mcOperations));
-                assert SisuBigDecimal.create(shape.getExplicitWidth())
-                        .compareToFuzzy(SisuBigDecimal.create(explicitWidthOfShape),
-                                SisuBigDecimal.mcComparisons) == 0:
-                        "A shape should not change width for no reason. Was " + explicitWidthOfShape.toPlainString() +
-                                ", now " + shape.getExplicitWidth().toPlainString();
+            for (Shape shape : this.contents)
+            {
+                updateShape(shape);
             }
         }
     }
@@ -521,7 +541,8 @@ public class Drawing {
      * @param height the explicit height of the Drawing; it is a Float to match
      *               the precision allowed by the SVG spec.
      */
-    public void setExplicitHeight(Float height) {
+    public void setExplicitHeight(Float height)
+    {
         this.setExplicitHeight(BigDecimal.valueOf(height));
     }
 
@@ -530,96 +551,35 @@ public class Drawing {
      *
      * @param height The explicit height of the Drawing; it is an Integer to allow for common use cases.
      */
-    public void setExplicitHeight(Integer height) {
+    public void setExplicitHeight(Integer height)
+    {
         this.setExplicitHeight(BigDecimal.valueOf(height));
     }
 
     /**
      * Set the explicit width of this drawing.
-     * <p>
+     *
      * This method also calculates the explicit widths and x positions of all the drawing's contents.
      *
      * @param drawingExplicitWidth The explicit width of the drawing.
      */
-    private void setExplicitWidth(@NotNull BigDecimal drawingExplicitWidth) {
-        BigDecimal explicitToImplicitRatio = this.getExplicitToImplicitRatio();
-        assert this.getExplicitToImplicitRatio().compareTo(explicitToImplicitRatio) == 0 :
-                "The explicit to implicit ratio of a drawing should not change, old: "
-                        + explicitToImplicitRatio.toPlainString()
-                        + " new: " + this.getExplicitToImplicitRatio().toPlainString();
+    private void setExplicitWidth(@NotNull BigDecimal drawingExplicitWidth)
+    {
         // Note that this line can change the explicit to implicit ratio
         this.explicitWidth = drawingExplicitWidth;
-        if (this.getExplicitHeight() == null) {
+        if (this.getExplicitHeight() == null)
+        {
             // If this Drawing does not have an explicit height, make the explicit height of the Drawing as tall as
             // necessary to accommodate the contents.
-            logger.atFine().log("Implicit width of contents: %f", this.getImplicitWidthOfContents());
-            logger.atFine().log("Explicit to implicit ratio: %f", explicitToImplicitRatio);
-            this.explicitHeight = this.getImplicitWidthOfContents().multiply(explicitToImplicitRatio);
-            logger.atFine().log("Explicit height: %f", this.getExplicitHeight());
+            this.explicitHeight = this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio(),
+                    SisuBigDecimal.mcOperations);
         }
-        assert explicitToImplicitRatio != null :
-                "The explicit to implicit ratio of a drawing cannot equal null.";
-        //assert this.getExplicitToImplicitRatio().compareTo(explicitToImplicitRatio) == 0 :
-        //        "The explicit to implicit ratio of a drawing should not change, old: "
-        //                + explicitToImplicitRatio.toPlainString()
-        //                + " new: " + this.getExplicitToImplicitRatio().toPlainString();
-
-        if (this.length() > 0) {
-            BigDecimal explicitHeightOfShape;
-            BigDecimal explicitWidthOfShape;
-            BigDecimal implicitHeightOfShape;
-            BigDecimal implicitWidthOfShape;
-
+        if (this.length() > 0)
+        {
             // Set the explicit widths and x positions of all contents
-            for (Shape shape : this.contents) {
-                implicitWidthOfShape = shape.getImplicitWidth();
-                assert implicitWidthOfShape != null : "The implicit width of a shape cannot be null.";
-                explicitWidthOfShape = implicitWidthOfShape.multiply(this.getExplicitToImplicitRatio(),
-                        SisuBigDecimal.mcOperations);
-                shape.setExplicitWidth(explicitWidthOfShape);
-
-                implicitHeightOfShape = shape.getImplicitHeight();
-                explicitHeightOfShape = implicitHeightOfShape.multiply(this.getExplicitToImplicitRatio(),
-                        SisuBigDecimal.mcOperations);
-                assert explicitHeightOfShape != null :
-                        "The explicit height of a shape should not be null after it has been set";
-                shape.setExplicitHeight(explicitHeightOfShape);
-                assert shape.getExplicitHeight() != null :
-                        "The explicit height of a shape should not be null after it has been set";
-                assert shape.getExplicitHeight().doubleValue() == explicitHeightOfShape.doubleValue() :
-                        "A shape should not change height for no reason. Was " + explicitHeightOfShape.toPlainString() +
-                                ", now " + shape.getExplicitHeight().toPlainString();
-
-                // Set the explicit y position of the current Shape
-                BigDecimal implicitYPositionOfShape = shape.getImplicitYPosition();
-                // The fudge factor is to shift the diagram down so that all y-coordinates are positive
-                BigDecimal fudgeFactorY = this.getImplicitYMaximum();
-                BigDecimal fudgedImplicitYPositionOfShape = implicitYPositionOfShape.subtract(fudgeFactorY);
-                fudgedImplicitYPositionOfShape = fudgedImplicitYPositionOfShape.negate();
-                assert fudgedImplicitYPositionOfShape.compareTo(BigDecimal.ZERO) >= 0 :
-                        "All y-coordinates must be positive.";
-                BigDecimal explicitYPositionOfShape =
-                        fudgedImplicitYPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
-                                SisuBigDecimal.mcOperations);
-                shape.setExplicitYPosition(explicitYPositionOfShape);
-                assert shape.getExplicitWidth().doubleValue() == explicitWidthOfShape.doubleValue() :
-                        "A shape should not change width for no reason. Was " + explicitWidthOfShape.toPlainString() +
-                                ", now " + shape.getExplicitWidth().toPlainString();
-
-                // Set the explicit y position of the current Shape
-                BigDecimal implicitXPositionOfShape = shape.getImplicitXPosition();
-                BigDecimal fudgeFactorX = this.getImplicitXMinimum();
-                BigDecimal fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX);
-                assert fudgedImplicitXPositionOfShape.compareTo(BigDecimal.ZERO) >= 0 :
-                        "All x-coordinates must be positive.";
-                shape.setExplicitXPosition(fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
-                        SisuBigDecimal.mcOperations));
-                assert shape.getExplicitWidth().doubleValue() == explicitWidthOfShape.doubleValue() :
-                        "A shape should not change width for no reason. Was " + explicitWidthOfShape.toPlainString() +
-                                ", now " + shape.getExplicitWidth().toPlainString();
-                //assert this.getExplicitToImplicitRatio().compareTo(explicitToImplicitRatio) == 0 :
-                //        "The explicit to implicit ratio of a drawing should not change";
-
+            for (Shape shape : this.contents)
+            {
+                this.updateShape(shape);
             }
         }
     }
@@ -630,7 +590,8 @@ public class Drawing {
      * @param width the explicit width of the Drawing; it is a Float
      *              to match the precision allowed by the SVG spec.
      */
-    public void setExplicitWidth(Float width) {
+    public void setExplicitWidth(Float width)
+    {
         this.setExplicitWidth(BigDecimal.valueOf(width));
 
     }
@@ -640,8 +601,65 @@ public class Drawing {
      *
      * @param width The explicit width of the Drawing; it is an Integer to allow for common use cases.
      */
-    public void setExplicitWidth(Integer width) {
+    public void setExplicitWidth(Integer width)
+    {
         this.setExplicitWidth(BigDecimal.valueOf(width));
+    }
+
+    /**
+     * Update the width and x-coordinate, height and y-coordinate of a single shape
+     *
+     * Called by setExplicitWidth()
+     *
+     */
+    private void updateShape(Shape shape)
+    {
+        this.updateExplicitHeightOfShape(shape);
+        this.updateExplicitWidthOfShape(shape);
+        this.updateExplicitYPositionOfShape(shape);
+        this.updateExplicitXPositionOfShape(shape);
+    }
+
+
+    private void updateExplicitHeightOfShape(Shape shape)
+    {
+        // Update explicit height of shape
+        BigDecimal implicitHeightOfShape = shape.getImplicitHeight();
+        BigDecimal explicitHeightOfShape = implicitHeightOfShape.multiply(this.getExplicitToImplicitRatio(),
+                SisuBigDecimal.mcOperations);
+        shape.setExplicitHeight(explicitHeightOfShape);
+    }
+
+    private void updateExplicitWidthOfShape(Shape shape)
+    {
+        // Update explicit width of shape
+        BigDecimal implicitWidthOfShape = shape.getImplicitWidth();
+        BigDecimal explicitWidthOfShape = implicitWidthOfShape.multiply(this.getExplicitToImplicitRatio(),
+                SisuBigDecimal.mcOperations);
+        shape.setExplicitWidth(explicitWidthOfShape);
+    }
+    private void updateExplicitXPositionOfShape(Shape shape)
+    {
+        // Update the explicit x position of the Shape
+        BigDecimal implicitXPositionOfShape = shape.getImplicitXPosition();
+        BigDecimal fudgeFactorX = this.getImplicitXMinimum();
+        BigDecimal fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX);
+        shape.setExplicitXPosition(fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
+                SisuBigDecimal.mcOperations));
+    }
+
+    private void updateExplicitYPositionOfShape(Shape shape)
+    {
+        // Update the explicit y position of the Shape
+        BigDecimal implicitYPositionOfShape = shape.getImplicitYPosition();
+        // The fudge factor is to shift the diagram down so that all y-coordinates are positive
+        BigDecimal fudgeFactorY = this.getImplicitYMaximum();
+        BigDecimal fudgedImplicitYPositionOfShape = implicitYPositionOfShape.subtract(fudgeFactorY);
+        fudgedImplicitYPositionOfShape = fudgedImplicitYPositionOfShape.negate();
+        BigDecimal explicitYPositionOfShape =
+                fudgedImplicitYPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
+                        SisuBigDecimal.mcOperations);
+        shape.setExplicitYPosition(explicitYPositionOfShape);
     }
 
     /**
@@ -650,12 +668,15 @@ public class Drawing {
      * @param filename The name of the file to which to write.
      * @throws IOException If there is a problem writing to the file.
      */
-    public void writeToFile(String filename) throws IOException {
+    public void writeToFile(String filename) throws IOException
+    {
         String str = this.getSVG();
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename)))
+        {
             writer.write(str);
         }
-        catch (IOException e) {
+        catch (IOException e)
+        {
             throw (e);
         }
     }
