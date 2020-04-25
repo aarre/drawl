@@ -375,7 +375,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x other number
      * @return addition multiplication result
      */
-    public SisuBigDecimal mul(SisuBigDecimal x)
+    public SisuBigDecimal multiply(SisuBigDecimal x)
     {
         return new SisuBigDecimal(number.multiply(x.number));
     }
@@ -386,9 +386,9 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x other number
      * @return addition multiplication result
      */
-    public SisuBigDecimal mul(double x)
+    public SisuBigDecimal multiply(double x)
     {
-        return mul(new SisuBigDecimal(String.valueOf(x)));
+        return multiply(new SisuBigDecimal(String.valueOf(x)));
     }
 
     /**
