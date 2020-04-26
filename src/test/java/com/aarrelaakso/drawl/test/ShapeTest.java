@@ -256,6 +256,13 @@ public abstract class ShapeTest {
             then(implicitYPositionCenter).isEqualByComparingTo(BigDecimal.ZERO);
         }
 
+        @Test
+        @DisplayName("When a Shape is created, then it has an implicit top y position")
+        void whenShapeIsCreatedThenItHasAnImplicitTopYPosition() {
+            BigDecimal implicitYPositionTop = shape1.getImplicitYPositionTop();
+            then(implicitYPositionTop).isEqualByComparingTo(BigDecimal.valueOf(-0.5));
+        }
+
     }
 
 

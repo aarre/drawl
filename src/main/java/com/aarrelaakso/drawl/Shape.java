@@ -255,13 +255,23 @@ public class Shape
     }
 
     /**
-     * Get the implicit y position of this Shape.
+     * Get the implicit y position of the center of this Shape.
      *
-     * @return The implicit y position of this Shape.
+     * @return The implicit y position of the center of this Shape.
      */
     public BigDecimal getImplicitYPositionCenter()
     {
         return this.implicitYPositionCenter;
+    }
+
+    /**
+     * Get the implicit y position of the top of this Shape.
+     *
+     * @return The implicit y position of the top of this Shape.
+     */
+    public BigDecimal getImplicitYPositionTop()
+    {
+        return this.getImplicitYPositionCenter().subtract(this.getImplicitHalfHeight());
     }
 
     /**
