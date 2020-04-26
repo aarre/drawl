@@ -415,6 +415,6 @@ public class Shape {
         BigDecimal thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(),
                 SisuBigDecimal.mcOperations);
         this.setImplicitXPosition(thisImplicitXPosition);
-        
+
     }
 }
