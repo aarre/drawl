@@ -3,6 +3,7 @@ package com.aarrelaakso.drawl.test;
 import com.aarrelaakso.drawl.SisuBigDecimal;
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Shape;
+import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.jetbrains.annotations.NotNull;
@@ -18,6 +19,14 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Unit tests of Drawing - Shape (abstract)")
 public abstract class DrawingTestShape {
+
+    private static final FluentLogger logger;
+
+    static
+    {
+        logger = FluentLogger.forEnclosingClass();
+
+    }
 
     Drawing drawing;
     Shape shape1;
@@ -294,18 +303,58 @@ public abstract class DrawingTestShape {
     void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrectWithSetExplicitDimensions(@NotNull BDDSoftAssertions softly) {
         Integer sizeOfDrawing = 100;
         BigDecimal EXPECTED = BigDecimal.valueOf(sizeOfDrawing).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
-        drawing.add(shape1);
-        drawing.add(shape1);
-        shape2.setRightOf(shape1);
-        drawing.setExplicitDimensions(sizeOfDrawing, sizeOfDrawing);
-        BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
-        BigDecimal explicitYPosition2 = shape2.getExplicitYPosition();
 
+        logger.atFine().log("Adding shape1");
+        drawing.add(shape1);
+        BigDecimal implicitYPosition1 = shape1.getImplicitYPosition();
+        softly.then(implicitYPosition1)
+                .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
+                        + " expected explicit y position: (" + 0 + ")")
+                .isEqualByComparingTo(BigDecimal.ZERO);
+
+        logger.atFine().log("Adding shape2");
+        drawing.add(shape2);
+        BigDecimal implicitYPosition2 = shape2.getImplicitYPosition();
+        softly.then(implicitYPosition2)
+                .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
+                        + " expected explicit y position: (" + 0 + ")")
+                .isEqualByComparingTo(BigDecimal.ZERO);
+
+        logger.atFine().log("Setting shape2 right of shape1");
+        shape2.setRightOf(shape1);
+        logger.atFine().log("Getting implicit y position of shape1");
+        implicitYPosition1 = shape1.getImplicitYPosition();
+        softly.then(implicitYPosition1)
+                .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
+                        + " expected explicit y position: (" + 0 + ")")
+                .isEqualByComparingTo(BigDecimal.ZERO);
+        logger.atFine().log("Getting implicit y position of shape2");
+        implicitYPosition2 = shape2.getImplicitYPosition();
+        softly.then(implicitYPosition2)
+                .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
+                        + " expected explicit y position: (" + 0 + ")")
+                .isEqualByComparingTo(BigDecimal.ZERO);
+
+        logger.atFine().log("Setting explicit dimensions");
+        drawing.setExplicitDimensions(sizeOfDrawing, sizeOfDrawing);
+        implicitYPosition1 = shape1.getImplicitYPosition();
+        softly.then(implicitYPosition1)
+                .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
+                        + " expected explicit y position: (" + 0 + ")")
+                .isEqualByComparingTo(BigDecimal.ZERO);
+        implicitYPosition2 = shape1.getImplicitYPosition();
+        softly.then(implicitYPosition2)
+                .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
+                        + " expected explicit y position: (" + 0 + ")")
+                .isEqualByComparingTo(BigDecimal.ZERO);
+
+        BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
         softly.then(explicitYPosition1)
                 .as("The actual explicit y position of Shape 1 (" + explicitYPosition1 + ") should match the"
                         + " expected explicit y position: (" + EXPECTED + ")")
                 .isEqualByComparingTo(EXPECTED);
 
+        BigDecimal explicitYPosition2 = shape2.getExplicitYPosition();
         softly.then(explicitYPosition2)
                 .as("The actual explicit y position of Shape 2 (" + explicitYPosition2 + ") should match the"
                         + " expected explicit y position: (" + EXPECTED + ")")
