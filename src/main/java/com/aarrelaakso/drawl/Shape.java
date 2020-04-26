@@ -25,8 +25,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.math.BigDecimal;
 
-public class Shape {
+public class Shape
+{
 
+    private static final String CANNOT_BE_ADJACENT_TO_ITSELF = "A circle cannot be adjacent to itself";
     private static final FluentLogger logger;
 
     static
@@ -35,33 +37,26 @@ public class Shape {
 
     }
 
-    private static final String CANNOT_BE_ADJACENT_TO_ITSELF = "A circle cannot be adjacent to itself";
-
-    /**
-     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
-     */
-    private BigDecimal explicitXPosition = BigDecimal.ZERO;
-
-    /**
-     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
-     */
-    private BigDecimal explicitYPosition = BigDecimal.ZERO;
-
     /**
      * The angle, in degrees, to a neighbor. 0 represents up, and 90 degrees represents to the right.
      */
     private BigDecimal angleToNeighbor;
-
     /**
      * The explicit height of a Shape defaults to <code>null</code> to indicate it that has not yet been set.
      */
     private BigDecimal explicitHeight;
-
     /**
      * The explicit width of a Shape defaults to <code>null</code> to indicate that it has not yet been set.
      */
     private BigDecimal explicitWidth;
-
+    /**
+     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
+     */
+    private BigDecimal explicitXPosition = BigDecimal.ZERO;
+    /**
+     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
+     */
+    private BigDecimal explicitYPosition = BigDecimal.ZERO;
     /**
      * The implicit height of a default Shape is 1.
      */
@@ -91,9 +86,11 @@ public class Shape {
      * @return the Shape to the right of this one, if any;
      * <code>null</code> otherwise.
      */
-    public Shape getAbove() {
+    public Shape getAbove()
+    {
         Shape returnValue = null;
-        if (this.angleToNeighbor.equals(BigDecimal.valueOf(0))) {
+        if (this.angleToNeighbor.equals(BigDecimal.valueOf(0)))
+        {
             returnValue = this.neighbor;
         }
         return returnValue;
@@ -105,9 +102,11 @@ public class Shape {
      * @return the Shape to below this one, if any;
      * <code>null</code> otherwise.
      */
-    public Shape getBelow() {
+    public Shape getBelow()
+    {
         Shape returnValue = null;
-        if (this.angleToNeighbor.equals(BigDecimal.valueOf(180))) {
+        if (this.angleToNeighbor.equals(BigDecimal.valueOf(180)))
+        {
             returnValue = this.neighbor;
         }
         return returnValue;
@@ -122,7 +121,8 @@ public class Shape {
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @Nullable
-    public BigDecimal getExplicitHeight() {
+    public BigDecimal getExplicitHeight()
+    {
         return this.explicitHeight;
     }
 
@@ -134,7 +134,8 @@ public class Shape {
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @Nullable
-    public BigDecimal getExplicitWidth() {
+    public BigDecimal getExplicitWidth()
+    {
         return this.explicitWidth;
     }
 
@@ -145,7 +146,8 @@ public class Shape {
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
-    public BigDecimal getExplicitXPosition() {
+    public BigDecimal getExplicitXPosition()
+    {
         return this.explicitXPosition;
     }
 
@@ -156,16 +158,19 @@ public class Shape {
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
-    public BigDecimal getExplicitYPosition() {
+    public BigDecimal getExplicitYPosition()
+    {
         logger.atFine().log("Returning explicit y position of Shape %s as: %f", this.toString(), this.explicitYPosition.floatValue());
         return this.explicitYPosition;
     }
 
-    protected BigDecimal getImplicitHalfHeight() {
+    protected BigDecimal getImplicitHalfHeight()
+    {
         return this.getImplicitHeight().divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
     }
 
-    protected BigDecimal getImplicitHalfWidth() {
+    protected BigDecimal getImplicitHalfWidth()
+    {
         return this.getImplicitWidth().divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
     }
 
@@ -174,7 +179,8 @@ public class Shape {
      *
      * @return the implicit height of this Shape
      */
-    public BigDecimal getImplicitHeight() {
+    public BigDecimal getImplicitHeight()
+    {
         return this.implicitHeight;
     }
 
@@ -183,7 +189,8 @@ public class Shape {
      *
      * @return the implicit width of this Shape
      */
-    public BigDecimal getImplicitWidth() {
+    public BigDecimal getImplicitWidth()
+    {
         return this.getImplicitHeight();
     }
 
@@ -192,7 +199,8 @@ public class Shape {
      *
      * @return The implicit maximum (rightmost) x-position of this Shape.
      */
-    protected BigDecimal getImplicitXMaximum() {
+    protected BigDecimal getImplicitXMaximum()
+    {
         return this.getImplicitXPositionCenter().add(this.getImplicitHalfWidth());
     }
 
@@ -201,12 +209,29 @@ public class Shape {
      *
      * @return The implicit minimum (leftmost) x-position of this Shape.
      */
-    protected BigDecimal getImplicitXMinimum() {
+    protected BigDecimal getImplicitXMinimum()
+    {
         return this.getImplicitXPositionCenter().subtract(this.getImplicitHalfWidth());
     }
 
-    public BigDecimal getImplicitXPositionCenter() {
+    /**
+     * Get the implicit x position of the center of this Shape.
+     *
+     * @return The implicit x position of the center of this Shape.
+     */
+    public BigDecimal getImplicitXPositionCenter()
+    {
         return this.implicitXPositionCenter;
+    }
+
+    /**
+     * Get the implicit x position of the left edge of this Shape.
+     *
+     * @return The implicit x position of the left edge of this Shape.
+     */
+    public BigDecimal getImplicitXPositionLeft()
+    {
+        return this.getImplicitXPositionCenter().subtract(this.getImplicitHalfWidth());
     }
 
     /**
@@ -214,7 +239,8 @@ public class Shape {
      *
      * @return The implicit maximum (topmost) x-position of this Shape.
      */
-    protected BigDecimal getImplicitYMaximum() {
+    protected BigDecimal getImplicitYMaximum()
+    {
         return this.getImplicitYPositionCenter().add(this.getImplicitHalfHeight());
     }
 
@@ -223,7 +249,8 @@ public class Shape {
      *
      * @return The implicit minimum (bottommost) y-position of this Shape.
      */
-    protected BigDecimal getImplicitYMinimum() {
+    protected BigDecimal getImplicitYMinimum()
+    {
         return this.getImplicitYPositionCenter().subtract(this.getImplicitHalfHeight());
     }
 
@@ -232,7 +259,8 @@ public class Shape {
      *
      * @return The implicit y position of this Shape.
      */
-    public BigDecimal getImplicitYPositionCenter() {
+    public BigDecimal getImplicitYPositionCenter()
+    {
         return this.implicitYPositionCenter;
     }
 
@@ -242,13 +270,19 @@ public class Shape {
      * @return the Shape to the right of this one, if any;
      * <code>null</code> otherwise.
      */
-    public Shape getLeftOf() {
+    public Shape getLeftOf()
+    {
         Shape returnValue = null;
-        if (this.angleToNeighbor == null) {
+        if (this.angleToNeighbor == null)
+        {
             returnValue = null;
-        } else if (this.angleToNeighbor.equals(BigDecimal.valueOf(90))) {
+        }
+        else if (this.angleToNeighbor.equals(BigDecimal.valueOf(90)))
+        {
             returnValue = this.neighbor;
-        } else {
+        }
+        else
+        {
             returnValue = null;
         }
         return returnValue;
@@ -260,19 +294,26 @@ public class Shape {
      * @return the Shape to the left of this one, if any;
      * <code>null</code> otherwise.
      */
-    public Shape getRightOf() {
+    public Shape getRightOf()
+    {
         Shape returnValue = null;
-        if (this.angleToNeighbor == null) {
+        if (this.angleToNeighbor == null)
+        {
             returnValue = null;
-        } else if (this.angleToNeighbor.compareTo(BigDecimal.valueOf(270)) == 0) {
+        }
+        else if (this.angleToNeighbor.compareTo(BigDecimal.valueOf(270)) == 0)
+        {
             returnValue = this.neighbor;
-        } else {
+        }
+        else
+        {
             returnValue = null;
         }
         return returnValue;
     }
 
-    public String getSVG() {
+    public String getSVG()
+    {
         return "oops";
     }
 
@@ -281,8 +322,10 @@ public class Shape {
      *
      * @param shape The circle that will be below this one.
      */
-    public void setAbove(Shape shape) {
-        if (shape == this) {
+    public void setAbove(Shape shape)
+    {
+        if (shape == this)
+        {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
@@ -298,8 +341,10 @@ public class Shape {
      *
      * @param shape The circle that will be above this one.
      */
-    public void setBelow(Shape shape) {
-        if (shape == this) {
+    public void setBelow(Shape shape)
+    {
+        if (shape == this)
+        {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
@@ -318,7 +363,8 @@ public class Shape {
      *               been assigned an explicit height.
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
-    public void setExplicitHeight(@Nullable BigDecimal height) {
+    public void setExplicitHeight(@Nullable BigDecimal height)
+    {
         this.explicitHeight = height;
     }
 
@@ -330,48 +376,55 @@ public class Shape {
      *              been assigned an explicit width.
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
-    public void setExplicitWidth(@Nullable BigDecimal width) {
+    public void setExplicitWidth(@Nullable BigDecimal width)
+    {
         this.explicitWidth = width;
     }
 
-    protected void setExplicitXPosition(BigDecimal x) {
+    protected void setExplicitXPosition(BigDecimal x)
+    {
         this.explicitXPosition = x;
     }
 
-    public void setExplicitXPosition(Integer x) {
+    public void setExplicitXPosition(Integer x)
+    {
         this.explicitXPosition = BigDecimal.valueOf(x);
     }
 
     /**
      * Set the explicit y position of this Shape.
-     *
+     * <p>
      * The y position marks the vertical position of the Shape's center. The explicit coordinate system is the
      * common Cartesian coordinate system, with higher values of y upward and lower values of y downward.
      *
      * @param y The explicit y position of this Shape.
      */
-    protected void setExplicitYPosition(BigDecimal y) {
+    protected void setExplicitYPosition(BigDecimal y)
+    {
         this.explicitYPosition = y;
         logger.atFine().log("Setting explicit y position of Shape %s to: %f", this.toString(), y.floatValue());
     }
 
-    public void setExplicitYPosition(Integer y) {
+    public void setExplicitYPosition(Integer y)
+    {
         this.setExplicitYPosition(BigDecimal.valueOf(y));
     }
 
-    public void setImplicitXPositionCenter(BigDecimal x) {
+    public void setImplicitXPositionCenter(BigDecimal x)
+    {
         this.implicitXPositionCenter = x;
     }
 
     /**
      * Set the implicit y position of this Shape.
-     *
+     * <p>
      * The y position marks the vertical position of the Shape's center. In the implicit coordinate system, higher
      * values of y are upward whereas lower values of y are downward.
      *
      * @param y The implicit y position of this Shape.
      */
-    public void setImplicitYPositionCenter(BigDecimal y) {
+    public void setImplicitYPositionCenter(BigDecimal y)
+    {
         this.implicitYPositionCenter = y;
     }
 
@@ -380,8 +433,10 @@ public class Shape {
      *
      * @param shape the Shape to the right of this one
      */
-    public void setLeftOf(Shape shape) {
-        if (shape == this) {
+    public void setLeftOf(Shape shape)
+    {
+        if (shape == this)
+        {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
@@ -403,8 +458,10 @@ public class Shape {
      *
      * @param shape the Shape to the left of this one
      */
-    public void setRightOf(Shape shape) {
-        if (shape == this) {
+    public void setRightOf(Shape shape)
+    {
+        if (shape == this)
+        {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
