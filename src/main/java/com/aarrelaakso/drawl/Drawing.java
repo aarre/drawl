@@ -28,7 +28,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.HashSet;
-import java.util.logging.Level;
 
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
@@ -62,15 +61,16 @@ public class Drawing
     public void add(Shape shape)
     {
         if (this.isExplicitSet()) {
-            throw new UnsupportedOperationException("Cannot add shapes after a drawing's explicit dimensions have been set");
+            throw new UnsupportedOperationException("Cannot add shapes after setting a drawing's explicit dimensions");
         }
         contents.add(shape);
+        this.updateShape(shape);
     }
 
     /**
      * Get the explicit height of this Drawing.
      *
-     * @return The explicit height of this Drawing. Can be null if the drawing has length zero or the explicit
+     * @return The explicit height of this Drawing, or null if the drawing has length zero or the explicit
      * dimensions have not been set.
      */
     @Nullable
@@ -130,7 +130,7 @@ public class Drawing
      *
      * @return The ratio of explicit measures to implicit measures for this diagram as a whole.
      */
-    // TODO [Issue #1] Make this method private and factor out of unit tests.
+    // TODO [Issue No. 1] Make this method private and factor out of unit tests.
     public BigDecimal getExplicitToImplicitRatio()
     {
         BigDecimal explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
@@ -148,7 +148,7 @@ public class Drawing
     /**
      * Get the explicit width of this Drawing.
      *
-     * @return The explicit width of this Drawing. Can be null if the drawing has length zero or the explicit
+     * @return The explicit width of this Drawing, or null if the drawing has length zero or the explicit
      * dimensions have not been set.
      */
     @Nullable
@@ -162,7 +162,7 @@ public class Drawing
      *
      * @return The ratio of the explicit width of this drawing to the implicit width of its contents.
      */
-    // TODO [Issue #1] Make this method private and factor out of unit tests.
+    // TODO [Issue No. 1] Make this method private and factor out of unit tests.
     @NotNull
     public BigDecimal getExplicitWidthPerImplicitWidth()
     {
@@ -212,7 +212,7 @@ public class Drawing
      * Provides public access to the implicit height of the contents.
      *
      */
-    // TODO [Issue #1] Make this method private and factor out of unit tests.
+    // TODO [Issue No. 1] Make this method private and factor out of unit tests.
     public BigDecimal getImplicitHeight()
     {
         return this.getImplicitHeightOfContents();
@@ -234,7 +234,7 @@ public class Drawing
      * Provides public access to the implicit width of the contents for testing.
      *
      */
-    // TODO [Issue #1] Make this method private and factor out of unit tests.
+    // TODO [Issue No. 1] Make this method private and factor out of unit tests.
     public BigDecimal getImplicitWidth()
     {
         return this.getImplicitWidthOfContents();
@@ -260,7 +260,7 @@ public class Drawing
     @NotNull
     private BigDecimal getImplicitXMaximum()
     {
-        BigDecimal xMaximum = BigDecimal.ZERO;
+        BigDecimal xMaximum = BigDecimal.valueOf(Double.MIN_VALUE);
         for (Shape content : this.contents)
         {
             BigDecimal xMaximumCurrent = content.getImplicitXMaximum();
@@ -268,6 +268,10 @@ public class Drawing
             {
                 xMaximum = xMaximumCurrent;
             }
+        }
+        if (xMaximum.compareTo(BigDecimal.valueOf(Double.MIN_VALUE)) == 0)
+        {
+            xMaximum = BigDecimal.ZERO;
         }
         return xMaximum;
     }
@@ -280,7 +284,7 @@ public class Drawing
     @NotNull
     private BigDecimal getImplicitXMinimum()
     {
-        BigDecimal xMinimum = BigDecimal.ZERO;
+        BigDecimal xMinimum = BigDecimal.valueOf(Double.MAX_VALUE);
         for (Shape content : this.contents)
         {
             BigDecimal xMinimumCurrent = content.getImplicitXMinimum();
@@ -288,6 +292,10 @@ public class Drawing
             {
                 xMinimum = xMinimumCurrent;
             }
+        }
+        if (xMinimum.compareTo(BigDecimal.valueOf(Double.MAX_VALUE)) == 0)
+        {
+            xMinimum = BigDecimal.ZERO;
         }
         return xMinimum;
     }
@@ -300,7 +308,7 @@ public class Drawing
     @NotNull
     private BigDecimal getImplicitYMaximum()
     {
-        BigDecimal yMaximum = BigDecimal.ZERO;
+        BigDecimal yMaximum = BigDecimal.valueOf(Double.MIN_VALUE);
         for (Shape content : this.contents)
         {
             BigDecimal yMaximumCurrent = content.getImplicitYMaximum();
@@ -309,13 +317,17 @@ public class Drawing
                 yMaximum = yMaximumCurrent;
             }
         }
+        if (yMaximum.compareTo(BigDecimal.valueOf(Double.MIN_VALUE)) == 0)
+        {
+            yMaximum = BigDecimal.ZERO;
+        }
         return yMaximum;
     }
 
     /**
      * Get the minimum y-coordinate of this drawing in implicit terms.
      * <p>
-     * The minimum y-coordinate is the leftmost edge of the drawing.
+     * The minimum y-coordinate is the bottom edge of the drawing.
      */
     @NotNull
     private BigDecimal getImplicitYMinimum()
@@ -323,11 +335,15 @@ public class Drawing
         BigDecimal yMinimum = BigDecimal.valueOf(Double.MAX_VALUE);
         for (Shape content : this.contents)
         {
-            BigDecimal yMinimumCurrent = content.getImplicitXMinimum();
+            BigDecimal yMinimumCurrent = content.getImplicitYMinimum();
             if (yMinimumCurrent.compareTo(yMinimum) < 0)
             {
                 yMinimum = yMinimumCurrent;
             }
+        }
+        if (yMinimum.compareTo(BigDecimal.valueOf(Double.MAX_VALUE)) == 0)
+        {
+            yMinimum = BigDecimal.ZERO;
         }
         return yMinimum;
     }
@@ -367,11 +383,12 @@ public class Drawing
      *
      * @return A string of valid SVG that depicts the drawing within the bounds of the explicit width and height
      */
-    // TODO [Issue #1] Make this method private and factor out of unit tests.
+    // TODO [Issue No. 1] Make this method private and factor out of unit tests.
     public @NotNull String getSVG()
     {
 
         StringBuilder svgBuilder = new StringBuilder("<?xml version=\"1.0\" standalone=\"no\"?>");
+        //noinspection SpellCheckingInspection
         svgBuilder.append("<svg xmlns=\"http://www.w3.org/2000/svg\"");
 
         BigDecimal bdWidth = this.getExplicitWidth();
@@ -442,15 +459,20 @@ public class Drawing
      */
     public void setExplicitDimensions(Float explicitWidthOfDrawingFloat, Float explicitHeightOfDrawingFloat)
     {
+        logger.atFine().log("Entering setExplicitDimensions");
         // Calculate implicit aspect ratio
         BigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
         BigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
-        BigDecimal implicitAspectRatio = implicitWidthOfContents.divide(implicitHeightOfContents,
-                SisuBigDecimal.mcOperations);
+        BigDecimal implicitAspectRatio = BigDecimal.ZERO;
+        if (implicitHeightOfContents.compareTo(BigDecimal.ZERO) > 0)
+        {
+            implicitAspectRatio = implicitWidthOfContents.divide(implicitHeightOfContents,
+                    SisuBigDecimal.mcOperations);
+        }
 
         // Calculate explicit aspect ratio
-        this.setExplicitWidthInternal(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
         this.setExplicitHeightInternal(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
+        this.setExplicitWidthInternal(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
         BigDecimal explicitAspectRatio = this.getExplicitWidth().divide(this.getExplicitHeight(),
                 SisuBigDecimal.mcOperations);
 
@@ -469,15 +491,18 @@ public class Drawing
             // The implicit aspect ratio is less than or equal to the explicit aspect ratio.
             // Therefore, we are constrained by height.
             // Adjust the width to match.
-            BigDecimal adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio);
+            BigDecimal adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio,
+                    SisuBigDecimal.mcOperations);
             this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
             this.setExplicitWidth(adjustedWidth);
         }
         else
         {
             // The two aspect ratios are equal, so no adjustment is necessary
-            this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
+            logger.atFine().log("No adjustment necessary");
             this.setExplicitWidth(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
+            this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
+
         }
 
     }
@@ -623,7 +648,7 @@ public class Drawing
     }
 
 
-    private void updateExplicitHeightOfShape(Shape shape)
+    private void updateExplicitHeightOfShape(@NotNull Shape shape)
     {
         // Update explicit height of shape
         BigDecimal implicitHeightOfShape = shape.getImplicitHeight();
@@ -632,7 +657,7 @@ public class Drawing
         shape.setExplicitHeight(explicitHeightOfShape);
     }
 
-    private void updateExplicitWidthOfShape(Shape shape)
+    private void updateExplicitWidthOfShape(@NotNull Shape shape)
     {
         // Update explicit width of shape
         BigDecimal implicitWidthOfShape = shape.getImplicitWidth();
@@ -640,7 +665,7 @@ public class Drawing
                 SisuBigDecimal.mcOperations);
         shape.setExplicitWidth(explicitWidthOfShape);
     }
-    private void updateExplicitXPositionOfShape(Shape shape)
+    private void updateExplicitXPositionOfShape(@NotNull Shape shape)
     {
         // Update the explicit x position of the Shape
         BigDecimal implicitXPositionOfShape = shape.getImplicitXPosition();
@@ -650,7 +675,7 @@ public class Drawing
                 SisuBigDecimal.mcOperations));
     }
 
-    private void updateExplicitYPositionOfShape(Shape shape)
+    private void updateExplicitYPositionOfShape(@NotNull Shape shape)
     {
         // Update the explicit y position of the Shape
         BigDecimal implicitYPositionOfShape = shape.getImplicitYPosition();
@@ -665,14 +690,17 @@ public class Drawing
         BigDecimal implicitHeightOfContents = this.getImplicitHeight();
         BigDecimal explicitHeightOfContents = implicitHeightOfContents.multiply(explicitToImplicitRatio,
                 SisuBigDecimal.mcOperations);
-        BigDecimal explicitHeightOfDrawing = this.getExplicitHeight();
-        BigDecimal explicitVerticalWhitespace = explicitHeightOfDrawing.subtract(explicitHeightOfContents,
-                SisuBigDecimal.mcOperations);
-        BigDecimal explicitVerticalWhitespaceBelow = explicitVerticalWhitespace.divide(SisuBigDecimal.TWO,
-                SisuBigDecimal.mcOperations);
-        BigDecimal finalExplicitYPositionOfShape = explicitYPositionOfShape.add(explicitVerticalWhitespaceBelow,
-                SisuBigDecimal.mcOperations);
-        shape.setExplicitYPosition(finalExplicitYPositionOfShape);
+        if (this.isExplicitSet())
+        {
+            BigDecimal explicitHeightOfDrawing = this.getExplicitHeight();
+            BigDecimal explicitVerticalWhitespace = explicitHeightOfDrawing.subtract(explicitHeightOfContents,
+                    SisuBigDecimal.mcOperations);
+            BigDecimal explicitVerticalWhitespaceBelow = explicitVerticalWhitespace.divide(SisuBigDecimal.TWO,
+                    SisuBigDecimal.mcOperations);
+            BigDecimal finalExplicitYPositionOfShape = explicitYPositionOfShape.add(explicitVerticalWhitespaceBelow,
+                    SisuBigDecimal.mcOperations);
+            shape.setExplicitYPosition(finalExplicitYPositionOfShape);
+        }
     }
 
     /**
@@ -687,10 +715,6 @@ public class Drawing
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename)))
         {
             writer.write(str);
-        }
-        catch (IOException e)
-        {
-            throw (e);
         }
     }
 }

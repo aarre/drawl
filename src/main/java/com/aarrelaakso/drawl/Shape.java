@@ -40,12 +40,12 @@ public class Shape {
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
-    protected BigDecimal explicitXPosition = BigDecimal.ZERO;
+    private BigDecimal explicitXPosition = BigDecimal.ZERO;
 
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
-    protected BigDecimal explicitYPosition = BigDecimal.ZERO;
+    private BigDecimal explicitYPosition = BigDecimal.ZERO;
 
     /**
      * The angle, in degrees, to a neighbor. 0 represents up, and 90 degrees represents to the right.
@@ -157,7 +157,7 @@ public class Shape {
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
     public BigDecimal getExplicitYPosition() {
-        logger.atFine().log("Returning explicit y position as: %f", this.explicitYPosition.floatValue());
+        logger.atFine().log("Returning explicit y position of Shape %s as: %f", this.toString(), this.explicitYPosition.floatValue());
         return this.explicitYPosition;
     }
 
@@ -227,6 +227,11 @@ public class Shape {
         return this.getImplicitYPosition().subtract(this.getImplicitHalfHeight());
     }
 
+    /**
+     * Get the implicit y position of this Shape.
+     *
+     * @return The implicit y position of this Shape.
+     */
     public BigDecimal getImplicitYPosition() {
         return this.implicitYPosition;
     }
@@ -347,7 +352,7 @@ public class Shape {
      */
     protected void setExplicitYPosition(BigDecimal y) {
         this.explicitYPosition = y;
-        logger.atFine().log("Setting explicit y position to: %f", y.floatValue());
+        logger.atFine().log("Setting explicit y position of Shape %s to: %f", this.toString(), y.floatValue());
     }
 
     public void setExplicitYPosition(Integer y) {
@@ -381,10 +386,16 @@ public class Shape {
         }
         this.neighbor = shape;
         this.angleToNeighbor = BigDecimal.valueOf(90);
+
+        // Set the x position of this shape
         BigDecimal leftBoundaryOfShape = shape.getImplicitXMinimum();
         BigDecimal thisImplicitXPosition = leftBoundaryOfShape.subtract(this.getImplicitHalfWidth(),
                 SisuBigDecimal.mcOperations);
         this.setImplicitXPosition(thisImplicitXPosition);
+
+        // Set the y position of this shape to match the one it is to the left of
+        this.setImplicitYPosition(shape.getImplicitYPosition());
+        this.setExplicitYPosition(shape.getExplicitYPosition());
     }
 
     /**
@@ -398,12 +409,12 @@ public class Shape {
         }
         this.neighbor = shape;
         this.angleToNeighbor = BigDecimal.valueOf(270);
+
+        // Set this x position of this shape
         BigDecimal rightBoundaryOfShape = shape.getImplicitXMaximum();
         BigDecimal thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(),
                 SisuBigDecimal.mcOperations);
         this.setImplicitXPosition(thisImplicitXPosition);
-
-        // Set the y position of this shape to match the one it is to the right of
-        this.setImplicitYPosition(shape.getImplicitYPosition());
+        
     }
 }
