@@ -30,6 +30,9 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.logging.Level;
 
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
+
 public class Drawing
 {
 
@@ -58,6 +61,9 @@ public class Drawing
      */
     public void add(Shape shape)
     {
+        if (this.isExplicitSet()) {
+            throw new UnsupportedOperationException("Cannot add shapes after a drawing's explicit dimensions have been set");
+        }
         contents.add(shape);
     }
 
@@ -400,6 +406,23 @@ public class Drawing
     }
 
     /**
+     * Indicate whether the explicit dimensions of this Drawing have been set.
+     *
+     * @return
+     */
+    private boolean isExplicitSet()
+    {
+        if ((this.explicitWidth != null) || (this.explicitHeight != null))
+        {
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
+
+    /**
      * Get the number of items in this Drawing
      *
      * @return the number of items in this Drawing
@@ -419,53 +442,44 @@ public class Drawing
      */
     public void setExplicitDimensions(Float explicitWidthOfDrawingFloat, Float explicitHeightOfDrawingFloat)
     {
+        // Calculate implicit aspect ratio
+        BigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
+        BigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
+        BigDecimal implicitAspectRatio = implicitWidthOfContents.divide(implicitHeightOfContents,
+                SisuBigDecimal.mcOperations);
 
-        this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
-        this.setExplicitWidth(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
+        // Calculate explicit aspect ratio
+        this.setExplicitWidthInternal(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
+        this.setExplicitHeightInternal(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
+        BigDecimal explicitAspectRatio = this.getExplicitWidth().divide(this.getExplicitHeight(),
+                SisuBigDecimal.mcOperations);
 
-        if (this.length() > 0)
+        if (implicitAspectRatio.compareTo(explicitAspectRatio) > 0)
         {
-
-            BigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
-            assert implicitHeightOfContents.compareTo(BigDecimal.ZERO) > 0 :
-                    "Implicit height of contents cannot be zero or negative.";
-
-            BigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
-            assert implicitWidthOfContents.compareTo(BigDecimal.ZERO) > 0 :
-                    "Implicit width of contents cannot be zero or negative.";
-
-            BigDecimal implicitAspectRatio = implicitWidthOfContents.divide(implicitHeightOfContents,
+            // The implicit aspect ratio is greater than the explicit aspect ratio.
+            // Therefore, we are constrained by width.
+            // Adjust the height to match.
+            BigDecimal adjustedHeight = this.getExplicitWidth().divide(explicitAspectRatio,
                     SisuBigDecimal.mcOperations);
-            BigDecimal explicitAspectRatio = this.getExplicitWidth().divide(this.getExplicitHeight(),
-                    SisuBigDecimal.mcOperations);
-
-            if (implicitAspectRatio.compareTo(explicitAspectRatio) > 0)
-            {
-                // The implicit aspect ratio is greater than the explicit aspect ratio.
-                // Therefore, we are constrained by width.
-                // Adjust the height to match.
-                BigDecimal adjustedHeight = this.getExplicitWidth().divide(explicitAspectRatio,
-                        SisuBigDecimal.mcOperations);
-                this.setExplicitHeight(adjustedHeight);
-                this.setExplicitWidth(this.getExplicitWidth());
-
-            }
-            else
-            {
-                // The implicit aspect ratio is less than or equal to the explicit aspect ratio.
-                // Therefore, we are constrained by height.
-                // Adjust the width to match.
-                BigDecimal adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio);
-                this.setExplicitWidth(adjustedWidth);
-                this.setExplicitHeight(this.getExplicitHeight());
-            }
+            this.setExplicitHeight(adjustedHeight);
+            this.setExplicitWidth(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
+        }
+        else if (implicitAspectRatio.compareTo(explicitAspectRatio) < 0)
+        {
+            // The implicit aspect ratio is less than or equal to the explicit aspect ratio.
+            // Therefore, we are constrained by height.
+            // Adjust the width to match.
+            BigDecimal adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio);
+            this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
+            this.setExplicitWidth(adjustedWidth);
         }
         else
         {
-            // The drawing has no contents, so just set its dimensions
-            this.setExplicitWidth(this.getExplicitWidth());
-            this.setExplicitHeight(this.getExplicitHeight());
+            // The two aspect ratios are equal, so no adjustment is necessary
+            this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
+            this.setExplicitWidth(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
         }
+
     }
 
     /**
@@ -515,7 +529,6 @@ public class Drawing
      */
     private void setExplicitHeightInternal(@NotNull BigDecimal drawingExplicitHeight)
     {
-        logger.atFine().log("Setting explicit height to: " + drawingExplicitHeight.toPlainString());
         this.explicitHeight = drawingExplicitHeight;
     }
 
@@ -592,7 +605,6 @@ public class Drawing
      */
     private void setExplicitWidthInternal(@NotNull BigDecimal drawingExplicitWidth)
     {
-        logger.atFine().log("Setting explicit width to: " + drawingExplicitWidth.toPlainString());
         this.explicitWidth = drawingExplicitWidth;
     }
 

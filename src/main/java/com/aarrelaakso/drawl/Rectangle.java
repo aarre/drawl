@@ -20,14 +20,14 @@ public class Rectangle extends Shape {
         svgBuilder.append(" height=\"");
         svgBuilder.append(this.getExplicitHeight());
         svgBuilder.append("\"");
-        if (this.explicitXPosition != null) {
+        if (this.getExplicitXPosition() != null) {
             svgBuilder.append(" cx=\"");
-            svgBuilder.append(SVG.toString(this.explicitXPosition));
+            svgBuilder.append(SVG.toString(this.getExplicitXPosition()));
             svgBuilder.append("\"");
         }
-        if (this.explicitYPosition != null) {
+        if (this.getExplicitYPosition() != null) {
             svgBuilder.append(" cy=\"");
-            svgBuilder.append(SVG.toString(this.explicitYPosition));
+            svgBuilder.append(SVG.toString(this.getExplicitYPosition()));
             svgBuilder.append("\"");
         }
         svgBuilder.append(" />");

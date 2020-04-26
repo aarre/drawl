@@ -544,19 +544,19 @@ class DrawingTestXPositionExplicit extends Specification {
         drawing.setExplicitWidth(width)
         drawing.setExplicitHeight(height)
         BigDecimal bigWidth = BigDecimal.valueOf(width)
-        BigDecimal bigX1 = bigWidth.divide(6 as BigDecimal, SisuBigDecimal.mcOperations)
-        BigDecimal bigX2 = bigWidth.divide(2 as BigDecimal, SisuBigDecimal.mcOperations)
+        SisuBigDecimal circle1ExpectedXPosition = SisuBigDecimal.create(bigWidth.divide(6 as BigDecimal, SisuBigDecimal.mcOperations))
+        SisuBigDecimal circle2ExpectedXPosition = SisuBigDecimal.create(bigWidth.divide(2 as BigDecimal, SisuBigDecimal.mcOperations))
         BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations)
-        BigDecimal bigX3 = bigWidth.multiply(fraction, SisuBigDecimal.mcOperations)
-        float bigX1f = bigX1.floatValue()
-        float bigX2f = bigX2.floatValue()
-        float bigX3f = bigX3.floatValue()
+        SisuBigDecimal circle3ExpectedXPosition = SisuBigDecimal.create(bigWidth.multiply(fraction, SisuBigDecimal.mcOperations))
+
+        SisuBigDecimal circle1ExplicitXPosition = SisuBigDecimal.create(circle1.getExplicitXPosition())
+        SisuBigDecimal circle2ExplicitXPosition = SisuBigDecimal.create(circle2.getExplicitXPosition())
+        SisuBigDecimal circle3ExplicitXPosition = SisuBigDecimal.create(circle3.getExplicitXPosition())
 
         then:
-        circle1.getExplicitXPosition().floatValue() == bigX1f
-        circle2.getExplicitXPosition().floatValue() == bigX2f
-        circle3.getExplicitXPosition().floatValue() == bigX3f
-
+        circle1ExplicitXPosition.compareToFuzzy(circle1ExpectedXPosition) == 0
+        circle2ExplicitXPosition.compareToFuzzy(circle2ExpectedXPosition) == 0
+        circle3ExplicitXPosition.compareToFuzzy(circle3ExpectedXPosition) == 0
     }
 
     def "X-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Circles, then their explicit x positions are correct"() {
