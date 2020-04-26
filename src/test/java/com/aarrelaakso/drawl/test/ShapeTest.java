@@ -1,14 +1,10 @@
 package com.aarrelaakso.drawl.test;
 
-import com.aarrelaakso.drawl.Circle;
-import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Shape;
-import com.aarrelaakso.drawl.SisuBigDecimal;
 import com.google.common.flogger.FluentLogger;
 import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.*;
@@ -65,8 +61,8 @@ public abstract class ShapeTest {
         @DisplayName("When you set a default Shape above a default Shape, its implicit y-coordinate is 1")
         void whenYouSetADefaultShapeAboveADefaultShapeItsImplicitYCoordinateIs1() {
             shape1.setAbove(shape2);
-            BigDecimal y1 = shape1.getImplicitYPosition();
-            BigDecimal y2 = shape2.getImplicitYPosition();
+            BigDecimal y1 = shape1.getImplicitYPositionCenter();
+            BigDecimal y2 = shape2.getImplicitYPositionCenter();
             assertEquals(0, BigDecimal.ONE.compareTo(y1));
             assertEquals(0, BigDecimal.ZERO.compareTo(y2));
         }
@@ -75,8 +71,8 @@ public abstract class ShapeTest {
         @DisplayName("When you set a default Shape below a default Shape, its implicit y-coordinate is -1")
         void whenYouSetADefaultShapeBelowADefaultShapeItsImplicitYCoordinateIsNeg1() {
             shape1.setBelow(shape2);
-            BigDecimal y1 = shape1.getImplicitYPosition();
-            BigDecimal y2 = shape2.getImplicitYPosition();
+            BigDecimal y1 = shape1.getImplicitYPositionCenter();
+            BigDecimal y2 = shape2.getImplicitYPositionCenter();
             assertEquals(0, y1.compareTo(BigDecimal.valueOf(-1)));
             assertEquals(0, y2.compareTo(BigDecimal.ZERO));
         }
@@ -174,7 +170,7 @@ public abstract class ShapeTest {
         @Test
         @DisplayName("Then its implicit y-coordinate is 0")
         void thenImplicitYPositionIs0() {
-            BigDecimal x = shape1.getImplicitYPosition();
+            BigDecimal x = shape1.getImplicitYPositionCenter();
             assertEquals(0, x.compareTo(BigDecimal.ZERO));
         }
 
@@ -239,6 +235,22 @@ public abstract class ShapeTest {
             then(implicitXPositionCenter).isEqualByComparingTo(BigDecimal.ZERO);
         }
     }
+
+    @Nested
+    @DisplayName("y position")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class yPosition {
+
+        @Test
+        @DisplayName("When a Shape is created, then it has an implicit center y position")
+        void whenShapeIsCreatedThenItHasAnImplicitCenterYPosition() {
+            BigDecimal implicitYPositionCenter = shape1.getImplicitYPositionCenter();
+            then(implicitYPositionCenter).isEqualByComparingTo(BigDecimal.ZERO);
+        }
+
+    }
+
+
 
 
 }
