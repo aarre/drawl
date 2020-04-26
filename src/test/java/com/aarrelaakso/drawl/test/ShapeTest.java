@@ -229,11 +229,19 @@ public abstract class ShapeTest {
     class xPosition {
 
         @Test
-        @DisplayName("When a Shape is created, then it should have an implicit center x position")
-        void whenAShapeIsCreatedItShouldHaveCenterXPosition() {
+        @DisplayName("When a Shape is created, then it has an implicit center x position")
+        void whenAShapeIsCreatedThenItHasAnImplicitCenterXPosition() {
             BigDecimal implicitXPositionCenter = shape1.getImplicitXPositionCenter();
             then(implicitXPositionCenter).isEqualByComparingTo(BigDecimal.ZERO);
         }
+
+        @Test
+        @DisplayName("When a Shape is created, then it has an implicit left x position")
+        void whenAShapeIsCreatedThenItHasAnImplicitLeftXPosition() {
+            BigDecimal implicitXPositionLeft = shape1.getImplicitXPositionLeft();
+            then(implicitXPositionLeft).isEqualByComparingTo(BigDecimal.valueOf(-0.5));
+        }
+
     }
 
     @Nested
