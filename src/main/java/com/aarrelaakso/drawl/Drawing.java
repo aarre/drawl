@@ -686,7 +686,7 @@ public class Drawing
     private void updateExplicitYPositionOfShape(@NotNull Shape shape)
     {
         // Update the explicit y position of the Shape
-        BigDecimal implicitYPositionOfShape = shape.getImplicitYPosition();
+        BigDecimal implicitYPositionOfShape = shape.getImplicitYPositionCenter();
         // The fudge factor is to shift the diagram down so that all y-coordinates are positive
         BigDecimal fudgeFactorY = this.getImplicitYMaximum();
         BigDecimal fudgedImplicitYPositionOfShape = implicitYPositionOfShape.subtract(fudgeFactorY);

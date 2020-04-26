@@ -163,7 +163,7 @@ public class Circle extends Shape
     @Override
     protected BigDecimal getImplicitYMaximum()
     {
-        return this.getImplicitYPosition().add(this.getImplicitRadius());
+        return this.getImplicitYPositionCenter().add(this.getImplicitRadius());
     }
 
     /**

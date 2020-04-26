@@ -75,11 +75,11 @@ public class Shape {
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
-    private BigDecimal implicitXPosition = BigDecimal.ZERO;
+    private BigDecimal implicitXPositionCenter = BigDecimal.ZERO;
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
-    private BigDecimal implicitYPosition = BigDecimal.ZERO;
+    private BigDecimal implicitYPositionCenter = BigDecimal.ZERO;
     /**
      * A shape adjacent to this one, if any
      */
@@ -206,7 +206,7 @@ public class Shape {
     }
 
     public BigDecimal getImplicitXPositionCenter() {
-        return this.implicitXPosition;
+        return this.implicitXPositionCenter;
     }
 
     /**
@@ -215,7 +215,7 @@ public class Shape {
      * @return The implicit maximum (topmost) x-position of this Shape.
      */
     protected BigDecimal getImplicitYMaximum() {
-        return this.getImplicitYPosition().add(this.getImplicitHalfHeight());
+        return this.getImplicitYPositionCenter().add(this.getImplicitHalfHeight());
     }
 
     /**
@@ -224,7 +224,7 @@ public class Shape {
      * @return The implicit minimum (bottommost) y-position of this Shape.
      */
     protected BigDecimal getImplicitYMinimum() {
-        return this.getImplicitYPosition().subtract(this.getImplicitHalfHeight());
+        return this.getImplicitYPositionCenter().subtract(this.getImplicitHalfHeight());
     }
 
     /**
@@ -232,8 +232,8 @@ public class Shape {
      *
      * @return The implicit y position of this Shape.
      */
-    public BigDecimal getImplicitYPosition() {
-        return this.implicitYPosition;
+    public BigDecimal getImplicitYPositionCenter() {
+        return this.implicitYPositionCenter;
     }
 
     /**
@@ -290,7 +290,7 @@ public class Shape {
         BigDecimal topBoundaryOfShape = shape.getImplicitYMaximum();
         BigDecimal thisImplicitYPosition = topBoundaryOfShape.add(this.getImplicitHalfHeight(),
                 SisuBigDecimal.mcOperations);
-        this.setImplicitYPosition(thisImplicitYPosition);
+        this.setImplicitYPositionCenter(thisImplicitYPosition);
     }
 
     /**
@@ -307,7 +307,7 @@ public class Shape {
         BigDecimal bottomBoundaryOfShape = shape.getImplicitYMinimum();
         BigDecimal thisImplicitYPosition = bottomBoundaryOfShape.subtract(this.getImplicitHalfHeight(),
                 SisuBigDecimal.mcOperations);
-        this.setImplicitYPosition(thisImplicitYPosition);
+        this.setImplicitYPositionCenter(thisImplicitYPosition);
     }
 
     /**
@@ -359,8 +359,8 @@ public class Shape {
         this.setExplicitYPosition(BigDecimal.valueOf(y));
     }
 
-    public void setImplicitXPosition(BigDecimal x) {
-        this.implicitXPosition = x;
+    public void setImplicitXPositionCenter(BigDecimal x) {
+        this.implicitXPositionCenter = x;
     }
 
     /**
@@ -371,8 +371,8 @@ public class Shape {
      *
      * @param y The implicit y position of this Shape.
      */
-    public void setImplicitYPosition(BigDecimal y) {
-        this.implicitYPosition = y;
+    public void setImplicitYPositionCenter(BigDecimal y) {
+        this.implicitYPositionCenter = y;
     }
 
     /**
@@ -391,10 +391,10 @@ public class Shape {
         BigDecimal leftBoundaryOfShape = shape.getImplicitXMinimum();
         BigDecimal thisImplicitXPosition = leftBoundaryOfShape.subtract(this.getImplicitHalfWidth(),
                 SisuBigDecimal.mcOperations);
-        this.setImplicitXPosition(thisImplicitXPosition);
+        this.setImplicitXPositionCenter(thisImplicitXPosition);
 
         // Set the y position of this shape to match the one it is to the left of
-        this.setImplicitYPosition(shape.getImplicitYPosition());
+        this.setImplicitYPositionCenter(shape.getImplicitYPositionCenter());
         this.setExplicitYPosition(shape.getExplicitYPosition());
     }
 
@@ -414,7 +414,7 @@ public class Shape {
         BigDecimal rightBoundaryOfShape = shape.getImplicitXMaximum();
         BigDecimal thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(),
                 SisuBigDecimal.mcOperations);
-        this.setImplicitXPosition(thisImplicitXPosition);
+        this.setImplicitXPositionCenter(thisImplicitXPosition);
 
     }
 }

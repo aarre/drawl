@@ -354,7 +354,7 @@ public abstract class DrawingTestShape
 
         logger.atFine().log("Adding shape1");
         drawing.add(shape1);
-        BigDecimal implicitYPosition1 = shape1.getImplicitYPosition();
+        BigDecimal implicitYPosition1 = shape1.getImplicitYPositionCenter();
         softly.then(implicitYPosition1)
                 .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
@@ -362,7 +362,7 @@ public abstract class DrawingTestShape
 
         logger.atFine().log("Adding shape2");
         drawing.add(shape2);
-        BigDecimal implicitYPosition2 = shape2.getImplicitYPosition();
+        BigDecimal implicitYPosition2 = shape2.getImplicitYPositionCenter();
         softly.then(implicitYPosition2)
                 .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
@@ -371,13 +371,13 @@ public abstract class DrawingTestShape
         logger.atFine().log("Setting shape2 right of shape1");
         shape2.setRightOf(shape1);
         logger.atFine().log("Getting implicit y position of shape1");
-        implicitYPosition1 = shape1.getImplicitYPosition();
+        implicitYPosition1 = shape1.getImplicitYPositionCenter();
         softly.then(implicitYPosition1)
                 .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
                 .isEqualByComparingTo(BigDecimal.ZERO);
         logger.atFine().log("Getting implicit y position of shape2");
-        implicitYPosition2 = shape2.getImplicitYPosition();
+        implicitYPosition2 = shape2.getImplicitYPositionCenter();
         softly.then(implicitYPosition2)
                 .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
@@ -385,12 +385,12 @@ public abstract class DrawingTestShape
 
         logger.atFine().log("Setting explicit dimensions");
         drawing.setExplicitDimensions(sizeOfDrawing, sizeOfDrawing);
-        implicitYPosition1 = shape1.getImplicitYPosition();
+        implicitYPosition1 = shape1.getImplicitYPositionCenter();
         softly.then(implicitYPosition1)
                 .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
                 .isEqualByComparingTo(BigDecimal.ZERO);
-        implicitYPosition2 = shape1.getImplicitYPosition();
+        implicitYPosition2 = shape1.getImplicitYPositionCenter();
         softly.then(implicitYPosition2)
                 .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
