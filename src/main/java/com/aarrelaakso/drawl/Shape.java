@@ -41,22 +41,27 @@ public class Shape
      * The angle, in degrees, to a neighbor. 0 represents up, and 90 degrees represents to the right.
      */
     private BigDecimal angleToNeighbor;
+
     /**
      * The explicit height of a Shape defaults to <code>null</code> to indicate it that has not yet been set.
      */
     private BigDecimal explicitHeight;
+
     /**
      * The explicit width of a Shape defaults to <code>null</code> to indicate that it has not yet been set.
      */
     private BigDecimal explicitWidth;
+
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
-    private BigDecimal explicitXPosition = BigDecimal.ZERO;
+    private BigDecimal explicitXPositionCenter = BigDecimal.ZERO;
+
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
-    private BigDecimal explicitYPosition = BigDecimal.ZERO;
+    private BigDecimal explicitYPositionCenter = BigDecimal.ZERO;
+
     /**
      * The implicit height of a default Shape is 1.
      */
@@ -71,10 +76,12 @@ public class Shape
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
     private BigDecimal implicitXPositionCenter = BigDecimal.ZERO;
+
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
     private BigDecimal implicitYPositionCenter = BigDecimal.ZERO;
+
     /**
      * A shape adjacent to this one, if any
      */
@@ -112,6 +119,25 @@ public class Shape
         return returnValue;
     }
 
+    protected BigDecimal getExplicitHalfHeight()
+    {
+        if (this.getExplicitHeight() == null)
+        {
+            throw new UnsupportedOperationException("Cannot calculate explicit height without dimensions");
+        }
+        return this.getExplicitHeight().divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+    }
+
+
+
+    protected BigDecimal getExplicitHalfWidth()
+    {
+        if (this.getExplicitWidth() == null)
+        {
+            throw new UnsupportedOperationException("Cannot calculate explicit width without dimensions");
+        }
+        return this.getExplicitWidth().divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+    }
 
     /**
      * Get the explicit height of this Shape.
@@ -146,9 +172,14 @@ public class Shape
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
-    public BigDecimal getExplicitXPosition()
+    public BigDecimal getExplicitXPositionCenter()
     {
-        return this.explicitXPosition;
+        return this.explicitXPositionCenter;
+    }
+
+    public BigDecimal getExplicitXPositionLeft()
+    {
+        return this.explicitXPositionCenter.subtract(this.getExplicitHalfWidth());
     }
 
     /**
@@ -158,10 +189,16 @@ public class Shape
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
-    public BigDecimal getExplicitYPosition()
+    public BigDecimal getExplicitYPositionCenter()
     {
-        logger.atFine().log("Returning explicit y position of Shape %s as: %f", this.toString(), this.explicitYPosition.floatValue());
-        return this.explicitYPosition;
+        logger.atFine().log("Returning explicit y position of Shape %s as: %f", this.toString(),
+                this.explicitYPositionCenter.floatValue());
+        return this.explicitYPositionCenter;
+    }
+
+    public BigDecimal getExplicitYPositionTop()
+    {
+        return this.explicitYPositionCenter.subtract(this.getExplicitHalfHeight());
     }
 
     protected BigDecimal getImplicitHalfHeight()
@@ -382,7 +419,7 @@ public class Shape
      * Set the width of this Shape to an explicit value.
      * <p>
      *
-     * @param width the new width of this Shape. Can be <code>null</code> to indicate that this Shape has not yet
+     * @param width the new width of this Shape, or <code>null</code> to indicate that this Shape has not yet
      *              been assigned an explicit width.
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
@@ -391,14 +428,19 @@ public class Shape
         this.explicitWidth = width;
     }
 
-    protected void setExplicitXPosition(BigDecimal x)
+    protected void setExplicitXPositionCenter(BigDecimal x)
     {
-        this.explicitXPosition = x;
+        this.explicitXPositionCenter = x;
     }
 
-    public void setExplicitXPosition(Integer x)
+    public void setExplicitXPositionCenter(Integer x)
     {
-        this.explicitXPosition = BigDecimal.valueOf(x);
+        this.explicitXPositionCenter = BigDecimal.valueOf(x);
+    }
+
+    public void setExplicitYPosition(Integer y)
+    {
+        this.setExplicitYPositionCenter(BigDecimal.valueOf(y));
     }
 
     /**
@@ -409,15 +451,10 @@ public class Shape
      *
      * @param y The explicit y position of this Shape.
      */
-    protected void setExplicitYPosition(BigDecimal y)
+    protected void setExplicitYPositionCenter(BigDecimal y)
     {
-        this.explicitYPosition = y;
+        this.explicitYPositionCenter = y;
         logger.atFine().log("Setting explicit y position of Shape %s to: %f", this.toString(), y.floatValue());
-    }
-
-    public void setExplicitYPosition(Integer y)
-    {
-        this.setExplicitYPosition(BigDecimal.valueOf(y));
     }
 
     public void setImplicitXPositionCenter(BigDecimal x)
@@ -460,7 +497,7 @@ public class Shape
 
         // Set the y position of this shape to match the one it is to the left of
         this.setImplicitYPositionCenter(shape.getImplicitYPositionCenter());
-        this.setExplicitYPosition(shape.getExplicitYPosition());
+        this.setExplicitYPositionCenter(shape.getExplicitYPositionCenter());
     }
 
     /**

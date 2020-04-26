@@ -5,13 +5,13 @@ import java.math.BigDecimal;
 public class Rectangle extends Shape {
 
     public String getSVG() {
+        if (this.getExplicitWidth() == null || this.getExplicitHeight() == null)
+        {
+            throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
+        }
         String radiusStringValue;
         BigDecimal radiusExplicitValue = this.getImplicitHalfHeight();
-        if (radiusExplicitValue == null) {
-            throw new UnsupportedOperationException("Cannot draw a Rectangle with no height");
-        } else {
-            radiusStringValue = SVG.toString(radiusExplicitValue);
-        }
+        radiusStringValue = SVG.toString(radiusExplicitValue);
         StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<rect");
         svgBuilder.append(" width=\"");
@@ -20,14 +20,14 @@ public class Rectangle extends Shape {
         svgBuilder.append(" height=\"");
         svgBuilder.append(this.getExplicitHeight());
         svgBuilder.append("\"");
-        if (this.getExplicitXPosition() != null) {
-            svgBuilder.append(" cx=\"");
-            svgBuilder.append(SVG.toString(this.getExplicitXPosition()));
+        if (this.getExplicitXPositionLeft() != null) {
+            svgBuilder.append(" x=\"");
+            svgBuilder.append(SVG.toString(this.getExplicitXPositionLeft()));
             svgBuilder.append("\"");
         }
-        if (this.getExplicitYPosition() != null) {
-            svgBuilder.append(" cy=\"");
-            svgBuilder.append(SVG.toString(this.getExplicitYPosition()));
+        if (this.getExplicitYPositionTop() != null) {
+            svgBuilder.append(" y=\"");
+            svgBuilder.append(SVG.toString(this.getExplicitYPositionTop()));
             svgBuilder.append("\"");
         }
         svgBuilder.append(" />");

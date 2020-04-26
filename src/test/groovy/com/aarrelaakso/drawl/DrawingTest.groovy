@@ -1,6 +1,5 @@
 package com.aarrelaakso.drawl
 
-import java.util.concurrent.ThreadLocalRandom
 
 import spock.lang.Specification
 import org.apache.commons.lang3.StringUtils
@@ -459,9 +458,9 @@ class DrawingTestXPositionExplicit extends Specification {
         BigDecimal bigX3 = bigWidth.multiply(fraction, SisuBigDecimal.mcOperations)
 
         then:
-        circle1.getExplicitXPosition().compareTo(bigX1) == 0
-        circle2.getExplicitXPosition().compareTo(bigX2) == 0
-        circle3.getExplicitXPosition().compareTo(bigX3) == 0
+        circle1.getExplicitXPositionCenter().compareTo(bigX1) == 0
+        circle2.getExplicitXPositionCenter().compareTo(bigX2) == 0
+        circle3.getExplicitXPositionCenter().compareTo(bigX3) == 0
     }
 
     def "X-POSITION - EXPLICIT: When a drawing has three adjacent default Circles, then their explicit x-positions are correct (fixed)"() {
@@ -486,9 +485,9 @@ class DrawingTestXPositionExplicit extends Specification {
         BigDecimal bigX3 = bigWidth.multiply(fraction, SisuBigDecimal.mcOperations)
 
         then:
-        circle1.getExplicitXPosition().compareTo(bigX1) == 0
-        circle2.getExplicitXPosition().compareTo(bigX2) == 0
-        circle3.getExplicitXPosition().compareTo(bigX3) == 0
+        circle1.getExplicitXPositionCenter().compareTo(bigX1) == 0
+        circle2.getExplicitXPositionCenter().compareTo(bigX2) == 0
+        circle3.getExplicitXPositionCenter().compareTo(bigX3) == 0
     }
 
     def "X-POSITION - EXPLICIT: When a drawing has three adjacent default Circles, then their explicit x-positions are correct (max size)"() {
@@ -520,9 +519,9 @@ class DrawingTestXPositionExplicit extends Specification {
         bigX1f <= Float.MAX_VALUE
         bigX2f <= Float.MAX_VALUE
         bigX3f <= Float.MAX_VALUE
-        circle1.getExplicitXPosition().floatValue() == bigX1f
-        circle2.getExplicitXPosition().floatValue() == bigX2f
-        circle3.getExplicitXPosition().floatValue() == bigX3f
+        circle1.getExplicitXPositionCenter().floatValue() == bigX1f
+        circle2.getExplicitXPositionCenter().floatValue() == bigX2f
+        circle3.getExplicitXPositionCenter().floatValue() == bigX3f
 
     }
 
@@ -537,8 +536,8 @@ class DrawingTestXPositionExplicit extends Specification {
         circle2.setRightOf(circle1);
         drawing.setExplicitHeight(100)
         drawing.setExplicitWidth(100)
-        Integer explicitXPosition1 = circle1.getExplicitXPosition()
-        Integer explicitXPosition2 = circle2.getExplicitXPosition()
+        Integer explicitXPosition1 = circle1.getExplicitXPositionCenter()
+        Integer explicitXPosition2 = circle2.getExplicitXPositionCenter()
 
         then:
         explicitXPosition1.equals(Integer.valueOf(25))
@@ -563,8 +562,8 @@ class DrawingTestXPositionImplicit extends Specification {
         drawing.setExplicitHeight(height)
 
         then:
-        circle1.getExplicitXPosition().compareTo(BigDecimal.valueOf(width / 4)) == 0
-        circle2.getExplicitXPosition().compareTo(BigDecimal.valueOf((3 * width) / 4)) == 0
+        circle1.getExplicitXPositionCenter().compareTo(BigDecimal.valueOf(width / 4)) == 0
+        circle2.getExplicitXPositionCenter().compareTo(BigDecimal.valueOf((3 * width) / 4)) == 0
     }
 
 }

@@ -189,16 +189,16 @@ public class Circle extends Shape
         svgBuilder.append("r=\"");
         svgBuilder.append(radiusStringValue);
         svgBuilder.append("\"");
-        if (this.getExplicitXPosition() != null)
+        if (this.getExplicitXPositionCenter() != null)
         {
             svgBuilder.append(" cx=\"");
-            svgBuilder.append(SVG.toString(this.getExplicitXPosition()));
+            svgBuilder.append(SVG.toString(this.getExplicitXPositionCenter()));
             svgBuilder.append("\"");
         }
-        if (this.getExplicitYPosition() != null)
+        if (this.getExplicitYPositionCenter() != null)
         {
             svgBuilder.append(" cy=\"");
-            svgBuilder.append(SVG.toString(this.getExplicitYPosition()));
+            svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
             svgBuilder.append("\"");
         }
         svgBuilder.append(" />");

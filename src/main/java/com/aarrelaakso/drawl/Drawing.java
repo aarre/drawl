@@ -679,7 +679,7 @@ public class Drawing
         BigDecimal implicitXPositionOfShape = shape.getImplicitXPositionCenter();
         BigDecimal fudgeFactorX = this.getImplicitXMinimum();
         BigDecimal fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX);
-        shape.setExplicitXPosition(fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
+        shape.setExplicitXPositionCenter(fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
                 SisuBigDecimal.mcOperations));
     }
 
@@ -707,7 +707,7 @@ public class Drawing
                     SisuBigDecimal.mcOperations);
             BigDecimal finalExplicitYPositionOfShape = explicitYPositionOfShape.add(explicitVerticalWhitespaceBelow,
                     SisuBigDecimal.mcOperations);
-            shape.setExplicitYPosition(finalExplicitYPositionOfShape);
+            shape.setExplicitYPositionCenter(finalExplicitYPositionOfShape);
         }
     }
 
