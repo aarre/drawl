@@ -141,7 +141,7 @@ public class Circle extends Shape
     @Override
     protected BigDecimal getImplicitXMaximum()
     {
-        return this.getImplicitXPosition().add(this.getImplicitRadius());
+        return this.getImplicitXPositionCenter().add(this.getImplicitRadius());
     }
 
     /**
@@ -152,7 +152,7 @@ public class Circle extends Shape
     @Override
     protected BigDecimal getImplicitXMinimum()
     {
-        return this.getImplicitXPosition().subtract(this.getImplicitRadius());
+        return this.getImplicitXPositionCenter().subtract(this.getImplicitRadius());
     }
 
     /**

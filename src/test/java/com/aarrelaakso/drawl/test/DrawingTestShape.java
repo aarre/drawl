@@ -1,8 +1,8 @@
 package com.aarrelaakso.drawl.test;
 
-import com.aarrelaakso.drawl.SisuBigDecimal;
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Shape;
+import com.aarrelaakso.drawl.SisuBigDecimal;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
@@ -11,6 +11,7 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.math.BigDecimal;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +19,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Unit tests of Drawing - Shape (abstract)")
-public abstract class DrawingTestShape {
+public abstract class DrawingTestShape
+{
 
     private static final FluentLogger logger;
 
@@ -32,9 +34,41 @@ public abstract class DrawingTestShape {
     Shape shape1;
     Shape shape2;
     Shape shape3;
+    @Test
+    @DisplayName("X-POSITION - EXPLICIT: When a drawing has three adjacent default Circles, then their x-positions are correct (random)")
+    void whenADrawingHasThreeAdjacentShapesThenTheirXPositionsAreCorrectRandom()
+    {
+        drawing.add(shape1);
+        drawing.add(shape2);
+        drawing.add(shape3);
+        shape2.setRightOf(shape1);
+        shape3.setRightOf(shape2);
+        Double widthDouble = ThreadLocalRandom.current().nextDouble(0, Float.MAX_VALUE);
+        Float widthFloat = widthDouble.floatValue();
+        logger.atFine().log("width: " + widthFloat);
+        Double heightDouble = ThreadLocalRandom.current().nextDouble(0, Float.MAX_VALUE);
+        Float heightFloat = heightDouble.floatValue();
+        logger.atFine().log("height: " + heightFloat);
+        drawing.setExplicitWidth(widthFloat);
+        drawing.setExplicitHeight(heightFloat);
+        BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+        SisuBigDecimal circle1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations));
+        SisuBigDecimal circle2ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
+        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
+        SisuBigDecimal circle3ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.multiply(fraction, SisuBigDecimal.mcOperations));
+
+        SisuBigDecimal circle1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPosition());
+        SisuBigDecimal circle2ExplicitXPosition = SisuBigDecimal.create(shape2.getExplicitXPosition());
+        SisuBigDecimal circle3ExplicitXPosition = SisuBigDecimal.create(shape3.getExplicitXPosition());
+
+        then(circle1ExplicitXPosition.compareToFuzzy(circle1ExpectedXPosition)).isEqualTo(0);
+        then(circle2ExplicitXPosition.compareToFuzzy(circle2ExpectedXPosition)).isEqualTo(0);
+        then(circle3ExplicitXPosition.compareToFuzzy(circle3ExpectedXPosition)).isEqualTo(0);
+    }
 
     @BeforeEach
-    void givenADrawing() {
+    void givenADrawing()
+    {
         drawing = new Drawing();
     }
 
@@ -42,7 +76,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("height")
     @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has one default shape, then setting its explicit height scales its explicit width to fit")
-    void heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitHeightScalesItsExplicitWidthToFit(@NotNull BDDSoftAssertions softly) {
+    void heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitHeightScalesItsExplicitWidthToFit(@NotNull BDDSoftAssertions softly)
+    {
         drawing.add(shape1);
         drawing.setExplicitHeight(100);
         BigDecimal explicitHeightOfDrawing = drawing.getExplicitHeight();
@@ -61,7 +96,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("height")
     @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has one default shape, then setting its explicit width scales its explicit height to fit")
-    void heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitWidthScalesItsExplicitHeightToFit(@NotNull BDDSoftAssertions softly) {
+    void heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitWidthScalesItsExplicitHeightToFit(@NotNull BDDSoftAssertions softly)
+    {
         Integer size = 100;
         BigDecimal EXPECTED = BigDecimal.valueOf(size);
         drawing.add(shape1);
@@ -98,7 +134,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("height")
     @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has two adjacent Shapes, then their explicit heights are correct #1")
-    void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect01(@NotNull BDDSoftAssertions softly) {
+    void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect01(@NotNull BDDSoftAssertions softly)
+    {
         drawing.add(shape1);
         drawing.add(shape2);
         shape2.setRightOf(shape1);
@@ -121,7 +158,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("height")
     @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has two adjacent Shapes, then their explicit heights are correct #2")
-    void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect02(@NotNull BDDSoftAssertions softly) {
+    void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect02(@NotNull BDDSoftAssertions softly)
+    {
         drawing.add(shape1);
         drawing.add(shape2);
         shape2.setRightOf(shape1);
@@ -139,7 +177,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("height")
     @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has two adjacent Shapes, then their explicit heights are correct #3")
-    void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect03(BDDSoftAssertions softly) {
+    void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect03(BDDSoftAssertions softly)
+    {
         drawing.add(shape1);
         drawing.add(shape2);
         shape2.setRightOf(shape1);
@@ -158,14 +197,16 @@ public abstract class DrawingTestShape {
 
     @Test
     @DisplayName("LENGTH: Adding a circle to an empty drawing gives the drawing a length of 1")
-    void lengthWhenADrawingHasOneShapeThenItsLengthIs1() {
+    void lengthWhenADrawingHasOneShapeThenItsLengthIs1()
+    {
         drawing.add(shape1);
         assertEquals(new Integer(1), drawing.length());
     }
 
     @Test
     @DisplayName("SVG: Calling getSVG without parameters does not throw an exception")
-    void svgWhenYouCallSVGWithoutParametersItDoesNotThrowAnException() {
+    void svgWhenYouCallSVGWithoutParametersItDoesNotThrowAnException()
+    {
         assertDoesNotThrow(() -> {
             String svg = drawing.getSVG();
         });
@@ -173,7 +214,8 @@ public abstract class DrawingTestShape {
 
     @Test
     @DisplayName("WIDTH - EXPLICIT: When a drawing has one default Shape, the explicit width per implicit width is the explicit width of the drawing")
-    void widthExplicitWhenADrawingHasOneDefaultShapeThenTheExplicitWidthPerObjectIsTheExplicitWidthOfTheDrawing() {
+    void widthExplicitWhenADrawingHasOneDefaultShapeThenTheExplicitWidthPerObjectIsTheExplicitWidthOfTheDrawing()
+    {
         Integer size = 100;
         BigDecimal EXPECTED = BigDecimal.valueOf(size);
         drawing.add(shape1);
@@ -188,7 +230,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("width")
     @DisplayName("WIDTH - EXPLICIT: When a drawing has one default Shape, the Shape's explicit width is the explicit width of the drawing")
-    void widthExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitWidthIsTheExplicitWidthOfTheDrawing() {
+    void widthExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitWidthIsTheExplicitWidthOfTheDrawing()
+    {
         drawing.add(shape1);
         drawing.setExplicitWidth(100);
         drawing.setExplicitHeight(100);
@@ -201,7 +244,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("width")
     @DisplayName("WIDTH - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit widths are correct")
-    void widthExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitWidthsAreCorrect(BDDSoftAssertions softly) {
+    void widthExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitWidthsAreCorrect(BDDSoftAssertions softly)
+    {
         drawing.add(shape1);
         drawing.add(shape2);
         shape2.setRightOf(shape1);
@@ -218,7 +262,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("y-position")
     @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has a default Shape, then its explicit y position is correct")
-    void yPositionExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitYPositionIsCorrect() {
+    void yPositionExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitYPositionIsCorrect()
+    {
         Integer size = 100;
         drawing.add(shape1);
         drawing.setExplicitDimensions(size, size);
@@ -230,9 +275,9 @@ public abstract class DrawingTestShape {
 
     /**
      * This variant tests the effect of this order:
-     *     1. Adding the shapes to the drawing.
-     *     2. Setting the shapes adjacent to one another.
-     *     3. Setting the size of the drawing (height first).
+     * 1. Adding the shapes to the drawing.
+     * 2. Setting the shapes adjacent to one another.
+     * 3. Setting the size of the drawing (height first).
      *
      * @param softly
      */
@@ -240,7 +285,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("y-position")
     @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #1a")
-    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01a(@NotNull BDDSoftAssertions softly) {
+    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01a(@NotNull BDDSoftAssertions softly)
+    {
 
         Integer SIZE = 100;
         BigDecimal EXPECTED_Y_POS = BigDecimal.valueOf(SIZE).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
@@ -256,8 +302,8 @@ public abstract class DrawingTestShape {
 
         drawing.setExplicitWidth(SIZE);
         softly.then(drawing.getExplicitToImplicitRatio())
-                .as("After setExplicitWidth, the explicit to implicit ratio should be %d", SIZE/2.0)
-                .isEqualByComparingTo(BigDecimal.valueOf(SIZE/2.0));
+                .as("After setExplicitWidth, the explicit to implicit ratio should be %d", SIZE / 2.0)
+                .isEqualByComparingTo(BigDecimal.valueOf(SIZE / 2.0));
 
         BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
         softly.then(explicitYPosition1)
@@ -272,9 +318,9 @@ public abstract class DrawingTestShape {
 
     /**
      * This variant tests the effect of this order:
-     *     1. Adding the shapes to the drawing.
-     *     2. Setting the shapes adjacent to one another.
-     *     3. Setting the size of the drawing (width first).
+     * 1. Adding the shapes to the drawing.
+     * 2. Setting the shapes adjacent to one another.
+     * 3. Setting the size of the drawing (width first).
      *
      * @param softly
      */
@@ -282,7 +328,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("y-position")
     @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #1b")
-    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01b(@NotNull BDDSoftAssertions softly) {
+    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01b(@NotNull BDDSoftAssertions softly)
+    {
         drawing.add(shape1);
         drawing.add(shape2);
         shape2.setRightOf(shape1);
@@ -300,7 +347,8 @@ public abstract class DrawingTestShape {
     @Tag("explicit")
     @Tag("y-position")
     @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct (with setExplicitDimensions)")
-    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrectWithSetExplicitDimensions(@NotNull BDDSoftAssertions softly) {
+    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrectWithSetExplicitDimensions(@NotNull BDDSoftAssertions softly)
+    {
         Integer sizeOfDrawing = 100;
         BigDecimal EXPECTED = BigDecimal.valueOf(sizeOfDrawing).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
 

@@ -1,15 +1,28 @@
 package com.aarrelaakso.drawl.test;
 
+import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Shape;
+import com.aarrelaakso.drawl.SisuBigDecimal;
+import com.google.common.flogger.FluentLogger;
 import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Unit tests of Shape (abstract)")
 public abstract class ShapeTest {
+
+    private static final FluentLogger logger;
+
+    static
+    {
+        logger = FluentLogger.forEnclosingClass();
+
+    }
 
     Shape shape1;
     Shape shape2;
@@ -39,6 +52,8 @@ public abstract class ShapeTest {
             shape2.setRightOf(shape1);
             shape3.setRightOf(shape2);
         }
+
+
     }
 
     @Nested
@@ -69,11 +84,11 @@ public abstract class ShapeTest {
         @Test
         @DisplayName("When you set a Shape leftOf a default Shape, its implicit x-coordinate is -1")
         void whenYouSetAShapeLeftOfADefaultShapeItsImplicitXCoordinateIsNeg1() {
-            BigDecimal x10 = shape1.getImplicitXPosition();
-            BigDecimal x20 = shape2.getImplicitXPosition();
+            BigDecimal x10 = shape1.getImplicitXPositionCenter();
+            BigDecimal x20 = shape2.getImplicitXPositionCenter();
             shape1.setLeftOf(shape2);
-            BigDecimal x11 = shape1.getImplicitXPosition();
-            BigDecimal x21 = shape2.getImplicitXPosition();
+            BigDecimal x11 = shape1.getImplicitXPositionCenter();
+            BigDecimal x21 = shape2.getImplicitXPositionCenter();
             assertEquals(0, x10.compareTo(BigDecimal.ZERO));
             assertEquals(0, x20.compareTo(BigDecimal.ZERO));
             assertEquals(0, x11.compareTo(BigDecimal.valueOf(-1)));
@@ -83,11 +98,11 @@ public abstract class ShapeTest {
         @Test
         @DisplayName("When you set a Shape rightOf another Shape, its implicit x-coordinate is 1")
         void whenYouSetAShapeRightOfADefaultShapeItsImplicitXCoordinateIs1() {
-            BigDecimal x10 = shape1.getImplicitXPosition();
-            BigDecimal x20 = shape2.getImplicitXPosition();
+            BigDecimal x10 = shape1.getImplicitXPositionCenter();
+            BigDecimal x20 = shape2.getImplicitXPositionCenter();
             shape1.setRightOf(shape2);
-            BigDecimal x11 = shape1.getImplicitXPosition();
-            BigDecimal x21 = shape2.getImplicitXPosition();
+            BigDecimal x11 = shape1.getImplicitXPositionCenter();
+            BigDecimal x21 = shape2.getImplicitXPositionCenter();
             assertEquals(0, x10.compareTo(BigDecimal.ZERO));
             assertEquals(0, x20.compareTo(BigDecimal.ZERO));
             assertEquals(0, x11.compareTo(BigDecimal.ONE));
@@ -152,7 +167,7 @@ public abstract class ShapeTest {
         @Test
         @DisplayName("Then its implicit x-coordinate is 0")
         void thenImplicitXPositionIs0() {
-            BigDecimal x = shape1.getImplicitXPosition();
+            BigDecimal x = shape1.getImplicitXPositionCenter();
             assertEquals(0, x.compareTo(BigDecimal.ZERO));
         }
 
@@ -209,6 +224,19 @@ public abstract class ShapeTest {
             assertThrows(UnsupportedOperationException.class, () -> {
                 shape1.setRightOf(shape1);
             });
+        }
+    }
+
+    @Nested
+    @DisplayName("x position")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class xPosition {
+
+        @Test
+        @DisplayName("When a Shape is created, then it should have an implicit center x position")
+        void whenAShapeIsCreatedItShouldHaveCenterXPosition() {
+            BigDecimal implicitXPositionCenter = shape1.getImplicitXPositionCenter();
+            then(implicitXPositionCenter).isEqualByComparingTo(BigDecimal.ZERO);
         }
     }
 
