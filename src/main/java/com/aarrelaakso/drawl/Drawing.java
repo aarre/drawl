@@ -676,7 +676,7 @@ public class Drawing
     private void updateExplicitXPositionOfShape(@NotNull Shape shape)
     {
         // Update the explicit x position of the Shape
-        BigDecimal implicitXPositionOfShape = shape.getImplicitXPosition();
+        BigDecimal implicitXPositionOfShape = shape.getImplicitXPositionCenter();
         BigDecimal fudgeFactorX = this.getImplicitXMinimum();
         BigDecimal fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX);
         shape.setExplicitXPosition(fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),

@@ -193,7 +193,7 @@ public class Shape {
      * @return The implicit maximum (rightmost) x-position of this Shape.
      */
     protected BigDecimal getImplicitXMaximum() {
-        return this.getImplicitXPosition().add(this.getImplicitHalfWidth());
+        return this.getImplicitXPositionCenter().add(this.getImplicitHalfWidth());
     }
 
     /**
@@ -202,10 +202,10 @@ public class Shape {
      * @return The implicit minimum (leftmost) x-position of this Shape.
      */
     protected BigDecimal getImplicitXMinimum() {
-        return this.getImplicitXPosition().subtract(this.getImplicitHalfWidth());
+        return this.getImplicitXPositionCenter().subtract(this.getImplicitHalfWidth());
     }
 
-    public BigDecimal getImplicitXPosition() {
+    public BigDecimal getImplicitXPositionCenter() {
         return this.implicitXPosition;
     }
 
