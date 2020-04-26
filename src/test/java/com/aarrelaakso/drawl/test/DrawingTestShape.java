@@ -301,8 +301,15 @@ public abstract class DrawingTestShape {
         BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
         BigDecimal explicitYPosition2 = shape2.getExplicitYPosition();
 
-        softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
+        softly.then(explicitYPosition1)
+                .as("The actual explicit y position of Shape 1 (" + explicitYPosition1 + ") should match the"
+                        + " expected explicit y position: (" + EXPECTED + ")")
+                .isEqualByComparingTo(EXPECTED);
+
+        softly.then(explicitYPosition2)
+                .as("The actual explicit y position of Shape 2 (" + explicitYPosition2 + ") should match the"
+                        + " expected explicit y position: (" + EXPECTED + ")")
+                .isEqualByComparingTo(EXPECTED);
     }
 
 }
