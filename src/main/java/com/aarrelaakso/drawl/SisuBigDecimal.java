@@ -219,7 +219,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      */
     public SisuBigDecimalRemainderPair divWithRemainder(SisuBigDecimal x, int precision)
     {
-        BigDecimal div = number.divide(x.number, new MathContext(precision, ROUNDING_MODE));
+        BigDecimal div = number.divide(x.number, new MathContext(precision, RoundingMode.DOWN));
         BigDecimal rem = number.subtract(div.multiply(x.number));
         return SisuBigDecimalRemainderPair.create(new SisuBigDecimal(div), new SisuBigDecimal(rem));
     }

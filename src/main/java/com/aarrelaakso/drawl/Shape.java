@@ -19,12 +19,21 @@
 
 package com.aarrelaakso.drawl;
 
+import com.google.common.flogger.FluentLogger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.math.BigDecimal;
 
 public class Shape {
+
+    private static final FluentLogger logger;
+
+    static
+    {
+        logger = FluentLogger.forEnclosingClass();
+
+    }
 
     private static final String CANNOT_BE_ADJACENT_TO_ITSELF = "A circle cannot be adjacent to itself";
 
@@ -148,6 +157,7 @@ public class Shape {
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
     public BigDecimal getExplicitYPosition() {
+        logger.atFine().log("Returning explicit y position as: %f", this.explicitYPosition.floatValue());
         return this.explicitYPosition;
     }
 
@@ -327,12 +337,21 @@ public class Shape {
         this.explicitXPosition = BigDecimal.valueOf(x);
     }
 
+    /**
+     * Set the explicit y position of this Shape.
+     *
+     * The y position marks the vertical position of the Shape's center. The explicit coordinate system is the
+     * common Cartesian coordinate system, with higher values of y upward and lower values of y downward.
+     *
+     * @param y The explicit y position of this Shape.
+     */
     protected void setExplicitYPosition(BigDecimal y) {
         this.explicitYPosition = y;
+        logger.atFine().log("Setting explicit y position to: %f", y.floatValue());
     }
 
     public void setExplicitYPosition(Integer y) {
-        this.explicitYPosition = BigDecimal.valueOf(y);
+        this.setExplicitYPosition(BigDecimal.valueOf(y));
     }
 
     public void setImplicitXPosition(BigDecimal x) {
@@ -340,12 +359,12 @@ public class Shape {
     }
 
     /**
-     * Set the implicit y position of this circle.
+     * Set the implicit y position of this Shape.
      *
-     * The y position marks the vertical position of the circle's center. In the implicit coordinate system, higher
+     * The y position marks the vertical position of the Shape's center. In the implicit coordinate system, higher
      * values of y are upward whereas lower values of y are downward.
      *
-     * @param y The implicit y position of this circle.
+     * @param y The implicit y position of this Shape.
      */
     public void setImplicitYPosition(BigDecimal y) {
         this.implicitYPosition = y;

@@ -2,6 +2,7 @@ package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Rectangle;
 import org.assertj.core.api.BDDSoftAssertions;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
@@ -27,15 +28,15 @@ public class DrawingTestRectangle extends DrawingTestShape {
     @Tag("rectangle")
     @Tag("svg")
     @DisplayName("SVG: When a square (100) drawing has two adjacent Rectangles, then the SVG is correct")
-    void svgWhenASquare100DrawingHasTwoAdjacentCirclesThenTheSVGIsCorrect(BDDSoftAssertions softly) {
+    void svgWhenASquare100DrawingHasTwoAdjacentCirclesThenTheSVGIsCorrect(@NotNull BDDSoftAssertions softly) {
         drawing.add(shape1);
         drawing.add(shape2);
         shape2.setRightOf(shape1);
         String svg = drawing.getSVG(100, 100);
 
         softly.then(svg).contains("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">")
-                .contains("<rect height=\"50\" width=\"50\" cx=\"25\" cy=\"50\" />")
-                .contains("<rect height=\"50\" width=\"50\" cx=\"75\" cy=\"50\" />")
+                .contains("<rect width=\"50\" height=\"50\" cx=\"25\" cy=\"50\" />")
+                .contains("<rect width=\"50\" height=\"50\" cx=\"75\" cy=\"50\" />")
                 .contains("</svg>");
     }
 }

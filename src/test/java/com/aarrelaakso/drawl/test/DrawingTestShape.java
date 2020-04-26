@@ -287,61 +287,6 @@ public abstract class DrawingTestShape {
         softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
     }
 
-    /**
-     * This variant tests the effect of this order:
-     *     1. Setting the size of the drawing.
-     *     2. Adding the shapes to the drawing.
-     *     3. Setting the shapes adjacent to each other.
-     *
-     * @param softly
-     */
-    @Test
-    @Tag("explicit")
-    @Tag("y-position")
-    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #2")
-    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect02(@NotNull BDDSoftAssertions softly) {
-        drawing.setExplicitHeight(100);
-        drawing.setExplicitWidth(100);
-        drawing.add(shape1);
-        drawing.add(shape2);
-        shape2.setRightOf(shape1);
-        BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
-        BigDecimal explicitYPosition2 = shape2.getExplicitYPosition();
-        BigDecimal EXPECTED = BigDecimal.valueOf(50);
-
-        softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
-    }
-
-    /**
-     * This variant tests the effect of this order:
-     *     1. Setting the size of the drawing.
-     *     2. Setting the shapes adjacent to each other.
-     *     3. Adding the shapes to the drawing.
-     *
-     * @param softly
-     */
-    @Test
-    @Tag("explicit")
-    @Tag("y-position")
-    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #3")
-    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect03(@NotNull BDDSoftAssertions softly) {
-        drawing.setExplicitHeight(100);
-        drawing.setExplicitWidth(100);
-
-        shape2.setRightOf(shape1);
-
-        drawing.add(shape1);
-        drawing.add(shape2);
-
-        BigDecimal explicitYPosition1 = shape1.getExplicitYPosition();
-        BigDecimal explicitYPosition2 = shape2.getExplicitYPosition();
-        BigDecimal EXPECTED = BigDecimal.valueOf(50);
-
-        softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
-    }
-
     @Test
     @Tag("explicit")
     @Tag("y-position")
