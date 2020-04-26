@@ -477,29 +477,32 @@ public class Drawing
                 SisuBigDecimal.mcOperations);
         logger.atFine().log("Explicit aspect ratio: " + explicitAspectRatio);
 
-        if (implicitAspectRatio.compareTo(explicitAspectRatio) > 0)
+        if (FALSE)
         {
-            // The implicit aspect ratio is greater than the explicit aspect ratio.
-            // Therefore, we are constrained by width.
-            // Adjust the height to match.
-            logger.atFine().log("Adjusting height");
-            BigDecimal adjustedHeight = this.getExplicitWidth().divide(explicitAspectRatio,
-                    SisuBigDecimal.mcOperations);
-            logger.atFine().log("Setting adjusted height, adjusted height: " + adjustedHeight.toPlainString());
-            this.setExplicitHeight(adjustedHeight);
-            logger.atFine().log("Setting explicit width");
-            this.setExplicitWidth(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
-        }
-        else if (implicitAspectRatio.compareTo(explicitAspectRatio) < 0)
-        {
-            // The implicit aspect ratio is less than or equal to the explicit aspect ratio.
-            // Therefore, we are constrained by height.
-            // Adjust the width to match.
-            logger.atFine().log("Adjusting width");
-            BigDecimal adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio,
-                    SisuBigDecimal.mcOperations);
-            this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
-            this.setExplicitWidth(adjustedWidth);
+            if (implicitAspectRatio.compareTo(explicitAspectRatio) > 0)
+            {
+                // The implicit aspect ratio is greater than the explicit aspect ratio.
+                // Therefore, we are constrained by width.
+                // Adjust the height to match.
+                logger.atFine().log("Adjusting height");
+                BigDecimal adjustedHeight = this.getExplicitWidth().divide(explicitAspectRatio,
+                        SisuBigDecimal.mcOperations);
+                logger.atFine().log("Setting adjusted height, adjusted height: " + adjustedHeight.toPlainString());
+                this.setExplicitHeight(adjustedHeight);
+                logger.atFine().log("Setting explicit width");
+                this.setExplicitWidth(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
+            }
+            else if (implicitAspectRatio.compareTo(explicitAspectRatio) < 0)
+            {
+                // The implicit aspect ratio is less than or equal to the explicit aspect ratio.
+                // Therefore, we are constrained by height.
+                // Adjust the width to match.
+                logger.atFine().log("Adjusting width");
+                BigDecimal adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio,
+                        SisuBigDecimal.mcOperations);
+                this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
+                this.setExplicitWidth(adjustedWidth);
+            }
         }
         else
         {
