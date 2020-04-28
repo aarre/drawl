@@ -1,4 +1,4 @@
-package com.aarrelaakso.drawl.test;
+package com.aarrelaakso.drawl;
 
 import com.aarrelaakso.drawl.Rectangle;
 import com.aarrelaakso.drawl.Shape;
