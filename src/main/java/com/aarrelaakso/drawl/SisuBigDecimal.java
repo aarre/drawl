@@ -25,26 +25,26 @@ import java.math.RoundingMode;
 public class SisuBigDecimal implements Comparable<SisuBigDecimal>
 {
 
-    public static final SisuBigDecimal HALF = SisuBigDecimal.valueOf(0.5);
-    public static final SisuBigDecimal ONE = SisuBigDecimal.valueOf(BigDecimal.ONE);
-    public static final SisuBigDecimal TWO = SisuBigDecimal.valueOf(2);
-    public static RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
-    public static int SCALE_FOR_COMPARISONS = 32;
-    public static int SCALE_FOR_OPERATIONS = 64;
+    protected static final SisuBigDecimal HALF = SisuBigDecimal.valueOf(0.5);
+    protected static final SisuBigDecimal ONE = SisuBigDecimal.valueOf(BigDecimal.ONE);
+    protected static final SisuBigDecimal TWO = SisuBigDecimal.valueOf(2);
+    protected static RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
+    protected static int SCALE_FOR_COMPARISONS = 32;
+    protected static int SCALE_FOR_OPERATIONS = 64;
     /**
      * Zero.
      */
-    public static SisuBigDecimal ZERO = new SisuBigDecimal("0");
+    protected static SisuBigDecimal ZERO = new SisuBigDecimal("0");
 
     /**
      * Use this MathContext for comparisons.
      */
-    public static MathContext mcComparisons = new MathContext(SCALE_FOR_COMPARISONS, ROUNDING_MODE);
+    protected static MathContext mcComparisons = new MathContext(SCALE_FOR_COMPARISONS, ROUNDING_MODE);
 
     /**
      * Use this MathContext for other operations, such as multiplying and dividing.
      */
-    public static MathContext mcOperations = new MathContext(SCALE_FOR_OPERATIONS, ROUNDING_MODE);
+    protected static MathContext mcOperations = new MathContext(SCALE_FOR_OPERATIONS, ROUNDING_MODE);
 
 
     /**
@@ -64,7 +64,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @param number number
      */
-    public SisuBigDecimal(BigDecimal number)
+    protected SisuBigDecimal(BigDecimal number)
     {
         this.number = number.stripTrailingZeros();
     }
@@ -85,7 +85,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param s source string
      * @return created number
      */
-    public static SisuBigDecimal valueOf(String s)
+    protected static SisuBigDecimal valueOf(String s)
     {
         return new SisuBigDecimal(s);
     }
@@ -96,7 +96,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param number number
      * @return created number
      */
-    public static SisuBigDecimal valueOf(double number)
+    protected static SisuBigDecimal valueOf(double number)
     {
         return new SisuBigDecimal(BigDecimal.valueOf(number));
     }
@@ -107,7 +107,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param number number
      * @return created number
      */
-    public static SisuBigDecimal valueOf(BigDecimal number)
+    protected static SisuBigDecimal valueOf(BigDecimal number)
     {
         return new SisuBigDecimal(number);
     }
@@ -119,7 +119,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @return True if bd is a mathematical integer,
      * false otherwise.
      */
-    public static boolean isIntegerValue(BigDecimal bd)
+    protected static boolean isIntegerValue(BigDecimal bd)
     {
         return bd.signum() == 0 || bd.scale() <= 0 || bd.stripTrailingZeros().scale() <= 0;
     }
@@ -130,7 +130,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param val
      * @return
      */
-    public static boolean isIntegerValue(float val)
+    protected static boolean isIntegerValue(float val)
     {
         // See: https://stackoverflow.com/questions/4727569/how-to-check-whether-a-float-has-an-integer-value
         return ((int) val) == val;
@@ -141,7 +141,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @return absolute value of this number
      */
-    public SisuBigDecimal abs()
+    protected SisuBigDecimal abs()
     {
         return SisuBigDecimal.valueOf(number.abs());
     }
@@ -152,7 +152,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x other number
      * @return addition operation result
      */
-    public SisuBigDecimal add(SisuBigDecimal x)
+    protected SisuBigDecimal add(SisuBigDecimal x)
     {
         return new SisuBigDecimal(number.add(x.number));
     }
@@ -163,7 +163,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x other number
      * @return addition operation result
      */
-    public SisuBigDecimal add(double x)
+    protected SisuBigDecimal add(double x)
     {
         return add(new SisuBigDecimal(String.valueOf(x)));
     }
@@ -178,7 +178,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param mc the MathContext to use.
      * @return this + augend, rounded as necessary
      */
-    public SisuBigDecimal add(SisuBigDecimal augend, MathContext mc)
+    protected SisuBigDecimal add(SisuBigDecimal augend, MathContext mc)
     {
         return new SisuBigDecimal(number.add(augend.number, mc));
     }
@@ -188,15 +188,24 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @return this SisuBigDecimal converted to a BigDecimal.
      */
-    public BigDecimal bigDecimalValue()
+    protected BigDecimal bigDecimalValue()
     {
         return this.number;
     }
 
+    /**
+     * Compares this BigDecimal with the specified BigDecimal. Two BigDecimal objects that are equal in value but have
+     * a different scale (like 2.0 and 2.00) are considered equal by this method.
+     *
+     * This method overrides the compareTo method in the java.lang.Comparable interface.
+     *
+     * @param val BigDecimal to which this BigDecimal is to be compared.
+     * @returns -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than val.
+     */
     @Override
-    public int compareTo(SisuBigDecimal x)
+    public int compareTo(SisuBigDecimal val)
     {
-        return number.compareTo(x.number);
+        return number.compareTo(val.number);
     }
 
     /**
@@ -205,7 +214,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param val The other SisuBigDecimal to compare to this one.
      * @return -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than val.
      */
-    public int compareToFuzzy(SisuBigDecimal val)
+    protected int compareToFuzzy(SisuBigDecimal val)
     {
         return this.compareToFuzzy(val, mcComparisons);
     }
@@ -217,14 +226,14 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param mc  The MathContext to use for the comparison.
      * @return -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than val.
      */
-    public int compareToFuzzy(SisuBigDecimal val, MathContext mc)
+    protected int compareToFuzzy(SisuBigDecimal val, MathContext mc)
     {
         SisuBigDecimal thisNumberRounded = SisuBigDecimal.valueOf(this.number.round(mc));
         SisuBigDecimal xNumberRounded = val.round(mc);
         return thisNumberRounded.compareTo(xNumberRounded);
     }
 
-    public SisuBigDecimal divide(SisuBigDecimal val, MathContext mathContext)
+    protected SisuBigDecimal divide(SisuBigDecimal val, MathContext mathContext)
     {
         return new SisuBigDecimal(number.divide(val.number, mathContext));
     }
@@ -236,7 +245,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param precision precision of the result (see the class level comment for details)
      * @return division operation result
      */
-    public SisuBigDecimal divide(SisuBigDecimal x, int precision)
+    protected SisuBigDecimal divide(SisuBigDecimal x, int precision)
     {
         return new SisuBigDecimal(number.divide(x.number, new MathContext(precision, ROUNDING_MODE)));
     }
@@ -248,7 +257,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param precision precision of the result (see the class level comment for details)
      * @return division operation result
      */
-    public SisuBigDecimal divide(double x, int precision)
+    protected SisuBigDecimal divide(double x, int precision)
     {
         return divide(new SisuBigDecimal(String.valueOf(x)), precision);
     }
@@ -260,7 +269,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param precision precision of the result (see the class level comment for details)
      * @return division operation result
      */
-    public SisuBigDecimalRemainderPair divWithRemainder(SisuBigDecimal x, int precision)
+    protected SisuBigDecimalRemainderPair divWithRemainder(SisuBigDecimal x, int precision)
     {
         BigDecimal div = number.divide(x.number, new MathContext(precision, RoundingMode.DOWN));
         BigDecimal rem = number.subtract(div.multiply(x.number));
@@ -274,7 +283,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param precision precision of the result (see the class level comment for details)
      * @return division operation result
      */
-    public SisuBigDecimalRemainderPair divWithRemainder(double x, int precision)
+    protected SisuBigDecimalRemainderPair divWithRemainder(double x, int precision)
     {
         return divWithRemainder(new SisuBigDecimal(String.valueOf(x)), precision);
     }
@@ -285,7 +294,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @return double representation of this value
      */
-    public double doubleValue()
+    protected double doubleValue()
     {
         return number.doubleValue();
     }
@@ -296,7 +305,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x tested number
      * @return true if this number is equal to the other number
      */
-    public boolean equals(SisuBigDecimal x)
+    protected boolean equals(SisuBigDecimal x)
     {
         return number.compareTo(x.number) == 0;
     }
@@ -307,11 +316,20 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x tested number
      * @return true if this number is equal to the other number
      */
-    public boolean equals(double x)
+    protected boolean equals(double x)
     {
         return equals(new SisuBigDecimal(String.valueOf(x)));
     }
 
+    /**
+     * Compares this SisuBigDecimal with the specified Object for equality. Unlike compareTo, this method considers two
+     * SisuBigDecimal objects equal only if they are equal in value and scale (thus 2.0 is not equal to 2.00 when
+     * compared by this method).
+     *
+     * @param obj Object to which this BigDecimal is to be compared.
+     * @returns true if and only if the specified Object is a SisuBigDecimal whose value and scale are equal to this
+     * SisuBigDecimal's.
+     */
     @Override
     public boolean equals(Object obj)
     {
@@ -327,7 +345,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @return this SisuBigDecimal converted to a Float.
      */
-    public Float floatValue()
+    protected Float floatValue()
     {
         return Float.valueOf(number.floatValue());
     }
@@ -338,7 +356,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x tested number
      * @return true if this number is greater than the other one
      */
-    public boolean g(SisuBigDecimal x)
+    protected boolean g(SisuBigDecimal x)
     {
         return number.compareTo(x.number) == 1;
     }
@@ -349,7 +367,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x tested number
      * @return true if this number is greater than the other one
      */
-    public boolean g(double x)
+    protected boolean g(double x)
     {
         return g(new SisuBigDecimal(String.valueOf(x)));
     }
@@ -360,7 +378,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x tested number
      * @return true if this number is greater or equal to the other one
      */
-    public boolean geq(SisuBigDecimal x)
+    protected boolean geq(SisuBigDecimal x)
     {
         return number.compareTo(x.number) >= 0;
     }
@@ -371,11 +389,17 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x tested number
      * @return true if this number is greater or equal to the other one
      */
-    public boolean geq(double x)
+    protected boolean geq(double x)
     {
         return geq(SisuBigDecimal.valueOf(String.valueOf(x)));
     }
 
+    /**
+     * Returns the hash code for this SisuBigDecimal. Note that two SisuBigDecimal objects that are numerically equal
+     * but differ in scale (like 2.0 and 2.00) will generally not have the same hash code.
+     *
+     * @return hash code for this BigDecimal.
+     */
     @Override
     public int hashCode()
     {
@@ -388,7 +412,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x tested number
      * @return true if this number is less than the other one
      */
-    public boolean l(SisuBigDecimal x)
+    protected boolean l(SisuBigDecimal x)
     {
         return number.compareTo(x.number) < 0;
     }
@@ -402,7 +426,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @return this BigDecimal converted to an int.
      */
-    public Integer intValue()
+    protected Integer intValue()
     {
         return this.number.intValue();
     }
@@ -413,7 +437,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x tested number
      * @return true if this number is less than the other one
      */
-    public boolean l(double x)
+    protected boolean l(double x)
     {
         return l(SisuBigDecimal.valueOf(String.valueOf(x)));
     }
@@ -424,7 +448,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x tested number
      * @return true if this number is less than the other one
      */
-    public boolean leq(SisuBigDecimal x)
+    protected boolean leq(SisuBigDecimal x)
     {
         return number.compareTo(x.number) <= 0;
     }
@@ -435,7 +459,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x tested number
      * @return true if this number is less than the other one
      */
-    public boolean leq(double x)
+    protected boolean leq(double x)
     {
         return leq(SisuBigDecimal.valueOf(String.valueOf(x)));
     }
@@ -446,7 +470,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x other number
      * @return addition multiplication result
      */
-    public SisuBigDecimal multiply(SisuBigDecimal x)
+    protected SisuBigDecimal multiply(SisuBigDecimal x)
     {
         return new SisuBigDecimal(number.multiply(x.number));
     }
@@ -459,7 +483,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param mc the MathContext to use.
      * @return this * multiplicand, rounded as necessary.
      */
-    public SisuBigDecimal multiply(SisuBigDecimal multiplicand, MathContext mc)
+    protected SisuBigDecimal multiply(SisuBigDecimal multiplicand, MathContext mc)
     {
         return new SisuBigDecimal(this.number.multiply(multiplicand.number, mc));
     }
@@ -470,7 +494,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x other number
      * @return addition multiplication result
      */
-    public SisuBigDecimal multiply(double x)
+    protected SisuBigDecimal multiply(double x)
     {
         return multiply(new SisuBigDecimal(String.valueOf(x)));
     }
@@ -480,7 +504,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @return negative of this number
      */
-    public SisuBigDecimal negate()
+    protected SisuBigDecimal negate()
     {
         return SisuBigDecimal.valueOf(number.negate());
     }
@@ -492,7 +516,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param precision precision of the result (see the class level comment for details)
      * @return power operation result
      */
-    public SisuBigDecimal pow(int n, int precision)
+    protected SisuBigDecimal pow(int n, int precision)
     {
         return SisuBigDecimal.valueOf(number.pow(n, new MathContext(precision, ROUNDING_MODE)));
     }
@@ -503,7 +527,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param mc The MathContext to use for the rounding operation.
      * @return A new instance of SisuBigDecimal that has the same value as this one rounded.
      */
-    public SisuBigDecimal round(MathContext mc)
+    protected SisuBigDecimal round(MathContext mc)
     {
         return SisuBigDecimal.valueOf(this.number.round(mc));
     }
@@ -511,7 +535,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
     /**
      * Create a new instance with a set scale
      */
-    public SisuBigDecimal setScale(Integer scale)
+    protected SisuBigDecimal setScale(Integer scale)
     {
         BigDecimal scaledValue = this.number.setScale(scale, ROUNDING_MODE);
         return SisuBigDecimal.valueOf(scaledValue);
@@ -523,7 +547,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x other number
      * @return addition subtraction result
      */
-    public SisuBigDecimal subtract(SisuBigDecimal x)
+    protected SisuBigDecimal subtract(SisuBigDecimal x)
     {
         return new SisuBigDecimal(number.subtract(x.number));
     }
@@ -538,7 +562,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param mc the MathContext to use.
      * @return this - subtrahend, rounded as necessary
      */
-    public SisuBigDecimal subtract(SisuBigDecimal subtrahend, MathContext mc)
+    protected SisuBigDecimal subtract(SisuBigDecimal subtrahend, MathContext mc)
     {
         return new SisuBigDecimal(number.subtract(subtrahend.number, mc));
     }
@@ -549,7 +573,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param x other number
      * @return addition subtraction result
      */
-    public SisuBigDecimal subtract(double x)
+    protected SisuBigDecimal subtract(double x)
     {
         return subtract(new SisuBigDecimal(String.valueOf(x)));
     }
@@ -562,7 +586,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      * @param numDecimals number of decimals, must be non negative
      * @return number as a plain string with specified number of decimals
      */
-    public String toFixedDecimalString(int numDecimals)
+    protected String toFixedDecimalString(int numDecimals)
     {
         assert (numDecimals >= 0) : "numDecimals must be >= 0";
         String str = number.toPlainString();
@@ -608,9 +632,76 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @return number in it's string representation
      */
-    public String toFullString()
+    protected String toFullString()
     {
         return number.toPlainString();
+    }
+
+    /**
+     * Returns the string representation of this SisuBigDecimal, using scientific notation if an exponent is needed. A
+     * standard canonical string form of the SisuBigDecimal is created as though by the following steps: first, the
+     * absolute value of the unscaled value of the BigDecimal is converted to a string in base ten using the characters
+     * '0' through '9' with no leading zeros (except if its value is zero, in which case a single '0' character is
+     * used). Next, an adjusted exponent is calculated; this is the negated scale, plus the number of characters in the
+     * converted unscaled value, less one. That is, -scale+(ulength-1), where ulength is the length of the absolute
+     * value of the unscaled value in decimal digits (its precision).
+     *
+     * If the scale is greater than or equal to zero and the adjusted exponent is greater than or equal to -6, the
+     * number will be converted to a character form without using exponential notation. In this case, if the scale is
+     * zero then no decimal point is added and if the scale is positive a decimal point will be inserted with the scale
+     * specifying the number of characters to the right of the decimal point. '0' characters are added to the left of
+     * the converted unscaled value as necessary. If no character precedes the decimal point after this insertion then
+     * a conventional '0' character is prefixed.
+     *
+     * Otherwise (that is, if the scale is negative, or the adjusted exponent is less than -6), the number will be
+     * converted to a character form using exponential notation. In this case, if the converted BigInteger has more than
+     * one digit a decimal point is inserted after the first digit. An exponent in character form is then suffixed to
+     * the converted unscaled value (perhaps with inserted decimal point); this comprises the letter 'E' followed
+     * immediately by the adjusted exponent converted to a character form. The latter is in base ten, using the
+     * characters '0' through '9' with no leading zeros, and is always prefixed by a sign character '-' ('\u002D') if
+     * the adjusted exponent is negative, '+' ('\u002B') otherwise).
+     *
+     * Finally, the entire string is prefixed by a minus sign character '-' ('\u002D') if the unscaled value is less
+     * than zero. No sign character is prefixed if the unscaled value is zero or positive.
+     *
+     * Examples:
+     *
+     * For each representation [unscaled value, scale] on the left, the resulting string is shown on the right.
+     *
+     *  [123,0]      "123"
+     *  [-123,0]     "-123"
+     *  [123,-1]     "1.23E+3"
+     *  [123,-3]     "1.23E+5"
+     *  [123,1]      "12.3"
+     *  [123,5]      "0.00123"
+     *  [123,10]     "1.23E-8"
+     *  [-123,12]    "-1.23E-10"
+     *
+     * Notes:
+     *
+     * There is a one-to-one mapping between the distinguishable BigDecimal values and the result of this conversion.
+     * That is, every distinguishable BigDecimal value (unscaled value and scale) has a unique string representation
+     * as a result of using toString. If that string representation is converted back to a BigDecimal using the
+     * BigDecimal(String) constructor, then the original value will be recovered.
+     *
+     * The string produced for a given number is always the same; it is not affected by locale. This means that it can
+     * be used as a canonical string representation for exchanging decimal data, or as a key for a Hashtable, etc.
+     * Locale-sensitive number formatting and parsing is handled by the NumberFormat class and its subclasses.
+     *
+     * The toEngineeringString() method may be used for presenting numbers with exponents in engineering notation, and
+     * the setScale method may be used for rounding a BigDecimal so it has a known number of digits after the decimal
+     * point.
+     *
+     * The digit-to-character mapping provided by Character.forDigit is used.
+     *
+     * Overrides:
+     * toString in class Object
+     *
+     * @return string representation of this BigDecimal.
+     */
+    private int temp()
+    {
+        return 1;
     }
 
     @Override
@@ -633,7 +724,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @returns a string representation of this SisuBigDecimal without an exponent field.
      */
-    public String toPlainString()
+    protected String toPlainString()
     {
         return this.number.toPlainString();
     }
@@ -644,7 +735,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @return number without part right from the decimal point
      */
-    public SisuBigDecimal truncDecimals()
+    protected SisuBigDecimal truncDecimals()
     {
         return new SisuBigDecimal(new BigDecimal(number.toBigInteger()));
     }
