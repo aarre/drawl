@@ -1,19 +1,25 @@
+/*
+ * Copyright (c) 2020. Aarre Laakso
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 package com.aarrelaakso.drawl;
 
-import com.aarrelaakso.drawl.Drawing;
-import com.aarrelaakso.drawl.Shape;
-import com.aarrelaakso.drawl.SisuBigDecimal;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
+import static org.assertj.core.api.BDDAssertions.then;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import java.math.BigDecimal;
 import java.util.concurrent.ThreadLocalRandom;
 
-import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -72,9 +78,9 @@ public abstract class DrawingTestShape
                 Float heightFloat = Float.MAX_VALUE;
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().equals(SisuBigDecimal.valueOf(widthFloat)));
                 drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().equals(SisuBigDecimal.valueOf(heightFloat)));
 
                 SisuBigDecimal widthBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
@@ -104,9 +110,9 @@ public abstract class DrawingTestShape
                 Float heightFloat = Float.MAX_VALUE - 1;
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().equals(SisuBigDecimal.valueOf(widthFloat)));
                 drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().equals(SisuBigDecimal.valueOf(heightFloat)));
 
                 SisuBigDecimal widthBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
@@ -137,9 +143,9 @@ public abstract class DrawingTestShape
                 Float heightFloat = Float.valueOf("5.567761E37");
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().equals(SisuBigDecimal.valueOf(widthFloat)));
                 drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().equals(SisuBigDecimal.valueOf(heightFloat)));
 
                 SisuBigDecimal widthBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
@@ -170,9 +176,9 @@ public abstract class DrawingTestShape
                 Float heightFloat = Float.valueOf("56");
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().equals(SisuBigDecimal.valueOf(widthFloat)));
                 drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().equals(SisuBigDecimal.valueOf(heightFloat)));
 
                 SisuBigDecimal widthBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
@@ -205,8 +211,8 @@ public abstract class DrawingTestShape
                 Float heightFloat = Float.valueOf("5.567761E37");
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitDimensions(widthFloat, heightFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
-                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().equals(SisuBigDecimal.valueOf(widthFloat)));
+                softly.then(drawing.getExplicitHeight().equals(SisuBigDecimal.valueOf(heightFloat)));
 
                 SisuBigDecimal widthBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
@@ -311,9 +317,9 @@ public abstract class DrawingTestShape
                 logger.atFine().log("width: " + widthFloat);
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().equals(SisuBigDecimal.valueOf(widthFloat)));
                 drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().equals(SisuBigDecimal.valueOf(heightFloat)));
 
                 // At this aspect ratio, the sizes of the shapes may be constrained by the height
                 SisuBigDecimal heightSisuBigDecimal = SisuBigDecimal.valueOf(heightFloat);
@@ -322,7 +328,7 @@ public abstract class DrawingTestShape
                 SisuBigDecimal aspectRatio = SisuBigDecimal.valueOf(widthFloat/heightFloat);
 
                 SisuBigDecimal widthOfShapes;
-                if (aspectRatio.g(3))
+                if (aspectRatio.isGreaterThan(3))
                 {
                     widthOfShapes = heightSisuBigDecimal.multiply(SisuBigDecimal.valueOf(3));
                 }
@@ -335,7 +341,7 @@ public abstract class DrawingTestShape
                 SisuBigDecimal extraWidthLeft = extraWidth.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
 
                 SisuBigDecimal circle1ExpectedXPosition = widthOfShapes.divide(SisuBigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
-                if (aspectRatio.g(3))
+                if (aspectRatio.isGreaterThan(3))
                 {
                         circle1ExpectedXPosition = circle1ExpectedXPosition.add(extraWidthLeft);
                 }
@@ -346,7 +352,7 @@ public abstract class DrawingTestShape
                                 circle1ExpectedXPosition + " but it was " + circle1ExplicitXPosition).isEqualTo(0);
 
                 SisuBigDecimal circle2ExpectedXPosition = widthOfShapes.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
-                if (aspectRatio.g(3))
+                if (aspectRatio.isGreaterThan(3))
                 {
                     circle2ExpectedXPosition = circle2ExpectedXPosition.add(extraWidthLeft);
                 }
@@ -358,7 +364,7 @@ public abstract class DrawingTestShape
 
                 SisuBigDecimal fraction = SisuBigDecimal.valueOf(5).divide(SisuBigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
                 SisuBigDecimal circle3ExpectedXPosition = widthOfShapes.multiply(fraction, SisuBigDecimal.mcOperations);
-                if (aspectRatio.g(3))
+                if (aspectRatio.isGreaterThan(3))
                 {
                     circle3ExpectedXPosition = circle3ExpectedXPosition.add(extraWidthLeft);
                 }
@@ -546,12 +552,12 @@ public abstract class DrawingTestShape
         SisuBigDecimal explicitHeight2 = shape2.getExplicitHeight();
         SisuBigDecimal expectedHeight = SisuBigDecimal.valueOf(50);
 
-        assertAll("The explicit heights of both Shapes are correct",
-                () -> assertEquals(0, explicitHeight1.compareTo(expectedHeight),
-                        "The explicit height of shape1 should be " + expectedHeight.toPlainString() + " but it was " + explicitHeight1.toString()),
-                () -> assertEquals(0, explicitHeight2.compareTo(expectedHeight),
-                        "The explicit height of shape2 should be " + expectedHeight.toPlainString() + " but it was " + explicitHeight2.toString())
-        );
+        softly.then(explicitHeight1)
+                .as("The explicit height of shape1 should be " + expectedHeight.toPlainString() + " but it was " + explicitHeight1.toString())
+                .isEqualTo(expectedHeight);
+        softly.then(explicitHeight2)
+                .as("The explicit height of shape2 should be " + expectedHeight.toPlainString() + " but it was " + explicitHeight2.toString())
+                .isEqualTo(expectedHeight);
     }
 
     @Test

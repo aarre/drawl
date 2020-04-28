@@ -100,7 +100,7 @@ public class Circle extends Shape
     private SisuBigDecimal getImplicitDiameter()
     {
         SisuBigDecimal myImplicitRadius = this.getImplicitRadius();
-        assert myImplicitRadius.compareTo(SisuBigDecimal.ZERO) != 0 : "Implicit radius cannot be zero.";
+        assert !myImplicitRadius.equals(SisuBigDecimal.ZERO) : "Implicit radius cannot be zero.";
         return myImplicitRadius.multiply(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
     }
 

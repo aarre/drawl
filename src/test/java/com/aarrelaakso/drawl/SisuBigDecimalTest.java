@@ -10,9 +10,6 @@
 
 package com.aarrelaakso.drawl;
 
-import com.aarrelaakso.drawl.SisuBigDecimal;
-import com.aarrelaakso.drawl.SisuBigDecimalRemainderPair;
-
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import static org.assertj.core.api.BDDAssertions.then;
@@ -235,13 +232,13 @@ public class SisuBigDecimalTest
     @Test
     public void testG()
     {
-        assertTrue(SisuBigDecimal.valueOf(1).g(SisuBigDecimal.valueOf(0)));
-        assertFalse(SisuBigDecimal.valueOf(0).g(SisuBigDecimal.valueOf(0)));
-        assertFalse(SisuBigDecimal.valueOf(-1).g(SisuBigDecimal.valueOf(0)));
+        assertTrue(SisuBigDecimal.valueOf(1).isGreaterThan(SisuBigDecimal.valueOf(0)));
+        assertFalse(SisuBigDecimal.valueOf(0).isGreaterThan(SisuBigDecimal.valueOf(0)));
+        assertFalse(SisuBigDecimal.valueOf(-1).isGreaterThan(SisuBigDecimal.valueOf(0)));
         // double version
-        assertTrue(SisuBigDecimal.valueOf(1).g(0));
-        assertFalse(SisuBigDecimal.valueOf(0).g(0));
-        assertFalse(SisuBigDecimal.valueOf(-1).g(0));
+        assertTrue(SisuBigDecimal.valueOf(1).isGreaterThan(0));
+        assertFalse(SisuBigDecimal.valueOf(0).isGreaterThan(0));
+        assertFalse(SisuBigDecimal.valueOf(-1).isGreaterThan(0));
     }
 
     /**
@@ -250,13 +247,13 @@ public class SisuBigDecimalTest
     @Test
     public void testGeq()
     {
-        assertTrue(SisuBigDecimal.valueOf(1).geq(SisuBigDecimal.valueOf(0)));
-        assertTrue(SisuBigDecimal.valueOf(0).geq(SisuBigDecimal.valueOf(0)));
-        assertFalse(SisuBigDecimal.valueOf(-1).geq(SisuBigDecimal.valueOf(0)));
+        assertTrue(SisuBigDecimal.valueOf(1).isGreaterThanOrEqualTo(SisuBigDecimal.valueOf(0)));
+        assertTrue(SisuBigDecimal.valueOf(0).isGreaterThanOrEqualTo(SisuBigDecimal.valueOf(0)));
+        assertFalse(SisuBigDecimal.valueOf(-1).isGreaterThanOrEqualTo(SisuBigDecimal.valueOf(0)));
         // double version
-        assertTrue(SisuBigDecimal.valueOf(1).geq(0));
-        assertTrue(SisuBigDecimal.valueOf(0).geq(0));
-        assertFalse(SisuBigDecimal.valueOf(-1).geq(0));
+        assertTrue(SisuBigDecimal.valueOf(1).isGreaterThanOrEqualTo(0));
+        assertTrue(SisuBigDecimal.valueOf(0).isGreaterThanOrEqualTo(0));
+        assertFalse(SisuBigDecimal.valueOf(-1).isGreaterThanOrEqualTo(0));
     }
 
     /**
@@ -265,13 +262,13 @@ public class SisuBigDecimalTest
     @Test
     public void testL()
     {
-        assertFalse(SisuBigDecimal.valueOf(1).l(SisuBigDecimal.valueOf(0)));
-        assertFalse(SisuBigDecimal.valueOf(0).l(SisuBigDecimal.valueOf(0)));
-        assertTrue(SisuBigDecimal.valueOf(-1).l(SisuBigDecimal.valueOf(0)));
+        assertFalse(SisuBigDecimal.valueOf(1).isLessThan(SisuBigDecimal.valueOf(0)));
+        assertFalse(SisuBigDecimal.valueOf(0).isLessThan(SisuBigDecimal.valueOf(0)));
+        assertTrue(SisuBigDecimal.valueOf(-1).isLessThan(SisuBigDecimal.valueOf(0)));
         // double version
-        assertFalse(SisuBigDecimal.valueOf(1).l(0));
-        assertFalse(SisuBigDecimal.valueOf(0).l(0));
-        assertTrue(SisuBigDecimal.valueOf(-1).l(0));
+        assertFalse(SisuBigDecimal.valueOf(1).isLessThan(0));
+        assertFalse(SisuBigDecimal.valueOf(0).isLessThan(0));
+        assertTrue(SisuBigDecimal.valueOf(-1).isLessThan(0));
     }
 
     /**
@@ -280,13 +277,13 @@ public class SisuBigDecimalTest
     @Test
     public void testLeq()
     {
-        assertFalse(SisuBigDecimal.valueOf(1).leq(SisuBigDecimal.valueOf(0)));
-        assertTrue(SisuBigDecimal.valueOf(0).leq(SisuBigDecimal.valueOf(0)));
-        assertTrue(SisuBigDecimal.valueOf(-1).leq(SisuBigDecimal.valueOf(0)));
+        assertFalse(SisuBigDecimal.valueOf(1).isLessThanOrEqualTo(SisuBigDecimal.valueOf(0)));
+        assertTrue(SisuBigDecimal.valueOf(0).isLessThanOrEqualTo(SisuBigDecimal.valueOf(0)));
+        assertTrue(SisuBigDecimal.valueOf(-1).isLessThanOrEqualTo(SisuBigDecimal.valueOf(0)));
         // double version
-        assertFalse(SisuBigDecimal.valueOf(1).leq(0));
-        assertTrue(SisuBigDecimal.valueOf(0).leq(0));
-        assertTrue(SisuBigDecimal.valueOf(-1).leq(0));
+        assertFalse(SisuBigDecimal.valueOf(1).isLessThanOrEqualTo(0));
+        assertTrue(SisuBigDecimal.valueOf(0).isLessThanOrEqualTo(0));
+        assertTrue(SisuBigDecimal.valueOf(-1).isLessThanOrEqualTo(0));
     }
 
     /**

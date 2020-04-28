@@ -26,7 +26,6 @@ import org.jetbrains.annotations.Nullable;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.HashSet;
 
 import static java.lang.Boolean.FALSE;
@@ -88,7 +87,7 @@ public class Drawing
     {
         SisuBigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
         SisuBigDecimal explicitHeightPerImplicitHeight;
-        if (implicitHeightOfContents.compareTo(SisuBigDecimal.ZERO) != 0)
+        if (implicitHeightOfContents.isNotEqualTo(SisuBigDecimal.ZERO))
         {
             if (this.getExplicitHeight() == null)
             {
@@ -135,7 +134,7 @@ public class Drawing
     {
         SisuBigDecimal explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
         SisuBigDecimal explicitWidthPerImplicitWidth = this.getExplicitWidthPerImplicitWidth();
-        if (explicitHeightPerImplicitHeight.compareTo(explicitWidthPerImplicitWidth) <= 0)
+        if (explicitHeightPerImplicitHeight.isLessThanOrEqualTo(explicitWidthPerImplicitWidth))
         {
             return explicitHeightPerImplicitHeight;
         }
@@ -169,10 +168,10 @@ public class Drawing
         SisuBigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
         assert implicitWidthOfContents != null :
                 "The implicit width of the contents of a drawing cannot be null.";
-        assert implicitWidthOfContents.compareTo(SisuBigDecimal.ZERO) >= 0 :
+        assert implicitWidthOfContents.isGreaterThanOrEqualTo(SisuBigDecimal.ZERO) :
                 "The implicit width of the contents of a drawing must be positive (or zero).";
         SisuBigDecimal explicitWidthPerImplicitWidth;
-        if (implicitWidthOfContents.compareTo(SisuBigDecimal.ZERO) != 0)
+        if (implicitWidthOfContents.isNotEqualTo(SisuBigDecimal.ZERO))
         {
             if (this.getExplicitWidth() == null)
             {
@@ -247,7 +246,7 @@ public class Drawing
      */
     private SisuBigDecimal getImplicitWidthOfContents()
     {
-        assert this.getImplicitXMaximum().compareTo(this.getImplicitXMinimum()) >= 0 :
+        assert this.getImplicitXMaximum().isGreaterThanOrEqualTo(this.getImplicitXMinimum()) :
                 "The implicit x-coordinate maximum must be greater than or equal to the implicit x-coordinate minimum.";
         return this.getImplicitXMaximum().subtract(this.getImplicitXMinimum());
     }
@@ -264,12 +263,12 @@ public class Drawing
         for (Shape content : this.contents)
         {
             SisuBigDecimal xMaximumCurrent = content.getImplicitXMaximum();
-            if (xMaximumCurrent.compareTo(xMaximum) > 0)
+            if (xMaximumCurrent.isGreaterThan(xMaximum))
             {
                 xMaximum = xMaximumCurrent;
             }
         }
-        if (xMaximum.compareTo(SisuBigDecimal.valueOf(Double.MIN_VALUE)) == 0)
+        if (xMaximum.isEqualTo(SisuBigDecimal.valueOf(Double.MIN_VALUE)))
         {
             xMaximum = SisuBigDecimal.ZERO;
         }
@@ -288,12 +287,12 @@ public class Drawing
         for (Shape content : this.contents)
         {
             SisuBigDecimal xMinimumCurrent = content.getImplicitXMinimum();
-            if (xMinimumCurrent.compareTo(xMinimum) < 0)
+            if (xMinimumCurrent.isLessThan(xMinimum))
             {
                 xMinimum = xMinimumCurrent;
             }
         }
-        if (xMinimum.compareTo(SisuBigDecimal.valueOf(Double.MAX_VALUE)) == 0)
+        if (xMinimum.isEqualTo(SisuBigDecimal.valueOf(Double.MAX_VALUE)))
         {
             xMinimum = SisuBigDecimal.ZERO;
         }
@@ -312,12 +311,12 @@ public class Drawing
         for (Shape content : this.contents)
         {
             SisuBigDecimal yMaximumCurrent = content.getImplicitYMaximum();
-            if (yMaximumCurrent.compareTo(yMaximum) > 0)
+            if (yMaximumCurrent.isGreaterThan(yMaximum))
             {
                 yMaximum = yMaximumCurrent;
             }
         }
-        if (yMaximum.compareTo(SisuBigDecimal.valueOf(Double.MIN_VALUE)) == 0)
+        if (yMaximum.isEqualTo(SisuBigDecimal.valueOf(Double.MIN_VALUE)))
         {
             yMaximum = SisuBigDecimal.ZERO;
         }
@@ -336,12 +335,12 @@ public class Drawing
         for (Shape content : this.contents)
         {
             SisuBigDecimal yMinimumCurrent = content.getImplicitYMinimum();
-            if (yMinimumCurrent.compareTo(yMinimum) < 0)
+            if (yMinimumCurrent.isLessThan(yMinimum))
             {
                 yMinimum = yMinimumCurrent;
             }
         }
-        if (yMinimum.compareTo(SisuBigDecimal.valueOf(Double.MAX_VALUE)) == 0)
+        if (yMinimum.isEqualTo(SisuBigDecimal.valueOf(Double.MAX_VALUE)))
         {
             yMinimum = SisuBigDecimal.ZERO;
         }
@@ -464,7 +463,7 @@ public class Drawing
         SisuBigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
         SisuBigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
         SisuBigDecimal implicitAspectRatio = SisuBigDecimal.ZERO;
-        if (implicitHeightOfContents.compareTo(SisuBigDecimal.ZERO) > 0)
+        if (implicitHeightOfContents.isGreaterThan(SisuBigDecimal.ZERO))
         {
             implicitAspectRatio = implicitWidthOfContents.divide(implicitHeightOfContents,
                     SisuBigDecimal.mcOperations);
@@ -479,7 +478,7 @@ public class Drawing
 
         if (FALSE)
         {
-            if (implicitAspectRatio.compareTo(explicitAspectRatio) > 0)
+            if (implicitAspectRatio.isGreaterThan(explicitAspectRatio))
             {
                 // The implicit aspect ratio is greater than the explicit aspect ratio.
                 // Therefore, we are constrained by width.
@@ -492,7 +491,7 @@ public class Drawing
                 logger.atFine().log("Setting explicit width");
                 this.setExplicitWidth(SisuBigDecimal.valueOf(explicitWidthOfDrawingFloat));
             }
-            else if (implicitAspectRatio.compareTo(explicitAspectRatio) < 0)
+            else if (implicitAspectRatio.isLessThan(explicitAspectRatio))
             {
                 // The implicit aspect ratio is less than or equal to the explicit aspect ratio.
                 // Therefore, we are constrained by height.
