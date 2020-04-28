@@ -43,7 +43,7 @@ public class DrawingTestCircle extends DrawingTestShape
     void svgGeneratedByADrawingWithACircleContainsTheStringCircle()
     {
         int radius = 4000;
-        Circle circle = new Circle(BigDecimal.valueOf(radius));
+        Circle circle = new Circle(SisuBigDecimal.valueOf(radius));
         drawing.add(circle);
         String svg = drawing.getSVG(100, 100);
         then(svg).contains("circle");
@@ -71,11 +71,11 @@ public class DrawingTestCircle extends DrawingTestShape
         shape2.setRightOf(shape1);
         drawing.setExplicitHeight(100);
         drawing.setExplicitWidth(100);
-        BigDecimal explicitRadius1 = shape1.getExplicitRadius();
-        BigDecimal explicitRadius2 = shape2.getExplicitRadius();
+        SisuBigDecimal explicitRadius1 = shape1.getExplicitRadius();
+        SisuBigDecimal explicitRadius2 = shape2.getExplicitRadius();
 
-        assertEquals(0, BigDecimal.valueOf(25).compareTo(explicitRadius1));
-        assertEquals(0, BigDecimal.valueOf(25).compareTo(explicitRadius2));
+        assertEquals(0, SisuBigDecimal.valueOf(25).compareTo(explicitRadius1));
+        assertEquals(0, SisuBigDecimal.valueOf(25).compareTo(explicitRadius2));
     }
 
     @Test
@@ -87,9 +87,9 @@ public class DrawingTestCircle extends DrawingTestShape
         shape2.setRightOf(shape1);
         drawing.setExplicitHeight(100);
         drawing.setExplicitWidth(100);
-        BigDecimal actualImplicitRadius1 = shape1.getImplicitRadius();
-        BigDecimal actualImplicitRadius2 = shape2.getImplicitRadius();
-        BigDecimal expectedValue = SisuBigDecimal.HALF;
+        SisuBigDecimal actualImplicitRadius1 = shape1.getImplicitRadius();
+        SisuBigDecimal actualImplicitRadius2 = shape2.getImplicitRadius();
+        SisuBigDecimal expectedValue = SisuBigDecimal.HALF;
 
         assertEquals(0, expectedValue.compareTo(actualImplicitRadius1));
         assertEquals(0, expectedValue.compareTo(actualImplicitRadius2));

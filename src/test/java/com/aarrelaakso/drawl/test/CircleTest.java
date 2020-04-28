@@ -1,11 +1,8 @@
 package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Circle;
-import com.aarrelaakso.drawl.Drawing;
-import com.aarrelaakso.drawl.Shape;
+import com.aarrelaakso.drawl.SisuBigDecimal;
 import org.junit.jupiter.api.*;
-
-import java.math.BigDecimal;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,8 +54,8 @@ public class CircleTest extends ShapeTest {
          @Test
         @DisplayName("Then its implicit radius is 0.5")
         void thenImplicitRadiusIs05() {
-            BigDecimal radius = shape1.getImplicitRadius();
-            assertEquals(BigDecimal.valueOf(0.5), radius);
+            SisuBigDecimal radius = shape1.getImplicitRadius();
+            assertEquals(SisuBigDecimal.valueOf(0.5), radius);
         }
 
         @Tag("circle")
@@ -68,9 +65,9 @@ public class CircleTest extends ShapeTest {
         @DisplayName("Then you can set the explicit radius of a circle to a fixed value")
         void thenYouCanSetTheExplicitRadiusOfACircleToAFixedValue() {
             Integer radius = 100;
-            BigDecimal EXPECTED = BigDecimal.valueOf(radius);
+            SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(radius);
             shape1.setExplicitRadius(radius);
-            BigDecimal ACTUAL = shape1.getExplicitRadius();
+            SisuBigDecimal ACTUAL = shape1.getExplicitRadius();
 
             then(ACTUAL).isEqualByComparingTo(EXPECTED);
         }

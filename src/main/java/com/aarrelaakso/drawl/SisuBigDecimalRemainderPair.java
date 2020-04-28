@@ -45,7 +45,7 @@ public final class SisuBigDecimalRemainderPair
      * @param remainder remainder
      * @return number remainder pair
      */
-    public static SisuBigDecimalRemainderPair create(SisuBigDecimal number, SisuBigDecimal remainder)
+    public static SisuBigDecimalRemainderPair  valueOf(SisuBigDecimal number, SisuBigDecimal remainder)
     {
         SisuBigDecimalRemainderPair res = new SisuBigDecimalRemainderPair();
         res.number = number;

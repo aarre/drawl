@@ -2,10 +2,11 @@ package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Shape;
-import com.google.common.flogger.FluentLogger;
-import org.junit.jupiter.api.*;
+import com.aarrelaakso.drawl.SisuBigDecimal;
 
-import java.math.BigDecimal;
+import com.google.common.flogger.FluentLogger;
+import org.assertj.core.api.BDDSoftAssertions;
+import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +19,6 @@ public abstract class ShapeTest {
     static
     {
         logger = FluentLogger.forEnclosingClass();
-
     }
 
     Shape shape1;
@@ -47,48 +47,48 @@ public abstract class ShapeTest {
         @DisplayName("When you set a default Shape above a default Shape, its implicit y-coordinate is 1")
         void whenYouSetADefaultShapeAboveADefaultShapeItsImplicitYCoordinateIs1() {
             shape1.setAbove(shape2);
-            BigDecimal y1 = shape1.getImplicitYPositionCenter();
-            BigDecimal y2 = shape2.getImplicitYPositionCenter();
-            assertEquals(0, BigDecimal.ONE.compareTo(y1));
-            assertEquals(0, BigDecimal.ZERO.compareTo(y2));
+            SisuBigDecimal y1 = shape1.getImplicitYPositionCenter();
+            SisuBigDecimal y2 = shape2.getImplicitYPositionCenter();
+            assertEquals(0, SisuBigDecimal.ONE.compareTo(y1));
+            assertEquals(0, SisuBigDecimal.ZERO.compareTo(y2));
         }
 
         @Test
         @DisplayName("When you set a default Shape below a default Shape, its implicit y-coordinate is -1")
         void whenYouSetADefaultShapeBelowADefaultShapeItsImplicitYCoordinateIsNeg1() {
             shape1.setBelow(shape2);
-            BigDecimal y1 = shape1.getImplicitYPositionCenter();
-            BigDecimal y2 = shape2.getImplicitYPositionCenter();
-            assertEquals(0, y1.compareTo(BigDecimal.valueOf(-1)));
-            assertEquals(0, y2.compareTo(BigDecimal.ZERO));
+            SisuBigDecimal y1 = shape1.getImplicitYPositionCenter();
+            SisuBigDecimal y2 = shape2.getImplicitYPositionCenter();
+            assertEquals(0, y1.compareTo(SisuBigDecimal.valueOf(-1)));
+            assertEquals(0, y2.compareTo(SisuBigDecimal.ZERO));
         }
 
         @Test
         @DisplayName("When you set a Shape leftOf a default Shape, its implicit x-coordinate is -1")
         void whenYouSetAShapeLeftOfADefaultShapeItsImplicitXCoordinateIsNeg1() {
-            BigDecimal x10 = shape1.getImplicitXPositionCenter();
-            BigDecimal x20 = shape2.getImplicitXPositionCenter();
+            SisuBigDecimal x10 = shape1.getImplicitXPositionCenter();
+            SisuBigDecimal x20 = shape2.getImplicitXPositionCenter();
             shape1.setLeftOf(shape2);
-            BigDecimal x11 = shape1.getImplicitXPositionCenter();
-            BigDecimal x21 = shape2.getImplicitXPositionCenter();
-            assertEquals(0, x10.compareTo(BigDecimal.ZERO));
-            assertEquals(0, x20.compareTo(BigDecimal.ZERO));
-            assertEquals(0, x11.compareTo(BigDecimal.valueOf(-1)));
-            assertEquals(0, x21.compareTo(BigDecimal.ZERO));
+            SisuBigDecimal x11 = shape1.getImplicitXPositionCenter();
+            SisuBigDecimal x21 = shape2.getImplicitXPositionCenter();
+            assertEquals(0, x10.compareTo(SisuBigDecimal.ZERO));
+            assertEquals(0, x20.compareTo(SisuBigDecimal.ZERO));
+            assertEquals(0, x11.compareTo(SisuBigDecimal.valueOf(-1)));
+            assertEquals(0, x21.compareTo(SisuBigDecimal.ZERO));
         }
 
         @Test
         @DisplayName("When you set a Shape rightOf another Shape, its implicit x-coordinate is 1")
         void whenYouSetAShapeRightOfADefaultShapeItsImplicitXCoordinateIs1() {
-            BigDecimal x10 = shape1.getImplicitXPositionCenter();
-            BigDecimal x20 = shape2.getImplicitXPositionCenter();
+            SisuBigDecimal x10 = shape1.getImplicitXPositionCenter();
+            SisuBigDecimal x20 = shape2.getImplicitXPositionCenter();
             shape1.setRightOf(shape2);
-            BigDecimal x11 = shape1.getImplicitXPositionCenter();
-            BigDecimal x21 = shape2.getImplicitXPositionCenter();
-            assertEquals(0, x10.compareTo(BigDecimal.ZERO));
-            assertEquals(0, x20.compareTo(BigDecimal.ZERO));
-            assertEquals(0, x11.compareTo(BigDecimal.ONE));
-            assertEquals(0, x21.compareTo(BigDecimal.ZERO));
+            SisuBigDecimal x11 = shape1.getImplicitXPositionCenter();
+            SisuBigDecimal x21 = shape2.getImplicitXPositionCenter();
+            assertEquals(0, x10.compareTo(SisuBigDecimal.ZERO));
+            assertEquals(0, x20.compareTo(SisuBigDecimal.ZERO));
+            assertEquals(0, x11.compareTo(SisuBigDecimal.ONE));
+            assertEquals(0, x21.compareTo(SisuBigDecimal.ZERO));
         }
 
         @Test
@@ -116,64 +116,62 @@ public abstract class ShapeTest {
         @Test
         @DisplayName("Then its explicit width is null")
         void thenExplicitWidthIsNull() {
-            BigDecimal width = shape1.getExplicitWidth();
+            SisuBigDecimal width = shape1.getExplicitWidth();
             assertEquals(null, width, "The explicit width of a default Shape should be null.");
         }
 
         @Test
         @DisplayName("Then its explicit x-coordinate is 0")
         void thenExplicitXCoordinateIs0() {
-            BigDecimal x = shape1.getExplicitXPositionCenter();
-            assertAll("The result should be exactly 0",
-                    () -> assertEquals(BigDecimal.ZERO, x),
-                    () -> assertEquals("0", x.toString())
-            );
-        }
+            SisuBigDecimal x = shape1.getExplicitXPositionCenter();
+            then(x).isEqualByComparingTo(SisuBigDecimal.ZERO);
+            then("0").isEqualTo(x.toPlainString());
+         }
 
         @Test
         @DisplayName("Then its explicit y-coordinate is 0")
         void thenExplicitYCoordinateIs0() {
-            BigDecimal y = shape1.getExplicitYPositionCenter();
+            SisuBigDecimal y = shape1.getExplicitYPositionCenter();
             assertAll("The y-coordinate of a default Circle should be exactly 0",
-                    () -> assertEquals(BigDecimal.ZERO, y),
-                    () -> assertEquals("0", y.toString())
+                    () -> assertEquals(SisuBigDecimal.ZERO, y),
+                    () -> assertEquals("0", y.toPlainString())
             );
         }
 
         @Test
         @DisplayName("Then its implicit height is 1")
         void thenImplicitHeightIs1() {
-            BigDecimal implicitHeight = shape1.getImplicitHeight();
-            assertEquals(1, implicitHeight.compareTo(BigDecimal.ZERO));
+            SisuBigDecimal implicitHeight = shape1.getImplicitHeight();
+            assertEquals(1, implicitHeight.compareTo(SisuBigDecimal.ZERO));
         }
 
         @Test
         @DisplayName("Then its implicit width is 1")
         void thenImplicitWidthIs1() {
-            BigDecimal width = shape1.getImplicitWidth();
-            assertEquals(0, width.compareTo(BigDecimal.ONE));
+            SisuBigDecimal width = shape1.getImplicitWidth();
+            assertEquals(0, width.compareTo(SisuBigDecimal.ONE));
         }
 
         @Test
         @DisplayName("Then its implicit x-coordinate is 0")
         void thenImplicitXPositionIs0() {
-            BigDecimal x = shape1.getImplicitXPositionCenter();
-            assertEquals(0, x.compareTo(BigDecimal.ZERO));
+            SisuBigDecimal x = shape1.getImplicitXPositionCenter();
+            assertEquals(0, x.compareTo(SisuBigDecimal.ZERO));
         }
 
         @Test
         @DisplayName("Then its implicit y-coordinate is 0")
         void thenImplicitYPositionIs0() {
-            BigDecimal x = shape1.getImplicitYPositionCenter();
-            assertEquals(0, x.compareTo(BigDecimal.ZERO));
+            SisuBigDecimal x = shape1.getImplicitYPositionCenter();
+            assertEquals(0, x.compareTo(SisuBigDecimal.ZERO));
         }
 
         @Test
         @DisplayName("Then setting the height and then getting the height give the same result")
         void thenSettingTheHeightAndGettingTheHeightGiveTheSameResult() {
-            BigDecimal EXPECTED = BigDecimal.valueOf(100);
+            SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(100);
             shape1.setExplicitHeight(EXPECTED);
-            BigDecimal ACTUAL = shape1.getExplicitHeight();
+            SisuBigDecimal ACTUAL = shape1.getExplicitHeight();
 
             then(EXPECTED).isEqualByComparingTo(ACTUAL);
         }
@@ -181,9 +179,9 @@ public abstract class ShapeTest {
         @Test
         @DisplayName("Then setting the width and then getting the width give the same result")
         void thenSettingTheWidthAndGettingTheWidthGiveTheSameResult() {
-            BigDecimal EXPECTED = BigDecimal.valueOf(100);
+            SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(100);
             shape1.setExplicitWidth(EXPECTED);
-            BigDecimal ACTUAL = shape1.getExplicitWidth();
+            SisuBigDecimal ACTUAL = shape1.getExplicitWidth();
 
             then(EXPECTED).isEqualByComparingTo(ACTUAL);
         }
@@ -194,8 +192,8 @@ public abstract class ShapeTest {
         @DisplayName("Then you can set its x-coordinate and get it back")
         void thenYouCanSetItsXCoordinateAndGetItBack() {
             shape1.setExplicitXPositionCenter(100);
-            BigDecimal x = shape1.getExplicitXPositionCenter();
-            assertEquals(0, x.compareTo(BigDecimal.valueOf(100)));
+            SisuBigDecimal x = shape1.getExplicitXPositionCenter();
+            assertEquals(0, x.compareTo(SisuBigDecimal.valueOf(100)));
         }
 
         @Test
@@ -221,17 +219,17 @@ public abstract class ShapeTest {
             @DisplayName("When a Shape is created, then it has an explicit center x position")
             void whenAShapeIsCreatedThenItHasAnExplicitCenterXPosition()
             {
-                BigDecimal explicitXPositionCenter = shape1.getExplicitXPositionCenter();
-                then(explicitXPositionCenter).isEqualByComparingTo(BigDecimal.ZERO);
+                SisuBigDecimal explicitXPositionCenter = shape1.getExplicitXPositionCenter();
+                then(explicitXPositionCenter).isEqualByComparingTo(SisuBigDecimal.ZERO);
             }
 
             @Test
             @DisplayName("When a Shape has explicit dimensions, then it has an explicit left x position")
             void whenAShapeIsCreatedThenItHasAnExplicitLeftXPosition()
             {
-                shape1.setExplicitWidth(BigDecimal.valueOf(100));
-                BigDecimal explicitXPositionLeft = shape1.getExplicitXPositionLeft();
-                then(explicitXPositionLeft).isEqualByComparingTo(BigDecimal.valueOf(-50));
+                shape1.setExplicitWidth(SisuBigDecimal.valueOf(100));
+                SisuBigDecimal explicitXPositionLeft = shape1.getExplicitXPositionLeft();
+                then(explicitXPositionLeft).isEqualByComparingTo(SisuBigDecimal.valueOf(-50));
             }
         }
 
@@ -244,16 +242,16 @@ public abstract class ShapeTest {
             @DisplayName("When a Shape is created, then it has an implicit center x position")
             void whenAShapeIsCreatedThenItHasAnImplicitCenterXPosition()
             {
-                BigDecimal implicitXPositionCenter = shape1.getImplicitXPositionCenter();
-                then(implicitXPositionCenter).isEqualByComparingTo(BigDecimal.ZERO);
+                SisuBigDecimal implicitXPositionCenter = shape1.getImplicitXPositionCenter();
+                then(implicitXPositionCenter).isEqualByComparingTo(SisuBigDecimal.ZERO);
             }
 
             @Test
             @DisplayName("When a Shape is created, then it has an implicit left x position")
             void whenAShapeIsCreatedThenItHasAnImplicitLeftXPosition()
             {
-                BigDecimal implicitXPositionLeft = shape1.getImplicitXPositionLeft();
-                then(implicitXPositionLeft).isEqualByComparingTo(BigDecimal.valueOf(-0.5));
+                SisuBigDecimal implicitXPositionLeft = shape1.getImplicitXPositionLeft();
+                then(implicitXPositionLeft).isEqualByComparingTo(SisuBigDecimal.valueOf(-0.5));
             }
         }
 
@@ -276,9 +274,9 @@ public abstract class ShapeTest {
                 Drawing drawing = new Drawing();
                 drawing.add(shape1);
                 drawing.setExplicitDimensions(100,100);
-                //shape1.setExplicitHeight(BigDecimal.valueOf(100));
-                BigDecimal explicitXPositionTop = shape1.getExplicitYPositionTop();
-                then(explicitXPositionTop).isEqualByComparingTo(BigDecimal.valueOf(0));
+                //shape1.setExplicitHeight(SisuBigDecimal.valueOf(100));
+                SisuBigDecimal explicitXPositionTop = shape1.getExplicitYPositionTop();
+                then(explicitXPositionTop).isEqualByComparingTo(SisuBigDecimal.valueOf(0));
             }
         }
 
@@ -291,15 +289,15 @@ public abstract class ShapeTest {
             @Test
             @DisplayName("When a Shape is created, then it has an implicit center y position")
             void whenShapeIsCreatedThenItHasAnImplicitCenterYPosition() {
-                BigDecimal implicitYPositionCenter = shape1.getImplicitYPositionCenter();
-                then(implicitYPositionCenter).isEqualByComparingTo(BigDecimal.ZERO);
+                SisuBigDecimal implicitYPositionCenter = shape1.getImplicitYPositionCenter();
+                then(implicitYPositionCenter).isEqualByComparingTo(SisuBigDecimal.ZERO);
             }
 
             @Test
             @DisplayName("When a Shape is created, then it has an implicit top y position")
             void whenShapeIsCreatedThenItHasAnImplicitTopYPosition() {
-                BigDecimal implicitYPositionTop = shape1.getImplicitYPositionTop();
-                then(implicitYPositionTop).isEqualByComparingTo(BigDecimal.valueOf(-0.5));
+                SisuBigDecimal implicitYPositionTop = shape1.getImplicitYPositionTop();
+                then(implicitYPositionTop).isEqualByComparingTo(SisuBigDecimal.valueOf(-0.5));
             }
         }
 

@@ -50,9 +50,9 @@ public class SisuBigDecimalTest
     @Test
     public void testAbs()
     {
-        assertEquals(SisuBigDecimal.create(0), SisuBigDecimal.create(0).abs());
-        assertEquals(SisuBigDecimal.create(1), SisuBigDecimal.create(1).abs());
-        assertEquals(SisuBigDecimal.create(1), SisuBigDecimal.create(-1).abs());
+        assertEquals(SisuBigDecimal.valueOf(0), SisuBigDecimal.valueOf(0).abs());
+        assertEquals(SisuBigDecimal.valueOf(1), SisuBigDecimal.valueOf(1).abs());
+        assertEquals(SisuBigDecimal.valueOf(1), SisuBigDecimal.valueOf(-1).abs());
     }
 
     /**
@@ -61,9 +61,9 @@ public class SisuBigDecimalTest
     @Test
     public void testAdd()
     {
-        assertEquals(SisuBigDecimal.create(2), SisuBigDecimal.create(1).add(SisuBigDecimal.create("1")));
+        assertEquals(SisuBigDecimal.valueOf(2), SisuBigDecimal.valueOf(1).add(SisuBigDecimal.valueOf("1")));
         // double version
-        assertEquals(SisuBigDecimal.create(2), SisuBigDecimal.create(1).add(1));
+        assertEquals(SisuBigDecimal.valueOf(2), SisuBigDecimal.valueOf(1).add(1));
     }
 
     /**
@@ -72,9 +72,9 @@ public class SisuBigDecimalTest
     @Test
     public void testCompareTo()
     {
-        assertEquals(1, SisuBigDecimal.create(1).compareTo(SisuBigDecimal.create(0)));
-        assertEquals(0, SisuBigDecimal.create(0).compareTo(SisuBigDecimal.create(0)));
-        assertEquals(-1, SisuBigDecimal.create(-1).compareTo(SisuBigDecimal.create(0)));
+        assertEquals(1, SisuBigDecimal.valueOf(1).compareTo(SisuBigDecimal.valueOf(0)));
+        assertEquals(0, SisuBigDecimal.valueOf(0).compareTo(SisuBigDecimal.valueOf(0)));
+        assertEquals(-1, SisuBigDecimal.valueOf(-1).compareTo(SisuBigDecimal.valueOf(0)));
     }
 
     /**
@@ -84,8 +84,8 @@ public class SisuBigDecimalTest
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is low")
     public void testCompareToFuzzy()
     {
-        SisuBigDecimal value1 = SisuBigDecimal.create(1.0/3.0);
-        SisuBigDecimal value2 = SisuBigDecimal.create(1.0/2.999999999999999999999999999999999999999999999999999);
+        SisuBigDecimal value1 = SisuBigDecimal.valueOf(1.0/3.0);
+        SisuBigDecimal value2 = SisuBigDecimal.valueOf(1.0/2.999999999999999999999999999999999999999999999999999);
         Integer precision = 10;
         Integer ACTUAL =  value1.compareToFuzzy(value2, SisuBigDecimal.mcComparisons);
         Integer EXPECTED = 0;
@@ -102,8 +102,8 @@ public class SisuBigDecimalTest
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is high #1")
     public void testCompareToFuzzyWhenPrecisionIsHigh01()
     {
-        SisuBigDecimal value1 = SisuBigDecimal.create("0.3333333333333333");
-        SisuBigDecimal value2 = SisuBigDecimal.create("0.3333333333333334");
+        SisuBigDecimal value1 = SisuBigDecimal.valueOf("0.3333333333333333");
+        SisuBigDecimal value2 = SisuBigDecimal.valueOf("0.3333333333333334");
 
         Integer precision = 100;
         Integer ACTUAL =  value1.compareToFuzzy(value2, SisuBigDecimal.mcOperations);
@@ -121,8 +121,8 @@ public class SisuBigDecimalTest
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is high #2")
     public void testCompareToFuzzyWhenPrecisionIsHigh02()
     {
-        SisuBigDecimal value1 = SisuBigDecimal.create("0.3333333333333334");
-        SisuBigDecimal value2 = SisuBigDecimal.create("0.3333333333333333");
+        SisuBigDecimal value1 = SisuBigDecimal.valueOf("0.3333333333333334");
+        SisuBigDecimal value2 = SisuBigDecimal.valueOf("0.3333333333333333");
 
         Integer precision = 100;
         Integer ACTUAL =  value1.compareToFuzzy(value2, SisuBigDecimal.mcOperations);
@@ -140,24 +140,24 @@ public class SisuBigDecimalTest
     @Test
     public void testCreate()
     {
-        assertEquals(SisuBigDecimal.create(1), SisuBigDecimal.create("1"));
-        assertEquals(SisuBigDecimal.create(-1), SisuBigDecimal.create("-1"));
-        assertEquals(SisuBigDecimal.create(1), SisuBigDecimal.create("1.00"));
-        assertEquals(SisuBigDecimal.create(1.5), SisuBigDecimal.create("1.5"));
-        assertEquals(SisuBigDecimal.create(4.95), SisuBigDecimal.create("4.95"));
-        assertEquals(SisuBigDecimal.create(new BigDecimal("1e-25")), SisuBigDecimal.create("0.0000000000000000000000001"));
-        assertEquals(SisuBigDecimal.create(new BigDecimal("1e-25")), SisuBigDecimal.create("0.000000000000000000000000100000"));
+        assertEquals(SisuBigDecimal.valueOf(1), SisuBigDecimal.valueOf("1"));
+        assertEquals(SisuBigDecimal.valueOf(-1), SisuBigDecimal.valueOf("-1"));
+        assertEquals(SisuBigDecimal.valueOf(1), SisuBigDecimal.valueOf("1.00"));
+        assertEquals(SisuBigDecimal.valueOf(1.5), SisuBigDecimal.valueOf("1.5"));
+        assertEquals(SisuBigDecimal.valueOf(4.95), SisuBigDecimal.valueOf("4.95"));
+        assertEquals(SisuBigDecimal.valueOf(new BigDecimal("1e-25")), SisuBigDecimal.valueOf("0.0000000000000000000000001"));
+        assertEquals(SisuBigDecimal.valueOf(new BigDecimal("1e-25")), SisuBigDecimal.valueOf("0.000000000000000000000000100000"));
         //
-        assertEquals(SisuBigDecimal.create(1).hashCode(), SisuBigDecimal.create("1").hashCode());
-        assertEquals(SisuBigDecimal.create(1).hashCode(), SisuBigDecimal.create("1.00").hashCode());
-        assertEquals(SisuBigDecimal.create(1.5).hashCode(), SisuBigDecimal.create("1.5").hashCode());
-        assertEquals(SisuBigDecimal.create(1000).hashCode(), SisuBigDecimal.create("1000").hashCode());
-        assertEquals(SisuBigDecimal.create(1000).hashCode(), SisuBigDecimal.create("1.000E3").hashCode());
-        assertEquals(SisuBigDecimal.create(new BigDecimal("1e-25")).hashCode(), SisuBigDecimal.create("0.0000000000000000000000001").hashCode());
-        assertEquals(SisuBigDecimal.create(new BigDecimal("1e-25")).hashCode(), SisuBigDecimal.create("0.000000000000000000000000100000").hashCode());
-        assertEquals(SisuBigDecimal.create(1000), SisuBigDecimal.create("1000"));
-        assertEquals(SisuBigDecimal.create(1000), SisuBigDecimal.create("1.000E3"));
-        assertFalse(SisuBigDecimal.create(1).hashCode() == SisuBigDecimal.create("1.5").hashCode());
+        assertEquals(SisuBigDecimal.valueOf(1).hashCode(), SisuBigDecimal.valueOf("1").hashCode());
+        assertEquals(SisuBigDecimal.valueOf(1).hashCode(), SisuBigDecimal.valueOf("1.00").hashCode());
+        assertEquals(SisuBigDecimal.valueOf(1.5).hashCode(), SisuBigDecimal.valueOf("1.5").hashCode());
+        assertEquals(SisuBigDecimal.valueOf(1000).hashCode(), SisuBigDecimal.valueOf("1000").hashCode());
+        assertEquals(SisuBigDecimal.valueOf(1000).hashCode(), SisuBigDecimal.valueOf("1.000E3").hashCode());
+        assertEquals(SisuBigDecimal.valueOf(new BigDecimal("1e-25")).hashCode(), SisuBigDecimal.valueOf("0.0000000000000000000000001").hashCode());
+        assertEquals(SisuBigDecimal.valueOf(new BigDecimal("1e-25")).hashCode(), SisuBigDecimal.valueOf("0.000000000000000000000000100000").hashCode());
+        assertEquals(SisuBigDecimal.valueOf(1000), SisuBigDecimal.valueOf("1000"));
+        assertEquals(SisuBigDecimal.valueOf(1000), SisuBigDecimal.valueOf("1.000E3"));
+        assertFalse(SisuBigDecimal.valueOf(1).hashCode() == SisuBigDecimal.valueOf("1.5").hashCode());
     }
 
     /**
@@ -166,15 +166,15 @@ public class SisuBigDecimalTest
     @Test
     public void testDiv()
     {
-        assertEquals(SisuBigDecimal.create("1.5"), SisuBigDecimal.create(3).div(SisuBigDecimal.create(2), 2));
-        assertEquals(SisuBigDecimal.create("0.67"), SisuBigDecimal.create(2).div(SisuBigDecimal.create(3), 2));
-        assertEquals(SisuBigDecimal.create("6.7"), SisuBigDecimal.create(20).div(SisuBigDecimal.create(3), 2));
-        assertEquals(SisuBigDecimal.create("0.6666666667"), SisuBigDecimal.create(2).div(SisuBigDecimal.create("3"), 10));
+        assertEquals(SisuBigDecimal.valueOf("1.5"), SisuBigDecimal.valueOf(3).divide(SisuBigDecimal.valueOf(2), 2));
+        assertEquals(SisuBigDecimal.valueOf("0.67"), SisuBigDecimal.valueOf(2).divide(SisuBigDecimal.valueOf(3), 2));
+        assertEquals(SisuBigDecimal.valueOf("6.7"), SisuBigDecimal.valueOf(20).divide(SisuBigDecimal.valueOf(3), 2));
+        assertEquals(SisuBigDecimal.valueOf("0.6666666667"), SisuBigDecimal.valueOf(2).divide(SisuBigDecimal.valueOf("3"), 10));
         // double version
-        assertEquals(SisuBigDecimal.create("1.5"), SisuBigDecimal.create(3).div(2, 2));
-        assertEquals(SisuBigDecimal.create("0.67"), SisuBigDecimal.create(2).div(3, 2));
-        assertEquals(SisuBigDecimal.create("6.7"), SisuBigDecimal.create(20).div(3, 2));
-        assertEquals(SisuBigDecimal.create("0.6666666667"), SisuBigDecimal.create(2).div(3, 10));
+        assertEquals(SisuBigDecimal.valueOf("1.5"), SisuBigDecimal.valueOf(3).divide(2, 2));
+        assertEquals(SisuBigDecimal.valueOf("0.67"), SisuBigDecimal.valueOf(2).divide(3, 2));
+        assertEquals(SisuBigDecimal.valueOf("6.7"), SisuBigDecimal.valueOf(20).divide(3, 2));
+        assertEquals(SisuBigDecimal.valueOf("0.6666666667"), SisuBigDecimal.valueOf(2).divide(3, 10));
     }
 
     /**
@@ -183,15 +183,15 @@ public class SisuBigDecimalTest
     @Test
     public void testDivWithRemainder()
     {
-        assertEquals(SisuBigDecimalRemainderPair.create(SisuBigDecimal.create("1.5"), SisuBigDecimal.create("0")),
-                SisuBigDecimal.create(3).divWithRemainder(SisuBigDecimal.create(2), 2));
+        assertEquals(SisuBigDecimalRemainderPair.valueOf(SisuBigDecimal.valueOf("1.5"), SisuBigDecimal.valueOf("0")),
+                SisuBigDecimal.valueOf(3).divWithRemainder(SisuBigDecimal.valueOf(2), 2));
 
-        SisuBigDecimalRemainderPair EXPECTED = SisuBigDecimalRemainderPair.create(
-                SisuBigDecimal.create("0.66"),
-                SisuBigDecimal.create("0.02"));
+        SisuBigDecimalRemainderPair EXPECTED = SisuBigDecimalRemainderPair.valueOf(
+                SisuBigDecimal.valueOf("0.66"),
+                SisuBigDecimal.valueOf("0.02"));
 
-        SisuBigDecimal two = SisuBigDecimal.create(2);
-        SisuBigDecimal three = SisuBigDecimal.create(3);
+        SisuBigDecimal two = SisuBigDecimal.valueOf(2);
+        SisuBigDecimal three = SisuBigDecimal.valueOf(3);
 
         SisuBigDecimalRemainderPair ACTUAL = two.divWithRemainder(three, 2);
 
@@ -201,19 +201,19 @@ public class SisuBigDecimalTest
                 .isEqualTo(EXPECTED);
 
 
-        assertEquals(SisuBigDecimalRemainderPair.create(SisuBigDecimal.create("6.6"), SisuBigDecimal.create("0.2")),
-                SisuBigDecimal.create(20).divWithRemainder(SisuBigDecimal.create(3), 2));
-        assertEquals(SisuBigDecimalRemainderPair.create(SisuBigDecimal.create("0.6666666666"), SisuBigDecimal.create("0.0000000002")),
-                SisuBigDecimal.create(2).divWithRemainder(SisuBigDecimal.create(3), 10));
+        assertEquals(SisuBigDecimalRemainderPair.valueOf(SisuBigDecimal.valueOf("6.6"), SisuBigDecimal.valueOf("0.2")),
+                SisuBigDecimal.valueOf(20).divWithRemainder(SisuBigDecimal.valueOf(3), 2));
+        assertEquals(SisuBigDecimalRemainderPair.valueOf(SisuBigDecimal.valueOf("0.6666666666"), SisuBigDecimal.valueOf("0.0000000002")),
+                SisuBigDecimal.valueOf(2).divWithRemainder(SisuBigDecimal.valueOf(3), 10));
         // double version
-        assertEquals(SisuBigDecimalRemainderPair.create(SisuBigDecimal.create("1.5"), SisuBigDecimal.create("0")),
-                SisuBigDecimal.create(3).divWithRemainder(2, 2));
-        assertEquals(SisuBigDecimalRemainderPair.create(SisuBigDecimal.create("0.66"), SisuBigDecimal.create("0.02")),
-                SisuBigDecimal.create(2).divWithRemainder(3, 2));
-        assertEquals(SisuBigDecimalRemainderPair.create(SisuBigDecimal.create("6.6"), SisuBigDecimal.create("0.2")),
-                SisuBigDecimal.create(20).divWithRemainder(3, 2));
-        assertEquals(SisuBigDecimalRemainderPair.create(SisuBigDecimal.create("0.6666666666"), SisuBigDecimal.create("0.0000000002")),
-                SisuBigDecimal.create(2).divWithRemainder(3, 10));
+        assertEquals(SisuBigDecimalRemainderPair.valueOf(SisuBigDecimal.valueOf("1.5"), SisuBigDecimal.valueOf("0")),
+                SisuBigDecimal.valueOf(3).divWithRemainder(2, 2));
+        assertEquals(SisuBigDecimalRemainderPair.valueOf(SisuBigDecimal.valueOf("0.66"), SisuBigDecimal.valueOf("0.02")),
+                SisuBigDecimal.valueOf(2).divWithRemainder(3, 2));
+        assertEquals(SisuBigDecimalRemainderPair.valueOf(SisuBigDecimal.valueOf("6.6"), SisuBigDecimal.valueOf("0.2")),
+                SisuBigDecimal.valueOf(20).divWithRemainder(3, 2));
+        assertEquals(SisuBigDecimalRemainderPair.valueOf(SisuBigDecimal.valueOf("0.6666666666"), SisuBigDecimal.valueOf("0.0000000002")),
+                SisuBigDecimal.valueOf(2).divWithRemainder(3, 10));
     }
 
     /**
@@ -222,11 +222,11 @@ public class SisuBigDecimalTest
     @Test
     public void testEq()
     {
-        assertTrue(SisuBigDecimal.create(0).eq(SisuBigDecimal.ZERO));
-        assertFalse(SisuBigDecimal.create(1).eq(SisuBigDecimal.ZERO));
+        assertTrue(SisuBigDecimal.valueOf(0).equals(SisuBigDecimal.ZERO));
+        assertFalse(SisuBigDecimal.valueOf(1).equals(SisuBigDecimal.ZERO));
         // double version
-        assertTrue(SisuBigDecimal.create(0).eq(0));
-        assertFalse(SisuBigDecimal.create(1).eq(0));
+        assertTrue(SisuBigDecimal.valueOf(0).equals(0));
+        assertFalse(SisuBigDecimal.valueOf(1).equals(0));
     }
 
     /**
@@ -235,13 +235,13 @@ public class SisuBigDecimalTest
     @Test
     public void testG()
     {
-        assertTrue(SisuBigDecimal.create(1).g(SisuBigDecimal.create(0)));
-        assertFalse(SisuBigDecimal.create(0).g(SisuBigDecimal.create(0)));
-        assertFalse(SisuBigDecimal.create(-1).g(SisuBigDecimal.create(0)));
+        assertTrue(SisuBigDecimal.valueOf(1).g(SisuBigDecimal.valueOf(0)));
+        assertFalse(SisuBigDecimal.valueOf(0).g(SisuBigDecimal.valueOf(0)));
+        assertFalse(SisuBigDecimal.valueOf(-1).g(SisuBigDecimal.valueOf(0)));
         // double version
-        assertTrue(SisuBigDecimal.create(1).g(0));
-        assertFalse(SisuBigDecimal.create(0).g(0));
-        assertFalse(SisuBigDecimal.create(-1).g(0));
+        assertTrue(SisuBigDecimal.valueOf(1).g(0));
+        assertFalse(SisuBigDecimal.valueOf(0).g(0));
+        assertFalse(SisuBigDecimal.valueOf(-1).g(0));
     }
 
     /**
@@ -250,13 +250,13 @@ public class SisuBigDecimalTest
     @Test
     public void testGeq()
     {
-        assertTrue(SisuBigDecimal.create(1).geq(SisuBigDecimal.create(0)));
-        assertTrue(SisuBigDecimal.create(0).geq(SisuBigDecimal.create(0)));
-        assertFalse(SisuBigDecimal.create(-1).geq(SisuBigDecimal.create(0)));
+        assertTrue(SisuBigDecimal.valueOf(1).geq(SisuBigDecimal.valueOf(0)));
+        assertTrue(SisuBigDecimal.valueOf(0).geq(SisuBigDecimal.valueOf(0)));
+        assertFalse(SisuBigDecimal.valueOf(-1).geq(SisuBigDecimal.valueOf(0)));
         // double version
-        assertTrue(SisuBigDecimal.create(1).geq(0));
-        assertTrue(SisuBigDecimal.create(0).geq(0));
-        assertFalse(SisuBigDecimal.create(-1).geq(0));
+        assertTrue(SisuBigDecimal.valueOf(1).geq(0));
+        assertTrue(SisuBigDecimal.valueOf(0).geq(0));
+        assertFalse(SisuBigDecimal.valueOf(-1).geq(0));
     }
 
     /**
@@ -265,13 +265,13 @@ public class SisuBigDecimalTest
     @Test
     public void testL()
     {
-        assertFalse(SisuBigDecimal.create(1).l(SisuBigDecimal.create(0)));
-        assertFalse(SisuBigDecimal.create(0).l(SisuBigDecimal.create(0)));
-        assertTrue(SisuBigDecimal.create(-1).l(SisuBigDecimal.create(0)));
+        assertFalse(SisuBigDecimal.valueOf(1).l(SisuBigDecimal.valueOf(0)));
+        assertFalse(SisuBigDecimal.valueOf(0).l(SisuBigDecimal.valueOf(0)));
+        assertTrue(SisuBigDecimal.valueOf(-1).l(SisuBigDecimal.valueOf(0)));
         // double version
-        assertFalse(SisuBigDecimal.create(1).l(0));
-        assertFalse(SisuBigDecimal.create(0).l(0));
-        assertTrue(SisuBigDecimal.create(-1).l(0));
+        assertFalse(SisuBigDecimal.valueOf(1).l(0));
+        assertFalse(SisuBigDecimal.valueOf(0).l(0));
+        assertTrue(SisuBigDecimal.valueOf(-1).l(0));
     }
 
     /**
@@ -280,13 +280,13 @@ public class SisuBigDecimalTest
     @Test
     public void testLeq()
     {
-        assertFalse(SisuBigDecimal.create(1).leq(SisuBigDecimal.create(0)));
-        assertTrue(SisuBigDecimal.create(0).leq(SisuBigDecimal.create(0)));
-        assertTrue(SisuBigDecimal.create(-1).leq(SisuBigDecimal.create(0)));
+        assertFalse(SisuBigDecimal.valueOf(1).leq(SisuBigDecimal.valueOf(0)));
+        assertTrue(SisuBigDecimal.valueOf(0).leq(SisuBigDecimal.valueOf(0)));
+        assertTrue(SisuBigDecimal.valueOf(-1).leq(SisuBigDecimal.valueOf(0)));
         // double version
-        assertFalse(SisuBigDecimal.create(1).leq(0));
-        assertTrue(SisuBigDecimal.create(0).leq(0));
-        assertTrue(SisuBigDecimal.create(-1).leq(0));
+        assertFalse(SisuBigDecimal.valueOf(1).leq(0));
+        assertTrue(SisuBigDecimal.valueOf(0).leq(0));
+        assertTrue(SisuBigDecimal.valueOf(-1).leq(0));
     }
 
     /**
@@ -295,9 +295,9 @@ public class SisuBigDecimalTest
     @Test
     public void testMul()
     {
-        assertEquals(SisuBigDecimal.create(6), SisuBigDecimal.create(3).multiply(SisuBigDecimal.create(2)));
+        assertEquals(SisuBigDecimal.valueOf(6), SisuBigDecimal.valueOf(3).multiply(SisuBigDecimal.valueOf(2)));
         // double version
-        assertEquals(SisuBigDecimal.create(6), SisuBigDecimal.create(3).multiply(2));
+        assertEquals(SisuBigDecimal.valueOf(6), SisuBigDecimal.valueOf(3).multiply(2));
     }
 
     /**
@@ -306,9 +306,9 @@ public class SisuBigDecimalTest
     @Test
     public void testNegate()
     {
-        assertEquals(SisuBigDecimal.create(0), SisuBigDecimal.create(0).negate());
-        assertEquals(SisuBigDecimal.create(-1), SisuBigDecimal.create(1).negate());
-        assertEquals(SisuBigDecimal.create(1), SisuBigDecimal.create(-1).negate());
+        assertEquals(SisuBigDecimal.valueOf(0), SisuBigDecimal.valueOf(0).negate());
+        assertEquals(SisuBigDecimal.valueOf(-1), SisuBigDecimal.valueOf(1).negate());
+        assertEquals(SisuBigDecimal.valueOf(1), SisuBigDecimal.valueOf(-1).negate());
     }
 
     /**
@@ -317,11 +317,11 @@ public class SisuBigDecimalTest
     @Test
     public void testPow()
     {
-        assertEquals(SisuBigDecimal.create(0), SisuBigDecimal.create(0).pow(3, 2));
-        assertEquals(SisuBigDecimal.create(1), SisuBigDecimal.create(1).pow(3, 2));
-        assertEquals(SisuBigDecimal.create(8), SisuBigDecimal.create(2).pow(3, 2));
-        assertEquals(SisuBigDecimal.create(15.63), SisuBigDecimal.create(2.50).pow(3, 4));
-        assertEquals(SisuBigDecimal.create(-15.625), SisuBigDecimal.create(-2.50).pow(3, 10));
+        assertEquals(SisuBigDecimal.valueOf(0), SisuBigDecimal.valueOf(0).pow(3, 2));
+        assertEquals(SisuBigDecimal.valueOf(1), SisuBigDecimal.valueOf(1).pow(3, 2));
+        assertEquals(SisuBigDecimal.valueOf(8), SisuBigDecimal.valueOf(2).pow(3, 2));
+        assertEquals(SisuBigDecimal.valueOf(15.63), SisuBigDecimal.valueOf(2.50).pow(3, 4));
+        assertEquals(SisuBigDecimal.valueOf(-15.625), SisuBigDecimal.valueOf(-2.50).pow(3, 10));
     }
 
     /**
@@ -330,9 +330,9 @@ public class SisuBigDecimalTest
     @Test
     public void testSub()
     {
-        assertEquals(SisuBigDecimal.create(2), SisuBigDecimal.create(3).sub(SisuBigDecimal.create(1)));
+        assertEquals(SisuBigDecimal.valueOf(2), SisuBigDecimal.valueOf(3).subtract(SisuBigDecimal.valueOf(1)));
         // double version
-        assertEquals(SisuBigDecimal.create(2), SisuBigDecimal.create(3).sub(1));
+        assertEquals(SisuBigDecimal.valueOf(2), SisuBigDecimal.valueOf(3).subtract(1));
     }
 
     /**
@@ -341,22 +341,22 @@ public class SisuBigDecimalTest
     @Test
     public void testToFixedDecimalString()
     {
-        assertEquals("1", SisuBigDecimal.create("1").toFixedDecimalString(0));
-        assertEquals("1", SisuBigDecimal.create("1.5").toFixedDecimalString(0));
-        assertEquals("1.00", SisuBigDecimal.create("1").toFixedDecimalString(2));
-        assertEquals("1.50", SisuBigDecimal.create("1.5").toFixedDecimalString(2));
-        assertEquals("1.50", SisuBigDecimal.create("1.50").toFixedDecimalString(2));
-        assertEquals("1.50", SisuBigDecimal.create("1.500").toFixedDecimalString(2));
-        assertEquals("0.0000000000000000000000001", SisuBigDecimal.create("1E-25").toFixedDecimalString(25));
-        assertEquals("0.00", SisuBigDecimal.create("1E-25").toFixedDecimalString(2));
-        assertEquals("-1", SisuBigDecimal.create("-1").toFixedDecimalString(0));
-        assertEquals("-1", SisuBigDecimal.create("-1.5").toFixedDecimalString(0));
-        assertEquals("-1.00", SisuBigDecimal.create("-1").toFixedDecimalString(2));
-        assertEquals("-1.50", SisuBigDecimal.create("-1.5").toFixedDecimalString(2));
-        assertEquals("-1.50", SisuBigDecimal.create("-1.50").toFixedDecimalString(2));
-        assertEquals("-1.50", SisuBigDecimal.create("-1.500").toFixedDecimalString(2));
-        assertEquals("-0.0000000000000000000000001", SisuBigDecimal.create("-1E-25").toFixedDecimalString(25));
-        assertEquals("-0.00", SisuBigDecimal.create("-1E-25").toFixedDecimalString(2));
+        assertEquals("1", SisuBigDecimal.valueOf("1").toFixedDecimalString(0));
+        assertEquals("1", SisuBigDecimal.valueOf("1.5").toFixedDecimalString(0));
+        assertEquals("1.00", SisuBigDecimal.valueOf("1").toFixedDecimalString(2));
+        assertEquals("1.50", SisuBigDecimal.valueOf("1.5").toFixedDecimalString(2));
+        assertEquals("1.50", SisuBigDecimal.valueOf("1.50").toFixedDecimalString(2));
+        assertEquals("1.50", SisuBigDecimal.valueOf("1.500").toFixedDecimalString(2));
+        assertEquals("0.0000000000000000000000001", SisuBigDecimal.valueOf("1E-25").toFixedDecimalString(25));
+        assertEquals("0.00", SisuBigDecimal.valueOf("1E-25").toFixedDecimalString(2));
+        assertEquals("-1", SisuBigDecimal.valueOf("-1").toFixedDecimalString(0));
+        assertEquals("-1", SisuBigDecimal.valueOf("-1.5").toFixedDecimalString(0));
+        assertEquals("-1.00", SisuBigDecimal.valueOf("-1").toFixedDecimalString(2));
+        assertEquals("-1.50", SisuBigDecimal.valueOf("-1.5").toFixedDecimalString(2));
+        assertEquals("-1.50", SisuBigDecimal.valueOf("-1.50").toFixedDecimalString(2));
+        assertEquals("-1.50", SisuBigDecimal.valueOf("-1.500").toFixedDecimalString(2));
+        assertEquals("-0.0000000000000000000000001", SisuBigDecimal.valueOf("-1E-25").toFixedDecimalString(25));
+        assertEquals("-0.00", SisuBigDecimal.valueOf("-1E-25").toFixedDecimalString(2));
     }
 
     /**
@@ -365,8 +365,8 @@ public class SisuBigDecimalTest
     @Test
     public void testToFullString()
     {
-        assertEquals("1.5", SisuBigDecimal.create("1.5").toFullString());
-        assertEquals("0.0000000000000000000000001", SisuBigDecimal.create("1E-25").toFullString());
+        assertEquals("1.5", SisuBigDecimal.valueOf("1.5").toFullString());
+        assertEquals("0.0000000000000000000000001", SisuBigDecimal.valueOf("1E-25").toFullString());
     }
 
     /**
@@ -375,14 +375,14 @@ public class SisuBigDecimalTest
     @Test
     public void testTruncDecimals()
     {
-        assertEquals(SisuBigDecimal.create("1"), SisuBigDecimal.create("1").truncDecimals());
-        assertEquals(SisuBigDecimal.create("1"), SisuBigDecimal.create("1.5").truncDecimals());
-        assertEquals(SisuBigDecimal.create("10"), SisuBigDecimal.create("10").truncDecimals());
-        assertEquals(SisuBigDecimal.create("10"), SisuBigDecimal.create("10.5").truncDecimals());
-        assertEquals(SisuBigDecimal.create("-1"), SisuBigDecimal.create("-1").truncDecimals());
-        assertEquals(SisuBigDecimal.create("-1"), SisuBigDecimal.create("-1.5").truncDecimals());
-        assertEquals(SisuBigDecimal.create("-10"), SisuBigDecimal.create("-10").truncDecimals());
-        assertEquals(SisuBigDecimal.create("-10"), SisuBigDecimal.create("-10.5").truncDecimals());
+        assertEquals(SisuBigDecimal.valueOf("1"), SisuBigDecimal.valueOf("1").truncDecimals());
+        assertEquals(SisuBigDecimal.valueOf("1"), SisuBigDecimal.valueOf("1.5").truncDecimals());
+        assertEquals(SisuBigDecimal.valueOf("10"), SisuBigDecimal.valueOf("10").truncDecimals());
+        assertEquals(SisuBigDecimal.valueOf("10"), SisuBigDecimal.valueOf("10.5").truncDecimals());
+        assertEquals(SisuBigDecimal.valueOf("-1"), SisuBigDecimal.valueOf("-1").truncDecimals());
+        assertEquals(SisuBigDecimal.valueOf("-1"), SisuBigDecimal.valueOf("-1.5").truncDecimals());
+        assertEquals(SisuBigDecimal.valueOf("-10"), SisuBigDecimal.valueOf("-10").truncDecimals());
+        assertEquals(SisuBigDecimal.valueOf("-10"), SisuBigDecimal.valueOf("-10.5").truncDecimals());
     }
 
     @Override

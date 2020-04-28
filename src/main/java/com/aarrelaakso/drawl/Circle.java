@@ -11,12 +11,12 @@ public class Circle extends Shape
     /**
      * The explicit radius of a Circle is null by default.
      */
-    private BigDecimal explicitRadius;
+    private SisuBigDecimal explicitRadius;
 
     /**
      * The implicit radius of a Circle is 0.5 by default, giving the default Circle an implicit diameter of 1.
      */
-    private BigDecimal implicitRadius = SisuBigDecimal.HALF;
+    private SisuBigDecimal implicitRadius = SisuBigDecimal.HALF;
 
     /**
      * Construct a circle with a default implicit radius.
@@ -31,7 +31,7 @@ public class Circle extends Shape
      *
      * @param implicitRadius The implicit radius of the new circle.
      */
-    public Circle(BigDecimal implicitRadius)
+    public Circle(SisuBigDecimal implicitRadius)
     {
         this.implicitRadius = implicitRadius;
     }
@@ -43,10 +43,10 @@ public class Circle extends Shape
      * not been set.
      */
     @Nullable
-    private BigDecimal getExplicitDiameter()
+    private SisuBigDecimal getExplicitDiameter()
     {
-        BigDecimal result = null;
-        BigDecimal radiusExplicitValue = this.getExplicitRadius();
+        SisuBigDecimal result = null;
+        SisuBigDecimal radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue != null)
         {
             result = radiusExplicitValue.multiply(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
@@ -62,7 +62,7 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    public BigDecimal getExplicitHeight()
+    public SisuBigDecimal getExplicitHeight()
     {
         return this.getExplicitDiameter();
     }
@@ -74,7 +74,7 @@ public class Circle extends Shape
      * not been set.
      */
     @Nullable
-    public BigDecimal getExplicitRadius()
+    public SisuBigDecimal getExplicitRadius()
     {
         return this.explicitRadius;
     }
@@ -87,7 +87,7 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    public BigDecimal getExplicitWidth()
+    public SisuBigDecimal getExplicitWidth()
     {
         return this.getExplicitDiameter();
     }
@@ -97,10 +97,10 @@ public class Circle extends Shape
      *
      * @return
      */
-    private BigDecimal getImplicitDiameter()
+    private SisuBigDecimal getImplicitDiameter()
     {
-        BigDecimal myImplicitRadius = this.getImplicitRadius();
-        assert myImplicitRadius.compareTo(BigDecimal.ZERO) != 0 : "Implicit radius cannot be zero.";
+        SisuBigDecimal myImplicitRadius = this.getImplicitRadius();
+        assert myImplicitRadius.compareTo(SisuBigDecimal.ZERO) != 0 : "Implicit radius cannot be zero.";
         return myImplicitRadius.multiply(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
     }
 
@@ -112,12 +112,12 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    public BigDecimal getImplicitHeight()
+    public SisuBigDecimal getImplicitHeight()
     {
         return this.getImplicitDiameter();
     }
 
-    public BigDecimal getImplicitRadius()
+    public SisuBigDecimal getImplicitRadius()
     {
         return this.implicitRadius;
     }
@@ -128,7 +128,7 @@ public class Circle extends Shape
      * @return the implicit width of this Circle
      */
     @Override
-    public BigDecimal getImplicitWidth()
+    public SisuBigDecimal getImplicitWidth()
     {
         return this.getImplicitDiameter();
     }
@@ -139,7 +139,7 @@ public class Circle extends Shape
      * @return The implicit maximum (rightmost) x-position of this Circle.
      */
     @Override
-    protected BigDecimal getImplicitXMaximum()
+    protected SisuBigDecimal getImplicitXMaximum()
     {
         return this.getImplicitXPositionCenter().add(this.getImplicitRadius());
     }
@@ -150,7 +150,7 @@ public class Circle extends Shape
      * @return The implicit minimum (leftmost) x-position of this Circle.
      */
     @Override
-    protected BigDecimal getImplicitXMinimum()
+    protected SisuBigDecimal getImplicitXMinimum()
     {
         return this.getImplicitXPositionCenter().subtract(this.getImplicitRadius());
     }
@@ -161,7 +161,7 @@ public class Circle extends Shape
      * @return The implicit maximum (topmost) x-position of this Circle.
      */
     @Override
-    protected BigDecimal getImplicitYMaximum()
+    protected SisuBigDecimal getImplicitYMaximum()
     {
         return this.getImplicitYPositionCenter().add(this.getImplicitRadius());
     }
@@ -175,7 +175,7 @@ public class Circle extends Shape
     public String getSVG()
     {
         String radiusStringValue;
-        BigDecimal radiusExplicitValue = this.getExplicitRadius();
+        SisuBigDecimal radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue == null)
         {
             // If the explicit radius has not been set, use the implicit radius
@@ -207,7 +207,7 @@ public class Circle extends Shape
      */
     // TODO [Issue #1] Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
     @Override
-    public void setExplicitHeight(@Nullable BigDecimal height)
+    public void setExplicitHeight(@Nullable SisuBigDecimal height)
     {
         if (height == null)
         {
@@ -222,11 +222,11 @@ public class Circle extends Shape
     /**
      * Set the radius to a fixed value
      * <p>
-     * This is a protected method because users of the API should not have to deal with BigDecimal.
+     * This is a protected method because users of the API should not have to deal with SisuBigDecimal.
      *
      * @param radius the fixed value
      */
-    protected void setExplicitRadius(@NotNull BigDecimal radius)
+    protected void setExplicitRadius(@NotNull SisuBigDecimal radius)
     {
         this.explicitRadius = radius;
     }
@@ -239,7 +239,7 @@ public class Circle extends Shape
      */
     public void setExplicitRadius(@NotNull Integer radius)
     {
-        this.explicitRadius = BigDecimal.valueOf(radius);
+        this.explicitRadius = SisuBigDecimal.valueOf(radius);
     }
 
     private void setExplicitRadiusToNull()
@@ -254,7 +254,7 @@ public class Circle extends Shape
      */
     // TODO [Issue #1] Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
     @Override
-    public void setExplicitWidth(@Nullable BigDecimal width)
+    public void setExplicitWidth(@Nullable SisuBigDecimal width)
     {
         if (width == null)
         {

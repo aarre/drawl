@@ -40,47 +40,47 @@ public class Shape
     /**
      * The angle, in degrees, to a neighbor. 0 represents up, and 90 degrees represents to the right.
      */
-    private BigDecimal angleToNeighbor;
+    private SisuBigDecimal angleToNeighbor;
 
     /**
      * The explicit height of a Shape defaults to <code>null</code> to indicate it that has not yet been set.
      */
-    private BigDecimal explicitHeight;
+    private SisuBigDecimal explicitHeight;
 
     /**
      * The explicit width of a Shape defaults to <code>null</code> to indicate that it has not yet been set.
      */
-    private BigDecimal explicitWidth;
+    private SisuBigDecimal explicitWidth;
 
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
-    private BigDecimal explicitXPositionCenter = BigDecimal.ZERO;
+    private SisuBigDecimal explicitXPositionCenter = SisuBigDecimal.ZERO;
 
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
-    private BigDecimal explicitYPositionCenter = BigDecimal.ZERO;
+    private SisuBigDecimal explicitYPositionCenter = SisuBigDecimal.ZERO;
 
     /**
      * The implicit height of a default Shape is 1.
      */
-    private BigDecimal implicitHeight = BigDecimal.ONE;
+    private SisuBigDecimal implicitHeight = SisuBigDecimal.ONE;
 
     /**
      * The implicit width of a default Shape is 1.
      */
-    private BigDecimal implicitWidth = BigDecimal.ONE;
+    private SisuBigDecimal implicitWidth = SisuBigDecimal.ONE;
 
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
-    private BigDecimal implicitXPositionCenter = BigDecimal.ZERO;
+    private SisuBigDecimal implicitXPositionCenter = SisuBigDecimal.ZERO;
 
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
-    private BigDecimal implicitYPositionCenter = BigDecimal.ZERO;
+    private SisuBigDecimal implicitYPositionCenter = SisuBigDecimal.ZERO;
 
     /**
      * A shape adjacent to this one, if any
@@ -96,7 +96,7 @@ public class Shape
     public Shape getAbove()
     {
         Shape returnValue = null;
-        if (this.angleToNeighbor.equals(BigDecimal.valueOf(0)))
+        if (this.angleToNeighbor.equals(SisuBigDecimal.ZERO))
         {
             returnValue = this.neighbor;
         }
@@ -112,31 +112,31 @@ public class Shape
     public Shape getBelow()
     {
         Shape returnValue = null;
-        if (this.angleToNeighbor.equals(BigDecimal.valueOf(180)))
+        if (this.angleToNeighbor.equals(SisuBigDecimal.valueOf(180)))
         {
             returnValue = this.neighbor;
         }
         return returnValue;
     }
 
-    protected BigDecimal getExplicitHalfHeight()
+    protected SisuBigDecimal getExplicitHalfHeight()
     {
         if (this.getExplicitHeight() == null)
         {
             throw new UnsupportedOperationException("Cannot calculate explicit height without dimensions");
         }
-        return this.getExplicitHeight().divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+        return this.getExplicitHeight().divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
     }
 
 
 
-    protected BigDecimal getExplicitHalfWidth()
+    protected SisuBigDecimal getExplicitHalfWidth()
     {
         if (this.getExplicitWidth() == null)
         {
             throw new UnsupportedOperationException("Cannot calculate explicit width without dimensions");
         }
-        return this.getExplicitWidth().divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+        return this.getExplicitWidth().divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
     }
 
     /**
@@ -147,7 +147,7 @@ public class Shape
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @Nullable
-    public BigDecimal getExplicitHeight()
+    public SisuBigDecimal getExplicitHeight()
     {
         return this.explicitHeight;
     }
@@ -160,7 +160,7 @@ public class Shape
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @Nullable
-    public BigDecimal getExplicitWidth()
+    public SisuBigDecimal getExplicitWidth()
     {
         return this.explicitWidth;
     }
@@ -172,12 +172,12 @@ public class Shape
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
-    public BigDecimal getExplicitXPositionCenter()
+    public SisuBigDecimal getExplicitXPositionCenter()
     {
         return this.explicitXPositionCenter;
     }
 
-    public BigDecimal getExplicitXPositionLeft()
+    public SisuBigDecimal getExplicitXPositionLeft()
     {
         return this.explicitXPositionCenter.subtract(this.getExplicitHalfWidth());
     }
@@ -189,26 +189,26 @@ public class Shape
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
-    public BigDecimal getExplicitYPositionCenter()
+    public SisuBigDecimal getExplicitYPositionCenter()
     {
         logger.atFine().log("Returning explicit y position of Shape %s as: %f", this.toString(),
                 this.explicitYPositionCenter.floatValue());
         return this.explicitYPositionCenter;
     }
 
-    public BigDecimal getExplicitYPositionTop()
+    public SisuBigDecimal getExplicitYPositionTop()
     {
         return this.explicitYPositionCenter.subtract(this.getExplicitHalfHeight());
     }
 
-    protected BigDecimal getImplicitHalfHeight()
+    protected SisuBigDecimal getImplicitHalfHeight()
     {
-        return this.getImplicitHeight().divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+        return this.getImplicitHeight().divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
     }
 
-    protected BigDecimal getImplicitHalfWidth()
+    protected SisuBigDecimal getImplicitHalfWidth()
     {
-        return this.getImplicitWidth().divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+        return this.getImplicitWidth().divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
     }
 
     /**
@@ -216,7 +216,7 @@ public class Shape
      *
      * @return the implicit height of this Shape
      */
-    public BigDecimal getImplicitHeight()
+    public SisuBigDecimal getImplicitHeight()
     {
         return this.implicitHeight;
     }
@@ -226,7 +226,7 @@ public class Shape
      *
      * @return the implicit width of this Shape
      */
-    public BigDecimal getImplicitWidth()
+    public SisuBigDecimal getImplicitWidth()
     {
         return this.getImplicitHeight();
     }
@@ -236,7 +236,7 @@ public class Shape
      *
      * @return The implicit maximum (rightmost) x-position of this Shape.
      */
-    protected BigDecimal getImplicitXMaximum()
+    protected SisuBigDecimal getImplicitXMaximum()
     {
         return this.getImplicitXPositionCenter().add(this.getImplicitHalfWidth());
     }
@@ -246,7 +246,7 @@ public class Shape
      *
      * @return The implicit minimum (leftmost) x-position of this Shape.
      */
-    protected BigDecimal getImplicitXMinimum()
+    protected SisuBigDecimal getImplicitXMinimum()
     {
         return this.getImplicitXPositionCenter().subtract(this.getImplicitHalfWidth());
     }
@@ -256,7 +256,7 @@ public class Shape
      *
      * @return The implicit x position of the center of this Shape.
      */
-    public BigDecimal getImplicitXPositionCenter()
+    public SisuBigDecimal getImplicitXPositionCenter()
     {
         return this.implicitXPositionCenter;
     }
@@ -266,7 +266,7 @@ public class Shape
      *
      * @return The implicit x position of the left edge of this Shape.
      */
-    public BigDecimal getImplicitXPositionLeft()
+    public SisuBigDecimal getImplicitXPositionLeft()
     {
         return this.getImplicitXPositionCenter().subtract(this.getImplicitHalfWidth());
     }
@@ -276,7 +276,7 @@ public class Shape
      *
      * @return The implicit maximum (topmost) x-position of this Shape.
      */
-    protected BigDecimal getImplicitYMaximum()
+    protected SisuBigDecimal getImplicitYMaximum()
     {
         return this.getImplicitYPositionCenter().add(this.getImplicitHalfHeight());
     }
@@ -286,7 +286,7 @@ public class Shape
      *
      * @return The implicit minimum (bottommost) y-position of this Shape.
      */
-    protected BigDecimal getImplicitYMinimum()
+    protected SisuBigDecimal getImplicitYMinimum()
     {
         return this.getImplicitYPositionCenter().subtract(this.getImplicitHalfHeight());
     }
@@ -296,7 +296,7 @@ public class Shape
      *
      * @return The implicit y position of the center of this Shape.
      */
-    public BigDecimal getImplicitYPositionCenter()
+    public SisuBigDecimal getImplicitYPositionCenter()
     {
         return this.implicitYPositionCenter;
     }
@@ -306,7 +306,7 @@ public class Shape
      *
      * @return The implicit y position of the top of this Shape.
      */
-    public BigDecimal getImplicitYPositionTop()
+    public SisuBigDecimal getImplicitYPositionTop()
     {
         return this.getImplicitYPositionCenter().subtract(this.getImplicitHalfHeight());
     }
@@ -324,7 +324,7 @@ public class Shape
         {
             returnValue = null;
         }
-        else if (this.angleToNeighbor.equals(BigDecimal.valueOf(90)))
+        else if (this.angleToNeighbor.equals(SisuBigDecimal.valueOf(90)))
         {
             returnValue = this.neighbor;
         }
@@ -348,7 +348,7 @@ public class Shape
         {
             returnValue = null;
         }
-        else if (this.angleToNeighbor.compareTo(BigDecimal.valueOf(270)) == 0)
+        else if (this.angleToNeighbor.compareTo(SisuBigDecimal.valueOf(270)) == 0)
         {
             returnValue = this.neighbor;
         }
@@ -376,9 +376,9 @@ public class Shape
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
-        this.angleToNeighbor = BigDecimal.valueOf(0);
-        BigDecimal topBoundaryOfShape = shape.getImplicitYMaximum();
-        BigDecimal thisImplicitYPosition = topBoundaryOfShape.add(this.getImplicitHalfHeight(),
+        this.angleToNeighbor = SisuBigDecimal.valueOf(0);
+        SisuBigDecimal topBoundaryOfShape = shape.getImplicitYMaximum();
+        SisuBigDecimal thisImplicitYPosition = topBoundaryOfShape.add(this.getImplicitHalfHeight(),
                 SisuBigDecimal.mcOperations);
         this.setImplicitYPositionCenter(thisImplicitYPosition);
     }
@@ -395,9 +395,9 @@ public class Shape
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
-        this.angleToNeighbor = BigDecimal.valueOf(180);
-        BigDecimal bottomBoundaryOfShape = shape.getImplicitYMinimum();
-        BigDecimal thisImplicitYPosition = bottomBoundaryOfShape.subtract(this.getImplicitHalfHeight(),
+        this.angleToNeighbor = SisuBigDecimal.valueOf(180);
+        SisuBigDecimal bottomBoundaryOfShape = shape.getImplicitYMinimum();
+        SisuBigDecimal thisImplicitYPosition = bottomBoundaryOfShape.subtract(this.getImplicitHalfHeight(),
                 SisuBigDecimal.mcOperations);
         this.setImplicitYPositionCenter(thisImplicitYPosition);
     }
@@ -410,7 +410,7 @@ public class Shape
      *               been assigned an explicit height.
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
-    public void setExplicitHeight(@Nullable BigDecimal height)
+    public void setExplicitHeight(@Nullable SisuBigDecimal height)
     {
         this.explicitHeight = height;
     }
@@ -423,13 +423,13 @@ public class Shape
      *              been assigned an explicit width.
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
-    public void setExplicitWidth(@Nullable BigDecimal width)
+    public void setExplicitWidth(@Nullable SisuBigDecimal width)
     {
         logger.atFine().log("Updating explicit width of shape to %s", width.toPlainString());
         this.explicitWidth = width;
     }
 
-    protected void setExplicitXPositionCenter(BigDecimal x)
+    protected void setExplicitXPositionCenter(SisuBigDecimal x)
     {
         this.explicitXPositionCenter = x;
         logger.atFine().log("Setting explicit x position of Shape %s to: %f", this.toString(), x.floatValue());
@@ -437,12 +437,12 @@ public class Shape
 
     public void setExplicitXPositionCenter(Integer x)
     {
-        this.explicitXPositionCenter = BigDecimal.valueOf(x);
+        this.explicitXPositionCenter = SisuBigDecimal.valueOf(x);
     }
 
     public void setExplicitYPosition(Integer y)
     {
-        this.setExplicitYPositionCenter(BigDecimal.valueOf(y));
+        this.setExplicitYPositionCenter(SisuBigDecimal.valueOf(y));
     }
 
     /**
@@ -453,13 +453,13 @@ public class Shape
      *
      * @param y The explicit y position of this Shape.
      */
-    protected void setExplicitYPositionCenter(BigDecimal y)
+    protected void setExplicitYPositionCenter(SisuBigDecimal y)
     {
         this.explicitYPositionCenter = y;
         logger.atFine().log("Setting explicit y position of Shape %s to: %f", this.toString(), y.floatValue());
     }
 
-    public void setImplicitXPositionCenter(BigDecimal x)
+    public void setImplicitXPositionCenter(SisuBigDecimal x)
     {
         this.implicitXPositionCenter = x;
     }
@@ -472,7 +472,7 @@ public class Shape
      *
      * @param y The implicit y position of this Shape.
      */
-    public void setImplicitYPositionCenter(BigDecimal y)
+    public void setImplicitYPositionCenter(SisuBigDecimal y)
     {
         this.implicitYPositionCenter = y;
     }
@@ -489,11 +489,11 @@ public class Shape
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
-        this.angleToNeighbor = BigDecimal.valueOf(90);
+        this.angleToNeighbor = SisuBigDecimal.valueOf(90);
 
         // Set the x position of this shape
-        BigDecimal leftBoundaryOfShape = shape.getImplicitXMinimum();
-        BigDecimal thisImplicitXPosition = leftBoundaryOfShape.subtract(this.getImplicitHalfWidth(),
+        SisuBigDecimal leftBoundaryOfShape = shape.getImplicitXMinimum();
+        SisuBigDecimal thisImplicitXPosition = leftBoundaryOfShape.subtract(this.getImplicitHalfWidth(),
                 SisuBigDecimal.mcOperations);
         this.setImplicitXPositionCenter(thisImplicitXPosition);
 
@@ -514,11 +514,11 @@ public class Shape
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
-        this.angleToNeighbor = BigDecimal.valueOf(270);
+        this.angleToNeighbor = SisuBigDecimal.valueOf(270);
 
         // Set this x position of this shape
-        BigDecimal rightBoundaryOfShape = shape.getImplicitXMaximum();
-        BigDecimal thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(),
+        SisuBigDecimal rightBoundaryOfShape = shape.getImplicitXMaximum();
+        SisuBigDecimal thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(),
                 SisuBigDecimal.mcOperations);
         this.setImplicitXPositionCenter(thisImplicitXPosition);
 
