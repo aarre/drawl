@@ -348,7 +348,7 @@ public class Shape
         {
             returnValue = null;
         }
-        else if (this.angleToNeighbor.compareTo(SisuBigDecimal.valueOf(270)) == 0)
+        else if (this.angleToNeighbor.isEqualTo(SisuBigDecimal.valueOf(270)))
         {
             returnValue = this.neighbor;
         }
