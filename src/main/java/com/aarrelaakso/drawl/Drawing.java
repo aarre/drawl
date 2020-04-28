@@ -541,18 +541,20 @@ public class Drawing
      */
     private void setExplicitHeight(@NotNull BigDecimal drawingExplicitHeight)
     {
+        logger.atFine().log("Setting explicit height");
         // Note that this line, by changing this.explicitWidth, can change the explicit to implicit ratio
         this.setExplicitHeightInternal(drawingExplicitHeight);
         if (this.getExplicitWidth() == null)
         {
             // If this Drawing does not have an explicit width, make the explicit width of the Drawing as wide as it
             // needs to be to accommodate the contents.
+            logger.atFine().log("Adjusting explicit width to fit");
             this.setExplicitWidthInternal(this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio(),
                     SisuBigDecimal.mcOperations));
         }
         for (Shape shape : this.contents)
         {
-            updateShape(shape);
+            this.updateShape(shape);
         }
     }
 
@@ -595,6 +597,7 @@ public class Drawing
      */
     private void setExplicitWidth(@NotNull BigDecimal drawingExplicitWidth)
     {
+        logger.atFine().log("Setting explicit width");
         // Note that this line, by changing this.explicitWidth, can change the explicit to implicit ratio
         this.setExplicitWidthInternal(drawingExplicitWidth);
         if (this.getExplicitHeight() == null)
@@ -649,6 +652,7 @@ public class Drawing
      */
     private void updateShape(Shape shape)
     {
+        logger.atFine().log("Updating shape");
         this.updateExplicitHeightOfShape(shape);
         this.updateExplicitWidthOfShape(shape);
         this.updateExplicitYPositionOfShape(shape);
@@ -668,6 +672,7 @@ public class Drawing
     private void updateExplicitWidthOfShape(@NotNull Shape shape)
     {
         // Update explicit width of shape
+        logger.atFine().log("Updating explicit width of shape");
         BigDecimal implicitWidthOfShape = shape.getImplicitWidth();
         BigDecimal explicitWidthOfShape = implicitWidthOfShape.multiply(this.getExplicitToImplicitRatio(),
                 SisuBigDecimal.mcOperations);
@@ -676,18 +681,38 @@ public class Drawing
     private void updateExplicitXPositionOfShape(@NotNull Shape shape)
     {
         // Update the explicit x position of the Shape
+        logger.atFine().log("Updating explicit x position");
         BigDecimal implicitXPositionOfShape = shape.getImplicitXPositionCenter();
+        // The fudge factor is to shift the diagram right so that all x coordinates are positive in explicit coordinate
+        // space
         BigDecimal fudgeFactorX = this.getImplicitXMinimum();
-        BigDecimal fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX);
-        shape.setExplicitXPositionCenter(fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
-                SisuBigDecimal.mcOperations));
+        BigDecimal fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX,
+                SisuBigDecimal.mcOperations);
+        BigDecimal explicitXPositionOfShape = fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
+                SisuBigDecimal.mcOperations);
+        shape.setExplicitXPositionCenter(explicitXPositionOfShape);
+        BigDecimal implicitWidthOfContents = this.getImplicitWidth();
+        BigDecimal explicitWidthOfContents = implicitWidthOfContents.multiply(this.getExplicitToImplicitRatio(),
+                SisuBigDecimal.mcOperations);
+        if (this.isExplicitSet())
+        {
+            BigDecimal explicitWidthOfDrawing = this.getExplicitWidth();
+            assert explicitWidthOfDrawing != null;
+            BigDecimal explicitHorizontalWhitespace = explicitWidthOfDrawing.subtract(explicitWidthOfContents,
+                    SisuBigDecimal.mcOperations);
+            BigDecimal explicitHorizontalWhitespaceLeft = explicitHorizontalWhitespace.divide(SisuBigDecimal.TWO,
+                    SisuBigDecimal.mcOperations);
+            BigDecimal finalExplicitXPositionOfShape = explicitXPositionOfShape.add(explicitHorizontalWhitespaceLeft,
+                    SisuBigDecimal.mcOperations);
+            shape.setExplicitXPositionCenter(finalExplicitXPositionOfShape);
+        }
     }
 
     private void updateExplicitYPositionOfShape(@NotNull Shape shape)
     {
         // Update the explicit y position of the Shape
         BigDecimal implicitYPositionOfShape = shape.getImplicitYPositionCenter();
-        // The fudge factor is to shift the diagram down so that all y-coordinates are positive
+        // The fudge factor is to shift the diagram down so that all y coordinates are positive in explicit coordinate space
         BigDecimal fudgeFactorY = this.getImplicitYMaximum();
         BigDecimal fudgedImplicitYPositionOfShape = implicitYPositionOfShape.subtract(fudgeFactorY);
         fudgedImplicitYPositionOfShape = fudgedImplicitYPositionOfShape.negate();

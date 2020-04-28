@@ -63,7 +63,7 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
      *
      * @param number number
      */
-    private SisuBigDecimal(BigDecimal number)
+    public SisuBigDecimal(BigDecimal number)
     {
         this.number = number.stripTrailingZeros();
     }
@@ -121,6 +121,18 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
     public static boolean isIntegerValue(BigDecimal bd)
     {
         return bd.signum() == 0 || bd.scale() <= 0 || bd.stripTrailingZeros().scale() <= 0;
+    }
+
+    /**
+     * Test whether a float is a mathematical integer.
+     *
+     * @param val
+     * @return
+     */
+    public static boolean isIntegerValue(float val)
+    {
+        // See: https://stackoverflow.com/questions/4727569/how-to-check-whether-a-float-has-an-integer-value
+        return ((int) val) == val;
     }
 
     /**

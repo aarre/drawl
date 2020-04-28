@@ -174,7 +174,6 @@ public class Circle extends Shape
     @Override
     public String getSVG()
     {
-
         String radiusStringValue;
         BigDecimal radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue == null)
@@ -189,18 +188,13 @@ public class Circle extends Shape
         svgBuilder.append("r=\"");
         svgBuilder.append(radiusStringValue);
         svgBuilder.append("\"");
-        if (this.getExplicitXPositionCenter() != null)
-        {
-            svgBuilder.append(" cx=\"");
-            svgBuilder.append(SVG.toString(this.getExplicitXPositionCenter()));
-            svgBuilder.append("\"");
-        }
-        if (this.getExplicitYPositionCenter() != null)
-        {
-            svgBuilder.append(" cy=\"");
-            svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
-            svgBuilder.append("\"");
-        }
+        svgBuilder.append(" cx=\"");
+        svgBuilder.append(SVG.toString(this.getExplicitXPositionCenter()));
+        svgBuilder.append("\"");
+        this.getExplicitYPositionCenter();
+        svgBuilder.append(" cy=\"");
+        svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
+        svgBuilder.append("\"");
         svgBuilder.append(" />");
         return svgBuilder.toString();
     }

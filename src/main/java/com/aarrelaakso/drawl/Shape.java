@@ -425,12 +425,14 @@ public class Shape
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     public void setExplicitWidth(@Nullable BigDecimal width)
     {
+        logger.atFine().log("Updating explicit width of shape to %s", width.toPlainString());
         this.explicitWidth = width;
     }
 
     protected void setExplicitXPositionCenter(BigDecimal x)
     {
         this.explicitXPositionCenter = x;
+        logger.atFine().log("Setting explicit x position of Shape %s to: %f", this.toString(), x.floatValue());
     }
 
     public void setExplicitXPositionCenter(Integer x)
