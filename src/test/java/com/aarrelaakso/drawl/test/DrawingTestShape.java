@@ -13,6 +13,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import java.math.BigDecimal;
 import java.util.concurrent.ThreadLocalRandom;
 
+import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,49 +35,388 @@ public abstract class DrawingTestShape
     Shape shape1;
     Shape shape2;
     Shape shape3;
-    @Test
-    @DisplayName("X-POSITION - EXPLICIT: When a drawing has three adjacent default Circles, then their x-positions are correct (random)")
-    void whenADrawingHasThreeAdjacentShapesThenTheirXPositionsAreCorrectRandom(@NotNull BDDSoftAssertions softly)
-    {
-        drawing.add(shape1);
-        drawing.add(shape2);
-        drawing.add(shape3);
-        shape2.setRightOf(shape1);
-        shape3.setRightOf(shape2);
-        Double widthDouble = ThreadLocalRandom.current().nextDouble(0, Float.MAX_VALUE);
-        Float widthFloat = widthDouble.floatValue();
-        logger.atFine().log("width: " + widthFloat);
-        Double heightDouble = ThreadLocalRandom.current().nextDouble(0, Float.MAX_VALUE);
-        Float heightFloat = heightDouble.floatValue();
-        logger.atFine().log("height: " + heightFloat);
-        drawing.setExplicitWidth(widthFloat);
-        drawing.setExplicitHeight(heightFloat);
-        BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
-
-        SisuBigDecimal circle1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations));
-        SisuBigDecimal circle1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
-        softly.then(circle1ExplicitXPosition.compareToFuzzy(circle1ExpectedXPosition))
-                .as("Expecting the explicit position of shape 1 to be " +
-            circle1ExpectedXPosition + " but it was " + circle1ExplicitXPosition).isEqualTo(0);
-
-        SisuBigDecimal circle2ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
-        SisuBigDecimal circle2ExplicitXPosition = SisuBigDecimal.create(shape2.getExplicitXPositionCenter());
-        softly.then(circle2ExplicitXPosition.compareToFuzzy(circle2ExpectedXPosition))
-                .as("Expecting the explicit position of shape 2 to be " +
-                        circle2ExpectedXPosition + " but it was " + circle2ExplicitXPosition).isEqualTo(0);
-
-        BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
-        SisuBigDecimal circle3ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.multiply(fraction, SisuBigDecimal.mcOperations));
-        SisuBigDecimal circle3ExplicitXPosition = SisuBigDecimal.create(shape3.getExplicitXPositionCenter());
-        softly.then(circle3ExplicitXPosition.compareToFuzzy(circle3ExpectedXPosition))
-                .as("Expecting the explicit position of shape 3 to be " +
-                        circle3ExpectedXPosition + " but it was " + circle3ExplicitXPosition).isEqualTo(0);
-    }
 
     @BeforeEach
     void givenADrawing()
     {
         drawing = new Drawing();
+    }
+
+    @Nested
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    @DisplayName("X Position")
+    class XPosition
+    {
+
+        @Nested
+        @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+        @DisplayName("Explicit")
+        class Explicit
+        {
+
+            /**
+             * Test that, when a Drawing has one adjacent Shape, then its x position is correct.
+             *
+             * This version uses Float.MAX_VALUE for the width and height of the Shape.
+             *
+             * @param softly Allows using JAssert softly.then assertions.
+             */
+            @Test
+            @DisplayName("When a drawing has one default Shape, then its x-position is correct (Float.MAX_VALUE)")
+            void whenADrawingHasOneShapeThenItsXPositionIsCorrectFloatMax(@NotNull BDDSoftAssertions softly)
+            {
+                // TODO [Issue No 16]
+                drawing.add(shape1);
+                Float widthFloat = Float.MAX_VALUE;
+                logger.atFine().log("width: " + widthFloat);
+                Float heightFloat = Float.MAX_VALUE;
+                logger.atFine().log("height: " + heightFloat);
+                drawing.setExplicitWidth(widthFloat);
+                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                drawing.setExplicitHeight(heightFloat);
+                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+
+                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+
+                SisuBigDecimal shape1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
+                SisuBigDecimal shape1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
+                        .as("Expecting the explicit position of " + shape1.toString() + "to be " +
+                                shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
+
+            }
+
+            /**
+             * Test that, when a Drawing has one adjacent Shape, then its x position is correct.
+             *
+             * This version uses Float.MAX_VALUE - 1 for the width and height of the Shape.
+             *
+             * @param softly Allows using JAssert softly.then assertions.
+             */
+            @Test
+            @DisplayName("When a drawing has one default Shape, then its x-position is correct (Float.MAX_VALUE - 1)")
+            void whenADrawingHasOneShapeThenItsXPositionIsCorrectFloatMaxMinus1(@NotNull BDDSoftAssertions softly)
+            {
+                // TODO [Issue No 16]
+                drawing.add(shape1);
+                Float widthFloat = Float.MAX_VALUE - 1;
+                logger.atFine().log("width: " + widthFloat);
+                Float heightFloat = Float.MAX_VALUE - 1;
+                logger.atFine().log("height: " + heightFloat);
+                drawing.setExplicitWidth(widthFloat);
+                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                drawing.setExplicitHeight(heightFloat);
+                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+
+                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+
+                SisuBigDecimal shape1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
+                SisuBigDecimal shape1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
+                        .as("Expecting the explicit position of " + shape1.toString() + "to be " +
+                                shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
+
+            }
+
+            /**
+             * Test that, when a Drawing has one adjacent Shape, then its x position is correct.
+             *
+             * This version uses a couple of specific numbers that were chosen randomly but fail reliably for three
+             * shapes. Do they also fail for one shape (which is easier to debug)?
+             *
+             * @param softly Allows using JAssert softly.then assertions.
+             */
+            @Test
+            @DisplayName("When a drawing has one default Shape, then its x-position is correct (random failed)")
+            void whenADrawingHasOneShapeThenItsXPositionIsCorrectRandomFailed(@NotNull BDDSoftAssertions softly)
+            {
+                // TODO [Issue No 16]
+                drawing.add(shape1);
+                Float widthFloat = Float.valueOf("2.149144E38");
+                logger.atFine().log("width: " + widthFloat);
+                Float heightFloat = Float.valueOf("5.567761E37");
+                logger.atFine().log("height: " + heightFloat);
+                drawing.setExplicitWidth(widthFloat);
+                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                drawing.setExplicitHeight(heightFloat);
+                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+
+                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+
+                SisuBigDecimal shape1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
+                SisuBigDecimal shape1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
+                        .as("Expecting the explicit position of " + shape1.toString() + "to be " +
+                                shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
+
+            }
+
+            /**
+             * Test that, when a Drawing has one adjacent Shape, then its x position is correct.
+             *
+             * This version uses low-value analogs of a couple of specific numbers that were chosen randomly but
+             * fail reliably for three shapes. They also fail for one shape (which is easier to debug).
+             *
+             * @param softly Allows using JAssert softly.then assertions.
+             */
+            @Test
+            @DisplayName("When a drawing has one default Shape, then its x-position is correct (random failed low value)")
+            void whenADrawingHasOneShapeThenItsXPositionIsCorrectRandomFailedLowValue(@NotNull BDDSoftAssertions softly)
+            {
+                // TODO [Issue No 16]
+                drawing.add(shape1);
+                Float widthFloat = Float.valueOf("214");
+                logger.atFine().log("width: " + widthFloat);
+                Float heightFloat = Float.valueOf("56");
+                logger.atFine().log("height: " + heightFloat);
+                drawing.setExplicitWidth(widthFloat);
+                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                drawing.setExplicitHeight(heightFloat);
+                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+
+                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+
+                SisuBigDecimal shape1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
+                SisuBigDecimal shape1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
+                        .as("Expecting the explicit position of " + shape1.toString() + "to be " +
+                                shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
+
+            }
+
+            /**
+             * Test that, when a Drawing has one adjacent Shape, then its x position is correct.
+             *
+             * This version uses a couple of specific numbers that were chosen randomly but fail reliably for three
+             * shapes. Do they also fail for one shape (which is easier to debug)?
+             *
+             * This version also uses setExplicitDimensions() instead of setExplicitWidth() and setExplicitHeight().
+             *
+             * @param softly Allows using JAssert softly.then assertions.
+             */
+            @Test
+            @DisplayName("When a drawing has one default Shape, then its x-position is correct (random failed) using setExplicitDimensions()")
+            void whenADrawingHasOneShapeThenItsXPositionIsCorrectRandomFailedSetExplicitDimensions(@NotNull BDDSoftAssertions softly)
+            {
+                // TODO [Issue No 16]
+                drawing.add(shape1);
+                Float widthFloat = Float.valueOf("2.149144E38");
+                logger.atFine().log("width: " + widthFloat);
+                Float heightFloat = Float.valueOf("5.567761E37");
+                logger.atFine().log("height: " + heightFloat);
+                drawing.setExplicitDimensions(widthFloat, heightFloat);
+                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+
+                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+
+                SisuBigDecimal shape1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
+                SisuBigDecimal shape1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
+                        .as("Expecting the explicit position of " + shape1.toString() + "to be " +
+                                shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
+
+            }
+
+            /**
+             * Test that, when a Drawing has three adjacent Shapes, then their x positions are correct.
+             *
+             * This version uses a couple of specific numbers that were chosen randomly but fail reliably.
+             *
+             * @param softly Allows using JAssert softly.then assertions.
+             */
+            @Test
+            @DisplayName("When a drawing has three adjacent default Shapes, then their x-positions are correct (random failed)")
+            void whenADrawingHasThreeAdjacentShapesThenTheirXPositionsAreCorrectRandomFailed(@NotNull BDDSoftAssertions softly)
+            {
+                test3Shapes("2.149144E38", "5.567761E37", softly);
+
+                // TODO [Issue No 16]
+            }
+
+            /**
+             * Test that, when a Drawing has three adjacent Shapes, then their x positions are correct.
+             *
+             * This version uses a couple of specific numbers that were chosen randomly but fail reliably.
+             *
+             * @param softly Allows using JAssert softly.then assertions.
+             */
+            @Test
+            @DisplayName("When a drawing has three adjacent default Shapes, then their x-positions are correct (random failed no 2)")
+            void whenADrawingHasThreeAdjacentShapesThenTheirXPositionsAreCorrectRandomFailed02(@NotNull BDDSoftAssertions softly)
+            {
+                // TODO [Issue No 16]
+                test3Shapes("2.1890229E38", "2.6594734E38", softly);
+            }
+
+            /**
+             * Test that, when a Drawing has three adjacent Shapes, then their x positions are correct.
+             *
+             * This version uses a couple of specific numbers that were chosen randomly but fail reliably.
+             *
+             * @param softly Allows using JAssert softly.then assertions.
+             */
+            @Test
+            @DisplayName("When a drawing has three adjacent default Shapes, then their x-positions are correct (random failed no 2 low value)")
+            void whenADrawingHasThreeAdjacentShapesThenTheirXPositionsAreCorrectRandomFailed02LowValue(@NotNull BDDSoftAssertions softly)
+            {
+                test3Shapes(219, 266, softly);
+                // TODO [Issue No 16]
+            }
+
+            /**
+             * Test that, when a Drawing has three adjacent Shapes, then their x positions are correct.
+             *
+             * This convenience method allows passing the arguments as Integers.
+             *
+             * @param widthInteger The width of the Drawing to be tested.
+             * @param heightInteger The height of the Drawing to be tested.
+             * @param softly AssertJ behavior-driven development soft assertions.
+             */
+            void test3Shapes(Integer widthInteger, Integer heightInteger, @NotNull BDDSoftAssertions softly)
+            {
+                test3Shapes(widthInteger.floatValue(), heightInteger.floatValue(), softly);
+            }
+
+            /**
+             * Test that, when a Drawing has three adjacent Shapes, then their x positions are correct.
+             *
+             * This convenience method allows passing the arguments as Strings.
+             *
+             * @param widthString The width of the Drawing to be tested.
+             * @param heightString The height of the Drawing to be tested.
+             * @param softly AssertJ behavior-driven development soft assertions.
+             */
+            void test3Shapes(String widthString, String heightString, @NotNull BDDSoftAssertions softly)
+            {
+                test3Shapes(Float.parseFloat(widthString), Float.parseFloat(heightString), softly);
+            }
+
+            /**
+             * Test that, when a Drawing has three adjacent Shapes, then their x positions are correct.
+             *
+             * This method centralizes the test code.
+             *
+             * @param widthFloat The width of the drawing to be tested
+             * @param heightFloat The height of the drawing to be tested
+             * @param softly AssertJ behavior-driven development soft assertions
+             */
+            void test3Shapes(Float widthFloat, Float heightFloat, @NotNull BDDSoftAssertions softly)
+            {
+                drawing.add(shape1);
+                drawing.add(shape2);
+                drawing.add(shape3);
+                shape2.setRightOf(shape1);
+                shape3.setRightOf(shape2);
+                logger.atFine().log("width: " + widthFloat);
+                logger.atFine().log("height: " + heightFloat);
+                drawing.setExplicitWidth(widthFloat);
+                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                drawing.setExplicitHeight(heightFloat);
+                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+
+                // At this aspect ratio, the sizes of the shapes may be constrained by the height
+                BigDecimal heightBigDecimal = BigDecimal.valueOf(heightFloat);
+                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+
+                SisuBigDecimal aspectRatio = SisuBigDecimal.create(widthFloat/heightFloat);
+
+                BigDecimal widthOfShapes;
+                if (aspectRatio.g(3))
+                {
+                    widthOfShapes = heightBigDecimal.multiply(BigDecimal.valueOf(3));
+                }
+                else
+                {
+                    widthOfShapes = widthBigDecimal;
+                }
+
+                BigDecimal extraWidth = widthBigDecimal.subtract(widthOfShapes);
+                BigDecimal extraWidthLeft = extraWidth.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
+
+                SisuBigDecimal circle1ExpectedXPosition = SisuBigDecimal.create(widthOfShapes
+                        .divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations));
+                if (aspectRatio.g(3))
+                {
+                        circle1ExpectedXPosition = circle1ExpectedXPosition.add(SisuBigDecimal.create(extraWidthLeft));
+                }
+
+                SisuBigDecimal circle1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                softly.then(circle1ExplicitXPosition.compareToFuzzy(circle1ExpectedXPosition))
+                        .as("Expecting the explicit x position of shape 1 to be " +
+                                circle1ExpectedXPosition + " but it was " + circle1ExplicitXPosition).isEqualTo(0);
+
+                SisuBigDecimal circle2ExpectedXPosition = SisuBigDecimal.create(widthOfShapes
+                        .divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations));
+                if (aspectRatio.g(3))
+                {
+                    circle2ExpectedXPosition = circle2ExpectedXPosition.add(SisuBigDecimal.create(extraWidthLeft));
+                }
+
+                SisuBigDecimal circle2ExplicitXPosition = SisuBigDecimal.create(shape2.getExplicitXPositionCenter());
+                softly.then(circle2ExplicitXPosition.compareToFuzzy(circle2ExpectedXPosition))
+                        .as("Expecting the explicit x position of shape 2 to be " +
+                                circle2ExpectedXPosition + " but it was " + circle2ExplicitXPosition).isEqualTo(0);
+
+                BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
+                SisuBigDecimal circle3ExpectedXPosition = SisuBigDecimal.create(widthOfShapes
+                        .multiply(fraction, SisuBigDecimal.mcOperations));
+                if (aspectRatio.g(3))
+                {
+                    circle3ExpectedXPosition = circle3ExpectedXPosition.add(SisuBigDecimal.create(extraWidthLeft));
+                }
+                SisuBigDecimal circle3ExplicitXPosition = SisuBigDecimal.create(shape3.getExplicitXPositionCenter());
+                softly.then(circle3ExplicitXPosition.compareToFuzzy(circle3ExpectedXPosition))
+                        .as("Expecting the explicit x position of shape 3 to be " +
+                                circle3ExpectedXPosition + " but it was " + circle3ExplicitXPosition).isEqualTo(0);
+            }
+
+            /**
+             * Test that, when a Drawing has three adjacent Shapes, then their x positions are correct.
+             *
+             * This version uses low-value analogs of a couple of specific numbers that were chosen randomly but fail reliably.
+             *
+             * @param softly Allows using JAssert softly.then assertions.
+             */
+            @Test
+            @DisplayName("When a drawing has three adjacent default Shapes, then their x-positions are correct (random failed - low value)")
+            void whenADrawingHasThreeAdjacentShapesThenTheirXPositionsAreCorrectRandomFailedLowValue(@NotNull BDDSoftAssertions softly)
+            {
+                test3Shapes("214.9144", "55.67761", softly);
+                // TODO [Issue No 16]
+            }
+
+            /**
+             * Test that, when a Drawing has three adjacent Shapes, then their x positions are correct.
+             *
+             * This version uses low-value analogs of a couple of specific numbers that were chosen randomly but fail reliably,
+             * specifically choosing numbers that are easy to work with.
+             *
+             * @param softly Allows using JAssert softly.then assertions.
+             */
+            @Test
+            @DisplayName("When a drawing has three adjacent default Shapes, then their x-positions are correct (low value - simple)")
+            void whenADrawingHasThreeAdjacentShapesThenTheirXPositionsAreCorrectRandomFailedLowValueSimple(@NotNull BDDSoftAssertions softly)
+            {
+                // TODO [Issue No 16]
+                test3Shapes("60", "19", softly);
+            }
+
+            @Test
+            @DisplayName("When a drawing has three adjacent default Shapes, then their x-positions are correct (random)")
+            void whenADrawingHasThreeAdjacentShapesThenTheirXPositionsAreCorrectRandom(@NotNull BDDSoftAssertions softly)
+            {
+                // TODO [Issue No 16]
+                // TODO This method needs code from the others because it may randomly generate code in which the
+                // height is less than 1/3 of the width.
+                
+                Double widthDouble = ThreadLocalRandom.current().nextDouble(0, Float.MAX_VALUE);
+                Float widthFloat = widthDouble.floatValue();
+                Double heightDouble = ThreadLocalRandom.current().nextDouble(0, Float.MAX_VALUE);
+                Float heightFloat = heightDouble.floatValue();
+                test3Shapes(widthFloat, heightFloat, softly);
+            }
+        }
     }
 
     @Test
