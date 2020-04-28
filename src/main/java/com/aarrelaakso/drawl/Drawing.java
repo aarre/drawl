@@ -44,8 +44,8 @@ public class Drawing
     }
 
     private final HashSet<Shape> contents;
-    private BigDecimal explicitHeight;
-    private BigDecimal explicitWidth;
+    private SisuBigDecimal explicitHeight;
+    private SisuBigDecimal explicitWidth;
 
     public Drawing()
     {
@@ -74,7 +74,7 @@ public class Drawing
      * dimensions have not been set.
      */
     @Nullable
-    public BigDecimal getExplicitHeight()
+    public SisuBigDecimal getExplicitHeight()
     {
         return this.explicitHeight;
     }
@@ -84,11 +84,11 @@ public class Drawing
      *
      * @return The ratio of the explicit height of this Drawing to the implicit height of its contents
      */
-    private BigDecimal getExplicitHeightPerImplicitHeight()
+    private SisuBigDecimal getExplicitHeightPerImplicitHeight()
     {
-        BigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
-        BigDecimal explicitHeightPerImplicitHeight;
-        if (implicitHeightOfContents.compareTo(BigDecimal.ZERO) != 0)
+        SisuBigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
+        SisuBigDecimal explicitHeightPerImplicitHeight;
+        if (implicitHeightOfContents.compareTo(SisuBigDecimal.ZERO) != 0)
         {
             if (this.getExplicitHeight() == null)
             {
@@ -96,7 +96,7 @@ public class Drawing
                 if (this.getExplicitWidth() == null)
                 {
                     // If the explicit width also has no value, the ratio is 0
-                    explicitHeightPerImplicitHeight = BigDecimal.ZERO;
+                    explicitHeightPerImplicitHeight = SisuBigDecimal.ZERO;
                 }
                 else
                 {
@@ -115,7 +115,7 @@ public class Drawing
         else
         {
             // The implicit height of the contents is 0, so the ratio is 0
-            explicitHeightPerImplicitHeight = BigDecimal.ZERO;
+            explicitHeightPerImplicitHeight = SisuBigDecimal.ZERO;
         }
         return explicitHeightPerImplicitHeight;
     }
@@ -131,10 +131,10 @@ public class Drawing
      * @return The ratio of explicit measures to implicit measures for this diagram as a whole.
      */
     // TODO [Issue No. 1] Make this method private and factor out of unit tests.
-    public BigDecimal getExplicitToImplicitRatio()
+    public SisuBigDecimal getExplicitToImplicitRatio()
     {
-        BigDecimal explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
-        BigDecimal explicitWidthPerImplicitWidth = this.getExplicitWidthPerImplicitWidth();
+        SisuBigDecimal explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
+        SisuBigDecimal explicitWidthPerImplicitWidth = this.getExplicitWidthPerImplicitWidth();
         if (explicitHeightPerImplicitHeight.compareTo(explicitWidthPerImplicitWidth) <= 0)
         {
             return explicitHeightPerImplicitHeight;
@@ -152,7 +152,7 @@ public class Drawing
      * dimensions have not been set.
      */
     @Nullable
-    public BigDecimal getExplicitWidth()
+    public SisuBigDecimal getExplicitWidth()
     {
         return this.explicitWidth;
     }
@@ -164,15 +164,15 @@ public class Drawing
      */
     // TODO [Issue No. 1] Make this method private and factor out of unit tests.
     @NotNull
-    public BigDecimal getExplicitWidthPerImplicitWidth()
+    public SisuBigDecimal getExplicitWidthPerImplicitWidth()
     {
-        BigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
+        SisuBigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
         assert implicitWidthOfContents != null :
                 "The implicit width of the contents of a drawing cannot be null.";
-        assert implicitWidthOfContents.compareTo(BigDecimal.ZERO) >= 0 :
+        assert implicitWidthOfContents.compareTo(SisuBigDecimal.ZERO) >= 0 :
                 "The implicit width of the contents of a drawing must be positive (or zero).";
-        BigDecimal explicitWidthPerImplicitWidth;
-        if (implicitWidthOfContents.compareTo(BigDecimal.ZERO) != 0)
+        SisuBigDecimal explicitWidthPerImplicitWidth;
+        if (implicitWidthOfContents.compareTo(SisuBigDecimal.ZERO) != 0)
         {
             if (this.getExplicitWidth() == null)
             {
@@ -180,7 +180,7 @@ public class Drawing
                 if (this.getExplicitHeight() == null)
                 {
                     // The explicit height is also null, so the ratio is 0
-                    explicitWidthPerImplicitWidth = BigDecimal.ZERO;
+                    explicitWidthPerImplicitWidth = SisuBigDecimal.ZERO;
                 }
                 else
                 {
@@ -199,7 +199,7 @@ public class Drawing
         else
         {
             // The implicit width of the contents is 0, so the ratio is 0
-            explicitWidthPerImplicitWidth = BigDecimal.ZERO;
+            explicitWidthPerImplicitWidth = SisuBigDecimal.ZERO;
         }
         assert explicitWidthPerImplicitWidth != null :
                 "The ratio of the explicit width of a drawing to the implicit width of its contents cannot be null.";
@@ -213,7 +213,7 @@ public class Drawing
      *
      */
     // TODO [Issue No. 1] Make this method private and factor out of unit tests.
-    public BigDecimal getImplicitHeight()
+    public SisuBigDecimal getImplicitHeight()
     {
         return this.getImplicitHeightOfContents();
     }
@@ -223,7 +223,7 @@ public class Drawing
      *
      * @return the implicit total height of all contents in this drawing
      */
-    private BigDecimal getImplicitHeightOfContents()
+    private SisuBigDecimal getImplicitHeightOfContents()
     {
         return this.getImplicitYMaximum().subtract(this.getImplicitYMinimum());
     }
@@ -235,7 +235,7 @@ public class Drawing
      *
      */
     // TODO [Issue No. 1] Make this method private and factor out of unit tests.
-    public BigDecimal getImplicitWidth()
+    public SisuBigDecimal getImplicitWidth()
     {
         return this.getImplicitWidthOfContents();
     }
@@ -245,7 +245,7 @@ public class Drawing
      *
      * @return the implicit total width of all contents in this drawing
      */
-    private BigDecimal getImplicitWidthOfContents()
+    private SisuBigDecimal getImplicitWidthOfContents()
     {
         assert this.getImplicitXMaximum().compareTo(this.getImplicitXMinimum()) >= 0 :
                 "The implicit x-coordinate maximum must be greater than or equal to the implicit x-coordinate minimum.";
@@ -258,20 +258,20 @@ public class Drawing
      * The maximum x-coordinate is the right edge of the drawing.
      */
     @NotNull
-    private BigDecimal getImplicitXMaximum()
+    private SisuBigDecimal getImplicitXMaximum()
     {
-        BigDecimal xMaximum = BigDecimal.valueOf(Double.MIN_VALUE);
+        SisuBigDecimal xMaximum = SisuBigDecimal.valueOf(Double.MIN_VALUE);
         for (Shape content : this.contents)
         {
-            BigDecimal xMaximumCurrent = content.getImplicitXMaximum();
+            SisuBigDecimal xMaximumCurrent = content.getImplicitXMaximum();
             if (xMaximumCurrent.compareTo(xMaximum) > 0)
             {
                 xMaximum = xMaximumCurrent;
             }
         }
-        if (xMaximum.compareTo(BigDecimal.valueOf(Double.MIN_VALUE)) == 0)
+        if (xMaximum.compareTo(SisuBigDecimal.valueOf(Double.MIN_VALUE)) == 0)
         {
-            xMaximum = BigDecimal.ZERO;
+            xMaximum = SisuBigDecimal.ZERO;
         }
         return xMaximum;
     }
@@ -282,20 +282,20 @@ public class Drawing
      * The minimum x-coordinate is the leftmost edge of the drawing.
      */
     @NotNull
-    private BigDecimal getImplicitXMinimum()
+    private SisuBigDecimal getImplicitXMinimum()
     {
-        BigDecimal xMinimum = BigDecimal.valueOf(Double.MAX_VALUE);
+        SisuBigDecimal xMinimum = SisuBigDecimal.valueOf(Double.MAX_VALUE);
         for (Shape content : this.contents)
         {
-            BigDecimal xMinimumCurrent = content.getImplicitXMinimum();
+            SisuBigDecimal xMinimumCurrent = content.getImplicitXMinimum();
             if (xMinimumCurrent.compareTo(xMinimum) < 0)
             {
                 xMinimum = xMinimumCurrent;
             }
         }
-        if (xMinimum.compareTo(BigDecimal.valueOf(Double.MAX_VALUE)) == 0)
+        if (xMinimum.compareTo(SisuBigDecimal.valueOf(Double.MAX_VALUE)) == 0)
         {
-            xMinimum = BigDecimal.ZERO;
+            xMinimum = SisuBigDecimal.ZERO;
         }
         return xMinimum;
     }
@@ -306,20 +306,20 @@ public class Drawing
      * The maximum y-coordinate is the top edge of the drawing.
      */
     @NotNull
-    private BigDecimal getImplicitYMaximum()
+    private SisuBigDecimal getImplicitYMaximum()
     {
-        BigDecimal yMaximum = BigDecimal.valueOf(Double.MIN_VALUE);
+        SisuBigDecimal yMaximum = SisuBigDecimal.valueOf(Double.MIN_VALUE);
         for (Shape content : this.contents)
         {
-            BigDecimal yMaximumCurrent = content.getImplicitYMaximum();
+            SisuBigDecimal yMaximumCurrent = content.getImplicitYMaximum();
             if (yMaximumCurrent.compareTo(yMaximum) > 0)
             {
                 yMaximum = yMaximumCurrent;
             }
         }
-        if (yMaximum.compareTo(BigDecimal.valueOf(Double.MIN_VALUE)) == 0)
+        if (yMaximum.compareTo(SisuBigDecimal.valueOf(Double.MIN_VALUE)) == 0)
         {
-            yMaximum = BigDecimal.ZERO;
+            yMaximum = SisuBigDecimal.ZERO;
         }
         return yMaximum;
     }
@@ -330,20 +330,20 @@ public class Drawing
      * The minimum y-coordinate is the bottom edge of the drawing.
      */
     @NotNull
-    private BigDecimal getImplicitYMinimum()
+    private SisuBigDecimal getImplicitYMinimum()
     {
-        BigDecimal yMinimum = BigDecimal.valueOf(Double.MAX_VALUE);
+        SisuBigDecimal yMinimum = SisuBigDecimal.valueOf(Double.MAX_VALUE);
         for (Shape content : this.contents)
         {
-            BigDecimal yMinimumCurrent = content.getImplicitYMinimum();
+            SisuBigDecimal yMinimumCurrent = content.getImplicitYMinimum();
             if (yMinimumCurrent.compareTo(yMinimum) < 0)
             {
                 yMinimum = yMinimumCurrent;
             }
         }
-        if (yMinimum.compareTo(BigDecimal.valueOf(Double.MAX_VALUE)) == 0)
+        if (yMinimum.compareTo(SisuBigDecimal.valueOf(Double.MAX_VALUE)) == 0)
         {
-            yMinimum = BigDecimal.ZERO;
+            yMinimum = SisuBigDecimal.ZERO;
         }
         return yMinimum;
     }
@@ -391,7 +391,7 @@ public class Drawing
         //noinspection SpellCheckingInspection
         svgBuilder.append("<svg xmlns=\"http://www.w3.org/2000/svg\"");
 
-        BigDecimal bdWidth = this.getExplicitWidth();
+        SisuBigDecimal bdWidth = this.getExplicitWidth();
         if (bdWidth != null)
         {
             svgBuilder.append(" width=\"");
@@ -400,7 +400,7 @@ public class Drawing
             svgBuilder.append("\"");
         }
 
-        BigDecimal bdHeight = this.getExplicitHeight();
+        SisuBigDecimal bdHeight = this.getExplicitHeight();
         if (bdHeight != null)
         {
             svgBuilder.append(" height=\"");
@@ -461,19 +461,19 @@ public class Drawing
     {
         logger.atFine().log("Entering setExplicitDimensions");
         // Calculate implicit aspect ratio
-        BigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
-        BigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
-        BigDecimal implicitAspectRatio = BigDecimal.ZERO;
-        if (implicitHeightOfContents.compareTo(BigDecimal.ZERO) > 0)
+        SisuBigDecimal implicitHeightOfContents = this.getImplicitHeightOfContents();
+        SisuBigDecimal implicitWidthOfContents = this.getImplicitWidthOfContents();
+        SisuBigDecimal implicitAspectRatio = SisuBigDecimal.ZERO;
+        if (implicitHeightOfContents.compareTo(SisuBigDecimal.ZERO) > 0)
         {
             implicitAspectRatio = implicitWidthOfContents.divide(implicitHeightOfContents,
                     SisuBigDecimal.mcOperations);
         }
 
         // Calculate explicit aspect ratio
-        this.setExplicitHeightInternal(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
-        this.setExplicitWidthInternal(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
-        BigDecimal explicitAspectRatio = this.getExplicitWidth().divide(this.getExplicitHeight(),
+        this.setExplicitHeightInternal(SisuBigDecimal.valueOf(explicitWidthOfDrawingFloat));
+        this.setExplicitWidthInternal(SisuBigDecimal.valueOf(explicitWidthOfDrawingFloat));
+        SisuBigDecimal explicitAspectRatio = this.getExplicitWidth().divide(this.getExplicitHeight(),
                 SisuBigDecimal.mcOperations);
         logger.atFine().log("Explicit aspect ratio: " + explicitAspectRatio);
 
@@ -485,12 +485,12 @@ public class Drawing
                 // Therefore, we are constrained by width.
                 // Adjust the height to match.
                 logger.atFine().log("Adjusting height");
-                BigDecimal adjustedHeight = this.getExplicitWidth().divide(explicitAspectRatio,
+                SisuBigDecimal adjustedHeight = this.getExplicitWidth().divide(explicitAspectRatio,
                         SisuBigDecimal.mcOperations);
                 logger.atFine().log("Setting adjusted height, adjusted height: " + adjustedHeight.toPlainString());
                 this.setExplicitHeight(adjustedHeight);
                 logger.atFine().log("Setting explicit width");
-                this.setExplicitWidth(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
+                this.setExplicitWidth(SisuBigDecimal.valueOf(explicitWidthOfDrawingFloat));
             }
             else if (implicitAspectRatio.compareTo(explicitAspectRatio) < 0)
             {
@@ -498,9 +498,9 @@ public class Drawing
                 // Therefore, we are constrained by height.
                 // Adjust the width to match.
                 logger.atFine().log("Adjusting width");
-                BigDecimal adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio,
+                SisuBigDecimal adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio,
                         SisuBigDecimal.mcOperations);
-                this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
+                this.setExplicitHeight(SisuBigDecimal.valueOf(explicitHeightOfDrawingFloat));
                 this.setExplicitWidth(adjustedWidth);
             }
         }
@@ -508,8 +508,8 @@ public class Drawing
         {
             // The two aspect ratios are equal, so no adjustment is necessary
             logger.atFine().log("No adjustment necessary");
-            this.setExplicitWidth(BigDecimal.valueOf(explicitWidthOfDrawingFloat));
-            this.setExplicitHeight(BigDecimal.valueOf(explicitHeightOfDrawingFloat));
+            this.setExplicitWidth(SisuBigDecimal.valueOf(explicitWidthOfDrawingFloat));
+            this.setExplicitHeight(SisuBigDecimal.valueOf(explicitHeightOfDrawingFloat));
 
         }
 
@@ -539,7 +539,7 @@ public class Drawing
      *
      * @param drawingExplicitHeight The explicit height of the drawing.
      */
-    private void setExplicitHeight(@NotNull BigDecimal drawingExplicitHeight)
+    private void setExplicitHeight(@NotNull SisuBigDecimal drawingExplicitHeight)
     {
         logger.atFine().log("Setting explicit height");
         // Note that this line, by changing this.explicitWidth, can change the explicit to implicit ratio
@@ -562,7 +562,7 @@ public class Drawing
      * Use this to allow logging changes to internal height
      * @param drawingExplicitHeight
      */
-    private void setExplicitHeightInternal(@NotNull BigDecimal drawingExplicitHeight)
+    private void setExplicitHeightInternal(@NotNull SisuBigDecimal drawingExplicitHeight)
     {
         this.explicitHeight = drawingExplicitHeight;
     }
@@ -575,7 +575,7 @@ public class Drawing
      */
     public void setExplicitHeight(Float height)
     {
-        this.setExplicitHeight(BigDecimal.valueOf(height));
+        this.setExplicitHeight(SisuBigDecimal.valueOf(height));
     }
 
     /**
@@ -585,7 +585,7 @@ public class Drawing
      */
     public void setExplicitHeight(Integer height)
     {
-        this.setExplicitHeight(BigDecimal.valueOf(height));
+        this.setExplicitHeight(SisuBigDecimal.valueOf(height));
     }
 
     /**
@@ -595,7 +595,7 @@ public class Drawing
      *
      * @param drawingExplicitWidth The explicit width of the drawing.
      */
-    private void setExplicitWidth(@NotNull BigDecimal drawingExplicitWidth)
+    private void setExplicitWidth(@NotNull SisuBigDecimal drawingExplicitWidth)
     {
         logger.atFine().log("Setting explicit width");
         // Note that this line, by changing this.explicitWidth, can change the explicit to implicit ratio
@@ -621,7 +621,7 @@ public class Drawing
      */
     public void setExplicitWidth(Float width)
     {
-        this.setExplicitWidth(BigDecimal.valueOf(width));
+        this.setExplicitWidth(SisuBigDecimal.valueOf(width));
 
     }
 
@@ -632,14 +632,14 @@ public class Drawing
      */
     public void setExplicitWidth(Integer width)
     {
-        this.setExplicitWidth(BigDecimal.valueOf(width));
+        this.setExplicitWidth(SisuBigDecimal.valueOf(width));
     }
 
     /**
      * Use this to allow logging changes to internal height
      * @param drawingExplicitWidth
      */
-    private void setExplicitWidthInternal(@NotNull BigDecimal drawingExplicitWidth)
+    private void setExplicitWidthInternal(@NotNull SisuBigDecimal drawingExplicitWidth)
     {
         this.explicitWidth = drawingExplicitWidth;
     }
@@ -663,8 +663,8 @@ public class Drawing
     private void updateExplicitHeightOfShape(@NotNull Shape shape)
     {
         // Update explicit height of shape
-        BigDecimal implicitHeightOfShape = shape.getImplicitHeight();
-        BigDecimal explicitHeightOfShape = implicitHeightOfShape.multiply(this.getExplicitToImplicitRatio(),
+        SisuBigDecimal implicitHeightOfShape = shape.getImplicitHeight();
+        SisuBigDecimal explicitHeightOfShape = implicitHeightOfShape.multiply(this.getExplicitToImplicitRatio(),
                 SisuBigDecimal.mcOperations);
         shape.setExplicitHeight(explicitHeightOfShape);
     }
@@ -673,8 +673,8 @@ public class Drawing
     {
         // Update explicit width of shape
         logger.atFine().log("Updating explicit width of shape");
-        BigDecimal implicitWidthOfShape = shape.getImplicitWidth();
-        BigDecimal explicitWidthOfShape = implicitWidthOfShape.multiply(this.getExplicitToImplicitRatio(),
+        SisuBigDecimal implicitWidthOfShape = shape.getImplicitWidth();
+        SisuBigDecimal explicitWidthOfShape = implicitWidthOfShape.multiply(this.getExplicitToImplicitRatio(),
                 SisuBigDecimal.mcOperations);
         shape.setExplicitWidth(explicitWidthOfShape);
     }
@@ -682,27 +682,27 @@ public class Drawing
     {
         // Update the explicit x position of the Shape
         logger.atFine().log("Updating explicit x position");
-        BigDecimal implicitXPositionOfShape = shape.getImplicitXPositionCenter();
+        SisuBigDecimal implicitXPositionOfShape = shape.getImplicitXPositionCenter();
         // The fudge factor is to shift the diagram right so that all x coordinates are positive in explicit coordinate
         // space
-        BigDecimal fudgeFactorX = this.getImplicitXMinimum();
-        BigDecimal fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX,
+        SisuBigDecimal fudgeFactorX = this.getImplicitXMinimum();
+        SisuBigDecimal fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX,
                 SisuBigDecimal.mcOperations);
-        BigDecimal explicitXPositionOfShape = fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
+        SisuBigDecimal explicitXPositionOfShape = fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
                 SisuBigDecimal.mcOperations);
         shape.setExplicitXPositionCenter(explicitXPositionOfShape);
-        BigDecimal implicitWidthOfContents = this.getImplicitWidth();
-        BigDecimal explicitWidthOfContents = implicitWidthOfContents.multiply(this.getExplicitToImplicitRatio(),
+        SisuBigDecimal implicitWidthOfContents = this.getImplicitWidth();
+        SisuBigDecimal explicitWidthOfContents = implicitWidthOfContents.multiply(this.getExplicitToImplicitRatio(),
                 SisuBigDecimal.mcOperations);
         if (this.isExplicitSet())
         {
-            BigDecimal explicitWidthOfDrawing = this.getExplicitWidth();
+            SisuBigDecimal explicitWidthOfDrawing = this.getExplicitWidth();
             assert explicitWidthOfDrawing != null;
-            BigDecimal explicitHorizontalWhitespace = explicitWidthOfDrawing.subtract(explicitWidthOfContents,
+            SisuBigDecimal explicitHorizontalWhitespace = explicitWidthOfDrawing.subtract(explicitWidthOfContents,
                     SisuBigDecimal.mcOperations);
-            BigDecimal explicitHorizontalWhitespaceLeft = explicitHorizontalWhitespace.divide(SisuBigDecimal.TWO,
+            SisuBigDecimal explicitHorizontalWhitespaceLeft = explicitHorizontalWhitespace.divide(SisuBigDecimal.TWO,
                     SisuBigDecimal.mcOperations);
-            BigDecimal finalExplicitXPositionOfShape = explicitXPositionOfShape.add(explicitHorizontalWhitespaceLeft,
+            SisuBigDecimal finalExplicitXPositionOfShape = explicitXPositionOfShape.add(explicitHorizontalWhitespaceLeft,
                     SisuBigDecimal.mcOperations);
             shape.setExplicitXPositionCenter(finalExplicitXPositionOfShape);
         }
@@ -711,26 +711,26 @@ public class Drawing
     private void updateExplicitYPositionOfShape(@NotNull Shape shape)
     {
         // Update the explicit y position of the Shape
-        BigDecimal implicitYPositionOfShape = shape.getImplicitYPositionCenter();
+        SisuBigDecimal implicitYPositionOfShape = shape.getImplicitYPositionCenter();
         // The fudge factor is to shift the diagram down so that all y coordinates are positive in explicit coordinate space
-        BigDecimal fudgeFactorY = this.getImplicitYMaximum();
-        BigDecimal fudgedImplicitYPositionOfShape = implicitYPositionOfShape.subtract(fudgeFactorY);
+        SisuBigDecimal fudgeFactorY = this.getImplicitYMaximum();
+        SisuBigDecimal fudgedImplicitYPositionOfShape = implicitYPositionOfShape.subtract(fudgeFactorY);
         fudgedImplicitYPositionOfShape = fudgedImplicitYPositionOfShape.negate();
-        BigDecimal explicitToImplicitRatio = this.getExplicitToImplicitRatio();
-        BigDecimal explicitYPositionOfShape = fudgedImplicitYPositionOfShape.multiply(explicitToImplicitRatio,
+        SisuBigDecimal explicitToImplicitRatio = this.getExplicitToImplicitRatio();
+        SisuBigDecimal explicitYPositionOfShape = fudgedImplicitYPositionOfShape.multiply(explicitToImplicitRatio,
                 SisuBigDecimal.mcOperations);
         // TODO Add code parallel to code below to updateExplicitXPositionOfShape()
-        BigDecimal implicitHeightOfContents = this.getImplicitHeight();
-        BigDecimal explicitHeightOfContents = implicitHeightOfContents.multiply(explicitToImplicitRatio,
+        SisuBigDecimal implicitHeightOfContents = this.getImplicitHeight();
+        SisuBigDecimal explicitHeightOfContents = implicitHeightOfContents.multiply(explicitToImplicitRatio,
                 SisuBigDecimal.mcOperations);
         if (this.isExplicitSet())
         {
-            BigDecimal explicitHeightOfDrawing = this.getExplicitHeight();
-            BigDecimal explicitVerticalWhitespace = explicitHeightOfDrawing.subtract(explicitHeightOfContents,
+            SisuBigDecimal explicitHeightOfDrawing = this.getExplicitHeight();
+            SisuBigDecimal explicitVerticalWhitespace = explicitHeightOfDrawing.subtract(explicitHeightOfContents,
                     SisuBigDecimal.mcOperations);
-            BigDecimal explicitVerticalWhitespaceBelow = explicitVerticalWhitespace.divide(SisuBigDecimal.TWO,
+            SisuBigDecimal explicitVerticalWhitespaceBelow = explicitVerticalWhitespace.divide(SisuBigDecimal.TWO,
                     SisuBigDecimal.mcOperations);
-            BigDecimal finalExplicitYPositionOfShape = explicitYPositionOfShape.add(explicitVerticalWhitespaceBelow,
+            SisuBigDecimal finalExplicitYPositionOfShape = explicitYPositionOfShape.add(explicitVerticalWhitespaceBelow,
                     SisuBigDecimal.mcOperations);
             shape.setExplicitYPositionCenter(finalExplicitYPositionOfShape);
         }

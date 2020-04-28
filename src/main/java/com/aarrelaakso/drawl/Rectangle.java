@@ -1,7 +1,5 @@
 package com.aarrelaakso.drawl;
 
-import java.math.BigDecimal;
-
 public class Rectangle extends Shape {
 
     public String getSVG() {
@@ -10,15 +8,15 @@ public class Rectangle extends Shape {
             throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
         }
         String radiusStringValue;
-        BigDecimal radiusExplicitValue = this.getImplicitHalfHeight();
+        SisuBigDecimal radiusExplicitValue = this.getImplicitHalfHeight();
         radiusStringValue = SVG.toString(radiusExplicitValue);
         StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<rect");
         svgBuilder.append(" width=\"");
-        svgBuilder.append(this.getExplicitWidth());
+        svgBuilder.append(this.getExplicitWidth().toPlainString());
         svgBuilder.append("\"");
         svgBuilder.append(" height=\"");
-        svgBuilder.append(this.getExplicitHeight());
+        svgBuilder.append(this.getExplicitHeight().toPlainString());
         svgBuilder.append("\"");
         if (this.getExplicitXPositionLeft() != null) {
             svgBuilder.append(" x=\"");

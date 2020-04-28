@@ -15,7 +15,7 @@ public class SVG
      *
      * @param number the number to convert.
      */
-    public static @NotNull String toString(BigDecimal number)
+    public static @NotNull String toString(SisuBigDecimal number)
     {
         String result = "";
         Float floatValue = number.floatValue();

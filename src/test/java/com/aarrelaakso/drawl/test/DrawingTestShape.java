@@ -72,14 +72,14 @@ public abstract class DrawingTestShape
                 Float heightFloat = Float.MAX_VALUE;
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
                 drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
 
-                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+                SisuBigDecimal widthBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
-                SisuBigDecimal shape1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
-                SisuBigDecimal shape1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                SisuBigDecimal shape1ExpectedXPosition = widthBigDecimal.divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+                SisuBigDecimal shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit position of " + shape1.toString() + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -104,14 +104,14 @@ public abstract class DrawingTestShape
                 Float heightFloat = Float.MAX_VALUE - 1;
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
                 drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
 
-                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+                SisuBigDecimal widthBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
-                SisuBigDecimal shape1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
-                SisuBigDecimal shape1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                SisuBigDecimal shape1ExpectedXPosition = widthBigDecimal.divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+                SisuBigDecimal shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit position of " + shape1.toString() + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -137,14 +137,14 @@ public abstract class DrawingTestShape
                 Float heightFloat = Float.valueOf("5.567761E37");
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
                 drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
 
-                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+                SisuBigDecimal widthBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
-                SisuBigDecimal shape1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
-                SisuBigDecimal shape1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                SisuBigDecimal shape1ExpectedXPosition = widthBigDecimal.divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+                SisuBigDecimal shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit position of " + shape1.toString() + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -170,14 +170,14 @@ public abstract class DrawingTestShape
                 Float heightFloat = Float.valueOf("56");
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
                 drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
 
-                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+                SisuBigDecimal widthBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
-                SisuBigDecimal shape1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
-                SisuBigDecimal shape1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                SisuBigDecimal shape1ExpectedXPosition = widthBigDecimal.divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+                SisuBigDecimal shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit position of " + shape1.toString() + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -205,13 +205,13 @@ public abstract class DrawingTestShape
                 Float heightFloat = Float.valueOf("5.567761E37");
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitDimensions(widthFloat, heightFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
-                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
 
-                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+                SisuBigDecimal widthBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
-                SisuBigDecimal shape1ExpectedXPosition = SisuBigDecimal.create(widthBigDecimal.divide(BigDecimal.valueOf(2), SisuBigDecimal.mcOperations));
-                SisuBigDecimal shape1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                SisuBigDecimal shape1ExpectedXPosition = widthBigDecimal.divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+                SisuBigDecimal shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit position of " + shape1.toString() + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -311,61 +311,58 @@ public abstract class DrawingTestShape
                 logger.atFine().log("width: " + widthFloat);
                 logger.atFine().log("height: " + heightFloat);
                 drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().compareTo(BigDecimal.valueOf(widthFloat)) == 0);
+                softly.then(drawing.getExplicitWidth().compareTo(SisuBigDecimal.valueOf(widthFloat)) == 0);
                 drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().compareTo(BigDecimal.valueOf(heightFloat)) == 0);
+                softly.then(drawing.getExplicitHeight().compareTo(SisuBigDecimal.valueOf(heightFloat)) == 0);
 
                 // At this aspect ratio, the sizes of the shapes may be constrained by the height
-                BigDecimal heightBigDecimal = BigDecimal.valueOf(heightFloat);
-                BigDecimal widthBigDecimal = BigDecimal.valueOf(widthFloat);
+                SisuBigDecimal heightSisuBigDecimal = SisuBigDecimal.valueOf(heightFloat);
+                SisuBigDecimal widthSisuBigDecimal = SisuBigDecimal.valueOf(widthFloat);
 
-                SisuBigDecimal aspectRatio = SisuBigDecimal.create(widthFloat/heightFloat);
+                SisuBigDecimal aspectRatio = SisuBigDecimal.valueOf(widthFloat/heightFloat);
 
-                BigDecimal widthOfShapes;
+                SisuBigDecimal widthOfShapes;
                 if (aspectRatio.g(3))
                 {
-                    widthOfShapes = heightBigDecimal.multiply(BigDecimal.valueOf(3));
+                    widthOfShapes = heightSisuBigDecimal.multiply(SisuBigDecimal.valueOf(3));
                 }
                 else
                 {
-                    widthOfShapes = widthBigDecimal;
+                    widthOfShapes = widthSisuBigDecimal;
                 }
 
-                BigDecimal extraWidth = widthBigDecimal.subtract(widthOfShapes);
-                BigDecimal extraWidthLeft = extraWidth.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
+                SisuBigDecimal extraWidth = widthSisuBigDecimal.subtract(widthOfShapes);
+                SisuBigDecimal extraWidthLeft = extraWidth.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
 
-                SisuBigDecimal circle1ExpectedXPosition = SisuBigDecimal.create(widthOfShapes
-                        .divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations));
+                SisuBigDecimal circle1ExpectedXPosition = widthOfShapes.divide(SisuBigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
                 if (aspectRatio.g(3))
                 {
-                        circle1ExpectedXPosition = circle1ExpectedXPosition.add(SisuBigDecimal.create(extraWidthLeft));
+                        circle1ExpectedXPosition = circle1ExpectedXPosition.add(extraWidthLeft);
                 }
 
-                SisuBigDecimal circle1ExplicitXPosition = SisuBigDecimal.create(shape1.getExplicitXPositionCenter());
+                SisuBigDecimal circle1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(circle1ExplicitXPosition.compareToFuzzy(circle1ExpectedXPosition))
                         .as("Expecting the explicit x position of shape 1 to be " +
                                 circle1ExpectedXPosition + " but it was " + circle1ExplicitXPosition).isEqualTo(0);
 
-                SisuBigDecimal circle2ExpectedXPosition = SisuBigDecimal.create(widthOfShapes
-                        .divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations));
+                SisuBigDecimal circle2ExpectedXPosition = widthOfShapes.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
                 if (aspectRatio.g(3))
                 {
-                    circle2ExpectedXPosition = circle2ExpectedXPosition.add(SisuBigDecimal.create(extraWidthLeft));
+                    circle2ExpectedXPosition = circle2ExpectedXPosition.add(extraWidthLeft);
                 }
 
-                SisuBigDecimal circle2ExplicitXPosition = SisuBigDecimal.create(shape2.getExplicitXPositionCenter());
+                SisuBigDecimal circle2ExplicitXPosition = shape2.getExplicitXPositionCenter();
                 softly.then(circle2ExplicitXPosition.compareToFuzzy(circle2ExpectedXPosition))
                         .as("Expecting the explicit x position of shape 2 to be " +
                                 circle2ExpectedXPosition + " but it was " + circle2ExplicitXPosition).isEqualTo(0);
 
-                BigDecimal fraction = BigDecimal.valueOf(5).divide(BigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
-                SisuBigDecimal circle3ExpectedXPosition = SisuBigDecimal.create(widthOfShapes
-                        .multiply(fraction, SisuBigDecimal.mcOperations));
+                SisuBigDecimal fraction = SisuBigDecimal.valueOf(5).divide(SisuBigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
+                SisuBigDecimal circle3ExpectedXPosition = widthOfShapes.multiply(fraction, SisuBigDecimal.mcOperations);
                 if (aspectRatio.g(3))
                 {
-                    circle3ExpectedXPosition = circle3ExpectedXPosition.add(SisuBigDecimal.create(extraWidthLeft));
+                    circle3ExpectedXPosition = circle3ExpectedXPosition.add(extraWidthLeft);
                 }
-                SisuBigDecimal circle3ExplicitXPosition = SisuBigDecimal.create(shape3.getExplicitXPositionCenter());
+                SisuBigDecimal circle3ExplicitXPosition = shape3.getExplicitXPositionCenter();
                 softly.then(circle3ExplicitXPosition.compareToFuzzy(circle3ExpectedXPosition))
                         .as("Expecting the explicit x position of shape 3 to be " +
                                 circle3ExpectedXPosition + " but it was " + circle3ExplicitXPosition).isEqualTo(0);
@@ -409,7 +406,7 @@ public abstract class DrawingTestShape
                 // TODO [Issue No 16]
                 // TODO This method needs code from the others because it may randomly generate code in which the
                 // height is less than 1/3 of the width.
-                
+
                 Double widthDouble = ThreadLocalRandom.current().nextDouble(0, Float.MAX_VALUE);
                 Float widthFloat = widthDouble.floatValue();
                 Double heightDouble = ThreadLocalRandom.current().nextDouble(0, Float.MAX_VALUE);
@@ -442,11 +439,11 @@ public abstract class DrawingTestShape
     {
         drawing.add(shape1);
         drawing.setExplicitHeight(100);
-        BigDecimal explicitHeightOfDrawing = drawing.getExplicitHeight();
-        BigDecimal explicitWidthOfDrawing = drawing.getExplicitWidth();
-        BigDecimal explicitHeightOfShape = shape1.getExplicitHeight();
-        BigDecimal explicitWidthOfShape = shape1.getExplicitWidth();
-        BigDecimal EXPECTED = BigDecimal.valueOf(100);
+        SisuBigDecimal explicitHeightOfDrawing = drawing.getExplicitHeight();
+        SisuBigDecimal explicitWidthOfDrawing = drawing.getExplicitWidth();
+        SisuBigDecimal explicitHeightOfShape = shape1.getExplicitHeight();
+        SisuBigDecimal explicitWidthOfShape = shape1.getExplicitWidth();
+        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(100);
 
         softly.then(explicitHeightOfDrawing).isEqualByComparingTo(EXPECTED);
         softly.then(explicitWidthOfDrawing).isEqualByComparingTo(EXPECTED);
@@ -461,13 +458,13 @@ public abstract class DrawingTestShape
     void heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitWidthScalesItsExplicitHeightToFit(@NotNull BDDSoftAssertions softly)
     {
         Integer size = 100;
-        BigDecimal EXPECTED = BigDecimal.valueOf(size);
+        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(size);
         drawing.add(shape1);
         drawing.setExplicitWidth(size);
-        BigDecimal explicitHeightOfDrawing = drawing.getExplicitHeight();
-        BigDecimal explicitWidthOfDrawing = drawing.getExplicitWidth();
-        BigDecimal explicitHeightOfShape = shape1.getExplicitHeight();
-        BigDecimal explicitWidthOfShape = shape1.getExplicitWidth();
+        SisuBigDecimal explicitHeightOfDrawing = drawing.getExplicitHeight();
+        SisuBigDecimal explicitWidthOfDrawing = drawing.getExplicitWidth();
+        SisuBigDecimal explicitHeightOfShape = shape1.getExplicitHeight();
+        SisuBigDecimal explicitWidthOfShape = shape1.getExplicitWidth();
 
         softly.then(explicitHeightOfDrawing)
                 .as("Expecting explicit height of drawing to be %s but got %s",
@@ -503,9 +500,9 @@ public abstract class DrawingTestShape
         shape2.setRightOf(shape1);
         drawing.setExplicitHeight(100);
         drawing.setExplicitWidth(100);
-        BigDecimal explicitHeight1 = shape1.getExplicitHeight();
-        BigDecimal explicitHeight2 = shape2.getExplicitHeight();
-        BigDecimal EXPECTED = BigDecimal.valueOf(50);
+        SisuBigDecimal explicitHeight1 = shape1.getExplicitHeight();
+        SisuBigDecimal explicitHeight2 = shape2.getExplicitHeight();
+        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
 
         softly.then(explicitHeight1).isEqualByComparingTo(EXPECTED);
         softly.then(explicitHeight2).isEqualByComparingTo(EXPECTED);
@@ -527,9 +524,9 @@ public abstract class DrawingTestShape
         shape2.setRightOf(shape1);
         drawing.setExplicitWidth(100);
         drawing.setExplicitHeight(100);
-        BigDecimal explicitHeight1 = shape1.getExplicitHeight();
-        BigDecimal explicitHeight2 = shape2.getExplicitHeight();
-        BigDecimal EXPECTED = BigDecimal.valueOf(50);
+        SisuBigDecimal explicitHeight1 = shape1.getExplicitHeight();
+        SisuBigDecimal explicitHeight2 = shape2.getExplicitHeight();
+        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
 
         softly.then(explicitHeight1).isEqualByComparingTo(EXPECTED);
         softly.then(explicitHeight2).isEqualByComparingTo(EXPECTED);
@@ -545,9 +542,9 @@ public abstract class DrawingTestShape
         drawing.add(shape2);
         shape2.setRightOf(shape1);
         drawing.setExplicitDimensions(100, 100);
-        BigDecimal explicitHeight1 = shape1.getExplicitHeight();
-        BigDecimal explicitHeight2 = shape2.getExplicitHeight();
-        BigDecimal expectedHeight = BigDecimal.valueOf(50);
+        SisuBigDecimal explicitHeight1 = shape1.getExplicitHeight();
+        SisuBigDecimal explicitHeight2 = shape2.getExplicitHeight();
+        SisuBigDecimal expectedHeight = SisuBigDecimal.valueOf(50);
 
         assertAll("The explicit heights of both Shapes are correct",
                 () -> assertEquals(0, explicitHeight1.compareTo(expectedHeight),
@@ -579,11 +576,11 @@ public abstract class DrawingTestShape
     void widthExplicitWhenADrawingHasOneDefaultShapeThenTheExplicitWidthPerObjectIsTheExplicitWidthOfTheDrawing()
     {
         Integer size = 100;
-        BigDecimal EXPECTED = BigDecimal.valueOf(size);
+        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(size);
         drawing.add(shape1);
         drawing.setExplicitWidth(size);
         drawing.setExplicitHeight(size);
-        BigDecimal widthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        SisuBigDecimal widthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then(widthPerObject).isEqualByComparingTo(EXPECTED);
     }
@@ -597,9 +594,9 @@ public abstract class DrawingTestShape
         drawing.add(shape1);
         drawing.setExplicitWidth(100);
         drawing.setExplicitHeight(100);
-        BigDecimal shapeExplicitWidth = shape1.getExplicitWidth();
+        SisuBigDecimal shapeExplicitWidth = shape1.getExplicitWidth();
 
-        then(shapeExplicitWidth).isEqualByComparingTo(BigDecimal.valueOf(100));
+        then(shapeExplicitWidth).isEqualByComparingTo(SisuBigDecimal.valueOf(100));
     }
 
     @Test
@@ -613,11 +610,11 @@ public abstract class DrawingTestShape
         shape2.setRightOf(shape1);
         drawing.setExplicitHeight(100);
         drawing.setExplicitWidth(100);
-        BigDecimal explicitWidth1 = shape1.getExplicitWidth();
-        BigDecimal explicitWidth2 = shape2.getExplicitWidth();
+        SisuBigDecimal explicitWidth1 = shape1.getExplicitWidth();
+        SisuBigDecimal explicitWidth2 = shape2.getExplicitWidth();
 
-        softly.then(explicitWidth1).isEqualByComparingTo(BigDecimal.valueOf(50));
-        softly.then(explicitWidth2).isEqualByComparingTo(BigDecimal.valueOf(50));
+        softly.then(explicitWidth1).isEqualByComparingTo(SisuBigDecimal.valueOf(50));
+        softly.then(explicitWidth2).isEqualByComparingTo(SisuBigDecimal.valueOf(50));
     }
 
     @Test
@@ -629,8 +626,8 @@ public abstract class DrawingTestShape
         Integer size = 100;
         drawing.add(shape1);
         drawing.setExplicitDimensions(size, size);
-        BigDecimal yPosition = shape1.getExplicitYPositionCenter();
-        BigDecimal EXPECTED = BigDecimal.valueOf(50);
+        SisuBigDecimal yPosition = shape1.getExplicitYPositionCenter();
+        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
 
         then(yPosition).isEqualByComparingTo(EXPECTED);
     }
@@ -651,7 +648,7 @@ public abstract class DrawingTestShape
     {
 
         Integer SIZE = 100;
-        BigDecimal EXPECTED_Y_POS = BigDecimal.valueOf(SIZE).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
+        SisuBigDecimal EXPECTED_Y_POS = SisuBigDecimal.valueOf(SIZE).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
 
         drawing.add(shape1);
         drawing.add(shape2);
@@ -660,19 +657,19 @@ public abstract class DrawingTestShape
         drawing.setExplicitHeight(SIZE);
         softly.then(drawing.getExplicitToImplicitRatio())
                 .as("After setExplicitHeight, the explicit to implicit ratio should be %d", SIZE)
-                .isEqualByComparingTo(BigDecimal.valueOf(SIZE));
+                .isEqualByComparingTo(SisuBigDecimal.valueOf(SIZE));
 
         drawing.setExplicitWidth(SIZE);
         softly.then(drawing.getExplicitToImplicitRatio())
                 .as("After setExplicitWidth, the explicit to implicit ratio should be %d", SIZE / 2.0)
-                .isEqualByComparingTo(BigDecimal.valueOf(SIZE / 2.0));
+                .isEqualByComparingTo(SisuBigDecimal.valueOf(SIZE / 2.0));
 
-        BigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
+        SisuBigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
         softly.then(explicitYPosition1)
                 .as("The y position of shape1 should be %s", EXPECTED_Y_POS.toPlainString())
                 .isEqualByComparingTo(EXPECTED_Y_POS);
 
-        BigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
+        SisuBigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
         softly.then(explicitYPosition2)
                 .as("The y position of shape2 should be %s", EXPECTED_Y_POS.toPlainString())
                 .isEqualByComparingTo(EXPECTED_Y_POS);
@@ -697,9 +694,9 @@ public abstract class DrawingTestShape
         shape2.setRightOf(shape1);
         drawing.setExplicitWidth(100);
         drawing.setExplicitHeight(100);
-        BigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
-        BigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
-        BigDecimal EXPECTED = BigDecimal.valueOf(50);
+        SisuBigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
+        SisuBigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
+        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
 
         softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
         softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
@@ -712,23 +709,23 @@ public abstract class DrawingTestShape
     void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrectWithSetExplicitDimensions(@NotNull BDDSoftAssertions softly)
     {
         Integer sizeOfDrawing = 100;
-        BigDecimal EXPECTED = BigDecimal.valueOf(sizeOfDrawing).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
+        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(sizeOfDrawing).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
 
         logger.atFine().log("Adding shape1");
         drawing.add(shape1);
-        BigDecimal implicitYPosition1 = shape1.getImplicitYPositionCenter();
+        SisuBigDecimal implicitYPosition1 = shape1.getImplicitYPositionCenter();
         softly.then(implicitYPosition1)
                 .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(BigDecimal.ZERO);
+                .isEqualByComparingTo(SisuBigDecimal.ZERO);
 
         logger.atFine().log("Adding shape2");
         drawing.add(shape2);
-        BigDecimal implicitYPosition2 = shape2.getImplicitYPositionCenter();
+        SisuBigDecimal implicitYPosition2 = shape2.getImplicitYPositionCenter();
         softly.then(implicitYPosition2)
                 .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(BigDecimal.ZERO);
+                .isEqualByComparingTo(SisuBigDecimal.ZERO);
 
         logger.atFine().log("Setting shape2 right of shape1");
         shape2.setRightOf(shape1);
@@ -737,13 +734,13 @@ public abstract class DrawingTestShape
         softly.then(implicitYPosition1)
                 .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(BigDecimal.ZERO);
+                .isEqualByComparingTo(SisuBigDecimal.ZERO);
         logger.atFine().log("Getting implicit y position of shape2");
         implicitYPosition2 = shape2.getImplicitYPositionCenter();
         softly.then(implicitYPosition2)
                 .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(BigDecimal.ZERO);
+                .isEqualByComparingTo(SisuBigDecimal.ZERO);
 
         logger.atFine().log("Setting explicit dimensions");
         drawing.setExplicitDimensions(sizeOfDrawing, sizeOfDrawing);
@@ -751,20 +748,20 @@ public abstract class DrawingTestShape
         softly.then(implicitYPosition1)
                 .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(BigDecimal.ZERO);
+                .isEqualByComparingTo(SisuBigDecimal.ZERO);
         implicitYPosition2 = shape1.getImplicitYPositionCenter();
         softly.then(implicitYPosition2)
                 .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
                         + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(BigDecimal.ZERO);
+                .isEqualByComparingTo(SisuBigDecimal.ZERO);
 
-        BigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
+        SisuBigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
         softly.then(explicitYPosition1)
                 .as("The actual explicit y position of Shape 1 (" + explicitYPosition1 + ") should match the"
                         + " expected explicit y position: (" + EXPECTED + ")")
                 .isEqualByComparingTo(EXPECTED);
 
-        BigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
+        SisuBigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
         softly.then(explicitYPosition2)
                 .as("The actual explicit y position of Shape 2 (" + explicitYPosition2 + ") should match the"
                         + " expected explicit y position: (" + EXPECTED + ")")
