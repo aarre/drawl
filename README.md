@@ -6,3 +6,6 @@ Drawl is the world's best drawing language.
   <img alt="Coverity Scan Build Status"
        src="https://scan.coverity.com/projects/20902/badge.svg"/>
 </a>
+
+Drawl is an object-oriented domain-specific language for creating
+vector graphics using Java.
