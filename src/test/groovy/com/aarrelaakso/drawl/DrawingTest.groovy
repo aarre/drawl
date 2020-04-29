@@ -1,8 +1,11 @@
-package com.aarrelaakso.drawl
+package com.aarrelaakso.drawl.test
 
-
+import com.aarrelaakso.drawl.Circle
+import com.aarrelaakso.drawl.SisuBigDecimal
 import spock.lang.Specification
 import org.apache.commons.lang3.StringUtils
+
+import com.aarrelaakso.drawl.Drawing
 
 class DrawingTestSVG extends Specification {
 

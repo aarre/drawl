@@ -10,15 +10,14 @@
 
 package com.aarrelaakso.drawl;
 
+import com.aarrelaakso.drawl.SisuBigDecimal;
+import com.aarrelaakso.drawl.SisuBigDecimalRemainderPair;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
 
@@ -32,7 +31,7 @@ import java.math.BigDecimal;
  */
 @DisplayName("Unit tests of SisuBigDecimal")
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-public class SisuBigDecimalTest
+public class SisuBigDecimalTestProtected
 {
     /**
      * Creates new instance.
@@ -47,7 +46,7 @@ public class SisuBigDecimalTest
     @Test
     public void testAbs()
     {
-        assertEquals(SisuBigDecimal.valueOf(0), SisuBigDecimal.valueOf(0).abs());
+        Assertions.assertEquals(SisuBigDecimal.valueOf(0), SisuBigDecimal.valueOf(0).abs());
         assertEquals(SisuBigDecimal.valueOf(1), SisuBigDecimal.valueOf(1).abs());
         assertEquals(SisuBigDecimal.valueOf(1), SisuBigDecimal.valueOf(-1).abs());
     }
@@ -180,7 +179,7 @@ public class SisuBigDecimalTest
     @Test
     public void testDivWithRemainder()
     {
-        assertEquals(SisuBigDecimalRemainderPair.valueOf(SisuBigDecimal.valueOf("1.5"), SisuBigDecimal.valueOf("0")),
+        Assertions.assertEquals(SisuBigDecimalRemainderPair.valueOf(SisuBigDecimal.valueOf("1.5"), SisuBigDecimal.valueOf("0")),
                 SisuBigDecimal.valueOf(3).divWithRemainder(SisuBigDecimal.valueOf(2), 2));
 
         SisuBigDecimalRemainderPair EXPECTED = SisuBigDecimalRemainderPair.valueOf(
