@@ -31,7 +31,7 @@ public class Circle extends Shape
      *
      * @param implicitRadius The implicit radius of the new circle.
      */
-    public Circle(SisuBigDecimal implicitRadius)
+    protected Circle(SisuBigDecimal implicitRadius)
     {
         this.implicitRadius = implicitRadius;
     }
@@ -74,7 +74,7 @@ public class Circle extends Shape
      * not been set.
      */
     @Nullable
-    public SisuBigDecimal getExplicitRadius()
+    protected SisuBigDecimal getExplicitRadius()
     {
         return this.explicitRadius;
     }
@@ -87,7 +87,7 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    public SisuBigDecimal getExplicitWidth()
+    protected SisuBigDecimal getExplicitWidth()
     {
         return this.getExplicitDiameter();
     }
@@ -97,7 +97,7 @@ public class Circle extends Shape
      *
      * @return
      */
-    private SisuBigDecimal getImplicitDiameter()
+    protected SisuBigDecimal getImplicitDiameter()
     {
         SisuBigDecimal myImplicitRadius = this.getImplicitRadius();
         assert !myImplicitRadius.equals(SisuBigDecimal.ZERO) : "Implicit radius cannot be zero.";
@@ -112,12 +112,12 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    public SisuBigDecimal getImplicitHeight()
+    protected SisuBigDecimal getImplicitHeight()
     {
         return this.getImplicitDiameter();
     }
 
-    public SisuBigDecimal getImplicitRadius()
+    protected SisuBigDecimal getImplicitRadius()
     {
         return this.implicitRadius;
     }
@@ -128,7 +128,7 @@ public class Circle extends Shape
      * @return the implicit width of this Circle
      */
     @Override
-    public SisuBigDecimal getImplicitWidth()
+    protected SisuBigDecimal getImplicitWidth()
     {
         return this.getImplicitDiameter();
     }
@@ -207,7 +207,7 @@ public class Circle extends Shape
      */
     // TODO [Issue #1] Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
     @Override
-    public void setExplicitHeight(@Nullable SisuBigDecimal height)
+    protected void setExplicitHeight(@Nullable SisuBigDecimal height)
     {
         if (height == null)
         {

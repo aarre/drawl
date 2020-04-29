@@ -8,19 +8,20 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.aarrelaakso.drawl;
+package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Rectangle;
-import com.aarrelaakso.drawl.Shape;
+import com.aarrelaakso.drawl.SisuBigDecimal;
 import org.junit.jupiter.api.*;
 
-import java.math.BigDecimal;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 @DisplayName("Unit tests of Rectangle")
-public class RectangleTest extends ShapeTest {
+public class RectangleTestPublic extends ShapeTestPublic
+{
 
     Rectangle shape1;
     Rectangle shape2;
@@ -31,9 +32,9 @@ public class RectangleTest extends ShapeTest {
         shape1 = new Rectangle();
         shape2 = new Rectangle();
         shape3 = new Rectangle();
-        RectangleTest.super.shape1 = shape1;
-        RectangleTest.super.shape2 = shape2;
-        RectangleTest.super.shape3 = shape3;
+        RectangleTestPublic.super.shape1 = shape1;
+        RectangleTestPublic.super.shape2 = shape2;
+        RectangleTestPublic.super.shape3 = shape3;
     }
 
     @Nested
@@ -48,7 +49,19 @@ public class RectangleTest extends ShapeTest {
     @DisplayName("Asymmetric (non-square) Rectangles")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
     class GivenAsymmetricRectangles {
-        Rectangle rectangle = new Rectangle(10, 20);
+
+        @Test
+        @DisplayName("When an asymmetric rectangle is created, then it is not null")
+        void whenAnAsymmetricRectangleIsCreatedThenItIsNotNull()
+        {
+            Integer height = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
+            Integer width = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
+            Double aspectRatio = Double.valueOf(width/height);
+            Rectangle rectangle = new Rectangle(aspectRatio);
+            then(rectangle).isNotNull();
+        }
+
+
     }
 
 

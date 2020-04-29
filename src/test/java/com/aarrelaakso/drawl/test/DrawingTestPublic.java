@@ -10,7 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Unit tests of Drawing without any shapes")
-public class DrawingTest {
+public class DrawingTestPublic
+{
 
     Drawing drawing;
 

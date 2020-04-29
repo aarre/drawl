@@ -147,7 +147,7 @@ public class Shape
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @Nullable
-    public SisuBigDecimal getExplicitHeight()
+    protected SisuBigDecimal getExplicitHeight()
     {
         return this.explicitHeight;
     }
@@ -160,7 +160,7 @@ public class Shape
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @Nullable
-    public SisuBigDecimal getExplicitWidth()
+    protected SisuBigDecimal getExplicitWidth()
     {
         return this.explicitWidth;
     }
@@ -172,12 +172,12 @@ public class Shape
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
-    public SisuBigDecimal getExplicitXPositionCenter()
+    protected SisuBigDecimal getExplicitXPositionCenter()
     {
         return this.explicitXPositionCenter;
     }
 
-    public SisuBigDecimal getExplicitXPositionLeft()
+    protected SisuBigDecimal getExplicitXPositionLeft()
     {
         return this.explicitXPositionCenter.subtract(this.getExplicitHalfWidth());
     }
@@ -189,14 +189,12 @@ public class Shape
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
-    public SisuBigDecimal getExplicitYPositionCenter()
+    protected SisuBigDecimal getExplicitYPositionCenter()
     {
-        logger.atFine().log("Returning explicit y position of Shape %s as: %f", this.toString(),
-                this.explicitYPositionCenter.floatValue());
         return this.explicitYPositionCenter;
     }
 
-    public SisuBigDecimal getExplicitYPositionTop()
+    protected SisuBigDecimal getExplicitYPositionTop()
     {
         return this.explicitYPositionCenter.subtract(this.getExplicitHalfHeight());
     }
@@ -216,7 +214,7 @@ public class Shape
      *
      * @return the implicit height of this Shape
      */
-    public SisuBigDecimal getImplicitHeight()
+    protected SisuBigDecimal getImplicitHeight()
     {
         return this.implicitHeight;
     }
@@ -226,7 +224,7 @@ public class Shape
      *
      * @return the implicit width of this Shape
      */
-    public SisuBigDecimal getImplicitWidth()
+    protected SisuBigDecimal getImplicitWidth()
     {
         return this.getImplicitHeight();
     }
@@ -256,7 +254,7 @@ public class Shape
      *
      * @return The implicit x position of the center of this Shape.
      */
-    public SisuBigDecimal getImplicitXPositionCenter()
+    protected SisuBigDecimal getImplicitXPositionCenter()
     {
         return this.implicitXPositionCenter;
     }
@@ -266,7 +264,7 @@ public class Shape
      *
      * @return The implicit x position of the left edge of this Shape.
      */
-    public SisuBigDecimal getImplicitXPositionLeft()
+    protected SisuBigDecimal getImplicitXPositionLeft()
     {
         return this.getImplicitXPositionCenter().subtract(this.getImplicitHalfWidth());
     }
@@ -296,7 +294,7 @@ public class Shape
      *
      * @return The implicit y position of the center of this Shape.
      */
-    public SisuBigDecimal getImplicitYPositionCenter()
+    protected SisuBigDecimal getImplicitYPositionCenter()
     {
         return this.implicitYPositionCenter;
     }
@@ -306,7 +304,7 @@ public class Shape
      *
      * @return The implicit y position of the top of this Shape.
      */
-    public SisuBigDecimal getImplicitYPositionTop()
+    protected SisuBigDecimal getImplicitYPositionTop()
     {
         return this.getImplicitYPositionCenter().subtract(this.getImplicitHalfHeight());
     }
@@ -410,7 +408,7 @@ public class Shape
      *               been assigned an explicit height.
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
-    public void setExplicitHeight(@Nullable SisuBigDecimal height)
+    protected void setExplicitHeight(@Nullable SisuBigDecimal height)
     {
         this.explicitHeight = height;
     }
@@ -423,7 +421,7 @@ public class Shape
      *              been assigned an explicit width.
      */
     // TODO [Issue #1] Make this method protected and factor out of unit tests.
-    public void setExplicitWidth(@Nullable SisuBigDecimal width)
+    protected void setExplicitWidth(@Nullable SisuBigDecimal width)
     {
         logger.atFine().log("Updating explicit width of shape to %s", width.toPlainString());
         this.explicitWidth = width;
@@ -435,12 +433,12 @@ public class Shape
         logger.atFine().log("Setting explicit x position of Shape %s to: %f", this.toString(), x.floatValue());
     }
 
-    public void setExplicitXPositionCenter(Integer x)
+    protected void setExplicitXPositionCenter(Integer x)
     {
         this.explicitXPositionCenter = SisuBigDecimal.valueOf(x);
     }
 
-    public void setExplicitYPosition(Integer y)
+    protected void setExplicitYPosition(Integer y)
     {
         this.setExplicitYPositionCenter(SisuBigDecimal.valueOf(y));
     }
@@ -459,7 +457,17 @@ public class Shape
         logger.atFine().log("Setting explicit y position of Shape %s to: %f", this.toString(), y.floatValue());
     }
 
-    public void setImplicitXPositionCenter(SisuBigDecimal x)
+    protected final void setImplicitHeight(SisuBigDecimal implicitHeight)
+    {
+        this.implicitHeight = implicitHeight;
+    }
+
+    protected final void setImplicitWidth(SisuBigDecimal implicitWidth)
+    {
+        this.implicitWidth = implicitWidth;
+    }
+
+    protected void setImplicitXPositionCenter(SisuBigDecimal x)
     {
         this.implicitXPositionCenter = x;
     }
@@ -472,7 +480,7 @@ public class Shape
      *
      * @param y The implicit y position of this Shape.
      */
-    public void setImplicitYPositionCenter(SisuBigDecimal y)
+    protected void setImplicitYPositionCenter(SisuBigDecimal y)
     {
         this.implicitYPositionCenter = y;
     }

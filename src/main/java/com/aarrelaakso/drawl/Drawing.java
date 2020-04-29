@@ -57,7 +57,7 @@ public class Drawing
      *
      * @param shape The shape to add
      */
-    public void add(Shape shape)
+    public void add(@NotNull Shape shape)
     {
         if (this.isExplicitSet()) {
             throw new UnsupportedOperationException("Cannot add shapes after setting a drawing's explicit dimensions");
@@ -649,7 +649,7 @@ public class Drawing
      * Called by setExplicitWidth()
      *
      */
-    private void updateShape(Shape shape)
+    private void updateShape(@NotNull Shape shape)
     {
         logger.atFine().log("Updating shape");
         this.updateExplicitHeightOfShape(shape);

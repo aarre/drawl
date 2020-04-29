@@ -2,16 +2,25 @@ package com.aarrelaakso.drawl;
 
 public class Rectangle extends Shape {
 
-    private final SisuBigDecimal height;
-    private final SisuBigDecimal width;
-
     /**
-     * Creates a new Rectangle with the default width and height.
+     * Creates a Rectangle with the default width and height.
      */
     public Rectangle()
     {
-        this.height = SisuBigDecimal.ONE;
-        this.width = SisuBigDecimal.ONE;
+        this.setImplicitHeight(SisuBigDecimal.ONE);
+        this.setImplicitWidth(SisuBigDecimal.ONE);
+    }
+
+    /**
+     * Creates a rectangle with a given aspect ratio.
+     *
+     * @param aspectRatio The aspect ratio of the new rectangle. The aspect ratio is expressed as width over height.
+     */
+    public Rectangle (Double aspectRatio)
+    {
+        // This method is public because the user can deal with a ratio, which is dimensionless.
+        this.setImplicitHeight(SisuBigDecimal.ONE);
+        this.setImplicitWidth(SisuBigDecimal.ONE.multiply(aspectRatio));
     }
 
     /**
@@ -20,10 +29,11 @@ public class Rectangle extends Shape {
      * @param implicitWidth the width of the new Rectangle.
      * @param implicitHeight the height of the new Rectangle.
      */
-    public Rectangle(Integer implicitWidth, Integer implicitHeight)
+    protected Rectangle(Integer implicitWidth, Integer implicitHeight)
     {
-        this.height = SisuBigDecimal.valueOf(implicitHeight);
-        this.width = SisuBigDecimal.valueOf(implicitWidth);
+        // This method is protected because the user should never have to deal with implicit dimensions.
+        this.setImplicitHeight(SisuBigDecimal.valueOf(implicitHeight));
+        this.setImplicitWidth(SisuBigDecimal.valueOf(implicitWidth));
     }
 
     /**
@@ -32,10 +42,11 @@ public class Rectangle extends Shape {
      * @param implicitWidth the width of the new Rectangle.
      * @param implicitHeight the height of the new Rectangle.
      */
-    public Rectangle(SisuBigDecimal implicitWidth, SisuBigDecimal implicitHeight)
+    protected Rectangle(SisuBigDecimal implicitWidth, SisuBigDecimal implicitHeight)
     {
-        this.height = implicitHeight;
-        this.width = implicitWidth;
+        // This method is protected because the user should never have to deal with implicit dimensions.
+        this.setImplicitHeight(implicitHeight);
+        this.setImplicitWidth(implicitWidth);
     }
 
     public String getSVG() {
