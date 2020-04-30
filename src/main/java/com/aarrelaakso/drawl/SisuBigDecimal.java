@@ -112,6 +112,10 @@ public class SisuBigDecimal implements Comparable<SisuBigDecimal>
         return new SisuBigDecimal(number);
     }
 
+    protected static SisuBigDecimal valueOf(Integer number)
+    {
+        return new SisuBigDecimal(BigDecimal.valueOf(number));
+    }
     /**
      * Test whether a BigDecimal is a mathematical integer.
      *
