@@ -23,27 +23,13 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 public class RectangleTestPublic extends ShapeTestPublic
 {
 
-    Rectangle shape1;
-    Rectangle shape2;
-    Rectangle shape3;
-
     @BeforeEach
     void givenRectangles() {
+        // These values override those in ShapeTestPublic
         shape1 = new Rectangle();
         shape2 = new Rectangle();
         shape3 = new Rectangle();
-        RectangleTestPublic.super.shape1 = shape1;
-        RectangleTestPublic.super.shape2 = shape2;
-        RectangleTestPublic.super.shape3 = shape3;
     }
-
-    @Nested
-    @DisplayName("Given one default Rectangle SVG")
-    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class GivenOneDefaultRectangleSVG {
-
-    }
-
 
     @Nested
     @DisplayName("Asymmetric (non-square) Rectangles")

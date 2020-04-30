@@ -382,7 +382,6 @@ public class Drawing
      *
      * @return A string of valid SVG that depicts the drawing within the bounds of the explicit width and height
      */
-    // TODO [Issue No. 1] Make this method private and factor out of unit tests.
     public @NotNull String getSVG()
     {
 

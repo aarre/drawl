@@ -23,7 +23,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-@DisplayName("Unit tests of Drawing with Rectangle shapes")
+@DisplayName("Rectangle Drawings - Protected API")
 public class DrawingTestRectangleProtected extends DrawingTestShapeProtected
 {
 
@@ -31,12 +31,10 @@ public class DrawingTestRectangleProtected extends DrawingTestShapeProtected
     @DisplayName("Given three default Rectangles")
     void givenTheeDefaultRectangles()
     {
+        // These values are overriden from the superclass.
         shape1 = new Rectangle();
         shape2 = new Rectangle();
         shape3 = new Rectangle();
-        com.aarrelaakso.drawl.DrawingTestRectangleProtected.super.shape1 = shape1;
-        com.aarrelaakso.drawl.DrawingTestRectangleProtected.super.shape2 = shape2;
-        com.aarrelaakso.drawl.DrawingTestRectangleProtected.super.shape3 = shape3;
     }
 
     @Test
@@ -54,14 +52,60 @@ public class DrawingTestRectangleProtected extends DrawingTestShapeProtected
                 .contains("y=\"0\"");
     }
 
-    @Test
-    @DisplayName("When an asymmetric rectangle is created with SisuBigDecimal dimensions, then it is not null")
-    void whenAnAsymmetricRectangleIsCreatedWithSisuBigDecimalDimensionsThenItIsNotNull()
+    @Nested
+    @DisplayName("Asymmetric (non-square) Rectangles")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class GivenAsymmetricRectangles
     {
-        SisuBigDecimal height = SisuBigDecimal.valueOf(ThreadLocalRandom.current().nextDouble(Double.MAX_VALUE));
-        SisuBigDecimal width = SisuBigDecimal.valueOf(ThreadLocalRandom.current().nextDouble(Double.MAX_VALUE));
-        Rectangle rectangle = new Rectangle(width, height);
-        then(rectangle).isNotNull();
-    }
 
+        @Test
+        @DisplayName("When an asymmetric rectangle is created, then it maintains its height and width over getting SVG")
+        void whenAnAsymmetricRectangleIsCreatedThenItMaintainsItsImplicitHeightAndWidthOnDrawing(@NotNull BDDSoftAssertions softly)
+        {
+            Integer height = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
+            Integer width = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
+            Double aspectRatio = Double.valueOf(Double.valueOf(width) / Double.valueOf(height));
+            Rectangle rectangle = new Rectangle(aspectRatio);
+            SisuBigDecimal EXPECTED_HEIGHT = SisuBigDecimal.ONE;
+            SisuBigDecimal EXPECTED_WIDTH = SisuBigDecimal.valueOf(aspectRatio);
+            softly.then(EXPECTED_HEIGHT).isEqualTo(rectangle.getImplicitHeight());
+            softly.then(EXPECTED_WIDTH).as("Expected implicit width to be %s but it was %s.",
+                    EXPECTED_WIDTH.toPlainString(), rectangle.getImplicitWidth().toPlainString())
+                    .isEqualTo(rectangle.getImplicitWidth());
+            drawing.add(rectangle);
+            softly.then(EXPECTED_HEIGHT).isEqualTo(rectangle.getImplicitHeight());
+            softly.then(EXPECTED_WIDTH).isEqualTo(rectangle.getImplicitWidth());
+            drawing.setExplicitDimensions(100,100);
+            softly.then(EXPECTED_HEIGHT).isEqualTo(rectangle.getImplicitHeight());
+            softly.then(EXPECTED_WIDTH).isEqualTo(rectangle.getImplicitWidth());
+            String svg = drawing.getSVG();
+            softly.then(EXPECTED_HEIGHT).isEqualTo(rectangle.getImplicitHeight());
+            softly.then(EXPECTED_WIDTH).isEqualTo(rectangle.getImplicitWidth());
+        }
+
+        @Test
+        @DisplayName("When an asymmetric rectangle is created, then its explicit dimensions are correct")
+        void whenAnAsymmetricRectangleIsCreatedThenItsExplicitDimensionsAreCorrect(@NotNull BDDSoftAssertions softly)
+        {
+            Integer height = 5;
+            Integer width = 20;
+            Double aspectRatio = Double.valueOf(width) / Double.valueOf(height);
+            Rectangle rectangle = new Rectangle(aspectRatio);
+            drawing.add(rectangle);
+            drawing.setExplicitDimensions(100,100);
+            softly.then(SisuBigDecimal.valueOf(100))
+                    .as("Expecting width to be %s but it was %s",
+                            SisuBigDecimal.valueOf(100).toPlainString(),
+                            rectangle.getExplicitWidth().toPlainString())
+                    .isEqualTo(rectangle.getExplicitWidth());
+            softly.then(SisuBigDecimal.valueOf(25))
+                    .as("Expecting height to be %s but it was %s",
+                            SisuBigDecimal.valueOf(25).toPlainString(),
+                            rectangle.getExplicitHeight().toPlainString())
+                    .isEqualTo(rectangle.getExplicitHeight());
+        }
+
+
+
+    }
 }

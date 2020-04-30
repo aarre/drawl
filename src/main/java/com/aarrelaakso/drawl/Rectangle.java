@@ -20,7 +20,7 @@ public class Rectangle extends Shape {
     {
         // This method is public because the user can deal with a ratio, which is dimensionless.
         this.setImplicitHeight(SisuBigDecimal.ONE);
-        this.setImplicitWidth(SisuBigDecimal.ONE.multiply(aspectRatio));
+        this.setImplicitWidth(SisuBigDecimal.valueOf(aspectRatio));
     }
 
     /**
