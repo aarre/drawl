@@ -20,7 +20,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-@DisplayName("Unit tests of Drawing with Rectangle shapes")
+@DisplayName("Rectangle Drawings - Public API")
 public class DrawingTestRectanglePublic extends DrawingTestShapePublic
 {
 
@@ -30,45 +30,54 @@ public class DrawingTestRectanglePublic extends DrawingTestShapePublic
         shape1 = new Rectangle();
         shape2 = new Rectangle();
         shape3 = new Rectangle();
-        DrawingTestRectanglePublic.super.shape1 = shape1;
-        DrawingTestRectanglePublic.super.shape2 = shape2;
-        DrawingTestRectanglePublic.super.shape3 = shape3;
     }
 
-    @Test
-    @Tag("rectangle")
-    @Tag("svg")
-    @DisplayName("SVG: When a square (100) drawing has two adjacent Rectangles, then the SVG is correct")
-    void svgWhenASquare100DrawingHasTwoAdjacentRectanglesThenTheSVGIsCorrect(@NotNull BDDSoftAssertions softly) {
-        drawing.add(shape1);
-        drawing.add(shape2);
-        shape2.setRightOf(shape1);
-        String svg = drawing.getSVG(100, 100);
+    @Nested
+    @DisplayName("Symmetric (square) Rectangles")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class GivenSymmetricRectangles
+    {
+        @Test
+        @Tag("rectangle")
+        @Tag("svg")
+        @DisplayName("SVG: When a square (100) drawing has two adjacent Rectangles, then the SVG is correct")
+        void svgWhenASquare100DrawingHasTwoAdjacentRectanglesThenTheSVGIsCorrect(@NotNull BDDSoftAssertions softly)
+        {
+            drawing.add(shape1);
+            drawing.add(shape2);
+            shape2.setRightOf(shape1);
+            String svg = drawing.getSVG(100, 100);
 
-        softly.then(svg).contains("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">")
-                .contains("<rect width=\"50\" height=\"50\" x=\"0\" y=\"25\" />")
-                .contains("<rect width=\"50\" height=\"50\" x=\"50\" y=\"25\" />")
-                .contains("</svg>");
+            softly.then(svg).contains("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">")
+                    .contains("<rect width=\"50\" height=\"50\" x=\"0\" y=\"25\" />")
+                    .contains("<rect width=\"50\" height=\"50\" x=\"50\" y=\"25\" />")
+                    .contains("</svg>");
+        }
     }
 
-    @Test
-    @Tag("rectangle")
-    @Tag("svg")
-    @DisplayName("SVG: When a square (100) drawing has two adjacent asymmetric Rectangles, then the SVG is correct")
-    void svgWhenASquare100DrawingHasTwoAdjacentAsymmetricRectanglesThenTheSVGIsCorrect(@NotNull BDDSoftAssertions softly) {
-        shape1 = new Rectangle(Double.valueOf(1/2));
-        shape2 = new Rectangle(Double.valueOf(2));
-        drawing.add(shape1);
-        drawing.add(shape2);
-        shape2.setRightOf(shape1);
-        String svg = drawing.getSVG(100, 100);
+    @Nested
+    @DisplayName("Asymmetric (non-square) Rectangles")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class GivenAsymmetricRectangles
+    {
+        @Test
+        @Tag("rectangle")
+        @Tag("svg")
+        @DisplayName("SVG: When a square (100) drawing has two adjacent asymmetric Rectangles, then the SVG is correct")
+        void svgWhenASquare100DrawingHasTwoAdjacentAsymmetricRectanglesThenTheSVGIsCorrect(@NotNull BDDSoftAssertions softly) {
+            shape1 = new Rectangle(0.5);
+            shape2 = new Rectangle(2.0);
+            drawing.add(shape1);
+            drawing.add(shape2);
+            shape2.setRightOf(shape1);
+            String svg = drawing.getSVG(100, 100);
 
-        softly.then(svg).contains("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">")
-                .contains("<rect width=\"0.5\" height=\"1\" x=\"0\" y=\"25\" />")
-                .contains("<rect width=\"2\" height=\"1\" x=\"50\" y=\"25\" />")
-                .contains("</svg>");
+            softly.then(svg).contains("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">")
+                    .contains("<rect width=\"80\" height=\"40\" x=\"20\" y=\"30\" />")
+                    .contains("<rect width=\"20\" height=\"40\" x=\"0\" y=\"30\" />")
+                    .contains("</svg>");
+        }
+
     }
-
-
 
 }

@@ -205,7 +205,6 @@ public class Circle extends Shape
      * @param height The new height of this Circle. This value can be <code>null</code> to indicate that the explict
      *               height has not yet been determined.
      */
-    // TODO [Issue #1] Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
     @Override
     protected void setExplicitHeight(@Nullable SisuBigDecimal height)
     {

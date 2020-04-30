@@ -65,12 +65,14 @@ public class Shape
     /**
      * The implicit height of a default Shape is 1.
      */
-    private SisuBigDecimal implicitHeight = SisuBigDecimal.ONE;
+    //private SisuBigDecimal implicitHeight = SisuBigDecimal.ONE;
+    private SisuBigDecimal implicitHeight;
 
     /**
      * The implicit width of a default Shape is 1.
      */
-    private SisuBigDecimal implicitWidth = SisuBigDecimal.ONE;
+    //private SisuBigDecimal implicitWidth = SisuBigDecimal.ONE;
+    private SisuBigDecimal implicitWidth;
 
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
@@ -158,7 +160,6 @@ public class Shape
      * @return the explicit width of this Shape, or <code>null</code> if this Shape has not yet been assigned an
      * explicit width.
      */
-    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @Nullable
     protected SisuBigDecimal getExplicitWidth()
     {
@@ -170,7 +171,6 @@ public class Shape
      *
      * @return the explicit x-position of this Shape.
      */
-    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @NotNull
     protected SisuBigDecimal getExplicitXPositionCenter()
     {
@@ -226,7 +226,7 @@ public class Shape
      */
     protected SisuBigDecimal getImplicitWidth()
     {
-        return this.getImplicitHeight();
+        return this.implicitWidth;
     }
 
     /**
@@ -407,9 +407,9 @@ public class Shape
      * @param height The new height of this Shape. Can be <code>null</code> to indicate that this Shape has not yet
      *               been assigned an explicit height.
      */
-    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     protected void setExplicitHeight(@Nullable SisuBigDecimal height)
     {
+        logger.atFine().log("Setting explicit height of shape to %s", height.toPlainString());
         this.explicitHeight = height;
     }
 
@@ -420,10 +420,9 @@ public class Shape
      * @param width the new width of this Shape, or <code>null</code> to indicate that this Shape has not yet
      *              been assigned an explicit width.
      */
-    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     protected void setExplicitWidth(@Nullable SisuBigDecimal width)
     {
-        logger.atFine().log("Updating explicit width of shape to %s", width.toPlainString());
+        logger.atFine().log("Setting explicit width of shape to %s", width.toPlainString());
         this.explicitWidth = width;
     }
 
@@ -459,11 +458,13 @@ public class Shape
 
     protected final void setImplicitHeight(SisuBigDecimal implicitHeight)
     {
+        logger.atFine().log("Setting implicit height to %s", implicitHeight.toPlainString());
         this.implicitHeight = implicitHeight;
     }
 
     protected final void setImplicitWidth(SisuBigDecimal implicitWidth)
     {
+        logger.atFine().log("Setting implicit width to %s", implicitWidth.toPlainString());
         this.implicitWidth = implicitWidth;
     }
 
