@@ -23,8 +23,6 @@ import com.google.common.flogger.FluentLogger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.math.BigDecimal;
-
 public class Shape
 {
 
@@ -88,6 +86,11 @@ public class Shape
      * A shape adjacent to this one, if any
      */
     private Shape neighbor;
+
+    /**
+     * The fill of this Shape. Defaults to null.
+     */
+    private String fill;
 
     /**
      * Get this Shape's neighbor above (this Shape is below that one), if any.
@@ -197,6 +200,17 @@ public class Shape
     protected SisuBigDecimal getExplicitYPositionTop()
     {
         return this.explicitYPositionCenter.subtract(this.getExplicitHalfHeight());
+    }
+
+    /**
+     * Returns the fill associated with this Shape, if any.
+     *
+     * @return the fill associated with this Shape, or null if no fill has been associated with this Shape.
+     */
+    @Nullable
+    public String getFill()
+    {
+        return this.fill;
     }
 
     protected SisuBigDecimal getImplicitHalfHeight()
@@ -454,6 +468,16 @@ public class Shape
     {
         this.explicitYPositionCenter = y;
         logger.atFine().log("Setting explicit y position of Shape %s to: %f", this.toString(), y.floatValue());
+    }
+
+    /**
+     * Set the fill of this Shape.
+     *
+     * @param s A string representing a fill color, e.g., "white".
+     */
+    public void setFill(String s)
+    {
+        this.fill = s;
     }
 
     protected final void setImplicitHeight(SisuBigDecimal implicitHeight)

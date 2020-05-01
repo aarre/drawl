@@ -75,6 +75,12 @@ public class Rectangle extends Shape {
             svgBuilder.append(SVG.toString(this.getExplicitYPositionTop()));
             svgBuilder.append("\"");
         }
+        if (this.getFill() != null)
+        {
+            svgBuilder.append(" fill=\"");
+            svgBuilder.append(this.getFill());
+            svgBuilder.append("\"");
+        }
         svgBuilder.append(" />");
         return svgBuilder.toString();
     }

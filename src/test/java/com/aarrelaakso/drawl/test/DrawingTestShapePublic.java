@@ -51,7 +51,39 @@ public abstract class DrawingTestShapePublic
         drawing = new Drawing();
     }
 
+    /**
+     * Tests applying fill to Shapes
+     */
+    @Nested
+    @DisplayName("Fill")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class Fill
+    {
+        @Test
+        @Tag("fill")
+        @Tag("svg")
+        @Tag("public")
+        @DisplayName("When the fill is set, then it appears in the SVG")
+        void whenTheFillIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly)
+        {
+            drawing.add(shape1);
+            shape1.setFill("white");
+            String svg = drawing.getSVG(100,100);
+            softly.then(svg).contains("fill");
+            softly.then(svg).contains("white");
+        }
+    }
 
+    /**
+     * Tests applying stroke to Shapes
+     */
+    @Nested
+    @DisplayName("Stroke")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class Stroke
+    {
+
+    }
 
     @Test
     @DisplayName("LENGTH: Adding a circle to an empty drawing gives the drawing a length of 1")

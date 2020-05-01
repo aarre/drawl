@@ -195,6 +195,12 @@ public class Circle extends Shape
         svgBuilder.append(" cy=\"");
         svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
         svgBuilder.append("\"");
+        if (this.getFill() != null)
+        {
+            svgBuilder.append(" fill=\"");
+            svgBuilder.append(this.getFill());
+            svgBuilder.append("\"");
+        }
         svgBuilder.append(" />");
         return svgBuilder.toString();
     }
