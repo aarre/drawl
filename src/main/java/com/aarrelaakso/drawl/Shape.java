@@ -88,9 +88,14 @@ public class Shape
     private Shape neighbor;
 
     /**
-     * The fill of this Shape. Defaults to null.
+     * The fill of this Shape. Defaults to null, meaning the SVG default.
      */
     private String fill;
+
+    /**
+     * The stroke of this Shape. Defaults to null, meaning the SVG default.
+     */
+    private String stroke;
 
     /**
      * Get this Shape's neighbor above (this Shape is below that one), if any.
@@ -371,6 +376,17 @@ public class Shape
         return returnValue;
     }
 
+    /**
+     * Gets the stroke of this Shape.
+     *
+     * @return The stroke of this shape, or null if the stroke of this Shape has not been set.
+     */
+    @Nullable
+    public String getStroke()
+    {
+        return this.stroke;
+    }
+
     public String getSVG()
     {
         return "oops";
@@ -555,5 +571,15 @@ public class Shape
                 SisuBigDecimal.mcOperations);
         this.setImplicitXPositionCenter(thisImplicitXPosition);
 
+    }
+
+    /**
+     * Sets the stroke of this shape.
+     *
+     * @param s A stroke name.
+     */
+    public void setStroke(String s)
+    {
+        this.stroke = s;
     }
 }

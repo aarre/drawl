@@ -82,7 +82,19 @@ public abstract class DrawingTestShapePublic
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
     class Stroke
     {
-
+        @Test
+        @Tag("stroke")
+        @Tag("svg")
+        @Tag("public")
+        @DisplayName("When the stroke is set, then it appears in the SVG")
+        void whenTheStrokeIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly)
+        {
+            drawing.add(shape1);
+            shape1.setStroke("darkslategray");
+            String svg = drawing.getSVG(100,100);
+            softly.then(svg).contains("stroke");
+            softly.then(svg).contains("darkslategray");
+        }
     }
 
     @Test

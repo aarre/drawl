@@ -81,6 +81,12 @@ public class Rectangle extends Shape {
             svgBuilder.append(this.getFill());
             svgBuilder.append("\"");
         }
+        if (this.getStroke() != null)
+        {
+            svgBuilder.append(" stroke=\"");
+            svgBuilder.append(this.getStroke());
+            svgBuilder.append("\"");
+        }
         svgBuilder.append(" />");
         return svgBuilder.toString();
     }
