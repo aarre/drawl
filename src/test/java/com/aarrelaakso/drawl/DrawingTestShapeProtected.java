@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import java.math.BigDecimal;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static org.assertj.core.api.BDDAssertions.then;
@@ -41,140 +40,6 @@ public abstract class DrawingTestShapeProtected
     }
 
     @Test
-    @Tag("explicit")
-    @Tag("height")
-    @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has one default shape, then setting its explicit height scales its explicit width to fit")
-    void heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitHeightScalesItsExplicitWidthToFit(@NotNull BDDSoftAssertions softly)
-    {
-        drawing.add(shape1);
-        drawing.setExplicitHeight(100);
-        SisuBigDecimal explicitHeightOfDrawing = drawing.getExplicitHeight();
-        SisuBigDecimal explicitWidthOfDrawing = drawing.getExplicitWidth();
-        SisuBigDecimal explicitHeightOfShape = shape1.getExplicitHeight();
-        SisuBigDecimal explicitWidthOfShape = shape1.getExplicitWidth();
-        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(100);
-
-        softly.then(explicitHeightOfDrawing).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitWidthOfDrawing).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitHeightOfShape).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitWidthOfShape).isEqualByComparingTo(EXPECTED);
-    }
-
-    @Test
-    @Tag("explicit")
-    @Tag("height")
-    @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has one default shape, then setting its explicit width scales its explicit height to fit")
-    void heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitWidthScalesItsExplicitHeightToFit(@NotNull BDDSoftAssertions softly)
-    {
-        Integer size = 100;
-        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(size);
-        drawing.add(shape1);
-        drawing.setExplicitWidth(size);
-        SisuBigDecimal explicitHeightOfDrawing = drawing.getExplicitHeight();
-        SisuBigDecimal explicitWidthOfDrawing = drawing.getExplicitWidth();
-        SisuBigDecimal explicitHeightOfShape = shape1.getExplicitHeight();
-        SisuBigDecimal explicitWidthOfShape = shape1.getExplicitWidth();
-
-        softly.then(explicitHeightOfDrawing)
-                .as("Expecting explicit height of drawing to be %s but got %s",
-                        EXPECTED.toPlainString(), explicitHeightOfDrawing.toPlainString())
-                .isEqualByComparingTo(EXPECTED);
-        softly.then(explicitWidthOfDrawing)
-                .as("Expecting explicit width of drawing to be %s but got %s",
-                        EXPECTED.toPlainString(), explicitWidthOfDrawing.toPlainString())
-                .isEqualByComparingTo(EXPECTED);
-        softly.then(explicitHeightOfShape)
-                .as("Expecting explicit height of shape to be %s but got %s",
-                        EXPECTED.toPlainString(), explicitHeightOfShape.toPlainString())
-                .isEqualByComparingTo(EXPECTED);
-        softly.then(explicitWidthOfShape)
-                .as("Expecting explicit width of shape to be %s but got %s",
-                        EXPECTED.toPlainString(), explicitWidthOfShape.toPlainString())
-                .isEqualByComparingTo(EXPECTED);
-    }
-
-    /**
-     * This version of the test sets height first, then width second.
-     *
-     * @param softly
-     */
-    @Test
-    @Tag("explicit")
-    @Tag("height")
-    @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has two adjacent Shapes, then their explicit heights are correct #1")
-    void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect01(@NotNull BDDSoftAssertions softly)
-    {
-        drawing.add(shape1);
-        drawing.add(shape2);
-        shape2.setRightOf(shape1);
-        drawing.setExplicitHeight(100);
-        drawing.setExplicitWidth(100);
-        SisuBigDecimal explicitHeight1 = shape1.getExplicitHeight();
-        SisuBigDecimal explicitHeight2 = shape2.getExplicitHeight();
-        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
-
-        softly.then(explicitHeight1).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitHeight2).isEqualByComparingTo(EXPECTED);
-    }
-
-    /**
-     * This version of the test sets width first, then height second.
-     *
-     * @param softly
-     */
-    @Test
-    @Tag("explicit")
-    @Tag("height")
-    @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has two adjacent Shapes, then their explicit heights are correct #2")
-    void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect02(@NotNull BDDSoftAssertions softly)
-    {
-        drawing.add(shape1);
-        drawing.add(shape2);
-        shape2.setRightOf(shape1);
-        drawing.setExplicitWidth(100);
-        drawing.setExplicitHeight(100);
-        SisuBigDecimal explicitHeight1 = shape1.getExplicitHeight();
-        SisuBigDecimal explicitHeight2 = shape2.getExplicitHeight();
-        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
-
-        softly.then(explicitHeight1).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitHeight2).isEqualByComparingTo(EXPECTED);
-    }
-
-    @Test
-    @Tag("explicit")
-    @Tag("height")
-    @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has two adjacent Shapes, then their explicit heights are correct #3")
-    void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect03(BDDSoftAssertions softly)
-    {
-        drawing.add(shape1);
-        drawing.add(shape2);
-        shape2.setRightOf(shape1);
-        drawing.setExplicitDimensions(100, 100);
-        SisuBigDecimal explicitHeight1 = shape1.getExplicitHeight();
-        SisuBigDecimal explicitHeight2 = shape2.getExplicitHeight();
-        SisuBigDecimal expectedHeight = SisuBigDecimal.valueOf(50);
-
-        softly.then(explicitHeight1)
-                .as("The explicit height of shape1 should be " + expectedHeight.toPlainString() + " but it was " + explicitHeight1.toString())
-                .isEqualTo(expectedHeight);
-        softly.then(explicitHeight2)
-                .as("The explicit height of shape2 should be " + expectedHeight.toPlainString() + " but it was " + explicitHeight2.toString())
-                .isEqualTo(expectedHeight);
-    }
-
-    @Test
-    @DisplayName("SVG: The SVG generated by a drawing with a Circle contains the string 'circle'")
-    void svgGeneratedByADrawingWithACircleContainsTheStringCircle()
-    {
-        int radius = 4000;
-        Circle circle = new Circle(SisuBigDecimal.valueOf(radius));
-        drawing.add(circle);
-        String svg = drawing.getSVG(100, 100);
-        then(svg).contains("circle");
-    }
-
-    @Test
     @DisplayName("The SVG generated by a Shape contains the x- and y-coordinates")
     void thenTheSVGGeneratedByAShapeContainsXAndYCoordinates(@NotNull BDDSoftAssertions softly)
     {
@@ -190,196 +55,383 @@ public abstract class DrawingTestShapeProtected
                 .contains("y=\"50\"");
     }
 
-
-    @Test
-    @DisplayName("WIDTH - EXPLICIT: When a drawing has one default Shape, the explicit width per implicit width is the explicit width of the drawing")
-    void widthExplicitWhenADrawingHasOneDefaultShapeThenTheExplicitWidthPerObjectIsTheExplicitWidthOfTheDrawing()
+    @Nested
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    @DisplayName("Height")
+    class Height
     {
-        Integer size = 100;
-        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(size);
-        drawing.add(shape1);
-        drawing.setExplicitWidth(size);
-        drawing.setExplicitHeight(size);
-        SisuBigDecimal widthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
-        then(widthPerObject).isEqualByComparingTo(EXPECTED);
+        @Nested
+        @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+        @DisplayName("Explicit")
+        class Explicit
+        {
+
+            @Test
+            @Tag("explicit")
+            @Tag("height")
+            @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has one default shape, then setting its explicit height scales its explicit width to fit")
+            void heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitHeightScalesItsExplicitWidthToFit(@NotNull BDDSoftAssertions softly)
+            {
+                drawing.add(shape1);
+                drawing.setExplicitHeight(100);
+                SisuBigDecimal explicitHeightOfDrawing = drawing.getExplicitHeight();
+                SisuBigDecimal explicitWidthOfDrawing = drawing.getExplicitWidth();
+                SisuBigDecimal explicitHeightOfShape = shape1.getExplicitHeight();
+                SisuBigDecimal explicitWidthOfShape = shape1.getExplicitWidth();
+                SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(100);
+
+                softly.then(explicitHeightOfDrawing).isEqualByComparingTo(EXPECTED);
+                softly.then(explicitWidthOfDrawing).isEqualByComparingTo(EXPECTED);
+                softly.then(explicitHeightOfShape).isEqualByComparingTo(EXPECTED);
+                softly.then(explicitWidthOfShape).isEqualByComparingTo(EXPECTED);
+            }
+
+            @Test
+            @Tag("explicit")
+            @Tag("height")
+            @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has one default shape, then setting its explicit width scales its explicit height to fit")
+            void heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitWidthScalesItsExplicitHeightToFit(@NotNull BDDSoftAssertions softly)
+            {
+                Integer size = 100;
+                SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(size);
+                drawing.add(shape1);
+                drawing.setExplicitWidth(size);
+                SisuBigDecimal explicitHeightOfDrawing = drawing.getExplicitHeight();
+                SisuBigDecimal explicitWidthOfDrawing = drawing.getExplicitWidth();
+                SisuBigDecimal explicitHeightOfShape = shape1.getExplicitHeight();
+                SisuBigDecimal explicitWidthOfShape = shape1.getExplicitWidth();
+
+                softly.then(explicitHeightOfDrawing)
+                        .as("Expecting explicit height of drawing to be %s but got %s",
+                                EXPECTED.toPlainString(), explicitHeightOfDrawing.toPlainString())
+                        .isEqualByComparingTo(EXPECTED);
+                softly.then(explicitWidthOfDrawing)
+                        .as("Expecting explicit width of drawing to be %s but got %s",
+                                EXPECTED.toPlainString(), explicitWidthOfDrawing.toPlainString())
+                        .isEqualByComparingTo(EXPECTED);
+                softly.then(explicitHeightOfShape)
+                        .as("Expecting explicit height of shape to be %s but got %s",
+                                EXPECTED.toPlainString(), explicitHeightOfShape.toPlainString())
+                        .isEqualByComparingTo(EXPECTED);
+                softly.then(explicitWidthOfShape)
+                        .as("Expecting explicit width of shape to be %s but got %s",
+                                EXPECTED.toPlainString(), explicitWidthOfShape.toPlainString())
+                        .isEqualByComparingTo(EXPECTED);
+            }
+
+            /**
+             * This version of the test sets height first, then width second.
+             *
+             * @param softly
+             */
+            @Test
+            @Tag("explicit")
+            @Tag("height")
+            @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has two adjacent Shapes, then their explicit heights are correct #1")
+            void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect01(@NotNull BDDSoftAssertions softly)
+            {
+                drawing.add(shape1);
+                drawing.add(shape2);
+                shape2.setRightOf(shape1);
+                drawing.setExplicitHeight(100);
+                drawing.setExplicitWidth(100);
+                SisuBigDecimal explicitHeight1 = shape1.getExplicitHeight();
+                SisuBigDecimal explicitHeight2 = shape2.getExplicitHeight();
+                SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
+
+                softly.then(explicitHeight1).isEqualByComparingTo(EXPECTED);
+                softly.then(explicitHeight2).isEqualByComparingTo(EXPECTED);
+            }
+
+            /**
+             * This version of the test sets width first, then height second.
+             *
+             * @param softly
+             */
+            @Test
+            @Tag("explicit")
+            @Tag("height")
+            @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has two adjacent Shapes, then their explicit heights are correct #2")
+            void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect02(@NotNull BDDSoftAssertions softly)
+            {
+                drawing.add(shape1);
+                drawing.add(shape2);
+                shape2.setRightOf(shape1);
+                drawing.setExplicitWidth(100);
+                drawing.setExplicitHeight(100);
+                SisuBigDecimal explicitHeight1 = shape1.getExplicitHeight();
+                SisuBigDecimal explicitHeight2 = shape2.getExplicitHeight();
+                SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
+
+                softly.then(explicitHeight1).isEqualByComparingTo(EXPECTED);
+                softly.then(explicitHeight2).isEqualByComparingTo(EXPECTED);
+            }
+
+            @Test
+            @Tag("explicit")
+            @Tag("height")
+            @DisplayName("HEIGHT - EXPLICIT When a square (100) drawing has two adjacent Shapes, then their explicit heights are correct #3")
+            void heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect03(BDDSoftAssertions softly)
+            {
+                drawing.add(shape1);
+                drawing.add(shape2);
+                shape2.setRightOf(shape1);
+                drawing.setExplicitDimensions(100, 100);
+                SisuBigDecimal explicitHeight1 = shape1.getExplicitHeight();
+                SisuBigDecimal explicitHeight2 = shape2.getExplicitHeight();
+                SisuBigDecimal expectedHeight = SisuBigDecimal.valueOf(50);
+
+                softly.then(explicitHeight1)
+                        .as("The explicit height of shape1 should be " + expectedHeight.toPlainString() + " but it was " + explicitHeight1.toString())
+                        .isEqualTo(expectedHeight);
+                softly.then(explicitHeight2)
+                        .as("The explicit height of shape2 should be " + expectedHeight.toPlainString() + " but it was " + explicitHeight2.toString())
+                        .isEqualTo(expectedHeight);
+            }
+        }
     }
 
-    @Test
-    @Tag("explicit")
-    @Tag("width")
-    @DisplayName("WIDTH - EXPLICIT: When a drawing has one default Shape, the Shape's explicit width is the explicit width of the drawing")
-    void widthExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitWidthIsTheExplicitWidthOfTheDrawing()
+    @Nested
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    @DisplayName("Width")
+    class Width
     {
-        drawing.add(shape1);
-        drawing.setExplicitWidth(100);
-        drawing.setExplicitHeight(100);
-        SisuBigDecimal shapeExplicitWidth = shape1.getExplicitWidth();
+        @Nested
+        @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+        @DisplayName("Explicit")
+        class Explicit
+        {
 
-        then(shapeExplicitWidth).isEqualByComparingTo(SisuBigDecimal.valueOf(100));
+
+            @Test
+            @DisplayName("WIDTH - EXPLICIT: When a drawing has one default Shape, the explicit width per implicit width is the explicit width of the drawing")
+            void widthExplicitWhenADrawingHasOneDefaultShapeThenTheExplicitWidthPerObjectIsTheExplicitWidthOfTheDrawing()
+            {
+                Integer size = 100;
+                SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(size);
+                drawing.add(shape1);
+                drawing.setExplicitWidth(size);
+                drawing.setExplicitHeight(size);
+                SisuBigDecimal widthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+
+                then(widthPerObject).isEqualByComparingTo(EXPECTED);
+            }
+
+            @Test
+            @Tag("explicit")
+            @Tag("width")
+            @DisplayName("WIDTH - EXPLICIT: When a drawing has one default Shape, the Shape's explicit width is the explicit width of the drawing")
+            void widthExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitWidthIsTheExplicitWidthOfTheDrawing()
+            {
+                drawing.add(shape1);
+                drawing.setExplicitWidth(100);
+                drawing.setExplicitHeight(100);
+                SisuBigDecimal shapeExplicitWidth = shape1.getExplicitWidth();
+
+                then(shapeExplicitWidth).isEqualByComparingTo(SisuBigDecimal.valueOf(100));
+            }
+
+            @Test
+            @Tag("explicit")
+            @Tag("width")
+            @DisplayName("WIDTH - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit widths are correct")
+            void widthExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitWidthsAreCorrect(BDDSoftAssertions softly)
+            {
+                drawing.add(shape1);
+                drawing.add(shape2);
+                shape2.setRightOf(shape1);
+                drawing.setExplicitHeight(100);
+                drawing.setExplicitWidth(100);
+                SisuBigDecimal explicitWidth1 = shape1.getExplicitWidth();
+                SisuBigDecimal explicitWidth2 = shape2.getExplicitWidth();
+
+                softly.then(explicitWidth1).isEqualByComparingTo(SisuBigDecimal.valueOf(50));
+                softly.then(explicitWidth2).isEqualByComparingTo(SisuBigDecimal.valueOf(50));
+            }
+
+        }
+
     }
 
-    @Test
-    @Tag("explicit")
-    @Tag("width")
-    @DisplayName("WIDTH - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit widths are correct")
-    void widthExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitWidthsAreCorrect(BDDSoftAssertions softly)
+    @Nested
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    @DisplayName("Y Position")
+    class YPosition
     {
-        drawing.add(shape1);
-        drawing.add(shape2);
-        shape2.setRightOf(shape1);
-        drawing.setExplicitHeight(100);
-        drawing.setExplicitWidth(100);
-        SisuBigDecimal explicitWidth1 = shape1.getExplicitWidth();
-        SisuBigDecimal explicitWidth2 = shape2.getExplicitWidth();
+        @Nested
+        @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+        @DisplayName("Explicit")
+        class Explicit
+        {
 
-        softly.then(explicitWidth1).isEqualByComparingTo(SisuBigDecimal.valueOf(50));
-        softly.then(explicitWidth2).isEqualByComparingTo(SisuBigDecimal.valueOf(50));
-    }
+            @Test
+            @Tag("explicit")
+            @Tag("y-position")
+            @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has a default Shape, then its explicit y position is correct")
+            void yPositionExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitYPositionIsCorrect()
+            {
+                Integer size = 100;
+                drawing.add(shape1);
+                drawing.setExplicitDimensions(size, size);
+                SisuBigDecimal yPosition = shape1.getExplicitYPositionCenter();
+                SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
 
-    @Test
-    @Tag("explicit")
-    @Tag("y-position")
-    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has a default Shape, then its explicit y position is correct")
-    void yPositionExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitYPositionIsCorrect()
-    {
-        Integer size = 100;
-        drawing.add(shape1);
-        drawing.setExplicitDimensions(size, size);
-        SisuBigDecimal yPosition = shape1.getExplicitYPositionCenter();
-        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
+                then(yPosition).isEqualByComparingTo(EXPECTED);
+            }
 
-        then(yPosition).isEqualByComparingTo(EXPECTED);
-    }
+            /**
+             * This variant tests the effect of this order:
+             * 1. Adding the shapes to the drawing.
+             * 2. Setting the shapes adjacent to one another.
+             * 3. Setting the size of the drawing (height first).
+             *
+             * @param softly
+             */
+            @Test
+            @Tag("explicit")
+            @Tag("y-position")
+            @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #1a")
+            void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01a(@NotNull BDDSoftAssertions softly)
+            {
 
-    /**
-     * This variant tests the effect of this order:
-     * 1. Adding the shapes to the drawing.
-     * 2. Setting the shapes adjacent to one another.
-     * 3. Setting the size of the drawing (height first).
-     *
-     * @param softly
-     */
-    @Test
-    @Tag("explicit")
-    @Tag("y-position")
-    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #1a")
-    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01a(@NotNull BDDSoftAssertions softly)
-    {
+                Integer SIZE = 100;
+                SisuBigDecimal EXPECTED_Y_POS = SisuBigDecimal.valueOf(SIZE).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
 
-        Integer SIZE = 100;
-        SisuBigDecimal EXPECTED_Y_POS = SisuBigDecimal.valueOf(SIZE).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
+                drawing.add(shape1);
+                drawing.add(shape2);
+                shape2.setRightOf(shape1);
 
-        drawing.add(shape1);
-        drawing.add(shape2);
-        shape2.setRightOf(shape1);
+                drawing.setExplicitHeight(SIZE);
+                softly.then(drawing.getExplicitToImplicitRatio())
+                        .as("After setExplicitHeight, the explicit to implicit ratio should be %d", SIZE)
+                        .isEqualByComparingTo(SisuBigDecimal.valueOf(SIZE));
 
-        drawing.setExplicitHeight(SIZE);
-        softly.then(drawing.getExplicitToImplicitRatio())
-                .as("After setExplicitHeight, the explicit to implicit ratio should be %d", SIZE)
-                .isEqualByComparingTo(SisuBigDecimal.valueOf(SIZE));
+                drawing.setExplicitWidth(SIZE);
+                softly.then(drawing.getExplicitToImplicitRatio())
+                        .as("After setExplicitWidth, the explicit to implicit ratio should be %d", SIZE / 2.0)
+                        .isEqualByComparingTo(SisuBigDecimal.valueOf(SIZE / 2.0));
 
-        drawing.setExplicitWidth(SIZE);
-        softly.then(drawing.getExplicitToImplicitRatio())
-                .as("After setExplicitWidth, the explicit to implicit ratio should be %d", SIZE / 2.0)
-                .isEqualByComparingTo(SisuBigDecimal.valueOf(SIZE / 2.0));
+                SisuBigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
+                softly.then(explicitYPosition1)
+                        .as("The y position of shape1 should be %s", EXPECTED_Y_POS.toPlainString())
+                        .isEqualByComparingTo(EXPECTED_Y_POS);
 
-        SisuBigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
-        softly.then(explicitYPosition1)
-                .as("The y position of shape1 should be %s", EXPECTED_Y_POS.toPlainString())
-                .isEqualByComparingTo(EXPECTED_Y_POS);
+                SisuBigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
+                softly.then(explicitYPosition2)
+                        .as("The y position of shape2 should be %s", EXPECTED_Y_POS.toPlainString())
+                        .isEqualByComparingTo(EXPECTED_Y_POS);
+            }
 
-        SisuBigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
-        softly.then(explicitYPosition2)
-                .as("The y position of shape2 should be %s", EXPECTED_Y_POS.toPlainString())
-                .isEqualByComparingTo(EXPECTED_Y_POS);
-    }
+            /**
+             * This variant tests the effect of this order:
+             * 1. Adding the shapes to the drawing.
+             * 2. Setting the shapes adjacent to one another.
+             * 3. Setting the size of the drawing (width first).
+             *
+             * @param softly
+             */
+            @Test
+            @Tag("explicit")
+            @Tag("y-position")
+            @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #1b")
+            void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01b(@NotNull BDDSoftAssertions softly)
+            {
+                drawing.add(shape1);
+                drawing.add(shape2);
+                shape2.setRightOf(shape1);
+                drawing.setExplicitWidth(100);
+                drawing.setExplicitHeight(100);
+                SisuBigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
+                SisuBigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
+                SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
 
-    /**
-     * This variant tests the effect of this order:
-     * 1. Adding the shapes to the drawing.
-     * 2. Setting the shapes adjacent to one another.
-     * 3. Setting the size of the drawing (width first).
-     *
-     * @param softly
-     */
-    @Test
-    @Tag("explicit")
-    @Tag("y-position")
-    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #1b")
-    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01b(@NotNull BDDSoftAssertions softly)
-    {
-        drawing.add(shape1);
-        drawing.add(shape2);
-        shape2.setRightOf(shape1);
-        drawing.setExplicitWidth(100);
-        drawing.setExplicitHeight(100);
-        SisuBigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
-        SisuBigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
-        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(50);
+                softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
+                softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
+            }
 
-        softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
-        softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
-    }
+            @Test
+            @Tag("explicit")
+            @Tag("y-position")
+            @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct (with setExplicitDimensions)")
+            void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrectWithSetExplicitDimensions(@NotNull BDDSoftAssertions softly)
+            {
+                Integer sizeOfDrawing = 100;
+                SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(sizeOfDrawing).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
 
-    @Test
-    @Tag("explicit")
-    @Tag("y-position")
-    @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct (with setExplicitDimensions)")
-    void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrectWithSetExplicitDimensions(@NotNull BDDSoftAssertions softly)
-    {
-        Integer sizeOfDrawing = 100;
-        SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(sizeOfDrawing).divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
+                drawing.add(shape1);
+                SisuBigDecimal implicitYPosition1 = shape1.getImplicitYPositionCenter();
+                softly.then(implicitYPosition1)
+                        .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
+                                + " expected explicit y position: (" + 0 + ")")
+                        .isEqualByComparingTo(SisuBigDecimal.ZERO);
 
-        drawing.add(shape1);
-        SisuBigDecimal implicitYPosition1 = shape1.getImplicitYPositionCenter();
-        softly.then(implicitYPosition1)
-                .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
-                        + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(SisuBigDecimal.ZERO);
+                drawing.add(shape2);
+                SisuBigDecimal implicitYPosition2 = shape2.getImplicitYPositionCenter();
+                softly.then(implicitYPosition2)
+                        .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
+                                + " expected explicit y position: (" + 0 + ")")
+                        .isEqualByComparingTo(SisuBigDecimal.ZERO);
 
-        drawing.add(shape2);
-        SisuBigDecimal implicitYPosition2 = shape2.getImplicitYPositionCenter();
-        softly.then(implicitYPosition2)
-                .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
-                        + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(SisuBigDecimal.ZERO);
+                shape2.setRightOf(shape1);
+                implicitYPosition1 = shape1.getImplicitYPositionCenter();
+                softly.then(implicitYPosition1)
+                        .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
+                                + " expected explicit y position: (" + 0 + ")")
+                        .isEqualByComparingTo(SisuBigDecimal.ZERO);
+                implicitYPosition2 = shape2.getImplicitYPositionCenter();
+                softly.then(implicitYPosition2)
+                        .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
+                                + " expected explicit y position: (" + 0 + ")")
+                        .isEqualByComparingTo(SisuBigDecimal.ZERO);
 
-        shape2.setRightOf(shape1);
-        implicitYPosition1 = shape1.getImplicitYPositionCenter();
-        softly.then(implicitYPosition1)
-                .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
-                        + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(SisuBigDecimal.ZERO);
-        implicitYPosition2 = shape2.getImplicitYPositionCenter();
-        softly.then(implicitYPosition2)
-                .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
-                        + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(SisuBigDecimal.ZERO);
+                drawing.setExplicitDimensions(sizeOfDrawing, sizeOfDrawing);
+                implicitYPosition1 = shape1.getImplicitYPositionCenter();
+                softly.then(implicitYPosition1)
+                        .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
+                                + " expected explicit y position: (" + 0 + ")")
+                        .isEqualByComparingTo(SisuBigDecimal.ZERO);
+                implicitYPosition2 = shape1.getImplicitYPositionCenter();
+                softly.then(implicitYPosition2)
+                        .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
+                                + " expected explicit y position: (" + 0 + ")")
+                        .isEqualByComparingTo(SisuBigDecimal.ZERO);
 
-        drawing.setExplicitDimensions(sizeOfDrawing, sizeOfDrawing);
-        implicitYPosition1 = shape1.getImplicitYPositionCenter();
-        softly.then(implicitYPosition1)
-                .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
-                        + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(SisuBigDecimal.ZERO);
-        implicitYPosition2 = shape1.getImplicitYPositionCenter();
-        softly.then(implicitYPosition2)
-                .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
-                        + " expected explicit y position: (" + 0 + ")")
-                .isEqualByComparingTo(SisuBigDecimal.ZERO);
+                SisuBigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
+                softly.then(explicitYPosition1)
+                        .as("The actual explicit y position of Shape 1 (" + explicitYPosition1 + ") should match the"
+                                + " expected explicit y position: (" + EXPECTED + ")")
+                        .isEqualByComparingTo(EXPECTED);
 
-        SisuBigDecimal explicitYPosition1 = shape1.getExplicitYPositionCenter();
-        softly.then(explicitYPosition1)
-                .as("The actual explicit y position of Shape 1 (" + explicitYPosition1 + ") should match the"
-                        + " expected explicit y position: (" + EXPECTED + ")")
-                .isEqualByComparingTo(EXPECTED);
+                SisuBigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
+                softly.then(explicitYPosition2)
+                        .as("The actual explicit y position of Shape 2 (" + explicitYPosition2 + ") should match the"
+                                + " expected explicit y position: (" + EXPECTED + ")")
+                        .isEqualByComparingTo(EXPECTED);
+            }
 
-        SisuBigDecimal explicitYPosition2 = shape2.getExplicitYPositionCenter();
-        softly.then(explicitYPosition2)
-                .as("The actual explicit y position of Shape 2 (" + explicitYPosition2 + ") should match the"
-                        + " expected explicit y position: (" + EXPECTED + ")")
-                .isEqualByComparingTo(EXPECTED);
+            @Nested
+            @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+            @DisplayName("Implicit")
+            class Implicit
+            {
+                @Test
+                @Tag("implicit")
+                @Tag("y-position")
+                @Tag("protected")
+                @DisplayName("When a drawing has two vertically adjacent default Circles, then their implicit y-positions are correct (fixed)")
+                void whenADrawingHasTwoAdjacentDefaultCirclesThenTheirImplicitYPositionsAreCorrect(BDDSoftAssertions softly)
+                {
+                    drawing.add(shape1);
+                    drawing.add(shape2);
+                    shape2.setAbove(shape1);
+
+                    softly.then(SisuBigDecimal.ZERO).isEqualTo(shape1.getImplicitYPositionCenter());
+                    softly.then(SisuBigDecimal.ONE).isEqualTo(shape2.getImplicitYPositionCenter());
+                }
+            }
+        }
+
     }
 
     @Nested
@@ -393,57 +445,6 @@ public abstract class DrawingTestShapeProtected
         @DisplayName("Explicit")
         class Explicit
         {
-
-            @Tag("x-position")
-            @Tag("explicit")
-            @DisplayName("When a drawing has three adjacent default Shapes, then their explicit x-positions are correct (max size)")
-                    void whenADrawingHasThreeAdjacentDefaultShapesThenTheirExplicitXPositionsAreCorrectMaxSize(BDDSoftAssertions softly)
-            {
-                drawing.add(shape1);
-                drawing.add(shape2);
-                drawing.add(shape3);
-                shape2.setRightOf(shape1);
-                shape3.setRightOf(shape2);
-                Float width = Float.MAX_VALUE;
-                 Float height = Float.MAX_VALUE;
-                  drawing.setExplicitWidth(width);
-                drawing.setExplicitHeight(height);
-                SisuBigDecimal bigX1 = SisuBigDecimal.valueOf(width).divide(SisuBigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
-                SisuBigDecimal bigX2 = SisuBigDecimal.valueOf(width).divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
-                SisuBigDecimal fraction = SisuBigDecimal.valueOf(5).divide(SisuBigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
-                SisuBigDecimal bigX3 = SisuBigDecimal.valueOf(width).multiply(fraction, SisuBigDecimal.mcOperations);
-                float bigX1f = bigX1.floatValue();
-                float bigX2f = bigX2.floatValue();
-                float bigX3f = bigX3.floatValue();
-
-                softly.then(Float.MAX_VALUE).isGreaterThanOrEqualTo(bigX1f);
-                softly.then(Float.MAX_VALUE).isGreaterThanOrEqualTo(bigX2f);
-                softly.then(Float.MAX_VALUE).isGreaterThanOrEqualTo(bigX3f);
-
-                softly.then(bigX1f).isEqualTo(shape1.getExplicitXPositionCenter().floatValue());
-                softly.then(bigX2f).isEqualTo(shape2.getExplicitXPositionCenter().floatValue());
-                softly.then(bigX3f).isEqualTo(shape3.getExplicitXPositionCenter().floatValue());
-
-            }
-
-            @Tag("x-position")
-            @Tag("explicit")
-            @DisplayName("When a square (100) drawing has two adjacent Circles, then their explicit x positions are correct")
-                    void whenASquare100DrawingHasTwoAdjacentCirclesThenTheirExplicitXPositionsAreCorrect(BDDSoftAssertions softly)
-            {
-
-                drawing.add(shape1);
-                 drawing.add(shape2);
-                shape2.setRightOf(shape1);
-                drawing.setExplicitHeight(100);
-                drawing.setExplicitWidth(100);
-                SisuBigDecimal explicitXPosition1 = shape1.getExplicitXPositionCenter();
-                SisuBigDecimal explicitXPosition2 = shape2.getExplicitXPositionCenter();
-
-                then:
-                softly.then(explicitXPosition1).isEqualTo(SisuBigDecimal.valueOf(25));
-                softly.then(explicitXPosition2).equals(SisuBigDecimal.valueOf(75));
-            }
 
             /**
              * Test that, when a Drawing has three adjacent Shapes, then their x positions are correct.
@@ -760,6 +761,38 @@ public abstract class DrawingTestShapeProtected
                 softly.then(actualExplicitXPositionCenter3).isEqualTo(expectedExplicitXPositionCenter3);
             }
 
+            @Tag("x-position")
+            @Tag("explicit")
+            @DisplayName("When a drawing has three adjacent default Shapes, then their explicit x-positions are correct (max size)")
+            void whenADrawingHasThreeAdjacentDefaultShapesThenTheirExplicitXPositionsAreCorrectMaxSize(BDDSoftAssertions softly)
+            {
+                drawing.add(shape1);
+                drawing.add(shape2);
+                drawing.add(shape3);
+                shape2.setRightOf(shape1);
+                shape3.setRightOf(shape2);
+                Float width = Float.MAX_VALUE;
+                Float height = Float.MAX_VALUE;
+                drawing.setExplicitWidth(width);
+                drawing.setExplicitHeight(height);
+                SisuBigDecimal bigX1 = SisuBigDecimal.valueOf(width).divide(SisuBigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
+                SisuBigDecimal bigX2 = SisuBigDecimal.valueOf(width).divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+                SisuBigDecimal fraction = SisuBigDecimal.valueOf(5).divide(SisuBigDecimal.valueOf(6), SisuBigDecimal.mcOperations);
+                SisuBigDecimal bigX3 = SisuBigDecimal.valueOf(width).multiply(fraction, SisuBigDecimal.mcOperations);
+                float bigX1f = bigX1.floatValue();
+                float bigX2f = bigX2.floatValue();
+                float bigX3f = bigX3.floatValue();
+
+                softly.then(Float.MAX_VALUE).isGreaterThanOrEqualTo(bigX1f);
+                softly.then(Float.MAX_VALUE).isGreaterThanOrEqualTo(bigX2f);
+                softly.then(Float.MAX_VALUE).isGreaterThanOrEqualTo(bigX3f);
+
+                softly.then(bigX1f).isEqualTo(shape1.getExplicitXPositionCenter().floatValue());
+                softly.then(bigX2f).isEqualTo(shape2.getExplicitXPositionCenter().floatValue());
+                softly.then(bigX3f).isEqualTo(shape3.getExplicitXPositionCenter().floatValue());
+
+            }
+
             @Test
             @DisplayName("When a drawing has three adjacent default Shapes, then their x-positions are correct (random)")
             void whenADrawingHasThreeAdjacentShapesThenTheirXPositionsAreCorrectRandom(@NotNull BDDSoftAssertions softly)
@@ -881,34 +914,29 @@ public abstract class DrawingTestShapeProtected
                 softly.then(EXPECTED_1).isEqualTo(shape1.getExplicitXPositionCenter());
                 softly.then(EXPECTED_2).isEqualTo(shape2.getExplicitXPositionCenter());
             }
-        }
-    }
 
-    @Nested
-    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    @DisplayName("Y Position")
-    class YPosition
-    {
-        @Nested
-        @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-        @DisplayName("Implicit")
-        class Implicit
-        {
-            @Test
-            @Tag("implicit")
-            @Tag("y-position")
-            @Tag("protected")
-            @DisplayName("When a drawing has two adjacent default Circles, then their implicit y-positions are correct (fixed)")
-            void whenADrawingHasTwoAdjacentDefaultCirclesThenTheirImplicitYPositionsAreCorrect(BDDSoftAssertions softly)
+            @Tag("x-position")
+            @Tag("explicit")
+            @DisplayName("When a square (100) drawing has two adjacent Circles, then their explicit x positions are correct")
+            void whenASquare100DrawingHasTwoAdjacentCirclesThenTheirExplicitXPositionsAreCorrect(BDDSoftAssertions softly)
             {
+
                 drawing.add(shape1);
                 drawing.add(shape2);
-                shape2.setAbove(shape1);
+                shape2.setRightOf(shape1);
+                drawing.setExplicitHeight(100);
+                drawing.setExplicitWidth(100);
+                SisuBigDecimal explicitXPosition1 = shape1.getExplicitXPositionCenter();
+                SisuBigDecimal explicitXPosition2 = shape2.getExplicitXPositionCenter();
 
-                softly.then(SisuBigDecimal.ZERO).isEqualTo(shape1.getImplicitYPositionCenter());
-                softly.then(SisuBigDecimal.ONE).isEqualTo(shape2.getImplicitYPositionCenter());
+                then:
+                softly.then(explicitXPosition1).isEqualTo(SisuBigDecimal.valueOf(25));
+                softly.then(explicitXPosition2).equals(SisuBigDecimal.valueOf(75));
             }
         }
     }
 
+
+
 }
+

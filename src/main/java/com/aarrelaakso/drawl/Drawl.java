@@ -58,7 +58,7 @@ public class Drawl {
         drawing.add(shape1);
         Shape shape2 = new Rectangle(20,10);
         drawing.add(shape2);
-        shape2.setRightOf(shape1);
+        shape2.setAbove(shape1);
         String svg = drawing.getSVG(110, 110);
         System.out.println(svg);
         drawing.writeToFile("test.svg");

@@ -28,101 +28,64 @@ public abstract class ShapeTestProtected
     Shape shape3;
 
 
-    @Nested
-    @DisplayName("Explicit")
-    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class explicit
-    {
-        @Test
-        @DisplayName("When a Shape is created, then it has an explicit center x position")
-        void whenAShapeIsCreatedThenItHasAnExplicitCenterXPosition()
-        {
-            SisuBigDecimal explicitXPositionCenter = shape1.getExplicitXPositionCenter();
-            then(explicitXPositionCenter).isEqualByComparingTo(SisuBigDecimal.ZERO);
-        }
-
-        @Test
-        @DisplayName("When a Shape has explicit dimensions, then it has an explicit left x position")
-        void whenAShapeIsCreatedThenItHasAnExplicitLeftXPosition()
-        {
-            shape1.setExplicitWidth(SisuBigDecimal.valueOf(100));
-            SisuBigDecimal explicitXPositionLeft = shape1.getExplicitXPositionLeft();
-            then(explicitXPositionLeft).isEqualByComparingTo(SisuBigDecimal.valueOf(-50));
-        }
-    }
-
-    @Nested
-    @DisplayName("Implicit")
-    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class implicit
-    {
-        @Test
-        @DisplayName("When a Shape is created, then it has an implicit center x position")
-        void whenAShapeIsCreatedThenItHasAnImplicitCenterXPosition()
-        {
-            SisuBigDecimal implicitXPositionCenter = shape1.getImplicitXPositionCenter();
-            then(implicitXPositionCenter).isEqualByComparingTo(SisuBigDecimal.ZERO);
-        }
-
-        @Test
-        @DisplayName("When a Shape is created, then it has an implicit left x position")
-        void whenAShapeIsCreatedThenItHasAnImplicitLeftXPosition()
-        {
-            SisuBigDecimal implicitXPositionLeft = shape1.getImplicitXPositionLeft();
-            then(implicitXPositionLeft).isEqualByComparingTo(SisuBigDecimal.valueOf(-0.5));
-        }
-    }
-
     /**
-     * Tests the y-coordinates of Shapes
+     * Tests the x positions of Shapes
      */
     @Nested
-    class testYCoordinate
+    @DisplayName("XPosition")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class XPosition
     {
-
         /**
-         * Tests the implicit y-coordinates of Shapes
+         * Tests the explicit x positions of Shapes
          */
         @Nested
-        class testImplicit
+        @DisplayName("Explicit")
+        @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+        class Explicit
         {
             @Test
-            @DisplayName("When you set a default Shape above a default Shape, its implicit y-coordinate is 1")
-            void whenYouSetADefaultShapeAboveADefaultShapeItsImplicitYCoordinateIs1()
+            @DisplayName("When a Shape is created, then it has an explicit center x position")
+            void whenAShapeIsCreatedThenItHasAnExplicitCenterXPosition()
             {
-                shape1.setAbove(shape2);
-                SisuBigDecimal y1 = shape1.getImplicitYPositionCenter();
-                SisuBigDecimal y2 = shape2.getImplicitYPositionCenter();
-                assertEquals(SisuBigDecimal.ONE, y1);
-                assertEquals(SisuBigDecimal.ZERO, y2);
+                SisuBigDecimal explicitXPositionCenter = shape1.getExplicitXPositionCenter();
+                then(explicitXPositionCenter).isEqualByComparingTo(SisuBigDecimal.ZERO);
             }
 
             @Test
-            @DisplayName("When you set a default Shape below a default Shape, its implicit y-coordinate is -1")
-            void whenYouSetADefaultShapeBelowADefaultShapeItsImplicitYCoordinateIsNeg1()
+            @DisplayName("When a Shape has explicit dimensions, then it has an explicit left x position")
+            void whenAShapeIsCreatedThenItHasAnExplicitLeftXPosition()
             {
-                shape1.setBelow(shape2);
-                SisuBigDecimal y1 = shape1.getImplicitYPositionCenter();
-                SisuBigDecimal y2 = shape2.getImplicitYPositionCenter();
-                assertEquals(y1, SisuBigDecimal.valueOf(-1));
-                assertEquals(y2, SisuBigDecimal.ZERO);
+                shape1.setExplicitWidth(SisuBigDecimal.valueOf(100));
+                SisuBigDecimal explicitXPositionLeft = shape1.getExplicitXPositionLeft();
+                then(explicitXPositionLeft).isEqualByComparingTo(SisuBigDecimal.valueOf(-50));
             }
-
         }
-    }
 
-    /**
-     * Tests the x-coordinates of Shapes
-     */
-    @Nested
-    class testXCoordinate
-    {
         /**
-         * Tests the implicit x-coordinates of Shapes
+         * Tests the implicit x positions of Shapes
          */
         @Nested
-        class testYCoordinate
+        @DisplayName("Implicit")
+        @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+        class Implicit
         {
+            @Test
+            @DisplayName("When a Shape is created, then it has an implicit center x position")
+            void whenAShapeIsCreatedThenItHasAnImplicitCenterXPosition()
+            {
+                SisuBigDecimal implicitXPositionCenter = shape1.getImplicitXPositionCenter();
+                then(implicitXPositionCenter).isEqualByComparingTo(SisuBigDecimal.ZERO);
+            }
+
+            @Test
+            @DisplayName("When a Shape is created, then it has an implicit left x position")
+            void whenAShapeIsCreatedThenItHasAnImplicitLeftXPosition()
+            {
+                SisuBigDecimal implicitXPositionLeft = shape1.getImplicitXPositionLeft();
+                then(implicitXPositionLeft).isEqualByComparingTo(SisuBigDecimal.valueOf(-0.5));
+            }
+
             @Test
             @DisplayName("When you set a Shape leftOf a default Shape, its implicit x-coordinate is -1")
             void whenYouSetAShapeLeftOfADefaultShapeItsImplicitXCoordinateIsNeg1()
@@ -152,20 +115,25 @@ public abstract class ShapeTestProtected
                 assertEquals(x11, SisuBigDecimal.ONE);
                 assertEquals(x21, SisuBigDecimal.ZERO);
             }
-
         }
     }
 
 
+    /**
+     * Tests the y positions of Shapes
+     */
     @Nested
-    @DisplayName("y position")
+    @DisplayName("Y Position")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class yPosition {
-
+    class YPosition
+    {
+        /**
+         * Tests the explicit y positions of Shapes
+         */
         @Nested
         @DisplayName("Explicit")
         @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-        class explicit
+        class Explicit
         {
             @Test
             @DisplayName("When a Shape has explicit dimensions, then it has an explicit top y position")
@@ -173,31 +141,57 @@ public abstract class ShapeTestProtected
             {
                 Drawing drawing = new Drawing();
                 drawing.add(shape1);
-                drawing.setExplicitDimensions(100,100);
+                drawing.setExplicitDimensions(100, 100);
                 //shape1.setExplicitHeight(SisuBigDecimal.valueOf(100));
                 SisuBigDecimal explicitXPositionTop = shape1.getExplicitYPositionTop();
                 then(explicitXPositionTop).isEqualByComparingTo(SisuBigDecimal.valueOf(0));
             }
         }
 
+        /**
+         * Tests the implicit y positions of Shapes
+         */
         @Nested
         @DisplayName("Implicit")
         @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-        class implicit
+        class Implicit
         {
-
             @Test
             @DisplayName("When a Shape is created, then it has an implicit center y position")
-            void whenShapeIsCreatedThenItHasAnImplicitCenterYPosition() {
+            void whenShapeIsCreatedThenItHasAnImplicitCenterYPosition()
+            {
                 SisuBigDecimal implicitYPositionCenter = shape1.getImplicitYPositionCenter();
                 then(implicitYPositionCenter).isEqualByComparingTo(SisuBigDecimal.ZERO);
             }
 
             @Test
             @DisplayName("When a Shape is created, then it has an implicit top y position")
-            void whenShapeIsCreatedThenItHasAnImplicitTopYPosition() {
+            void whenShapeIsCreatedThenItHasAnImplicitTopYPosition()
+            {
                 SisuBigDecimal implicitYPositionTop = shape1.getImplicitYPositionTop();
                 then(implicitYPositionTop).isEqualByComparingTo(SisuBigDecimal.valueOf(-0.5));
+            }
+
+            @Test
+            @DisplayName("When you set a default Shape above a default Shape, its implicit y-coordinate is 1")
+            void whenYouSetADefaultShapeAboveADefaultShapeItsImplicitYCoordinateIs1()
+            {
+                shape1.setAbove(shape2);
+                SisuBigDecimal y1 = shape1.getImplicitYPositionCenter();
+                SisuBigDecimal y2 = shape2.getImplicitYPositionCenter();
+                assertEquals(SisuBigDecimal.ONE, y1);
+                assertEquals(SisuBigDecimal.ZERO, y2);
+            }
+
+            @Test
+            @DisplayName("When you set a default Shape below a default Shape, its implicit y-coordinate is -1")
+            void whenYouSetADefaultShapeBelowADefaultShapeItsImplicitYCoordinateIsNeg1()
+            {
+                shape1.setBelow(shape2);
+                SisuBigDecimal y1 = shape1.getImplicitYPositionCenter();
+                SisuBigDecimal y2 = shape2.getImplicitYPositionCenter();
+                assertEquals(y1, SisuBigDecimal.valueOf(-1));
+                assertEquals(y2, SisuBigDecimal.ZERO);
             }
         }
     }
@@ -302,4 +296,3 @@ public abstract class ShapeTestProtected
 
     }
 }
-
