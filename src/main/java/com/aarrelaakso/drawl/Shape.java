@@ -63,14 +63,14 @@ public class Shape
     /**
      * The implicit height of a default Shape is 1.
      */
-    //private SisuBigDecimal implicitHeight = SisuBigDecimal.ONE;
-    private SisuBigDecimal implicitHeight;
+    private SisuBigDecimal implicitHeight = SisuBigDecimal.ONE;
+    //private SisuBigDecimal implicitHeight;
 
     /**
      * The implicit width of a default Shape is 1.
      */
-    //private SisuBigDecimal implicitWidth = SisuBigDecimal.ONE;
-    private SisuBigDecimal implicitWidth;
+    private SisuBigDecimal implicitWidth = SisuBigDecimal.ONE;
+    //private SisuBigDecimal implicitWidth;
 
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
