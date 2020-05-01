@@ -394,7 +394,3 @@ class DrawingTestWidthImplicit extends Specification {
         implicitWidth == SisuBigDecimal.TWO
     }
 }
-
-class DrawingTestXPositionExplicit extends Specification {
-
-}
