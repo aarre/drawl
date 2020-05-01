@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['one',['ONE',['../classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a50a879aa4cb7468400bc4b0f2927f7f0',1,'com::aarrelaakso::drawl::SisuBigDecimal']]]
+  ['rounding_5fmode',['ROUNDING_MODE',['../d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#afcdca984f764db570786fff2442142cb',1,'com::aarrelaakso::drawl::SisuBigDecimal']]]
 ];

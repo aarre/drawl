@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.Shape.getExplicitYPositionCenter" name="com.aarrelaakso.drawl.Shape.getExplicitYPositionCenter">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="269,5,511,32"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad14fa860ab74cfa90815f56cf4c3ecf" title="Set this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="282,57,498,98"/>
+</map>

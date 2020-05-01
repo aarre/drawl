@@ -1,0 +1,11 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.add" name="com.aarrelaakso.drawl.SisuBigDecimal.add">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#acb7e453b97a2800eaf52d209f9759bf6" title="Get the implicit maximum (rightmost) x&#45;position of this Circle. " alt="" coords="243,5,456,47"/>
+<area shape="rect" id="node3" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a69c8084493cd0d4c899235c171fe127e" title="Get the implicit maximum (topmost) y&#45;position of this Circle. " alt="" coords="243,71,456,112"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="236,136,463,177"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a3bde9d5b2cc582ddb6c521b122c40ff8" title="Get the implicit maximum (rightmost) x&#45;position of this Shape. " alt="" coords="241,201,457,243"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a09e1586ce85c1d964cc3b7ce94bc5d4c" title="Set this Shape&#39;s neighbor to the left (this Shape is to the right of that one). " alt="" coords="511,244,727,285"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a7a4579f2966a3d5ebbfa46b5b2528f9d" title="Get the implicit maximum (topmost) y&#45;position of this Shape. " alt="" coords="241,319,457,360"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a942b3cf3365498dc1ac6b0309ce33b86" title="Set this Shape above another Shape. " alt="" coords="511,335,727,376"/>
+<area shape="rect" id="node10" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a20a8c4842d23a2a5394eed4bc7d19251" title="Performs addition operation. " alt="" coords="258,436,441,477"/>
+<area shape="rect" id="node9" href="$d8/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="775,342,997,369"/>
+</map>

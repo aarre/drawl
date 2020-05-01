@@ -1,0 +1,10 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitYPositionCenter" name="com.aarrelaakso.drawl.Shape.getImplicitYPositionCenter">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a69c8084493cd0d4c899235c171fe127e" title="Get the implicit maximum (topmost) y&#45;position of this Circle. " alt="" coords="271,5,484,47"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a7a4579f2966a3d5ebbfa46b5b2528f9d" title="Get the implicit maximum (topmost) y&#45;position of this Shape. " alt="" coords="269,71,485,112"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa0877965f7f172378e87ba69f27c7ad6" title="Get the implicit minimum (bottommost) y&#45;position of this Shape. " alt="" coords="269,136,485,177"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a5ffc02627cca0723e3555b5d04ba2b75" title="Get the implicit y position of the top of this Shape. " alt="" coords="269,201,485,243"/>
+<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad14fa860ab74cfa90815f56cf4c3ecf" title="Set this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="269,267,485,308"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a942b3cf3365498dc1ac6b0309ce33b86" title="Set this Shape above another Shape. " alt="" coords="533,71,749,112"/>
+<area shape="rect" id="node5" href="$d8/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="797,78,1020,105"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa0ec0030515b5096820e4dd030c0b320" title="Set this circle below another circle. " alt="" coords="533,136,749,177"/>
+</map>

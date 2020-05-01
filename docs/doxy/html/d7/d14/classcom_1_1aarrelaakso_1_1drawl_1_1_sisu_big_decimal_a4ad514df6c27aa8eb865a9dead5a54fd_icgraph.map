@@ -1,0 +1,12 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.multiply" name="com.aarrelaakso.drawl.SisuBigDecimal.multiply">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a8137fc064c1c7ce86fed179b56be9ab5" title="Construct a circle with an implicit radius. " alt="" coords="252,5,447,47"/>
+<area shape="rect" id="node3" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#afdf1eafa90768ab10a9a6ceb25941e34" title="Get the implicit diameter of this Circle. " alt="" coords="243,71,456,112"/>
+<area shape="rect" id="node6" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Set the explicit dimensions of this Drawing. " alt="" coords="236,136,463,177"/>
+<area shape="rect" id="node10" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="236,201,463,243"/>
+<area shape="rect" id="node11" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a629f43082e518f55326ca0efcffad3b5" title="Performs multiplication operation. " alt="" coords="258,267,441,308"/>
+<area shape="rect" id="node4" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a634a3118425b7aa555ef14d0b4441a93" title="Get the implicit height of this Circle. " alt="" coords="531,8,745,49"/>
+<area shape="rect" id="node5" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a062c441fca2adcc959e236d7352bea55" title="Get the implicit width of this Circle. " alt="" coords="531,73,745,115"/>
+<area shape="rect" id="node7" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="511,142,765,169"/>
+<area shape="rect" id="node9" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aaba87ad07d1574f91ea08f5022caf507" title="Set the explicit dimensions of this Drawing. " alt="" coords="525,193,751,235"/>
+<area shape="rect" id="node8" href="$d8/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="813,142,1036,169"/>
+</map>

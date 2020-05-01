@@ -1,0 +1,9 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.isIntegerValue" name="com.aarrelaakso.drawl.SisuBigDecimal.isIntegerValue">
+<area shape="rect" id="node2" href="$d7/d81/classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#a6658c22ded498ee41fdcf637a3cc9dab" title="Convert a number to a string for SVG. " alt="" coords="236,49,436,90"/>
+<area shape="rect" id="node3" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="497,5,738,32"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ae49bfdabbf7177b244a7a0b5ae995fe1" title="Get the SVG for this Drawing. " alt="" coords="490,56,745,83"/>
+<area shape="rect" id="node8" href="$d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="484,107,751,133"/>
+<area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="799,27,1053,53"/>
+<area shape="rect" id="node7" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a3ec0a89518a13eca1db4b7b5179beaa0" title="Write SVG representing this drawing to a file. " alt="" coords="807,78,1045,119"/>
+<area shape="rect" id="node6" href="$d8/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="1101,56,1324,83"/>
+</map>

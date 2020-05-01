@@ -1,0 +1,4 @@
+var classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_rectangle_public_1_1_given_symmetric_rectangles =
+[
+    [ "svgWhenASquare100DrawingHasTwoAdjacentRectanglesThenTheSVGIsCorrect", "db/da0/classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_rectangle_public_1_1_given_symmetric_rectangles.html#a443bfa3c249de03e904735b565dc4be5", null ]
+];

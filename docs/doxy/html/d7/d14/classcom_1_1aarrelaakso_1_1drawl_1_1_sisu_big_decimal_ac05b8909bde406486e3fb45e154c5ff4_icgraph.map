@@ -1,0 +1,6 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.toString" name="com.aarrelaakso.drawl.SisuBigDecimal.toString">
+<area shape="rect" id="node2" href="$d7/d18/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_shape_protected_1_1_height_1_1_explicit.html#a4a61fda878c702d61aff5a77cb8f11f4" title="com.aarrelaakso.drawl.Drawing\lTestShapeProtected.Height.Explicit.height\lExplicitWhenASquare100DrawingHasTwoAdjacentShapes\lThenTheirExplicitHeightsAreCorrect03" alt="" coords="236,5,599,76"/>
+<area shape="rect" id="node3" href="$d4/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_test_protected.html#a526686745922a25cd44d646b9dc5d5dd" title="Test compareToFuzzy method when precision is low. " alt="" coords="292,101,543,157"/>
+<area shape="rect" id="node4" href="$d4/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_test_protected.html#a3196ead4500b5380b9df53e25763e5fb" title="Test compareToFuzzy method when precision is high (big number comes second) " alt="" coords="292,181,543,237"/>
+<area shape="rect" id="node5" href="$d4/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_test_protected.html#a0c627eb056104b30c95036065113c277" title="Test compareToFuzzy method when precision is high (big number comes first) " alt="" coords="292,261,543,317"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimalTestProtected.testDivWithRemainder" name="com.aarrelaakso.drawl.SisuBigDecimalTestProtected.testDivWithRemainder">
+<area shape="rect" id="node2" href="$d9/dd6/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_remainder_pair.html#ad23fce014bb13131e936ebbbbc33c9b2" title="Creates new instance. " alt="" coords="579,43,803,85"/>
+<area shape="rect" id="node3" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="309,39,492,81"/>
+<area shape="rect" id="node4" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a21e09234efca516798b5bd745fccad41" title="Performs division operation and returns the result with remainder. " alt="" coords="301,105,501,146"/>
+<area shape="rect" id="node5" href="$d9/dd6/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_remainder_pair.html#ac2d403d156c6b95d3850d72117b9db3d" title="Returns number. " alt="" coords="279,170,522,211"/>
+<area shape="rect" id="node6" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aa1fdb9a9086d8a7a0c75f7b2acbf4931" title="Converts this number to the full, containing everything that can be restored. " alt="" coords="309,235,492,277"/>
+<area shape="rect" id="node7" href="$d9/dd6/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_remainder_pair.html#a2dea512a765d3ca63baeb155bf5f2312" title="Returns remainder. " alt="" coords="271,301,531,342"/>
+</map>

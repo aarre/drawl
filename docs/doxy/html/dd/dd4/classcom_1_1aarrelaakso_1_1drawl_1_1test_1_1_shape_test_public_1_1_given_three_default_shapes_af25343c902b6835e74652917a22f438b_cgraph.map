@@ -1,0 +1,11 @@
+<map id="com.aarrelaakso.drawl.test.ShapeTestPublic.GivenThreeDefaultShapes.whenYouSetThreeDefaultShapesAdjacentToOneAnotherThenNoExceptionIsThrown" name="com.aarrelaakso.drawl.test.ShapeTestPublic.GivenThreeDefaultShapes.whenYouSetThreeDefaultShapesAdjacentToOneAnotherThenNoExceptionIsThrown">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a09e1586ce85c1d964cc3b7ce94bc5d4c" title="Set this Shape&#39;s neighbor to the left (this Shape is to the right of that one). " alt="" coords="368,90,584,132"/>
+<area shape="rect" id="node3" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="1177,14,1359,56"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a3bde9d5b2cc582ddb6c521b122c40ff8" title="Get the implicit maximum (rightmost) x&#45;position of this Shape. " alt="" coords="632,90,848,132"/>
+<area shape="rect" id="node6" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aed9db04cdf1516cc87d0599b99fb6b02" title="Performs addition operation. " alt="" coords="913,28,1095,69"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a46d1d2823bc131d796a6a41383334d85" title="com.aarrelaakso.drawl.Shape.get\lImplicitHalfWidth" alt="" coords="896,158,1112,200"/>
+<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a4fbc0d430cfe312e018e4ec58f726842" title="com.aarrelaakso.drawl.Shape.set\lImplicitXPositionCenter" alt="" coords="632,208,848,249"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a50c12c30790bd28ec0b71b58f59b1e96" title="Get the implicit x position of the center of this Shape. " alt="" coords="896,93,1112,134"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af6a043538a5aba4f4b3eb7278206a841" title="Get the implicit width of this Shape. " alt="" coords="1160,190,1376,232"/>
+<area shape="rect" id="node9" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac1dbd016deb958fa7332bf3a777d14e2" title="com.aarrelaakso.drawl.Sisu\lBigDecimal.divide" alt="" coords="1177,125,1359,166"/>
+</map>

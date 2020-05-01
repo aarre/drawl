@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.test.DrawingTestShapePublic" name="com.aarrelaakso.drawl.test.DrawingTestShapePublic">
+<area shape="rect" id="node2" href="$d7/de7/classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_circle_public.html" title="{com.aarrelaakso.drawl.test.\lDrawingTestCirclePublic\n|~ shape1\l~ shape2\l~ shape3\l|~ givenTheeDefaultCircles()\l~ svgGeneratedByADrawingWith\lACircleIsExactlyAsExpected()\l~ svgWhenADefaultCircleIsThe\lOnlyContentOfADrawingThenItIsAs\lLargeAsPossible()\l~ svgWhenASquare100Drawing\lHasTwoAdjacentCirclesThenThe\lSVGIsCorrect()\l}" alt="" coords="5,263,236,501"/>
+<area shape="rect" id="node3" href="$d1/d10/classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_rectangle_public.html" title="{com.aarrelaakso.drawl.test.\lDrawingTestRectanglePublic\n||~ givenTheeDefaultRectangles()\l}" alt="" coords="261,336,471,428"/>
+</map>

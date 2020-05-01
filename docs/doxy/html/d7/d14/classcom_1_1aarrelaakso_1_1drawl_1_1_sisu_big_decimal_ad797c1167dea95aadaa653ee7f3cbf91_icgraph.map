@@ -1,0 +1,13 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.floatValue" name="com.aarrelaakso.drawl.SisuBigDecimal.floatValue">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8e4c74480fede49f44519554136c12b0" title="com.aarrelaakso.drawl.Shape.set\lExplicitXPositionCenter" alt="" coords="236,5,452,47"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0ddc58345fca924e973fac474955ef14" title="Set the explicit y position of this Shape. " alt="" coords="236,71,452,112"/>
+<area shape="rect" id="node6" href="$d7/d81/classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#a6658c22ded498ee41fdcf637a3cc9dab" title="Convert a number to a string for SVG. " alt="" coords="244,157,444,199"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af8af5129e3e61324439a1035428016a2" title="com.aarrelaakso.drawl.Shape.set\lExplicitYPosition" alt="" coords="525,5,741,47"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad14fa860ab74cfa90815f56cf4c3ecf" title="Set this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="525,71,741,112"/>
+<area shape="rect" id="node7" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="513,137,754,163"/>
+<area shape="rect" id="node8" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ae49bfdabbf7177b244a7a0b5ae995fe1" title="Get the SVG for this Drawing. " alt="" coords="506,187,761,214"/>
+<area shape="rect" id="node12" href="$d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="500,238,767,265"/>
+<area shape="rect" id="node9" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="815,158,1069,185"/>
+<area shape="rect" id="node11" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a3ec0a89518a13eca1db4b7b5179beaa0" title="Write SVG representing this drawing to a file. " alt="" coords="823,209,1061,251"/>
+<area shape="rect" id="node10" href="$d8/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="1117,187,1340,214"/>
+</map>

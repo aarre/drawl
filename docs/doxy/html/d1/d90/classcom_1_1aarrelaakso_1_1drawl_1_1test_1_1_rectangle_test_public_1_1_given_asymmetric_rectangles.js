@@ -1,0 +1,4 @@
+var classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_rectangle_test_public_1_1_given_asymmetric_rectangles =
+[
+    [ "whenAnAsymmetricRectangleIsCreatedThenItIsNotNull", "d1/d90/classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_rectangle_test_public_1_1_given_asymmetric_rectangles.html#a1d619a14442a3e0052382b179add9550", null ]
+];

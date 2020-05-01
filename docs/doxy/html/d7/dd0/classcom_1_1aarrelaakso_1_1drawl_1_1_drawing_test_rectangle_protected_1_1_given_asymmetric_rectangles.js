@@ -1,0 +1,5 @@
+var classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle_protected_1_1_given_asymmetric_rectangles =
+[
+    [ "whenAnAsymmetricRectangleIsCreatedThenItMaintainsItsImplicitHeightAndWidthOnDrawing", "d7/dd0/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle_protected_1_1_given_asymmetric_rectangles.html#af5269e358d1a37f3e05b24aeb76749e8", null ],
+    [ "whenAnAsymmetricRectangleIsCreatedThenItsExplicitDimensionsAreCorrect", "d7/dd0/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle_protected_1_1_given_asymmetric_rectangles.html#aae09832de20326dfbd1d7754afb91324", null ]
+];

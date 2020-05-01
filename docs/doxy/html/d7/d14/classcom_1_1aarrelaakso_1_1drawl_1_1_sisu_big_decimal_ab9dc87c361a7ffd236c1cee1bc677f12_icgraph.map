@@ -1,0 +1,9 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.isGreaterThan" name="com.aarrelaakso.drawl.SisuBigDecimal.isGreaterThan">
+<area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a6c89875402beb4944f7994a0f8d09b41" title="Get the implicit total width of all contents in this Drawing. " alt="" coords="236,5,463,47"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Set the explicit dimensions of this Drawing. " alt="" coords="236,71,463,112"/>
+<area shape="rect" id="node8" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a89df07cdc9c356d097db099d609335dc" title="Returns whether this number is greater than the other number. " alt="" coords="258,136,441,177"/>
+<area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="525,5,751,47"/>
+<area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="511,75,765,102"/>
+<area shape="rect" id="node7" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aaba87ad07d1574f91ea08f5022caf507" title="Set the explicit dimensions of this Drawing. " alt="" coords="525,127,751,168"/>
+<area shape="rect" id="node6" href="$d8/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="813,75,1036,102"/>
+</map>

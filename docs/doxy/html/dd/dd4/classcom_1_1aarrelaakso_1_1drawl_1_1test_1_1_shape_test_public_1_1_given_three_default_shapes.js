@@ -1,0 +1,4 @@
+var classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_public_1_1_given_three_default_shapes =
+[
+    [ "whenYouSetThreeDefaultShapesAdjacentToOneAnotherThenNoExceptionIsThrown", "dd/dd4/classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_public_1_1_given_three_default_shapes.html#af25343c902b6835e74652917a22f438b", null ]
+];

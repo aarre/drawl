@@ -1,13 +1,7 @@
 var searchData=
 [
-  ['givenasymmetricrectangles',['GivenAsymmetricRectangles',['../classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_rectangle_public_1_1_given_asymmetric_rectangles.html',1,'com.aarrelaakso.drawl.test.DrawingTestRectanglePublic.GivenAsymmetricRectangles'],['../classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_rectangle_test_public_1_1_given_asymmetric_rectangles.html',1,'com.aarrelaakso.drawl.test.RectangleTestPublic.GivenAsymmetricRectangles'],['../classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle_test_protected_1_1_given_asymmetric_rectangles.html',1,'com.aarrelaakso.drawl.RectangleTestProtected.GivenAsymmetricRectangles'],['../classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle_protected_1_1_given_asymmetric_rectangles.html',1,'com.aarrelaakso.drawl.DrawingTestRectangleProtected.GivenAsymmetricRectangles']]],
-  ['givenonedefaultcircle',['GivenOneDefaultCircle',['../classcom_1_1aarrelaakso_1_1drawl_1_1_circle_test_protected_1_1_given_one_default_circle.html',1,'com::aarrelaakso::drawl::CircleTestProtected']]],
-  ['givenonedefaultshape',['GivenOneDefaultShape',['../classcom_1_1aarrelaakso_1_1drawl_1_1_shape_test_protected_1_1_given_one_default_shape.html',1,'com::aarrelaakso::drawl::ShapeTestProtected']]],
-  ['givenonedefaultshapesvg',['GivenOneDefaultShapeSVG',['../classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_public_1_1_given_one_default_shape_s_v_g.html',1,'com::aarrelaakso::drawl::test::ShapeTestPublic']]],
-  ['givenonedefaultshapesvgsubclass',['GivenOneDefaultShapeSVGSubclass',['../classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_circle_test_public_1_1_given_one_default_shape_s_v_g_subclass.html',1,'com::aarrelaakso::drawl::test::CircleTestPublic']]],
-  ['givensymmetricrectangles',['GivenSymmetricRectangles',['../classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_rectangle_public_1_1_given_symmetric_rectangles.html',1,'com::aarrelaakso::drawl::test::DrawingTestRectanglePublic']]],
-  ['giventhreedefaultcircles',['GivenThreeDefaultCircles',['../classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_circle_test_public_1_1_given_three_default_circles.html',1,'com::aarrelaakso::drawl::test::CircleTestPublic']]],
-  ['giventhreedefaultshapes',['GivenThreeDefaultShapes',['../classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_public_1_1_given_three_default_shapes.html',1,'com::aarrelaakso::drawl::test::ShapeTestPublic']]],
-  ['giventwodefaultcircles',['GivenTwoDefaultCircles',['../classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_circle_test_public_1_1_given_two_default_circles.html',1,'com::aarrelaakso::drawl::test::CircleTestPublic']]],
-  ['giventwodefaultshapes',['GivenTwoDefaultShapes',['../classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_public_1_1_given_two_default_shapes.html',1,'com::aarrelaakso::drawl::test::ShapeTestPublic']]]
+  ['shape',['Shape',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html',1,'com::aarrelaakso::drawl']]],
+  ['sisubigdecimal',['SisuBigDecimal',['../d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html',1,'com::aarrelaakso::drawl']]],
+  ['sisubigdecimalremainderpair',['SisuBigDecimalRemainderPair',['../d9/dd6/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_remainder_pair.html',1,'com::aarrelaakso::drawl']]],
+  ['svg',['SVG',['../d7/d81/classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html',1,'com::aarrelaakso::drawl']]]
 ];

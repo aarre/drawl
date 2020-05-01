@@ -1,0 +1,7 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.isLessThanOrEqualTo" name="com.aarrelaakso.drawl.SisuBigDecimal.isLessThanOrEqualTo">
+<area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#af246964be3ebccffbba448a0a094f866" title="Get the ratio of explicit measures to implicit measures for this Drawing as a whole. " alt="" coords="276,71,503,112"/>
+<area shape="rect" id="node6" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a2644e7161a3022a10d2fa99f95ba051e" title="Returns whether this number is less or equal to the other number. " alt="" coords="278,136,501,177"/>
+<area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aaba87ad07d1574f91ea08f5022caf507" title="Set the explicit dimensions of this Drawing. " alt="" coords="551,5,777,47"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a418641b3099d2070ee0fa69dc7b35af1" title="Set the explicit height of this Drawing. " alt="" coords="551,71,777,112"/>
+<area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="551,136,777,177"/>
+</map>

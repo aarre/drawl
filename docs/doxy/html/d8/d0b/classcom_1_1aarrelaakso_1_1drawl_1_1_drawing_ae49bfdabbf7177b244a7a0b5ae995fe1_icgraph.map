@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.Drawing.getSVG" name="com.aarrelaakso.drawl.Drawing.getSVG">
+<area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="308,5,563,32"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a3ec0a89518a13eca1db4b7b5179beaa0" title="Write SVG representing this drawing to a file. " alt="" coords="317,57,554,98"/>
+<area shape="rect" id="node3" href="$d8/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="611,35,833,61"/>
+</map>

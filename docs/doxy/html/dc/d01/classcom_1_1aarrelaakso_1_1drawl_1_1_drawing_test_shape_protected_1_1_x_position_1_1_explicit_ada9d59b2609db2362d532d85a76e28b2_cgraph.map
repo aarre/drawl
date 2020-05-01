@@ -1,0 +1,10 @@
+<map id="com.aarrelaakso.drawl.DrawingTestShapeProtected.XPosition.Explicit.test3Shapes" name="com.aarrelaakso.drawl.DrawingTestShapeProtected.XPosition.Explicit.test3Shapes">
+<area shape="rect" id="node2" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="341,5,523,47"/>
+<area shape="rect" id="node3" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ab9dc87c361a7ffd236c1cee1bc677f12" title="Returns whether this number is greater than the other number. " alt="" coords="341,71,523,112"/>
+<area shape="rect" id="node4" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a4ad514df6c27aa8eb865a9dead5a54fd" title="Performs multiplication operation. " alt="" coords="341,136,523,177"/>
+<area shape="rect" id="node5" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a44ef5723298dfa0e8fc62506fdc059cd" title="Performs subtraction operation. " alt="" coords="341,201,523,243"/>
+<area shape="rect" id="node6" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac1dbd016deb958fa7332bf3a777d14e2" title="com.aarrelaakso.drawl.Sisu\lBigDecimal.divide" alt="" coords="341,267,523,308"/>
+<area shape="rect" id="node7" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aed9db04cdf1516cc87d0599b99fb6b02" title="Performs addition operation. " alt="" coords="341,332,523,373"/>
+<area shape="rect" id="node8" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a9a7c6100961355b8acb1dbcb40197136" title="Compare this SisusBigInt to another using the default MathContext. " alt="" coords="335,397,529,439"/>
+<area shape="rect" id="node9" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a0c8a57da15ab119fd46af9292ccfe028" title="Returns whether this number is equal with another number. " alt="" coords="341,463,523,504"/>
+</map>

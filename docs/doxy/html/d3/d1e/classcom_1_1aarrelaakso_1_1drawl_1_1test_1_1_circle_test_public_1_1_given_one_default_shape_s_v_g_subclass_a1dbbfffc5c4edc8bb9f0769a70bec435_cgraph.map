@@ -1,0 +1,13 @@
+<map id="com.aarrelaakso.drawl.test.CircleTestPublic.GivenOneDefaultShapeSVGSubclass.thenSVGContainsCircle" name="com.aarrelaakso.drawl.test.CircleTestPublic.GivenOneDefaultShapeSVGSubclass.thenSVGContainsCircle">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="337,209,579,235"/>
+<area shape="rect" id="node3" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a1fd7180d686a72b1631a51f0c34f5690" title="Get the explicit radius of this Circle. " alt="" coords="637,5,850,47"/>
+<area shape="rect" id="node4" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a12d16906e4e41d57f9e453f6b508bfa7" title="Set the radius to a fixed value. " alt="" coords="637,71,850,112"/>
+<area shape="rect" id="node5" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a8991b4ff460833d4198dc692241f142f" title="com.aarrelaakso.drawl.Circle.get\lImplicitRadius" alt="" coords="637,136,850,177"/>
+<area shape="rect" id="node6" href="$d7/d81/classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#a6658c22ded498ee41fdcf637a3cc9dab" title="Convert a number to a string for SVG. " alt="" coords="643,201,843,243"/>
+<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6499eaa6fd9cdef3d77fe20a5b039401" title="Get the explicit y&#45;position of this Shape. " alt="" coords="635,267,851,308"/>
+<area shape="rect" id="node11" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0d9a33a3e151aaceeec140bea343a650" title="Returns the fill associated with this Shape, if any. " alt="" coords="627,333,860,359"/>
+<area shape="rect" id="node12" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a4e1d54c7e161e3af5053939ddefdf9e6" title="Gets the stroke of this Shape. " alt="" coords="635,384,851,425"/>
+<area shape="rect" id="node7" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ad797c1167dea95aadaa653ee7f3cbf91" title="Converts this BigDecimal to a Float. " alt="" coords="908,136,1091,177"/>
+<area shape="rect" id="node8" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a91b8c8917efe62714376acabd7659a00" title="Test whether a BigDecimal is a mathematical integer. " alt="" coords="908,201,1091,243"/>
+<area shape="rect" id="node9" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a8d02465f77c81ac072066766db81d196" title="Converts this BigDecimal to an int. " alt="" coords="908,267,1091,308"/>
+</map>

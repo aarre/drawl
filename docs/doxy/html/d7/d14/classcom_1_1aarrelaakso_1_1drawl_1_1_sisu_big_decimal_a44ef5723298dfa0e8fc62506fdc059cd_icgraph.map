@@ -1,0 +1,16 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.subtract" name="com.aarrelaakso.drawl.SisuBigDecimal.subtract">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ac7ed577bb645a1f136b221feda9e6dfc" title="Get the implicit minimum (leftmost) x&#45;position of this Circle. " alt="" coords="243,5,456,47"/>
+<area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a02cea69033b7f7930b9dae17a7706fc3" title="Get the implicit total height of all contents in the drawing. " alt="" coords="236,71,463,112"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="531,129,757,171"/>
+<area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a6c89875402beb4944f7994a0f8d09b41" title="Get the implicit total width of all contents in this Drawing. " alt="" coords="236,188,463,229"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a4e26548d18a063bff6bb0781526b909f" title="com.aarrelaakso.drawl.Shape.get\lExplicitXPositionLeft" alt="" coords="241,253,457,295"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af5d7293539d67234c9941e6abc3e642b" title="com.aarrelaakso.drawl.Shape.get\lExplicitYPositionTop" alt="" coords="241,319,457,360"/>
+<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af0ceac29118047c73bd3ff308a71c36f" title="Get the implicit minimum (leftmost) x&#45;position of this Shape. " alt="" coords="241,384,457,425"/>
+<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad14fa860ab74cfa90815f56cf4c3ecf" title="Set this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="536,413,752,455"/>
+<area shape="rect" id="node11" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ad9b2aee9937d5f034f7f4a2a1d979260" title="Get the implicit x position of the left edge of this Shape. " alt="" coords="241,501,457,543"/>
+<area shape="rect" id="node12" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa0877965f7f172378e87ba69f27c7ad6" title="Get the implicit minimum (bottommost) y&#45;position of this Shape. " alt="" coords="241,567,457,608"/>
+<area shape="rect" id="node13" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa0ec0030515b5096820e4dd030c0b320" title="Set this circle below another circle. " alt="" coords="536,596,752,637"/>
+<area shape="rect" id="node14" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a5ffc02627cca0723e3555b5d04ba2b75" title="Get the implicit y position of the top of this Shape. " alt="" coords="241,684,457,725"/>
+<area shape="rect" id="node15" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#abde4af9e4686abbbdb1539505f7223ae" title="Performs subtraction operation. " alt="" coords="258,749,441,791"/>
+<area shape="rect" id="node7" href="$d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="511,294,777,321"/>
+</map>
