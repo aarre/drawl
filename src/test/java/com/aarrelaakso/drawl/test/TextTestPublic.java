@@ -10,18 +10,21 @@
 
 package com.aarrelaakso.drawl.test;
 
-import com.aarrelaakso.drawl.Rectangle;
 import com.aarrelaakso.drawl.Text;
-import org.junit.experimental.theories.suppliers.TestedOn;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
+import static org.assertj.core.api.BDDAssertions.then;
 
 @DisplayName("Unit tests the Text class")
 public class TextTestPublic extends ShapeTestPublic
 {
     @BeforeEach
-    void givenText() {
+    void givenText()
+    {
         // These values override those in ShapeTestPublic
         shape1 = new Text();
         shape2 = new Text();
@@ -33,5 +36,34 @@ public class TextTestPublic extends ShapeTestPublic
     void whenAUserCreatesATextObjectThenHeCanInitializeItWithAString()
     {
         Text text = new Text("Lorem ipsum");
+        then(text.getText()).isEqualTo("Lorem ipsum");
     }
+
+    @Test
+    @DisplayName("When a user creates a Text object, then he can initialize it without a String")
+    void whenAUserCreatesATextObjectThenHeCanInitializeItWithoutAString()
+    {
+        Text text = new Text();
+        then(text.getText()).isEqualTo("");
+    }
+
+
+    @Test
+    @DisplayName("When a user creates a Text object without explicit dimensions, then getting SVG throws an exception")
+    void whenAUserCreatesATextObjectWithoutExplicitDimensionsThenGettingSVGThrowsAnException()
+    {
+
+        // when
+        Text text = new Text();
+        Throwable thrown = catchThrowable(() -> {
+            text.getSVG();
+        });
+
+        // then
+        assertThat(thrown).isInstanceOf(UnsupportedOperationException.class)
+                .hasMessageContaining("Cannot get SVG without setting explicit dimensions");
+
+    }
+
+
 }
