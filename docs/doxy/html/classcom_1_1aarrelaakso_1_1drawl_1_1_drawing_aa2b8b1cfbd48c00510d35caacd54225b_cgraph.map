@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.Drawing.getImplicitWidthOfContents" name="com.aarrelaakso.drawl.Drawing.getImplicitWidthOfContents">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ae146d81dcbaee5bf08320a8aea1caa94" title="Get the maximum x&#45;coordinate of this drawing in implicit terms. " alt="" coords="280,5,507,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a5d22ab9bea6d5739055a4646f1d77445" title="Get the minimum x&#45;coordinate of this drawing in implicit terms. " alt="" coords="280,71,507,112"/>
+</map>

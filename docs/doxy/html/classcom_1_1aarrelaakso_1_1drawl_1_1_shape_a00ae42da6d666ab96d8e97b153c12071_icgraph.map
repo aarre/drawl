@@ -1,0 +1,11 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitXPosition" name="com.aarrelaakso.drawl.Shape.getImplicitXPosition">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ad3e98b046afb89337e4c23933352a257" title="Get the implicit maximum (rightmost) x&#45;position of this Circle. " alt="" coords="271,5,484,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ac3535e4f3a586ac152b22ec1c0eca616" title="Get the implicit minimum (leftmost) x&#45;position of this Circle. " alt="" coords="271,71,484,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a68c1f1c22b21a4f2b2f304ad126b7dc2" title="Get the implicit maximum (rightmost) x&#45;position of this Shape. " alt="" coords="269,136,485,177"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a5e0032e5ce7a6234319b93d8817a8e60" title="Get the implicit minimum (leftmost) x&#45;position of this Shape. " alt="" coords="269,201,485,243"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a09e1586ce85c1d964cc3b7ce94bc5d4c" title="Set this Shape&#39;s neighbor to the left (this Shape is to the right of that one). " alt="" coords="533,136,749,177"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="858,70,1081,97"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_circle.html#a9300c53574faebbe307fa6e36bb784af" title="com.aarrelaakso.drawl.test.\lDrawingTestCircle.radiusExplicit\lWhenASquare100DrawingHasTwoAdjacentCircles\lThenTheirExplicitRadiiAreCorrect" alt="" coords="811,121,1127,192"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_rectangle.html#a79bc18d3888be3686674d35db4211a93" title="com.aarrelaakso.drawl.test.\lDrawingTestRectangle.svgWhenASquare100\lDrawingHasTwoAdjacentCirclesThenTheSVGIsCorrect" alt="" coords="797,217,1141,273"/>
+<area shape="rect" id="node10" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad14fa860ab74cfa90815f56cf4c3ecf" title="Set this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="533,201,749,243"/>
+</map>

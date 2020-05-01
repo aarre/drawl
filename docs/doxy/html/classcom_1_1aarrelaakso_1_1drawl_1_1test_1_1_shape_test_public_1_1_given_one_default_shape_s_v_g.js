@@ -1,0 +1,4 @@
+var classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_public_1_1_given_one_default_shape_s_v_g =
+[
+    [ "thenYouCannotMakeItAdjacentToItself", "classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_public_1_1_given_one_default_shape_s_v_g.html#a46b9c4595570ef5a819a78a6ebb581ac", null ]
+];

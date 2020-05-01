@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.equals" name="com.aarrelaakso.drawl.SisuBigDecimal.equals">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#acebea2aa57031322323c9bf50ee447db" title="Get this Shape&#39;s neighbor above (this Shape is below that one), if any. " alt="" coords="236,5,452,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a53de5ab609d879719cd3b372dfe8df58" title="Get this Shape&#39;s neighbor below (this Shape is below that one), if any. " alt="" coords="236,71,452,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a2b19d5964ac46d545a7bae3133df6532" title="Get this Shape&#39;s neighbor to the right (this Shape is to the left of that one), if any..." alt="" coords="236,136,452,177"/>
+</map>

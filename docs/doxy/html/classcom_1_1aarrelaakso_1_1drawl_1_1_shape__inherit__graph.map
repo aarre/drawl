@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.Shape" name="com.aarrelaakso.drawl.Shape">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html" title="{com.aarrelaakso.drawl.Circle\n||+ Circle()\l+ getExplicitHeight()\l+ getSVG()\l+ setExplicitRadius()\l+ setExplicitWidth()\l# Circle()\l# getExplicitRadius()\l# getExplicitWidth()\l# getImplicitDiameter()\l# getImplicitHeight()\l# getImplicitRadius()\l# getImplicitWidth()\l# getImplicitXMaximum()\l# getImplicitXMinimum()\l# getImplicitYMaximum()\l# setExplicitHeight()\l# setExplicitRadius()\l}" alt="" coords="5,483,196,795"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html" title="{com.aarrelaakso.drawl.Rectangle\n||+ Rectangle()\l+ Rectangle()\l+ getSVG()\l# Rectangle()\l# Rectangle()\l}" alt="" coords="221,571,437,707"/>
+</map>

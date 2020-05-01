@@ -1,0 +1,16 @@
+<map id="com.aarrelaakso.drawl.Drawing.isExplicitSet" name="com.aarrelaakso.drawl.Drawing.isExplicitSet">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ada30626f9ec81d847d250b661b371b06" title="Add a shape to this drawing. " alt="" coords="864,78,1095,105"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a534b929a2b7e038af13f19b6749c6cdc" title="com.aarrelaakso.drawl.Drawing.update\lExplicitXPositionOfShape" alt="" coords="272,195,520,236"/>
+<area shape="rect" id="node15" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ae3aa0c7b937d8a3a14677401b90a077f" title="com.aarrelaakso.drawl.Drawing.update\lExplicitYPositionOfShape" alt="" coords="272,130,520,171"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="1835,72,2057,98"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_shape_1_1_x_position_1_1_explicit.html#a1a9bd7f22e46f7a6e99bfe95c40dc962" title="Test that, when a Drawing has one adjacent Shape, then its x position is correct. ..." alt="" coords="1143,78,1461,148"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape_test_1_1y_position_1_1explicit.html#a571872ee76a27706e250306c5172c063" title="com.aarrelaakso.drawl.Shape\lTest.yPosition.explicit.whenAShape\lIsCreatedThenItHasAnExplicitTopXPosition" alt="" coords="1509,46,1787,102"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a90d2fdc2df1e9464f57653329ed5ed8c" title="Update the width and x&#45;coordinate, height and y&#45;coordinate of a single shape. " alt="" coords="568,172,816,214"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#acb2e20b19ea7c439cc4ae0bcccfbe84d" title="Set the explicit height of this Drawing. " alt="" coords="866,172,1093,214"/>
+<area shape="rect" id="node13" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aff03bfaa1f628a96840cbdad1da323f8" title="Set the explicit width of this drawing. " alt="" coords="866,238,1093,279"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Set the explicit dimensions of this Drawing. " alt="" coords="1189,238,1415,279"/>
+<area shape="rect" id="node12" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a48a4a44d49cf54821b6cb50adad143c3" title="Set the explicit height of this Drawing. " alt="" coords="1189,172,1415,214"/>
+<area shape="rect" id="node10" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="1521,166,1775,193"/>
+<area shape="rect" id="node11" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aaba87ad07d1574f91ea08f5022caf507" title="Set the explicit dimensions of this Drawing. " alt="" coords="1535,238,1761,279"/>
+<area shape="rect" id="node14" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#acac147e5eb6c93aaa44862c112ee7853" title="Set the explicit width of this Drawing. " alt="" coords="1189,303,1415,344"/>
+</map>

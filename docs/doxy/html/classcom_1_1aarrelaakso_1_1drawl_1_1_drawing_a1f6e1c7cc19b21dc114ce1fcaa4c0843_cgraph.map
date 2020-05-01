@@ -1,0 +1,12 @@
+<map id="com.aarrelaakso.drawl.Drawing.setExplicitDimensions" name="com.aarrelaakso.drawl.Drawing.setExplicitDimensions">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ab9dc87c361a7ffd236c1cee1bc677f12" title="Returns whether this number is greater than the other number. " alt="" coords="302,5,485,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac1dbd016deb958fa7332bf3a777d14e2" title="com.aarrelaakso.drawl.Sisu\lBigDecimal.divide" alt="" coords="577,91,759,132"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="302,123,485,164"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a9fa3ed25aae7717e21bba60b0ce375ed" title="Get the explicit width of this Drawing. " alt="" coords="555,247,781,288"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#acc618a034a3c32a28de43f465fe0d0a1" title="Get the explicit height of this Drawing. " alt="" coords="280,188,507,229"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aad76de7e2c8ced754cc3f98f53f5e692" title="Returns a string representation of this Sisu BigDecimal without an exponent field. " alt="" coords="302,305,485,347"/>
+<area shape="rect" id="node10" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#acd8d9994b3096998bb2a059d2782e883" title="Returns whether this number is less than the other number. " alt="" coords="302,371,485,412"/>
+<area shape="rect" id="node11" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a4ad514df6c27aa8eb865a9dead5a54fd" title="Performs multiplication operation. " alt="" coords="302,436,485,477"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a855e56f2f721da7239fb0f41f42dc705" title="Indicates whether another value is not equal to this SisuBigDecimal. " alt="" coords="577,181,759,223"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a0bec7f1090a853692b13cbf387f8b11a" title="Returns whether this number is equal with the other number. " alt="" coords="829,181,1012,223"/>
+</map>

@@ -1,0 +1,5 @@
+var classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1x_position_1_1explicit =
+[
+    [ "whenAShapeIsCreatedThenItHasAnExplicitCenterXPosition", "classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1x_position_1_1explicit.html#ac22fb1b7744243b03ce0818a7e8226ea", null ],
+    [ "whenAShapeIsCreatedThenItHasAnExplicitLeftXPosition", "classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1x_position_1_1explicit.html#a15739cb1f03746d90ecb41252b68896e", null ]
+];

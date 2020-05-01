@@ -1,0 +1,11 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.isIntegerValue" name="com.aarrelaakso.drawl.SisuBigDecimal.isIntegerValue">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#a505531184271f78c500bd64a838cf259" title="Convert a number to a string for SVG. " alt="" coords="240,107,440,148"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="com.aarrelaakso.drawl.Circle.getSVG" alt="" coords="501,30,742,57"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ae49bfdabbf7177b244a7a0b5ae995fe1" title="Get the SVG for this Drawing. " alt="" coords="494,114,749,141"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="488,171,755,198"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_circle_test.html#a3d3ddec424120354609dc4575583cae3" title="com.aarrelaakso.drawl.test.\lCircleTest.givenOneDefaultCircle" alt="" coords="827,5,1045,47"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="809,71,1063,98"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a3ec0a89518a13eca1db4b7b5179beaa0" title="Write SVG representing this drawing to a file. " alt="" coords="817,123,1055,164"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="1117,101,1340,127"/>
+<area shape="rect" id="node10" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_rectangle_test.html#a51333a653bb8ff90ef9e2491f1f4f565" title="com.aarrelaakso.drawl.test.\lRectangleTest.givenOneDefaultRectangle" alt="" coords="803,188,1069,229"/>
+</map>

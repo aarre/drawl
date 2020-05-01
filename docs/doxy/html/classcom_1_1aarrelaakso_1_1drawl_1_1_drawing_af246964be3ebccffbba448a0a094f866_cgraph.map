@@ -1,0 +1,10 @@
+<map id="com.aarrelaakso.drawl.Drawing.getExplicitToImplicitRatio" name="com.aarrelaakso.drawl.Drawing.getExplicitToImplicitRatio">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ac3064aa40e64c40b079c2e0448780e02" title="Get the ratio of the explicit width of this drawing to the implicit width of its contents. " alt="" coords="280,115,507,156"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac809a1deb4723c852a7737e9a40eb57e" title="Returns whether this number is less or equal to the other number. " alt="" coords="282,180,505,221"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aa6c1b25dee6e289b50c85dd9e03df0f6" title="Returns whether this number is greater or equal to the other number. " alt="" coords="555,5,792,47"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a855e56f2f721da7239fb0f41f42dc705" title="Indicates whether another value is not equal to this SisuBigDecimal. " alt="" coords="862,69,1045,111"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a9fa3ed25aae7717e21bba60b0ce375ed" title="Get the explicit width of this Drawing. " alt="" coords="840,139,1067,180"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#acc618a034a3c32a28de43f465fe0d0a1" title="Get the explicit height of this Drawing. " alt="" coords="560,173,787,215"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac1dbd016deb958fa7332bf3a777d14e2" title="com.aarrelaakso.drawl.Sisu\lBigDecimal.divide" alt="" coords="862,213,1045,255"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a0bec7f1090a853692b13cbf387f8b11a" title="Returns whether this number is equal with the other number. " alt="" coords="1115,69,1297,111"/>
+</map>

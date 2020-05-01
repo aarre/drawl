@@ -1,0 +1,8 @@
+var classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1_given_two_default_shapes =
+[
+    [ "whenYouSetADefaultShapeAboveADefaultShapeItsImplicitYCoordinateIs1", "classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1_given_two_default_shapes.html#a071655e65626b5e711f49aa9f8c1e161", null ],
+    [ "whenYouSetADefaultShapeBelowADefaultShapeItsImplicitYCoordinateIsNeg1", "classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1_given_two_default_shapes.html#a7e2bc9b2686112bf954036b5a0f1d991", null ],
+    [ "whenYouSetAShapeLeftOfADefaultShapeItsImplicitXCoordinateIsNeg1", "classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1_given_two_default_shapes.html#a3d6ab637495d3c3e14d582624548d235", null ],
+    [ "whenYouSetAShapeRightOfADefaultShapeItsImplicitXCoordinateIs1", "classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1_given_two_default_shapes.html#abb6400d209b04dc8ff756af1c2c37f24", null ],
+    [ "whenYouSetAShapeRightOfADefaultShapeThenYouCanRecallThatInformation", "classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1_given_two_default_shapes.html#a09a19ae978532eeb941ccfc4ae9503da", null ]
+];

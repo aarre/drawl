@@ -1,0 +1,6 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitXMaximum" name="com.aarrelaakso.drawl.Shape.getImplicitXMaximum">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a09e1586ce85c1d964cc3b7ce94bc5d4c" title="Set this Shape&#39;s neighbor to the left (this Shape is to the right of that one). " alt="" coords="269,63,485,105"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="607,5,829,32"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_rectangle.html#ad46017bf35b0af1c234eddbfd5d25f4b" title="com.aarrelaakso.drawl.test.\lDrawingTestRectangle.svgWhenASquare100\lDrawingHasTwoAdjacentRectanglesThenTheSVGIsCorrect" alt="" coords="533,56,903,112"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1_given_three_default_shapes.html#a81294df3b65f82f0bc15c273374128e7" title="com.aarrelaakso.drawl.test.\lShapeTest.GivenThreeDefaultShapes.when\lYouSetThreeDefaultShapesAdjacentToOneAnother\lThenNoExceptionIsThrown" alt="" coords="559,137,877,207"/>
+</map>

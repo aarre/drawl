@@ -1,0 +1,4 @@
+var classcom_1_1aarrelaakso_1_1drawl_1_1_circle_test_1_1_given_three_default_circles =
+[
+    [ "whenYouSetThreeDefaultShapesAdjacentToOneAnotherThenNoExceptionIsThrown", "classcom_1_1aarrelaakso_1_1drawl_1_1_circle_test_1_1_given_three_default_circles.html#a2c37144cbecd6046c09b0a01fb167879", null ]
+];

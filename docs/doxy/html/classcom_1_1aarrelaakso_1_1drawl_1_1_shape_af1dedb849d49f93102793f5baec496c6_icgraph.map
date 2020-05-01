@@ -1,0 +1,7 @@
+<map id="com.aarrelaakso.drawl.Shape.setImplicitXPosition" name="com.aarrelaakso.drawl.Shape.setImplicitXPosition">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad14fa860ab74cfa90815f56cf4c3ecf" title="Set this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="269,6,485,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a09e1586ce85c1d964cc3b7ce94bc5d4c" title="Set this Shape&#39;s neighbor to the left (this Shape is to the right of that one). " alt="" coords="269,71,485,113"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="594,5,817,32"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_circle.html#a9300c53574faebbe307fa6e36bb784af" title="com.aarrelaakso.drawl.test.\lDrawingTestCircle.radiusExplicit\lWhenASquare100DrawingHasTwoAdjacentCircles\lThenTheirExplicitRadiiAreCorrect" alt="" coords="547,57,863,127"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_rectangle.html#a79bc18d3888be3686674d35db4211a93" title="com.aarrelaakso.drawl.test.\lDrawingTestRectangle.svgWhenASquare100\lDrawingHasTwoAdjacentCirclesThenTheSVGIsCorrect" alt="" coords="533,152,877,208"/>
+</map>

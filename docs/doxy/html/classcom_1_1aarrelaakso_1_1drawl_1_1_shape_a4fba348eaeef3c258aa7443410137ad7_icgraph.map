@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.Shape.getExplicitHalfWidth" name="com.aarrelaakso.drawl.Shape.getExplicitHalfWidth">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a4e26548d18a063bff6bb0781526b909f" title="com.aarrelaakso.drawl.Shape.get\lExplicitXPositionLeft" alt="" coords="269,31,485,73"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="561,5,828,32"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape_test_protected_1_1_x_position_1_1_explicit.html#a09304eac54d935cbfd17126b1a14280a" title="com.aarrelaakso.drawl.Shape\lTestProtected.XPosition.Explicit.when\lAShapeIsCreatedThenItHasAnExplicitLeftXPosition" alt="" coords="533,56,856,112"/>
+</map>

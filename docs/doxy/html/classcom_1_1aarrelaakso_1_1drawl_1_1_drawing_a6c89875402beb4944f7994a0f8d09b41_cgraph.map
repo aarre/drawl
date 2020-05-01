@@ -1,0 +1,8 @@
+<map id="com.aarrelaakso.drawl.Drawing.getImplicitWidth" name="com.aarrelaakso.drawl.Drawing.getImplicitWidth">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aa6c1b25dee6e289b50c85dd9e03df0f6" title="Returns whether this number is greater or equal to the other number. " alt="" coords="280,5,517,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a44ef5723298dfa0e8fc62506fdc059cd" title="Performs subtraction operation. " alt="" coords="307,71,490,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="307,136,490,177"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ab9dc87c361a7ffd236c1cee1bc677f12" title="Returns whether this number is greater than the other number. " alt="" coords="307,201,490,243"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a0c8a57da15ab119fd46af9292ccfe028" title="Returns whether this number is equal with another number. " alt="" coords="307,267,490,308"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#acd8d9994b3096998bb2a059d2782e883" title="Returns whether this number is less than the other number. " alt="" coords="307,332,490,373"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="com.aarrelaakso.drawl.Drawing.add" name="com.aarrelaakso.drawl.Drawing.add">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="334,5,557,32"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_shape_protected.html#aebde19c5d6b129aadffe848337c84118" title="com.aarrelaakso.drawl.Drawing\lTestShapeProtected.thenTheSVGGenerated\lByAShapeContainsXAndYCoordinates" alt="" coords="305,56,585,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape_test_protected_1_1_y_position_1_1_explicit.html#a6b46fe8979b50d31f4cdef54d99209aa" title="com.aarrelaakso.drawl.Shape\lTestProtected.YPosition.Explicit.when\lAShapeIsCreatedThenItHasAnExplicitTopXPosition" alt="" coords="284,136,607,192"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_shape_public_1_1_fill.html#a4ec65789b456650fb6b88ea3abcda097" title="com.aarrelaakso.drawl.test.\lDrawingTestShapePublic.Fill.when\lTheFillIsSetThenItAppearsInTheSVG" alt="" coords="326,216,565,272"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="com.aarrelaakso.drawl.test.CircleTestPublic.givenOneDefaultCircle" name="com.aarrelaakso.drawl.test.CircleTestPublic.givenOneDefaultCircle">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="com.aarrelaakso.drawl.Circle.getSVG" alt="" coords="271,46,512,73"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a7aaa309b8888df8c946abb6bae047d3c" title="Get the explicit radius of this Circle. " alt="" coords="560,5,773,47"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#a505531184271f78c500bd64a838cf259" title="Convert a number to a string for SVG. " alt="" coords="567,71,767,112"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_big_decimal_math.html#ae49289968d8e2b135bf4598a75fcde7f" title="Test whether a BigDecimal is a mathematical integer. " alt="" coords="821,71,1008,112"/>
+</map>

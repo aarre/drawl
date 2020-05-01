@@ -1,0 +1,11 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitWidth" name="com.aarrelaakso.drawl.Shape.getImplicitWidth">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aba4ebce9c32944624e536d42aba4ea75" title="com.aarrelaakso.drawl.Shape.get\lImplicitHalfWidth" alt="" coords="269,138,485,179"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a68c1f1c22b21a4f2b2f304ad126b7dc2" title="Get the implicit maximum (rightmost) x&#45;position of this Shape. " alt="" coords="533,21,749,62"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a09e1586ce85c1d964cc3b7ce94bc5d4c" title="Set this Shape&#39;s neighbor to the left (this Shape is to the right of that one). " alt="" coords="797,63,1013,105"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a5e0032e5ce7a6234319b93d8817a8e60" title="Get the implicit minimum (leftmost) x&#45;position of this Shape. " alt="" coords="533,138,749,179"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad14fa860ab74cfa90815f56cf4c3ecf" title="Set this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="797,154,1013,195"/>
+<area shape="rect" id="node10" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ad0505474f6ef51f26512e507e1e572b5" title="Get the implicit x position of the left edge of this Shape. " alt="" coords="533,255,749,297"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="1135,5,1357,32"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_rectangle.html#ad46017bf35b0af1c234eddbfd5d25f4b" title="com.aarrelaakso.drawl.test.\lDrawingTestRectangle.svgWhenASquare100\lDrawingHasTwoAdjacentRectanglesThenTheSVGIsCorrect" alt="" coords="1061,56,1431,112"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_1_1_given_three_default_shapes.html#a81294df3b65f82f0bc15c273374128e7" title="com.aarrelaakso.drawl.test.\lShapeTest.GivenThreeDefaultShapes.when\lYouSetThreeDefaultShapesAdjacentToOneAnother\lThenNoExceptionIsThrown" alt="" coords="1087,137,1405,207"/>
+</map>

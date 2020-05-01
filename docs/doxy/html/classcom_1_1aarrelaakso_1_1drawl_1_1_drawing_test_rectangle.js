@@ -1,0 +1,26 @@
+var classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle =
+[
+    [ "[static initializer]", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a671171e1fc5bb5d26751d44cc268b1c7", null ],
+    [ "givenADrawing", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a0d735636e0e3ac11618d49b68a3f0c99", null ],
+    [ "givenTheeDefaultRectangles", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#af23852987b75f645e666f955ce267f90", null ],
+    [ "heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitHeightScalesItsExplicitWidthToFit", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a1343c2caa457d67ffb08e83cafe611c8", null ],
+    [ "heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitWidthScalesItsExplicitHeightToFit", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a8cc48d17df37f604e3d96700968d6e1d", null ],
+    [ "heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect01", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a02fdfa8931edf367fb3d1cb5e5a9500a", null ],
+    [ "heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect02", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a1cbe5c5ef648c63cd6604e47ba10d00c", null ],
+    [ "heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect03", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#af6c5fab95f1667e5145a30f76cd3571d", null ],
+    [ "lengthWhenADrawingHasOneShapeThenItsLengthIs1", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a4c920f7489ab32e0d43f651a9a884907", null ],
+    [ "svgWhenASquare100DrawingHasTwoAdjacentRectanglesThenTheSVGIsCorrect", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a39dce6294d67dd05755a81f7215d646a", null ],
+    [ "svgWhenYouCallSVGWithoutParametersItDoesNotThrowAnException", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#afb86063e34ff643e38b05fa9b5698a9c", null ],
+    [ "thenTheSVGGeneratedByAShapeContainsXAndYCoordinates", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#ae83867714cf83d87629c2c8ccc3ca815", null ],
+    [ "widthExplicitWhenADrawingHasOneDefaultShapeThenTheExplicitWidthPerObjectIsTheExplicitWidthOfTheDrawing", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#adf976ae8348ca90c215ab2e1bf9d6b2d", null ],
+    [ "widthExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitWidthIsTheExplicitWidthOfTheDrawing", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a7e7fcd84198b33bf23aa6ccfea08a281", null ],
+    [ "widthExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitWidthsAreCorrect", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#aab5fb45b776e6a0c00a2f08a7c5fd053", null ],
+    [ "yPositionExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitYPositionIsCorrect", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a9c7de2c0d1fabf14bd921003443d9019", null ],
+    [ "yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01a", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a909780a4b5359fd89c639e15888c984f", null ],
+    [ "yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01b", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a63743e9f6fb39b608df9862fc18345a5", null ],
+    [ "yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrectWithSetExplicitDimensions", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a79cf645509b3e2949bb9774e809d0a0f", null ],
+    [ "drawing", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a6f1b889c733202f1576b454512a108e7", null ],
+    [ "shape1", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#ae9c5d8930ff58dbe1189a689066c5348", null ],
+    [ "shape2", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#aeb7c172c6a343a41c938005db603d82a", null ],
+    [ "shape3", "classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle.html#a25f749a15a8dd07993fe0c90ef5342e0", null ]
+];

@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.Drawing.getImplicitHeightOfContents" name="com.aarrelaakso.drawl.Drawing.getImplicitHeightOfContents">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a0a7dcc4ac1f58032fda66f644256c3c3" title="Get the maximum y&#45;coordinate of this drawing in implicit terms. " alt="" coords="280,5,507,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a43686f8212a3a752c9a2d15ba5a15cc9" title="Get the minimum y&#45;coordinate of this drawing in implicit terms. " alt="" coords="280,71,507,112"/>
+</map>

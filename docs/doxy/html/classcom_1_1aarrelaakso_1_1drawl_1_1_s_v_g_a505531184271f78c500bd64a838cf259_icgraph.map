@@ -1,0 +1,10 @@
+<map id="com.aarrelaakso.drawl.SVG.toString" name="com.aarrelaakso.drawl.SVG.toString">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="266,100,507,127"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ae49bfdabbf7177b244a7a0b5ae995fe1" title="Get the SVG for this Drawing. " alt="" coords="259,165,514,192"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="253,216,520,243"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_circle_test_1_1_given_one_default_shape_s_v_g_subclass.html#ae2d897744d964362566a3a31d9a39964" title="com.aarrelaakso.drawl.test.\lCircleTest.GivenOneDefaultShape\lSVGSubclass.thenSVGContainsCircle" alt="" coords="590,5,837,61"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_circle.html#a87f9715965e1e8d9f97c5afba8734ad3" title="com.aarrelaakso.drawl.test.\lDrawingTestCircle.svgGeneratedBy\lADrawingWithACircleContainsTheStringCircle" alt="" coords="568,85,859,141"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="586,165,841,192"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a3ec0a89518a13eca1db4b7b5179beaa0" title="Write SVG representing this drawing to a file. " alt="" coords="595,217,832,258"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="907,195,1129,221"/>
+</map>

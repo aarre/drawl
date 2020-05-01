@@ -1,0 +1,6 @@
+<map id="com.aarrelaakso.drawl.RectangleTestProtected.GivenAsymmetricRectangles.whenAnAsymmetricRectangleIsCreatedWithSisuBigDecimalDimensionsThenItsImplicitDimensionsAreCorrect" name="com.aarrelaakso.drawl.RectangleTestProtected.GivenAsymmetricRectangles.whenAnAsymmetricRectangleIsCreatedWithSisuBigDecimalDimensionsThenItsImplicitDimensionsAreCorrect">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="414,5,597,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af6a043538a5aba4f4b3eb7278206a841" title="Get the implicit width of this Shape. " alt="" coords="397,71,613,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aad76de7e2c8ced754cc3f98f53f5e692" title="Returns a string representation of this Sisu BigDecimal without an exponent field. " alt="" coords="414,136,597,177"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a76f8b3c8365af3e5800ad06113b3e507" title="Get the implicit height of this Shape. " alt="" coords="397,201,613,243"/>
+</map>

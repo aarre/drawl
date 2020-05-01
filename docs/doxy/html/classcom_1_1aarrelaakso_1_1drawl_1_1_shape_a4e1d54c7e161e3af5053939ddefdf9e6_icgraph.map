@@ -1,0 +1,7 @@
+<map id="com.aarrelaakso.drawl.Shape.getStroke" name="com.aarrelaakso.drawl.Shape.getStroke">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="282,100,523,127"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="269,151,536,177"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_circle_protected.html#adeb4d076f6e25eb58d4348224f2cf132" title="com.aarrelaakso.drawl.Drawing\lTestCircleProtected.svgGenerated\lByADrawingWithACircleContainsTheStringCircle" alt="" coords="584,5,891,61"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_circle_test_public_1_1_given_one_default_shape_s_v_g_subclass.html#a1dbbfffc5c4edc8bb9f0769a70bec435" title="com.aarrelaakso.drawl.test.\lCircleTestPublic.GivenOneDefault\lShapeSVGSubclass.thenSVGContainsCircle" alt="" coords="595,85,879,141"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_circle_public.html#adb0812dda7613ebb24fe49725a7179c4" title="com.aarrelaakso.drawl.test.\lDrawingTestCirclePublic.svgGenerated\lByADrawingWithACircleIsExactlyAsExpected" alt="" coords="592,165,883,221"/>
+</map>

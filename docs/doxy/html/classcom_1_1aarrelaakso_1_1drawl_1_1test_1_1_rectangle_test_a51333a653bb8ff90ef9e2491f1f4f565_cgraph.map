@@ -1,0 +1,9 @@
+<map id="com.aarrelaakso.drawl.test.RectangleTestPublic.givenOneDefaultRectangle" name="com.aarrelaakso.drawl.test.RectangleTestPublic.givenOneDefaultRectangle">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="320,111,587,138"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a423c78d3daaa86ea3752effd55ec8250" title="com.aarrelaakso.drawl.Shape.get\lImplicitHalfHeight" alt="" coords="635,5,851,47"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#a505531184271f78c500bd64a838cf259" title="Convert a number to a string for SVG. " alt="" coords="643,71,843,112"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#addb6061150e48a22f65ac3c4d8eb6295" title="Get the explicit width of this Shape. " alt="" coords="635,136,851,177"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ad445fb6d0f022ecca30f08034464417f" title="Get the explicit height of this Shape. " alt="" coords="635,201,851,243"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a36e4e6264d35fccac15d228899bc38af" title="Get the implicit height of this Shape. " alt="" coords="899,5,1115,47"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_big_decimal_math.html#ae49289968d8e2b135bf4598a75fcde7f" title="Test whether a BigDecimal is a mathematical integer. " alt="" coords="913,71,1100,112"/>
+</map>

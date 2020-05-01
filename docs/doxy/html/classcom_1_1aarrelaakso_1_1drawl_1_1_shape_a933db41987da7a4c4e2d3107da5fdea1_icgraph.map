@@ -1,0 +1,7 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitYPosition" name="com.aarrelaakso.drawl.Shape.getImplicitYPosition">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a0f789969d5f9d8b04ae57671855cb6ef" title="Get the implicit maximum (topmost) y&#45;position of this Circle. " alt="" coords="271,5,484,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#afb3be6de43fc966e41ccb9e7786eecbe" title="Get the implicit maximum (topmost) y&#45;position of this Shape. " alt="" coords="269,71,485,112"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a89307f9500f936da1444e63e6644ffe8" title="Get the implicit minimum (bottommost) y&#45;position of this Shape. " alt="" coords="269,136,485,177"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a942b3cf3365498dc1ac6b0309ce33b86" title="Set this Shape above another Shape. " alt="" coords="533,71,749,112"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa0ec0030515b5096820e4dd030c0b320" title="Set this circle below another circle. " alt="" coords="533,136,749,177"/>
+</map>

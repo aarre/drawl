@@ -1,0 +1,8 @@
+<map id="com.aarrelaakso.drawl.test.DrawingTestShapePublic.heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect03" name="com.aarrelaakso.drawl.test.DrawingTestShapePublic.heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect03">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aed9db04cdf1516cc87d0599b99fb6b02" title="Performs addition operation. " alt="" coords="368,5,551,47"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="368,71,551,112"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aad76de7e2c8ced754cc3f98f53f5e692" title="Returns a string representation of this Sisu BigDecimal without an exponent field. " alt="" coords="368,136,551,177"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac05b8909bde406486e3fb45e154c5ff4" title="com.aarrelaakso.drawl.Sisu\lBigDecimal.toString" alt="" coords="368,201,551,243"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a67a8c41e95f12142516f7a8f8736386a" title="Prevents construction from outside. " alt="" coords="599,39,785,80"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aa1fdb9a9086d8a7a0c75f7b2acbf4931" title="Converts this number to the full, containing everything that can be restored. " alt="" coords="601,201,783,243"/>
+</map>

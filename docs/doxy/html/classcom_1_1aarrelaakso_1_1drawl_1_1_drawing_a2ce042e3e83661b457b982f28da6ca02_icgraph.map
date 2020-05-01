@@ -1,0 +1,12 @@
+<map id="com.aarrelaakso.drawl.Drawing.setExplicitHeightInternal" name="com.aarrelaakso.drawl.Drawing.setExplicitHeightInternal">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Set the explicit dimensions of this Drawing. " alt="" coords="601,165,827,207"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#acb2e20b19ea7c439cc4ae0bcccfbe84d" title="Set the explicit height of this Drawing. " alt="" coords="280,85,507,127"/>
+<area shape="rect" id="node10" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aff03bfaa1f628a96840cbdad1da323f8" title="Set the explicit width of this drawing. " alt="" coords="280,203,507,244"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="933,114,1187,141"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aaba87ad07d1574f91ea08f5022caf507" title="Set the explicit dimensions of this Drawing. " alt="" coords="947,165,1173,207"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape_test_1_1y_position_1_1explicit.html#a571872ee76a27706e250306c5172c063" title="com.aarrelaakso.drawl.Shape\lTest.yPosition.explicit.whenAShape\lIsCreatedThenItHasAnExplicitTopXPosition" alt="" coords="921,231,1199,287"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="1247,114,1469,141"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a48a4a44d49cf54821b6cb50adad143c3" title="Set the explicit height of this Drawing. " alt="" coords="601,5,827,47"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_shape_1_1_x_position_1_1_explicit.html#a1a9bd7f22e46f7a6e99bfe95c40dc962" title="Test that, when a Drawing has one adjacent Shape, then its x position is correct. ..." alt="" coords="555,71,873,141"/>
+<area shape="rect" id="node11" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#acac147e5eb6c93aaa44862c112ee7853" title="Set the explicit width of this Drawing. " alt="" coords="601,231,827,272"/>
+</map>

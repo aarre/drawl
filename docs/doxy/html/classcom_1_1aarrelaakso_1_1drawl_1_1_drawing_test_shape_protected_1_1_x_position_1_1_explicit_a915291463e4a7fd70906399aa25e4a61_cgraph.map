@@ -1,0 +1,6 @@
+<map id="com.aarrelaakso.drawl.DrawingTestShapeProtected.XPosition.Explicit.whenADrawingHasThreeAdjacentDefaultShapesThenTheirExplicitXPositionsAreCorrectMaxSize" name="com.aarrelaakso.drawl.DrawingTestShapeProtected.XPosition.Explicit.whenADrawingHasThreeAdjacentDefaultShapesThenTheirExplicitXPositionsAreCorrectMaxSize">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="384,5,567,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac1dbd016deb958fa7332bf3a777d14e2" title="com.aarrelaakso.drawl.Sisu\lBigDecimal.divide" alt="" coords="384,71,567,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a4ad514df6c27aa8eb865a9dead5a54fd" title="Performs multiplication operation. " alt="" coords="384,136,567,177"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ad797c1167dea95aadaa653ee7f3cbf91" title="Converts this BigDecimal to a Float. " alt="" coords="384,201,567,243"/>
+</map>

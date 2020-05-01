@@ -1,0 +1,7 @@
+<map id="com.aarrelaakso.drawl.Drawing.getSVG" name="com.aarrelaakso.drawl.Drawing.getSVG">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="308,73,563,99"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a3ec0a89518a13eca1db4b7b5179beaa0" title="Write SVG representing this drawing to a file. " alt="" coords="317,5,554,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="639,10,862,37"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_shape_protected.html#aebde19c5d6b129aadffe848337c84118" title="com.aarrelaakso.drawl.Drawing\lTestShapeProtected.thenTheSVGGenerated\lByAShapeContainsXAndYCoordinates" alt="" coords="611,61,891,117"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_shape_public_1_1_fill.html#a4ec65789b456650fb6b88ea3abcda097" title="com.aarrelaakso.drawl.test.\lDrawingTestShapePublic.Fill.when\lTheFillIsSetThenItAppearsInTheSVG" alt="" coords="631,141,870,197"/>
+</map>

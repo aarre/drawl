@@ -1,0 +1,12 @@
+<map id="com.aarrelaakso.drawl.Drawing.writeToFile" name="com.aarrelaakso.drawl.Drawing.writeToFile">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ae49bfdabbf7177b244a7a0b5ae995fe1" title="Get the SVG for this Drawing. " alt="" coords="291,209,545,235"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a9fa3ed25aae7717e21bba60b0ce375ed" title="Get the explicit width of this Drawing. " alt="" coords="868,201,1095,243"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#a6658c22ded498ee41fdcf637a3cc9dab" title="Convert a number to a string for SVG. " alt="" coords="607,104,807,145"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#acc618a034a3c32a28de43f465fe0d0a1" title="Get the explicit height of this Drawing. " alt="" coords="593,263,820,304"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ad797c1167dea95aadaa653ee7f3cbf91" title="Converts this BigDecimal to a Float. " alt="" coords="890,136,1073,177"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a91b8c8917efe62714376acabd7659a00" title="Test whether a BigDecimal is a mathematical integer. " alt="" coords="890,5,1073,47"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a8d02465f77c81ac072066766db81d196" title="Converts this BigDecimal to an int. " alt="" coords="890,71,1073,112"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a855e56f2f721da7239fb0f41f42dc705" title="Indicates whether another value is not equal to this SisuBigDecimal. " alt="" coords="890,267,1073,308"/>
+<area shape="rect" id="node11" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac1dbd016deb958fa7332bf3a777d14e2" title="com.aarrelaakso.drawl.Sisu\lBigDecimal.divide" alt="" coords="890,332,1073,373"/>
+<area shape="rect" id="node10" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a0bec7f1090a853692b13cbf387f8b11a" title="Returns whether this number is equal with the other number. " alt="" coords="1143,267,1325,308"/>
+</map>

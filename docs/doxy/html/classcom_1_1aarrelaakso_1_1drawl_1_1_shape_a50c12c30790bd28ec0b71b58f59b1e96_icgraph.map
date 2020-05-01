@@ -1,0 +1,10 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitXPositionCenter" name="com.aarrelaakso.drawl.Shape.getImplicitXPositionCenter">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#acb7e453b97a2800eaf52d209f9759bf6" title="Get the implicit maximum (rightmost) x&#45;position of this Circle. " alt="" coords="271,5,484,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ac7ed577bb645a1f136b221feda9e6dfc" title="Get the implicit minimum (leftmost) x&#45;position of this Circle. " alt="" coords="271,71,484,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a3bde9d5b2cc582ddb6c521b122c40ff8" title="Get the implicit maximum (rightmost) x&#45;position of this Shape. " alt="" coords="269,136,485,177"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af0ceac29118047c73bd3ff308a71c36f" title="Get the implicit minimum (leftmost) x&#45;position of this Shape. " alt="" coords="269,201,485,243"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ad9b2aee9937d5f034f7f4a2a1d979260" title="Get the implicit x position of the left edge of this Shape. " alt="" coords="269,267,485,308"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a09e1586ce85c1d964cc3b7ce94bc5d4c" title="Set this Shape&#39;s neighbor to the left (this Shape is to the right of that one). " alt="" coords="533,136,749,177"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_public_1_1_given_three_default_shapes.html#af25343c902b6835e74652917a22f438b" title="com.aarrelaakso.drawl.test.\lShapeTestPublic.GivenThreeDefault\lShapes.whenYouSetThreeDefaultShapesAdjacent\lToOneAnotherThenNoExceptionIsThrown" alt="" coords="797,121,1112,192"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad14fa860ab74cfa90815f56cf4c3ecf" title="Set this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="533,201,749,243"/>
+</map>

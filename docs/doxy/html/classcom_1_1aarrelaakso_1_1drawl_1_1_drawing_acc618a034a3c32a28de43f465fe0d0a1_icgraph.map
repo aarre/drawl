@@ -1,0 +1,15 @@
+<map id="com.aarrelaakso.drawl.Drawing.getExplicitHeight" name="com.aarrelaakso.drawl.Drawing.getExplicitHeight">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ac3064aa40e64c40b079c2e0448780e02" title="Get the ratio of the explicit width of this drawing to the implicit width of its contents. " alt="" coords="294,308,521,349"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a418641b3099d2070ee0fa69dc7b35af1" title="Set the explicit height of this Drawing. " alt="" coords="980,329,1207,371"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="980,405,1207,447"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ae49bfdabbf7177b244a7a0b5ae995fe1" title="Get the SVG for this Drawing. " alt="" coords="280,75,535,102"/>
+<area shape="rect" id="node13" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Set the explicit dimensions of this Drawing. " alt="" coords="294,169,521,211"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#af246964be3ebccffbba448a0a094f866" title="Get the ratio of explicit measures to implicit measures for this Drawing as a whole. " alt="" coords="631,308,857,349"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aaba87ad07d1574f91ea08f5022caf507" title="Set the explicit dimensions of this Drawing. " alt="" coords="980,243,1207,284"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="617,75,871,102"/>
+<area shape="rect" id="node12" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a3ec0a89518a13eca1db4b7b5179beaa0" title="Write SVG representing this drawing to a file. " alt="" coords="625,5,863,47"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="982,10,1205,37"/>
+<area shape="rect" id="node10" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_shape_protected.html#aebde19c5d6b129aadffe848337c84118" title="com.aarrelaakso.drawl.Drawing\lTestShapeProtected.thenTheSVGGenerated\lByAShapeContainsXAndYCoordinates" alt="" coords="953,141,1233,197"/>
+<area shape="rect" id="node11" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_shape_public_1_1_fill.html#a4ec65789b456650fb6b88ea3abcda097" title="com.aarrelaakso.drawl.test.\lDrawingTestShapePublic.Fill.when\lTheFillIsSetThenItAppearsInTheSVG" alt="" coords="974,61,1213,117"/>
+<area shape="rect" id="node14" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape_test_protected_1_1_y_position_1_1_explicit.html#a6b46fe8979b50d31f4cdef54d99209aa" title="com.aarrelaakso.drawl.Shape\lTestProtected.YPosition.Explicit.when\lAShapeIsCreatedThenItHasAnExplicitTopXPosition" alt="" coords="583,227,905,283"/>
+</map>

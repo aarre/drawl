@@ -1,0 +1,7 @@
+<map id="com.aarrelaakso.drawl.Circle.setExplicitRadius" name="com.aarrelaakso.drawl.Circle.setExplicitRadius">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="267,60,508,87"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ae33de9e5435733a1c15395ef19585c44" title="Set the height of this Circle to a fixed value. " alt="" coords="281,111,494,153"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ac32b09f9e39c3b559f117a1f0a10abe1" title="Set the width of this Circle to a fixed value. " alt="" coords="281,177,494,218"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_circle_test_1_1_given_one_default_shape_s_v_g_subclass.html#ae2d897744d964362566a3a31d9a39964" title="com.aarrelaakso.drawl.test.\lCircleTest.GivenOneDefaultShape\lSVGSubclass.thenSVGContainsCircle" alt="" coords="578,5,825,61"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_circle.html#a87f9715965e1e8d9f97c5afba8734ad3" title="com.aarrelaakso.drawl.test.\lDrawingTestCircle.svgGeneratedBy\lADrawingWithACircleContainsTheStringCircle" alt="" coords="556,85,847,141"/>
+</map>

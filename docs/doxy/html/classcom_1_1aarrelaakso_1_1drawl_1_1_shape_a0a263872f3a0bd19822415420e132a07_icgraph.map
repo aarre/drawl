@@ -1,0 +1,6 @@
+<map id="com.aarrelaakso.drawl.Shape.getExplicitHeight" name="com.aarrelaakso.drawl.Shape.getExplicitHeight">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="907,7,1173,34"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa3857406bc4f6c7373f1cd7cbe16dfd9" title="com.aarrelaakso.drawl.Shape.get\lExplicitHalfHeight" alt="" coords="324,29,540,71"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle_protected_1_1_given_asymmetric_rectangles.html#aae09832de20326dfbd1d7754afb91324" title="com.aarrelaakso.drawl.Drawing\lTestRectangleProtected.GivenAsymmetric\lRectangles.whenAnAsymmetricRectangleIsCreated\lThenItsExplicitDimensionsAreCorrect" alt="" coords="269,95,595,165"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af5d7293539d67234c9941e6abc3e642b" title="com.aarrelaakso.drawl.Shape.get\lExplicitYPositionTop" alt="" coords="643,29,859,71"/>
+</map>

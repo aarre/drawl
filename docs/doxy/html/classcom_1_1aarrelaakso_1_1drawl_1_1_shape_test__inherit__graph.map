@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.test.ShapeTestPublic" name="com.aarrelaakso.drawl.test.ShapeTestPublic">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle_test.html" title="{com.aarrelaakso.drawl.test.CircleTestPublic\n|~ shape1\l~ shape2\l~ shape3\l|~ givenCircles()\l}" alt="" coords="5,175,223,281"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle_test.html" title="{com.aarrelaakso.drawl.test.RectangleTestPublic\n|~ shape1\l~ shape2\l~ shape3\l|~ givenRectangles()\l}" alt="" coords="247,175,490,281"/>
+</map>

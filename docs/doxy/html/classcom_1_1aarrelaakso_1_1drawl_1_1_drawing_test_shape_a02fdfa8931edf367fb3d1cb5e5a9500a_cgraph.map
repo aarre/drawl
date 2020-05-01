@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.test.DrawingTestShapePublic.heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect01" name="com.aarrelaakso.drawl.test.DrawingTestShapePublic.heightExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitHeightsAreCorrect01">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aed9db04cdf1516cc87d0599b99fb6b02" title="Performs addition operation. " alt="" coords="368,5,551,47"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="368,71,551,112"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a67a8c41e95f12142516f7a8f8736386a" title="Prevents construction from outside. " alt="" coords="599,39,785,80"/>
+</map>

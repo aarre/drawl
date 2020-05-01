@@ -1,0 +1,3 @@
+<map id="com.aarrelaakso.drawl.test.CircleTestPublic.GivenTwoDefaultCircles" name="com.aarrelaakso.drawl.test.CircleTestPublic.GivenTwoDefaultCircles">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape_test_1_1_given_two_default_shapes.html" title="{com.aarrelaakso.drawl.Shape\lTest.GivenTwoDefaultShapes\n||~ whenYouSetADefaultShapeAbove\lADefaultShapeItsImplicitYCoordinateIs1()\l~ whenYouSetADefaultShapeBelow\lADefaultShapeItsImplicitYCoordinate\lIsNeg1()\l~ whenYouSetAShapeLeftOfADefault\lShapeItsImplicitXCoordinateIsNeg1()\l~ whenYouSetAShapeRightOfADefault\lShapeItsImplicitXCoordinateIs1()\l~ whenYouSetAShapeRightOfADefault\lShapeThenYouCanRecallThatInformation()\l}" alt="" coords="5,5,276,244"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="com.aarrelaakso.drawl.Shape.getExplicitWidth" name="com.aarrelaakso.drawl.Shape.getExplicitWidth">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="935,5,1201,32"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a4fba348eaeef3c258aa7443410137ad7" title="com.aarrelaakso.drawl.Shape.get\lExplicitHalfWidth" alt="" coords="324,57,540,98"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle_protected_1_1_given_asymmetric_rectangles.html#aae09832de20326dfbd1d7754afb91324" title="com.aarrelaakso.drawl.Drawing\lTestRectangleProtected.GivenAsymmetric\lRectangles.whenAnAsymmetricRectangleIsCreated\lThenItsExplicitDimensionsAreCorrect" alt="" coords="269,122,595,193"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a4e26548d18a063bff6bb0781526b909f" title="com.aarrelaakso.drawl.Shape.get\lExplicitXPositionLeft" alt="" coords="643,57,859,98"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape_test_protected_1_1_x_position_1_1_explicit.html#a09304eac54d935cbfd17126b1a14280a" title="com.aarrelaakso.drawl.Shape\lTestProtected.XPosition.Explicit.when\lAShapeIsCreatedThenItHasAnExplicitLeftXPosition" alt="" coords="907,56,1229,112"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.Shape.setImplicitXPositionCenter" name="com.aarrelaakso.drawl.Shape.setImplicitXPositionCenter">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad14fa860ab74cfa90815f56cf4c3ecf" title="Set this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="269,5,485,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a09e1586ce85c1d964cc3b7ce94bc5d4c" title="Set this Shape&#39;s neighbor to the left (this Shape is to the right of that one). " alt="" coords="269,71,485,112"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_shape_test_public_1_1_given_three_default_shapes.html#af25343c902b6835e74652917a22f438b" title="com.aarrelaakso.drawl.test.\lShapeTestPublic.GivenThreeDefault\lShapes.whenYouSetThreeDefaultShapesAdjacent\lToOneAnotherThenNoExceptionIsThrown" alt="" coords="533,56,848,127"/>
+</map>

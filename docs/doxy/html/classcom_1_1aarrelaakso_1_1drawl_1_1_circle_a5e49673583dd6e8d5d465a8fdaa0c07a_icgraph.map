@@ -1,0 +1,12 @@
+<map id="com.aarrelaakso.drawl.Circle.getImplicitRadius" name="com.aarrelaakso.drawl.Circle.getImplicitRadius">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ab8b667e2aac30135e9b184292ff49614" title="Get the implicit diameter of this Circle. " alt="" coords="316,37,529,79"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ad3e98b046afb89337e4c23933352a257" title="Get the implicit maximum (rightmost) x&#45;position of this Circle. " alt="" coords="316,103,529,144"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ac3535e4f3a586ac152b22ec1c0eca616" title="Get the implicit minimum (leftmost) x&#45;position of this Circle. " alt="" coords="316,168,529,209"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a0f789969d5f9d8b04ae57671855cb6ef" title="Get the implicit maximum (topmost) y&#45;position of this Circle. " alt="" coords="316,233,529,275"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="302,299,543,326"/>
+<area shape="rect" id="node11" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_circle_test_1_1_given_one_default_circle.html#a32af4e643e8ce6d38b65e44413180fb4" title="com.aarrelaakso.drawl.test.\lCircleTest.GivenOneDefaultCircle.then\lYouCanSetTheRadiusOfACircleToBeTheSameAs\lTheRadiusOfAnotherCircle" alt="" coords="267,351,579,421"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a608c7580569337ea66a306844393b5b0" title="Get the implicit height of this Circle. " alt="" coords="665,5,879,47"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ad92d707428e62c5f6000acbb91c8e7d8" title="Get the implicit width of this Circle. " alt="" coords="665,71,879,112"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_circle_test_1_1_given_one_default_shape_s_v_g_subclass.html#ae2d897744d964362566a3a31d9a39964" title="com.aarrelaakso.drawl.test.\lCircleTest.GivenOneDefaultShape\lSVGSubclass.thenSVGContainsCircle" alt="" coords="649,245,895,301"/>
+<area shape="rect" id="node10" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_circle.html#a87f9715965e1e8d9f97c5afba8734ad3" title="com.aarrelaakso.drawl.test.\lDrawingTestCircle.svgGeneratedBy\lADrawingWithACircleContainsTheStringCircle" alt="" coords="627,325,917,381"/>
+</map>

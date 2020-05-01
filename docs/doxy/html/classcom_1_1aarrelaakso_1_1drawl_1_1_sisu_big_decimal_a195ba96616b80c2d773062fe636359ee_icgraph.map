@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.SisuBigDecimal.leq" name="com.aarrelaakso.drawl.SisuBigDecimal.leq">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aa4a40eeccf6e5879f79277b772e1eb02" title="Returns whether this number is less or equal to the other number. " alt="" coords="239,5,421,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_sisu_big_decimal_test.html#adbac9962cf419f85ae8c146d2696aa2c" title="Tests less or equal operator. " alt="" coords="236,71,424,112"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="com.aarrelaakso.drawl.Drawing.getExplicitToImplicitRatio" name="com.aarrelaakso.drawl.Drawing.getExplicitToImplicitRatio">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ab74181c5760c8d20dad641ff12cc511f" title="Get the ratio of the explicit height of this Drawing to the implicit height of its contents..." alt="" coords="280,71,507,112"/>
+<area shape="rect" id="node11" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#af8715b6bd8c98b7fbd2029979a034843" title="Get the ratio of the explicit width of this drawing to the implicit width of its contents. " alt="" coords="280,136,507,177"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a631d1d5dfbaed2eca8c77586e603d025" title="Get the implicit total height of all contents in the drawing. " alt="" coords="555,71,781,112"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#af0a90a7d441ca5e52a15b7b566862750" title="Get the explicit height of this Drawing. " alt="" coords="555,201,781,243"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ac1959c431849395031be2445dc189380" title="Get the explicit width of this Drawing. " alt="" coords="555,5,781,47"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aa2b8b1cfbd48c00510d35caacd54225b" title="Get the implicit total width of all contents in the drawing. " alt="" coords="555,136,781,177"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a0a7dcc4ac1f58032fda66f644256c3c3" title="Get the maximum y&#45;coordinate of this drawing in implicit terms. " alt="" coords="829,5,1056,47"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a43686f8212a3a752c9a2d15ba5a15cc9" title="Get the minimum y&#45;coordinate of this drawing in implicit terms. " alt="" coords="829,71,1056,112"/>
+<area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ae146d81dcbaee5bf08320a8aea1caa94" title="Get the maximum x&#45;coordinate of this drawing in implicit terms. " alt="" coords="829,136,1056,177"/>
+<area shape="rect" id="node10" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a5d22ab9bea6d5739055a4646f1d77445" title="Get the minimum x&#45;coordinate of this drawing in implicit terms. " alt="" coords="829,201,1056,243"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="com.aarrelaakso.drawl.test.DrawingTestCirclePublic" name="com.aarrelaakso.drawl.test.DrawingTestCirclePublic">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_drawing_test_shape_public.html" title="{com.aarrelaakso.drawl.test.\lDrawingTestShapePublic\n|~ drawing\l~ shape1\l~ shape2\l~ shape3\l|~ givenADrawing()\l~ lengthWhenADrawingHasOne\lShapeThenItsLengthIs1()\l~ svgWhenYouCallSVGWithout\lParametersItDoesNotThrowAnException()\l~ [static initializer]()\l}" alt="" coords="5,5,272,215"/>
+</map>

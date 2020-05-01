@@ -1,0 +1,9 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitHalfHeight" name="com.aarrelaakso.drawl.Shape.getImplicitHalfHeight">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="269,5,536,32"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a7a4579f2966a3d5ebbfa46b5b2528f9d" title="Get the implicit maximum (topmost) y&#45;position of this Shape. " alt="" coords="295,57,511,98"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a942b3cf3365498dc1ac6b0309ce33b86" title="Set this Shape above another Shape. " alt="" coords="584,99,800,141"/>
+<area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa0877965f7f172378e87ba69f27c7ad6" title="Get the implicit minimum (bottommost) y&#45;position of this Shape. " alt="" coords="295,174,511,215"/>
+<area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa0ec0030515b5096820e4dd030c0b320" title="Set this circle below another circle. " alt="" coords="584,190,800,231"/>
+<area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a5ffc02627cca0723e3555b5d04ba2b75" title="Get the implicit y position of the top of this Shape. " alt="" coords="295,291,511,333"/>
+<area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="848,107,1071,133"/>
+</map>

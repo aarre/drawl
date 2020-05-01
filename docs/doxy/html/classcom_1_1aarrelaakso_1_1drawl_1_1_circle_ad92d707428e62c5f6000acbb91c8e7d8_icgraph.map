@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.Circle.getImplicitWidth" name="com.aarrelaakso.drawl.Circle.getImplicitWidth">
+<area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#aa6757d5e787b835fc9cf66e5811885a1" title="Set this Circle&#39;s neighbor to the left (this Circle is to the right of that one). ..." alt="" coords="267,5,480,47"/>
+<area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#aca26f4842d4ec4f904b9c726d4720089" title="Set this Circle&#39;s neighbor to the right (this Circle is to the left of that one). ..." alt="" coords="533,5,746,47"/>
+<area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawl.html#abe6932294fbcb0164194129bff46187a" title="Main method for integration tests. " alt="" coords="528,71,751,98"/>
+</map>
