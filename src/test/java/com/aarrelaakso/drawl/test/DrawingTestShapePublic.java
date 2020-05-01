@@ -12,19 +12,14 @@ package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Shape;
-import com.aarrelaakso.drawl.SisuBigDecimal;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
-import static org.assertj.core.api.BDDAssertions.then;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
-import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import java.util.concurrent.ThreadLocalRandom;
-
-import static org.assertj.core.api.BDDAssertions.then;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
@@ -51,52 +46,6 @@ public abstract class DrawingTestShapePublic
         drawing = new Drawing();
     }
 
-    /**
-     * Tests applying fill to Shapes
-     */
-    @Nested
-    @DisplayName("Fill")
-    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class Fill
-    {
-        @Test
-        @Tag("fill")
-        @Tag("svg")
-        @Tag("public")
-        @DisplayName("When the fill is set, then it appears in the SVG")
-        void whenTheFillIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly)
-        {
-            drawing.add(shape1);
-            shape1.setFill("white");
-            String svg = drawing.getSVG(100,100);
-            softly.then(svg).contains("fill");
-            softly.then(svg).contains("white");
-        }
-    }
-
-    /**
-     * Tests applying stroke to Shapes
-     */
-    @Nested
-    @DisplayName("Stroke")
-    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class Stroke
-    {
-        @Test
-        @Tag("stroke")
-        @Tag("svg")
-        @Tag("public")
-        @DisplayName("When the stroke is set, then it appears in the SVG")
-        void whenTheStrokeIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly)
-        {
-            drawing.add(shape1);
-            shape1.setStroke("darkslategray");
-            String svg = drawing.getSVG(100,100);
-            softly.then(svg).contains("stroke");
-            softly.then(svg).contains("darkslategray");
-        }
-    }
-
     @Test
     @DisplayName("LENGTH: Adding a circle to an empty drawing gives the drawing a length of 1")
     void lengthWhenADrawingHasOneShapeThenItsLengthIs1()
@@ -112,6 +61,82 @@ public abstract class DrawingTestShapePublic
         assertDoesNotThrow(() -> {
             String svg = drawing.getSVG();
         });
+    }
+
+    /**
+     * Tests applying fill to Shapes
+     */
+    @Nested
+    @DisplayName("Fill")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class Fill
+    {
+
+        @Test
+        @Tag("fill")
+        @Tag("svg")
+        @Tag("public")
+        @DisplayName("When the fill is not set, then it does not appear in the SVG")
+        void whenTheFillIsNotSetThenItDoesNotAppearInTheSVG(BDDSoftAssertions softly)
+        {
+            drawing.add(shape1);
+            String svg = drawing.getSVG(100, 100);
+            softly.then(svg).doesNotContain("fill");
+            softly.then(svg).doesNotContain("darkslategray");
+        }
+
+        @Test
+        @Tag("fill")
+        @Tag("svg")
+        @Tag("public")
+        @DisplayName("When the fill is set, then it appears in the SVG")
+        void whenTheFillIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly)
+        {
+            drawing.add(shape1);
+            shape1.setFill("darkslategray");
+            String svg = drawing.getSVG(100, 100);
+            softly.then(svg).contains("fill");
+            softly.then(svg).contains("darkslategray");
+        }
+    }
+
+    /**
+     * Tests applying stroke to Shapes
+     */
+    @Nested
+    @DisplayName("Stroke")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class Stroke
+    {
+
+
+        @Test
+        @Tag("stroke")
+        @Tag("svg")
+        @Tag("public")
+        @DisplayName("When the stroke is not set, then it does not appear in the SVG")
+        void whenTheStrokeIsNotSetThenItDoesNotAppearInTheSVG(BDDSoftAssertions softly)
+        {
+            drawing.add(shape1);
+            String svg = drawing.getSVG(100, 100);
+            softly.then(svg).doesNotContain("stroke");
+            softly.then(svg).doesNotContain("darkslategray");
+        }
+
+        @Test
+        @Tag("stroke")
+        @Tag("svg")
+        @Tag("public")
+        @DisplayName("When the stroke is set, then it appears in the SVG")
+        void whenTheStrokeIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly)
+        {
+            drawing.add(shape1);
+            shape1.setStroke("darkslategray");
+            String svg = drawing.getSVG(100, 100);
+            softly.then(svg).contains("stroke");
+            softly.then(svg).contains("darkslategray");
+        }
+
     }
 
 }
