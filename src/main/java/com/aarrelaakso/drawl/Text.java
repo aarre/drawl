@@ -52,6 +52,7 @@ public class Text extends Shape
         svgBuilder.append(" y=\"");
         svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
         svgBuilder.append("\"");
+        svgBuilder.append(" dominant-baseline=\"middle\" text-anchor=\"middle\"");
         if (this.getStroke() != null)
         {
             svgBuilder.append(" stroke=\"");
