@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.DrawingTestShapeProtected.XPosition.Explicit.whenADrawingHasTwoAdjacentDefaultShapesThenTheirExplicitXPositionsAreCorrectFixed" name="com.aarrelaakso.drawl.DrawingTestShapeProtected.XPosition.Explicit.whenADrawingHasTwoAdjacentDefaultShapesThenTheirExplicitXPositionsAreCorrectFixed">
+<map id="com.aarrelaakso.drawl.ShapeDrawingTestProtected.XPosition.Explicit.whenADrawingHasTwoAdjacentDefaultShapesThenTheirExplicitXPositionsAreCorrectFixed" name="com.aarrelaakso.drawl.ShapeDrawingTestProtected.XPosition.Explicit.whenADrawingHasTwoAdjacentDefaultShapesThenTheirExplicitXPositionsAreCorrectFixed">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="376,5,559,47"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a0c8a57da15ab119fd46af9292ccfe028" title="Returns whether this number is equal with another number. " alt="" coords="376,71,559,112"/>
 </map>

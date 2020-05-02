@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.DrawingTestShapeProtected.thenTheSVGGeneratedByAShapeContainsXAndYCoordinates" name="com.aarrelaakso.drawl.DrawingTestShapeProtected.thenTheSVGGeneratedByAShapeContainsXAndYCoordinates">
+<map id="com.aarrelaakso.drawl.ShapeDrawingTestProtected.thenTheSVGGeneratedByAShapeContainsXAndYCoordinates" name="com.aarrelaakso.drawl.ShapeDrawingTestProtected.thenTheSVGGeneratedByAShapeContainsXAndYCoordinates">
 <area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a4b9877c446f162bd2705a2dba4bf04bc" title="Add a shape to this drawing. " alt="" coords="345,5,576,32"/>
 <area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Set the explicit dimensions of this Drawing. " alt="" coords="650,277,877,318"/>
 <area shape="rect" id="node14" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8e4c74480fede49f44519554136c12b0" title="com.aarrelaakso.drawl.Shape.set\lExplicitXPositionCenter" alt="" coords="353,57,569,98"/>
