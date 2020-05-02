@@ -27,6 +27,6 @@ public class ThreeCirclesHorizontal
         Circle circle3 = new Circle();
         drawing.add(circle3);
         circle3.setRightOf(circle2);
-        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg", 200, 200);
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg", 200, 70);
     }
 }
