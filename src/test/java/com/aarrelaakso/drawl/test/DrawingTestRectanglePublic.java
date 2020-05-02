@@ -80,4 +80,40 @@ public class DrawingTestRectanglePublic extends DrawingTestShapePublic
 
     }
 
+    @Test
+    @DisplayName("When a drawing has three horizontally adjacent default Rectangles, then the generated SVG is correct")
+    void whenADrawingHasThreeHorizontallyAdjacentDefaultCirclesThenTheGeneratedSVGIsCorrect(BDDSoftAssertions softly)
+    {
+        drawing.add(shape1);
+        drawing.add(shape2);
+        shape2.setRightOf(shape1);
+        drawing.add(shape3);
+        shape3.setRightOf(shape2);
+        Integer width = 100;
+        Integer height = 100;
+        String svg = drawing.getSVG(width, height);
+
+        softly.then(svg).contains("x=\"0\"");
+        softly.then(svg).contains("x=\"33.333332\"");
+        softly.then(svg).contains("x=\"66.666664\"");
+    }
+    @Test
+    @DisplayName("When a drawing has three vertically adjacent default Rectangles, then the generated SVG is correct")
+    void whenADrawingHasThreeVerticallyAdjacentDefaultCirclesThenTheGeneratedSVGIsCorrect(BDDSoftAssertions softly)
+    {
+        drawing.add(shape1);
+        drawing.add(shape2);
+        shape2.setAbove(shape1);
+        drawing.add(shape3);
+        shape3.setAbove(shape2);
+        Integer width = 100;
+        Integer height = 100;
+        String svg = drawing.getSVG(width, height);
+
+        softly.then(svg).contains("y=\"0\"");
+        softly.then(svg).contains("y=\"33.333332\"");
+        softly.then(svg).contains("y=\"66.666664\"");
+    }
+
+
 }

@@ -28,27 +28,6 @@ class DrawingTestSVG extends Specification {
         svg.contains("circle r=\"50\" cx=\"50\" cy=\"50\"")
     }
 
-    def "SVG: When a drawing has three adjacent default circles added sequentially, then the generated SVG is correct"() {
-        when:
-        Drawing drawing = new Drawing()
-        Circle circle1 = new Circle()
-        drawing.add(circle1)
-        Circle circle2 = new Circle()
-        drawing.add(circle2)
-        circle2.setRightOf(circle1)
-        Circle circle3 = new Circle()
-        drawing.add(circle3)
-        circle3.setRightOf(circle2)
-        Integer width = 100
-        Integer height = 100
-        String svg = drawing.getSVG(width, height)
-
-        then:
-        svg.contains("cx=\"16.666666\"")
-        svg.contains("cx=\"50\"")
-        svg.contains("cx=\"83.333336\"")
-    }
-
     def "SVG: When a drawing has two adjacent circles, they are placed accordingly in the SVG (other order)"() {
         when:
         Circle circle1 = new Circle()

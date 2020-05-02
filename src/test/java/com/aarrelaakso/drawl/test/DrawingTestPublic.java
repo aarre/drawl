@@ -1,8 +1,6 @@
 package com.aarrelaakso.drawl.test;
 
-import com.aarrelaakso.drawl.Circle;
 import com.aarrelaakso.drawl.Drawing;
-import com.aarrelaakso.drawl.Shape;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,7 +22,7 @@ public class DrawingTestPublic
     @DisplayName("When a Drawing is empty, then its length is 0")
     void whenADrawingIsEmptyThenItsLengthIs1 () {
         Drawing drawing = new Drawing();
-        assertEquals(0, drawing.length());
+        assertEquals(0, drawing.getLength());
     }
 
     @Test
