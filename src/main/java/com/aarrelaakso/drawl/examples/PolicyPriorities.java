@@ -10,17 +10,19 @@
 
 package com.aarrelaakso.drawl.examples;
 
-import com.aarrelaakso.drawl.Text;
+
 import com.aarrelaakso.drawl.Drawing;
+import com.aarrelaakso.drawl.Text;
 
 import java.io.IOException;
 
-public class TextExample
+public class PolicyPriorities
 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException
+    {
         Drawing drawing = new Drawing();
         Text text = new Text("Drawl");
         drawing.add(text);
-        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/TextExample.svg", 200, 100);
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/PolicyPriorities.svg", 200, 100);
     }
 }
