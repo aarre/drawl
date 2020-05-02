@@ -1,6 +1,10 @@
 package com.aarrelaakso.drawl;
 
-public class Rectangle extends Shape {
+import com.aarrelaakso.drawl.Shape;
+import com.aarrelaakso.drawl.SisuBigDecimal;
+
+public class Rectangle extends Shape
+{
 
     /**
      * Creates a Rectangle with the default width and height.

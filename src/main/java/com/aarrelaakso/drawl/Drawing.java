@@ -438,17 +438,17 @@ public class Drawing
     }
 
     /**
-     * Get the number of items in this Drawing
+     * Gets the number of items in this Drawing
      *
      * @return the number of items in this Drawing
      */
-    public Integer length()
+    public Integer getLength()
     {
         return contents.size();
     }
 
     /**
-     * Set the explicit dimensions of this Drawing.
+     * Sets the explicit dimensions of this Drawing.
      * <p>
      * It is preferable to do it this way rather than setting width and height separately.
      *
@@ -740,12 +740,12 @@ public class Drawing
      * @param filename The name of the file to which to write.
      * @throws IOException If there is a problem writing to the file.
      */
-    public void writeToFile(String filename) throws IOException
+    public void writeToFile(String filename, Integer width, Integer height) throws IOException
     {
-        String str = this.getSVG();
+        String svg = this.getSVG(width, height);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename)))
         {
-            writer.write(str);
+            writer.write(svg);
         }
     }
 }

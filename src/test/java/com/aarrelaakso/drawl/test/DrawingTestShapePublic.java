@@ -51,7 +51,7 @@ public abstract class DrawingTestShapePublic
     void lengthWhenADrawingHasOneShapeThenItsLengthIs1()
     {
         drawing.add(shape1);
-        assertEquals(new Integer(1), drawing.length());
+        assertEquals(new Integer(1), drawing.getLength());
     }
 
     @Test
