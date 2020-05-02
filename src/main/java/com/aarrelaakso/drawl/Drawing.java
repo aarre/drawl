@@ -310,7 +310,7 @@ public class Drawing
         SisuBigDecimal yMaximum = SisuBigDecimal.valueOf(Double.MIN_VALUE);
         for (Shape content : this.contents)
         {
-            SisuBigDecimal yMaximumCurrent = content.getImplicitYMaximum();
+            SisuBigDecimal yMaximumCurrent = content.getImplicitYPositionTop();
             if (yMaximumCurrent.isGreaterThan(yMaximum))
             {
                 yMaximum = yMaximumCurrent;
@@ -334,7 +334,7 @@ public class Drawing
         SisuBigDecimal yMinimum = SisuBigDecimal.valueOf(Double.MAX_VALUE);
         for (Shape content : this.contents)
         {
-            SisuBigDecimal yMinimumCurrent = content.getImplicitYMinimum();
+            SisuBigDecimal yMinimumCurrent = content.getImplicitYPositionBottom();
             if (yMinimumCurrent.isLessThan(yMinimum))
             {
                 yMinimum = yMinimumCurrent;

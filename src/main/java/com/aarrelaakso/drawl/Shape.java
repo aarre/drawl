@@ -59,39 +59,32 @@ public class Shape
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
     private SisuBigDecimal explicitYPositionCenter = SisuBigDecimal.ZERO;
-
-    /**
-     * The implicit height of a default Shape is 1.
-     */
-    private SisuBigDecimal implicitHeight = SisuBigDecimal.ONE;
-    //private SisuBigDecimal implicitHeight;
-
-    /**
-     * The implicit width of a default Shape is 1.
-     */
-    private SisuBigDecimal implicitWidth = SisuBigDecimal.ONE;
-    //private SisuBigDecimal implicitWidth;
-
-    /**
-     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
-     */
-    private SisuBigDecimal implicitXPositionCenter = SisuBigDecimal.ZERO;
-
-    /**
-     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
-     */
-    private SisuBigDecimal implicitYPositionCenter = SisuBigDecimal.ZERO;
-
-    /**
-     * A shape adjacent to this one, if any
-     */
-    private Shape neighbor;
-
     /**
      * The fill of this Shape. Defaults to null, meaning the SVG default.
      */
     private String fill;
-
+    //private SisuBigDecimal implicitHeight;
+    /**
+     * The implicit height of a default Shape is 1.
+     */
+    private SisuBigDecimal implicitHeight = SisuBigDecimal.ONE;
+    //private SisuBigDecimal implicitWidth;
+    /**
+     * The implicit width of a default Shape is 1.
+     */
+    private SisuBigDecimal implicitWidth = SisuBigDecimal.ONE;
+    /**
+     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
+     */
+    private SisuBigDecimal implicitXPositionCenter = SisuBigDecimal.ZERO;
+    /**
+     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
+     */
+    private SisuBigDecimal implicitYPositionCenter = SisuBigDecimal.ZERO;
+    /**
+     * A shape adjacent to this one, if any
+     */
+    private Shape neighbor;
     /**
      * The stroke of this Shape. Defaults to null, meaning the SVG default.
      */
@@ -139,7 +132,6 @@ public class Shape
     }
 
 
-
     protected SisuBigDecimal getExplicitHalfWidth()
     {
         if (this.getExplicitWidth() == null)
@@ -155,7 +147,6 @@ public class Shape
      * @return the explicit height of this Shape, or <code>null</code> if this Shape has not yet been assigned an
      * explicit height.
      */
-    // TODO [Issue #1] Make this method protected and factor out of unit tests.
     @Nullable
     protected SisuBigDecimal getExplicitHeight()
     {
@@ -175,7 +166,7 @@ public class Shape
     }
 
     /**
-     * Get the explicit x-position of this Shape.
+     * Gets the explicit x-position of this Shape.
      *
      * @return the explicit x-position of this Shape.
      */
@@ -191,20 +182,36 @@ public class Shape
     }
 
     /**
-     * Get the explicit y-position of this Shape.
+     * Gets the explicit y position of the bottom of this Shape.
      *
-     * @return the explicit y-position of this Shape.
+     * @return the explicit y position of the bottom of this Shape.
      */
-    // TODO [Issue #1] Make this method protected and factor out of unit tests.
+    @NotNull
+    protected SisuBigDecimal getExplicitYPositionBottom()
+    {
+        return this.getExplicitYPositionCenter().subtract(this.getExplicitHalfHeight());
+    }
+
+    /**
+     * Gets the explicit y-position of the center of this Shape.
+     *
+     * @return the explicit y-position of the center of this Shape.
+     */
     @NotNull
     protected SisuBigDecimal getExplicitYPositionCenter()
     {
         return this.explicitYPositionCenter;
     }
 
+    /**
+     * Gets the explicit y-position of the top of this Shape.
+     *
+     * @return the explicit y-position of the top of this Shape.
+     */
+    @NotNull
     protected SisuBigDecimal getExplicitYPositionTop()
     {
-        return this.explicitYPositionCenter.subtract(this.getExplicitHalfHeight());
+        return this.getExplicitYPositionCenter().subtract(this.getExplicitHalfHeight());
     }
 
     /**
@@ -289,21 +296,11 @@ public class Shape
     }
 
     /**
-     * Get the implicit maximum (topmost) y-position of this Shape.
-     *
-     * @return The implicit maximum (topmost) x-position of this Shape.
-     */
-    protected SisuBigDecimal getImplicitYMaximum()
-    {
-        return this.getImplicitYPositionCenter().add(this.getImplicitHalfHeight());
-    }
-
-    /**
-     * Get the implicit minimum (bottommost) y-position of this Shape.
+     * Get the implicit bottommost y-position of this Shape. In implicit coordinates, this is the minimum y-position.
      *
      * @return The implicit minimum (bottommost) y-position of this Shape.
      */
-    protected SisuBigDecimal getImplicitYMinimum()
+    protected SisuBigDecimal getImplicitYPositionBottom()
     {
         return this.getImplicitYPositionCenter().subtract(this.getImplicitHalfHeight());
     }
@@ -319,13 +316,13 @@ public class Shape
     }
 
     /**
-     * Get the implicit y position of the top of this Shape.
+     * Gets the implicit topmost y position of this Shape. In implicit coordinates, this is the maximum y position.
      *
-     * @return The implicit y position of the top of this Shape.
+     * @return The implicit maximum (topmost) y-position of this Shape.
      */
     protected SisuBigDecimal getImplicitYPositionTop()
     {
-        return this.getImplicitYPositionCenter().subtract(this.getImplicitHalfHeight());
+        return this.getImplicitYPositionCenter().add(this.getImplicitHalfHeight());
     }
 
     /**
@@ -376,6 +373,11 @@ public class Shape
         return returnValue;
     }
 
+    public String getSVG()
+    {
+        return "oops";
+    }
+
     /**
      * Gets the stroke of this Shape.
      *
@@ -385,11 +387,6 @@ public class Shape
     public String getStroke()
     {
         return this.stroke;
-    }
-
-    public String getSVG()
-    {
-        return "oops";
     }
 
     /**
@@ -405,7 +402,7 @@ public class Shape
         }
         this.neighbor = shape;
         this.angleToNeighbor = SisuBigDecimal.valueOf(0);
-        SisuBigDecimal topBoundaryOfShape = shape.getImplicitYMaximum();
+        SisuBigDecimal topBoundaryOfShape = shape.getImplicitYPositionTop();
         SisuBigDecimal thisImplicitYPosition = topBoundaryOfShape.add(this.getImplicitHalfHeight(),
                 SisuBigDecimal.mcOperations);
         this.setImplicitYPositionCenter(thisImplicitYPosition);
@@ -424,7 +421,7 @@ public class Shape
         }
         this.neighbor = shape;
         this.angleToNeighbor = SisuBigDecimal.valueOf(180);
-        SisuBigDecimal bottomBoundaryOfShape = shape.getImplicitYMinimum();
+        SisuBigDecimal bottomBoundaryOfShape = shape.getImplicitYPositionBottom();
         SisuBigDecimal thisImplicitYPosition = bottomBoundaryOfShape.subtract(this.getImplicitHalfHeight(),
                 SisuBigDecimal.mcOperations);
         this.setImplicitYPositionCenter(thisImplicitYPosition);

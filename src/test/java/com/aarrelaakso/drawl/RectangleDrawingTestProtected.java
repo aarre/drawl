@@ -10,7 +10,6 @@
 
 package com.aarrelaakso.drawl;
 
-import com.aarrelaakso.drawl.test.DrawingTestShapePublic;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +23,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Rectangle Drawings - Protected API")
-public class DrawingTestRectangleProtected extends DrawingTestShapeProtected
+public class RectangleDrawingTestProtected extends ShapeDrawingTestProtected
 {
 
     @BeforeEach

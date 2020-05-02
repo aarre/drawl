@@ -1,8 +1,5 @@
 package com.aarrelaakso.drawl;
 
-import com.aarrelaakso.drawl.Shape;
-import com.aarrelaakso.drawl.SisuBigDecimal;
-
 public class Rectangle extends Shape
 {
 
@@ -58,9 +55,6 @@ public class Rectangle extends Shape
         {
             throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
         }
-        String radiusStringValue;
-        SisuBigDecimal radiusExplicitValue = this.getImplicitHalfHeight();
-        radiusStringValue = SVG.toString(radiusExplicitValue);
         StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<rect");
         svgBuilder.append(" width=\"");

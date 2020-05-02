@@ -161,7 +161,7 @@ public class Circle extends Shape
      * @return The implicit maximum (topmost) x-position of this Circle.
      */
     @Override
-    protected SisuBigDecimal getImplicitYMaximum()
+    protected SisuBigDecimal getImplicitYPositionTop()
     {
         return this.getImplicitYPositionCenter().add(this.getImplicitRadius());
     }

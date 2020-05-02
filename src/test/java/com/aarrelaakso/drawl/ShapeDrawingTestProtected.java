@@ -26,7 +26,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Tests the protected API for Shapes on Drawings")
-public abstract class DrawingTestShapeProtected
+public abstract class ShapeDrawingTestProtected
 {
     Drawing drawing;
     Shape shape1;
@@ -203,19 +203,6 @@ public abstract class DrawingTestShapeProtected
         @Test
         @Tag("length")
         @Tag("protected")
-        @DisplayName("When a Drawing has three shapes, then its length is 3")
-        void whenADrawingHasThreeShapesThenItsLengthIs3()
-        {
-            drawing.add(shape1);
-            drawing.add(shape2);
-            drawing.add(shape3);
-
-            then(drawing.getLength()).isEqualTo(3);
-        }
-
-        @Test
-        @Tag("length")
-        @Tag("protected")
         @DisplayName("When a Drawing has three horizontally adjacent shapes, then its length is 3")
         void whenADrawingHasThreeHorizontallyAdjacenShapesThenItsLengthIs3()
         {
@@ -224,6 +211,19 @@ public abstract class DrawingTestShapeProtected
             drawing.add(shape3);
             shape2.setRightOf(shape1);
             shape3.setRightOf(shape2);
+
+            then(drawing.getLength()).isEqualTo(3);
+        }
+
+        @Test
+        @Tag("length")
+        @Tag("protected")
+        @DisplayName("When a Drawing has three shapes, then its length is 3")
+        void whenADrawingHasThreeShapesThenItsLengthIs3()
+        {
+            drawing.add(shape1);
+            drawing.add(shape2);
+            drawing.add(shape3);
 
             then(drawing.getLength()).isEqualTo(3);
         }
@@ -965,30 +965,44 @@ public abstract class DrawingTestShapeProtected
                         .isEqualByComparingTo(EXPECTED);
             }
 
-            @Nested
-            @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-            @DisplayName("Implicit")
-            class Implicit
-            {
-                @Test
-                @Tag("implicit")
-                @Tag("y-position")
-                @Tag("protected")
-                @DisplayName("When a drawing has two vertically adjacent default Circles, then their implicit y-positions are correct (fixed)")
-                void whenADrawingHasTwoAdjacentDefaultCirclesThenTheirImplicitYPositionsAreCorrect(BDDSoftAssertions softly)
-                {
-                    drawing.add(shape1);
-                    drawing.add(shape2);
-                    shape2.setAbove(shape1);
+        }
 
-                    softly.then(SisuBigDecimal.ZERO).isEqualTo(shape1.getImplicitYPositionCenter());
-                    softly.then(SisuBigDecimal.ONE).isEqualTo(shape2.getImplicitYPositionCenter());
-                }
+        @Nested
+        @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+        @DisplayName("Implicit")
+        class Implicit
+        {
+            @Test
+            @Tag("implicit")
+            @Tag("y-position")
+            @Tag("protected")
+            @DisplayName("When a drawing has two vertically adjacent default Circles, then their implicit y-positions are correct (fixed)")
+            void whenADrawingHasTwoAdjacentDefaultCirclesThenTheirImplicitYPositionsAreCorrect(BDDSoftAssertions softly)
+            {
+                drawing.add(shape1);
+                drawing.add(shape2);
+                shape2.setAbove(shape1);
+
+                softly.then(SisuBigDecimal.ZERO).isEqualTo(shape1.getImplicitYPositionCenter());
+                softly.then(SisuBigDecimal.ONE).isEqualTo(shape2.getImplicitYPositionCenter());
             }
         }
 
     }
 
+    @Nested
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    @DisplayName("Y Position Bottom")
+    class YPositionBottom
+    {
 
+
+        @Test
+        @DisplayName("When a Shape object is created, then the user can get the implicit y position of its bottom")
+        void whenATextObjectIsCreatedThenTheUserCanGetTheBottomYPosition()
+        {
+            then(shape1.getImplicitYPositionBottom()).isNotNull();
+        }
+    }
 }
 

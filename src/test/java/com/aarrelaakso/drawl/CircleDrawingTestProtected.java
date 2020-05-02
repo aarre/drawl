@@ -10,7 +10,6 @@
 
 package com.aarrelaakso.drawl;
 
-import com.aarrelaakso.drawl.test.DrawingTestShapePublic;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
@@ -20,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Unit tests of Drawing with Circle shapes")
-public class DrawingTestCircleProtected extends DrawingTestShapeProtected
+public class CircleDrawingTestProtected extends ShapeDrawingTestProtected
 {
 
     Circle shape1;
@@ -34,9 +33,9 @@ public class DrawingTestCircleProtected extends DrawingTestShapeProtected
         shape1 = new Circle();
         shape2 = new Circle();
         shape3 = new Circle();
-        com.aarrelaakso.drawl.DrawingTestCircleProtected.super.shape1 = shape1;
-        com.aarrelaakso.drawl.DrawingTestCircleProtected.super.shape2 = shape2;
-        com.aarrelaakso.drawl.DrawingTestCircleProtected.super.shape3 = shape3;
+        CircleDrawingTestProtected.super.shape1 = shape1;
+        CircleDrawingTestProtected.super.shape2 = shape2;
+        CircleDrawingTestProtected.super.shape3 = shape3;
     }
 
     @Test
