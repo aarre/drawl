@@ -8,51 +8,39 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.aarrelaakso.drawl.test;
+package com.aarrelaakso.drawl;
 
-import com.aarrelaakso.drawl.Text;
+import com.google.common.flogger.FluentLogger;
+
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
-import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
- * Tests the public API of Text placed on Drawings
+ * Tests the protected API of Text objects.
+ *
+ * @author Aarre Laakso
+ * @link https://github.com/aarre/drawl
  */
+@DisplayName("Text - Protected API")
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-@DisplayName("Text Drawings - Public API")
-public class DrawingTestTextPublic extends DrawingTestShapePublic
+public class TextTestProtected
 {
-
-    @BeforeEach
-    @DisplayName("Given three default Text objects")
-    void givenTheeDefaultTextObjects()
-    {
-        shape1 = new Text();
-        shape2 = new Text();
-        shape3 = new Text();
-    }
+    private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
     @Test
-    @DisplayName("When a user creates a Drawing with Text, then its SVG contains a text element opening tag")
-    void whenAUserCreatesADrawingWithTextThenItsSVGContainsATextElementOpeningTag()
-    {
-        Text text = new Text();
-        drawing.add(text);
-        drawing.setExplicitDimensions(100, 100);
-        then(drawing.getSVG()).contains("<text");
-    }
-
-    @Test
-    @DisplayName("When a user creates a Drawing with Text, then the Text is placed at midline by default")
-    void whenAUserCreatesADrawingWithTextThenTheTextIsPlacedAtMidlineByDefault()
+    @DisplayName("When a user creates a new Text object, then its implicit y position is correct")
+    void whenAUserCreatesANewTextObjectThenItsImplicitYPositionIsCorrect()
     {
         Text text = new Text("Drawl");
-        drawing.add(text);
-        drawing.setExplicitDimensions(100, 100);
-        then(drawing.getSVG()).contains("y=\"50\"");
-    }
 
-} // end class
+        then(text.getImplicitYPositionCenter()).isEqualTo(SisuBigDecimal.ZERO);
+    }
+}

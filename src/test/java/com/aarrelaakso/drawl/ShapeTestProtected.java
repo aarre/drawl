@@ -142,7 +142,6 @@ public abstract class ShapeTestProtected
                 Drawing drawing = new Drawing();
                 drawing.add(shape1);
                 drawing.setExplicitDimensions(100, 100);
-                //shape1.setExplicitHeight(SisuBigDecimal.valueOf(100));
                 SisuBigDecimal explicitXPositionTop = shape1.getExplicitYPositionTop();
                 then(explicitXPositionTop).isEqualByComparingTo(SisuBigDecimal.valueOf(0));
             }
@@ -169,7 +168,7 @@ public abstract class ShapeTestProtected
             void whenShapeIsCreatedThenItHasAnImplicitTopYPosition()
             {
                 SisuBigDecimal implicitYPositionTop = shape1.getImplicitYPositionTop();
-                then(implicitYPositionTop).isEqualByComparingTo(SisuBigDecimal.valueOf(-0.5));
+                then(implicitYPositionTop).isEqualByComparingTo(SisuBigDecimal.valueOf(0.5));
             }
 
             @Test

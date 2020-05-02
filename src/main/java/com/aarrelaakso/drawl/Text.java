@@ -50,7 +50,7 @@ public class Text extends Shape
         svgBuilder.append(SVG.toString(this.getExplicitXPositionLeft()));
         svgBuilder.append("\"");
         svgBuilder.append(" y=\"");
-        svgBuilder.append(SVG.toString(this.getExplicitYPositionTop()));
+        svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
         svgBuilder.append("\"");
         if (this.getStroke() != null)
         {
