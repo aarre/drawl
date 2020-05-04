@@ -3,8 +3,6 @@ package com.aarrelaakso.drawl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.math.BigDecimal;
-
 public class Circle extends Shape
 {
 

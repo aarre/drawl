@@ -242,12 +242,12 @@ public class Shape
 
     protected SisuBigDecimal getImplicitHalfHeight()
     {
-        return this.getImplicitHeight().divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+        return this.getImplicitHeight().divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
     }
 
     protected SisuBigDecimal getImplicitHalfWidth()
     {
-        return this.getImplicitWidth().divide(SisuBigDecimal.valueOf(2), SisuBigDecimal.mcOperations);
+        return this.getImplicitWidth().divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
     }
 
     /**

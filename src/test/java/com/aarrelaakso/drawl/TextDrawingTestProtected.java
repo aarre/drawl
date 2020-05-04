@@ -10,7 +10,6 @@
 
 package com.aarrelaakso.drawl;
 
-import com.aarrelaakso.drawl.test.ShapeDrawingTestPublic;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

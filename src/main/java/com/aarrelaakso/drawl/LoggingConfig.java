@@ -10,11 +10,11 @@ import static java.lang.Boolean.TRUE;
 
 public class LoggingConfig {
 
-    Boolean SIMPLE_LOG_FORMAT = TRUE;
+    private static final Boolean SIMPLE_LOG_FORMAT = TRUE;
 
     public LoggingConfig() {
         try {
-            if (SIMPLE_LOG_FORMAT)
+            if (Boolean.TRUE.equals(SIMPLE_LOG_FORMAT))
             {
                 // Programmatic configuration
                 System.setProperty("java.util.logging.SimpleFormatter.format",
@@ -28,7 +28,7 @@ public class LoggingConfig {
 
             //System.setProperty("java.util.logging.config.file", path);
 
-            Level consoleLevel = Level.FINE;
+            Level consoleLevel = Level.WARNING;
             Level loggerLevel = consoleLevel;
 
             final ConsoleHandler consoleHandler = new ConsoleHandler();
