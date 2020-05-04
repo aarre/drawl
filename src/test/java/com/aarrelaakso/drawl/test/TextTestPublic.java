@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.catchThrowable;
 import static org.assertj.core.api.BDDAssertions.then;
 
-@DisplayName("Unit tests the Text class")
+@DisplayName("Text - Public API")
 public class TextTestPublic extends ShapeTestPublic
 {
     @BeforeEach
@@ -36,7 +36,7 @@ public class TextTestPublic extends ShapeTestPublic
     void whenAUserCreatesATextObjectThenHeCanInitializeItWithAString()
     {
         Text text = new Text("Lorem ipsum");
-        then(text.getText()).isEqualTo("Lorem ipsum");
+        then(text.toString()).isEqualTo("Lorem ipsum");
     }
 
     @Test
@@ -44,7 +44,7 @@ public class TextTestPublic extends ShapeTestPublic
     void whenAUserCreatesATextObjectThenHeCanInitializeItWithoutAString()
     {
         Text text = new Text();
-        then(text.getText()).isEqualTo("");
+        then(text.toString()).isEqualTo(null);
     }
 
 

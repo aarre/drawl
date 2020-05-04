@@ -21,7 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Tests the public API of Circles.
  */
-@DisplayName("Unit tests of Circle")
+@DisplayName("Circles - Public API")
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 public class CircleTestPublic extends ShapeTestPublic
 {

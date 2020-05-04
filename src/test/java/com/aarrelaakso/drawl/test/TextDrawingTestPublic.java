@@ -23,7 +23,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Text Drawings - Public API")
-public class DrawingTestTextPublic extends DrawingTestShapePublic
+public class TextDrawingTestPublic extends ShapeDrawingTestPublic
 {
 
     @BeforeEach
@@ -39,10 +39,22 @@ public class DrawingTestTextPublic extends DrawingTestShapePublic
     @DisplayName("When a user creates a Drawing with Text, then its SVG contains a text element opening tag")
     void whenAUserCreatesADrawingWithTextThenItsSVGContainsATextElementOpeningTag()
     {
+        Text text = new Text("Drawl");
+        drawing.add(text);
+        drawing.setExplicitDimensions(100, 100);
+
+        then(drawing.getSVG()).contains("<text");
+    }
+
+    @Test
+    @DisplayName("When a user creates a Drawing with Text, then its SVG contains a text element opening tag")
+    void whenAUserCreatesADrawingWithEmptyTextThenItsSVGDoesNotContainATextElementOpeningTag()
+    {
         Text text = new Text();
         drawing.add(text);
         drawing.setExplicitDimensions(100, 100);
-        then(drawing.getSVG()).contains("<text");
+
+        then(drawing.getSVG()).doesNotContain("<text");
     }
 
     @Test

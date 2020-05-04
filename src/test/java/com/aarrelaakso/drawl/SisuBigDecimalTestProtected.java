@@ -24,12 +24,12 @@ import java.math.BigDecimal;
 
 
 /**
- * Test cases for SisuBigDecimal
+ * Tests the SisuBigDecimal class
  *
  * @author radek.hecl
  * @link https://dzone.com/articles/arbitrary-precision-numbers
  */
-@DisplayName("Unit tests of SisuBigDecimal")
+@DisplayName("SisuBigDecimal")
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 public class SisuBigDecimalTestProtected
 {

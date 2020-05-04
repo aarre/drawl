@@ -11,10 +11,15 @@
 package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class Text extends Shape
 {
-    @NotNull String text = "";
+    /**
+     * The string associated with this Text object. Defaults to <code>null</code>, meaning that no string has been
+     * associated with this Text object.
+     */
+    @Nullable private String string;
 
     /**
      * Constructs a default Text object.
@@ -27,11 +32,11 @@ public class Text extends Shape
     /**
      * Constructs a Text object with some text.
      *
-     * @param text the text to associate with the new Text object.
+     * @param string the text to associate with the new Text object.
      */
-    public Text(String text)
+    public Text(@NotNull String string)
     {
-        this.text = text;
+        this.string = string;
     }
 
     /**
@@ -39,45 +44,71 @@ public class Text extends Shape
      *
      * @return a string of SVG that represents the text associated with this Text object.
      */
+    @Override
+    @NotNull
     public String getSVG() {
         if (this.getExplicitWidth() == null || this.getExplicitHeight() == null)
         {
             throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
         }
-        StringBuilder svgBuilder = new StringBuilder();
-        svgBuilder.append("<text");
-        svgBuilder.append(" x=\"");
-        svgBuilder.append(SVG.toString(this.getExplicitXPositionLeft()));
-        svgBuilder.append("\"");
-        svgBuilder.append(" y=\"");
-        svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
-        svgBuilder.append("\"");
-        svgBuilder.append(" dominant-baseline=\"middle\" text-anchor=\"middle\"");
-        if (this.getStroke() != null)
+        if (this.toString() != null)
         {
-            svgBuilder.append(" stroke=\"");
-            svgBuilder.append(this.getStroke());
+            StringBuilder svgBuilder = new StringBuilder();
+            svgBuilder.append("<text");
+            svgBuilder.append(" x=\"");
+            svgBuilder.append(SVG.toString(this.getExplicitXPositionCenter()));
             svgBuilder.append("\"");
+            svgBuilder.append(" y=\"");
+            svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
+            svgBuilder.append("\"");
+            svgBuilder.append(" dominant-baseline=\"middle\" text-anchor=\"middle\"");
+            if (this.getStroke() != null)
+            {
+                svgBuilder.append(" stroke=\"");
+                svgBuilder.append(this.getStroke());
+                svgBuilder.append("\"");
+            }
+            if (this.getFill() != null)
+            {
+                svgBuilder.append(" fill=\"");
+                svgBuilder.append(this.getFill());
+                svgBuilder.append("\"");
+            }
+            svgBuilder.append(">");
+            svgBuilder.append(this.toString());
+            svgBuilder.append("</text>");
+            if (this.hasText())
+            {
+                svgBuilder.append(this.getText().getSVG());
+            }
+            return svgBuilder.toString();
         }
-        if (this.getFill() != null)
+        else
         {
-            svgBuilder.append(" fill=\"");
-            svgBuilder.append(this.getFill());
-            svgBuilder.append("\"");
+            return "";
         }
-        svgBuilder.append(">");
-        svgBuilder.append(this.getText());
-        svgBuilder.append("</text>");
-        return svgBuilder.toString();
     }
 
     /**
-     * Gets the text associated with this Text object.
+     * Sets the string associated with this Text object.
      *
-     * @return the text associated with this Text object.
+     * @param string The string to associate with this Text object. Use <code>null</code> to indicate that no string is
+     *               associated with this Text object.
      */
-    public String getText()
+    public void setString(@Nullable String string)
     {
-        return this.text;
+        this.string = string;
+    }
+
+    /**
+     * Gets the text string associated with this Text object.
+     *
+     * @return the text string associated with this Text object, or <code>null</code> if there is no text string
+     * associated with this Text object.
+     */
+    @Nullable
+    public String toString()
+    {
+        return this.string;
     }
 }

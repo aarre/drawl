@@ -92,7 +92,7 @@ public class CircleDrawingTestProtected extends ShapeDrawingTestProtected
         drawing.add(shape2);
         drawing.setExplicitDimensions(100, 100);
         shape1.setExplicitXPositionCenter(x);
-        shape1.setExplicitYPosition(y);
+        shape1.setExplicitYPositionCenter(y);
         String svg = drawing.getSVG();
         softly.then(svg).contains("cx=\"50\"")
                 .contains("cy=\"50\"");

@@ -21,7 +21,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Rectangle Drawings - Public API")
-public class DrawingTestRectanglePublic extends DrawingTestShapePublic
+public class RectangleDrawingTestPublic extends ShapeDrawingTestPublic
 {
 
     @BeforeEach

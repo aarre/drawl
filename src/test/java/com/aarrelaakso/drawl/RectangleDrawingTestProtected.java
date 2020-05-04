@@ -30,7 +30,7 @@ public class RectangleDrawingTestProtected extends ShapeDrawingTestProtected
     @DisplayName("Given three default Rectangles")
     void givenTheeDefaultRectangles()
     {
-        // These values are overriden from the superclass.
+        // These values override those in the superclass.
         shape1 = new Rectangle();
         shape2 = new Rectangle();
         shape3 = new Rectangle();
@@ -45,7 +45,7 @@ public class RectangleDrawingTestProtected extends ShapeDrawingTestProtected
         drawing.add(shape2);
         drawing.setExplicitDimensions(100,100);
         shape1.setExplicitXPositionCenter(x);
-        shape1.setExplicitYPosition(y);
+        shape1.setExplicitYPositionCenter(y);
         String svg = drawing.getSVG();
         softly.then(svg).contains("x=\"0\"")
                 .contains("y=\"0\"");

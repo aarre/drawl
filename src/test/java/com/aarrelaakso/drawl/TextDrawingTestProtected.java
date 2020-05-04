@@ -10,7 +10,9 @@
 
 package com.aarrelaakso.drawl;
 
+import com.aarrelaakso.drawl.test.ShapeDrawingTestPublic;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,9 +23,20 @@ import static org.assertj.core.api.BDDAssertions.then;
  * Tests the public API of Shapes.
  */
 @ExtendWith(SoftAssertionsExtension.class)
-@DisplayName("Unit tests of Text protected API")
-public class TextDrawingTestProtected
+@DisplayName("Text Drawings - Protected API")
+public class TextDrawingTestProtected extends ShapeDrawingTestProtected
 {
+
+    @BeforeEach
+    @DisplayName("Given three default Rectangles")
+    void givenTheeDefaultRectangles()
+    {
+        // These values override those in the superclass.
+        shape1 = new Text();
+        shape2 = new Text();
+        shape3 = new Text();
+    }
+
     @Test
     @DisplayName("When a user creates a Drawing with a Text object, then its explicit y position is correct")
     void whenAUserCreatesADrawingWithATextObjectThenItsExplicitYPositionIsCorrect()
@@ -33,5 +46,21 @@ public class TextDrawingTestProtected
         drawing.add(text);
         drawing.setExplicitDimensions(100,100);
         then(text.getExplicitYPositionCenter()).isEqualTo(SisuBigDecimal.valueOf(50));
+    }
+
+    @Test
+    @DisplayName("When Text is added to a Shape, then the Text shows up in the SVG")
+    void whenTextIsAddedToADrawingThenItInheritsAnXPosition()
+    {
+        if (shape1.getClass() == Text.class)
+        {
+            ((Text) shape1).setString("Drawl");
+        }
+        Text text = new Text("Drawl");
+        shape1.addText(text);
+        drawing.add(shape1);
+        drawing.setExplicitDimensions(100, 100);
+
+        then(drawing.getSVG()).contains("Drawl");
     }
 }

@@ -11,8 +11,6 @@
 package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Circle;
-import com.aarrelaakso.drawl.Drawing;
-import com.aarrelaakso.drawl.Shape;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.junit.jupiter.api.*;
@@ -21,8 +19,8 @@ import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-@DisplayName("Unit tests of Drawing with Circle shapes")
-public class DrawingTestCirclePublic extends DrawingTestShapePublic
+@DisplayName("Circle Drawings - Public API")
+public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
 {
 
     private static final FluentLogger logger =  FluentLogger.forEnclosingClass();

@@ -12,19 +12,22 @@ package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Shape;
+import com.aarrelaakso.drawl.SisuBigDecimal;
+import com.aarrelaakso.drawl.Text;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-@DisplayName("Unit tests of Drawing - Shape (abstract)")
-public abstract class DrawingTestShapePublic
+@DisplayName("Shape Drawings - Public API")
+public abstract class ShapeDrawingTestPublic
 {
 
     private static final FluentLogger logger;
@@ -92,6 +95,10 @@ public abstract class DrawingTestShapePublic
         @DisplayName("When the fill is set, then it appears in the SVG")
         void whenTheFillIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly)
         {
+            if (shape1.getClass() == Text.class)
+            {
+                ((Text) shape1).setString("Drawl");
+            }
             drawing.add(shape1);
             shape1.setFill("darkslategray");
             String svg = drawing.getSVG(100, 100);
@@ -131,10 +138,43 @@ public abstract class DrawingTestShapePublic
         void whenTheStrokeIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly)
         {
             drawing.add(shape1);
+            if (shape1.getClass() == Text.class)
+            {
+                ((Text) shape1).setString("Drawl");
+            }
             shape1.setStroke("darkslategray");
             String svg = drawing.getSVG(100, 100);
             softly.then(svg).contains("stroke");
             softly.then(svg).contains("darkslategray");
+        }
+
+    }
+
+    /**
+     * Tests adding Text to Shapes
+     */
+    @Nested
+    @DisplayName("Text")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class TextTests
+    {
+
+        @Test
+        @DisplayName("When Text is added to a Shape, then it shows up in the SVG")
+        void whenTextIsAddedToAShapeThenItShowsUpInTheSVG()
+        {
+            if (shape1.getClass() == Text.class)
+            {
+                // If the outer Shape is a Text object but does not have a String, then it will not be issued to
+                // the SVG. Therefore, if the outer Shape is a Text object, we need to assign it a String.
+                ((Text) shape1).setString("Lward");
+            }
+            Text text = new Text("Drawl");
+            shape1.addText(text);
+            drawing.add(shape1);
+            drawing.setExplicitDimensions(100, 100);
+
+            then(drawing.getSVG()).contains("Drawl");
         }
 
     }
