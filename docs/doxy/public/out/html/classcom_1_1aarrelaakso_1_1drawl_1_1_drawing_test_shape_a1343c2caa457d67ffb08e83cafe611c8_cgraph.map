@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.test.DrawingTestShapePublic.heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitHeightScalesItsExplicitWidthToFit" name="com.aarrelaakso.drawl.test.DrawingTestShapePublic.heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitHeightScalesItsExplicitWidthToFit">
+<map id="com.aarrelaakso.drawl.test.ShapeDrawingTestPublic.heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitHeightScalesItsExplicitWidthToFit" name="com.aarrelaakso.drawl.test.ShapeDrawingTestPublic.heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitHeightScalesItsExplicitWidthToFit">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="379,20,561,61"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a67a8c41e95f12142516f7a8f8736386a" title="Prevents construction from outside. " alt="" coords="609,20,796,61"/>
 </map>

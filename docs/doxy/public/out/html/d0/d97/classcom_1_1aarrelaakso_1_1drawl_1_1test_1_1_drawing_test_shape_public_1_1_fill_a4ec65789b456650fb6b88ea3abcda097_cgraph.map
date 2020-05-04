@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.test.DrawingTestShapePublic.Fill.whenTheFillIsSetThenItAppearsInTheSVG" name="com.aarrelaakso.drawl.test.DrawingTestShapePublic.Fill.whenTheFillIsSetThenItAppearsInTheSVG">
+<map id="com.aarrelaakso.drawl.test.ShapeDrawingTestPublic.Fill.whenTheFillIsSetThenItAppearsInTheSVG" name="com.aarrelaakso.drawl.test.ShapeDrawingTestPublic.Fill.whenTheFillIsSetThenItAppearsInTheSVG">
 <area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a4b9877c446f162bd2705a2dba4bf04bc" title="Add a shape to this drawing. " alt="" coords="304,231,535,258"/>
 <area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a2a2868c85bfbf4d2940d929950001b3d" title="Set the fill of this Shape. " alt="" coords="303,282,536,309"/>
 <area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="292,333,547,359"/>

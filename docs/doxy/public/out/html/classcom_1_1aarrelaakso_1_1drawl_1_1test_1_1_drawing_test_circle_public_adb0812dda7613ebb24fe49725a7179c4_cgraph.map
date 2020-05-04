@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.test.DrawingTestCirclePublic.svgGeneratedByADrawingWithACircleIsExactlyAsExpected" name="com.aarrelaakso.drawl.test.DrawingTestCirclePublic.svgGeneratedByADrawingWithACircleIsExactlyAsExpected">
+<map id="com.aarrelaakso.drawl.test.CircleDrawingTestPublic.svgGeneratedByADrawingWithACircleIsExactlyAsExpected" name="com.aarrelaakso.drawl.test.CircleDrawingTestPublic.svgGeneratedByADrawingWithACircleIsExactlyAsExpected">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="344,209,585,235"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a1fd7180d686a72b1631a51f0c34f5690" title="Get the explicit radius of this Circle. " alt="" coords="643,5,857,47"/>
 <area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a12d16906e4e41d57f9e453f6b508bfa7" title="Set the radius to a fixed value. " alt="" coords="643,71,857,112"/>
