@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Tests the protected API of Shapes.
  */
-@DisplayName("Unit tests of Shape private API (abstract)")
+@DisplayName("Shapes - Private API")
 public abstract class ShapeTestProtected
 {
 

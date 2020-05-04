@@ -10,7 +10,9 @@
 
 package com.aarrelaakso.drawl.test;
 
+import com.aarrelaakso.drawl.Rectangle;
 import com.aarrelaakso.drawl.Shape;
+import com.aarrelaakso.drawl.Text;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;

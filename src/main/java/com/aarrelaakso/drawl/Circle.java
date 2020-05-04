@@ -208,13 +208,17 @@ public class Circle extends Shape
             svgBuilder.append("\"");
         }
         svgBuilder.append(" />");
+        if (Boolean.TRUE.equals(this.hasText()))
+        {
+            svgBuilder.append(this.getText().getSVG());
+        }
         return svgBuilder.toString();
     }
 
     /**
      * Set the height of this Circle to a fixed value
      *
-     * @param height The new height of this Circle. This value can be <code>null</code> to indicate that the explict
+     * @param height The new height of this Circle. This value can be <code>null</code> to indicate that the explicit
      *               height has not yet been determined.
      */
     @Override
@@ -227,6 +231,10 @@ public class Circle extends Shape
         else
         {
             this.setExplicitRadius(height.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations));
+            if (Boolean.TRUE.equals(this.hasText()))
+            {
+                this.getText().setExplicitHeight(height);
+            }
         }
     }
 
@@ -248,7 +256,7 @@ public class Circle extends Shape
      * @param radius The fixed value for the radius of this Circle. This method allows providing the value as an
      *               Integer to support common use cases.
      */
-    public void setExplicitRadius(@NotNull Integer radius)
+    protected void setExplicitRadius(@NotNull Integer radius)
     {
         this.explicitRadius = SisuBigDecimal.valueOf(radius);
     }
@@ -263,9 +271,8 @@ public class Circle extends Shape
      *
      * @param width the new width of this Circle
      */
-    // TODO [Issue #1] Make this method protected because API users cannot set explicit dimensions. Adjust unit tests.
     @Override
-    public void setExplicitWidth(@Nullable SisuBigDecimal width)
+    protected void setExplicitWidth(@Nullable SisuBigDecimal width)
     {
         if (width == null)
         {
@@ -274,6 +281,10 @@ public class Circle extends Shape
         else
         {
             this.setExplicitRadius(width.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations));
+            if (Boolean.TRUE.equals(this.hasText()))
+            {
+                this.getText().setExplicitWidth(width);
+            }
         }
     }
 

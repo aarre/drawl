@@ -12,6 +12,7 @@ package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Rectangle;
 import com.aarrelaakso.drawl.SisuBigDecimal;
+import com.aarrelaakso.drawl.Text;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.junit.jupiter.api.*;
 
@@ -25,7 +26,8 @@ public class RectangleTestPublic extends ShapeTestPublic
 {
 
     @BeforeEach
-    void givenRectangles() {
+    void givenRectangles()
+    {
         // These values override those in ShapeTestPublic
         shape1 = new Rectangle();
         shape2 = new Rectangle();
@@ -35,7 +37,8 @@ public class RectangleTestPublic extends ShapeTestPublic
     @Nested
     @DisplayName("Asymmetric (non-square) Rectangles")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class GivenAsymmetricRectangles {
+    class GivenAsymmetricRectangles
+    {
 
         @Test
         @DisplayName("When an asymmetric rectangle is created, then it is not null")
@@ -43,14 +46,12 @@ public class RectangleTestPublic extends ShapeTestPublic
         {
             Integer height = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
             Integer width = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
-            Double aspectRatio = Double.valueOf(width/height);
+            Double aspectRatio = Double.valueOf(width / height);
             Rectangle rectangle = new Rectangle(aspectRatio);
             then(rectangle).isNotNull();
         }
 
 
     }
-
-
 
 }

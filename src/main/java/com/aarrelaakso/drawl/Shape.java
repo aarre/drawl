@@ -59,36 +59,51 @@ public class Shape
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
     private SisuBigDecimal explicitYPositionCenter = SisuBigDecimal.ZERO;
+
     /**
      * The fill of this Shape. Defaults to null, meaning the SVG default.
      */
     private String fill;
-    //private SisuBigDecimal implicitHeight;
+
     /**
      * The implicit height of a default Shape is 1.
      */
     private SisuBigDecimal implicitHeight = SisuBigDecimal.ONE;
-    //private SisuBigDecimal implicitWidth;
+
     /**
      * The implicit width of a default Shape is 1.
      */
     private SisuBigDecimal implicitWidth = SisuBigDecimal.ONE;
+
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
     private SisuBigDecimal implicitXPositionCenter = SisuBigDecimal.ZERO;
+
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
     private SisuBigDecimal implicitYPositionCenter = SisuBigDecimal.ZERO;
+
     /**
      * A shape adjacent to this one, if any
      */
     private Shape neighbor;
+
     /**
      * The stroke of this Shape. Defaults to null, meaning the SVG default.
      */
     private String stroke;
+
+    /**
+     * Text inside this Shape. Defaults to null, meaning no Text in this Shape.
+     */
+    private Text text;
+
+    public void addText(@Nullable Text text)
+    {
+        this.text = text;
+    }
 
     /**
      * Get this Shape's neighbor above (this Shape is below that one), if any.
@@ -390,6 +405,36 @@ public class Shape
     }
 
     /**
+     * Returns a Text object that belongs to this Shape, if there is one.
+     *
+     * @return A Text object that belongs to this Shape, or <code>null</code> if this Shape does not have a Text object
+     * associated with it.
+     */
+    @Nullable
+    public Text getText()
+    {
+        return this.text;
+    }
+
+    /**
+     * Indicates whether this shape has a Text object associated with it.
+     *
+     * @return TRUE if this shape has a Text object associated with it, FALSE otherwise.
+     */
+    @NotNull
+    public Boolean hasText()
+    {
+        if (this.getText() == null)
+        {
+            return Boolean.FALSE;
+        }
+        else
+        {
+            return Boolean.TRUE;
+        }
+    }
+
+    /**
      * Set this Shape above another Shape.
      *
      * @param shape The circle that will be below this one.
@@ -436,8 +481,11 @@ public class Shape
      */
     protected void setExplicitHeight(@Nullable SisuBigDecimal height)
     {
-        logger.atFine().log("Setting explicit height of shape to %s", height.toPlainString());
         this.explicitHeight = height;
+        if (Boolean.TRUE.equals(this.hasText()))
+        {
+            this.getText().setExplicitHeight(height);
+        }
     }
 
     /**
@@ -449,28 +497,38 @@ public class Shape
      */
     protected void setExplicitWidth(@Nullable SisuBigDecimal width)
     {
-        logger.atFine().log("Setting explicit width of shape to %s", width.toPlainString());
         this.explicitWidth = width;
+        if (Boolean.TRUE.equals(this.hasText()))
+        {
+            this.getText().setExplicitWidth(width);
+        }
     }
 
+    /**
+     * Sets the explicit center position of this Shape.
+     * @param x
+     */
     protected void setExplicitXPositionCenter(SisuBigDecimal x)
     {
         this.explicitXPositionCenter = x;
-        logger.atFine().log("Setting explicit x position of Shape %s to: %f", this.toString(), x.floatValue());
+        if(Boolean.TRUE.equals(this.hasText()))
+        {
+            this.getText().setExplicitXPositionCenter(x);
+        }
     }
 
     protected void setExplicitXPositionCenter(Integer x)
     {
-        this.explicitXPositionCenter = SisuBigDecimal.valueOf(x);
+        setExplicitXPositionCenter(SisuBigDecimal.valueOf(x));
     }
 
-    protected void setExplicitYPosition(Integer y)
+    protected void setExplicitYPositionCenter(Integer y)
     {
         this.setExplicitYPositionCenter(SisuBigDecimal.valueOf(y));
     }
 
     /**
-     * Set the explicit y position of this Shape.
+     * Sets the explicit y position of this Shape.
      * <p>
      * The y position marks the vertical position of the Shape's center. The explicit coordinate system is the
      * common Cartesian coordinate system, with higher values of y upward and lower values of y downward.
@@ -480,7 +538,10 @@ public class Shape
     protected void setExplicitYPositionCenter(SisuBigDecimal y)
     {
         this.explicitYPositionCenter = y;
-        logger.atFine().log("Setting explicit y position of Shape %s to: %f", this.toString(), y.floatValue());
+        if(Boolean.TRUE.equals(this.hasText()))
+        {
+            this.getText().setExplicitYPositionCenter(y);
+        }
     }
 
     /**
@@ -508,6 +569,10 @@ public class Shape
     protected void setImplicitXPositionCenter(SisuBigDecimal x)
     {
         this.implicitXPositionCenter = x;
+        if(Boolean.TRUE.equals(this.hasText()))
+        {
+            this.getText().setImplicitXPositionCenter(x);
+        }
     }
 
     /**
@@ -521,6 +586,10 @@ public class Shape
     protected void setImplicitYPositionCenter(SisuBigDecimal y)
     {
         this.implicitYPositionCenter = y;
+        if(Boolean.TRUE.equals(this.hasText()))
+        {
+            this.getText().setImplicitYPositionCenter(y);
+        }
     }
 
     /**
