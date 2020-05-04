@@ -2,8 +2,6 @@ package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.math.BigDecimal;
-
 public class SVG
 {
 

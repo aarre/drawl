@@ -11,12 +11,10 @@
 package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Circle;
-import com.aarrelaakso.drawl.ShapeTestProtected;
 import com.aarrelaakso.drawl.SisuBigDecimal;
 import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.BDDAssertions.then;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Tests the public API of Circles.

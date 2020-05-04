@@ -10,7 +10,6 @@
 
 package com.aarrelaakso.drawl;
 
-import com.aarrelaakso.drawl.test.ShapeTestPublic;
 import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.BDDAssertions.then;

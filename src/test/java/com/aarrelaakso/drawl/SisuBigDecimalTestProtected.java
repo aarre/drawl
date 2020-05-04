@@ -11,7 +11,6 @@
 package com.aarrelaakso.drawl;
 
 import com.aarrelaakso.drawl.SisuBigDecimal;
-import com.aarrelaakso.drawl.SisuBigDecimalRemainderPair;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import static org.assertj.core.api.BDDAssertions.then;
