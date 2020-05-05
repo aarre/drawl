@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.valueOf" name="com.aarrelaakso.drawl.SisuBigDecimal.valueOf">
+<map id="com.aarrelaakso.drawl.DrawlNumber.valueOf" name="com.aarrelaakso.drawl.DrawlNumber.valueOf">
 <area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#af34a59acf0e1fc33777aca1b9be7b23d" title="Set the radius of this Circle to a fixed value. " alt="" coords="248,5,461,47"/>
 <area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a6c89875402beb4944f7994a0f8d09b41" title="Get the implicit total width of all contents in this Drawing. " alt="" coords="241,71,468,112"/>
 <area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Set the explicit dimensions of this Drawing. " alt="" coords="241,201,468,243"/>

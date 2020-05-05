@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.isGreaterThan" name="com.aarrelaakso.drawl.SisuBigDecimal.isGreaterThan">
+<map id="com.aarrelaakso.drawl.DrawlNumber.isGreaterThan" name="com.aarrelaakso.drawl.DrawlNumber.isGreaterThan">
 <area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a6c89875402beb4944f7994a0f8d09b41" title="Get the implicit total width of all contents in this Drawing. " alt="" coords="236,5,463,47"/>
 <area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Set the explicit dimensions of this Drawing. " alt="" coords="236,71,463,112"/>
 <area shape="rect" id="node8" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a89df07cdc9c356d097db099d609335dc" title="Returns whether this number is greater than the other number. " alt="" coords="258,136,441,177"/>

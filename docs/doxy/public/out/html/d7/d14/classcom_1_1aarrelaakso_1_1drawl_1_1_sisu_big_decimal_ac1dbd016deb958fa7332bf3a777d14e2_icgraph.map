@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.divide" name="com.aarrelaakso.drawl.SisuBigDecimal.divide">
+<map id="com.aarrelaakso.drawl.DrawlNumber.divide" name="com.aarrelaakso.drawl.DrawlNumber.divide">
 <area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#acc618a034a3c32a28de43f465fe0d0a1" title="Get the explicit height of this Drawing. " alt="" coords="236,233,463,275"/>
 <area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ac3064aa40e64c40b079c2e0448780e02" title="Get the ratio of the explicit width of this drawing to the implicit width of its contents. " alt="" coords="525,92,751,133"/>
 <area shape="rect" id="node7" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="1128,84,1355,125"/>

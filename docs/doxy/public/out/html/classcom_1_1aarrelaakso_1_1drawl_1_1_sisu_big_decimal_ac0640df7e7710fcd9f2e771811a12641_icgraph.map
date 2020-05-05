@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.create" name="com.aarrelaakso.drawl.SisuBigDecimal.create">
+<map id="com.aarrelaakso.drawl.DrawlNumber.create" name="com.aarrelaakso.drawl.DrawlNumber.create">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a7b9d58fa45206483a9ca603c118d7fae" title="Returns absolute value of this number. " alt="" coords="321,5,503,47"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_sisu_big_decimal_test.html#a5a913cc98a44b74f8aa935ceb7b4368a" title="Creates new instance. " alt="" coords="645,35,836,76"/>
 <area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a2914bed4a69adb928d6edb2af9d578d4" title="Compare this SisuBigDecimal to another fuzzily. " alt="" coords="643,243,838,284"/>

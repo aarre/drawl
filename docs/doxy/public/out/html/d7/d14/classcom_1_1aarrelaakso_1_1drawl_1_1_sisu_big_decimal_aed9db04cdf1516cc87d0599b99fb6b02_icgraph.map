@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.add" name="com.aarrelaakso.drawl.SisuBigDecimal.add">
+<map id="com.aarrelaakso.drawl.DrawlNumber.add" name="com.aarrelaakso.drawl.DrawlNumber.add">
 <area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#acb7e453b97a2800eaf52d209f9759bf6" title="Get the implicit maximum (rightmost) x&#45;position of this Circle. " alt="" coords="243,5,456,47"/>
 <area shape="rect" id="node3" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a69c8084493cd0d4c899235c171fe127e" title="Get the implicit maximum (topmost) y&#45;position of this Circle. " alt="" coords="243,71,456,112"/>
 <area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="236,136,463,177"/>

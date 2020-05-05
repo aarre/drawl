@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimalTestProtected.testCompareToFuzzyWhenPrecisionIsHigh02" name="com.aarrelaakso.drawl.SisuBigDecimalTestProtected.testCompareToFuzzyWhenPrecisionIsHigh02">
+<map id="com.aarrelaakso.drawl.DrawlNumberTestProtected.testCompareToFuzzyWhenPrecisionIsHigh02" name="com.aarrelaakso.drawl.DrawlNumberTestProtected.testCompareToFuzzyWhenPrecisionIsHigh02">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="305,5,487,47"/>
 <area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a9a7c6100961355b8acb1dbcb40197136" title="Compare this SisusBigInt to another using the default MathContext. " alt="" coords="299,71,493,112"/>
 <area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac05b8909bde406486e3fb45e154c5ff4" title="com.aarrelaakso.drawl.Sisu\lBigDecimal.toString" alt="" coords="305,136,487,177"/>

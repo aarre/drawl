@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimalRemainderPair.valueOf" name="com.aarrelaakso.drawl.SisuBigDecimalRemainderPair.valueOf">
+<map id="com.aarrelaakso.drawl.DrawlNumberRemainderPair.valueOf" name="com.aarrelaakso.drawl.DrawlNumberRemainderPair.valueOf">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a21e09234efca516798b5bd745fccad41" title="Performs division operation and returns the result with remainder. " alt="" coords="277,20,477,61"/>
 <area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_test_protected.html#af5680b65b4cec4b0e2641459ba2278ae" title="Tests division with remainder. " alt="" coords="525,71,743,127"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a8707dfd3e59cee5e599d6a8a469b7f0d" title="Performs division operation and returns the result with remainder. " alt="" coords="534,5,734,47"/>

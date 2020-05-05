@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.geq" name="com.aarrelaakso.drawl.SisuBigDecimal.geq">
+<map id="com.aarrelaakso.drawl.DrawlNumber.geq" name="com.aarrelaakso.drawl.DrawlNumber.geq">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aa8a6486ad7565f5ff010b5212383c50e" title="Returns whether this number is greater or equal to the other number. " alt="" coords="240,5,423,47"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1test_1_1_sisu_big_decimal_test.html#a3029f98272b514a05be79ae83d1acdb6" title="Tests greater or equal operator. " alt="" coords="236,71,427,112"/>
 </map>

@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.isLessThanOrEqualTo" name="com.aarrelaakso.drawl.SisuBigDecimal.isLessThanOrEqualTo">
+<map id="com.aarrelaakso.drawl.DrawlNumber.isLessThanOrEqualTo" name="com.aarrelaakso.drawl.DrawlNumber.isLessThanOrEqualTo">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#af246964be3ebccffbba448a0a094f866" title="Get the ratio of explicit measures to implicit measures for this Drawing as a whole. " alt="" coords="276,71,503,112"/>
 <area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a2644e7161a3022a10d2fa99f95ba051e" title="Returns whether this number is less or equal to the other number. " alt="" coords="278,136,501,177"/>
 <area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_test_protected.html#a65586d75b86288d280960b90f2b3e8fe" title="Tests less or equal operator. " alt="" coords="280,201,499,243"/>

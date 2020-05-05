@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.compareToFuzzy" name="com.aarrelaakso.drawl.SisuBigDecimal.compareToFuzzy">
+<map id="com.aarrelaakso.drawl.DrawlNumber.compareToFuzzy" name="com.aarrelaakso.drawl.DrawlNumber.compareToFuzzy">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_shape_protected_1_1_x_position_1_1_explicit.html#ada9d59b2609db2362d532d85a76e28b2" title="Test that, when a Drawing has three adjacent Shapes, then their x positions are correct. " alt="" coords="293,5,575,61"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_shape_protected_1_1_x_position_1_1_explicit.html#ab861f08ea0c88524d6f1c39ce93c6aad" title="Test that, when a Drawing has one adjacent Shape, then its x position is correct. ..." alt="" coords="248,85,620,141"/>
 <area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_shape_protected_1_1_x_position_1_1_explicit.html#ad214c1f3474afa8828e453194653bd7e" title="Test that, when a Drawing has one adjacent Shape, then its x position is correct. ..." alt="" coords="275,166,593,237"/>

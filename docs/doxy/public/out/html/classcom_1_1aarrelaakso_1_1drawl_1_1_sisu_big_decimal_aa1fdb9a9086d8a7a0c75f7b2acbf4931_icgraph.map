@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.toFullString" name="com.aarrelaakso.drawl.SisuBigDecimal.toFullString">
+<map id="com.aarrelaakso.drawl.DrawlNumber.toFullString" name="com.aarrelaakso.drawl.DrawlNumber.toFullString">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac05b8909bde406486e3fb45e154c5ff4" title="com.aarrelaakso.drawl.Sisu\lBigDecimal.toString" alt="" coords="253,148,436,189"/>
 <area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_test_protected.html#af5680b65b4cec4b0e2641459ba2278ae" title="Tests division with remainder. " alt="" coords="236,214,453,270"/>
 <area shape="rect" id="node8" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_test_protected.html#a04bc5566a5c903f4ef00e463230ed9d4" title="Tests conversion to full string. " alt="" coords="239,294,451,350"/>

@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.multiply" name="com.aarrelaakso.drawl.SisuBigDecimal.multiply">
+<map id="com.aarrelaakso.drawl.DrawlNumber.multiply" name="com.aarrelaakso.drawl.DrawlNumber.multiply">
 <area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a8137fc064c1c7ce86fed179b56be9ab5" title="Construct a circle with an implicit radius. " alt="" coords="252,5,447,47"/>
 <area shape="rect" id="node3" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#afdf1eafa90768ab10a9a6ceb25941e34" title="Get the implicit diameter of this Circle. " alt="" coords="243,71,456,112"/>
 <area shape="rect" id="node6" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Set the explicit dimensions of this Drawing. " alt="" coords="236,136,463,177"/>

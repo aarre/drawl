@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.SisuBigDecimal" name="com.aarrelaakso.drawl.SisuBigDecimal.SisuBigDecimal">
+<map id="DrawlNumber" name="com.aarrelaakso.drawl.DrawlNumber.SisuBigDecimal">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="249,1477,431,1518"/>
 <area shape="rect" id="node43" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#aed9db04cdf1516cc87d0599b99fb6b02" title="Performs addition operation. " alt="" coords="249,357,431,398"/>
 <area shape="rect" id="node44" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a21e09234efca516798b5bd745fccad41" title="Performs division operation and returns the result with remainder. " alt="" coords="240,1542,440,1583"/>

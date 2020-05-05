@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimalTestProtected.testAbs" name="com.aarrelaakso.drawl.SisuBigDecimalTestProtected.testAbs">
+<map id="com.aarrelaakso.drawl.DrawlNumberTestProtected.testAbs" name="com.aarrelaakso.drawl.DrawlNumberTestProtected.testAbs">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="504,5,687,47"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a7b9d58fa45206483a9ca603c118d7fae" title="Returns absolute value of this number. " alt="" coords="273,35,456,76"/>
 </map>

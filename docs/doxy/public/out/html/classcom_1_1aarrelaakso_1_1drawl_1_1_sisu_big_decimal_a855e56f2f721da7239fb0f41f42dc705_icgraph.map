@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.isNotEqualTo" name="com.aarrelaakso.drawl.SisuBigDecimal.isNotEqualTo">
+<map id="com.aarrelaakso.drawl.DrawlNumber.isNotEqualTo" name="com.aarrelaakso.drawl.DrawlNumber.isNotEqualTo">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#acc618a034a3c32a28de43f465fe0d0a1" title="Get the explicit height of this Drawing. " alt="" coords="236,123,463,164"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ac3064aa40e64c40b079c2e0448780e02" title="Get the ratio of the explicit width of this drawing to the implicit width of its contents. " alt="" coords="525,5,751,47"/>
 <area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a418641b3099d2070ee0fa69dc7b35af1" title="Set the explicit height of this Drawing. " alt="" coords="1211,36,1437,77"/>

@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.toPlainString" name="com.aarrelaakso.drawl.SisuBigDecimal.toPlainString">
+<map id="com.aarrelaakso.drawl.DrawlNumber.toPlainString" name="com.aarrelaakso.drawl.DrawlNumber.toPlainString">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Set the explicit dimensions of this Drawing. " alt="" coords="312,194,539,235"/>
 <area shape="rect" id="node9" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ad41ecfc8ce74638066d8a21c97e3f399" title="com.aarrelaakso.drawl.Shape.set\lImplicitHeight" alt="" coords="317,275,533,317"/>
 <area shape="rect" id="node11" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6ec4c2bd26d08f0a1545bd1d5f47c05a" title="com.aarrelaakso.drawl.Shape.set\lImplicitWidth" alt="" coords="317,341,533,382"/>

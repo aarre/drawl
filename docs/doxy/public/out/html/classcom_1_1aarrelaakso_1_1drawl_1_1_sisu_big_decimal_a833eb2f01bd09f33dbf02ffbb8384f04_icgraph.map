@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.compareTo" name="com.aarrelaakso.drawl.SisuBigDecimal.compareTo">
+<map id="com.aarrelaakso.drawl.DrawlNumber.compareTo" name="com.aarrelaakso.drawl.DrawlNumber.compareTo">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#afdf1eafa90768ab10a9a6ceb25941e34" title="Get the implicit diameter of this Circle. " alt="" coords="289,71,502,112"/>
 <area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a607fd74fd57adcc4b63204bdf3085778" title="Get the ratio of the explicit height of this Drawing to the implicit height of its contents..." alt="" coords="877,441,1104,483"/>
 <area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#af246964be3ebccffbba448a0a094f866" title="Get the ratio of explicit measures to implicit measures for this Drawing as a whole. " alt="" coords="1152,559,1379,600"/>

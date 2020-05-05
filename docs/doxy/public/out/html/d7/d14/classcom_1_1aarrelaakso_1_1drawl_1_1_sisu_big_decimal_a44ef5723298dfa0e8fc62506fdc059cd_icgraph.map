@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.subtract" name="com.aarrelaakso.drawl.SisuBigDecimal.subtract">
+<map id="com.aarrelaakso.drawl.DrawlNumber.subtract" name="com.aarrelaakso.drawl.DrawlNumber.subtract">
 <area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ac7ed577bb645a1f136b221feda9e6dfc" title="Get the implicit minimum (leftmost) x&#45;position of this Circle. " alt="" coords="243,5,456,47"/>
 <area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a02cea69033b7f7930b9dae17a7706fc3" title="Get the implicit total height of all contents in the drawing. " alt="" coords="236,71,463,112"/>
 <area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="531,129,757,171"/>

@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.floatValue" name="com.aarrelaakso.drawl.SisuBigDecimal.floatValue">
+<map id="com.aarrelaakso.drawl.DrawlNumber.floatValue" name="com.aarrelaakso.drawl.DrawlNumber.floatValue">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8e4c74480fede49f44519554136c12b0" title="com.aarrelaakso.drawl.Shape.set\lExplicitXPositionCenter" alt="" coords="293,5,509,47"/>
 <area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0ddc58345fca924e973fac474955ef14" title="Set the explicit y position of this Shape. " alt="" coords="293,103,509,144"/>
 <area shape="rect" id="node7" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#a6658c22ded498ee41fdcf637a3cc9dab" title="Convert a number to a string for SVG. " alt="" coords="301,169,501,211"/>

@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimalTestProtected.testTruncDecimals" name="com.aarrelaakso.drawl.SisuBigDecimalTestProtected.testTruncDecimals">
+<map id="com.aarrelaakso.drawl.DrawlNumberTestProtected.testTruncDecimals" name="com.aarrelaakso.drawl.DrawlNumberTestProtected.testTruncDecimals">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="284,5,467,47"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ab81d0189bbfd5f1b69de6781ac383ac3" title="Truncates all the fractional part of this number. " alt="" coords="284,71,467,112"/>
 </map>

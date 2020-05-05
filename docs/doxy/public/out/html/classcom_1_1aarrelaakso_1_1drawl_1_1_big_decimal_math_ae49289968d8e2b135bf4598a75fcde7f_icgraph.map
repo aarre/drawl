@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.isIntegerValue" name="com.aarrelaakso.drawl.SisuBigDecimal.isIntegerValue">
+<map id="com.aarrelaakso.drawl.DrawlNumber.isIntegerValue" name="com.aarrelaakso.drawl.DrawlNumber.isIntegerValue">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#a505531184271f78c500bd64a838cf259" title="Convert a number to a string for SVG. " alt="" coords="240,107,440,148"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="com.aarrelaakso.drawl.Circle.getSVG" alt="" coords="501,30,742,57"/>
 <area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ae49bfdabbf7177b244a7a0b5ae995fe1" title="Get the SVG for this Drawing. " alt="" coords="494,114,749,141"/>

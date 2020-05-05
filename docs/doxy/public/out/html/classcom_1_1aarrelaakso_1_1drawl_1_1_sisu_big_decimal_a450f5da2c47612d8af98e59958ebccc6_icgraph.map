@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.compareTo" name="com.aarrelaakso.drawl.SisuBigDecimal.compareTo">
+<map id="com.aarrelaakso.drawl.DrawlNumber.compareTo" name="com.aarrelaakso.drawl.DrawlNumber.compareTo">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a2914bed4a69adb928d6edb2af9d578d4" title="Compare this SisuBigDecimal to another fuzzily. " alt="" coords="271,5,466,47"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_test_protected.html#ad3464ad30628610a77852ae668291b22" title="Tests compare to method. " alt="" coords="236,71,501,112"/>
 </map>

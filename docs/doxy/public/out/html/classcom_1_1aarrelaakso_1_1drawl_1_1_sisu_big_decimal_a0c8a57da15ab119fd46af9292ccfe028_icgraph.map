@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.isEqualTo" name="com.aarrelaakso.drawl.SisuBigDecimal.isEqualTo">
+<map id="com.aarrelaakso.drawl.DrawlNumber.isEqualTo" name="com.aarrelaakso.drawl.DrawlNumber.isEqualTo">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a6c89875402beb4944f7994a0f8d09b41" title="Get the implicit total width of all contents in this Drawing. " alt="" coords="312,5,539,47"/>
 <area shape="rect" id="node4" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a1ad573b06f341aa79f6a255a476ae6e4" title="Get this Shape&#39;s neighbor to the left (this Shape is to the right of that one), if any..." alt="" coords="317,71,533,112"/>
 <area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_drawing_test_rectangle_protected_1_1_given_asymmetric_rectangles.html#af5269e358d1a37f3e05b24aeb76749e8" title="com.aarrelaakso.drawl.Drawing\lTestRectangleProtected.GivenAsymmetric\lRectangles.whenAnAsymmetricRectangleIsCreated\lThenItMaintainsItsImplicitHeightAndWidthOnDrawing" alt="" coords="259,136,591,207"/>

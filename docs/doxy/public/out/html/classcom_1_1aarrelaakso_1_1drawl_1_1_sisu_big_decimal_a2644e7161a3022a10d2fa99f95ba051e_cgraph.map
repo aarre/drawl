@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.isLessThanOrEqualTo" name="com.aarrelaakso.drawl.SisuBigDecimal.isLessThanOrEqualTo">
+<map id="com.aarrelaakso.drawl.DrawlNumber.isLessThanOrEqualTo" name="com.aarrelaakso.drawl.DrawlNumber.isLessThanOrEqualTo">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#ac809a1deb4723c852a7737e9a40eb57e" title="Returns whether this number is less or equal to the other number. " alt="" coords="276,5,499,47"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a076ac8cd04ac04e39f7f3fcc7ce9a4a1" title="Creates new instance. " alt="" coords="296,71,479,112"/>
 </map>

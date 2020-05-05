@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.equals" name="com.aarrelaakso.drawl.SisuBigDecimal.equals">
+<map id="com.aarrelaakso.drawl.DrawlNumber.equals" name="com.aarrelaakso.drawl.DrawlNumber.equals">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#afdf1eafa90768ab10a9a6ceb25941e34" title="Get the implicit diameter of this Circle. " alt="" coords="237,37,451,79"/>
 <area shape="rect" id="node5" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#acebea2aa57031322323c9bf50ee447db" title="Get this Shape&#39;s neighbor above (this Shape is below that one), if any. " alt="" coords="236,103,452,144"/>
 <area shape="rect" id="node6" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a53de5ab609d879719cd3b372dfe8df58" title="Get this Shape&#39;s neighbor below (this Shape is below that one), if any. " alt="" coords="236,168,452,209"/>

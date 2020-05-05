@@ -1,4 +1,4 @@
-<map id="com.aarrelaakso.drawl.SisuBigDecimal.eq" name="com.aarrelaakso.drawl.SisuBigDecimal.eq">
+<map id="com.aarrelaakso.drawl.DrawlNumber.eq" name="com.aarrelaakso.drawl.DrawlNumber.eq">
 <area shape="rect" id="node2" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a97dba153d108ae44a135981e7a2af1a8" title="Returns whether this number is equal with the other number. " alt="" coords="238,5,421,47"/>
 <area shape="rect" id="node3" href="$classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a67a8c41e95f12142516f7a8f8736386a" title="Prevents construction from outside. " alt="" coords="236,71,423,112"/>
 </map>
