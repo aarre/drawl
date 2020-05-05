@@ -10,10 +10,7 @@
 
 package com.aarrelaakso.drawl.test;
 
-import com.aarrelaakso.drawl.Drawing;
-import com.aarrelaakso.drawl.Measure;
-import com.aarrelaakso.drawl.Shape;
-import com.aarrelaakso.drawl.Text;
+import com.aarrelaakso.drawl.*;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
@@ -27,13 +24,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(SoftAssertionsExtension.class)
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @DisplayName("Shape Drawings - Public API")
-public abstract class ShapeDrawingTestPublic
-{
+public abstract class ShapeDrawingTestPublic {
 
     private static final FluentLogger logger;
 
-    static
-    {
+    static {
         logger = FluentLogger.forEnclosingClass();
 
     }
@@ -44,23 +39,20 @@ public abstract class ShapeDrawingTestPublic
     Shape shape3;
 
     @BeforeEach
-    void givenADrawing()
-    {
+    void givenADrawing() {
         drawing = new Drawing();
     }
 
     @Test
     @DisplayName("LENGTH: Adding a circle to an empty drawing gives the drawing a length of 1")
-    void lengthWhenADrawingHasOneShapeThenItsLengthIs1()
-    {
+    void lengthWhenADrawingHasOneShapeThenItsLengthIs1() {
         drawing.add(shape1);
         assertEquals(new Integer(1), drawing.getLength());
     }
 
     @Test
     @DisplayName("SVG: Calling getSVG without parameters does not throw an exception")
-    void svgWhenYouCallSVGWithoutParametersItDoesNotThrowAnException()
-    {
+    void svgWhenYouCallSVGWithoutParametersItDoesNotThrowAnException() {
         assertDoesNotThrow(() -> {
             String svg = drawing.getSVG();
         });
@@ -72,16 +64,14 @@ public abstract class ShapeDrawingTestPublic
     @Nested
     @DisplayName("Fill")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class Fill
-    {
+    class Fill {
 
         @Test
         @Tag("fill")
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the fill is not set, then it does not appear in the SVG")
-        void whenTheFillIsNotSetThenItDoesNotAppearInTheSVG(BDDSoftAssertions softly)
-        {
+        void whenTheFillIsNotSetThenItDoesNotAppearInTheSVG(BDDSoftAssertions softly) {
             drawing.add(shape1);
             String svg = drawing.getSVG(100, 100);
             softly.then(svg).doesNotContain("fill");
@@ -93,10 +83,8 @@ public abstract class ShapeDrawingTestPublic
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the fill is set, then it appears in the SVG")
-        void whenTheFillIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly)
-        {
-            if (shape1.getClass() == Text.class)
-            {
+        void whenTheFillIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly) {
+            if (shape1.getClass() == Text.class) {
                 ((Text) shape1).setString("Drawl");
             }
             drawing.add(shape1);
@@ -113,8 +101,7 @@ public abstract class ShapeDrawingTestPublic
     @Nested
     @DisplayName("Stroke")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class Stroke
-    {
+    class Stroke {
 
 
         @Test
@@ -122,8 +109,7 @@ public abstract class ShapeDrawingTestPublic
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the stroke is not set, then it does not appear in the SVG")
-        void whenTheStrokeIsNotSetThenItDoesNotAppearInTheSVG(BDDSoftAssertions softly)
-        {
+        void whenTheStrokeIsNotSetThenItDoesNotAppearInTheSVG(BDDSoftAssertions softly) {
             drawing.add(shape1);
             String svg = drawing.getSVG(100, 100);
             softly.then(svg).doesNotContain("stroke");
@@ -135,11 +121,9 @@ public abstract class ShapeDrawingTestPublic
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the stroke is set, then it appears in the SVG")
-        void whenTheStrokeIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly)
-        {
+        void whenTheStrokeIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly) {
             drawing.add(shape1);
-            if (shape1.getClass() == Text.class)
-            {
+            if (shape1.getClass() == Text.class) {
                 ((Text) shape1).setString("Drawl");
             }
             shape1.setStroke("darkslategray");
@@ -156,15 +140,12 @@ public abstract class ShapeDrawingTestPublic
     @Nested
     @DisplayName("Text")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class TextTests
-    {
+    class TextTests {
 
         @Test
         @DisplayName("When Text is added to a Shape, then it shows up in the SVG")
-        void whenTextIsAddedToAShapeThenItShowsUpInTheSVG()
-        {
-            if (shape1.getClass() == Text.class)
-            {
+        void whenTextIsAddedToAShapeThenItShowsUpInTheSVG() {
+            if (shape1.getClass() == Text.class) {
                 // If the outer Shape is a Text object but does not have a String, then it will not be issued to
                 // the SVG. Therefore, if the outer Shape is a Text object, we need to assign it a String.
                 ((Text) shape1).setString("Lward");
@@ -185,13 +166,73 @@ public abstract class ShapeDrawingTestPublic
     @Nested
     @DisplayName("Non-adjacent Positioning")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class NonAdjacentTests
-    {
+    class NonAdjacentTests {
         @Test
-        @DisplayName("When a Shape is set nonadjacent to another shape, then...")
-        void whenAShapeIsSetNonAdjacentToAnotherShapeThen()
-        {
+        @DisplayName("When a Shape is set nonadjacent right of another shape, then...")
+        void whenAShapeIsSetNonAdjacentRightOfAnotherShapeThen() {
+            drawing.add(shape1);
+            drawing.add(shape2);
             shape2.setRightOf(shape1, shape2.getWidth());
+            if (shape1.getClass() == Circle.class) {
+                then(drawing.getSVG(30, 10)).contains("x=\"25\"");
+            } else if (shape1.getClass() == Rectangle.class) {
+                then(drawing.getSVG(30, 10)).contains("x=\"20\"");
+            } else if (shape1.getClass() == Text.class) {
+                ((Text)shape1).setString("Drawl");
+                ((Text)shape2).setString("Lward");
+                then(drawing.getSVG(30, 10)).contains("x=\"25\"");
+            }
+        }
+
+        @Test
+        @DisplayName("When a Shape is set nonadjacent left of another shape, then...")
+        void whenAShapeIsSetNonAdjacentLeftOfAnotherShapeThen() {
+            drawing.add(shape1);
+            drawing.add(shape2);
+            shape2.setLeftOf(shape1, shape2.getWidth());
+            if (shape1.getClass() == Circle.class) {
+                then(drawing.getSVG(30, 10)).contains("x=\"25\"");
+            } else if (shape1.getClass() == Rectangle.class) {
+                then(drawing.getSVG(30, 10)).contains("x=\"20\"");
+            } else if (shape1.getClass() == Text.class) {
+                ((Text)shape1).setString("Drawl");
+                ((Text)shape2).setString("Lward");
+                then(drawing.getSVG(30, 10)).contains("x=\"25\"");
+            }
+        }
+
+        @Test
+        @DisplayName("When a Shape is set nonadjacent above another shape, then...")
+        void whenAShapeIsSetNonAdjacentAboveAnotherShapeThen() {
+            drawing.add(shape1);
+            drawing.add(shape2);
+            shape2.setAbove(shape1, shape2.getWidth());
+            if (shape1.getClass() == Circle.class) {
+                then(drawing.getSVG(10, 30)).contains("y=\"25\"");
+            } else if (shape1.getClass() == Rectangle.class) {
+                then(drawing.getSVG(10, 30)).contains("y=\"20\"");
+            } else if (shape1.getClass() == Text.class) {
+                ((Text)shape1).setString("Drawl");
+                ((Text)shape2).setString("Lward");
+                then(drawing.getSVG(10, 30)).contains("y=\"25\"");
+            }
+        }
+
+        @Test
+        @DisplayName("When a Shape is set nonadjacent below another shape, then...")
+        void whenAShapeIsSetNonAdjacentBelowAnotherShapeThen() {
+            drawing.add(shape1);
+            drawing.add(shape2);
+            shape2.setBelow(shape1, shape2.getWidth());
+            if (shape1.getClass() == Circle.class) {
+                then(drawing.getSVG(10, 30)).contains("y=\"25\"");
+            } else if (shape1.getClass() == Rectangle.class) {
+                then(drawing.getSVG(10, 30)).contains("y=\"20\"");
+            } else if (shape1.getClass() == Text.class) {
+                ((Text)shape1).setString("Drawl");
+                ((Text)shape2).setString("Lward");
+                then(drawing.getSVG(10, 30)).contains("y=\"25\"");
+            }
         }
     }
 
@@ -201,13 +242,23 @@ public abstract class ShapeDrawingTestPublic
     @Nested
     @DisplayName("Measures")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class MeasureTests
-    {
+    class MeasureTests {
         @Test
-        @DisplayName("whenAUserGetsTheWidthOfAShapeThenItIsNotANumber")
-        void whenAUserGetsTheWidthOfAShapeThenItIsNotANumber()
-        {
+        @DisplayName("whenAUserGetsTheWidthOfADefaultShapeThenItIs1")
+        void whenAUserGetsTheWidthOfADefaultShapeThenItIs1() {
             Measure measure = shape1.getWidth();
+            then(measure).isInstanceOf(Measure.class);
+            then(measure).isNotEqualTo(0);
+            then(measure).isEqualToComparingFieldByField(new Measure(1));
+        }
+
+        @Test
+        @DisplayName("whenAUserGetsTheHeightOfADefaultShapeThenItIs1")
+        void whenAUserGetsTheHeightOfADefaultShapeThenItIs1() {
+            Measure measure = shape1.getHeight();
+            then(measure).isInstanceOf(Measure.class);
+            then(measure).isNotEqualTo(0);
+            then(measure).isEqualToComparingFieldByField(new Measure(1));
         }
     }
 }
