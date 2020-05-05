@@ -23,12 +23,12 @@ dependencies {
     // Apache Commons
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-math3
+    compile group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
+
 
     // JetBrains Annotations
     compile 'org.jetbrains:annotations:16.0.2'
-
-    // JUnit 4
-    //compile 'junit:junit:4.12'
 
     // Flogger (Google fluent logging)
     compile group: 'com.google.flogger', name: 'flogger', version: '0.5.1'
