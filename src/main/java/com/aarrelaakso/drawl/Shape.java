@@ -240,6 +240,17 @@ public class Shape
         return this.fill;
     }
 
+    /**
+     * Returns a Measure object that represents the height of this Shape.
+     *
+     * @return a Measure object that represents the height of this Shape.
+     */
+    public Measure getHeight()
+    {
+        DrawlNumber height = this.getImplicitHeight();
+        return new Measure(height);
+    }
+
     protected DrawlNumber getImplicitHalfHeight()
     {
         return this.getImplicitHeight().divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
@@ -446,12 +457,17 @@ public class Shape
         }
     }
 
+    public void setAbove(Shape shape)
+    {
+        this.setAbove(shape, new Measure(0));
+    }
+
     /**
      * Set this Shape above another Shape.
      *
      * @param shape The circle that will be below this one.
      */
-    public void setAbove(Shape shape)
+    public void setAbove(Shape shape, Measure offset)
     {
         if (shape == this)
         {
@@ -459,10 +475,22 @@ public class Shape
         }
         this.neighbor = shape;
         this.angleToNeighbor = DrawlNumber.valueOf(0);
+
+        // Set the y position of this Shape
         DrawlNumber topBoundaryOfShape = shape.getImplicitYPositionTop();
         DrawlNumber thisImplicitYPosition = topBoundaryOfShape.add(this.getImplicitHalfHeight(),
                 DrawlNumber.mcOperations);
+        thisImplicitYPosition = thisImplicitYPosition.add(offset.toDrawlNumber());
         this.setImplicitYPositionCenter(thisImplicitYPosition);
+
+        // Set the x position of this Shape to match the one it is above
+        this.setImplicitXPositionCenter(shape.getImplicitXPositionCenter());
+        this.setExplicitXPositionCenter(shape.getExplicitXPositionCenter());
+    }
+
+    public void setBelow(Shape shape)
+    {
+        this.setBelow(shape, new Measure(0));
     }
 
     /**
@@ -470,7 +498,7 @@ public class Shape
      *
      * @param shape The circle that will be above this one.
      */
-    public void setBelow(Shape shape)
+    public void setBelow(Shape shape, Measure offset)
     {
         if (shape == this)
         {
@@ -481,7 +509,12 @@ public class Shape
         DrawlNumber bottomBoundaryOfShape = shape.getImplicitYPositionBottom();
         DrawlNumber thisImplicitYPosition = bottomBoundaryOfShape.subtract(this.getImplicitHalfHeight(),
                 DrawlNumber.mcOperations);
+        thisImplicitYPosition = thisImplicitYPosition.subtract(offset.toDrawlNumber());
         this.setImplicitYPositionCenter(thisImplicitYPosition);
+
+        // Set the x position of this Shape to match the one it is above
+        this.setImplicitXPositionCenter(shape.getImplicitXPositionCenter());
+        this.setExplicitXPositionCenter(shape.getExplicitXPositionCenter());
     }
 
     /**
@@ -604,12 +637,16 @@ public class Shape
         }
     }
 
+    public void setLeftOf(Shape shape)
+    {
+        this.setLeftOf(shape, new Measure(0));
+    }
     /**
      * Set this Shape's neighbor to the right (this Shape is to the left of that one).
      *
      * @param shape the Shape to the right of this one
      */
-    public void setLeftOf(Shape shape)
+    public void setLeftOf(Shape shape, Measure offset)
     {
         if (shape == this)
         {
@@ -622,7 +659,10 @@ public class Shape
         DrawlNumber leftBoundaryOfShape = shape.getImplicitXMinimum();
         DrawlNumber thisImplicitXPosition = leftBoundaryOfShape.subtract(this.getImplicitHalfWidth(),
                 DrawlNumber.mcOperations);
+
+        thisImplicitXPosition = thisImplicitXPosition.subtract(offset.toDrawlNumber());
         this.setImplicitXPositionCenter(thisImplicitXPosition);
+
 
         // Set the y position of this shape to match the one it is to the left of
         this.setImplicitYPositionCenter(shape.getImplicitYPositionCenter());
@@ -654,14 +694,16 @@ public class Shape
         this.neighbor = shape;
         this.angleToNeighbor = DrawlNumber.valueOf(270);
 
-        // Set the x position of this shape
+        // Set the x position of this Shape
         DrawlNumber rightBoundaryOfShape = shape.getImplicitXMaximum();
         DrawlNumber thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(),
                 DrawlNumber.mcOperations);
-        thisImplicitXPosition.add(offset.toDrawlNumber());
+        thisImplicitXPosition = thisImplicitXPosition.add(offset.toDrawlNumber());
         this.setImplicitXPositionCenter(thisImplicitXPosition);
 
-
+        // Set the y position of this shape to match the one it is to the left of
+        this.setImplicitYPositionCenter(shape.getImplicitYPositionCenter());
+        this.setExplicitYPositionCenter(shape.getExplicitYPositionCenter());
     }
 
     /**
