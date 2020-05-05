@@ -11,6 +11,7 @@
 package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Drawing;
+import com.aarrelaakso.drawl.Measure;
 import com.aarrelaakso.drawl.Shape;
 import com.aarrelaakso.drawl.Text;
 import com.google.common.flogger.FluentLogger;
@@ -178,4 +179,35 @@ public abstract class ShapeDrawingTestPublic
 
     }
 
+    /**
+     * Tests setting Shapes non-adjacent to other Shapes
+     */
+    @Nested
+    @DisplayName("Non-adjacent Positioning")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class NonAdjacentTests
+    {
+        @Test
+        @DisplayName("When a Shape is set nonadjacent to another shape, then...")
+        void whenAShapeIsSetNonAdjacentToAnotherShapeThen()
+        {
+            shape2.setRightOf(shape1, shape2.getWidth());
+        }
+    }
+
+    /**
+     * Tests getting and setting Measures on Shapes
+     */
+    @Nested
+    @DisplayName("Measures")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class MeasureTests
+    {
+        @Test
+        @DisplayName("whenAUserGetsTheWidthOfAShapeThenItIsNotANumber")
+        void whenAUserGetsTheWidthOfAShapeThenItIsNotANumber()
+        {
+            Measure measure = shape1.getWidth();
+        }
+    }
 }
