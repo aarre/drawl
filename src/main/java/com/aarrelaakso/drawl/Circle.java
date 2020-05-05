@@ -9,12 +9,12 @@ public class Circle extends Shape
     /**
      * The explicit radius of a Circle is null by default.
      */
-    private SisuBigDecimal explicitRadius;
+    private DrawlNumber explicitRadius;
 
     /**
      * The implicit radius of a Circle is 0.5 by default, giving the default Circle an implicit diameter of 1.
      */
-    private SisuBigDecimal implicitRadius = SisuBigDecimal.HALF;
+    private DrawlNumber implicitRadius = DrawlNumber.HALF;
 
     /**
      * Construct a circle with a default implicit radius.
@@ -29,7 +29,7 @@ public class Circle extends Shape
      *
      * @param implicitRadius The implicit radius of the new circle.
      */
-    protected Circle(SisuBigDecimal implicitRadius)
+    protected Circle(DrawlNumber implicitRadius)
     {
         this.implicitRadius = implicitRadius;
     }
@@ -41,13 +41,13 @@ public class Circle extends Shape
      * not been set.
      */
     @Nullable
-    private SisuBigDecimal getExplicitDiameter()
+    private DrawlNumber getExplicitDiameter()
     {
-        SisuBigDecimal result = null;
-        SisuBigDecimal radiusExplicitValue = this.getExplicitRadius();
+        DrawlNumber result = null;
+        DrawlNumber radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue != null)
         {
-            result = radiusExplicitValue.multiply(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
+            result = radiusExplicitValue.multiply(DrawlNumber.TWO, DrawlNumber.mcOperations);
         }
         return result;
     }
@@ -60,7 +60,7 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    public SisuBigDecimal getExplicitHeight()
+    public DrawlNumber getExplicitHeight()
     {
         return this.getExplicitDiameter();
     }
@@ -72,7 +72,7 @@ public class Circle extends Shape
      * not been set.
      */
     @Nullable
-    protected SisuBigDecimal getExplicitRadius()
+    protected DrawlNumber getExplicitRadius()
     {
         return this.explicitRadius;
     }
@@ -85,7 +85,7 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    protected SisuBigDecimal getExplicitWidth()
+    protected DrawlNumber getExplicitWidth()
     {
         return this.getExplicitDiameter();
     }
@@ -95,11 +95,11 @@ public class Circle extends Shape
      *
      * @return
      */
-    protected SisuBigDecimal getImplicitDiameter()
+    protected DrawlNumber getImplicitDiameter()
     {
-        SisuBigDecimal myImplicitRadius = this.getImplicitRadius();
-        assert !myImplicitRadius.equals(SisuBigDecimal.ZERO) : "Implicit radius cannot be zero.";
-        return myImplicitRadius.multiply(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations);
+        DrawlNumber myImplicitRadius = this.getImplicitRadius();
+        assert !myImplicitRadius.equals(DrawlNumber.ZERO) : "Implicit radius cannot be zero.";
+        return myImplicitRadius.multiply(DrawlNumber.TWO, DrawlNumber.mcOperations);
     }
 
     /**
@@ -110,12 +110,12 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    protected SisuBigDecimal getImplicitHeight()
+    protected DrawlNumber getImplicitHeight()
     {
         return this.getImplicitDiameter();
     }
 
-    protected SisuBigDecimal getImplicitRadius()
+    protected DrawlNumber getImplicitRadius()
     {
         return this.implicitRadius;
     }
@@ -126,7 +126,7 @@ public class Circle extends Shape
      * @return the implicit width of this Circle
      */
     @Override
-    protected SisuBigDecimal getImplicitWidth()
+    protected DrawlNumber getImplicitWidth()
     {
         return this.getImplicitDiameter();
     }
@@ -137,7 +137,7 @@ public class Circle extends Shape
      * @return The implicit maximum (rightmost) x-position of this Circle.
      */
     @Override
-    protected SisuBigDecimal getImplicitXMaximum()
+    protected DrawlNumber getImplicitXMaximum()
     {
         return this.getImplicitXPositionCenter().add(this.getImplicitRadius());
     }
@@ -148,7 +148,7 @@ public class Circle extends Shape
      * @return The implicit minimum (leftmost) x-position of this Circle.
      */
     @Override
-    protected SisuBigDecimal getImplicitXMinimum()
+    protected DrawlNumber getImplicitXMinimum()
     {
         return this.getImplicitXPositionCenter().subtract(this.getImplicitRadius());
     }
@@ -159,7 +159,7 @@ public class Circle extends Shape
      * @return The implicit maximum (topmost) x-position of this Circle.
      */
     @Override
-    protected SisuBigDecimal getImplicitYPositionTop()
+    protected DrawlNumber getImplicitYPositionTop()
     {
         return this.getImplicitYPositionCenter().add(this.getImplicitRadius());
     }
@@ -173,7 +173,7 @@ public class Circle extends Shape
     public String getSVG()
     {
         String radiusStringValue;
-        SisuBigDecimal radiusExplicitValue = this.getExplicitRadius();
+        DrawlNumber radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue == null)
         {
             // If the explicit radius has not been set, use the implicit radius
@@ -220,7 +220,7 @@ public class Circle extends Shape
      *               height has not yet been determined.
      */
     @Override
-    protected void setExplicitHeight(@Nullable SisuBigDecimal height)
+    protected void setExplicitHeight(@Nullable DrawlNumber height)
     {
         if (height == null)
         {
@@ -228,7 +228,7 @@ public class Circle extends Shape
         }
         else
         {
-            this.setExplicitRadius(height.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations));
+            this.setExplicitRadius(height.divide(DrawlNumber.TWO, DrawlNumber.mcOperations));
             if (Boolean.TRUE.equals(this.hasText()))
             {
                 this.getText().setExplicitHeight(height);
@@ -243,7 +243,7 @@ public class Circle extends Shape
      *
      * @param radius the fixed value
      */
-    protected void setExplicitRadius(@NotNull SisuBigDecimal radius)
+    protected void setExplicitRadius(@NotNull DrawlNumber radius)
     {
         this.explicitRadius = radius;
     }
@@ -256,7 +256,7 @@ public class Circle extends Shape
      */
     protected void setExplicitRadius(@NotNull Integer radius)
     {
-        this.explicitRadius = SisuBigDecimal.valueOf(radius);
+        this.explicitRadius = DrawlNumber.valueOf(radius);
     }
 
     private void setExplicitRadiusToNull()
@@ -270,7 +270,7 @@ public class Circle extends Shape
      * @param width the new width of this Circle
      */
     @Override
-    protected void setExplicitWidth(@Nullable SisuBigDecimal width)
+    protected void setExplicitWidth(@Nullable DrawlNumber width)
     {
         if (width == null)
         {
@@ -278,7 +278,7 @@ public class Circle extends Shape
         }
         else
         {
-            this.setExplicitRadius(width.divide(SisuBigDecimal.TWO, SisuBigDecimal.mcOperations));
+            this.setExplicitRadius(width.divide(DrawlNumber.TWO, DrawlNumber.mcOperations));
             if (Boolean.TRUE.equals(this.hasText()))
             {
                 this.getText().setExplicitWidth(width);

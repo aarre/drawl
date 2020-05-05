@@ -1,7 +1,7 @@
 package com.aarrelaakso.drawl.test
 
 import com.aarrelaakso.drawl.Circle
-import com.aarrelaakso.drawl.SisuBigDecimal
+import com.aarrelaakso.drawl.DrawlNumber
 import spock.lang.Specification
 import org.apache.commons.lang3.StringUtils
 
@@ -50,10 +50,10 @@ class DrawingTestSVG extends Specification {
         Drawing drawing = new Drawing()
         drawing.add(circle1)
         drawing.add(circle2)
-        SisuBigDecimal implicitWidthOfContents = drawing.getImplicitWidthOfContents()
+        DrawlNumber implicitWidthOfContents = drawing.getImplicitWidthOfContents()
 
         then:
-        implicitWidthOfContents == SisuBigDecimal.ONE
+        implicitWidthOfContents == DrawlNumber.ONE
     }
 
     def "SVG: When a drawing has two default Circles, they are the same in the SVG"() {
@@ -161,13 +161,13 @@ class DrawingTestSVG extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == SisuBigDecimal.TWO;
+        drawing.getImplicitWidth() == DrawlNumber.TWO;
 
         when:
         String svg = drawing.getSVG(100, 100)
 
         then:
-        drawing.getImplicitWidth() == SisuBigDecimal.TWO;
+        drawing.getImplicitWidth() == DrawlNumber.TWO;
     }
 
     def "SVG - WIDTH: When you add two default Circles to a drawing, the drawing is still the same width after you get the SVG"() {
@@ -179,14 +179,14 @@ class DrawingTestSVG extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == SisuBigDecimal.ONE;
+        drawing.getImplicitWidth() == DrawlNumber.ONE;
 
         when:
         String svg = drawing.getSVG(100, 100)
         int count = StringUtils.countMatches(svg, "circle")
 
         then:
-        drawing.getImplicitWidth() == SisuBigDecimal.ONE;
+        drawing.getImplicitWidth() == DrawlNumber.ONE;
     }
 
 }
@@ -199,10 +199,10 @@ class DrawingTestWidthExplicit extends Specification {
         Circle circle = new Circle()
         drawing.add(circle)
         drawing.setExplicitWidth(100)
-        SisuBigDecimal explicitWidth = drawing.getExplicitWidth()
+        DrawlNumber explicitWidth = drawing.getExplicitWidth()
 
         then:
-        explicitWidth == SisuBigDecimal.valueOf(100)
+        explicitWidth == DrawlNumber.valueOf(100)
     }
 
     def "WIDTH - EXPLICIT: You can get the explicit width per implicit width for a drawing with one Circle"() {
@@ -212,10 +212,10 @@ class DrawingTestWidthExplicit extends Specification {
         drawing.add(circle)
         drawing.setExplicitWidth(100)
         drawing.setExplicitHeight(100)
-        SisuBigDecimal explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then:
-        explicitWidthPerObject == SisuBigDecimal.valueOf(100)
+        explicitWidthPerObject == DrawlNumber.valueOf(100)
     }
 
     def "WIDTH - EXPLICIT: You can get the explicit width per implicit width for a drawing with two adjacent Circles"() {
@@ -228,10 +228,10 @@ class DrawingTestWidthExplicit extends Specification {
         drawing.add(circle2)
         drawing.setExplicitWidth(100)
         drawing.setExplicitHeight(100)
-        SisuBigDecimal explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then:
-        explicitWidthPerObject == SisuBigDecimal.valueOf(50)
+        explicitWidthPerObject == DrawlNumber.valueOf(50)
     }
 
     def "WIDTH - EXPLICIT: You can get the explicit width per implicit width for a drawing with two adjacent Circles (other order)"() {
@@ -244,10 +244,10 @@ class DrawingTestWidthExplicit extends Specification {
         drawing.add(circle2)
         drawing.setExplicitWidth(100)
         drawing.setExplicitHeight(100)
-        SisuBigDecimal explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then:
-        explicitWidthPerObject == SisuBigDecimal.valueOf(50)
+        explicitWidthPerObject == DrawlNumber.valueOf(50)
     }
 }
 
@@ -265,7 +265,7 @@ class DrawingTestWidthImplicit extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == SisuBigDecimal.valueOf(2)
+        drawing.getImplicitWidth() == DrawlNumber.valueOf(2)
     }
 
     def "WIDTH - IMPLICIT: When you add two horizontally adjacent Circles to a drawing (in the other order), the drawing is twice as wide"() {
@@ -278,7 +278,7 @@ class DrawingTestWidthImplicit extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == SisuBigDecimal.valueOf(2)
+        drawing.getImplicitWidth() == DrawlNumber.valueOf(2)
     }
 
     def "WIDTH - IMPLICIT: When you add two default Circles to a drawing, the drawing stays the same width"() {
@@ -290,7 +290,7 @@ class DrawingTestWidthImplicit extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == SisuBigDecimal.ONE
+        drawing.getImplicitWidth() == DrawlNumber.ONE
     }
 
     def "WIDTH - IMPLICIT: When a drawing has one default Circle, the implicit width of the Circle is 1.0"() {
@@ -298,10 +298,10 @@ class DrawingTestWidthImplicit extends Specification {
         Circle circle = new Circle()
         Drawing drawing = new Drawing()
         drawing.add(circle)
-        SisuBigDecimal implicitWidth = circle.getImplicitWidth()
+        DrawlNumber implicitWidth = circle.getImplicitWidth()
 
         then:
-        implicitWidth == SisuBigDecimal.ONE
+        implicitWidth == DrawlNumber.ONE
     }
 
     def "WIDTH - IMPLICIT: When a drawing has one default Circle, the implicit width of the drawing is 1.0"() {
@@ -309,10 +309,10 @@ class DrawingTestWidthImplicit extends Specification {
         Circle circle = new Circle()
         Drawing drawing = new Drawing()
         drawing.add(circle)
-        SisuBigDecimal implicitWidth = drawing.getImplicitWidth()
+        DrawlNumber implicitWidth = drawing.getImplicitWidth()
 
         then:
-        implicitWidth == SisuBigDecimal.ONE
+        implicitWidth == DrawlNumber.ONE
 
     }
 
@@ -321,10 +321,10 @@ class DrawingTestWidthImplicit extends Specification {
         Circle circle = new Circle()
         Drawing drawing = new Drawing()
         drawing.add(circle)
-        SisuBigDecimal implicitWidthOfContents = drawing.getImplicitWidthOfContents()
+        DrawlNumber implicitWidthOfContents = drawing.getImplicitWidthOfContents()
 
         then:
-        implicitWidthOfContents == SisuBigDecimal.ONE
+        implicitWidthOfContents == DrawlNumber.ONE
     }
 
     def "WIDTH - IMPLICIT: When a square (100) drawing has two adjacent Circles, then their implicit widths are correct"() {
@@ -337,12 +337,12 @@ class DrawingTestWidthImplicit extends Specification {
         circle2.setRightOf(circle1);
         drawing.setExplicitHeight(100)
         drawing.setExplicitWidth(100)
-        SisuBigDecimal implicitWidth1 = circle1.getImplicitWidth()
-        SisuBigDecimal implicitWidth2 = circle2.getImplicitWidth()
+        DrawlNumber implicitWidth1 = circle1.getImplicitWidth()
+        DrawlNumber implicitWidth2 = circle2.getImplicitWidth()
 
         then:
-        implicitWidth1 == SisuBigDecimal.ONE
-        implicitWidth2 == SisuBigDecimal.ONE
+        implicitWidth1 == DrawlNumber.ONE
+        implicitWidth2 == DrawlNumber.ONE
     }
 
     def "WIDTH - IMPLICIT: You can get the implicit width of a drawing with two adjacent Circles"() {
@@ -353,10 +353,10 @@ class DrawingTestWidthImplicit extends Specification {
         Drawing drawing = new Drawing()
         drawing.add(circle1)
         drawing.add(circle2)
-        SisuBigDecimal implicitWidth = drawing.getImplicitWidth();
+        DrawlNumber implicitWidth = drawing.getImplicitWidth();
 
         then:
-        implicitWidth == SisuBigDecimal.TWO
+        implicitWidth == DrawlNumber.TWO
     }
 
     def "WIDTH - IMPLICIT: You can get the implicit width of a drawing with two adjacent objects (other order)"() {
@@ -367,9 +367,9 @@ class DrawingTestWidthImplicit extends Specification {
         Drawing drawing = new Drawing()
         drawing.add(circle1)
         drawing.add(circle2)
-        SisuBigDecimal implicitWidth = drawing.getImplicitWidth();
+        DrawlNumber implicitWidth = drawing.getImplicitWidth();
 
         then:
-        implicitWidth == SisuBigDecimal.TWO
+        implicitWidth == DrawlNumber.TWO
     }
 }

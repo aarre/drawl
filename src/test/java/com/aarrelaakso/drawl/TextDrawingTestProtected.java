@@ -44,7 +44,7 @@ public class TextDrawingTestProtected extends ShapeDrawingTestProtected
         Text text = new Text("Drawl");
         drawing.add(text);
         drawing.setExplicitDimensions(100,100);
-        then(text.getExplicitYPositionCenter()).isEqualTo(SisuBigDecimal.valueOf(50));
+        then(text.getExplicitYPositionCenter()).isEqualTo(DrawlNumber.valueOf(50));
     }
 
     @Test

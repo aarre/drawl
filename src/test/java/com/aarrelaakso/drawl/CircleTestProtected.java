@@ -47,8 +47,8 @@ public class CircleTestProtected extends ShapeTestProtected
         @Test
         @DisplayName("Then its implicit radius is 0.5")
         void thenImplicitRadiusIs05() {
-            SisuBigDecimal radius = shape1.getImplicitRadius();
-            assertEquals(SisuBigDecimal.valueOf(0.5), radius);
+            DrawlNumber radius = shape1.getImplicitRadius();
+            assertEquals(DrawlNumber.valueOf(0.5), radius);
         }
 
         @Tag("circle")
@@ -58,9 +58,9 @@ public class CircleTestProtected extends ShapeTestProtected
         @DisplayName("Then you can set the explicit radius of a circle to a fixed value")
         void thenYouCanSetTheExplicitRadiusOfACircleToAFixedValue() {
             Integer radius = 100;
-            SisuBigDecimal EXPECTED = SisuBigDecimal.valueOf(radius);
+            DrawlNumber EXPECTED = DrawlNumber.valueOf(radius);
             shape1.setExplicitRadius(radius);
-            SisuBigDecimal ACTUAL = shape1.getExplicitRadius();
+            DrawlNumber ACTUAL = shape1.getExplicitRadius();
 
             then(ACTUAL).isEqualByComparingTo(EXPECTED);
         }

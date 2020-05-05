@@ -20,21 +20,21 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  *
  * @author radek.hecl
  */
-public final class SisuBigDecimalRemainderPair
+public final class DrawlNumberRemainderPair
 {
     /**
      * Unit number.
      */
-    private SisuBigDecimal number;
+    private DrawlNumber number;
     /**
      * Remainder.
      */
-    private SisuBigDecimal remainder;
+    private DrawlNumber remainder;
 
     /**
      * Creates new instance.
      */
-    private SisuBigDecimalRemainderPair()
+    private DrawlNumberRemainderPair()
     {
     }
 
@@ -45,9 +45,9 @@ public final class SisuBigDecimalRemainderPair
      * @param remainder remainder
      * @return number remainder pair
      */
-    public static SisuBigDecimalRemainderPair  valueOf(SisuBigDecimal number, SisuBigDecimal remainder)
+    public static DrawlNumberRemainderPair valueOf(DrawlNumber number, DrawlNumber remainder)
     {
-        SisuBigDecimalRemainderPair res = new SisuBigDecimalRemainderPair();
+        DrawlNumberRemainderPair res = new DrawlNumberRemainderPair();
         res.number = number;
         res.remainder = remainder;
         res.guardInvariants();
@@ -65,7 +65,7 @@ public final class SisuBigDecimalRemainderPair
      *
      * @return number
      */
-    public SisuBigDecimal getNumber()
+    public DrawlNumber getNumber()
     {
         return number;
     }
@@ -75,7 +75,7 @@ public final class SisuBigDecimalRemainderPair
      *
      * @return remainder
      */
-    public SisuBigDecimal getRemainder()
+    public DrawlNumber getRemainder()
     {
         return remainder;
     }

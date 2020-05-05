@@ -65,8 +65,8 @@ public class RectangleDrawingTestProtected extends ShapeDrawingTestProtected
             Integer width = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
             Double aspectRatio = Double.valueOf(Double.valueOf(width) / Double.valueOf(height));
             Rectangle rectangle = new Rectangle(aspectRatio);
-            SisuBigDecimal EXPECTED_HEIGHT = SisuBigDecimal.ONE;
-            SisuBigDecimal EXPECTED_WIDTH = SisuBigDecimal.valueOf(aspectRatio);
+            DrawlNumber EXPECTED_HEIGHT = DrawlNumber.ONE;
+            DrawlNumber EXPECTED_WIDTH = DrawlNumber.valueOf(aspectRatio);
             softly.then(EXPECTED_HEIGHT).isEqualTo(rectangle.getImplicitHeight());
             softly.then(EXPECTED_WIDTH).as("Expected implicit width to be %s but it was %s.",
                     EXPECTED_WIDTH.toPlainString(), rectangle.getImplicitWidth().toPlainString())
@@ -92,14 +92,14 @@ public class RectangleDrawingTestProtected extends ShapeDrawingTestProtected
             Rectangle rectangle = new Rectangle(aspectRatio);
             drawing.add(rectangle);
             drawing.setExplicitDimensions(100,100);
-            softly.then(SisuBigDecimal.valueOf(100))
+            softly.then(DrawlNumber.valueOf(100))
                     .as("Expecting width to be %s but it was %s",
-                            SisuBigDecimal.valueOf(100).toPlainString(),
+                            DrawlNumber.valueOf(100).toPlainString(),
                             rectangle.getExplicitWidth().toPlainString())
                     .isEqualTo(rectangle.getExplicitWidth());
-            softly.then(SisuBigDecimal.valueOf(25))
+            softly.then(DrawlNumber.valueOf(25))
                     .as("Expecting height to be %s but it was %s",
-                            SisuBigDecimal.valueOf(25).toPlainString(),
+                            DrawlNumber.valueOf(25).toPlainString(),
                             rectangle.getExplicitHeight().toPlainString())
                     .isEqualTo(rectangle.getExplicitHeight());
         }
