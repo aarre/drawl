@@ -137,6 +137,20 @@ public class Shape
         return returnValue;
     }
 
+
+    /**
+     * Returns a Point object representing this Shape's bottom port.
+     *
+     * @return
+     */
+    public Point getBottomPort()
+    {
+        DrawlNumber xCoordinate = this.getImplicitXPositionCenter();
+        DrawlNumber yCoordinate = this.getImplicitYPositionBottom();
+        return new Point(xCoordinate, yCoordinate);
+    }
+
+
     protected DrawlNumber getExplicitHalfHeight()
     {
         if (this.getExplicitHeight() == null)
@@ -322,6 +336,16 @@ public class Shape
     }
 
     /**
+     * Get the implicit x position of the right edge of this Shape.
+     *
+     * @return The implicit x position of the right edge of this Shape.
+     */
+    protected DrawlNumber getImplicitXPositionRight()
+    {
+        return this.getImplicitXPositionCenter().add(this.getImplicitHalfWidth());
+    }
+
+    /**
      * Get the implicit bottommost y-position of this Shape. In implicit coordinates, this is the minimum y-position.
      *
      * @return The implicit minimum (bottommost) y-position of this Shape.
@@ -376,6 +400,20 @@ public class Shape
     }
 
     /**
+     * Returns a Point object representing this Shape's left port.
+     *
+     * @return
+     */
+    public Point getLeftPort()
+    {
+        DrawlNumber xCoordinate = this.getImplicitXPositionLeft();
+        DrawlNumber yCoordinate = this.getImplicitYPositionCenter();
+        return new Point(xCoordinate, yCoordinate);
+    }
+
+
+
+    /**
      * Get this Shape's neighbor to the left (this Shape is to the right of that one), if any.
      *
      * @return the Shape to the left of this one, if any;
@@ -397,6 +435,18 @@ public class Shape
             returnValue = null;
         }
         return returnValue;
+    }
+
+    /**
+     * Returns a Point object representing this Shape's left port.
+     *
+     * @return
+     */
+    public Point getRightPort()
+    {
+        DrawlNumber xCoordinate = this.getImplicitXPositionRight();
+        DrawlNumber yCoordinate = this.getImplicitYPositionCenter();
+        return new Point(xCoordinate, yCoordinate);
     }
 
     public String getSVG()
@@ -425,6 +475,18 @@ public class Shape
     public Text getText()
     {
         return this.text;
+    }
+
+    /**
+     * Returns a Point object representing this Shape's top port.
+     *
+     * @return
+     */
+    public Point getTopPort()
+    {
+        DrawlNumber xCoordinate = this.getImplicitXPositionCenter();
+        DrawlNumber yCoordinate = this.getImplicitYPositionTop();
+        return new Point(xCoordinate, yCoordinate);
     }
 
     /**

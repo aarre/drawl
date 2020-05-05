@@ -10,9 +10,8 @@
 
 package com.aarrelaakso.drawl.test;
 
-import com.aarrelaakso.drawl.Rectangle;
+import com.aarrelaakso.drawl.Point;
 import com.aarrelaakso.drawl.Shape;
-import com.aarrelaakso.drawl.Text;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
@@ -28,13 +27,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  */
 @ExtendWith(SoftAssertionsExtension.class)
 @DisplayName("Unit tests of Shape public API (abstract)")
-public abstract class ShapeTestPublic
-{
+public abstract class ShapeTestPublic {
 
     private static final FluentLogger logger;
 
-    static
-    {
+    static {
         logger = FluentLogger.forEnclosingClass();
     }
 
@@ -45,13 +42,11 @@ public abstract class ShapeTestPublic
     @Nested
     @DisplayName("Given three default shapes")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class GivenThreeDefaultShapes
-    {
+    class GivenThreeDefaultShapes {
 
         @Test
         @DisplayName("When you set three default Circles adjacent to one another, no exception is thrown")
-        void whenYouSetThreeDefaultShapesAdjacentToOneAnotherThenNoExceptionIsThrown()
-        {
+        void whenYouSetThreeDefaultShapesAdjacentToOneAnotherThenNoExceptionIsThrown() {
             shape2.setRightOf(shape1);
             shape3.setRightOf(shape2);
         }
@@ -60,13 +55,11 @@ public abstract class ShapeTestPublic
     @Nested
     @DisplayName("Given two default Shapes")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class GivenTwoDefaultShapes
-    {
+    class GivenTwoDefaultShapes {
 
         @Test
         @DisplayName("When you set a Circle rightOf another circle, you can recall that information")
-        void whenYouSetAShapeRightOfADefaultShapeThenYouCanRecallThatInformation()
-        {
+        void whenYouSetAShapeRightOfADefaultShapeThenYouCanRecallThatInformation() {
             shape1.setRightOf(shape2);
             assertEquals(shape1.getRightOf(), shape2);
         }
@@ -77,16 +70,52 @@ public abstract class ShapeTestPublic
     @Nested
     @DisplayName("Given one default Shape SVG")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class GivenOneDefaultShapeSVG
-    {
+    class GivenOneDefaultShapeSVG {
 
         @Test
         @DisplayName("Then you cannot make it adjacent to itself")
-        void thenYouCannotMakeItAdjacentToItself()
-        {
+        void thenYouCannotMakeItAdjacentToItself() {
             assertThrows(UnsupportedOperationException.class, () -> {
                 shape1.setRightOf(shape1);
             });
+        }
+    }
+
+    @Nested
+    @DisplayName("Ports")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class Ports {
+
+        @Test
+        @DisplayName("whenAShapeIsCreatedThenItHasALeftPort")
+        void whenAShapeIsCreatedThenItHasALeftPort(BDDSoftAssertions softly) {
+            Point leftPort = shape1.getLeftPort();
+            softly.then(leftPort).isNotNull();
+            softly.then(leftPort).isInstanceOf(Point.class);
+        }
+
+        @Test
+        @DisplayName("whenAShapeIsCreatedThenItHasARightPort")
+        void whenAShapeIsCreatedThenItHasARightPort(BDDSoftAssertions softly) {
+            Point leftPort = shape1.getRightPort();
+            softly.then(leftPort).isNotNull();
+            softly.then(leftPort).isInstanceOf(Point.class);
+        }
+
+        @Test
+        @DisplayName("whenAShapeIsCreatedThenItHasATopPort")
+        void whenAShapeIsCreatedThenItHasATopPort(BDDSoftAssertions softly) {
+            Point leftPort = shape1.getTopPort();
+            softly.then(leftPort).isNotNull();
+            softly.then(leftPort).isInstanceOf(Point.class);
+        }
+
+        @Test
+        @DisplayName("whenAShapeIsCreatedThenItHasABottomPort")
+        void whenAShapeIsCreatedThenItHasABottomPort(BDDSoftAssertions softly) {
+            Point leftPort = shape1.getBottomPort();
+            softly.then(leftPort).isNotNull();
+            softly.then(leftPort).isInstanceOf(Point.class);
         }
     }
 
