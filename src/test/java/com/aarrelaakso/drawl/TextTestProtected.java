@@ -41,6 +41,6 @@ public class TextTestProtected
     {
         Text text = new Text("Drawl");
 
-        then(text.getImplicitYPositionCenter()).isEqualTo(SisuBigDecimal.ZERO);
+        then(text.getImplicitYPositionCenter()).isEqualTo(DrawlNumber.ZERO);
     }
 }

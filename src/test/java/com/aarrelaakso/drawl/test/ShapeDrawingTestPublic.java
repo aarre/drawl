@@ -12,7 +12,6 @@ package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Shape;
-import com.aarrelaakso.drawl.SisuBigDecimal;
 import com.aarrelaakso.drawl.Text;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;

@@ -13,11 +13,11 @@ public class SVG
      *
      * @param number the number to convert.
      */
-    public static @NotNull String toString(SisuBigDecimal number)
+    public static @NotNull String toString(DrawlNumber number)
     {
         String result = "";
         Float floatValue = number.floatValue();
-        if (SisuBigDecimal.isIntegerValue(floatValue))
+        if (DrawlNumber.isIntegerValue(floatValue))
         {
                 result = String.valueOf(number.intValue());
         }

@@ -8,8 +8,8 @@ public class Rectangle extends Shape
      */
     public Rectangle()
     {
-        this.setImplicitHeight(SisuBigDecimal.ONE);
-        this.setImplicitWidth(SisuBigDecimal.ONE);
+        this.setImplicitHeight(DrawlNumber.ONE);
+        this.setImplicitWidth(DrawlNumber.ONE);
     }
 
     /**
@@ -20,8 +20,8 @@ public class Rectangle extends Shape
     public Rectangle (Double aspectRatio)
     {
         // This method is public because the user can deal with a ratio, which is dimensionless.
-        this.setImplicitHeight(SisuBigDecimal.ONE);
-        this.setImplicitWidth(SisuBigDecimal.valueOf(aspectRatio));
+        this.setImplicitHeight(DrawlNumber.ONE);
+        this.setImplicitWidth(DrawlNumber.valueOf(aspectRatio));
     }
 
     /**
@@ -33,8 +33,8 @@ public class Rectangle extends Shape
     protected Rectangle(Integer implicitWidth, Integer implicitHeight)
     {
         // This method is protected because the user should never have to deal with implicit dimensions.
-        this.setImplicitHeight(SisuBigDecimal.valueOf(implicitHeight));
-        this.setImplicitWidth(SisuBigDecimal.valueOf(implicitWidth));
+        this.setImplicitHeight(DrawlNumber.valueOf(implicitHeight));
+        this.setImplicitWidth(DrawlNumber.valueOf(implicitWidth));
     }
 
     /**
@@ -43,7 +43,7 @@ public class Rectangle extends Shape
      * @param implicitWidth the width of the new Rectangle.
      * @param implicitHeight the height of the new Rectangle.
      */
-    protected Rectangle(SisuBigDecimal implicitWidth, SisuBigDecimal implicitHeight)
+    protected Rectangle(DrawlNumber implicitWidth, DrawlNumber implicitHeight)
     {
         // This method is protected because the user should never have to deal with implicit dimensions.
         this.setImplicitHeight(implicitHeight);

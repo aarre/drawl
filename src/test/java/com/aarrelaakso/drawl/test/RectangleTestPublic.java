@@ -11,7 +11,6 @@
 package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Rectangle;
-import com.aarrelaakso.drawl.SisuBigDecimal;
 import org.junit.jupiter.api.*;
 
 import java.util.concurrent.ThreadLocalRandom;
