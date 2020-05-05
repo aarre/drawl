@@ -215,7 +215,7 @@ public class DrawlNumberTestProtected
     {
         assertEquals(DrawlNumber.valueOf("0.6666666667"), DrawlNumber.valueOf(2).divide(DrawlNumber.valueOf("3"), 10));
     }
-    
+
     /**
      * Tests equal operator.
      */

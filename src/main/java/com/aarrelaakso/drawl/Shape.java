@@ -417,6 +417,18 @@ public class Shape
     }
 
     /**
+     * Returns a Measure object that represents the width of this Shape.
+     *
+     * @return
+     */
+    public Measure getWidth()
+    {
+       DrawlNumber width = this.getImplicitWidth();
+       return new Measure(width);
+
+    }
+
+    /**
      * Indicates whether this shape has a Text object associated with it.
      *
      * @return TRUE if this shape has a Text object associated with it, FALSE otherwise.
@@ -618,11 +630,22 @@ public class Shape
     }
 
     /**
-     * Set this Shape's neighbor to the left (this Shape is to the right of that one).
+     * Sets this Shape's neighbor to the left (this Shape is to the right of that one).
      *
      * @param shape the Shape to the left of this one
      */
     public void setRightOf(Shape shape)
+    {
+        this.setRightOf(shape, new Measure(0));
+    }
+
+    /**
+     * Sets this Shape's neighbor to the left with an offset. (This Shape is to the right of that one by an offset.)
+     *
+     * @param shape The Shape to set to the right of which this one will be set.
+     * @param offset The distance to offset the other Shape from this one.
+     */
+    public void setRightOf(Shape shape, Measure offset)
     {
         if (shape == this)
         {
@@ -631,11 +654,13 @@ public class Shape
         this.neighbor = shape;
         this.angleToNeighbor = DrawlNumber.valueOf(270);
 
-        // Set this x position of this shape
+        // Set the x position of this shape
         DrawlNumber rightBoundaryOfShape = shape.getImplicitXMaximum();
         DrawlNumber thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(),
                 DrawlNumber.mcOperations);
+        thisImplicitXPosition.add(offset.toDrawlNumber());
         this.setImplicitXPositionCenter(thisImplicitXPosition);
+
 
     }
 

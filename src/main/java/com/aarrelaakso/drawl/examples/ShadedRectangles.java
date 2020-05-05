@@ -20,23 +20,26 @@ public class ShadedRectangles
 {
     public static void main(String[] args) throws IOException
     {
-        Drawing drawing = new Drawing();
-        Rectangle currentRectangle = null;
-        Rectangle lastRectangle = null;
-        int MAXIMUM_RECTANGLES = 1000;
-
-        for (int i = 0; i < MAXIMUM_RECTANGLES; i = i+1)
+        for (int k = 0; k < 20; k++)
         {
-            currentRectangle = new Rectangle(0.01);
-            float lightness = i * 100 / MAXIMUM_RECTANGLES;
-            currentRectangle.setFill("hsl(0, 100%, " + lightness + "%)");
-            drawing.add(currentRectangle);
-            if (lastRectangle != null)
+            Drawing drawing = new Drawing();
+            Rectangle currentRectangle = null;
+            Rectangle lastRectangle = null;
+            int MAXIMUM_RECTANGLES = 1000;
+
+            for (int i = 0; i < MAXIMUM_RECTANGLES; i = i + 1)
             {
-                currentRectangle.setRightOf(lastRectangle);
+                currentRectangle = new Rectangle(0.01);
+                float lightness = i * 100 / MAXIMUM_RECTANGLES;
+                currentRectangle.setFill("hsl(0, 100%, " + lightness + "%)");
+                drawing.add(currentRectangle);
+                if (lastRectangle != null)
+                {
+                    currentRectangle.setRightOf(lastRectangle);
+                }
+                lastRectangle = currentRectangle;
             }
-            lastRectangle = currentRectangle;
+            drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ShadedRectangles.svg", 1000, 100);
         }
-        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ShadedRectangles.svg", 1000, 100);
     }
 }
