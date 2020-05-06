@@ -210,6 +210,11 @@ public class Shape
         return this.explicitXPositionCenter.subtract(this.getExplicitHalfWidth());
     }
 
+    protected DrawlNumber getExplicitXPositionRight()
+    {
+        return this.explicitXPositionCenter.add(this.getExplicitHalfWidth());
+    }
+
     /**
      * Gets the explicit y position of the bottom of this Shape.
      *

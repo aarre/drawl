@@ -8,43 +8,31 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.aarrelaakso.drawl;
+package com.aarrelaakso.drawl.test;
+
+
+import com.aarrelaakso.drawl.Line;
+import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
- * Represents a point on the drawing canvas.
+ * Tests the public API of Lines.
  */
-public class Point {
+@ExtendWith(SoftAssertionsExtension.class)
+@DisplayName("Lines - Public API")
+public class LineTestPublic extends ShapeTestPublic {
 
-    private DrawlNumber implicitXCoordinate;
-    private DrawlNumber implicitYCoordinate;
-
-    /**
-     * Constructs a new Point object.
-     *
-     * @param implicitXCoordinate
-     * @param implicitYCoordinate
-     */
-    protected Point(DrawlNumber implicitXCoordinate, DrawlNumber implicitYCoordinate)
-    {
-        this.implicitXCoordinate = implicitXCoordinate;
-        this.implicitYCoordinate = implicitYCoordinate;
-    }
-
-    protected Point(Integer implicitXCoordinate, Integer implicitYCoordinate)
-    {
-        this.implicitXCoordinate = new DrawlNumber(implicitXCoordinate);
-        this.implicitYCoordinate = new DrawlNumber(implicitYCoordinate);
-    }
-
-    protected DrawlNumber getX()
-    {
-        return implicitXCoordinate;
+    @BeforeEach
+    void givenRectangles() {
+        // These values override those in ShapeTestPublic
+        shape1 = new Line();
+        shape2 = new Line();
+        shape3 = new Line();
     }
 
 
-    protected DrawlNumber getY()
-    {
-        return implicitYCoordinate;
-    }
+
 
 }

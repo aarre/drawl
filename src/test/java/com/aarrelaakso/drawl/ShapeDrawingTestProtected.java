@@ -61,8 +61,15 @@ public abstract class ShapeDrawingTestProtected
         String svg = drawing.getSVG();
         if (shape1.getClass() == Rectangle.class)
         {
-            softly.then(svg).contains("x=\"" + 0 + "\"")
-                    .contains("y=\"" + 0 + "\"");
+            softly.then(svg).contains("x=\"0\"")
+                    .contains("y=\"0\"");
+        }
+        else if (shape1.getClass() == Line.class)
+        {
+            softly.then(svg).contains("x1=\"0\"");
+            softly.then(svg).contains("y1=\"0\"");
+            softly.then(svg).contains("x2=\"100\"");
+            softly.then(svg).contains("y2=\"100\"");
         }
         else
         {

@@ -10,56 +10,51 @@
 
 package com.aarrelaakso.drawl;
 
+import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import static org.assertj.core.api.BDDAssertions.then;
-
-/**
- * Tests the public API of Shapes.
- */
+@DisplayName("Line - Protected API")
 @ExtendWith(SoftAssertionsExtension.class)
-@DisplayName("Text Drawings - Protected API")
-public class TextDrawingTestProtected extends ShapeDrawingTestProtected
-{
+public class LineDrawingTestProtected extends ShapeDrawingTestProtected {
 
     @BeforeEach
-    @DisplayName("Given three default Text objects")
-    void givenTheeDefaultTextObjects()
+    @DisplayName("Given three default Lines")
+    void givenTheeDefaultLines()
     {
         // These values override those in the superclass.
-        shape1 = new Text();
-        shape2 = new Text();
-        shape3 = new Text();
+        shape1 = new Line();
+        shape2 = new Line();
+        shape3 = new Line();
     }
 
     @Test
-    @DisplayName("When a user creates a Drawing with a Text object, then its explicit y position is correct")
-    void whenAUserCreatesADrawingWithATextObjectThenItsExplicitYPositionIsCorrect()
-    {
-        Drawing drawing = new Drawing();
-        Text text = new Text("Drawl");
-        drawing.add(text);
-        drawing.setExplicitDimensions(100,100);
-        then(text.getExplicitYPositionCenter()).isEqualTo(DrawlNumber.valueOf(50));
-    }
-
-    @Test
-    @DisplayName("When Text is added to a Shape, then the Text shows up in the SVG")
-    void whenTextIsAddedToADrawingThenItInheritsAnXPosition()
-    {
-        if (shape1.getClass() == Text.class)
-        {
-            ((Text) shape1).setString("Drawl");
-        }
-        Text text = new Text("Drawl");
-        shape1.addText(text);
+    @DisplayName("When a drawing has a Line, then the Line has the correct coordinates")
+    void whenADrawingHasALineThenItShowsUpInSVG(BDDSoftAssertions softly) {
         drawing.add(shape1);
-        drawing.setExplicitDimensions(100, 100);
+        shape1.setStroke("blue");
+        drawing.add(shape2);
+        shape2.setStroke("green");
+        shape2.setRightOf(shape1, shape2.getWidth());
+        Line line = new Line(shape1.getRightPort(), shape2.getLeftPort());
+        line.setStroke("red");
+        drawing.add(line);
+        drawing.setExplicitDimensions(100,100);
 
-        then(drawing.getSVG()).contains("Drawl");
+        Point point1 = line.getPoint1Explicit();
+        Point point2 = line.getPoint2Explicit();
+
+        softly.then(point1).isNotNull();
+        softly.then(point2).isNotNull();
+
+        softly.then(point1.getX()).isEqualTo(DrawlNumber.valueOf(100.0/3.0));
+        softly.then(point1.getY()).isEqualTo(DrawlNumber.valueOf(50));
+
+        softly.then(point1.getX()).isEqualTo(DrawlNumber.valueOf(200.0/3.0));
+        softly.then(point1.getY()).isEqualTo(DrawlNumber.valueOf(50));
     }
+
 }

@@ -239,7 +239,7 @@ public class Circle extends Shape
     /**
      * Set the radius to a fixed value
      * <p>
-     * This is a protected method because users of the API should not have to deal with SisuBigDecimal.
+     * This is a protected method because users of the API should not have to deal with DrawlNumber.
      *
      * @param radius the fixed value
      */

@@ -10,6 +10,7 @@
 
 package com.aarrelaakso.drawl.test;
 
+import com.aarrelaakso.drawl.Line;
 import com.aarrelaakso.drawl.Point;
 import com.aarrelaakso.drawl.Shape;
 import com.google.common.flogger.FluentLogger;
@@ -117,6 +118,16 @@ public abstract class ShapeTestPublic {
             softly.then(leftPort).isNotNull();
             softly.then(leftPort).isInstanceOf(Point.class);
         }
+    }
+
+    @Test
+    @DisplayName("When two shapes have been constructed, then it is possible to connect them with a Line")
+    void whenTwoShapesHaveBeenConstructedThenItIsPossibleToConnectThemWithALine()
+    {
+        shape1.setLeftOf(shape2, shape1.getWidth());
+        Point pointA = shape1.getRightPort();
+        Point pointB = shape2.getLeftPort();
+        Line line = new Line(pointA, pointB);
     }
 
 }

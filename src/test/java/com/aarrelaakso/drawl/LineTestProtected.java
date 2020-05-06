@@ -10,41 +10,29 @@
 
 package com.aarrelaakso.drawl;
 
+import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 /**
- * Represents a point on the drawing canvas.
+ * Tests the protected API of Lines.
  */
-public class Point {
+@ExtendWith(SoftAssertionsExtension.class)
+@DisplayName("Lines - Protected API")
+public class LineTestProtected extends ShapeTestProtected {
 
-    private DrawlNumber implicitXCoordinate;
-    private DrawlNumber implicitYCoordinate;
 
-    /**
-     * Constructs a new Point object.
-     *
-     * @param implicitXCoordinate
-     * @param implicitYCoordinate
-     */
-    protected Point(DrawlNumber implicitXCoordinate, DrawlNumber implicitYCoordinate)
+    @BeforeEach
+    void givenRectangles()
     {
-        this.implicitXCoordinate = implicitXCoordinate;
-        this.implicitYCoordinate = implicitYCoordinate;
-    }
-
-    protected Point(Integer implicitXCoordinate, Integer implicitYCoordinate)
-    {
-        this.implicitXCoordinate = new DrawlNumber(implicitXCoordinate);
-        this.implicitYCoordinate = new DrawlNumber(implicitYCoordinate);
-    }
-
-    protected DrawlNumber getX()
-    {
-        return implicitXCoordinate;
+        // These values override those in ShapeTestProtected
+        shape1 = new Line();
+        shape2 = new Line();
+        shape3 = new Line();
     }
 
 
-    protected DrawlNumber getY()
-    {
-        return implicitYCoordinate;
-    }
+
 
 }

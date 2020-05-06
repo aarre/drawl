@@ -8,43 +8,28 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.aarrelaakso.drawl;
+package com.aarrelaakso.drawl.examples;
 
-/**
- * Represents a point on the drawing canvas.
- */
-public class Point {
+import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.Drawing;
+import com.aarrelaakso.drawl.Line;
 
-    private DrawlNumber implicitXCoordinate;
-    private DrawlNumber implicitYCoordinate;
+import java.io.IOException;
 
-    /**
-     * Constructs a new Point object.
-     *
-     * @param implicitXCoordinate
-     * @param implicitYCoordinate
-     */
-    protected Point(DrawlNumber implicitXCoordinate, DrawlNumber implicitYCoordinate)
+public class LineExample {
+    public static void main(String[] args) throws IOException
     {
-        this.implicitXCoordinate = implicitXCoordinate;
-        this.implicitYCoordinate = implicitYCoordinate;
+        Drawing drawing = new Drawing();
+        Circle circle1 = new Circle();
+        Circle circle2 = new Circle();
+        drawing.add(circle1);
+        drawing.add(circle2);
+
+        circle2.setRightOf(circle1, circle2.getWidth());
+
+        Line line = new Line(circle1.getRightPort(), circle2.getLeftPort());
+        drawing.add(line);
+
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/LineExample.svg", 100, 100);
     }
-
-    protected Point(Integer implicitXCoordinate, Integer implicitYCoordinate)
-    {
-        this.implicitXCoordinate = new DrawlNumber(implicitXCoordinate);
-        this.implicitYCoordinate = new DrawlNumber(implicitYCoordinate);
-    }
-
-    protected DrawlNumber getX()
-    {
-        return implicitXCoordinate;
-    }
-
-
-    protected DrawlNumber getY()
-    {
-        return implicitYCoordinate;
-    }
-
 }
