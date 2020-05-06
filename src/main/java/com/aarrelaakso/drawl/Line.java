@@ -94,16 +94,16 @@ public class Line extends Shape {
         @NotNull StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("\n<line");
         svgBuilder.append(" x1=\"");
-        svgBuilder.append(this.getPoint1Explicit().getX().toPlainString());
+        svgBuilder.append(this.getPoint1Explicit().getX().toSVG());
         svgBuilder.append("\"");
         svgBuilder.append(" y1=\"");
-        svgBuilder.append(this.getPoint1Explicit().getY().toPlainString());
+        svgBuilder.append(this.getPoint1Explicit().getY().toSVG());
         svgBuilder.append("\"");
         svgBuilder.append(" x2=\"");
-        svgBuilder.append(this.getPoint2Explicit().getX().toPlainString());
+        svgBuilder.append(this.getPoint2Explicit().getX().toSVG());
         svgBuilder.append("\"");
         svgBuilder.append(" y2=\"");
-        svgBuilder.append(this.getPoint2Explicit().getY().toPlainString());
+        svgBuilder.append(this.getPoint2Explicit().getY().toSVG());
         svgBuilder.append("\"");
 
         if (this.getFill() != null) {
@@ -116,7 +116,6 @@ public class Line extends Shape {
             svgBuilder.append(this.getStroke());
             svgBuilder.append("\"");
         }
-        //svgBuilder.append(" style=\"stroke:rgb(255,0,0);stroke-width:2\"");
         svgBuilder.append(" />");
         if (this.getText() != null) {
             svgBuilder.append(this.getText().getSVG());

@@ -32,7 +32,7 @@ public class ShadedRectangles
             @Nullable Rectangle lastRectangle = null;
             int MAXIMUM_RECTANGLES = 1000;
 
-            for (int i = 0; i < MAXIMUM_RECTANGLES; i = i + 1)
+            for (int i = 0; i < MAXIMUM_RECTANGLES; i++)
             {
                 currentRectangle = new Rectangle(0.01);
                 float lightness = i * 100 / MAXIMUM_RECTANGLES;

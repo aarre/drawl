@@ -174,7 +174,7 @@ public class Shape {
      *
      * @return half the explicit height of this Shape.
      */
-    protected DrawlNumber getExplicitHalfHeight() {
+    private DrawlNumber getExplicitHalfHeight() {
         if (this.getExplicitHeight() == null) {
             throw new UnsupportedOperationException("Cannot calculate explicit height without dimensions");
         }

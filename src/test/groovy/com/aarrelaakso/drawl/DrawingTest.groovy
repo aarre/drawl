@@ -1,4 +1,4 @@
-package com.aarrelaakso.drawl.test
+package com.aarrelaakso.drawl;
 
 import com.aarrelaakso.drawl.Circle
 import com.aarrelaakso.drawl.DrawlNumber
@@ -109,13 +109,13 @@ class DrawingTestSVG extends Specification {
 
     def "SVG: When a square (200) drawing has two adjacent Circles, then the SVG is correct"() {
         when:
-        Drawing drawing = new Drawing();
-        Circle circle1 = new Circle();
-        drawing.add(circle1);
-        Circle circle2 = new Circle();
-        drawing.add(circle2);
-        circle2.setRightOf(circle1);
-        String svg = drawing.getSVG(200, 200);
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        drawing.add(circle1)
+        Circle circle2 = new Circle()
+        drawing.add(circle2)
+        circle2.setRightOf(circle1)
+        String svg = drawing.getSVG(200, 200)
 
         then:
         svg.contains("<circle r=\"50\" cx=\"50\" cy=\"100\" />")
@@ -161,13 +161,13 @@ class DrawingTestSVG extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == DrawlNumber.TWO;
+        drawing.getImplicitWidth() == DrawlNumber.TWO
 
         when:
         String svg = drawing.getSVG(100, 100)
 
         then:
-        drawing.getImplicitWidth() == DrawlNumber.TWO;
+        drawing.getImplicitWidth() == DrawlNumber.TWO
     }
 
     def "SVG - WIDTH: When you add two default Circles to a drawing, the drawing is still the same width after you get the SVG"() {
@@ -179,14 +179,13 @@ class DrawingTestSVG extends Specification {
         drawing.add(circle2)
 
         then:
-        drawing.getImplicitWidth() == DrawlNumber.ONE;
+        drawing.getImplicitWidth() == DrawlNumber.ONE
 
         when:
         String svg = drawing.getSVG(100, 100)
-        int count = StringUtils.countMatches(svg, "circle")
 
         then:
-        drawing.getImplicitWidth() == DrawlNumber.ONE;
+        drawing.getImplicitWidth() == DrawlNumber.ONE
     }
 
 }
@@ -212,7 +211,7 @@ class DrawingTestWidthExplicit extends Specification {
         drawing.add(circle)
         drawing.setExplicitWidth(100)
         drawing.setExplicitHeight(100)
-        DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth()
 
         then:
         explicitWidthPerObject == DrawlNumber.valueOf(100)
@@ -228,7 +227,7 @@ class DrawingTestWidthExplicit extends Specification {
         drawing.add(circle2)
         drawing.setExplicitWidth(100)
         drawing.setExplicitHeight(100)
-        DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth()
 
         then:
         explicitWidthPerObject == DrawlNumber.valueOf(50)
@@ -244,7 +243,7 @@ class DrawingTestWidthExplicit extends Specification {
         drawing.add(circle2)
         drawing.setExplicitWidth(100)
         drawing.setExplicitHeight(100)
-        DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth()
 
         then:
         explicitWidthPerObject == DrawlNumber.valueOf(50)
@@ -329,12 +328,12 @@ class DrawingTestWidthImplicit extends Specification {
 
     def "WIDTH - IMPLICIT: When a square (100) drawing has two adjacent Circles, then their implicit widths are correct"() {
         when:
-        Drawing drawing = new Drawing();
-        Circle circle1 = new Circle();
-        drawing.add(circle1);
-        Circle circle2 = new Circle();
-        drawing.add(circle2);
-        circle2.setRightOf(circle1);
+        Drawing drawing = new Drawing()
+        Circle circle1 = new Circle()
+        drawing.add(circle1)
+        Circle circle2 = new Circle()
+        drawing.add(circle2)
+        circle2.setRightOf(circle1)
         drawing.setExplicitHeight(100)
         drawing.setExplicitWidth(100)
         DrawlNumber implicitWidth1 = circle1.getImplicitWidth()
@@ -353,7 +352,7 @@ class DrawingTestWidthImplicit extends Specification {
         Drawing drawing = new Drawing()
         drawing.add(circle1)
         drawing.add(circle2)
-        DrawlNumber implicitWidth = drawing.getImplicitWidth();
+        DrawlNumber implicitWidth = drawing.getImplicitWidth()
 
         then:
         implicitWidth == DrawlNumber.TWO
@@ -367,7 +366,7 @@ class DrawingTestWidthImplicit extends Specification {
         Drawing drawing = new Drawing()
         drawing.add(circle1)
         drawing.add(circle2)
-        DrawlNumber implicitWidth = drawing.getImplicitWidth();
+        DrawlNumber implicitWidth = drawing.getImplicitWidth()
 
         then:
         implicitWidth == DrawlNumber.TWO
