@@ -20,7 +20,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 
 @ExtendWith(SoftAssertionsExtension.class)
-@DisplayName("Line - Public API")
+@DisplayName("Line Drawing - Public API")
 public class LineDrawingTestPublic extends ShapeDrawingTestPublic {
 
 
@@ -31,6 +31,7 @@ public class LineDrawingTestPublic extends ShapeDrawingTestPublic {
         shape2 = new Line();
         shape3 = new Line();
     }
+
 
 
     @Test

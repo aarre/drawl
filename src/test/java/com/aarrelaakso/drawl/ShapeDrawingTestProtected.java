@@ -67,9 +67,9 @@ public abstract class ShapeDrawingTestProtected
         else if (shape1.getClass() == Line.class)
         {
             softly.then(svg).contains("x1=\"0\"");
-            softly.then(svg).contains("y1=\"0\"");
+            softly.then(svg).contains("y1=\"100\"");
             softly.then(svg).contains("x2=\"100\"");
-            softly.then(svg).contains("y2=\"100\"");
+            softly.then(svg).contains("y2=\"0\"");
         }
         else
         {

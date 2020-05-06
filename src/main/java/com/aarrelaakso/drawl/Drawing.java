@@ -717,7 +717,6 @@ public class Drawing
         DrawlNumber explicitToImplicitRatio = this.getExplicitToImplicitRatio();
         DrawlNumber explicitYPositionOfShape = fudgedImplicitYPositionOfShape.multiply(explicitToImplicitRatio,
                 DrawlNumber.mcOperations);
-        // TODO Add code parallel to code below to updateExplicitXPositionOfShape()
         DrawlNumber implicitHeightOfContents = this.getImplicitHeight();
         DrawlNumber explicitHeightOfContents = implicitHeightOfContents.multiply(explicitToImplicitRatio,
                 DrawlNumber.mcOperations);

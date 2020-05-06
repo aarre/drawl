@@ -23,14 +23,12 @@ import com.google.common.flogger.FluentLogger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class Shape
-{
+public class Shape {
 
     private static final String CANNOT_BE_ADJACENT_TO_ITSELF = "A circle cannot be adjacent to itself";
     private static final FluentLogger logger;
 
-    static
-    {
+    static {
         logger = FluentLogger.forEnclosingClass();
 
     }
@@ -100,8 +98,7 @@ public class Shape
      */
     private Text text;
 
-    public void addText(@Nullable Text text)
-    {
+    public void addText(@Nullable Text text) {
         this.text = text;
     }
 
@@ -111,14 +108,16 @@ public class Shape
      * @return the Shape to the right of this one, if any;
      * <code>null</code> otherwise.
      */
-    public Shape getAbove()
-    {
+    public Shape getAbove() {
         Shape returnValue = null;
-        if (this.angleToNeighbor.equals(DrawlNumber.ZERO))
-        {
+        if (this.angleToNeighbor.equals(DrawlNumber.ZERO)) {
             returnValue = this.neighbor;
         }
         return returnValue;
+    }
+
+    public void setAbove(Shape shape) {
+        this.setAbove(shape, new Measure(0));
     }
 
     /**
@@ -127,44 +126,38 @@ public class Shape
      * @return the Shape to below this one, if any;
      * <code>null</code> otherwise.
      */
-    public Shape getBelow()
-    {
+    public Shape getBelow() {
         Shape returnValue = null;
-        if (this.angleToNeighbor.equals(DrawlNumber.valueOf(180)))
-        {
+        if (this.angleToNeighbor.equals(DrawlNumber.valueOf(180))) {
             returnValue = this.neighbor;
         }
         return returnValue;
     }
 
+    public void setBelow(Shape shape) {
+        this.setBelow(shape, new Measure(0));
+    }
 
     /**
      * Returns a Point object representing this Shape's bottom port.
      *
      * @return
      */
-    public Point getBottomPort()
-    {
+    public Point getBottomPort() {
         DrawlNumber xCoordinate = this.getImplicitXPositionCenter();
         DrawlNumber yCoordinate = this.getImplicitYPositionBottom();
         return new Point(xCoordinate, yCoordinate);
     }
 
-
-    protected DrawlNumber getExplicitHalfHeight()
-    {
-        if (this.getExplicitHeight() == null)
-        {
+    protected DrawlNumber getExplicitHalfHeight() {
+        if (this.getExplicitHeight() == null) {
             throw new UnsupportedOperationException("Cannot calculate explicit height without dimensions");
         }
         return this.getExplicitHeight().divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
     }
 
-
-    protected DrawlNumber getExplicitHalfWidth()
-    {
-        if (this.getExplicitWidth() == null)
-        {
+    protected DrawlNumber getExplicitHalfWidth() {
+        if (this.getExplicitWidth() == null) {
             throw new UnsupportedOperationException("Cannot calculate explicit width without dimensions");
         }
         return this.getExplicitWidth().divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
@@ -177,9 +170,22 @@ public class Shape
      * explicit height.
      */
     @Nullable
-    protected DrawlNumber getExplicitHeight()
-    {
+    protected DrawlNumber getExplicitHeight() {
         return this.explicitHeight;
+    }
+
+    /**
+     * Set the height of this Shape to an explicit value.
+     * <p>
+     *
+     * @param height The new height of this Shape. Can be <code>null</code> to indicate that this Shape has not yet
+     *               been assigned an explicit height.
+     */
+    protected void setExplicitHeight(@Nullable DrawlNumber height) {
+        this.explicitHeight = height;
+        if (Boolean.TRUE.equals(this.hasText())) {
+            this.getText().setExplicitHeight(height);
+        }
     }
 
     /**
@@ -189,29 +195,65 @@ public class Shape
      * explicit width.
      */
     @Nullable
-    protected DrawlNumber getExplicitWidth()
-    {
+    protected DrawlNumber getExplicitWidth() {
         return this.explicitWidth;
     }
 
     /**
-     * Gets the explicit x-position of this Shape.
+     * Set the width of this Shape to an explicit value.
+     * <p>
      *
-     * @return the explicit x-position of this Shape.
+     * @param width the new width of this Shape, or <code>null</code> to indicate that this Shape has not yet
+     *              been assigned an explicit width.
+     */
+    protected void setExplicitWidth(@Nullable DrawlNumber width) {
+        this.explicitWidth = width;
+        if (Boolean.TRUE.equals(this.hasText())) {
+            this.getText().setExplicitWidth(width);
+        }
+    }
+
+    /**
+     * Gets the explicit x-position of the center of this Shape.
+     *
+     * @return the explicit x-position of the center of this Shape.
      */
     @NotNull
-    protected DrawlNumber getExplicitXPositionCenter()
-    {
+    protected DrawlNumber getExplicitXPositionCenter() {
         return this.explicitXPositionCenter;
     }
 
-    protected DrawlNumber getExplicitXPositionLeft()
-    {
+    /**
+     * Sets the explicit center position of this Shape.
+     *
+     * @param x the explicit x position of the center of this Shape.
+     */
+    protected void setExplicitXPositionCenter(DrawlNumber x) {
+        this.explicitXPositionCenter = x;
+        if (Boolean.TRUE.equals(this.hasText())) {
+            this.getText().setExplicitXPositionCenter(x);
+        }
+    }
+
+    /**
+     * Sets the explicit x position of the center of this Shape.
+     *
+     * @param x the explicit x position of the center of this Shape.
+     */
+    protected void setExplicitXPositionCenter(Integer x) {
+        setExplicitXPositionCenter(DrawlNumber.valueOf(x));
+    }
+
+    /**
+     * Gets the explicit x position of the left edge of this Shape.
+     *
+     * @return the explicit x position of the left edge of this Shape.
+     */
+    protected DrawlNumber getExplicitXPositionLeft() {
         return this.explicitXPositionCenter.subtract(this.getExplicitHalfWidth());
     }
 
-    protected DrawlNumber getExplicitXPositionRight()
-    {
+    protected DrawlNumber getExplicitXPositionRight() {
         return this.explicitXPositionCenter.add(this.getExplicitHalfWidth());
     }
 
@@ -221,9 +263,8 @@ public class Shape
      * @return the explicit y position of the bottom of this Shape.
      */
     @NotNull
-    protected DrawlNumber getExplicitYPositionBottom()
-    {
-        return this.getExplicitYPositionCenter().subtract(this.getExplicitHalfHeight());
+    protected DrawlNumber getExplicitYPositionBottom() {
+        return this.getExplicitYPositionCenter().add(this.getExplicitHalfHeight());
     }
 
     /**
@@ -232,9 +273,27 @@ public class Shape
      * @return the explicit y-position of the center of this Shape.
      */
     @NotNull
-    protected DrawlNumber getExplicitYPositionCenter()
-    {
+    protected DrawlNumber getExplicitYPositionCenter() {
         return this.explicitYPositionCenter;
+    }
+
+    protected void setExplicitYPositionCenter(Integer y) {
+        this.setExplicitYPositionCenter(DrawlNumber.valueOf(y));
+    }
+
+    /**
+     * Sets the explicit y position of this Shape.
+     * <p>
+     * The y position marks the vertical position of the Shape's center. The explicit coordinate system is the
+     * common Cartesian coordinate system, with higher values of y upward and lower values of y downward.
+     *
+     * @param y The explicit y position of this Shape.
+     */
+    protected void setExplicitYPositionCenter(DrawlNumber y) {
+        this.explicitYPositionCenter = y;
+        if (Boolean.TRUE.equals(this.hasText())) {
+            this.getText().setExplicitYPositionCenter(y);
+        }
     }
 
     /**
@@ -243,8 +302,7 @@ public class Shape
      * @return the explicit y-position of the top of this Shape.
      */
     @NotNull
-    protected DrawlNumber getExplicitYPositionTop()
-    {
+    protected DrawlNumber getExplicitYPositionTop() {
         return this.getExplicitYPositionCenter().subtract(this.getExplicitHalfHeight());
     }
 
@@ -254,9 +312,17 @@ public class Shape
      * @return the fill associated with this Shape, or null if no fill has been associated with this Shape.
      */
     @Nullable
-    public String getFill()
-    {
+    public String getFill() {
         return this.fill;
+    }
+
+    /**
+     * Set the fill of this Shape.
+     *
+     * @param s A string representing a fill color, e.g., "white".
+     */
+    public void setFill(String s) {
+        this.fill = s;
     }
 
     /**
@@ -264,19 +330,16 @@ public class Shape
      *
      * @return a Measure object that represents the height of this Shape.
      */
-    public Measure getHeight()
-    {
+    public Measure getHeight() {
         DrawlNumber height = this.getImplicitHeight();
         return new Measure(height);
     }
 
-    protected DrawlNumber getImplicitHalfHeight()
-    {
+    protected DrawlNumber getImplicitHalfHeight() {
         return this.getImplicitHeight().divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
     }
 
-    protected DrawlNumber getImplicitHalfWidth()
-    {
+    protected DrawlNumber getImplicitHalfWidth() {
         return this.getImplicitWidth().divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
     }
 
@@ -285,9 +348,13 @@ public class Shape
      *
      * @return the implicit height of this Shape
      */
-    protected DrawlNumber getImplicitHeight()
-    {
+    protected DrawlNumber getImplicitHeight() {
         return this.implicitHeight;
+    }
+
+    protected final void setImplicitHeight(DrawlNumber implicitHeight) {
+        logger.atFine().log("Setting implicit height to %s", implicitHeight.toPlainString());
+        this.implicitHeight = implicitHeight;
     }
 
     /**
@@ -295,9 +362,13 @@ public class Shape
      *
      * @return the implicit width of this Shape
      */
-    protected DrawlNumber getImplicitWidth()
-    {
+    protected DrawlNumber getImplicitWidth() {
         return this.implicitWidth;
+    }
+
+    protected final void setImplicitWidth(DrawlNumber implicitWidth) {
+        logger.atFine().log("Setting implicit width to %s", implicitWidth.toPlainString());
+        this.implicitWidth = implicitWidth;
     }
 
     /**
@@ -305,8 +376,7 @@ public class Shape
      *
      * @return The implicit maximum (rightmost) x-position of this Shape.
      */
-    protected DrawlNumber getImplicitXMaximum()
-    {
+    protected DrawlNumber getImplicitXMaximum() {
         return this.getImplicitXPositionCenter().add(this.getImplicitHalfWidth());
     }
 
@@ -315,8 +385,7 @@ public class Shape
      *
      * @return The implicit minimum (leftmost) x-position of this Shape.
      */
-    protected DrawlNumber getImplicitXMinimum()
-    {
+    protected DrawlNumber getImplicitXMinimum() {
         return this.getImplicitXPositionCenter().subtract(this.getImplicitHalfWidth());
     }
 
@@ -325,9 +394,15 @@ public class Shape
      *
      * @return The implicit x position of the center of this Shape.
      */
-    protected DrawlNumber getImplicitXPositionCenter()
-    {
+    protected DrawlNumber getImplicitXPositionCenter() {
         return this.implicitXPositionCenter;
+    }
+
+    protected void setImplicitXPositionCenter(DrawlNumber x) {
+        this.implicitXPositionCenter = x;
+        if (Boolean.TRUE.equals(this.hasText())) {
+            this.getText().setImplicitXPositionCenter(x);
+        }
     }
 
     /**
@@ -335,8 +410,7 @@ public class Shape
      *
      * @return The implicit x position of the left edge of this Shape.
      */
-    protected DrawlNumber getImplicitXPositionLeft()
-    {
+    protected DrawlNumber getImplicitXPositionLeft() {
         return this.getImplicitXPositionCenter().subtract(this.getImplicitHalfWidth());
     }
 
@@ -345,8 +419,7 @@ public class Shape
      *
      * @return The implicit x position of the right edge of this Shape.
      */
-    protected DrawlNumber getImplicitXPositionRight()
-    {
+    protected DrawlNumber getImplicitXPositionRight() {
         return this.getImplicitXPositionCenter().add(this.getImplicitHalfWidth());
     }
 
@@ -355,8 +428,7 @@ public class Shape
      *
      * @return The implicit minimum (bottommost) y-position of this Shape.
      */
-    protected DrawlNumber getImplicitYPositionBottom()
-    {
+    protected DrawlNumber getImplicitYPositionBottom() {
         return this.getImplicitYPositionCenter().subtract(this.getImplicitHalfHeight());
     }
 
@@ -365,9 +437,23 @@ public class Shape
      *
      * @return The implicit y position of the center of this Shape.
      */
-    protected DrawlNumber getImplicitYPositionCenter()
-    {
+    protected DrawlNumber getImplicitYPositionCenter() {
         return this.implicitYPositionCenter;
+    }
+
+    /**
+     * Set the implicit y position of this Shape.
+     * <p>
+     * The y position marks the vertical position of the Shape's center. In the implicit coordinate system, higher
+     * values of y are upward whereas lower values of y are downward.
+     *
+     * @param y The implicit y position of this Shape.
+     */
+    protected void setImplicitYPositionCenter(DrawlNumber y) {
+        this.implicitYPositionCenter = y;
+        if (Boolean.TRUE.equals(this.hasText())) {
+            this.getText().setImplicitYPositionCenter(y);
+        }
     }
 
     /**
@@ -375,8 +461,7 @@ public class Shape
      *
      * @return The implicit maximum (topmost) y-position of this Shape.
      */
-    protected DrawlNumber getImplicitYPositionTop()
-    {
+    protected DrawlNumber getImplicitYPositionTop() {
         return this.getImplicitYPositionCenter().add(this.getImplicitHalfHeight());
     }
 
@@ -386,22 +471,20 @@ public class Shape
      * @return the Shape to the right of this one, if any;
      * <code>null</code> otherwise.
      */
-    public Shape getLeftOf()
-    {
+    public Shape getLeftOf() {
         Shape returnValue = null;
-        if (this.angleToNeighbor == null)
-        {
+        if (this.angleToNeighbor == null) {
             returnValue = null;
-        }
-        else if (this.angleToNeighbor.equals(DrawlNumber.valueOf(90)))
-        {
+        } else if (this.angleToNeighbor.equals(DrawlNumber.valueOf(90))) {
             returnValue = this.neighbor;
-        }
-        else
-        {
+        } else {
             returnValue = null;
         }
         return returnValue;
+    }
+
+    public void setLeftOf(Shape shape) {
+        this.setLeftOf(shape, new Measure(0));
     }
 
     /**
@@ -409,14 +492,11 @@ public class Shape
      *
      * @return
      */
-    public Point getLeftPort()
-    {
+    public Point getLeftPort() {
         DrawlNumber xCoordinate = this.getImplicitXPositionLeft();
         DrawlNumber yCoordinate = this.getImplicitYPositionCenter();
         return new Point(xCoordinate, yCoordinate);
     }
-
-
 
     /**
      * Get this Shape's neighbor to the left (this Shape is to the right of that one), if any.
@@ -424,22 +504,25 @@ public class Shape
      * @return the Shape to the left of this one, if any;
      * <code>null</code> otherwise.
      */
-    public Shape getRightOf()
-    {
+    public Shape getRightOf() {
         Shape returnValue = null;
-        if (this.angleToNeighbor == null)
-        {
+        if (this.angleToNeighbor == null) {
             returnValue = null;
-        }
-        else if (this.angleToNeighbor.isEqualTo(DrawlNumber.valueOf(270)))
-        {
+        } else if (this.angleToNeighbor.isEqualTo(DrawlNumber.valueOf(270))) {
             returnValue = this.neighbor;
-        }
-        else
-        {
+        } else {
             returnValue = null;
         }
         return returnValue;
+    }
+
+    /**
+     * Sets this Shape's neighbor to the left (this Shape is to the right of that one).
+     *
+     * @param shape the Shape to the left of this one
+     */
+    public void setRightOf(Shape shape) {
+        this.setRightOf(shape, new Measure(0));
     }
 
     /**
@@ -447,15 +530,13 @@ public class Shape
      *
      * @return
      */
-    public Point getRightPort()
-    {
+    public Point getRightPort() {
         DrawlNumber xCoordinate = this.getImplicitXPositionRight();
         DrawlNumber yCoordinate = this.getImplicitYPositionCenter();
         return new Point(xCoordinate, yCoordinate);
     }
 
-    public String getSVG()
-    {
+    public String getSVG() {
         return "oops";
     }
 
@@ -465,9 +546,17 @@ public class Shape
      * @return The stroke of this shape, or null if the stroke of this Shape has not been set.
      */
     @Nullable
-    public String getStroke()
-    {
+    public String getStroke() {
         return this.stroke;
+    }
+
+    /**
+     * Sets the stroke of this shape.
+     *
+     * @param s A stroke name.
+     */
+    public void setStroke(String s) {
+        this.stroke = s;
     }
 
     /**
@@ -477,8 +566,7 @@ public class Shape
      * associated with it.
      */
     @Nullable
-    public Text getText()
-    {
+    public Text getText() {
         return this.text;
     }
 
@@ -487,8 +575,7 @@ public class Shape
      *
      * @return
      */
-    public Point getTopPort()
-    {
+    public Point getTopPort() {
         DrawlNumber xCoordinate = this.getImplicitXPositionCenter();
         DrawlNumber yCoordinate = this.getImplicitYPositionTop();
         return new Point(xCoordinate, yCoordinate);
@@ -499,10 +586,9 @@ public class Shape
      *
      * @return
      */
-    public Measure getWidth()
-    {
-       DrawlNumber width = this.getImplicitWidth();
-       return new Measure(width);
+    public Measure getWidth() {
+        DrawlNumber width = this.getImplicitWidth();
+        return new Measure(width);
 
     }
 
@@ -512,21 +598,12 @@ public class Shape
      * @return TRUE if this shape has a Text object associated with it, FALSE otherwise.
      */
     @NotNull
-    public Boolean hasText()
-    {
-        if (this.getText() == null)
-        {
+    public Boolean hasText() {
+        if (this.getText() == null) {
             return Boolean.FALSE;
-        }
-        else
-        {
+        } else {
             return Boolean.TRUE;
         }
-    }
-
-    public void setAbove(Shape shape)
-    {
-        this.setAbove(shape, new Measure(0));
     }
 
     /**
@@ -534,10 +611,8 @@ public class Shape
      *
      * @param shape The circle that will be below this one.
      */
-    public void setAbove(Shape shape, Measure offset)
-    {
-        if (shape == this)
-        {
+    public void setAbove(Shape shape, Measure offset) {
+        if (shape == this) {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
@@ -555,20 +630,13 @@ public class Shape
         this.setExplicitXPositionCenter(shape.getExplicitXPositionCenter());
     }
 
-    public void setBelow(Shape shape)
-    {
-        this.setBelow(shape, new Measure(0));
-    }
-
     /**
      * Set this circle below another circle.
      *
      * @param shape The circle that will be above this one.
      */
-    public void setBelow(Shape shape, Measure offset)
-    {
-        if (shape == this)
-        {
+    public void setBelow(Shape shape, Measure offset) {
+        if (shape == this) {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
@@ -585,138 +653,12 @@ public class Shape
     }
 
     /**
-     * Set the height of this Shape to an explicit value.
-     * <p>
-     *
-     * @param height The new height of this Shape. Can be <code>null</code> to indicate that this Shape has not yet
-     *               been assigned an explicit height.
-     */
-    protected void setExplicitHeight(@Nullable DrawlNumber height)
-    {
-        this.explicitHeight = height;
-        if (Boolean.TRUE.equals(this.hasText()))
-        {
-            this.getText().setExplicitHeight(height);
-        }
-    }
-
-    /**
-     * Set the width of this Shape to an explicit value.
-     * <p>
-     *
-     * @param width the new width of this Shape, or <code>null</code> to indicate that this Shape has not yet
-     *              been assigned an explicit width.
-     */
-    protected void setExplicitWidth(@Nullable DrawlNumber width)
-    {
-        this.explicitWidth = width;
-        if (Boolean.TRUE.equals(this.hasText()))
-        {
-            this.getText().setExplicitWidth(width);
-        }
-    }
-
-    /**
-     * Sets the explicit center position of this Shape.
-     * @param x
-     */
-    protected void setExplicitXPositionCenter(DrawlNumber x)
-    {
-        this.explicitXPositionCenter = x;
-        if(Boolean.TRUE.equals(this.hasText()))
-        {
-            this.getText().setExplicitXPositionCenter(x);
-        }
-    }
-
-    protected void setExplicitXPositionCenter(Integer x)
-    {
-        setExplicitXPositionCenter(DrawlNumber.valueOf(x));
-    }
-
-    protected void setExplicitYPositionCenter(Integer y)
-    {
-        this.setExplicitYPositionCenter(DrawlNumber.valueOf(y));
-    }
-
-    /**
-     * Sets the explicit y position of this Shape.
-     * <p>
-     * The y position marks the vertical position of the Shape's center. The explicit coordinate system is the
-     * common Cartesian coordinate system, with higher values of y upward and lower values of y downward.
-     *
-     * @param y The explicit y position of this Shape.
-     */
-    protected void setExplicitYPositionCenter(DrawlNumber y)
-    {
-        this.explicitYPositionCenter = y;
-        if(Boolean.TRUE.equals(this.hasText()))
-        {
-            this.getText().setExplicitYPositionCenter(y);
-        }
-    }
-
-    /**
-     * Set the fill of this Shape.
-     *
-     * @param s A string representing a fill color, e.g., "white".
-     */
-    public void setFill(String s)
-    {
-        this.fill = s;
-    }
-
-    protected final void setImplicitHeight(DrawlNumber implicitHeight)
-    {
-        logger.atFine().log("Setting implicit height to %s", implicitHeight.toPlainString());
-        this.implicitHeight = implicitHeight;
-    }
-
-    protected final void setImplicitWidth(DrawlNumber implicitWidth)
-    {
-        logger.atFine().log("Setting implicit width to %s", implicitWidth.toPlainString());
-        this.implicitWidth = implicitWidth;
-    }
-
-    protected void setImplicitXPositionCenter(DrawlNumber x)
-    {
-        this.implicitXPositionCenter = x;
-        if(Boolean.TRUE.equals(this.hasText()))
-        {
-            this.getText().setImplicitXPositionCenter(x);
-        }
-    }
-
-    /**
-     * Set the implicit y position of this Shape.
-     * <p>
-     * The y position marks the vertical position of the Shape's center. In the implicit coordinate system, higher
-     * values of y are upward whereas lower values of y are downward.
-     *
-     * @param y The implicit y position of this Shape.
-     */
-    protected void setImplicitYPositionCenter(DrawlNumber y)
-    {
-        this.implicitYPositionCenter = y;
-        if(Boolean.TRUE.equals(this.hasText()))
-        {
-            this.getText().setImplicitYPositionCenter(y);
-        }
-    }
-
-    public void setLeftOf(Shape shape)
-    {
-        this.setLeftOf(shape, new Measure(0));
-    }
-    /**
      * Set this Shape's neighbor to the right (this Shape is to the left of that one).
      *
      * @param shape the Shape to the right of this one
      */
-    public void setLeftOf(Shape shape, Measure offset)
-    {
-        if (shape == this)
-        {
+    public void setLeftOf(Shape shape, Measure offset) {
+        if (shape == this) {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
@@ -737,25 +679,13 @@ public class Shape
     }
 
     /**
-     * Sets this Shape's neighbor to the left (this Shape is to the right of that one).
-     *
-     * @param shape the Shape to the left of this one
-     */
-    public void setRightOf(Shape shape)
-    {
-        this.setRightOf(shape, new Measure(0));
-    }
-
-    /**
      * Sets this Shape's neighbor to the left with an offset. (This Shape is to the right of that one by an offset.)
      *
-     * @param shape The Shape to set to the right of which this one will be set.
+     * @param shape  The Shape to set to the right of which this one will be set.
      * @param offset The distance to offset the other Shape from this one.
      */
-    public void setRightOf(Shape shape, Measure offset)
-    {
-        if (shape == this)
-        {
+    public void setRightOf(Shape shape, Measure offset) {
+        if (shape == this) {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
@@ -771,15 +701,5 @@ public class Shape
         // Set the y position of this shape to match the one it is to the left of
         this.setImplicitYPositionCenter(shape.getImplicitYPositionCenter());
         this.setExplicitYPositionCenter(shape.getExplicitYPositionCenter());
-    }
-
-    /**
-     * Sets the stroke of this shape.
-     *
-     * @param s A stroke name.
-     */
-    public void setStroke(String s)
-    {
-        this.stroke = s;
     }
 }

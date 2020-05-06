@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
 public class Line extends Shape {
 
     @NotNull
-    private Point point1Implicit = new Point(0,0);
+    private Point point1Implicit = new Point(0, 0);
 
     @NotNull
     private Point point2Implicit = new Point(0, 0);
@@ -30,8 +30,7 @@ public class Line extends Shape {
     /**
      * Constructs a default line whose ends are unknown.
      */
-    public Line()
-    {
+    public Line() {
 
     }
 
@@ -41,45 +40,52 @@ public class Line extends Shape {
      * @param point1Implicit The origin of the line in implicit coordinates
      * @param point2Implicit The end of the line in implicit coordinates
      */
-    public Line(@NotNull Point point1Implicit, @NotNull Point point2Implicit)
-    {
+    public Line(@NotNull Point point1Implicit, @NotNull Point point2Implicit) {
         this.point1Implicit = point1Implicit;
         this.point2Implicit = point2Implicit;
+
+        DrawlNumber implicitWidth = point2Implicit.getX().subtract(point1Implicit.getX());
+        DrawlNumber implicitHeight = point2Implicit.getY().subtract(point1Implicit.getY());
+
+        DrawlNumber implicitCenterX = point1Implicit.getX().add(implicitWidth.divide(DrawlNumber.TWO,
+                DrawlNumber.mcOperations));
+        DrawlNumber implicitCenterY = point1Implicit.getY().add(implicitHeight.divide(DrawlNumber.TWO,
+                DrawlNumber.mcOperations));
+
+        this.setImplicitWidth(implicitWidth);
+        this.setImplicitHeight(implicitHeight);
+        this.setImplicitXPositionCenter(implicitCenterX);
+        this.setImplicitYPositionCenter(implicitCenterY);
     }
 
     @Nullable
-    protected Point getPoint1Explicit()
-    {
-        DrawlNumber point1ExplicitX = getExplicitXPositionLeft();
-        DrawlNumber point1ExplicitY = getExplicitYPositionBottom();
+    protected Point getPoint1Explicit() {
+        DrawlNumber point1ExplicitX = this.getExplicitXPositionLeft();
+        DrawlNumber point1ExplicitY = this.getExplicitYPositionBottom();
 
         return new Point(point1ExplicitX, point1ExplicitY);
     }
 
     @Nullable
-    protected Point getPoint2Explicit()
-    {
-        DrawlNumber point2ExplicitX = getExplicitXPositionRight();
-        DrawlNumber point2ExplicitY = getExplicitYPositionTop();
+    protected Point getPoint2Explicit() {
+        DrawlNumber point2ExplicitX = this.getExplicitXPositionRight();
+        DrawlNumber point2ExplicitY = this.getExplicitYPositionTop();
 
         return new Point(point2ExplicitX, point2ExplicitY);
     }
 
     @NotNull
-    protected Point getPoint1Implicit()
-    {
+    protected Point getPoint1Implicit() {
         return this.point1Implicit;
     }
 
     @NotNull
-    protected Point getPoint2Implicit()
-    {
+    protected Point getPoint2Implicit() {
         return this.point2Implicit;
     }
 
     public String getSVG() {
-        if (this.getExplicitWidth() == null || this.getExplicitHeight() == null)
-        {
+        if (this.getExplicitWidth() == null || this.getExplicitHeight() == null) {
             throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
         }
         StringBuilder svgBuilder = new StringBuilder();
@@ -97,22 +103,19 @@ public class Line extends Shape {
         svgBuilder.append(this.getPoint2Explicit().getY().toPlainString());
         svgBuilder.append("\"");
 
-        if (this.getFill() != null)
-        {
+        if (this.getFill() != null) {
             svgBuilder.append(" fill=\"");
             svgBuilder.append(this.getFill());
             svgBuilder.append("\"");
         }
-        if (this.getStroke() != null)
-        {
+        if (this.getStroke() != null) {
             svgBuilder.append(" stroke=\"");
             svgBuilder.append(this.getStroke());
             svgBuilder.append("\"");
         }
         //svgBuilder.append(" style=\"stroke:rgb(255,0,0);stroke-width:2\"");
         svgBuilder.append(" />");
-        if (this.getText() != null)
-        {
+        if (this.getText() != null) {
             svgBuilder.append(this.getText().getSVG());
         }
         return svgBuilder.toString();
