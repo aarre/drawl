@@ -725,4 +725,25 @@ public class DrawlNumber implements Comparable<DrawlNumber>
         return "DrawlNumber[" + this.toFullString() + "]";
     }
 
+
+    /**
+     * Convert this number to a string for SVG.
+     * <p>
+     * The number will be represented with as many decimal points as necessary for SVG and no more than SVG can
+     * handle.
+     */
+    public @NotNull String toSVG()
+    {
+        String result = "";
+        Float floatValue = this.floatValue();
+        if (this.isIntegerValue(floatValue))
+        {
+            result = String.valueOf(this.intValue());
+        }
+        else
+        {
+            result = String.valueOf(floatValue);
+        }
+        return result;
+    }
 }

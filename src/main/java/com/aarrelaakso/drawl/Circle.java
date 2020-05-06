@@ -65,7 +65,7 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    public DrawlNumber getExplicitHeight()
+    protected DrawlNumber getExplicitHeight()
     {
         return this.getExplicitDiameter();
     }
@@ -184,7 +184,7 @@ public class Circle extends Shape
             // If the explicit radius has not been set, use the implicit radius
             this.setExplicitRadius(this.getImplicitRadius());
         }
-        radiusStringValue = SVG.toString(this.getExplicitRadius());
+        radiusStringValue = this.getExplicitRadius().toSVG();
 
         @NotNull StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<circle ");
@@ -192,10 +192,10 @@ public class Circle extends Shape
         svgBuilder.append(radiusStringValue);
         svgBuilder.append("\"");
         svgBuilder.append(" cx=\"");
-        svgBuilder.append(SVG.toString(this.getExplicitXPositionCenter()));
+        svgBuilder.append(this.getExplicitXPositionCenter().toSVG());
         svgBuilder.append("\"");
         svgBuilder.append(" cy=\"");
-        svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
+        svgBuilder.append(this.getExplicitYPositionCenter().toSVG());
         svgBuilder.append("\"");
         if (this.getFill() != null)
         {

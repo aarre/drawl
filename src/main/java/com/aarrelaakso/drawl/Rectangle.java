@@ -70,12 +70,12 @@ public class Rectangle extends Shape
         svgBuilder.append("\"");
         if (this.getExplicitXPositionLeft() != null) {
             svgBuilder.append(" x=\"");
-            svgBuilder.append(SVG.toString(this.getExplicitXPositionLeft()));
+            svgBuilder.append(this.getExplicitXPositionLeft().toSVG());
             svgBuilder.append("\"");
         }
         if (this.getExplicitYPositionTop() != null) {
             svgBuilder.append(" y=\"");
-            svgBuilder.append(SVG.toString(this.getExplicitYPositionTop()));
+            svgBuilder.append(this.getExplicitYPositionTop().toSVG());
             svgBuilder.append("\"");
         }
         if (this.getFill() != null)
