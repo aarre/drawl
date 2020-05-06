@@ -42,6 +42,54 @@ public abstract class ShapeTestPublic {
     Shape shape3;
 
     @Nested
+    @DisplayName("Above - Below - Left - Right")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class AboveBelowLeftRight {
+
+        @Test
+        @DisplayName("When Shape A is above Shape B, then Shape A is above Shape B")
+        void whenShapeAIsAboveShapeBThenShapeAIsAboveShapeB()
+        {
+            shape1.setAbove(shape2);
+            then(shape1.getAbove()).isEqualTo(shape2);
+        }
+
+        @Test
+        @DisplayName("When Shape A is below Shape B, then Shape A is below Shape B")
+        void whenShapeAIsBelowShapeBThenShapeAIsBelowShapeB()
+        {
+            shape1.setBelow(shape2);
+            then(shape1.getBelow()).isEqualTo(shape2);
+        }
+
+        @Test
+        @DisplayName("When Shape A is left of Shape B, then Shape A is left of Shape B")
+        void whenShapeAIsLeftOfShapeBThenShapeAIsLeftOfShapeB()
+        {
+            shape1.setLeftOf(shape2);
+            then(shape1.getLeftOf()).isEqualTo(shape2);
+        }
+
+        @Test
+        @DisplayName("When Shape A is right of Shape B, then Shape A is right of Shape B")
+        void whenShapeAIsRightOfShapeBThenShapeAIsRightOfShapeB()
+        {
+            shape1.setRightOf(shape2);
+            then(shape1.getRightOf()).isEqualTo(shape2);
+        }
+
+    }
+
+    @Test
+    @DisplayName("When two shapes have been constructed, then it is possible to connect them with a Line")
+    void whenTwoShapesHaveBeenConstructedThenItIsPossibleToConnectThemWithALine() {
+        shape1.setLeftOf(shape2, shape1.getWidth());
+        @NotNull Point pointA = shape1.getRightPort();
+        @NotNull Point pointB = shape2.getLeftPort();
+        @NotNull Line line = new Line(pointA, pointB);
+    }
+
+    @Nested
     @DisplayName("Given three default shapes")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
     class GivenThreeDefaultShapes {
@@ -119,16 +167,6 @@ public abstract class ShapeTestPublic {
             softly.then(leftPort).isNotNull();
             softly.then(leftPort).isInstanceOf(Point.class);
         }
-    }
-
-    @Test
-    @DisplayName("When two shapes have been constructed, then it is possible to connect them with a Line")
-    void whenTwoShapesHaveBeenConstructedThenItIsPossibleToConnectThemWithALine()
-    {
-        shape1.setLeftOf(shape2, shape1.getWidth());
-        @NotNull Point pointA = shape1.getRightPort();
-        @NotNull Point pointB = shape2.getLeftPort();
-        @NotNull Line line = new Line(pointA, pointB);
     }
 
 }
