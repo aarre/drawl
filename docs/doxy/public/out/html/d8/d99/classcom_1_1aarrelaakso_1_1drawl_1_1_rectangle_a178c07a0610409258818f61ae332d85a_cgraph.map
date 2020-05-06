@@ -1,6 +1,5 @@
 <map id="com.aarrelaakso.drawl.Rectangle.Rectangle" name="com.aarrelaakso.drawl.Rectangle.Rectangle">
-<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#acb96a96a1d43132def75a38c136c563f" title="com.aarrelaakso.drawl.Shape.set\lImplicitHeight" alt="" coords="273,5,489,47"/>
-<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a3fd17115c85e2bfc9e881838a3f7d735" title="Creates new instance. " alt="" coords="286,71,477,112"/>
-<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a03a408248a797d817ab32d5b833d5e1d" title="com.aarrelaakso.drawl.Shape.set\lImplicitWidth" alt="" coords="273,136,489,177"/>
-<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a07c4c1c3a0e81ae9aef3325bef3e0152" title="com.aarrelaakso.drawl.Drawl\lNumber.toPlainString" alt="" coords="537,71,728,112"/>
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a01a28173688c7c955b0c7558ac3ff5df" title="Sets the implicit height of this Shape. " alt="" coords="273,5,489,47"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4654022f4252c55f6aebd69494db301c" title="Creates new instance. " alt="" coords="286,71,477,112"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac513970aed7ea7faa1de7efa35d7d068" title="Sets the implicit width of this Shape. " alt="" coords="273,136,489,177"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="com.aarrelaakso.drawl.Line" name="com.aarrelaakso.drawl.Line">
-<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html" title="com.aarrelaakso.drawl.Shape" alt="" coords="439,348,634,375"/>
-<area shape="rect" id="node8" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html" title="com.aarrelaakso.drawl.Text" alt="" coords="455,481,637,508"/>
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html" title="Abstract class represents shapes such as circles, rectangles, and lines. " alt="" coords="439,348,634,375"/>
+<area shape="rect" id="node8" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html" title="Represents text on a drawing. " alt="" coords="455,481,637,508"/>
 <area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="276,118,467,159"/>
 <area shape="rect" id="node9" href="$de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html" title="Represents a point on the drawing canvas. " alt="" coords="229,348,415,375"/>
 </map>

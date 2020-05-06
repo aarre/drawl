@@ -1,0 +1,11 @@
+<map id="com.aarrelaakso.drawl.Shape.setRightOf" name="com.aarrelaakso.drawl.Shape.setRightOf">
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4654022f4252c55f6aebd69494db301c" title="Creates new instance. " alt="" coords="559,16,750,58"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a58b3ee7a390b84fa0b9a19d52a8bb8dc" title="Performs addition operation. " alt="" coords="282,43,473,84"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac796f934debb4cf92d285f387422deb6" title="Gets half of the implicit width of this Shape. " alt="" coords="269,174,485,215"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a58226399cee0d166f45e807869af0bc8" title="Sets the implicit x position of the center of this Shape. " alt="" coords="269,263,485,304"/>
+<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac49fa20747ea798a3b56c3ea99df2d8f" title="Sets the implicit y position of this Shape. " alt="" coords="269,352,485,394"/>
+<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a947c00be2ea3d0e732814b8ca377df45" title="Sets the explicit y&#45;position of the center of this Shape. " alt="" coords="269,108,485,150"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af7ebce58a8dbba0cbe372040b74d7fca" title="Gets the implicit width of this Shape. " alt="" coords="547,143,763,184"/>
+<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ac5c959677fa71d3303a9cb329f943cbc" title="Divides with DrawlNumber by another. " alt="" coords="559,208,750,250"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26" title="Returns a Text object that belongs to this Shape, if there is one. " alt="" coords="533,301,776,328"/>
+</map>

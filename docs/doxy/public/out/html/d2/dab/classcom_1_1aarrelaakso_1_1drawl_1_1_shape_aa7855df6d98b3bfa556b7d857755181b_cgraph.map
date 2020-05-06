@@ -1,5 +1,5 @@
 <map id="com.aarrelaakso.drawl.Shape.setExplicitXPositionCenter" name="com.aarrelaakso.drawl.Shape.setExplicitXPositionCenter">
 <area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a43d67e2711163383c32d8c14a6b17e2c" title="Sets the explicit center position of this Shape. " alt="" coords="269,29,485,71"/>
-<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a3fd17115c85e2bfc9e881838a3f7d735" title="Creates new instance. " alt="" coords="282,95,473,136"/>
+<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4654022f4252c55f6aebd69494db301c" title="Creates new instance. " alt="" coords="282,95,473,136"/>
 <area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26" title="Returns a Text object that belongs to this Shape, if there is one. " alt="" coords="533,37,776,63"/>
 </map>

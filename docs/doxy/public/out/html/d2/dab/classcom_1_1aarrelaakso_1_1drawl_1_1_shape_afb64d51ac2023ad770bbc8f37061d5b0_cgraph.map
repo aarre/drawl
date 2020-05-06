@@ -1,7 +1,7 @@
 <map id="com.aarrelaakso.drawl.Shape.getImplicitYPositionTop" name="com.aarrelaakso.drawl.Shape.getImplicitYPositionTop">
-<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0549739ee3201ae16091acce4ee6a5ac" title="Get the implicit y position of the center of this Shape. " alt="" coords="269,5,485,47"/>
-<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#aac6b91a4d4c7bbf99acd5472d39c071e" title="Performs addition operation. " alt="" coords="282,71,473,112"/>
-<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa476150489a3a5b634a15a1c03e045d7" title="com.aarrelaakso.drawl.Shape.get\lImplicitHalfHeight" alt="" coords="269,136,485,177"/>
-<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a41cc097acddea53404b62a812ef37276" title="Get the implicit height of this Shape. " alt="" coords="533,103,749,144"/>
-<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a42d9f576373ff039f2ee03ef9bb9d079" title="Divides with DrawlNumber by another. " alt="" coords="546,168,737,209"/>
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0549739ee3201ae16091acce4ee6a5ac" title="Gets the implicit y position of the center of this Shape. " alt="" coords="269,5,485,47"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a58b3ee7a390b84fa0b9a19d52a8bb8dc" title="Performs addition operation. " alt="" coords="282,71,473,112"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa476150489a3a5b634a15a1c03e045d7" title="Gets half of the implicit height of this Shape. " alt="" coords="269,136,485,177"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a41cc097acddea53404b62a812ef37276" title="Gets the implicit height of this Shape. " alt="" coords="533,103,749,144"/>
+<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ac5c959677fa71d3303a9cb329f943cbc" title="Divides with DrawlNumber by another. " alt="" coords="546,168,737,209"/>
 </map>

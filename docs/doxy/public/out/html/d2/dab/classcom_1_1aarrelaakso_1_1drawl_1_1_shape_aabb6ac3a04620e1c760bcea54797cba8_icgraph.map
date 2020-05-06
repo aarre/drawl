@@ -1,10 +1,10 @@
 <map id="com.aarrelaakso.drawl.Shape.getExplicitWidth" name="com.aarrelaakso.drawl.Shape.getExplicitWidth">
 <area shape="rect" id="node2" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a54dd70515b691c8afa88f980e10698" title="com.aarrelaakso.drawl.Line.getSVG" alt="" coords="1129,111,1360,137"/>
 <area shape="rect" id="node3" href="$d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="815,52,1081,79"/>
-<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af952f32cb1706da71c9cb75916f4d665" title="com.aarrelaakso.drawl.Shape.get\lExplicitHalfWidth" alt="" coords="278,103,494,145"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af952f32cb1706da71c9cb75916f4d665" title="Gets half the explicit width of this Shape. " alt="" coords="278,103,494,145"/>
 <area shape="rect" id="node9" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html#ab1a6091b007ea4da41de26bc8c6ea021" title="Gets the SVG associated with this Text object. " alt="" coords="269,169,503,196"/>
 <area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a339cf8811f57b7cb5251109b04be953c" title="Gets the explicit x position of the left edge of this Shape. " alt="" coords="551,103,767,145"/>
-<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a19970b658b55e4e61de31aaaef8cf7fe" title="com.aarrelaakso.drawl.Shape.get\lExplicitXPositionRight" alt="" coords="551,169,767,210"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a19970b658b55e4e61de31aaaef8cf7fe" title="Gets the explicit x position of the right edge of this Shape. " alt="" coords="551,169,767,210"/>
 <area shape="rect" id="node6" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#ac8344112f3a5d24cfa4b732f3625af08" title="com.aarrelaakso.drawl.Line.get\lPoint1Explicit" alt="" coords="847,103,1049,145"/>
 <area shape="rect" id="node8" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a1f2be99b388cc8bfb6f2bb866c21138f" title="com.aarrelaakso.drawl.Line.get\lPoint2Explicit" alt="" coords="847,169,1049,210"/>
 </map>

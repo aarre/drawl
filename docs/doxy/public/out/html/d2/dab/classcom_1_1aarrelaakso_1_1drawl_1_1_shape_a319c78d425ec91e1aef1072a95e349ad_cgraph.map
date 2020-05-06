@@ -1,9 +1,9 @@
 <map id="com.aarrelaakso.drawl.Shape.getRightPort" name="com.aarrelaakso.drawl.Shape.getRightPort">
-<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aedcaf32e6be1114111e5ee2ddb1214a3" title="Get the implicit x position of the right edge of this Shape. " alt="" coords="269,71,485,112"/>
-<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0549739ee3201ae16091acce4ee6a5ac" title="Get the implicit y position of the center of this Shape. " alt="" coords="269,136,485,177"/>
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aedcaf32e6be1114111e5ee2ddb1214a3" title="Gets the implicit x position of the right edge of this Shape. " alt="" coords="269,71,485,112"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0549739ee3201ae16091acce4ee6a5ac" title="Gets the implicit y position of the center of this Shape. " alt="" coords="269,136,485,177"/>
 <area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac7a69f5cb9dd954f5054a3bebc35af41" title="Get the implicit x position of the center of this Shape. " alt="" coords="533,5,749,47"/>
-<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#aac6b91a4d4c7bbf99acd5472d39c071e" title="Performs addition operation. " alt="" coords="546,71,737,112"/>
-<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac796f934debb4cf92d285f387422deb6" title="com.aarrelaakso.drawl.Shape.get\lImplicitHalfWidth" alt="" coords="533,136,749,177"/>
-<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af7ebce58a8dbba0cbe372040b74d7fca" title="Get the implicit width of this Shape. " alt="" coords="797,103,1013,144"/>
-<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a42d9f576373ff039f2ee03ef9bb9d079" title="Divides with DrawlNumber by another. " alt="" coords="810,168,1001,209"/>
+<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a58b3ee7a390b84fa0b9a19d52a8bb8dc" title="Performs addition operation. " alt="" coords="546,71,737,112"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac796f934debb4cf92d285f387422deb6" title="Gets half of the implicit width of this Shape. " alt="" coords="533,136,749,177"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af7ebce58a8dbba0cbe372040b74d7fca" title="Gets the implicit width of this Shape. " alt="" coords="797,103,1013,144"/>
+<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ac5c959677fa71d3303a9cb329f943cbc" title="Divides with DrawlNumber by another. " alt="" coords="810,168,1001,209"/>
 </map>

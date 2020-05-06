@@ -2,12 +2,10 @@
 <area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aabb6ac3a04620e1c760bcea54797cba8" title="Get the explicit width of this Shape. " alt="" coords="301,5,517,47"/>
 <area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a76cd6b4d9f427f1888fc98fd653ee496" title="Get the explicit height of this Shape. " alt="" coords="301,71,517,112"/>
 <area shape="rect" id="node4" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html#aaded65428b035e05b91e65f21808b434" title="Gets the text string associated with this Text object. " alt="" coords="310,136,509,177"/>
-<area shape="rect" id="node5" href="$d7/d81/classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#ae360f344b090fed4452294dbf980185d" title="Convert a number to a string for SVG. " alt="" coords="309,201,509,243"/>
-<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a4e1d54c7e161e3af5053939ddefdf9e6" title="Gets the stroke of this Shape. " alt="" coords="301,267,517,308"/>
-<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0d9a33a3e151aaceeec140bea343a650" title="Returns the fill associated with this Shape, if any. " alt="" coords="293,333,526,359"/>
-<area shape="rect" id="node11" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a037a5515b2a6e1df1d1981aa5516e78e" title="Indicates whether this shape has a Text object associated with it. " alt="" coords="287,383,532,410"/>
-<area shape="rect" id="node12" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26" title="Returns a Text object that belongs to this Shape, if there is one. " alt="" coords="580,409,823,435"/>
-<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ae8442cbd5cc7ab0c35c0302b196b3819" title="Converts this BigDecimal to a Float. " alt="" coords="606,136,797,177"/>
-<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ac3253122bbe3bc4946ea8fde1ff95cb4" title="Test whether a BigDecimal is a mathematical integer. " alt="" coords="606,201,797,243"/>
-<area shape="rect" id="node8" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a8022d04415c5449344ac1e23658f8802" title="Converts this BigDecimal to an int. " alt="" coords="606,267,797,308"/>
+<area shape="rect" id="node5" href="$d7/d81/classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html#a42e1312eca53f124d5bd97a543e9d436" title="Convert a number to a string for SVG. " alt="" coords="309,201,509,243"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a4e1d54c7e161e3af5053939ddefdf9e6" title="Gets the stroke of this Shape. " alt="" coords="301,267,517,308"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0d9a33a3e151aaceeec140bea343a650" title="Returns the fill associated with this Shape, if any. " alt="" coords="293,333,526,359"/>
+<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a037a5515b2a6e1df1d1981aa5516e78e" title="Indicates whether this shape has a Text object associated with it. " alt="" coords="287,383,532,410"/>
+<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26" title="Returns a Text object that belongs to this Shape, if there is one. " alt="" coords="580,409,823,435"/>
+<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#adb78cd224b4c2f55439743336a51f204" title="Test whether a BigDecimal is a mathematical integer. " alt="" coords="606,201,797,243"/>
 </map>

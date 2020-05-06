@@ -1,8 +1,8 @@
 <map id="com.aarrelaakso.drawl.Shape.getExplicitYPositionTop" name="com.aarrelaakso.drawl.Shape.getExplicitYPositionTop">
 <area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a602cb73f783f2856fa81e82bf7792263" title="Gets the explicit y&#45;position of the center of this Shape. " alt="" coords="269,5,485,47"/>
-<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#af22316798b9d93dc113c6e6769c6ec7f" title="Performs subtraction operation. " alt="" coords="282,71,473,112"/>
-<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a7207aa8ba07ed18af81fb9d92a979cd6" title="com.aarrelaakso.drawl.Shape.get\lExplicitHalfHeight" alt="" coords="269,136,485,177"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4a9de57548307feaf7e703e5428422f5" title="Performs subtraction operation. " alt="" coords="282,71,473,112"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a7207aa8ba07ed18af81fb9d92a979cd6" title="Gets half the explicit height of this Shape. " alt="" coords="269,136,485,177"/>
 <area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a76cd6b4d9f427f1888fc98fd653ee496" title="Get the explicit height of this Shape. " alt="" coords="533,71,749,112"/>
-<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a42d9f576373ff039f2ee03ef9bb9d079" title="Divides with DrawlNumber by another. " alt="" coords="546,136,737,177"/>
-<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a3fd17115c85e2bfc9e881838a3f7d735" title="Creates new instance. " alt="" coords="546,201,737,243"/>
+<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ac5c959677fa71d3303a9cb329f943cbc" title="Divides with DrawlNumber by another. " alt="" coords="546,136,737,177"/>
+<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4654022f4252c55f6aebd69494db301c" title="Creates new instance. " alt="" coords="546,201,737,243"/>
 </map>

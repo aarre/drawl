@@ -1,0 +1,10 @@
+<map id="com.aarrelaakso.drawl.DrawlNumber.multiply" name="com.aarrelaakso.drawl.DrawlNumber.multiply">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#aa94aa289fa6a02523cceb0a7d46c1115" title="Get the implicit diameter of this Circle. " alt="" coords="251,68,464,109"/>
+<area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Sets the explicit dimensions of this Drawing. " alt="" coords="244,133,471,175"/>
+<area shape="rect" id="node8" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="244,199,471,240"/>
+<area shape="rect" id="node9" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a8eb1872ac149fcad193f46fc8a6fa0ad" title="Performs multiplication operation. " alt="" coords="262,264,453,305"/>
+<area shape="rect" id="node3" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a866cede87fd3253b3e4f93d9970717c3" title="Get the implicit height of this Circle. " alt="" coords="539,5,753,47"/>
+<area shape="rect" id="node4" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a63c0bcbf1138de1f85041213116c1d3a" title="Get the implicit width of this Circle. " alt="" coords="539,71,753,112"/>
+<area shape="rect" id="node6" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="519,139,773,166"/>
+<area shape="rect" id="node7" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ab5ce2b7ab7dced8861d87a572b6b0ce9" title="Set the explicit dimensions of this Drawing. " alt="" coords="533,191,759,232"/>
+</map>

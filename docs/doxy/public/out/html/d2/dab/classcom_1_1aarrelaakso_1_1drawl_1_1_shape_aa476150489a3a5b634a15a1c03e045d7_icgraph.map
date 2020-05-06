@@ -1,8 +1,8 @@
 <map id="com.aarrelaakso.drawl.Shape.getImplicitHalfHeight" name="com.aarrelaakso.drawl.Shape.getImplicitHalfHeight">
-<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af04961079cb3993d8f73670e6695415b" title="Get the implicit bottommost y&#45;position of this Shape. " alt="" coords="269,21,485,63"/>
-<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa0dd6332c22877c42b8c3863e5cc579e" title="Set this circle below another circle. " alt="" coords="533,71,749,112"/>
-<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#afb64d51ac2023ad770bbc8f37061d5b0" title="Gets the implicit topmost y position of this Shape. " alt="" coords="269,139,485,180"/>
-<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aab165a65f7bd1e55a6de7166577725a3" title="Set this Shape above another Shape. " alt="" coords="533,201,749,243"/>
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af04961079cb3993d8f73670e6695415b" title="Gets the implicit bottommost y&#45;position of this Shape. " alt="" coords="269,5,485,47"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#afb64d51ac2023ad770bbc8f37061d5b0" title="Gets the implicit topmost y position of this Shape. " alt="" coords="269,71,485,112"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a3d3e7adc0ba7f4634c913773d326f4e6" title="Sets this Shape above another Shape. " alt="" coords="269,136,485,177"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a9e6a74a094d67337b42a626d8aa167a8" title="Sets this circle below another circle. " alt="" coords="269,201,485,243"/>
 <area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aba14efe9a16c0808580963c66b171082" title="Returns a Point object representing this Shape&#39;s bottom port. " alt="" coords="533,5,749,47"/>
-<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aed4e9caa294aacc973b7a531a960e9e5" title="Returns a Point object representing this Shape&#39;s top port. " alt="" coords="533,136,749,177"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aed4e9caa294aacc973b7a531a960e9e5" title="Returns a Point object representing this Shape&#39;s top port. " alt="" coords="533,71,749,112"/>
 </map>

@@ -1,4 +1,3 @@
 <map id="com.aarrelaakso.drawl.Shape.getImplicitYPositionTop" name="com.aarrelaakso.drawl.Shape.getImplicitYPositionTop">
 <area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aed4e9caa294aacc973b7a531a960e9e5" title="Returns a Point object representing this Shape&#39;s top port. " alt="" coords="269,5,485,47"/>
-<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aab165a65f7bd1e55a6de7166577725a3" title="Set this Shape above another Shape. " alt="" coords="269,71,485,112"/>
 </map>

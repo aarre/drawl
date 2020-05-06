@@ -1,11 +1,10 @@
 <map id="com.aarrelaakso.drawl.Line.Line" name="com.aarrelaakso.drawl.Line.Line">
-<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#af22316798b9d93dc113c6e6769c6ec7f" title="Performs subtraction operation. " alt="" coords="275,5,466,47"/>
-<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#aac6b91a4d4c7bbf99acd5472d39c071e" title="Performs addition operation. " alt="" coords="275,71,466,112"/>
-<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a42d9f576373ff039f2ee03ef9bb9d079" title="Divides with DrawlNumber by another. " alt="" coords="275,136,466,177"/>
-<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a03a408248a797d817ab32d5b833d5e1d" title="com.aarrelaakso.drawl.Shape.set\lImplicitWidth" alt="" coords="263,201,479,243"/>
-<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#acb96a96a1d43132def75a38c136c563f" title="com.aarrelaakso.drawl.Shape.set\lImplicitHeight" alt="" coords="263,267,479,308"/>
-<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a58226399cee0d166f45e807869af0bc8" title="com.aarrelaakso.drawl.Shape.set\lImplicitXPositionCenter" alt="" coords="263,356,479,397"/>
-<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac49fa20747ea798a3b56c3ea99df2d8f" title="Set the implicit y position of this Shape. " alt="" coords="263,445,479,487"/>
-<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a07c4c1c3a0e81ae9aef3325bef3e0152" title="com.aarrelaakso.drawl.Drawl\lNumber.toPlainString" alt="" coords="553,235,743,276"/>
-<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26" title="Returns a Text object that belongs to this Shape, if there is one. " alt="" coords="527,407,769,434"/>
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4a9de57548307feaf7e703e5428422f5" title="Performs subtraction operation. " alt="" coords="275,5,466,47"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a58b3ee7a390b84fa0b9a19d52a8bb8dc" title="Performs addition operation. " alt="" coords="275,71,466,112"/>
+<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ac5c959677fa71d3303a9cb329f943cbc" title="Divides with DrawlNumber by another. " alt="" coords="275,136,466,177"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac513970aed7ea7faa1de7efa35d7d068" title="Sets the implicit width of this Shape. " alt="" coords="263,201,479,243"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a01a28173688c7c955b0c7558ac3ff5df" title="Sets the implicit height of this Shape. " alt="" coords="263,267,479,308"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a58226399cee0d166f45e807869af0bc8" title="Sets the implicit x position of the center of this Shape. " alt="" coords="263,356,479,397"/>
+<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac49fa20747ea798a3b56c3ea99df2d8f" title="Sets the implicit y position of this Shape. " alt="" coords="263,445,479,487"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26" title="Returns a Text object that belongs to this Shape, if there is one. " alt="" coords="527,409,769,435"/>
 </map>

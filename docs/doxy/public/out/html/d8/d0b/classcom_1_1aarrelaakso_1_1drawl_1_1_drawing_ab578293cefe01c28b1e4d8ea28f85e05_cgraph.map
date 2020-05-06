@@ -1,8 +1,8 @@
 <map id="com.aarrelaakso.drawl.Drawing.getExplicitWidthPerImplicitWidth" name="com.aarrelaakso.drawl.Drawing.getExplicitWidthPerImplicitWidth">
-<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a85995fb2b1a5a80620b78a7a4f760e46" title="Returns whether this number is greater or equal to the other number. " alt="" coords="285,5,501,47"/>
-<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#aab6723b4f59ce1f72f50b6104a598c13" title="Indicates whether another value is not equal to this SisuBigDecimal. " alt="" coords="573,69,763,111"/>
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a6d84deaa088ce225fd8d6d000d1cafa0" title="Returns whether this number is greater or equal to the other number. " alt="" coords="285,5,501,47"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a48b4f9d41317fa1d11020b9fe4a489cf" title="Indicates whether another value is not equal to this SisuBigDecimal. " alt="" coords="573,69,763,111"/>
 <area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aa3154a900c39b56463f485f7b8b3bb5a" title="Get the explicit width of this Drawing. " alt="" coords="555,139,781,180"/>
 <area shape="rect" id="node6" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a348e6da7ba49b56f8ea1fad037936337" title="Get the explicit height of this Drawing. " alt="" coords="280,173,507,215"/>
-<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a42d9f576373ff039f2ee03ef9bb9d079" title="Divides with DrawlNumber by another. " alt="" coords="573,213,763,255"/>
-<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a0b7c86770556d17d8de1b59b01d70d4e" title="Returns whether this number is equal with the other number. " alt="" coords="829,69,1020,111"/>
+<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ac5c959677fa71d3303a9cb329f943cbc" title="Divides with DrawlNumber by another. " alt="" coords="573,213,763,255"/>
+<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#aec32f189f8dadb219bf445be55ea0def" title="Returns whether this number is equal with the other number. " alt="" coords="829,69,1020,111"/>
 </map>

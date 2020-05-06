@@ -1,0 +1,9 @@
+<map id="com.aarrelaakso.drawl.DrawlNumber.isGreaterThanOrEqualTo" name="com.aarrelaakso.drawl.DrawlNumber.isGreaterThanOrEqualTo">
+<area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ab578293cefe01c28b1e4d8ea28f85e05" title="Get the ratio of the explicit width of this drawing to the implicit width of its contents. " alt="" coords="269,73,496,115"/>
+<area shape="rect" id="node7" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a833e9f69bd01b9640e34286ab53c0c90" title="Get the implicit total width of all contents in this Drawing. " alt="" coords="544,136,771,177"/>
+<area shape="rect" id="node8" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a2099cd81e0f9834548f8aea7814e9251" title="Returns whether this number is greater or equal to the other number. " alt="" coords="275,193,491,235"/>
+<area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a586f764563210b252eef4c35b2679cd3" title="Get the ratio of explicit measures to implicit measures for this Drawing as a whole. " alt="" coords="544,71,771,112"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ab5ce2b7ab7dced8861d87a572b6b0ce9" title="Set the explicit dimensions of this Drawing. " alt="" coords="819,5,1045,47"/>
+<area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a418641b3099d2070ee0fa69dc7b35af1" title="Set the explicit height of this Drawing. " alt="" coords="819,71,1045,112"/>
+<area shape="rect" id="node6" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="819,136,1045,177"/>
+</map>

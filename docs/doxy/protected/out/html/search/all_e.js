@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['point',['Point',['../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html',1,'com.aarrelaakso.drawl.Point'],['../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html#a934b3150ce40f5da49f10ed45a957e32',1,'com.aarrelaakso.drawl.Point.Point(DrawlNumber implicitXCoordinate, DrawlNumber implicitYCoordinate)'],['../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html#a7dafad597a0de883a2168702294ac42c',1,'com.aarrelaakso.drawl.Point.Point(Integer implicitXCoordinate, Integer implicitYCoordinate)']]],
+  ['point',['Point',['../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html',1,'com.aarrelaakso.drawl.Point'],['../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html#a934b3150ce40f5da49f10ed45a957e32',1,'com.aarrelaakso.drawl.Point.Point(DrawlNumber implicitXCoordinate, DrawlNumber implicitYCoordinate)'],['../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html#a3160ea0fd6d9632ccc4fcefe15680e8d',1,'com.aarrelaakso.drawl.Point.Point(@NotNull Integer implicitXCoordinate, @NotNull Integer implicitYCoordinate)']]],
   ['point_2ejava',['Point.java',['../d0/d5f/_point_8java.html',1,'']]],
   ['point1explicit',['point1Explicit',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a346544836f1f00ee8b9601a8cf036b36',1,'com::aarrelaakso::drawl::Line']]],
   ['point1implicit',['point1Implicit',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a48220286707ae05387f9c99d9e08784c',1,'com::aarrelaakso::drawl::Line']]],

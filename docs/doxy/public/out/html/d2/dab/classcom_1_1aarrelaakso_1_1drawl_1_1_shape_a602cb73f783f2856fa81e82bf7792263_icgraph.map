@@ -2,8 +2,6 @@
 <area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="269,5,511,32"/>
 <area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa26eb0263851ed8f8221bf3740e6e584" title="Gets the explicit y position of the bottom of this Shape. " alt="" coords="282,57,498,98"/>
 <area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a95f8a2f107299d91813627a95b3e0f0f" title="Gets the explicit y&#45;position of the top of this Shape. " alt="" coords="282,122,498,163"/>
-<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa1f77ee3e24986329b3618b76b2d12be" title="Set this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="282,187,498,229"/>
-<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a5bdc7b20e5863cf6c83a8abe57ce1399" title="Sets this Shape&#39;s neighbor to the left with an offset. " alt="" coords="282,253,498,294"/>
 <area shape="rect" id="node4" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#ac8344112f3a5d24cfa4b732f3625af08" title="com.aarrelaakso.drawl.Line.get\lPoint1Explicit" alt="" coords="591,57,793,98"/>
 <area shape="rect" id="node5" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a54dd70515b691c8afa88f980e10698" title="com.aarrelaakso.drawl.Line.getSVG" alt="" coords="873,97,1104,124"/>
 <area shape="rect" id="node7" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a1f2be99b388cc8bfb6f2bb866c21138f" title="com.aarrelaakso.drawl.Line.get\lPoint2Explicit" alt="" coords="591,122,793,163"/>

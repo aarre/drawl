@@ -2,6 +2,11 @@
 \label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}\index{com.\+aarrelaakso.\+drawl.\+Shape@{com.\+aarrelaakso.\+drawl.\+Shape}}
 
 
+Abstract class represents shapes such as circles, rectangles, and lines.  
+
+
+
+
 Inheritance diagram for com.\+aarrelaakso.\+drawl.\+Shape\+:
 \nopagebreak
 \begin{figure}[H]
@@ -24,15 +29,15 @@ Collaboration diagram for com.\+aarrelaakso.\+drawl.\+Shape\+:
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a9784264f6abcf623b2774d6ef2a53fdc}{add\+Text} (@Nullable \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_text}{Text} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ab54afc2d95d3447532f5ecf3fec3faa8}{text})
-\item 
+\begin{DoxyCompactList}\small\item\em Adds \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_text}{Text} inside this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_acebea2aa57031322323c9bf50ee447db}{get\+Above} ()
-\begin{DoxyCompactList}\small\item\em Get this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor above (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is below that one), if any. \end{DoxyCompactList}\item 
-void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a942b3cf3365498dc1ac6b0309ce33b86}{set\+Above} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape)
-\item 
+\begin{DoxyCompactList}\small\item\em Gets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor above (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is below that one), if any. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a47d2d3ec9719ad5ccc1d1dfb791358d4}{set\+Above} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape)
+\begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} above another \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a53de5ab609d879719cd3b372dfe8df58}{get\+Below} ()
-\begin{DoxyCompactList}\small\item\em Get this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor below (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is below that one), if any. \end{DoxyCompactList}\item 
-void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa0ec0030515b5096820e4dd030c0b320}{set\+Below} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape)
-\item 
+\begin{DoxyCompactList}\small\item\em Gets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor below (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is below that one), if any. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aabbe6165d905a690a38917443bf6e5b5}{set\+Below} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape)
+\begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} below another \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aba14efe9a16c0808580963c66b171082}{get\+Bottom\+Port} ()
 \begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} object representing this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s bottom port. \end{DoxyCompactList}\item 
 String \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a0d9a33a3e151aaceeec140bea343a650}{get\+Fill} ()
@@ -42,14 +47,14 @@ void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a2a2868c85bfbf4d2940d
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac9f74d31c332aab76b329edc22080e67}{get\+Height} ()
 \begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} object that represents the height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a2b19d5964ac46d545a7bae3133df6532}{get\+Left\+Of} ()
-\begin{DoxyCompactList}\small\item\em Get this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the right (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the left of that one), if any. \end{DoxyCompactList}\item 
-void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aad14fa860ab74cfa90815f56cf4c3ecf}{set\+Left\+Of} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape)
-\item 
+\begin{DoxyCompactList}\small\item\em Gets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the right (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the left of that one), if any. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa9979f6455fea0f9a066365cea3fc9db}{set\+Left\+Of} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape)
+\begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} to the left of another one. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aeffa96786ca552adf46924ec77da9555}{get\+Left\+Port} ()
 \begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} object representing this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s left port. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a1ad573b06f341aa79f6a255a476ae6e4}{get\+Right\+Of} ()
-\begin{DoxyCompactList}\small\item\em Get this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the left (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the right of that one), if any. \end{DoxyCompactList}\item 
-void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a09e1586ce85c1d964cc3b7ce94bc5d4c}{set\+Right\+Of} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape)
+\begin{DoxyCompactList}\small\item\em Gets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the left (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the right of that one), if any. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ae658426065f0d35bd721cd94bc540209}{set\+Right\+Of} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape)
 \begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the left (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the right of that one). \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a319c78d425ec91e1aef1072a95e349ad}{get\+Right\+Port} ()
 \begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} object representing this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s left port. \end{DoxyCompactList}\item 
@@ -67,21 +72,21 @@ void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a3930f6fe72f6c5e0c0aa
 \begin{DoxyCompactList}\small\item\em Returns a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} object that represents the width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 Boolean \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a037a5515b2a6e1df1d1981aa5516e78e}{has\+Text} ()
 \begin{DoxyCompactList}\small\item\em Indicates whether this shape has a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_text}{Text} object associated with it. \end{DoxyCompactList}\item 
-void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aab165a65f7bd1e55a6de7166577725a3}{set\+Above} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape, \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} offset)
-\begin{DoxyCompactList}\small\item\em Set this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} above another \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
-void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa0dd6332c22877c42b8c3863e5cc579e}{set\+Below} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape, \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} offset)
-\begin{DoxyCompactList}\small\item\em Set this circle below another circle. \end{DoxyCompactList}\item 
-void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa1f77ee3e24986329b3618b76b2d12be}{set\+Left\+Of} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape, \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} offset)
-\begin{DoxyCompactList}\small\item\em Set this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the right (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the left of that one). \end{DoxyCompactList}\item 
-void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a5bdc7b20e5863cf6c83a8abe57ce1399}{set\+Right\+Of} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape, \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} offset)
+void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a3d3e7adc0ba7f4634c913773d326f4e6}{set\+Above} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape, @Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} offset)
+\begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} above another \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a9e6a74a094d67337b42a626d8aa167a8}{set\+Below} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape, @Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} offset)
+\begin{DoxyCompactList}\small\item\em Sets this circle below another circle. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a185e0377ed1ba3ff4c8c630803f3bfc8}{set\+Left\+Of} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape, @Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} offset)
+\begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the right (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the left of that one). \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a6be6bb2859ccc4fd6e55e85aac5ec255}{set\+Right\+Of} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} shape, @Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} offset)
 \begin{DoxyCompactList}\small\item\em Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the left with an offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a7207aa8ba07ed18af81fb9d92a979cd6}{get\+Explicit\+Half\+Height} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets half the explicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af952f32cb1706da71c9cb75916f4d665}{get\+Explicit\+Half\+Width} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets half the explicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a76cd6b4d9f427f1888fc98fd653ee496}{get\+Explicit\+Height} ()
 \begin{DoxyCompactList}\small\item\em Get the explicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ad3881ca048d83262948961f9f0ab23e3}{set\+Explicit\+Height} (@Nullable \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} height)
@@ -99,29 +104,29 @@ void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa7855df6d98b3bfa556b
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a339cf8811f57b7cb5251109b04be953c}{get\+Explicit\+X\+Position\+Left} ()
 \begin{DoxyCompactList}\small\item\em Gets the explicit x position of the left edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a19970b658b55e4e61de31aaaef8cf7fe}{get\+Explicit\+X\+Position\+Right} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the explicit x position of the right edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa26eb0263851ed8f8221bf3740e6e584}{get\+Explicit\+Y\+Position\+Bottom} ()
 \begin{DoxyCompactList}\small\item\em Gets the explicit y position of the bottom of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a602cb73f783f2856fa81e82bf7792263}{get\+Explicit\+Y\+Position\+Center} ()
 \begin{DoxyCompactList}\small\item\em Gets the explicit y-\/position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a947c00be2ea3d0e732814b8ca377df45}{set\+Explicit\+Y\+Position\+Center} (Integer y)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the explicit y-\/position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a169bdd3220baa80ebb083b3b2db12546}{set\+Explicit\+Y\+Position\+Center} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} y)
 \begin{DoxyCompactList}\small\item\em Sets the explicit y position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a95f8a2f107299d91813627a95b3e0f0f}{get\+Explicit\+Y\+Position\+Top} ()
 \begin{DoxyCompactList}\small\item\em Gets the explicit y-\/position of the top of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa476150489a3a5b634a15a1c03e045d7}{get\+Implicit\+Half\+Height} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets half of the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac796f934debb4cf92d285f387422deb6}{get\+Implicit\+Half\+Width} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Gets half of the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a41cc097acddea53404b62a812ef37276}{get\+Implicit\+Height} ()
-\begin{DoxyCompactList}\small\item\em Get the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
-final void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_acb96a96a1d43132def75a38c136c563f}{set\+Implicit\+Height} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af2f5b1d81ce2cdabc8b18dfb029f413b}{implicit\+Height})
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
+final void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a01a28173688c7c955b0c7558ac3ff5df}{set\+Implicit\+Height} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af2f5b1d81ce2cdabc8b18dfb029f413b}{implicit\+Height})
+\begin{DoxyCompactList}\small\item\em Sets the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af7ebce58a8dbba0cbe372040b74d7fca}{get\+Implicit\+Width} ()
-\begin{DoxyCompactList}\small\item\em Get the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
-final void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a03a408248a797d817ab32d5b833d5e1d}{set\+Implicit\+Width} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a00c6b870d70449a79a000a3374ae041c}{implicit\+Width})
-\item 
+\begin{DoxyCompactList}\small\item\em Gets the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
+final void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac513970aed7ea7faa1de7efa35d7d068}{set\+Implicit\+Width} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a00c6b870d70449a79a000a3374ae041c}{implicit\+Width})
+\begin{DoxyCompactList}\small\item\em Sets the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ae1820c7d674c6c022b72cc086005131f}{get\+Implicit\+X\+Maximum} ()
 \begin{DoxyCompactList}\small\item\em Get the implicit maximum (rightmost) x-\/position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a43b7aaf82c47e231b57622b0346d3ce1}{get\+Implicit\+X\+Minimum} ()
@@ -129,17 +134,17 @@ final void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a03a408248a797d
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac7a69f5cb9dd954f5054a3bebc35af41}{get\+Implicit\+X\+Position\+Center} ()
 \begin{DoxyCompactList}\small\item\em Get the implicit x position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a58226399cee0d166f45e807869af0bc8}{set\+Implicit\+X\+Position\+Center} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} x)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the implicit x position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a3cc59779e8ce4a98ff2309e0fb414527}{get\+Implicit\+X\+Position\+Left} ()
-\begin{DoxyCompactList}\small\item\em Get the implicit x position of the left edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the implicit x position of the left edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aedcaf32e6be1114111e5ee2ddb1214a3}{get\+Implicit\+X\+Position\+Right} ()
-\begin{DoxyCompactList}\small\item\em Get the implicit x position of the right edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the implicit x position of the right edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af04961079cb3993d8f73670e6695415b}{get\+Implicit\+Y\+Position\+Bottom} ()
-\begin{DoxyCompactList}\small\item\em Get the implicit bottommost y-\/position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the implicit bottommost y-\/position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a0549739ee3201ae16091acce4ee6a5ac}{get\+Implicit\+Y\+Position\+Center} ()
-\begin{DoxyCompactList}\small\item\em Get the implicit y position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Gets the implicit y position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac49fa20747ea798a3b56c3ea99df2d8f}{set\+Implicit\+Y\+Position\+Center} (\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} y)
-\begin{DoxyCompactList}\small\item\em Set the implicit y position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets the implicit y position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_afb64d51ac2023ad770bbc8f37061d5b0}{get\+Implicit\+Y\+Position\+Top} ()
 \begin{DoxyCompactList}\small\item\em Gets the implicit topmost y position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Package Functions}
@@ -185,6 +190,9 @@ static final Fluent\+Logger \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shap
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Abstract class represents shapes such as circles, rectangles, and lines. 
+
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ad2adcb85374cf5d6d59429628314e8d1}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ad2adcb85374cf5d6d59429628314e8d1}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!\mbox{[}static initializer\mbox{]}@{[static initializer]}}
@@ -198,6 +206,15 @@ static final Fluent\+Logger \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shap
 \subsubsection{\texorpdfstring{add\+Text()}{addText()}}
 {\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+add\+Text (\begin{DoxyParamCaption}\item[{@Nullable \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_text}{Text}}]{text }\end{DoxyParamCaption})}
 
+
+
+Adds \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_text}{Text} inside this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_text}{Text} object representing the text to be drawn inside this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_acebea2aa57031322323c9bf50ee447db}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_acebea2aa57031322323c9bf50ee447db}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!get\+Above@{get\+Above}}
 \index{get\+Above@{get\+Above}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
@@ -206,7 +223,7 @@ static final Fluent\+Logger \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shap
 
 
 
-Get this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor above (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is below that one), if any. 
+Gets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor above (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is below that one), if any. 
 
 \begin{DoxyReturn}{Returns}
 the \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} to the right of this one, if any; {\ttfamily null} otherwise. 
@@ -219,7 +236,7 @@ the \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} to the right o
 
 
 
-Get this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor below (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is below that one), if any. 
+Gets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor below (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is below that one), if any. 
 
 \begin{DoxyReturn}{Returns}
 the \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} to below this one, if any; {\ttfamily null} otherwise. 
@@ -243,12 +260,26 @@ Returns a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} object r
 \subsubsection{\texorpdfstring{get\+Explicit\+Half\+Height()}{getExplicitHalfHeight()}}
 {\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} com.\+aarrelaakso.\+drawl.\+Shape.\+get\+Explicit\+Half\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Gets half the explicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+\begin{DoxyReturn}{Returns}
+half the explicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af952f32cb1706da71c9cb75916f4d665}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af952f32cb1706da71c9cb75916f4d665}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!get\+Explicit\+Half\+Width@{get\+Explicit\+Half\+Width}}
 \index{get\+Explicit\+Half\+Width@{get\+Explicit\+Half\+Width}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{get\+Explicit\+Half\+Width()}{getExplicitHalfWidth()}}
 {\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} com.\+aarrelaakso.\+drawl.\+Shape.\+get\+Explicit\+Half\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Gets half the explicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+\begin{DoxyReturn}{Returns}
+half the explicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a76cd6b4d9f427f1888fc98fd653ee496}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a76cd6b4d9f427f1888fc98fd653ee496}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!get\+Explicit\+Height@{get\+Explicit\+Height}}
 \index{get\+Explicit\+Height@{get\+Explicit\+Height}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
@@ -307,6 +338,13 @@ the explicit x position of the left edge of this \hyperlink{classcom_1_1aarrelaa
 \subsubsection{\texorpdfstring{get\+Explicit\+X\+Position\+Right()}{getExplicitXPositionRight()}}
 {\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} com.\+aarrelaakso.\+drawl.\+Shape.\+get\+Explicit\+X\+Position\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Gets the explicit x position of the right edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+\begin{DoxyReturn}{Returns}
+the explicit x position of the right edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa26eb0263851ed8f8221bf3740e6e584}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa26eb0263851ed8f8221bf3740e6e584}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!get\+Explicit\+Y\+Position\+Bottom@{get\+Explicit\+Y\+Position\+Bottom}}
 \index{get\+Explicit\+Y\+Position\+Bottom@{get\+Explicit\+Y\+Position\+Bottom}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
@@ -378,12 +416,26 @@ a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} object that 
 \subsubsection{\texorpdfstring{get\+Implicit\+Half\+Height()}{getImplicitHalfHeight()}}
 {\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} com.\+aarrelaakso.\+drawl.\+Shape.\+get\+Implicit\+Half\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Gets half of the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+\begin{DoxyReturn}{Returns}
+half of the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac796f934debb4cf92d285f387422deb6}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac796f934debb4cf92d285f387422deb6}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!get\+Implicit\+Half\+Width@{get\+Implicit\+Half\+Width}}
 \index{get\+Implicit\+Half\+Width@{get\+Implicit\+Half\+Width}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{get\+Implicit\+Half\+Width()}{getImplicitHalfWidth()}}
 {\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} com.\+aarrelaakso.\+drawl.\+Shape.\+get\+Implicit\+Half\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Gets half of the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+\begin{DoxyReturn}{Returns}
+half of the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a41cc097acddea53404b62a812ef37276}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a41cc097acddea53404b62a812ef37276}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!get\+Implicit\+Height@{get\+Implicit\+Height}}
 \index{get\+Implicit\+Height@{get\+Implicit\+Height}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
@@ -392,10 +444,10 @@ a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure} object that 
 
 
 
-Get the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+Gets the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
 
 \begin{DoxyReturn}{Returns}
-the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} 
+the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af7ebce58a8dbba0cbe372040b74d7fca}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af7ebce58a8dbba0cbe372040b74d7fca}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!get\+Implicit\+Width@{get\+Implicit\+Width}}
@@ -405,10 +457,10 @@ the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shap
 
 
 
-Get the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+Gets the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
 
 \begin{DoxyReturn}{Returns}
-the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} 
+the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ae1820c7d674c6c022b72cc086005131f}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ae1820c7d674c6c022b72cc086005131f}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!get\+Implicit\+X\+Maximum@{get\+Implicit\+X\+Maximum}}
@@ -457,7 +509,7 @@ The implicit x position of the center of this \hyperlink{classcom_1_1aarrelaakso
 
 
 
-Get the implicit x position of the left edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+Gets the implicit x position of the left edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
 
 \begin{DoxyReturn}{Returns}
 The implicit x position of the left edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
@@ -470,7 +522,7 @@ The implicit x position of the left edge of this \hyperlink{classcom_1_1aarrelaa
 
 
 
-Get the implicit x position of the right edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+Gets the implicit x position of the right edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
 
 \begin{DoxyReturn}{Returns}
 The implicit x position of the right edge of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
@@ -483,7 +535,7 @@ The implicit x position of the right edge of this \hyperlink{classcom_1_1aarrela
 
 
 
-Get the implicit bottommost y-\/position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+Gets the implicit bottommost y-\/position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
 
 In implicit coordinates, this is the minimum y-\/position.
 
@@ -498,7 +550,7 @@ The implicit minimum (bottommost) y-\/position of this \hyperlink{classcom_1_1aa
 
 
 
-Get the implicit y position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+Gets the implicit y position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
 
 \begin{DoxyReturn}{Returns}
 The implicit y position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
@@ -526,7 +578,7 @@ The implicit maximum (topmost) y-\/position of this \hyperlink{classcom_1_1aarre
 
 
 
-Get this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the right (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the left of that one), if any. 
+Gets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the right (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the left of that one), if any. 
 
 \begin{DoxyReturn}{Returns}
 the \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} to the right of this one, if any; {\ttfamily null} otherwise. 
@@ -552,7 +604,7 @@ Returns a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} object r
 
 
 
-Get this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the left (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the right of that one), if any. 
+Gets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the left (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the right of that one), if any. 
 
 \begin{DoxyReturn}{Returns}
 the \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} to the left of this one, if any; {\ttfamily null} otherwise. 
@@ -641,42 +693,60 @@ Indicates whether this shape has a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1
 \begin{DoxyReturn}{Returns}
 T\+R\+UE if this shape has a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_text}{Text} object associated with it, F\+A\+L\+SE otherwise. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a942b3cf3365498dc1ac6b0309ce33b86}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a942b3cf3365498dc1ac6b0309ce33b86}} 
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a47d2d3ec9719ad5ccc1d1dfb791358d4}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a47d2d3ec9719ad5ccc1d1dfb791358d4}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Above@{set\+Above}}
 \index{set\+Above@{set\+Above}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Above()}{setAbove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Above (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Above (\begin{DoxyParamCaption}\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aab165a65f7bd1e55a6de7166577725a3}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aab165a65f7bd1e55a6de7166577725a3}} 
+
+
+Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} above another \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & The \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} that will be below this one. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a3d3e7adc0ba7f4634c913773d326f4e6}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a3d3e7adc0ba7f4634c913773d326f4e6}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Above@{set\+Above}}
 \index{set\+Above@{set\+Above}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Above()}{setAbove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Above (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape,  }\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure}}]{offset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Above (\begin{DoxyParamCaption}\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape,  }\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure}}]{offset }\end{DoxyParamCaption})}
 
 
 
-Set this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} above another \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} above another \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em shape} & The circle that will be below this one. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa0ec0030515b5096820e4dd030c0b320}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa0ec0030515b5096820e4dd030c0b320}} 
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aabbe6165d905a690a38917443bf6e5b5}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aabbe6165d905a690a38917443bf6e5b5}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Below@{set\+Below}}
 \index{set\+Below@{set\+Below}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Below()}{setBelow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Below (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Below (\begin{DoxyParamCaption}\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa0dd6332c22877c42b8c3863e5cc579e}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa0dd6332c22877c42b8c3863e5cc579e}} 
+
+
+Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} below another \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & The \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} that will be above this one. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a9e6a74a094d67337b42a626d8aa167a8}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a9e6a74a094d67337b42a626d8aa167a8}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Below@{set\+Below}}
 \index{set\+Below@{set\+Below}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Below()}{setBelow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Below (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape,  }\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure}}]{offset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Below (\begin{DoxyParamCaption}\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape,  }\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure}}]{offset }\end{DoxyParamCaption})}
 
 
 
-Set this circle below another circle. 
+Sets this circle below another circle. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -749,6 +819,17 @@ Sets the explicit x position of the center of this \hyperlink{classcom_1_1aarrel
 \subsubsection{\texorpdfstring{set\+Explicit\+Y\+Position\+Center()}{setExplicitYPositionCenter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Explicit\+Y\+Position\+Center (\begin{DoxyParamCaption}\item[{Integer}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Sets the explicit y-\/position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+This convenience allows passing the argument as an Integer rather than a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The explicit y position of this shape. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a169bdd3220baa80ebb083b3b2db12546}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a169bdd3220baa80ebb083b3b2db12546}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Explicit\+Y\+Position\+Center@{set\+Explicit\+Y\+Position\+Center}}
 \index{set\+Explicit\+Y\+Position\+Center@{set\+Explicit\+Y\+Position\+Center}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
@@ -781,24 +862,51 @@ Set the fill of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shap
 {\em s} & A string representing a fill color, e.\+g., \char`\"{}white\char`\"{}. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_acb96a96a1d43132def75a38c136c563f}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_acb96a96a1d43132def75a38c136c563f}} 
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a01a28173688c7c955b0c7558ac3ff5df}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a01a28173688c7c955b0c7558ac3ff5df}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Implicit\+Height@{set\+Implicit\+Height}}
 \index{set\+Implicit\+Height@{set\+Implicit\+Height}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Implicit\+Height()}{setImplicitHeight()}}
-{\footnotesize\ttfamily final void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Implicit\+Height (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number}}]{implicit\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily final void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Implicit\+Height (\begin{DoxyParamCaption}\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number}}]{implicit\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a03a408248a797d817ab32d5b833d5e1d}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a03a408248a797d817ab32d5b833d5e1d}} 
+
+
+Sets the implicit height of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em implicit\+Height} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac513970aed7ea7faa1de7efa35d7d068}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac513970aed7ea7faa1de7efa35d7d068}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Implicit\+Width@{set\+Implicit\+Width}}
 \index{set\+Implicit\+Width@{set\+Implicit\+Width}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Implicit\+Width()}{setImplicitWidth()}}
-{\footnotesize\ttfamily final void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Implicit\+Width (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number}}]{implicit\+Width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily final void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Implicit\+Width (\begin{DoxyParamCaption}\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number}}]{implicit\+Width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Sets the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em implicit\+Width} & the implicit width of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a58226399cee0d166f45e807869af0bc8}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a58226399cee0d166f45e807869af0bc8}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Implicit\+X\+Position\+Center@{set\+Implicit\+X\+Position\+Center}}
 \index{set\+Implicit\+X\+Position\+Center@{set\+Implicit\+X\+Position\+Center}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Implicit\+X\+Position\+Center()}{setImplicitXPositionCenter()}}
 {\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Implicit\+X\+Position\+Center (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Sets the implicit x position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & implicit x position of the center of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac49fa20747ea798a3b56c3ea99df2d8f}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ac49fa20747ea798a3b56c3ea99df2d8f}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Implicit\+Y\+Position\+Center@{set\+Implicit\+Y\+Position\+Center}}
 \index{set\+Implicit\+Y\+Position\+Center@{set\+Implicit\+Y\+Position\+Center}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
@@ -807,7 +915,7 @@ Set the fill of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shap
 
 
 
-Set the implicit y position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
+Sets the implicit y position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. 
 
 The y position marks the vertical position of the \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s center. In the implicit coordinate system, higher values of y are upward whereas lower values of y are downward.
 
@@ -816,32 +924,41 @@ The y position marks the vertical position of the \hyperlink{classcom_1_1aarrela
 {\em y} & The implicit y position of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aad14fa860ab74cfa90815f56cf4c3ecf}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aad14fa860ab74cfa90815f56cf4c3ecf}} 
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa9979f6455fea0f9a066365cea3fc9db}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa9979f6455fea0f9a066365cea3fc9db}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Left\+Of@{set\+Left\+Of}}
 \index{set\+Left\+Of@{set\+Left\+Of}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Left\+Of()}{setLeftOf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Left\+Of (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Left\+Of (\begin{DoxyParamCaption}\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa1f77ee3e24986329b3618b76b2d12be}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_aa1f77ee3e24986329b3618b76b2d12be}} 
+
+
+Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} to the left of another one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & the \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} that will be to the right of this one. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a185e0377ed1ba3ff4c8c630803f3bfc8}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a185e0377ed1ba3ff4c8c630803f3bfc8}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Left\+Of@{set\+Left\+Of}}
 \index{set\+Left\+Of@{set\+Left\+Of}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Left\+Of()}{setLeftOf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Left\+Of (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape,  }\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure}}]{offset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Left\+Of (\begin{DoxyParamCaption}\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape,  }\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure}}]{offset }\end{DoxyParamCaption})}
 
 
 
-Set this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the right (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the left of that one). 
+Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquotesingle{}s neighbor to the right (this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} is to the left of that one). 
 
 
 \begin{DoxyParams}{Parameters}
 {\em shape} & the \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} to the right of this one \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a09e1586ce85c1d964cc3b7ce94bc5d4c}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a09e1586ce85c1d964cc3b7ce94bc5d4c}} 
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ae658426065f0d35bd721cd94bc540209}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_ae658426065f0d35bd721cd94bc540209}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Right\+Of@{set\+Right\+Of}}
 \index{set\+Right\+Of@{set\+Right\+Of}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Right\+Of()}{setRightOf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Right\+Of (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Right\+Of (\begin{DoxyParamCaption}\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape }\end{DoxyParamCaption})}
 
 
 
@@ -852,11 +969,11 @@ Sets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquot
 {\em shape} & the \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} to the left of this one \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a5bdc7b20e5863cf6c83a8abe57ce1399}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a5bdc7b20e5863cf6c83a8abe57ce1399}} 
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a6be6bb2859ccc4fd6e55e85aac5ec255}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a6be6bb2859ccc4fd6e55e85aac5ec255}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}!set\+Right\+Of@{set\+Right\+Of}}
 \index{set\+Right\+Of@{set\+Right\+Of}!com\+::aarrelaakso\+::drawl\+::\+Shape@{com\+::aarrelaakso\+::drawl\+::\+Shape}}
 \subsubsection{\texorpdfstring{set\+Right\+Of()}{setRightOf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Right\+Of (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape,  }\item[{\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure}}]{offset }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Shape.\+set\+Right\+Of (\begin{DoxyParamCaption}\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}}]{shape,  }\item[{@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_measure}{Measure}}]{offset }\end{DoxyParamCaption})}
 
 
 

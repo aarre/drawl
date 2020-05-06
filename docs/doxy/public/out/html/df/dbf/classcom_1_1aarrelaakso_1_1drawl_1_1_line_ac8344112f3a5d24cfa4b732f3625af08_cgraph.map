@@ -1,13 +1,13 @@
 <map id="com.aarrelaakso.drawl.Line.getPoint1Explicit" name="com.aarrelaakso.drawl.Line.getPoint1Explicit">
 <area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a339cf8811f57b7cb5251109b04be953c" title="Gets the explicit x position of the left edge of this Shape. " alt="" coords="256,103,472,144"/>
 <area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa26eb0263851ed8f8221bf3740e6e584" title="Gets the explicit y position of the bottom of this Shape. " alt="" coords="256,200,472,241"/>
-<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#af22316798b9d93dc113c6e6769c6ec7f" title="Performs subtraction operation. " alt="" coords="533,103,723,144"/>
-<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af952f32cb1706da71c9cb75916f4d665" title="com.aarrelaakso.drawl.Shape.get\lExplicitHalfWidth" alt="" coords="520,37,736,79"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4a9de57548307feaf7e703e5428422f5" title="Performs subtraction operation. " alt="" coords="533,103,723,144"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af952f32cb1706da71c9cb75916f4d665" title="Gets half the explicit width of this Shape. " alt="" coords="520,37,736,79"/>
 <area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aabb6ac3a04620e1c760bcea54797cba8" title="Get the explicit width of this Shape. " alt="" coords="784,5,1000,47"/>
-<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a42d9f576373ff039f2ee03ef9bb9d079" title="Divides with DrawlNumber by another. " alt="" coords="797,71,987,112"/>
-<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a3fd17115c85e2bfc9e881838a3f7d735" title="Creates new instance. " alt="" coords="797,136,987,177"/>
+<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ac5c959677fa71d3303a9cb329f943cbc" title="Divides with DrawlNumber by another. " alt="" coords="797,71,987,112"/>
+<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4654022f4252c55f6aebd69494db301c" title="Creates new instance. " alt="" coords="797,136,987,177"/>
 <area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a602cb73f783f2856fa81e82bf7792263" title="Gets the explicit y&#45;position of the center of this Shape. " alt="" coords="520,233,736,275"/>
-<area shape="rect" id="node10" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#aac6b91a4d4c7bbf99acd5472d39c071e" title="Performs addition operation. " alt="" coords="533,299,723,340"/>
-<area shape="rect" id="node11" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a7207aa8ba07ed18af81fb9d92a979cd6" title="com.aarrelaakso.drawl.Shape.get\lExplicitHalfHeight" alt="" coords="520,168,736,209"/>
+<area shape="rect" id="node10" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a58b3ee7a390b84fa0b9a19d52a8bb8dc" title="Performs addition operation. " alt="" coords="533,299,723,340"/>
+<area shape="rect" id="node11" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a7207aa8ba07ed18af81fb9d92a979cd6" title="Gets half the explicit height of this Shape. " alt="" coords="520,168,736,209"/>
 <area shape="rect" id="node12" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a76cd6b4d9f427f1888fc98fd653ee496" title="Get the explicit height of this Shape. " alt="" coords="784,201,1000,243"/>
 </map>

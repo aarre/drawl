@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.DrawlNumber.isEqualTo" name="com.aarrelaakso.drawl.DrawlNumber.isEqualTo">
+<area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a833e9f69bd01b9640e34286ab53c0c90" title="Get the implicit total width of all contents in this Drawing. " alt="" coords="244,5,471,47"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a1ad573b06f341aa79f6a255a476ae6e4" title="Gets this Shape&#39;s neighbor to the left (this Shape is to the right of that one), if any..." alt="" coords="249,71,465,112"/>
+<area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="519,5,745,47"/>
+</map>

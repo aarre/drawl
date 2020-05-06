@@ -1,8 +1,8 @@
 <map id="com.aarrelaakso.drawl.Drawing.getImplicitWidth" name="com.aarrelaakso.drawl.Drawing.getImplicitWidth">
-<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a85995fb2b1a5a80620b78a7a4f760e46" title="Returns whether this number is greater or equal to the other number. " alt="" coords="280,5,496,47"/>
-<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#af22316798b9d93dc113c6e6769c6ec7f" title="Performs subtraction operation. " alt="" coords="293,71,483,112"/>
-<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a3fd17115c85e2bfc9e881838a3f7d735" title="Creates new instance. " alt="" coords="293,136,483,177"/>
-<area shape="rect" id="node5" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a5e5b8c8b62d256fc9d2a51491806bdf5" title="Returns whether this number is greater than the other number. " alt="" coords="293,201,483,243"/>
-<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#af96bd123536cc6e868dae97f4184ad2c" title="Returns whether this number is equal with another number. " alt="" coords="293,267,483,308"/>
-<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a38686eecaa96cde870dd160d14524c04" title="Returns whether this number is less than the other number. " alt="" coords="293,332,483,373"/>
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a6d84deaa088ce225fd8d6d000d1cafa0" title="Returns whether this number is greater or equal to the other number. " alt="" coords="280,5,496,47"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4a9de57548307feaf7e703e5428422f5" title="Performs subtraction operation. " alt="" coords="293,71,483,112"/>
+<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4654022f4252c55f6aebd69494db301c" title="Creates new instance. " alt="" coords="293,136,483,177"/>
+<area shape="rect" id="node5" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a9e027810c3faea94d4918cb37e8dc647" title="Returns whether this number is greater than the other number. " alt="" coords="293,201,483,243"/>
+<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a2c478cd04c27511360f2f6a3d519a7c3" title="Returns whether this number is equal with another number. " alt="" coords="293,267,483,308"/>
+<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#adf18ede8f8565437ce262f4e9165a622" title="Returns whether this number is less than the other number. " alt="" coords="293,332,483,373"/>
 </map>

@@ -1,12 +1,12 @@
 <map id="com.aarrelaakso.drawl.Drawing.setExplicitDimensions" name="com.aarrelaakso.drawl.Drawing.setExplicitDimensions">
-<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a5e5b8c8b62d256fc9d2a51491806bdf5" title="Returns whether this number is greater than the other number. " alt="" coords="298,5,489,47"/>
-<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a42d9f576373ff039f2ee03ef9bb9d079" title="Divides with DrawlNumber by another. " alt="" coords="573,91,763,132"/>
-<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a3fd17115c85e2bfc9e881838a3f7d735" title="Creates new instance. " alt="" coords="298,123,489,164"/>
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a9e027810c3faea94d4918cb37e8dc647" title="Returns whether this number is greater than the other number. " alt="" coords="298,5,489,47"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ac5c959677fa71d3303a9cb329f943cbc" title="Divides with DrawlNumber by another. " alt="" coords="573,91,763,132"/>
+<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4654022f4252c55f6aebd69494db301c" title="Creates new instance. " alt="" coords="298,123,489,164"/>
 <area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aa3154a900c39b56463f485f7b8b3bb5a" title="Get the explicit width of this Drawing. " alt="" coords="555,247,781,288"/>
 <area shape="rect" id="node6" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a348e6da7ba49b56f8ea1fad037936337" title="Get the explicit height of this Drawing. " alt="" coords="280,188,507,229"/>
 <area shape="rect" id="node9" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a07c4c1c3a0e81ae9aef3325bef3e0152" title="com.aarrelaakso.drawl.Drawl\lNumber.toPlainString" alt="" coords="298,305,489,347"/>
-<area shape="rect" id="node10" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a38686eecaa96cde870dd160d14524c04" title="Returns whether this number is less than the other number. " alt="" coords="298,371,489,412"/>
-<area shape="rect" id="node11" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a8793a92d7875d105bc793f201f8b08d6" title="Performs multiplication operation. " alt="" coords="298,436,489,477"/>
-<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#aab6723b4f59ce1f72f50b6104a598c13" title="Indicates whether another value is not equal to this SisuBigDecimal. " alt="" coords="573,181,763,223"/>
-<area shape="rect" id="node8" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a0b7c86770556d17d8de1b59b01d70d4e" title="Returns whether this number is equal with the other number. " alt="" coords="829,181,1020,223"/>
+<area shape="rect" id="node10" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#adf18ede8f8565437ce262f4e9165a622" title="Returns whether this number is less than the other number. " alt="" coords="298,371,489,412"/>
+<area shape="rect" id="node11" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a72b791157519fe0971ffeaac63b33a1f" title="Performs multiplication operation. " alt="" coords="298,436,489,477"/>
+<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a48b4f9d41317fa1d11020b9fe4a489cf" title="Indicates whether another value is not equal to this SisuBigDecimal. " alt="" coords="573,181,763,223"/>
+<area shape="rect" id="node8" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#aec32f189f8dadb219bf445be55ea0def" title="Returns whether this number is equal with the other number. " alt="" coords="829,181,1020,223"/>
 </map>
