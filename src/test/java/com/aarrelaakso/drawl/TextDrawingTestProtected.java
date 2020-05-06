@@ -11,6 +11,7 @@
 package com.aarrelaakso.drawl;
 
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -40,8 +41,8 @@ public class TextDrawingTestProtected extends ShapeDrawingTestProtected
     @DisplayName("When a user creates a Drawing with a Text object, then its explicit y position is correct")
     void whenAUserCreatesADrawingWithATextObjectThenItsExplicitYPositionIsCorrect()
     {
-        Drawing drawing = new Drawing();
-        Text text = new Text("Drawl");
+        @NotNull Drawing drawing = new Drawing();
+        @NotNull Text text = new Text("Drawl");
         drawing.add(text);
         drawing.setExplicitDimensions(100,100);
         then(text.getExplicitYPositionCenter()).isEqualTo(DrawlNumber.valueOf(50));
@@ -55,7 +56,7 @@ public class TextDrawingTestProtected extends ShapeDrawingTestProtected
         {
             ((Text) shape1).setString("Drawl");
         }
-        Text text = new Text("Drawl");
+        @NotNull Text text = new Text("Drawl");
         shape1.addText(text);
         drawing.add(shape1);
         drawing.setExplicitDimensions(100, 100);

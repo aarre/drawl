@@ -12,6 +12,8 @@ package com.aarrelaakso.drawl;
 
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,19 +35,19 @@ public class LineDrawingTestProtected extends ShapeDrawingTestProtected {
 
     @Test
     @DisplayName("When a drawing has a Line, then the Line has the correct coordinates")
-    void whenADrawingHasALineThenItShowsUpInSVG(BDDSoftAssertions softly) {
+    void whenADrawingHasALineThenItShowsUpInSVG(@NotNull BDDSoftAssertions softly) {
         drawing.add(shape1);
         shape1.setStroke("blue");
         drawing.add(shape2);
         shape2.setStroke("green");
         shape2.setRightOf(shape1, shape2.getWidth());
-        Line line = new Line(shape1.getRightPort(), shape2.getLeftPort());
+        @NotNull Line line = new Line(shape1.getRightPort(), shape2.getLeftPort());
         line.setStroke("red");
         drawing.add(line);
         drawing.setExplicitDimensions(100,100);
 
-        Point point1 = line.getPoint1Explicit();
-        Point point2 = line.getPoint2Explicit();
+        @Nullable Point point1 = line.getPoint1Explicit();
+        @Nullable Point point2 = line.getPoint2Explicit();
 
         softly.then(point1).isNotNull();
         softly.then(point2).isNotNull();

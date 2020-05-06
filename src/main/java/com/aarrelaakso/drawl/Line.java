@@ -13,6 +13,9 @@ package com.aarrelaakso.drawl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Represents lines.
+ */
 public class Line extends Shape {
 
     @NotNull
@@ -61,7 +64,7 @@ public class Line extends Shape {
     @Nullable
     protected Point getPoint1Explicit() {
         DrawlNumber point1ExplicitX = this.getExplicitXPositionLeft();
-        DrawlNumber point1ExplicitY = this.getExplicitYPositionBottom();
+        @NotNull DrawlNumber point1ExplicitY = this.getExplicitYPositionBottom();
 
         return new Point(point1ExplicitX, point1ExplicitY);
     }
@@ -69,7 +72,7 @@ public class Line extends Shape {
     @Nullable
     protected Point getPoint2Explicit() {
         DrawlNumber point2ExplicitX = this.getExplicitXPositionRight();
-        DrawlNumber point2ExplicitY = this.getExplicitYPositionTop();
+        @NotNull DrawlNumber point2ExplicitY = this.getExplicitYPositionTop();
 
         return new Point(point2ExplicitX, point2ExplicitY);
     }
@@ -84,11 +87,11 @@ public class Line extends Shape {
         return this.point2Implicit;
     }
 
-    public String getSVG() {
+    public @NotNull String getSVG() {
         if (this.getExplicitWidth() == null || this.getExplicitHeight() == null) {
             throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
         }
-        StringBuilder svgBuilder = new StringBuilder();
+        @NotNull StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("\n<line");
         svgBuilder.append(" x1=\"");
         svgBuilder.append(this.getPoint1Explicit().getX().toPlainString());

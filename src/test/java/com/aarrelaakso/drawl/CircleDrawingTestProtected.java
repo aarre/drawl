@@ -12,6 +12,7 @@ package com.aarrelaakso.drawl;
 
 import org.assertj.core.api.BDDSoftAssertions;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.BDDAssertions.then;
@@ -43,9 +44,9 @@ public class CircleDrawingTestProtected extends ShapeDrawingTestProtected
     void svgGeneratedByADrawingWithACircleContainsTheStringCircle()
     {
         int radius = 4000;
-        Circle circle = new Circle(DrawlNumber.valueOf(radius));
+        @NotNull Circle circle = new Circle(DrawlNumber.valueOf(radius));
         drawing.add(circle);
-        String svg = drawing.getSVG(100, 100);
+        @NotNull String svg = drawing.getSVG(100, 100);
         then(svg).contains("circle");
     }
 
@@ -58,8 +59,8 @@ public class CircleDrawingTestProtected extends ShapeDrawingTestProtected
         shape2.setRightOf(shape1);
         drawing.setExplicitHeight(100);
         drawing.setExplicitWidth(100);
-        DrawlNumber explicitRadius1 = shape1.getExplicitRadius();
-        DrawlNumber explicitRadius2 = shape2.getExplicitRadius();
+        @Nullable DrawlNumber explicitRadius1 = shape1.getExplicitRadius();
+        @Nullable DrawlNumber explicitRadius2 = shape2.getExplicitRadius();
 
         assertEquals(DrawlNumber.valueOf(25), explicitRadius1);
         assertEquals(DrawlNumber.valueOf(25), explicitRadius2);
@@ -76,7 +77,7 @@ public class CircleDrawingTestProtected extends ShapeDrawingTestProtected
         drawing.setExplicitWidth(100);
         DrawlNumber actualImplicitRadius1 = shape1.getImplicitRadius();
         DrawlNumber actualImplicitRadius2 = shape2.getImplicitRadius();
-        DrawlNumber expectedValue = DrawlNumber.HALF;
+        @NotNull DrawlNumber expectedValue = DrawlNumber.HALF;
 
         assertEquals(expectedValue, actualImplicitRadius1);
         assertEquals(expectedValue, actualImplicitRadius2);
@@ -93,7 +94,7 @@ public class CircleDrawingTestProtected extends ShapeDrawingTestProtected
         drawing.setExplicitDimensions(100, 100);
         shape1.setExplicitXPositionCenter(x);
         shape1.setExplicitYPositionCenter(y);
-        String svg = drawing.getSVG();
+        @NotNull String svg = drawing.getSVG();
         softly.then(svg).contains("cx=\"50\"")
                 .contains("cy=\"50\"");
     }

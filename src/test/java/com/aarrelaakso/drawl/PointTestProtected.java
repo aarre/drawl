@@ -12,6 +12,7 @@ package com.aarrelaakso.drawl;
 
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,18 +28,18 @@ public class PointTestProtected
 {
     @Test
     @DisplayName("When you create a point then you can get X")
-    void whenYouCreateAPointThenYouCanGetX(BDDSoftAssertions softly)
+    void whenYouCreateAPointThenYouCanGetX(@NotNull BDDSoftAssertions softly)
     {
-        Point point = new Point(3, 19);
+        @NotNull Point point = new Point(3, 19);
         softly.then(point.getX()).isNotNull();
         softly.then(point.getX()).isEqualTo(DrawlNumber.valueOf(3));
     }
 
     @Test
     @DisplayName("When you create a point then you can get Y")
-    void whenYouCreateAPointThenYouCanGetY(BDDSoftAssertions softly)
+    void whenYouCreateAPointThenYouCanGetY(@NotNull BDDSoftAssertions softly)
     {
-        Point point = new Point(19, 17);
+        @NotNull Point point = new Point(19, 17);
         softly.then(point.getY()).isNotNull();
         softly.then(point.getY()).isEqualTo(DrawlNumber.valueOf(17));
     }

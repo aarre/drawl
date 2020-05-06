@@ -3,13 +3,16 @@ package com.aarrelaakso.drawl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Represents circles.
+ */
 public class Circle extends Shape
 {
 
     /**
      * The explicit radius of a Circle is null by default.
      */
-    private DrawlNumber explicitRadius;
+    private @Nullable DrawlNumber explicitRadius;
 
     /**
      * The implicit radius of a Circle is 0.5 by default, giving the default Circle an implicit diameter of 1.
@@ -43,8 +46,8 @@ public class Circle extends Shape
     @Nullable
     private DrawlNumber getExplicitDiameter()
     {
-        DrawlNumber result = null;
-        DrawlNumber radiusExplicitValue = this.getExplicitRadius();
+        @Nullable DrawlNumber result = null;
+        @Nullable DrawlNumber radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue != null)
         {
             result = radiusExplicitValue.multiply(DrawlNumber.TWO, DrawlNumber.mcOperations);
@@ -170,10 +173,10 @@ public class Circle extends Shape
      * @return A string containing SVG representing this Circle.
      */
     @Override
-    public String getSVG()
+    public @NotNull String getSVG()
     {
         String radiusStringValue;
-        DrawlNumber radiusExplicitValue = this.getExplicitRadius();
+        @Nullable DrawlNumber radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue == null)
         {
             // If the explicit radius has not been set, use the implicit radius
@@ -181,7 +184,7 @@ public class Circle extends Shape
         }
         radiusStringValue = SVG.toString(this.getExplicitRadius());
 
-        StringBuilder svgBuilder = new StringBuilder();
+        @NotNull StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<circle ");
         svgBuilder.append("r=\"");
         svgBuilder.append(radiusStringValue);

@@ -11,6 +11,7 @@
 package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Circle;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.BDDAssertions.then;
@@ -46,14 +47,14 @@ public class CircleTestPublic extends ShapeTestPublic
         @Test
         @DisplayName("Then the SVG contains 'circle'")
         void thenSVGContainsCircle() {
-            String svg = shape1.getSVG();
+            @NotNull String svg = shape1.getSVG();
             then(svg).contains("circle");
         }
 
         @Test
         @DisplayName("Then the SVG contains the radius")
         void thenSVGContainsRadius() {
-            String svg = shape1.getSVG();
+            @NotNull String svg = shape1.getSVG();
             then(svg).contains("r=\"0.5\"");
         }
     }

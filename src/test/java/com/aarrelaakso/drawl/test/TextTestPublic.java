@@ -11,6 +11,7 @@
 package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Text;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -35,7 +36,7 @@ public class TextTestPublic extends ShapeTestPublic
     @DisplayName("When a user creates a Text object, then he can initialize it with a String")
     void whenAUserCreatesATextObjectThenHeCanInitializeItWithAString()
     {
-        Text text = new Text("Lorem ipsum");
+        @NotNull Text text = new Text("Lorem ipsum");
         then(text.toString()).isEqualTo("Lorem ipsum");
     }
 
@@ -43,7 +44,7 @@ public class TextTestPublic extends ShapeTestPublic
     @DisplayName("When a user creates a Text object, then he can initialize it without a String")
     void whenAUserCreatesATextObjectThenHeCanInitializeItWithoutAString()
     {
-        Text text = new Text();
+        @NotNull Text text = new Text();
         then(text.toString()).isEqualTo(null);
     }
 
@@ -54,7 +55,7 @@ public class TextTestPublic extends ShapeTestPublic
     {
 
         // when
-        Text text = new Text();
+        @NotNull Text text = new Text();
         Throwable thrown = catchThrowable(() -> {
             text.getSVG();
         });

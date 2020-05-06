@@ -13,15 +13,19 @@ package com.aarrelaakso.drawl.examples;
 import com.aarrelaakso.drawl.Circle;
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Line;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
+/**
+ * Example of using Drawl to draw a line between two shapes.
+ */
 public class LineExample {
     public static void main(String[] args) throws IOException
     {
-        Drawing drawing = new Drawing();
-        Circle circle1 = new Circle();
-        Circle circle2 = new Circle();
+        @NotNull Drawing drawing = new Drawing();
+        @NotNull Circle circle1 = new Circle();
+        @NotNull Circle circle2 = new Circle();
         drawing.add(circle1);
         drawing.add(circle2);
         circle1.setFill("green");
@@ -29,7 +33,7 @@ public class LineExample {
 
         circle2.setRightOf(circle1, circle2.getWidth());
 
-        Line line = new Line(circle1.getRightPort(), circle2.getLeftPort());
+        @NotNull Line line = new Line(circle1.getRightPort(), circle2.getLeftPort());
         line.setStroke("red");
         drawing.add(line);
 

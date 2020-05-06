@@ -10,6 +10,8 @@
 
 package com.aarrelaakso.drawl;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Defines a public Measure class to represent measures on the diagram without exposing internal numerical
  * measurements to the user.
@@ -38,7 +40,7 @@ public class Measure
      *
      * @param length The length to associate with this Measure.
      */
-    public Measure(Integer length)
+    public Measure(@NotNull Integer length)
     {
         this.length = new DrawlNumber(length);
     }

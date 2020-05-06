@@ -11,6 +11,7 @@
 package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Rectangle;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 
 import java.util.concurrent.ThreadLocalRandom;
@@ -43,8 +44,8 @@ public class RectangleTestPublic extends ShapeTestPublic
         {
             Integer height = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
             Integer width = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
-            Double aspectRatio = Double.valueOf(width / height);
-            Rectangle rectangle = new Rectangle(aspectRatio);
+            @NotNull Double aspectRatio = Double.valueOf(width / height);
+            @NotNull Rectangle rectangle = new Rectangle(aspectRatio);
             then(rectangle).isNotNull();
         }
 

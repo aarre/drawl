@@ -16,6 +16,7 @@ import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
@@ -39,7 +40,7 @@ public class TextTestProtected
     @DisplayName("When a user creates a new Text object, then its implicit y position is correct")
     void whenAUserCreatesANewTextObjectThenItsImplicitYPositionIsCorrect()
     {
-        Text text = new Text("Drawl");
+        @NotNull Text text = new Text("Drawl");
 
         then(text.getImplicitYPositionCenter()).isEqualTo(DrawlNumber.ZERO);
     }

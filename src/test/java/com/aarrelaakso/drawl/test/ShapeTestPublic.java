@@ -16,6 +16,7 @@ import com.aarrelaakso.drawl.Shape;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -30,7 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @DisplayName("Unit tests of Shape public API (abstract)")
 public abstract class ShapeTestPublic {
 
-    private static final FluentLogger logger;
+    private static final @NotNull FluentLogger logger;
 
     static {
         logger = FluentLogger.forEnclosingClass();
@@ -89,32 +90,32 @@ public abstract class ShapeTestPublic {
 
         @Test
         @DisplayName("whenAShapeIsCreatedThenItHasALeftPort")
-        void whenAShapeIsCreatedThenItHasALeftPort(BDDSoftAssertions softly) {
-            Point leftPort = shape1.getLeftPort();
+        void whenAShapeIsCreatedThenItHasALeftPort(@NotNull BDDSoftAssertions softly) {
+            @NotNull Point leftPort = shape1.getLeftPort();
             softly.then(leftPort).isNotNull();
             softly.then(leftPort).isInstanceOf(Point.class);
         }
 
         @Test
         @DisplayName("whenAShapeIsCreatedThenItHasARightPort")
-        void whenAShapeIsCreatedThenItHasARightPort(BDDSoftAssertions softly) {
-            Point leftPort = shape1.getRightPort();
+        void whenAShapeIsCreatedThenItHasARightPort(@NotNull BDDSoftAssertions softly) {
+            @NotNull Point leftPort = shape1.getRightPort();
             softly.then(leftPort).isNotNull();
             softly.then(leftPort).isInstanceOf(Point.class);
         }
 
         @Test
         @DisplayName("whenAShapeIsCreatedThenItHasATopPort")
-        void whenAShapeIsCreatedThenItHasATopPort(BDDSoftAssertions softly) {
-            Point leftPort = shape1.getTopPort();
+        void whenAShapeIsCreatedThenItHasATopPort(@NotNull BDDSoftAssertions softly) {
+            @NotNull Point leftPort = shape1.getTopPort();
             softly.then(leftPort).isNotNull();
             softly.then(leftPort).isInstanceOf(Point.class);
         }
 
         @Test
         @DisplayName("whenAShapeIsCreatedThenItHasABottomPort")
-        void whenAShapeIsCreatedThenItHasABottomPort(BDDSoftAssertions softly) {
-            Point leftPort = shape1.getBottomPort();
+        void whenAShapeIsCreatedThenItHasABottomPort(@NotNull BDDSoftAssertions softly) {
+            @NotNull Point leftPort = shape1.getBottomPort();
             softly.then(leftPort).isNotNull();
             softly.then(leftPort).isInstanceOf(Point.class);
         }
@@ -125,9 +126,9 @@ public abstract class ShapeTestPublic {
     void whenTwoShapesHaveBeenConstructedThenItIsPossibleToConnectThemWithALine()
     {
         shape1.setLeftOf(shape2, shape1.getWidth());
-        Point pointA = shape1.getRightPort();
-        Point pointB = shape2.getLeftPort();
-        Line line = new Line(pointA, pointB);
+        @NotNull Point pointA = shape1.getRightPort();
+        @NotNull Point pointB = shape2.getLeftPort();
+        @NotNull Line line = new Line(pointA, pointB);
     }
 
 }
