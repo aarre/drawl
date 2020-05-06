@@ -17,7 +17,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-@DisplayName("Line - Protected API")
+@DisplayName("Line Drawing - Protected API")
 @ExtendWith(SoftAssertionsExtension.class)
 public class LineDrawingTestProtected extends ShapeDrawingTestProtected {
 
@@ -50,11 +50,11 @@ public class LineDrawingTestProtected extends ShapeDrawingTestProtected {
         softly.then(point1).isNotNull();
         softly.then(point2).isNotNull();
 
-        softly.then(point1.getX()).isEqualTo(DrawlNumber.valueOf(100.0/3.0));
+        softly.then(point1.getX().compareToFuzzy(DrawlNumber.valueOf(100.0/3.0))).isEqualTo(0);
         softly.then(point1.getY()).isEqualTo(DrawlNumber.valueOf(50));
 
-        softly.then(point1.getX()).isEqualTo(DrawlNumber.valueOf(200.0/3.0));
-        softly.then(point1.getY()).isEqualTo(DrawlNumber.valueOf(50));
+        softly.then(point2.getX().compareToFuzzy(DrawlNumber.valueOf(200.0/3.0))).isEqualTo(0);
+        softly.then(point2.getY()).isEqualTo(DrawlNumber.valueOf(50));
     }
 
 }

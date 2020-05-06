@@ -24,10 +24,13 @@ public class LineExample {
         Circle circle2 = new Circle();
         drawing.add(circle1);
         drawing.add(circle2);
+        circle1.setFill("green");
+        circle2.setFill("blue");
 
         circle2.setRightOf(circle1, circle2.getWidth());
 
         Line line = new Line(circle1.getRightPort(), circle2.getLeftPort());
+        line.setStroke("red");
         drawing.add(line);
 
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/LineExample.svg", 100, 100);
