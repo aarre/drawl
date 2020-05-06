@@ -427,7 +427,7 @@ public class Drawing {
         @Nullable DrawlNumber bdWidth = this.getExplicitWidth();
         if (bdWidth != null) {
             svgBuilder.append(" width=\"");
-            @NotNull String width = SVG.toString(bdWidth);
+            @NotNull String width = bdWidth.toSVG();
             svgBuilder.append(width);
             svgBuilder.append("\"");
         }
@@ -435,7 +435,7 @@ public class Drawing {
         @Nullable DrawlNumber bdHeight = this.getExplicitHeight();
         if (bdHeight != null) {
             svgBuilder.append(" height=\"");
-            @NotNull String height = SVG.toString(bdHeight);
+            @NotNull String height = bdHeight.toSVG();
             svgBuilder.append(height);
             svgBuilder.append("\"");
         }

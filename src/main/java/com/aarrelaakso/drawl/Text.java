@@ -59,10 +59,10 @@ public class Text extends Shape
             @NotNull StringBuilder svgBuilder = new StringBuilder();
             svgBuilder.append("<text");
             svgBuilder.append(" x=\"");
-            svgBuilder.append(SVG.toString(this.getExplicitXPositionCenter()));
+            svgBuilder.append(this.getExplicitXPositionCenter().toSVG());
             svgBuilder.append("\"");
             svgBuilder.append(" y=\"");
-            svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
+            svgBuilder.append(this.getExplicitYPositionCenter().toSVG());
             svgBuilder.append("\"");
             svgBuilder.append(" dominant-baseline=\"middle\" text-anchor=\"middle\"");
             if (this.getStroke() != null)
