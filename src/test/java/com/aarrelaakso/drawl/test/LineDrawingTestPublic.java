@@ -51,8 +51,8 @@ public class LineDrawingTestPublic extends ShapeDrawingTestPublic {
         softly.then(svg).contains("<line");
         softly.then(svg).contains("y1=\"50\"");
         softly.then(svg).contains("y2=\"50\"");
-        softly.then(svg).contains("x1=\"33.33333333");
-        softly.then(svg).contains("x2=\"66.66666666");
+        softly.then(svg).contains("x1=\"33.333332");
+        softly.then(svg).contains("x2=\"66.666664");
     }
 
 
