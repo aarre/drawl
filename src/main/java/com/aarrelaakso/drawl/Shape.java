@@ -23,6 +23,8 @@ import com.google.common.flogger.FluentLogger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
+
 /**
  * Abstract class represents shapes such as circles, rectangles, and lines.
  */
@@ -134,7 +136,7 @@ public class Shape {
     }
 
     /**
-     * Gets this Shape's neighbor below (this Shape is below that one), if any.
+     * Gets this Shape's neighbor below (this Shape is above that one), if any.
      *
      * @return the Shape to below this one, if any;
      * <code>null</code> otherwise.
@@ -197,7 +199,6 @@ public class Shape {
      * @return the explicit height of this Shape, or <code>null</code> if this Shape has not yet been assigned an
      * explicit height.
      */
-    @Nullable
     protected @Nullable DrawlNumber getExplicitHeight() {
         return this.explicitHeight;
     }
@@ -212,7 +213,7 @@ public class Shape {
     protected void setExplicitHeight(@Nullable DrawlNumber height) {
         this.explicitHeight = height;
         if (Boolean.TRUE.equals(this.hasText())) {
-            this.getText().setExplicitHeight(height);
+            Objects.requireNonNull(this.getText()).setExplicitHeight(height);
         }
     }
 
@@ -222,7 +223,6 @@ public class Shape {
      * @return the explicit width of this Shape, or <code>null</code> if this Shape has not yet been assigned an
      * explicit width.
      */
-    @Nullable
     protected @Nullable DrawlNumber getExplicitWidth() {
         return this.explicitWidth;
     }
@@ -237,7 +237,7 @@ public class Shape {
     protected void setExplicitWidth(@Nullable DrawlNumber width) {
         this.explicitWidth = width;
         if (Boolean.TRUE.equals(this.hasText())) {
-            this.getText().setExplicitWidth(width);
+            Objects.requireNonNull(this.getText()).setExplicitWidth(width);
         }
     }
 
@@ -259,7 +259,7 @@ public class Shape {
     protected void setExplicitXPositionCenter(DrawlNumber x) {
         this.explicitXPositionCenter = x;
         if (Boolean.TRUE.equals(this.hasText())) {
-            this.getText().setExplicitXPositionCenter(x);
+            Objects.requireNonNull(this.getText()).setExplicitXPositionCenter(x);
         }
     }
 
@@ -331,7 +331,7 @@ public class Shape {
     protected void setExplicitYPositionCenter(DrawlNumber y) {
         this.explicitYPositionCenter = y;
         if (Boolean.TRUE.equals(this.hasText())) {
-            this.getText().setExplicitYPositionCenter(y);
+            Objects.requireNonNull(this.getText()).setExplicitYPositionCenter(y);
         }
     }
 
@@ -380,7 +380,7 @@ public class Shape {
      * @return half of the implicit height of this Shape.
      */
     protected DrawlNumber getImplicitHalfHeight() {
-        return this.getImplicitHeight().divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
+        return Objects.requireNonNull(this.getImplicitHeight()).divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
     }
 
     /**
@@ -465,7 +465,7 @@ public class Shape {
     protected void setImplicitXPositionCenter(DrawlNumber x) {
         this.implicitXPositionCenter = x;
         if (Boolean.TRUE.equals(this.hasText())) {
-            this.getText().setImplicitXPositionCenter(x);
+            Objects.requireNonNull(this.getText()).setImplicitXPositionCenter(x);
         }
     }
 
@@ -516,7 +516,7 @@ public class Shape {
     protected void setImplicitYPositionCenter(DrawlNumber y) {
         this.implicitYPositionCenter = y;
         if (Boolean.TRUE.equals(this.hasText())) {
-            this.getText().setImplicitYPositionCenter(y);
+            Objects.requireNonNull(this.getText()).setImplicitYPositionCenter(y);
         }
     }
 
@@ -537,12 +537,8 @@ public class Shape {
      */
     public @Nullable Shape getLeftOf() {
         @Nullable Shape returnValue = null;
-        if (this.angleToNeighbor == null) {
-            returnValue = null;
-        } else if (this.angleToNeighbor.equals(DrawlNumber.valueOf(90))) {
+        if ((this.angleToNeighbor != null) && (this.angleToNeighbor.equals(DrawlNumber.valueOf(90)))) {
             returnValue = this.neighbor;
-        } else {
-            returnValue = null;
         }
         return returnValue;
     }
@@ -575,12 +571,8 @@ public class Shape {
      */
     public @Nullable Shape getRightOf() {
         @Nullable Shape returnValue = null;
-        if (this.angleToNeighbor == null) {
-            returnValue = null;
-        } else if (this.angleToNeighbor.isEqualTo(DrawlNumber.valueOf(270))) {
+        if ((this.angleToNeighbor != null) && (this.angleToNeighbor.isEqualTo(DrawlNumber.valueOf(270)))) {
             returnValue = this.neighbor;
-        } else {
-            returnValue = null;
         }
         return returnValue;
     }

@@ -3,6 +3,8 @@ package com.aarrelaakso.drawl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
+
 /**
  * Represents circles.
  */
@@ -94,9 +96,9 @@ public class Circle extends Shape
     }
 
     /**
-     * Get the implicit diameter of this Circle
+     * Get the implicit diameter of this Circle.
      *
-     * @return
+     * @return the implicit diameter of this Circle.
      */
     protected DrawlNumber getImplicitDiameter()
     {
@@ -106,7 +108,7 @@ public class Circle extends Shape
     }
 
     /**
-     * Get the implicit height of this Circle
+     * Get the implicit height of this Circle.
      *
      * @return the implicit height of this Circle, or <code>null</code> if the implicit radius of this Circle has
      * not been set.
@@ -192,7 +194,6 @@ public class Circle extends Shape
         svgBuilder.append(" cx=\"");
         svgBuilder.append(SVG.toString(this.getExplicitXPositionCenter()));
         svgBuilder.append("\"");
-        this.getExplicitYPositionCenter();
         svgBuilder.append(" cy=\"");
         svgBuilder.append(SVG.toString(this.getExplicitYPositionCenter()));
         svgBuilder.append("\"");
@@ -211,7 +212,7 @@ public class Circle extends Shape
         svgBuilder.append(" />");
         if (Boolean.TRUE.equals(this.hasText()))
         {
-            svgBuilder.append(this.getText().getSVG());
+            svgBuilder.append(Objects.requireNonNull(this.getText()).getSVG());
         }
         return svgBuilder.toString();
     }
@@ -234,7 +235,7 @@ public class Circle extends Shape
             this.setExplicitRadius(height.divide(DrawlNumber.TWO, DrawlNumber.mcOperations));
             if (Boolean.TRUE.equals(this.hasText()))
             {
-                this.getText().setExplicitHeight(height);
+                Objects.requireNonNull(this.getText()).setExplicitHeight(height);
             }
         }
     }
@@ -284,7 +285,7 @@ public class Circle extends Shape
             this.setExplicitRadius(width.divide(DrawlNumber.TWO, DrawlNumber.mcOperations));
             if (Boolean.TRUE.equals(this.hasText()))
             {
-                this.getText().setExplicitWidth(width);
+                Objects.requireNonNull(this.getText()).setExplicitWidth(width);
             }
         }
     }
