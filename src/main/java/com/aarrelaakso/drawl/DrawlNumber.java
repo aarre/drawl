@@ -435,59 +435,59 @@ public class DrawlNumber implements Comparable<DrawlNumber>
     /**
      * Returns whether this number is equal with another number.
      *
-     * @param x tested number
+     * @param val tested number
      * @return true if this number is equal to the other number
      * @author Aarre Laakso
      * @version 1.0, 04/28/2020
      * @since 04/28/2020
      */
-    protected boolean isEqualTo(@NotNull DrawlNumber x)
+    protected boolean isEqualTo(@NotNull DrawlNumber val)
     {
-        return number.compareTo(x.number) == 0;
+        return number.compareTo(val.number) == 0;
     }
 
     /**
      * Returns whether this number is greater than the other number.
      *
-     * @param x tested number
+     * @param val tested number
      * @return true if this number is greater than the other one
      */
-    protected boolean isGreaterThan(@NotNull DrawlNumber x)
+    protected boolean isGreaterThan(@NotNull DrawlNumber val)
     {
-        return number.compareTo(x.number) == 1;
+        return number.compareTo(val.number) == 1;
     }
 
     /**
      * Returns whether this number is greater than the other number.
      *
-     * @param x tested number
+     * @param val tested number
      * @return true if this number is greater than the other one
      */
-    protected boolean isGreaterThan(double x)
+    protected boolean isGreaterThan(double val)
     {
-        return isGreaterThan(new DrawlNumber(String.valueOf(x)));
+        return isGreaterThan(new DrawlNumber(String.valueOf(val)));
     }
 
     /**
      * Returns whether this number is greater or equal to the other number.
      *
-     * @param x tested number
+     * @param val tested number
      * @return true if this number is greater or equal to the other one
      */
-    protected boolean isGreaterThanOrEqualTo(@NotNull DrawlNumber x)
+    protected boolean isGreaterThanOrEqualTo(@NotNull DrawlNumber val)
     {
-        return number.compareTo(x.number) >= 0;
+        return number.compareTo(val.number) >= 0;
     }
 
     /**
      * Returns whether this number is greater or equal to the other number.
      *
-     * @param x tested number
+     * @param val tested number
      * @return true if this number is greater or equal to the other one
      */
-    protected boolean isGreaterThanOrEqualTo(double x)
+    protected boolean isGreaterThanOrEqualTo(double val)
     {
-        return isGreaterThanOrEqualTo(DrawlNumber.valueOf(String.valueOf(x)));
+        return isGreaterThanOrEqualTo(DrawlNumber.valueOf(String.valueOf(val)));
     }
 
     /**
@@ -501,45 +501,45 @@ public class DrawlNumber implements Comparable<DrawlNumber>
     /**
      * Returns whether this number is less than the other number.
      *
-     * @param x tested number
+     * @param val tested number
      * @return true if this number is less than the other one
      */
-    protected boolean isLessThan(@NotNull DrawlNumber x)
+    protected boolean isLessThan(@NotNull DrawlNumber val)
     {
-        return number.compareTo(x.number) < 0;
+        return number.compareTo(val.number) < 0;
     }
 
     /**
      * Returns whether this number is less than the other number.
      *
-     * @param x tested number
+     * @param val tested number
      * @return true if this number is less than the other one
      */
-    protected boolean isLessThan(double x)
+    protected boolean isLessThan(double val)
     {
-        return isLessThan(DrawlNumber.valueOf(String.valueOf(x)));
+        return isLessThan(DrawlNumber.valueOf(String.valueOf(val)));
     }
 
     /**
      * Returns whether this number is less or equal to the other number.
      *
-     * @param x tested number
+     * @param val tested number
      * @return true if this number is less than the other one
      */
-    protected boolean isLessThanOrEqualTo(@NotNull DrawlNumber x)
+    protected boolean isLessThanOrEqualTo(@NotNull DrawlNumber val)
     {
-        return number.compareTo(x.number) <= 0;
+        return number.compareTo(val.number) <= 0;
     }
 
     /**
      * Returns whether this number is less or equal to the other number.
      *
-     * @param x tested number
+     * @param val tested number
      * @return true if this number is less than the other one
      */
-    protected boolean isLessThanOrEqualTo(double x)
+    protected boolean isLessThanOrEqualTo(double val)
     {
-        return isLessThanOrEqualTo(DrawlNumber.valueOf(String.valueOf(x)));
+        return isLessThanOrEqualTo(DrawlNumber.valueOf(String.valueOf(val)));
     }
 
     /**
@@ -559,12 +559,12 @@ public class DrawlNumber implements Comparable<DrawlNumber>
     /**
      * Performs multiplication operation.
      *
-     * @param x other number
-     * @return addition multiplication result
+     * @param multiplicand other number
+     * @return multiplication result
      */
-    protected @NotNull DrawlNumber multiply(@NotNull DrawlNumber x)
+    protected @NotNull DrawlNumber multiply(@NotNull DrawlNumber multiplicand)
     {
-        return new DrawlNumber(this.number * x.number);
+        return new DrawlNumber(this.number * multiplicand.number);
     }
 
     /**
@@ -583,12 +583,12 @@ public class DrawlNumber implements Comparable<DrawlNumber>
     /**
      * Performs multiplication operation.
      *
-     * @param x other number
+     * @param multiplicand other number
      * @return addition multiplication result
      */
-    protected @NotNull DrawlNumber multiply(double x)
+    protected @NotNull DrawlNumber multiply(double multiplicand)
     {
-        return multiply(new DrawlNumber(String.valueOf(x)));
+        return multiply(new DrawlNumber(String.valueOf(multiplicand)));
     }
 
     /**
@@ -642,12 +642,12 @@ public class DrawlNumber implements Comparable<DrawlNumber>
     /**
      * Performs subtraction operation.
      *
-     * @param x other number
+     * @param subtrahend value to be subtracted from this DrawlNumber.
      * @return addition subtraction result
      */
-    protected @NotNull DrawlNumber subtract(@NotNull DrawlNumber x)
+    protected @NotNull DrawlNumber subtract(@NotNull DrawlNumber subtrahend)
     {
-        return new DrawlNumber(number - x.number);
+        return new DrawlNumber(number - subtrahend.number);
     }
 
     /**
@@ -655,7 +655,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * subtrahend is zero, then this, rounded if necessary, is used as the result. If this is zero then the result is
      * subtrahend.negate(mc).
      *
-     * @param subtrahend value to be subtracted from this SisuBigDecimal.
+     * @param subtrahend value to be subtracted from this DrawlNumber.
      * @param mc         Ignored. Preserved for compatibility with the SisuBigDecimal interface.
      * @return this - subtrahend, rounded as necessary
      * @throws ArithmeticException if the result is inexact but the rounding mode is UNNECESSARY.
@@ -668,12 +668,12 @@ public class DrawlNumber implements Comparable<DrawlNumber>
     /**
      * Performs subtraction operation.
      *
-     * @param x other number
+     * @param subtrahend value to be subtracted from this DrawlNumber.
      * @return addition subtraction result
      */
-    protected @NotNull DrawlNumber subtract(double x)
+    protected @NotNull DrawlNumber subtract(double subtrahend)
     {
-        return subtract(new DrawlNumber(String.valueOf(x)));
+        return subtract(new DrawlNumber(String.valueOf(subtrahend)));
     }
 
     /**
