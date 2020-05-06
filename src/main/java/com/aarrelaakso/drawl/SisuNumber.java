@@ -3,6 +3,7 @@ package com.aarrelaakso.drawl;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -28,23 +29,23 @@ public class SisuNumber implements Comparable<SisuNumber>
     protected static final SisuNumber HALF = SisuNumber.valueOf(0.5);
     protected static final SisuNumber ONE = SisuNumber.valueOf(BigDecimal.ONE);
     protected static final SisuNumber TWO = SisuNumber.valueOf(2);
-    protected static RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
+    protected static @NotNull RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
     protected static int SCALE_FOR_COMPARISONS = 32;
     protected static int SCALE_FOR_OPERATIONS = 64;
     /**
      * Zero.
      */
-    protected static SisuNumber ZERO = new SisuNumber("0");
+    protected static @NotNull SisuNumber ZERO = new SisuNumber("0");
 
     /**
      * Use this MathContext for comparisons.
      */
-    protected static MathContext mcComparisons = new MathContext(SCALE_FOR_COMPARISONS, ROUNDING_MODE);
+    protected static @NotNull MathContext mcComparisons = new MathContext(SCALE_FOR_COMPARISONS, ROUNDING_MODE);
 
     /**
      * Use this MathContext for other operations, such as multiplying and dividing.
      */
-    protected static MathContext mcOperations = new MathContext(SCALE_FOR_OPERATIONS, ROUNDING_MODE);
+    protected static @NotNull MathContext mcOperations = new MathContext(SCALE_FOR_OPERATIONS, ROUNDING_MODE);
 
 
     /**
@@ -64,7 +65,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      *
      * @param number number
      */
-    protected SisuNumber(BigDecimal number)
+    protected SisuNumber(@NotNull BigDecimal number)
     {
         this.number = number.stripTrailingZeros();
     }
@@ -74,7 +75,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      *
      * @param s string representation
      */
-    private SisuNumber(String s)
+    private SisuNumber(@NotNull String s)
     {
         this.number = new BigDecimal(s).stripTrailingZeros();
     }
@@ -85,7 +86,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param s source string
      * @return created number
      */
-    protected static SisuNumber valueOf(String s)
+    protected static @NotNull SisuNumber valueOf(@NotNull String s)
     {
         return new SisuNumber(s);
     }
@@ -96,7 +97,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param number number
      * @return created number
      */
-    protected static SisuNumber valueOf(double number)
+    protected static @NotNull SisuNumber valueOf(double number)
     {
         return new SisuNumber(BigDecimal.valueOf(number));
     }
@@ -107,12 +108,12 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param number number
      * @return created number
      */
-    protected static SisuNumber valueOf(BigDecimal number)
+    protected static @NotNull SisuNumber valueOf(@NotNull BigDecimal number)
     {
         return new SisuNumber(number);
     }
 
-    protected static SisuNumber valueOf(Integer number)
+    protected static @NotNull SisuNumber valueOf(Integer number)
     {
         return new SisuNumber(BigDecimal.valueOf(number));
     }
@@ -123,7 +124,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @return True if bd is a mathematical integer,
      * false otherwise.
      */
-    protected static boolean isIntegerValue(BigDecimal bd)
+    protected static boolean isIntegerValue(@NotNull BigDecimal bd)
     {
         return bd.signum() == 0 || bd.scale() <= 0 || bd.stripTrailingZeros().scale() <= 0;
     }
@@ -145,7 +146,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      *
      * @return absolute value of this number
      */
-    protected SisuNumber abs()
+    protected @NotNull SisuNumber abs()
     {
         return SisuNumber.valueOf(number.abs());
     }
@@ -156,7 +157,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x other number
      * @return addition operation result
      */
-    protected SisuNumber add(SisuNumber x)
+    protected @NotNull SisuNumber add(@NotNull SisuNumber x)
     {
         return new SisuNumber(number.add(x.number));
     }
@@ -167,7 +168,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x other number
      * @return addition operation result
      */
-    protected SisuNumber add(double x)
+    protected @NotNull SisuNumber add(double x)
     {
         return add(new SisuNumber(String.valueOf(x)));
     }
@@ -182,7 +183,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @return this + augend, rounded as necessary
      * @throws ArithmeticException if the result is inexact but the rounding mode is UNNECESSARY.
      */
-    protected SisuNumber add(SisuNumber augend, MathContext mc)
+    protected @NotNull SisuNumber add(@NotNull SisuNumber augend, MathContext mc)
     {
         return new SisuNumber(number.add(augend.number, mc));
     }
@@ -207,7 +208,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @returns -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than val.
      */
     @Override
-    public int compareTo(SisuNumber val)
+    public int compareTo(@NotNull SisuNumber val)
     {
         return number.compareTo(val.number);
     }
@@ -218,7 +219,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param val The other SisuNumber to compare to this one.
      * @return -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than val.
      */
-    protected int compareToFuzzy(SisuNumber val)
+    protected int compareToFuzzy(@NotNull SisuNumber val)
     {
         return this.compareToFuzzy(val, mcComparisons);
     }
@@ -230,15 +231,15 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param mc  The MathContext to use for the comparison.
      * @return -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than val.
      */
-    protected int compareToFuzzy(SisuNumber val, MathContext mc)
+    protected int compareToFuzzy(@NotNull SisuNumber val, MathContext mc)
     {
-        SisuNumber thisNumberRounded = SisuNumber.valueOf(this.number.round(mc));
-        SisuNumber xNumberRounded = val.round(mc);
+        @NotNull SisuNumber thisNumberRounded = SisuNumber.valueOf(this.number.round(mc));
+        @NotNull SisuNumber xNumberRounded = val.round(mc);
         return thisNumberRounded.compareTo(xNumberRounded);
     }
 
 
-    protected SisuNumber divide(SisuNumber val, MathContext mathContext)
+    protected @NotNull SisuNumber divide(@NotNull SisuNumber val, MathContext mathContext)
     {
         return new SisuNumber(number.divide(val.number, mathContext));
     }
@@ -250,7 +251,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param precision precision of the result (see the class level comment for details)
      * @return division operation result
      */
-    protected SisuNumber divide(SisuNumber x, int precision)
+    protected @NotNull SisuNumber divide(@NotNull SisuNumber x, int precision)
     {
         return new SisuNumber(number.divide(x.number, new MathContext(precision, ROUNDING_MODE)));
     }
@@ -262,7 +263,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param precision precision of the result (see the class level comment for details)
      * @return division operation result
      */
-    protected SisuNumber divide(double x, int precision)
+    protected @NotNull SisuNumber divide(double x, int precision)
     {
         return divide(new SisuNumber(String.valueOf(x)), precision);
     }
@@ -284,7 +285,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x tested number
      * @return true if this number is equal to the other number
      */
-    protected boolean equals(SisuNumber x)
+    protected boolean equals(@NotNull SisuNumber x)
     {
         return number.compareTo(x.number) == 0;
     }
@@ -324,7 +325,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      *
      * @return this SisuNumber converted to a Float.
      */
-    protected Float floatValue()
+    protected @NotNull Float floatValue()
     {
         return Float.valueOf(number.floatValue());
     }
@@ -335,7 +336,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x tested number
      * @return true if this number is greater than the other one
      */
-    protected boolean isGreaterThan(SisuNumber x)
+    protected boolean isGreaterThan(@NotNull SisuNumber x)
     {
         return number.compareTo(x.number) == 1;
     }
@@ -386,7 +387,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @version 1.0, 04/28/2020
      * @since 04/28/2020
      */
-    protected boolean isEqualTo(SisuNumber x)
+    protected boolean isEqualTo(@NotNull SisuNumber x)
     {
         return number.compareTo(x.number) == 0;
     }
@@ -397,7 +398,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x tested number
      * @return true if this number is greater or equal to the other one
      */
-    protected boolean isGreaterThanOrEqualTo(SisuNumber x)
+    protected boolean isGreaterThanOrEqualTo(@NotNull SisuNumber x)
     {
         return number.compareTo(x.number) >= 0;
     }
@@ -419,7 +420,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x tested number
      * @return true if this number is less than the other one
      */
-    protected boolean isLessThanOrEqualTo(SisuNumber x)
+    protected boolean isLessThanOrEqualTo(@NotNull SisuNumber x)
     {
         return number.compareTo(x.number) <= 0;
     }
@@ -444,7 +445,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @version 1.0, 04/28/2020
      * @since 1.0, 04/28/2020
      */
-    protected Boolean isNotEqualTo(SisuNumber val)
+    protected @NotNull Boolean isNotEqualTo(@NotNull SisuNumber val)
     {
         return !this.equals(val);
     }
@@ -455,7 +456,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x tested number
      * @return true if this number is less than the other one
      */
-    protected boolean isLessThan(SisuNumber x)
+    protected boolean isLessThan(@NotNull SisuNumber x)
     {
         return number.compareTo(x.number) < 0;
     }
@@ -477,7 +478,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x other number
      * @return addition multiplication result
      */
-    protected SisuNumber multiply(SisuNumber x)
+    protected @NotNull SisuNumber multiply(@NotNull SisuNumber x)
     {
         return new SisuNumber(number.multiply(x.number));
     }
@@ -490,7 +491,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @return this * multiplicand, rounded as necessary.
      * @throws ArithmeticException if the result is inexact but the rounding mode is UNNECESSARY.
      */
-    protected SisuNumber multiply(SisuNumber multiplicand, MathContext mc)
+    protected @NotNull SisuNumber multiply(@NotNull SisuNumber multiplicand, MathContext mc)
     {
         return new SisuNumber(this.number.multiply(multiplicand.number, mc));
     }
@@ -501,7 +502,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x other number
      * @return addition multiplication result
      */
-    protected SisuNumber multiply(double x)
+    protected @NotNull SisuNumber multiply(double x)
     {
         return multiply(new SisuNumber(String.valueOf(x)));
     }
@@ -511,7 +512,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      *
      * @return negative of this number
      */
-    protected SisuNumber negate()
+    protected @NotNull SisuNumber negate()
     {
         return SisuNumber.valueOf(number.negate());
     }
@@ -523,7 +524,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param precision precision of the result (see the class level comment for details)
      * @return power operation result
      */
-    protected SisuNumber pow(int n, int precision)
+    protected @NotNull SisuNumber pow(int n, int precision)
     {
         return SisuNumber.valueOf(number.pow(n, new MathContext(precision, ROUNDING_MODE)));
     }
@@ -534,7 +535,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param mc The MathContext to use for the rounding operation.
      * @return A new instance of SisuNumber that has the same value as this one rounded.
      */
-    protected SisuNumber round(MathContext mc)
+    protected @NotNull SisuNumber round(MathContext mc)
     {
         return SisuNumber.valueOf(this.number.round(mc));
     }
@@ -542,7 +543,7 @@ public class SisuNumber implements Comparable<SisuNumber>
     /**
      * Create a new instance with a set scale
      */
-    protected SisuNumber setScale(Integer scale)
+    protected @NotNull SisuNumber setScale(Integer scale)
     {
         BigDecimal scaledValue = this.number.setScale(scale, ROUNDING_MODE);
         return SisuNumber.valueOf(scaledValue);
@@ -554,7 +555,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x other number
      * @return addition subtraction result
      */
-    protected SisuNumber subtract(SisuNumber x)
+    protected @NotNull SisuNumber subtract(@NotNull SisuNumber x)
     {
         return new SisuNumber(number.subtract(x.number));
     }
@@ -569,7 +570,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @return this - subtrahend, rounded as necessary
      * @throws ArithmeticException if the result is inexact but the rounding mode is UNNECESSARY.
      */
-    protected SisuNumber subtract(SisuNumber subtrahend, MathContext mc)
+    protected @NotNull SisuNumber subtract(@NotNull SisuNumber subtrahend, MathContext mc)
     {
         return new SisuNumber(number.subtract(subtrahend.number, mc));
     }
@@ -580,7 +581,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      * @param x other number
      * @return addition subtraction result
      */
-    protected SisuNumber subtract(double x)
+    protected @NotNull SisuNumber subtract(double x)
     {
         return subtract(new SisuNumber(String.valueOf(x)));
     }
@@ -719,7 +720,7 @@ public class SisuNumber implements Comparable<SisuNumber>
     }
 
     @Override
-    public String toString()
+    public @NotNull String toString()
     {
         return "SisuNumber[" + this.toFullString() + "]";
     }
@@ -730,7 +731,7 @@ public class SisuNumber implements Comparable<SisuNumber>
      *
      * @return number without part right from the decimal point
      */
-    protected SisuNumber truncDecimals()
+    protected @NotNull SisuNumber truncDecimals()
     {
         return new SisuNumber(new BigDecimal(number.toBigInteger()));
     }

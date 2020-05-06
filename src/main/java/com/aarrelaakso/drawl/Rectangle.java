@@ -1,5 +1,10 @@
 package com.aarrelaakso.drawl;
 
+import org.jetbrains.annotations.NotNull;
+
+/**
+ * Represents rectangles.
+ */
 public class Rectangle extends Shape
 {
 
@@ -43,19 +48,19 @@ public class Rectangle extends Shape
      * @param implicitWidth the width of the new Rectangle.
      * @param implicitHeight the height of the new Rectangle.
      */
-    protected Rectangle(DrawlNumber implicitWidth, DrawlNumber implicitHeight)
+    protected Rectangle(@NotNull DrawlNumber implicitWidth, @NotNull DrawlNumber implicitHeight)
     {
         // This method is protected because the user should never have to deal with implicit dimensions.
         this.setImplicitHeight(implicitHeight);
         this.setImplicitWidth(implicitWidth);
     }
 
-    public String getSVG() {
+    public @NotNull String getSVG() {
         if (this.getExplicitWidth() == null || this.getExplicitHeight() == null)
         {
             throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
         }
-        StringBuilder svgBuilder = new StringBuilder();
+        @NotNull StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<rect");
         svgBuilder.append(" width=\"");
         svgBuilder.append(this.getExplicitWidth().toPlainString());

@@ -13,6 +13,7 @@ package com.aarrelaakso.drawl.test;
 import com.aarrelaakso.drawl.Circle;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.BDDAssertions.then;
@@ -40,7 +41,7 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
     void svgGeneratedByADrawingWithACircleIsExactlyAsExpected()
     {
         drawing.add(shape1);
-        String svg = drawing.getSVG(100, 100);
+        @NotNull String svg = drawing.getSVG(100, 100);
 
         then(svg).isEqualTo("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><circle r=\"50\" cx=\"50\" cy=\"50\" /></svg>");
     }
@@ -51,19 +52,19 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
     void svgWhenADefaultCircleIsTheOnlyContentOfADrawingThenItIsAsLargeAsPossible()
     {
         drawing.add(shape1);
-        String svg = drawing.getSVG(100, 100);
+        @NotNull String svg = drawing.getSVG(100, 100);
 
         assertTrue(svg.contains("circle r=\"50\""));
     }
 
     @Test
     @DisplayName("SVG: When a square (100) drawing has two adjacent Circles, then the SVG is correct")
-    void svgWhenASquare100DrawingHasTwoAdjacentCirclesThenTheSVGIsCorrect(BDDSoftAssertions softly)
+    void svgWhenASquare100DrawingHasTwoAdjacentCirclesThenTheSVGIsCorrect(@NotNull BDDSoftAssertions softly)
     {
         drawing.add(shape1);
         drawing.add(shape2);
         shape2.setRightOf(shape1);
-        String svg = drawing.getSVG(100, 100);
+        @NotNull String svg = drawing.getSVG(100, 100);
 
         softly.then(svg).contains("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">")
                 .contains("<circle r=\"25\" cx=\"25\" cy=\"50\" />")
@@ -81,16 +82,16 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
     {
         @Test
         @DisplayName("When a drawing has three horizontally adjacent default circles, then the generated SVG is correct")
-        void whenADrawingHasThreeHorizontallyAdjacentDefaultCirclesThenTheGeneratedSVGIsCorrect(BDDSoftAssertions softly)
+        void whenADrawingHasThreeHorizontallyAdjacentDefaultCirclesThenTheGeneratedSVGIsCorrect(@NotNull BDDSoftAssertions softly)
         {
             drawing.add(shape1);
             drawing.add(shape2);
             shape2.setRightOf(shape1);
             drawing.add(shape3);
             shape3.setRightOf(shape2);
-            Integer width = 100;
-            Integer height = 100;
-            String svg = drawing.getSVG(width, height);
+            @NotNull Integer width = 100;
+            @NotNull Integer height = 100;
+            @NotNull String svg = drawing.getSVG(width, height);
 
             softly.then(svg).contains("cx=\"16.666666\"");
             softly.then(svg).contains("cx=\"50\"");
@@ -98,16 +99,16 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         }
         @Test
         @DisplayName("When a drawing has three vertically adjacent default circles, then the generated SVG is correct")
-        void whenADrawingHasThreeVerticallyAdjacentDefaultCirclesThenTheGeneratedSVGIsCorrect(BDDSoftAssertions softly)
+        void whenADrawingHasThreeVerticallyAdjacentDefaultCirclesThenTheGeneratedSVGIsCorrect(@NotNull BDDSoftAssertions softly)
         {
             drawing.add(shape1);
             drawing.add(shape2);
             shape2.setAbove(shape1);
             drawing.add(shape3);
             shape3.setAbove(shape2);
-            Integer width = 100;
-            Integer height = 100;
-            String svg = drawing.getSVG(width, height);
+            @NotNull Integer width = 100;
+            @NotNull Integer height = 100;
+            @NotNull String svg = drawing.getSVG(width, height);
             logger.atFine().log(svg);
 
             softly.then(svg).contains("cy=\"16.666666\"");

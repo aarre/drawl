@@ -13,6 +13,9 @@ package com.aarrelaakso.drawl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+/**
+ * Represents text on a drawing.
+ */
 public class Text extends Shape
 {
     /**
@@ -53,7 +56,7 @@ public class Text extends Shape
         }
         if (this.toString() != null)
         {
-            StringBuilder svgBuilder = new StringBuilder();
+            @NotNull StringBuilder svgBuilder = new StringBuilder();
             svgBuilder.append("<text");
             svgBuilder.append(" x=\"");
             svgBuilder.append(SVG.toString(this.getExplicitXPositionCenter()));

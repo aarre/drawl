@@ -10,6 +10,8 @@
 
 package com.aarrelaakso.drawl;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.BDDAssertions.then;
@@ -57,10 +59,10 @@ public class CircleTestProtected extends ShapeTestProtected
         @Test
         @DisplayName("Then you can set the explicit radius of a circle to a fixed value")
         void thenYouCanSetTheExplicitRadiusOfACircleToAFixedValue() {
-            Integer radius = 100;
-            DrawlNumber EXPECTED = DrawlNumber.valueOf(radius);
+            @NotNull Integer radius = 100;
+            @NotNull DrawlNumber EXPECTED = DrawlNumber.valueOf(radius);
             shape1.setExplicitRadius(radius);
-            DrawlNumber ACTUAL = shape1.getExplicitRadius();
+            @Nullable DrawlNumber ACTUAL = shape1.getExplicitRadius();
 
             then(ACTUAL).isEqualByComparingTo(EXPECTED);
         }
@@ -68,7 +70,7 @@ public class CircleTestProtected extends ShapeTestProtected
         @Test
         @DisplayName("Then you can set the radius of a circle to be the same as the radius of another circle that has an implicit radius")
         void thenYouCanSetTheRadiusOfACircleToBeTheSameAsTheRadiusOfAnotherCircle() {
-            Circle circle2 = new Circle(shape1.getImplicitRadius());
+            @NotNull Circle circle2 = new Circle(shape1.getImplicitRadius());
             assertEquals(shape1.getImplicitRadius(), circle2.getImplicitRadius());
         }
     }

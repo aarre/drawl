@@ -11,6 +11,7 @@
 package com.aarrelaakso.drawl;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
@@ -76,11 +77,11 @@ public class DrawlNumberTestProtected
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is low")
     public void testCompareToFuzzy()
     {
-        DrawlNumber value1 = DrawlNumber.valueOf(1.0 / 3.0);
-        DrawlNumber value2 = DrawlNumber.valueOf(1.0 / 2.999999999999999999999999999999999999999999999999999);
-        Integer precision = 10;
+        @NotNull DrawlNumber value1 = DrawlNumber.valueOf(1.0 / 3.0);
+        @NotNull DrawlNumber value2 = DrawlNumber.valueOf(1.0 / 2.999999999999999999999999999999999999999999999999999);
+        @NotNull Integer precision = 10;
         Integer ACTUAL = value1.compareToFuzzy(value2, DrawlNumber.mcComparisons);
-        Integer EXPECTED = 0;
+        @NotNull Integer EXPECTED = 0;
 
         then(ACTUAL).as("Fuzzily comparing " + value1.toString() + " to " + value2.toString() +
                 " should result in a value of " + EXPECTED + " but got " + ACTUAL)
@@ -94,12 +95,12 @@ public class DrawlNumberTestProtected
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is high #1")
     public void testCompareToFuzzyWhenPrecisionIsHigh01()
     {
-        DrawlNumber value1 = DrawlNumber.valueOf("0.3333333333333333");
-        DrawlNumber value2 = DrawlNumber.valueOf("0.3333333333333334");
+        @NotNull DrawlNumber value1 = DrawlNumber.valueOf("0.3333333333333333");
+        @NotNull DrawlNumber value2 = DrawlNumber.valueOf("0.3333333333333334");
 
-        Integer precision = 100;
+        @NotNull Integer precision = 100;
         Integer ACTUAL = value1.compareToFuzzy(value2, DrawlNumber.mcOperations);
-        Integer EXPECTED = -1;
+        @NotNull Integer EXPECTED = -1;
 
         then(ACTUAL).as("Fuzzily comparing " + value1.toString() + " to " + value2.toString() +
                 " should result in a value of " + EXPECTED + " but got " + ACTUAL)
@@ -113,11 +114,11 @@ public class DrawlNumberTestProtected
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is high #2")
     public void testCompareToFuzzyWhenPrecisionIsHigh02()
     {
-        DrawlNumber value1 = DrawlNumber.valueOf("0.3333333333333334");
-        DrawlNumber value2 = DrawlNumber.valueOf("0.3333333333333333");
+        @NotNull DrawlNumber value1 = DrawlNumber.valueOf("0.3333333333333334");
+        @NotNull DrawlNumber value2 = DrawlNumber.valueOf("0.3333333333333333");
 
         Integer ACTUAL = value1.compareToFuzzy(value2, DrawlNumber.mcOperations);
-        Integer EXPECTED = 1;
+        @NotNull Integer EXPECTED = 1;
 
         then(ACTUAL).as("Fuzzily comparing " + value1.toString() + " to " + value2.toString() +
                 " should result in a value of " + EXPECTED + " but got " + ACTUAL)

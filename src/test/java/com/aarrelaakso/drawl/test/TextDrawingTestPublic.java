@@ -12,6 +12,7 @@ package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Text;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -39,7 +40,7 @@ public class TextDrawingTestPublic extends ShapeDrawingTestPublic
     @DisplayName("When a user creates a Drawing with Text, then its SVG contains a text element opening tag")
     void whenAUserCreatesADrawingWithTextThenItsSVGContainsATextElementOpeningTag()
     {
-        Text text = new Text("Drawl");
+        @NotNull Text text = new Text("Drawl");
         drawing.add(text);
         drawing.setExplicitDimensions(100, 100);
 
@@ -50,7 +51,7 @@ public class TextDrawingTestPublic extends ShapeDrawingTestPublic
     @DisplayName("When a user creates a Drawing with Text, then its SVG contains a text element opening tag")
     void whenAUserCreatesADrawingWithEmptyTextThenItsSVGDoesNotContainATextElementOpeningTag()
     {
-        Text text = new Text();
+        @NotNull Text text = new Text();
         drawing.add(text);
         drawing.setExplicitDimensions(100, 100);
 
@@ -61,7 +62,7 @@ public class TextDrawingTestPublic extends ShapeDrawingTestPublic
     @DisplayName("When a user creates a Drawing with Text, then the Text is placed at midline by default")
     void whenAUserCreatesADrawingWithTextThenTheTextIsPlacedAtMidlineByDefault()
     {
-        Text text = new Text("Drawl");
+        @NotNull Text text = new Text("Drawl");
         drawing.add(text);
         drawing.setExplicitDimensions(100, 100);
         then(drawing.getSVG()).contains("y=\"50\"");

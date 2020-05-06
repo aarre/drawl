@@ -10,6 +10,8 @@
 
 package com.aarrelaakso.drawl;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Represents a point on the drawing canvas.
  */
@@ -30,7 +32,7 @@ public class Point {
         this.implicitYCoordinate = implicitYCoordinate;
     }
 
-    protected Point(Integer implicitXCoordinate, Integer implicitYCoordinate)
+    protected Point(@NotNull Integer implicitXCoordinate, @NotNull Integer implicitYCoordinate)
     {
         this.implicitXCoordinate = new DrawlNumber(implicitXCoordinate);
         this.implicitYCoordinate = new DrawlNumber(implicitYCoordinate);

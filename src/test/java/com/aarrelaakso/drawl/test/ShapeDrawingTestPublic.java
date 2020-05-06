@@ -14,6 +14,7 @@ import com.aarrelaakso.drawl.*;
 import com.google.common.flogger.FluentLogger;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -26,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DisplayName("Shape Drawings - Public API")
 public abstract class ShapeDrawingTestPublic {
 
-    private static final FluentLogger logger;
+    private static final @NotNull FluentLogger logger;
 
     static {
         logger = FluentLogger.forEnclosingClass();
@@ -54,7 +55,7 @@ public abstract class ShapeDrawingTestPublic {
     @DisplayName("SVG: Calling getSVG without parameters does not throw an exception")
     void svgWhenYouCallSVGWithoutParametersItDoesNotThrowAnException() {
         assertDoesNotThrow(() -> {
-            String svg = drawing.getSVG();
+            @NotNull String svg = drawing.getSVG();
         });
     }
 
@@ -71,9 +72,9 @@ public abstract class ShapeDrawingTestPublic {
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the fill is not set, then it does not appear in the SVG")
-        void whenTheFillIsNotSetThenItDoesNotAppearInTheSVG(BDDSoftAssertions softly) {
+        void whenTheFillIsNotSetThenItDoesNotAppearInTheSVG(@NotNull BDDSoftAssertions softly) {
             drawing.add(shape1);
-            String svg = drawing.getSVG(100, 100);
+            @NotNull String svg = drawing.getSVG(100, 100);
             softly.then(svg).doesNotContain("fill");
             softly.then(svg).doesNotContain("darkslategray");
         }
@@ -83,13 +84,13 @@ public abstract class ShapeDrawingTestPublic {
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the fill is set, then it appears in the SVG")
-        void whenTheFillIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly) {
+        void whenTheFillIsSetThenItAppearsInTheSVG(@NotNull BDDSoftAssertions softly) {
             if (shape1.getClass() == Text.class) {
                 ((Text) shape1).setString("Drawl");
             }
             drawing.add(shape1);
             shape1.setFill("darkslategray");
-            String svg = drawing.getSVG(100, 100);
+            @NotNull String svg = drawing.getSVG(100, 100);
             softly.then(svg).contains("fill");
             softly.then(svg).contains("darkslategray");
         }
@@ -109,9 +110,9 @@ public abstract class ShapeDrawingTestPublic {
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the stroke is not set, then it does not appear in the SVG")
-        void whenTheStrokeIsNotSetThenItDoesNotAppearInTheSVG(BDDSoftAssertions softly) {
+        void whenTheStrokeIsNotSetThenItDoesNotAppearInTheSVG(@NotNull BDDSoftAssertions softly) {
             drawing.add(shape1);
-            String svg = drawing.getSVG(100, 100);
+            @NotNull String svg = drawing.getSVG(100, 100);
             softly.then(svg).doesNotContain("stroke");
             softly.then(svg).doesNotContain("darkslategray");
         }
@@ -121,13 +122,13 @@ public abstract class ShapeDrawingTestPublic {
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the stroke is set, then it appears in the SVG")
-        void whenTheStrokeIsSetThenItAppearsInTheSVG(BDDSoftAssertions softly) {
+        void whenTheStrokeIsSetThenItAppearsInTheSVG(@NotNull BDDSoftAssertions softly) {
             drawing.add(shape1);
             if (shape1.getClass() == Text.class) {
                 ((Text) shape1).setString("Drawl");
             }
             shape1.setStroke("darkslategray");
-            String svg = drawing.getSVG(100, 100);
+            @NotNull String svg = drawing.getSVG(100, 100);
             softly.then(svg).contains("stroke");
             softly.then(svg).contains("darkslategray");
         }
@@ -150,7 +151,7 @@ public abstract class ShapeDrawingTestPublic {
                 // the SVG. Therefore, if the outer Shape is a Text object, we need to assign it a String.
                 ((Text) shape1).setString("Lward");
             }
-            Text text = new Text("Drawl");
+            @NotNull Text text = new Text("Drawl");
             shape1.addText(text);
             drawing.add(shape1);
             drawing.setExplicitDimensions(100, 100);
@@ -246,7 +247,7 @@ public abstract class ShapeDrawingTestPublic {
         @Test
         @DisplayName("whenAUserGetsTheWidthOfADefaultShapeThenItIs1")
         void whenAUserGetsTheWidthOfADefaultShapeThenItIs1() {
-            Measure measure = shape1.getWidth();
+            @NotNull Measure measure = shape1.getWidth();
             then(measure).isInstanceOf(Measure.class);
             then(measure).isNotEqualTo(0);
             then(measure).isEqualToComparingFieldByField(new Measure(1));
@@ -255,7 +256,7 @@ public abstract class ShapeDrawingTestPublic {
         @Test
         @DisplayName("whenAUserGetsTheHeightOfADefaultShapeThenItIs1")
         void whenAUserGetsTheHeightOfADefaultShapeThenItIs1() {
-            Measure measure = shape1.getHeight();
+            @NotNull Measure measure = shape1.getHeight();
             then(measure).isInstanceOf(Measure.class);
             then(measure).isNotEqualTo(0);
             then(measure).isEqualToComparingFieldByField(new Measure(1));

@@ -2,6 +2,9 @@ package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Helper class for generating SVG.
+ */
 public class SVG
 {
 
@@ -13,7 +16,7 @@ public class SVG
      *
      * @param number the number to convert.
      */
-    public static @NotNull String toString(DrawlNumber number)
+    public static @NotNull String toString(@NotNull DrawlNumber number)
     {
         String result = "";
         Float floatValue = number.floatValue();

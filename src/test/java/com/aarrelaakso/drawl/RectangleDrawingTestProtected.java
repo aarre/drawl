@@ -46,7 +46,7 @@ public class RectangleDrawingTestProtected extends ShapeDrawingTestProtected
         drawing.setExplicitDimensions(100,100);
         shape1.setExplicitXPositionCenter(x);
         shape1.setExplicitYPositionCenter(y);
-        String svg = drawing.getSVG();
+        @NotNull String svg = drawing.getSVG();
         softly.then(svg).contains("x=\"0\"")
                 .contains("y=\"0\"");
     }
@@ -63,10 +63,10 @@ public class RectangleDrawingTestProtected extends ShapeDrawingTestProtected
         {
             Integer height = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
             Integer width = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
-            Double aspectRatio = Double.valueOf(Double.valueOf(width) / Double.valueOf(height));
-            Rectangle rectangle = new Rectangle(aspectRatio);
-            DrawlNumber EXPECTED_HEIGHT = DrawlNumber.ONE;
-            DrawlNumber EXPECTED_WIDTH = DrawlNumber.valueOf(aspectRatio);
+            @NotNull Double aspectRatio = Double.valueOf(Double.valueOf(width) / Double.valueOf(height));
+            @NotNull Rectangle rectangle = new Rectangle(aspectRatio);
+            @NotNull DrawlNumber EXPECTED_HEIGHT = DrawlNumber.ONE;
+            @NotNull DrawlNumber EXPECTED_WIDTH = DrawlNumber.valueOf(aspectRatio);
             softly.then(EXPECTED_HEIGHT).isEqualTo(rectangle.getImplicitHeight());
             softly.then(EXPECTED_WIDTH).as("Expected implicit width to be %s but it was %s.",
                     EXPECTED_WIDTH.toPlainString(), rectangle.getImplicitWidth().toPlainString())
@@ -77,7 +77,7 @@ public class RectangleDrawingTestProtected extends ShapeDrawingTestProtected
             drawing.setExplicitDimensions(100,100);
             softly.then(EXPECTED_HEIGHT).isEqualTo(rectangle.getImplicitHeight());
             softly.then(EXPECTED_WIDTH).isEqualTo(rectangle.getImplicitWidth());
-            String svg = drawing.getSVG();
+            @NotNull String svg = drawing.getSVG();
             softly.then(EXPECTED_HEIGHT).isEqualTo(rectangle.getImplicitHeight());
             softly.then(EXPECTED_WIDTH).isEqualTo(rectangle.getImplicitWidth());
         }
@@ -86,10 +86,10 @@ public class RectangleDrawingTestProtected extends ShapeDrawingTestProtected
         @DisplayName("When an asymmetric rectangle is created, then its explicit dimensions are correct")
         void whenAnAsymmetricRectangleIsCreatedThenItsExplicitDimensionsAreCorrect(@NotNull BDDSoftAssertions softly)
         {
-            Integer height = 5;
-            Integer width = 20;
-            Double aspectRatio = Double.valueOf(width) / Double.valueOf(height);
-            Rectangle rectangle = new Rectangle(aspectRatio);
+            @NotNull Integer height = 5;
+            @NotNull Integer width = 20;
+            @NotNull Double aspectRatio = Double.valueOf(width) / Double.valueOf(height);
+            @NotNull Rectangle rectangle = new Rectangle(aspectRatio);
             drawing.add(rectangle);
             drawing.setExplicitDimensions(100,100);
             softly.then(DrawlNumber.valueOf(100))

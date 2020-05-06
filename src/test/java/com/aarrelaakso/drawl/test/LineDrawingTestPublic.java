@@ -13,6 +13,7 @@ package com.aarrelaakso.drawl.test;
 import com.aarrelaakso.drawl.Line;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -36,16 +37,16 @@ public class LineDrawingTestPublic extends ShapeDrawingTestPublic {
 
     @Test
     @DisplayName("When a drawing has a line, then it is represented correctly in the SVG")
-    void whenADrawingHasALineThenItIsRepresentedCorrectlyInTheSVG(BDDSoftAssertions softly) {
+    void whenADrawingHasALineThenItIsRepresentedCorrectlyInTheSVG(@NotNull BDDSoftAssertions softly) {
         drawing.add(shape1);
         shape1.setStroke("blue");
         drawing.add(shape2);
         shape2.setStroke("green");
         shape2.setRightOf(shape1, shape2.getWidth());
-        Line line = new Line(shape1.getRightPort(), shape2.getLeftPort());
+        @NotNull Line line = new Line(shape1.getRightPort(), shape2.getLeftPort());
         line.setStroke("red");
         drawing.add(line);
-        String svg = drawing.getSVG(100,100);
+        @NotNull String svg = drawing.getSVG(100,100);
 
         softly.then(svg).contains("<line");
         softly.then(svg).contains("y1=\"50\"");

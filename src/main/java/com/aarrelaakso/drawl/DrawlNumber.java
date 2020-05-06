@@ -24,22 +24,22 @@ public class DrawlNumber implements Comparable<DrawlNumber>
     protected static final DrawlNumber HALF = DrawlNumber.valueOf(0.5);
     protected static final DrawlNumber ONE = DrawlNumber.valueOf(BigDecimal.ONE);
     protected static final DrawlNumber TWO = DrawlNumber.valueOf(2);
-    private static final FluentLogger logger;
-    protected static RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
+    private static final @NotNull FluentLogger logger;
+    protected static @NotNull RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
     protected static int SCALE_FOR_COMPARISONS = 32;
     protected static int SCALE_FOR_OPERATIONS = 64;
     /**
      * Zero.
      */
-    protected static DrawlNumber ZERO = new DrawlNumber("0");
+    protected static @NotNull DrawlNumber ZERO = new DrawlNumber("0");
     /**
      * Use this MathContext for comparisons.
      */
-    protected static MathContext mcComparisons = new MathContext(SCALE_FOR_COMPARISONS, ROUNDING_MODE);
+    protected static @NotNull MathContext mcComparisons = new MathContext(SCALE_FOR_COMPARISONS, ROUNDING_MODE);
     /**
      * Use this MathContext for other operations, such as multiplying and dividing.
      */
-    protected static MathContext mcOperations = new MathContext(SCALE_FOR_OPERATIONS, ROUNDING_MODE);
+    protected static @NotNull MathContext mcOperations = new MathContext(SCALE_FOR_OPERATIONS, ROUNDING_MODE);
 
     static
     {
@@ -73,7 +73,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * Creates a new instance
      */
     @Contract(pure = true)
-    protected DrawlNumber(Integer number)
+    protected DrawlNumber(@NotNull Integer number)
     {
         this.number = number.doubleValue();
     }
@@ -83,7 +83,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      *
      * @param s string representation
      */
-    private DrawlNumber(String s)
+    private DrawlNumber(@NotNull String s)
     {
         this.number = Double.valueOf(s);
     }
@@ -95,7 +95,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @return created number
      */
     @Contract("_ -> new")
-    protected static @NotNull DrawlNumber valueOf(String s)
+    protected static @NotNull DrawlNumber valueOf(@NotNull String s)
     {
         return new DrawlNumber(s);
     }
@@ -119,7 +119,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @return created number
      */
     @Contract("_ -> new")
-    protected static @NotNull DrawlNumber valueOf(BigDecimal number)
+    protected static @NotNull DrawlNumber valueOf(@NotNull BigDecimal number)
     {
         return new DrawlNumber(number.doubleValue());
     }
@@ -131,7 +131,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @return The new DrawlMath instance.
      */
     @Contract("_ -> new")
-    protected static @NotNull DrawlNumber valueOf(Integer number)
+    protected static @NotNull DrawlNumber valueOf(@NotNull Integer number)
     {
         return new DrawlNumber(number);
     }
@@ -143,7 +143,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @return True if bd is a mathematical integer,
      * false otherwise.
      */
-    protected static boolean isIntegerValue(BigDecimal bd)
+    protected static boolean isIntegerValue(@NotNull BigDecimal bd)
     {
         return bd.signum() == 0 || bd.scale() <= 0 || bd.stripTrailingZeros().scale() <= 0;
     }
@@ -165,7 +165,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      *
      * @return absolute value of this number
      */
-    protected DrawlNumber abs()
+    protected @NotNull DrawlNumber abs()
     {
         return DrawlNumber.valueOf(Math.abs(number));
     }
@@ -176,7 +176,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x other number
      * @return addition operation result
      */
-    protected DrawlNumber add(DrawlNumber x)
+    protected @NotNull DrawlNumber add(@NotNull DrawlNumber x)
     {
         return new DrawlNumber(number + x.number);
     }
@@ -187,7 +187,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x other number
      * @return addition operation result
      */
-    protected DrawlNumber add(double x)
+    protected @NotNull DrawlNumber add(double x)
     {
         return add(new DrawlNumber(String.valueOf(x)));
     }
@@ -201,7 +201,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param mc     the MathContext to use.
      * @return this + augend, rounded as necessary
      */
-    protected DrawlNumber add(@NotNull DrawlNumber augend, MathContext mc)
+    protected @NotNull DrawlNumber add(@NotNull DrawlNumber augend, MathContext mc)
     {
         return new DrawlNumber(this.number + augend.number);
     }
@@ -211,7 +211,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      *
      * @return this SisuBigDecimal converted to a BigDecimal.
      */
-    protected BigDecimal bigDecimalValue()
+    protected @NotNull BigDecimal bigDecimalValue()
     {
         return BigDecimal.valueOf(this.number);
     }
@@ -237,7 +237,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param val The other DrawlNumber to compare to this one.
      * @return -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than val.
      */
-    protected int compareToFuzzy(DrawlNumber val)
+    protected int compareToFuzzy(@NotNull DrawlNumber val)
     {
         return this.compareToFuzzy(val, mcComparisons);
     }
@@ -250,7 +250,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      *            (number of digits to the right of the decimal place) for this operation.
      * @return -1, 0, or 1 as this BigDecimal is numerically less than, equal to, or greater than val.
      */
-    protected int compareToFuzzy(DrawlNumber val, MathContext mc)
+    protected int compareToFuzzy(@NotNull DrawlNumber val, MathContext mc)
     {
         //Integer precision = mc.getPrecision();
         //DrawlNumber thisNumberRounded = DrawlNumber.valueOf(Precision.round(this.number, precision));
@@ -269,10 +269,10 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param precision This parameter is ignored. It is preserved for interface compatibility with SisuBigDecimal.
      * @return division operation result
      */
-    protected DrawlNumberRemainderPair divWithRemainder(DrawlNumber x, int precision)
+    protected @NotNull DrawlNumberRemainderPair divWithRemainder(@NotNull DrawlNumber x, int precision)
     {
-        Double div = this.number / x.number;
-        Double rem = this.number - (div * x.number);
+        @NotNull Double div = this.number / x.number;
+        @NotNull Double rem = this.number - (div * x.number);
         return DrawlNumberRemainderPair.valueOf(DrawlNumber.valueOf(div), DrawlNumber.valueOf(rem));
     }
 
@@ -283,7 +283,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param precision precision of the result (see the class level comment for details)
      * @return division operation result
      */
-    protected DrawlNumberRemainderPair divWithRemainder(double x, int precision)
+    protected @NotNull DrawlNumberRemainderPair divWithRemainder(double x, int precision)
     {
         return divWithRemainder(new DrawlNumber(String.valueOf(x)), precision);
     }
@@ -295,7 +295,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param mathContext Ignored. Retained for compatibility with SisuNumber interface.
      * @return This divided by val.
      */
-    protected DrawlNumber divide(DrawlNumber divisor, MathContext mathContext)
+    protected @NotNull DrawlNumber divide(@NotNull DrawlNumber divisor, MathContext mathContext)
     {
         return new DrawlNumber(this.number / divisor.number);
     }
@@ -307,13 +307,13 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param precision The precision (number of significant digits) of the result.
      * @return division operation result
      */
-    protected DrawlNumber divide(@NotNull DrawlNumber x, int precision)
+    protected @NotNull DrawlNumber divide(@NotNull DrawlNumber x, int precision)
     {
-        Double quotient = this.number / x.number;
+        @NotNull Double quotient = this.number / x.number;
         logger.atFine().log("Quotient is " + quotient);
         String quotientAsString = String.valueOf(quotient);
         // Remove leading zeros
-        String noZerosQuotient = quotientAsString.replaceFirst("^0+(?!$)", "");
+        @NotNull String noZerosQuotient = quotientAsString.replaceFirst("^0+(?!$)", "");
         logger.atFine().log("noZerosQuotient is " + noZerosQuotient);
         //String truncatedQuotient = noZerosQuotient.substring(0, Math.min(noZerosQuotient.length(), precision + 1));
         //logger.atFine().log("truncatedQuotient is " + truncatedQuotient);
@@ -321,10 +321,10 @@ public class DrawlNumber implements Comparable<DrawlNumber>
         {
             precision = precision + 1;
         }
-        Integer digitsBeforeDecimal = (int) Math.log10(quotient) + 1;
+        @NotNull Integer digitsBeforeDecimal = (int) Math.log10(quotient) + 1;
         //Integer digitsBeforeDecimal = (int)Math.log10(quotient);
         logger.atFine().log("Digits before decimal is " + digitsBeforeDecimal);
-        Integer requiredScale = precision - digitsBeforeDecimal;
+        @NotNull Integer requiredScale = precision - digitsBeforeDecimal;
         logger.atFine().log("Required scale (digits after decimal) is " + requiredScale);
         Double roundedQuotient = Precision.round(quotient, requiredScale);
         //Double roundedQuotient = Precision.round(quotient, precision);
@@ -339,7 +339,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param precision precision of the result (see the class level comment for details)
      * @return division operation result
      */
-    protected DrawlNumber divide(double x, int precision)
+    protected @NotNull DrawlNumber divide(double x, int precision)
     {
         return divide(new DrawlNumber(String.valueOf(x)), precision);
     }
@@ -361,7 +361,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x tested number
      * @return true if this number is equal to the other number
      */
-    protected boolean equals(DrawlNumber x)
+    protected boolean equals(@NotNull DrawlNumber x)
     {
         return number.compareTo(x.number) == 0;
     }
@@ -401,7 +401,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      *
      * @return this SisuBigDecimal converted to a Float.
      */
-    protected Float floatValue()
+    protected @NotNull Float floatValue()
     {
         return Float.valueOf(number.floatValue());
     }
@@ -441,7 +441,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @version 1.0, 04/28/2020
      * @since 04/28/2020
      */
-    protected boolean isEqualTo(DrawlNumber x)
+    protected boolean isEqualTo(@NotNull DrawlNumber x)
     {
         return number.compareTo(x.number) == 0;
     }
@@ -452,7 +452,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x tested number
      * @return true if this number is greater than the other one
      */
-    protected boolean isGreaterThan(DrawlNumber x)
+    protected boolean isGreaterThan(@NotNull DrawlNumber x)
     {
         return number.compareTo(x.number) == 1;
     }
@@ -474,7 +474,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x tested number
      * @return true if this number is greater or equal to the other one
      */
-    protected boolean isGreaterThanOrEqualTo(DrawlNumber x)
+    protected boolean isGreaterThanOrEqualTo(@NotNull DrawlNumber x)
     {
         return number.compareTo(x.number) >= 0;
     }
@@ -493,7 +493,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
     /**
      * Determines whether this DrawlNumber is an integer
      */
-    protected Boolean isIntegerValue()
+    protected @NotNull Boolean isIntegerValue()
     {
         return this.number.intValue() == this.number;
     }
@@ -504,7 +504,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x tested number
      * @return true if this number is less than the other one
      */
-    protected boolean isLessThan(DrawlNumber x)
+    protected boolean isLessThan(@NotNull DrawlNumber x)
     {
         return number.compareTo(x.number) < 0;
     }
@@ -526,7 +526,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x tested number
      * @return true if this number is less than the other one
      */
-    protected boolean isLessThanOrEqualTo(DrawlNumber x)
+    protected boolean isLessThanOrEqualTo(@NotNull DrawlNumber x)
     {
         return number.compareTo(x.number) <= 0;
     }
@@ -551,7 +551,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @version 1.0, 04/28/2020
      * @since 1.0, 04/28/2020
      */
-    protected Boolean isNotEqualTo(DrawlNumber val)
+    protected @NotNull Boolean isNotEqualTo(@NotNull DrawlNumber val)
     {
         return !this.equals(val);
     }
@@ -562,7 +562,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x other number
      * @return addition multiplication result
      */
-    protected DrawlNumber multiply(DrawlNumber x)
+    protected @NotNull DrawlNumber multiply(@NotNull DrawlNumber x)
     {
         return new DrawlNumber(this.number * x.number);
     }
@@ -575,7 +575,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @return this * multiplicand, rounded as necessary.
      * @throws ArithmeticException if the result is inexact but the rounding mode is UNNECESSARY.
      */
-    protected DrawlNumber multiply(DrawlNumber multiplicand, MathContext mc)
+    protected @NotNull DrawlNumber multiply(@NotNull DrawlNumber multiplicand, MathContext mc)
     {
         return new DrawlNumber(this.number * multiplicand.number);
     }
@@ -586,7 +586,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x other number
      * @return addition multiplication result
      */
-    protected DrawlNumber multiply(double x)
+    protected @NotNull DrawlNumber multiply(double x)
     {
         return multiply(new DrawlNumber(String.valueOf(x)));
     }
@@ -596,7 +596,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      *
      * @return negative of this number
      */
-    protected DrawlNumber negate()
+    protected @NotNull DrawlNumber negate()
     {
         return DrawlNumber.valueOf(-this.number);
     }
@@ -608,7 +608,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param precision Ignored. Provided for compatibility with SisuBigDecimal interface.
      * @return power operation result
      */
-    protected DrawlNumber pow(int n, int precision)
+    protected @NotNull DrawlNumber pow(int n, int precision)
     {
         return DrawlNumber.valueOf(Math.pow(this.number, n));
     }
@@ -619,7 +619,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param mc Ignored. Provided for interface compatibility with SisuBigDecimal.
      * @return A new instance of SisuBigDecimal that has the same value as this one rounded.
      */
-    protected DrawlNumber round(MathContext mc)
+    protected @NotNull DrawlNumber round(MathContext mc)
     {
         return DrawlNumber.valueOf(Math.round(this.number));
     }
@@ -630,7 +630,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param places How many decimal places to preserve in the new instance
      * @return
      */
-    protected DrawlNumber round(int places)
+    protected @NotNull DrawlNumber round(int places)
     {
         if (places < 0) throw new IllegalArgumentException();
 
@@ -645,7 +645,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x other number
      * @return addition subtraction result
      */
-    protected DrawlNumber subtract(DrawlNumber x)
+    protected @NotNull DrawlNumber subtract(@NotNull DrawlNumber x)
     {
         return new DrawlNumber(number - x.number);
     }
@@ -660,7 +660,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @return this - subtrahend, rounded as necessary
      * @throws ArithmeticException if the result is inexact but the rounding mode is UNNECESSARY.
      */
-    protected DrawlNumber subtract(DrawlNumber subtrahend, MathContext mc)
+    protected @NotNull DrawlNumber subtract(@NotNull DrawlNumber subtrahend, MathContext mc)
     {
         return new DrawlNumber(this.number - subtrahend.number);
     }
@@ -671,7 +671,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      * @param x other number
      * @return addition subtraction result
      */
-    protected DrawlNumber subtract(double x)
+    protected @NotNull DrawlNumber subtract(double x)
     {
         return subtract(new DrawlNumber(String.valueOf(x)));
     }
@@ -696,10 +696,10 @@ public class DrawlNumber implements Comparable<DrawlNumber>
      *
      * @return number in it's string representation
      */
-    protected String toFullString()
+    protected @NotNull String toFullString()
     {
         //Option2, use decimalFormat.
-        DecimalFormat df = new DecimalFormat("0");
+        @NotNull DecimalFormat df = new DecimalFormat("0");
         df.setMaximumFractionDigits(32);
         return df.format(this.number);
     }
@@ -720,7 +720,7 @@ public class DrawlNumber implements Comparable<DrawlNumber>
     }
 
     @Override
-    public String toString()
+    public @NotNull String toString()
     {
         return "DrawlNumber[" + this.toFullString() + "]";
     }

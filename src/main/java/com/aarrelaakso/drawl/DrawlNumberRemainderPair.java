@@ -13,6 +13,7 @@ package com.aarrelaakso.drawl;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Pair of the arbitrary number and remainder.
@@ -45,9 +46,9 @@ public final class DrawlNumberRemainderPair
      * @param remainder remainder
      * @return number remainder pair
      */
-    public static DrawlNumberRemainderPair valueOf(DrawlNumber number, DrawlNumber remainder)
+    public static @NotNull DrawlNumberRemainderPair valueOf(DrawlNumber number, DrawlNumber remainder)
     {
-        DrawlNumberRemainderPair res = new DrawlNumberRemainderPair();
+        @NotNull DrawlNumberRemainderPair res = new DrawlNumberRemainderPair();
         res.number = number;
         res.remainder = remainder;
         res.guardInvariants();

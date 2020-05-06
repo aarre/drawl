@@ -31,10 +31,13 @@ import java.util.HashSet;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
+/**
+ * Represents drawings.
+ */
 public class Drawing
 {
 
-    private static final FluentLogger logger;
+    private static final @NotNull FluentLogger logger;
 
     static
     {
@@ -42,14 +45,14 @@ public class Drawing
 
     }
 
-    private final HashSet<Shape> contents;
+    private final @NotNull HashSet<Shape> contents;
     private DrawlNumber explicitHeight;
     private DrawlNumber explicitWidth;
 
     public Drawing()
     {
         contents = new HashSet<>();
-        LoggingConfig loggingConfig = new LoggingConfig();
+        @NotNull LoggingConfig loggingConfig = new LoggingConfig();
     }
 
     /**
@@ -133,7 +136,7 @@ public class Drawing
     public DrawlNumber getExplicitToImplicitRatio()
     {
         DrawlNumber explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
-        DrawlNumber explicitWidthPerImplicitWidth = this.getExplicitWidthPerImplicitWidth();
+        @NotNull DrawlNumber explicitWidthPerImplicitWidth = this.getExplicitWidthPerImplicitWidth();
         if (explicitHeightPerImplicitHeight.isLessThanOrEqualTo(explicitWidthPerImplicitWidth))
         {
             return explicitHeightPerImplicitHeight;
@@ -260,7 +263,7 @@ public class Drawing
     private DrawlNumber getImplicitXMaximum()
     {
         DrawlNumber xMaximum = DrawlNumber.valueOf(Double.MIN_VALUE);
-        for (Shape content : this.contents)
+        for (@NotNull Shape content : this.contents)
         {
             DrawlNumber xMaximumCurrent = content.getImplicitXMaximum();
             if (xMaximumCurrent.isGreaterThan(xMaximum))
@@ -284,7 +287,7 @@ public class Drawing
     private DrawlNumber getImplicitXMinimum()
     {
         DrawlNumber xMinimum = DrawlNumber.valueOf(Double.MAX_VALUE);
-        for (Shape content : this.contents)
+        for (@NotNull Shape content : this.contents)
         {
             DrawlNumber xMinimumCurrent = content.getImplicitXMinimum();
             if (xMinimumCurrent.isLessThan(xMinimum))
@@ -308,7 +311,7 @@ public class Drawing
     private DrawlNumber getImplicitYMaximum()
     {
         DrawlNumber yMaximum = DrawlNumber.valueOf(Double.MIN_VALUE);
-        for (Shape content : this.contents)
+        for (@NotNull Shape content : this.contents)
         {
             DrawlNumber yMaximumCurrent = content.getImplicitYPositionTop();
             if (yMaximumCurrent.isGreaterThan(yMaximum))
@@ -332,7 +335,7 @@ public class Drawing
     private DrawlNumber getImplicitYMinimum()
     {
         DrawlNumber yMinimum = DrawlNumber.valueOf(Double.MAX_VALUE);
-        for (Shape content : this.contents)
+        for (@NotNull Shape content : this.contents)
         {
             DrawlNumber yMinimumCurrent = content.getImplicitYPositionBottom();
             if (yMinimumCurrent.isLessThan(yMinimum))
@@ -356,7 +359,7 @@ public class Drawing
      *                      the type is Float to match the SVG spec for numeric precision.
      * @return A string of valid SVG that depicts the drawing within the bounds of drawingWidth and drawingHeight.
      */
-    public String getSVG(Float drawingWidth, Float drawingHeight)
+    public @NotNull String getSVG(Float drawingWidth, Float drawingHeight)
     {
         this.setExplicitDimensions(drawingWidth, drawingHeight);
         return this.getSVG();
@@ -369,7 +372,7 @@ public class Drawing
      * @param drawingHeight The desired height of the output; the type is Integer to allow for common use cases.
      * @return A string of valid SVG that depicts the drawing within the bounds of drawingWidth and drawingHeight.
      */
-    public String getSVG(Integer drawingWidth, Integer drawingHeight)
+    public @NotNull String getSVG(@NotNull Integer drawingWidth, @NotNull Integer drawingHeight)
     {
         this.setExplicitDimensions(drawingWidth.floatValue(), drawingHeight.floatValue());
         return this.getSVG();
@@ -385,24 +388,24 @@ public class Drawing
     public @NotNull String getSVG()
     {
 
-        StringBuilder svgBuilder = new StringBuilder("<?xml version=\"1.0\" standalone=\"no\"?>");
+        @NotNull StringBuilder svgBuilder = new StringBuilder("<?xml version=\"1.0\" standalone=\"no\"?>");
         //noinspection SpellCheckingInspection
         svgBuilder.append("<svg xmlns=\"http://www.w3.org/2000/svg\"");
 
-        DrawlNumber bdWidth = this.getExplicitWidth();
+        @Nullable DrawlNumber bdWidth = this.getExplicitWidth();
         if (bdWidth != null)
         {
             svgBuilder.append(" width=\"");
-            String width = SVG.toString(this.getExplicitWidth());
+            @NotNull String width = SVG.toString(this.getExplicitWidth());
             svgBuilder.append(width);
             svgBuilder.append("\"");
         }
 
-        DrawlNumber bdHeight = this.getExplicitHeight();
+        @Nullable DrawlNumber bdHeight = this.getExplicitHeight();
         if (bdHeight != null)
         {
             svgBuilder.append(" height=\"");
-            String height = SVG.toString(this.getExplicitHeight());
+            @NotNull String height = SVG.toString(this.getExplicitHeight());
             svgBuilder.append(height);
             svgBuilder.append("\"");
         }
@@ -411,7 +414,7 @@ public class Drawing
 
         if (this.contents != null)
         {
-            for (Shape content : this.contents)
+            for (@NotNull Shape content : this.contents)
             {
                 svgBuilder.append(content.getSVG());
             }
@@ -523,7 +526,7 @@ public class Drawing
      * @param explicitWidthOfDrawing  The explicit width of the Drawing.
      * @param explicitHeightOfDrawing The explicit height of the Drawing.
      */
-    public void setExplicitDimensions(Integer explicitWidthOfDrawing, Integer explicitHeightOfDrawing)
+    public void setExplicitDimensions(@NotNull Integer explicitWidthOfDrawing, @NotNull Integer explicitHeightOfDrawing)
     {
         this.setExplicitDimensions(explicitWidthOfDrawing.floatValue(), explicitHeightOfDrawing.floatValue());
     }
@@ -550,7 +553,7 @@ public class Drawing
             this.setExplicitWidthInternal(this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio(),
                     DrawlNumber.mcOperations));
         }
-        for (Shape shape : this.contents)
+        for (@NotNull Shape shape : this.contents)
         {
             this.updateShape(shape);
         }
@@ -605,7 +608,7 @@ public class Drawing
             this.setExplicitHeightInternal(this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio(),
                     DrawlNumber.mcOperations));
         }
-        for (Shape shape : this.contents)
+        for (@NotNull Shape shape : this.contents)
         {
             this.updateShape(shape);
         }
@@ -661,7 +664,7 @@ public class Drawing
     private void updateExplicitHeightOfShape(@NotNull Shape shape)
     {
         // Update explicit height of shape
-        DrawlNumber implicitHeightOfShape = shape.getImplicitHeight();
+        @Nullable DrawlNumber implicitHeightOfShape = shape.getImplicitHeight();
         DrawlNumber explicitHeightOfShape = implicitHeightOfShape.multiply(this.getExplicitToImplicitRatio(),
                 DrawlNumber.mcOperations);
         shape.setExplicitHeight(explicitHeightOfShape);
@@ -683,7 +686,7 @@ public class Drawing
         DrawlNumber implicitXPositionOfShape = shape.getImplicitXPositionCenter();
         // The fudge factor is to shift the diagram right so that all x coordinates are positive in explicit coordinate
         // space
-        DrawlNumber fudgeFactorX = this.getImplicitXMinimum();
+        @NotNull DrawlNumber fudgeFactorX = this.getImplicitXMinimum();
         DrawlNumber fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX,
                 DrawlNumber.mcOperations);
         DrawlNumber explicitXPositionOfShape = fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
@@ -694,7 +697,7 @@ public class Drawing
                 DrawlNumber.mcOperations);
         if (this.isExplicitSet())
         {
-            DrawlNumber explicitWidthOfDrawing = this.getExplicitWidth();
+            @Nullable DrawlNumber explicitWidthOfDrawing = this.getExplicitWidth();
             assert explicitWidthOfDrawing != null;
             DrawlNumber explicitHorizontalWhitespace = explicitWidthOfDrawing.subtract(explicitWidthOfContents,
                     DrawlNumber.mcOperations);
@@ -711,7 +714,7 @@ public class Drawing
         // Update the explicit y position of the Shape
         DrawlNumber implicitYPositionOfShape = shape.getImplicitYPositionCenter();
         // The fudge factor is to shift the diagram down so that all y coordinates are positive in explicit coordinate space
-        DrawlNumber fudgeFactorY = this.getImplicitYMaximum();
+        @NotNull DrawlNumber fudgeFactorY = this.getImplicitYMaximum();
         DrawlNumber fudgedImplicitYPositionOfShape = implicitYPositionOfShape.subtract(fudgeFactorY);
         fudgedImplicitYPositionOfShape = fudgedImplicitYPositionOfShape.negate();
         DrawlNumber explicitToImplicitRatio = this.getExplicitToImplicitRatio();
@@ -722,7 +725,7 @@ public class Drawing
                 DrawlNumber.mcOperations);
         if (this.isExplicitSet())
         {
-            DrawlNumber explicitHeightOfDrawing = this.getExplicitHeight();
+            @Nullable DrawlNumber explicitHeightOfDrawing = this.getExplicitHeight();
             DrawlNumber explicitVerticalWhitespace = explicitHeightOfDrawing.subtract(explicitHeightOfContents,
                     DrawlNumber.mcOperations);
             DrawlNumber explicitVerticalWhitespaceBelow = explicitVerticalWhitespace.divide(DrawlNumber.TWO,
@@ -739,10 +742,10 @@ public class Drawing
      * @param filename The name of the file to which to write.
      * @throws IOException If there is a problem writing to the file.
      */
-    public void writeToFile(String filename, Integer width, Integer height) throws IOException
+    public void writeToFile(@NotNull String filename, @NotNull Integer width, @NotNull Integer height) throws IOException
     {
-        String svg = this.getSVG(width, height);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename)))
+        @NotNull String svg = this.getSVG(width, height);
+        try (@NotNull BufferedWriter writer = new BufferedWriter(new FileWriter(filename)))
         {
             writer.write(svg);
         }

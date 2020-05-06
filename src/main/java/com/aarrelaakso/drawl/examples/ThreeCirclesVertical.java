@@ -12,19 +12,23 @@ package com.aarrelaakso.drawl.examples;
 
 import com.aarrelaakso.drawl.Circle;
 import com.aarrelaakso.drawl.Drawing;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
+/**
+ * Example of using Drawl to draw three adjacent circles oriented vertically.
+ */
 public class ThreeCirclesVertical
 {
     public static void main(String[] args) throws IOException {
-        Drawing drawing = new Drawing();
-        Circle circle1 = new Circle();
+        @NotNull Drawing drawing = new Drawing();
+        @NotNull Circle circle1 = new Circle();
         drawing.add(circle1);
-        Circle circle2 = new Circle();
+        @NotNull Circle circle2 = new Circle();
         drawing.add(circle2);
         circle2.setAbove(circle1);
-        Circle circle3 = new Circle();
+        @NotNull Circle circle3 = new Circle();
         drawing.add(circle3);
         circle3.setAbove(circle2);
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg", 70, 200);

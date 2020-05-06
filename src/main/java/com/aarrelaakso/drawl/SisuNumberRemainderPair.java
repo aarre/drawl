@@ -13,6 +13,7 @@ package com.aarrelaakso.drawl;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Pair of the arbitrary number and remainder.
@@ -45,9 +46,9 @@ public final class SisuNumberRemainderPair
      * @param remainder remainder
      * @return number remainder pair
      */
-    public static SisuNumberRemainderPair valueOf(SisuNumber number, SisuNumber remainder)
+    public static @NotNull SisuNumberRemainderPair valueOf(SisuNumber number, SisuNumber remainder)
     {
-        SisuNumberRemainderPair res = new SisuNumberRemainderPair();
+        @NotNull SisuNumberRemainderPair res = new SisuNumberRemainderPair();
         res.number = number;
         res.remainder = remainder;
         res.guardInvariants();

@@ -13,18 +13,23 @@ package com.aarrelaakso.drawl.examples;
 import com.aarrelaakso.drawl.Circle;
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Rectangle;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 
+/**
+ * Example of using Drawl to draw a series of shaded rectangles.
+ */
 public class ShadedRectangles
 {
     public static void main(String[] args) throws IOException
     {
         for (int k = 0; k < 20; k++)
         {
-            Drawing drawing = new Drawing();
-            Rectangle currentRectangle = null;
-            Rectangle lastRectangle = null;
+            @NotNull Drawing drawing = new Drawing();
+            @Nullable Rectangle currentRectangle = null;
+            @Nullable Rectangle lastRectangle = null;
             int MAXIMUM_RECTANGLES = 1000;
 
             for (int i = 0; i < MAXIMUM_RECTANGLES; i = i + 1)

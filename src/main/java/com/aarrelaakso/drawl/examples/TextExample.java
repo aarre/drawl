@@ -12,14 +12,18 @@ package com.aarrelaakso.drawl.examples;
 
 import com.aarrelaakso.drawl.Text;
 import com.aarrelaakso.drawl.Drawing;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
+/**
+ * Example of using Drawl to draw text.
+ */
 public class TextExample
 {
     public static void main(String[] args) throws IOException {
-        Drawing drawing = new Drawing();
-        Text text = new Text("Drawl");
+        @NotNull Drawing drawing = new Drawing();
+        @NotNull Text text = new Text("Drawl");
         drawing.add(text);
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/TextExample.svg", 200, 100);
     }
