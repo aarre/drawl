@@ -1,0 +1,11 @@
+<map id="com.aarrelaakso.drawl.SisuNumber.valueOf" name="com.aarrelaakso.drawl.SisuNumber.valueOf">
+<area shape="rect" id="node2" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#ab0fbcc012471bbf5dc73166c9e27c66c" title="Returns absolute value of this number. " alt="" coords="253,5,435,47"/>
+<area shape="rect" id="node3" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#ac07c3a93d7826a5bd68740460adc9426" title="Compare this SisuNumber to another fuzzily. " alt="" coords="500,257,683,299"/>
+<area shape="rect" id="node4" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#ae99967be90c7a0a7c0233556f7df30ef" title="Returns whether this number is greater or equal to the other number. " alt="" coords="236,123,452,164"/>
+<area shape="rect" id="node5" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#ad1ea9f6dcbf997db828ee02b7c0aef94" title="Returns whether this number is less or equal to the other number. " alt="" coords="243,188,445,229"/>
+<area shape="rect" id="node6" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#afd65143333e3b7bbaa54f842e2cb9408" title="Returns whether this number is less than the other number. " alt="" coords="253,253,435,295"/>
+<area shape="rect" id="node7" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#a2386c00d733c84ee7c97ae11d7d05ea8" title="Negates this number. " alt="" coords="253,319,435,360"/>
+<area shape="rect" id="node8" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#a5946c1e3dcf68a8611e8e7957fe896e0" title="Returns this number powered by n. " alt="" coords="253,384,435,425"/>
+<area shape="rect" id="node9" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#a8e3e3d0dc152b97f0d2c23515e870b52" title="Create a new instance that has same value as this one rounded. " alt="" coords="253,449,435,491"/>
+<area shape="rect" id="node10" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#ad086a06534f7e4d9f4b61a03f0455c63" title="Create a new instance with a set scale. " alt="" coords="253,539,435,580"/>
+</map>

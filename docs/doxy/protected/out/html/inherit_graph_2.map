@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$de/dfb/classcom_1_1aarrelaakso_1_1drawl_1_1examples_1_1_text_example.html" title="com.aarrelaakso.drawl.examples.\lTextExample" alt="" coords="5,5,223,47"/>
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="145,5,336,47"/>
+<area shape="rect" id="node3" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html" title="Class for mathematical operations with BigDecimal values that are not provided by the BigDecimal clas..." alt="" coords="149,71,332,112"/>
 </map>

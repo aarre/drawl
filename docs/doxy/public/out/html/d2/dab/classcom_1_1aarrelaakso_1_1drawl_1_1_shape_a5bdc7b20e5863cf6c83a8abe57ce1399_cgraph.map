@@ -1,0 +1,16 @@
+<map id="com.aarrelaakso.drawl.Shape.setRightOf" name="com.aarrelaakso.drawl.Shape.setRightOf">
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a3fd17115c85e2bfc9e881838a3f7d735" title="Creates new instance. " alt="" coords="566,253,757,295"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ae1820c7d674c6c022b72cc086005131f" title="Get the implicit maximum (rightmost) x&#45;position of this Shape. " alt="" coords="273,71,489,112"/>
+<area shape="rect" id="node5" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#aac6b91a4d4c7bbf99acd5472d39c071e" title="Performs addition operation. " alt="" coords="566,5,757,47"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac796f934debb4cf92d285f387422deb6" title="com.aarrelaakso.drawl.Shape.get\lImplicitHalfWidth" alt="" coords="553,136,769,177"/>
+<area shape="rect" id="node9" href="$d9/df3/classcom_1_1aarrelaakso_1_1drawl_1_1_measure.html#a847bbfcc708d3ff19c89c5303cf69543" title="Converts this Measure to a DrawlNumber. " alt="" coords="269,239,492,280"/>
+<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a58226399cee0d166f45e807869af0bc8" title="com.aarrelaakso.drawl.Shape.set\lImplicitXPositionCenter" alt="" coords="273,548,489,589"/>
+<area shape="rect" id="node12" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac49fa20747ea798a3b56c3ea99df2d8f" title="Set the implicit y position of this Shape. " alt="" coords="273,393,489,435"/>
+<area shape="rect" id="node13" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0549739ee3201ae16091acce4ee6a5ac" title="Get the implicit y position of the center of this Shape. " alt="" coords="273,459,489,500"/>
+<area shape="rect" id="node14" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a947c00be2ea3d0e732814b8ca377df45" title="com.aarrelaakso.drawl.Shape.set\lExplicitYPositionCenter" alt="" coords="273,304,489,345"/>
+<area shape="rect" id="node15" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a602cb73f783f2856fa81e82bf7792263" title="Gets the explicit y&#45;position of the center of this Shape. " alt="" coords="273,613,489,655"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ac7a69f5cb9dd954f5054a3bebc35af41" title="Get the implicit x position of the center of this Shape. " alt="" coords="553,71,769,112"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af7ebce58a8dbba0cbe372040b74d7fca" title="Get the implicit width of this Shape. " alt="" coords="831,103,1047,144"/>
+<area shape="rect" id="node8" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a42d9f576373ff039f2ee03ef9bb9d079" title="Divides with DrawlNumber by another. " alt="" coords="843,168,1034,209"/>
+<area shape="rect" id="node11" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26" title="Returns a Text object that belongs to this Shape, if there is one. " alt="" coords="540,478,783,505"/>
+</map>

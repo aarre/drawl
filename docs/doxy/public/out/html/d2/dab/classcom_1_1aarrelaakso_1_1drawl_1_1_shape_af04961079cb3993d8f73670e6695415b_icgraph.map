@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitYPositionBottom" name="com.aarrelaakso.drawl.Shape.getImplicitYPositionBottom">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aba14efe9a16c0808580963c66b171082" title="Returns a Point object representing this Shape&#39;s bottom port. " alt="" coords="269,5,485,47"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa0dd6332c22877c42b8c3863e5cc579e" title="Set this circle below another circle. " alt="" coords="269,71,485,112"/>
+</map>

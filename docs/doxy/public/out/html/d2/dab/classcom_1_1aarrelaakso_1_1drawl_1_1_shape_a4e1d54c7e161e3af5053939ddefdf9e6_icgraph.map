@@ -1,4 +1,6 @@
 <map id="com.aarrelaakso.drawl.Shape.getStroke" name="com.aarrelaakso.drawl.Shape.getStroke">
 <area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="282,5,523,32"/>
-<area shape="rect" id="node3" href="$d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="269,56,536,83"/>
+<area shape="rect" id="node3" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a54dd70515b691c8afa88f980e10698" title="com.aarrelaakso.drawl.Line.getSVG" alt="" coords="287,56,518,83"/>
+<area shape="rect" id="node4" href="$d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="269,107,536,133"/>
+<area shape="rect" id="node5" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html#ab1a6091b007ea4da41de26bc8c6ea021" title="Gets the SVG associated with this Text object. " alt="" coords="286,157,519,184"/>
 </map>

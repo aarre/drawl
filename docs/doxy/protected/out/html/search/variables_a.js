@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['remainder',['remainder',['../d9/dd6/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal_remainder_pair.html#aa67b06e15115b1930dae9de0aa8e039f',1,'com::aarrelaakso::drawl::SisuBigDecimalRemainderPair']]],
-  ['rounding_5fmode',['ROUNDING_MODE',['../d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#afcdca984f764db570786fff2442142cb',1,'com::aarrelaakso::drawl::SisuBigDecimal']]]
+  ['point1explicit',['point1Explicit',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a346544836f1f00ee8b9601a8cf036b36',1,'com::aarrelaakso::drawl::Line']]],
+  ['point1implicit',['point1Implicit',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a48220286707ae05387f9c99d9e08784c',1,'com::aarrelaakso::drawl::Line']]],
+  ['point2explicit',['point2Explicit',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6dac91f727b34d1d798892ed6b6c2475',1,'com::aarrelaakso::drawl::Line']]],
+  ['point2implicit',['point2Implicit',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a055d1e743c66cc808f108664b38d7de2',1,'com::aarrelaakso::drawl::Line']]]
 ];

@@ -1,0 +1,8 @@
+<map id="com.aarrelaakso.drawl.DrawlNumber.isLessThan" name="com.aarrelaakso.drawl.DrawlNumber.isLessThan">
+<area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a833e9f69bd01b9640e34286ab53c0c90" title="Get the implicit total width of all contents in this Drawing. " alt="" coords="244,5,471,47"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a1f6e1c7cc19b21dc114ce1fcaa4c0843" title="Sets the explicit dimensions of this Drawing. " alt="" coords="244,71,471,112"/>
+<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ae2e4d5bbd915221f90dc802e22630809" title="Returns whether this number is less than the other number. " alt="" coords="262,136,453,177"/>
+<area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7bb5f35f3f77c0d5f319f5898aa203d8" title="Set the explicit width of this Drawing. " alt="" coords="533,5,759,47"/>
+<area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a7977c75a7448a5f93082e30753ce23c3" title="Get the SVG for this Drawing. " alt="" coords="519,75,773,102"/>
+<area shape="rect" id="node6" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aaba87ad07d1574f91ea08f5022caf507" title="Set the explicit dimensions of this Drawing. " alt="" coords="533,127,759,168"/>
+</map>

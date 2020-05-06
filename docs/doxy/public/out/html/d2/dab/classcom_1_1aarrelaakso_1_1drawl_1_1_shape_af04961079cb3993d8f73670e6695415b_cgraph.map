@@ -1,0 +1,7 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitYPositionBottom" name="com.aarrelaakso.drawl.Shape.getImplicitYPositionBottom">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0549739ee3201ae16091acce4ee6a5ac" title="Get the implicit y position of the center of this Shape. " alt="" coords="269,5,485,47"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#af22316798b9d93dc113c6e6769c6ec7f" title="Performs subtraction operation. " alt="" coords="282,71,473,112"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aa476150489a3a5b634a15a1c03e045d7" title="com.aarrelaakso.drawl.Shape.get\lImplicitHalfHeight" alt="" coords="269,136,485,177"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a41cc097acddea53404b62a812ef37276" title="Get the implicit height of this Shape. " alt="" coords="533,103,749,144"/>
+<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a42d9f576373ff039f2ee03ef9bb9d079" title="Divides with DrawlNumber by another. " alt="" coords="546,168,737,209"/>
+</map>

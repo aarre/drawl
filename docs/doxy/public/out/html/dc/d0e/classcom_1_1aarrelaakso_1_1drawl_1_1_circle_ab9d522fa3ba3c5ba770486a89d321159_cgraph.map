@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.Circle.setExplicitHeight" name="com.aarrelaakso.drawl.Circle.setExplicitHeight">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ab488257bdd425addecb822c45ed659ba" title="Set the radius to a fixed value. " alt="" coords="268,5,481,47"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26" title="Returns a Text object that belongs to this Shape, if there is one. " alt="" coords="531,113,773,139"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ad3881ca048d83262948961f9f0ab23e3" title="Set the height of this Shape to an explicit value. " alt="" coords="267,147,483,188"/>
+</map>

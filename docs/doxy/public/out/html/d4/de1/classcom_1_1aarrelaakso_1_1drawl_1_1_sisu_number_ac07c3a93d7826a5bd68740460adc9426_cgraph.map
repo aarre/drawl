@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.SisuNumber.compareToFuzzy" name="com.aarrelaakso.drawl.SisuNumber.compareToFuzzy">
+<area shape="rect" id="node2" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#a2fa3f605463c6f5cb21a08c93289cab3" title="Creates new instance. " alt="" coords="467,5,649,47"/>
+<area shape="rect" id="node3" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#a8e3e3d0dc152b97f0d2c23515e870b52" title="Create a new instance that has same value as this one rounded. " alt="" coords="236,35,419,76"/>
+<area shape="rect" id="node4" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#ac181aa40a51f66d059e9c612e7c67ff3" title="Compares this BigDecimal with the specified BigDecimal. " alt="" coords="236,100,419,141"/>
+</map>

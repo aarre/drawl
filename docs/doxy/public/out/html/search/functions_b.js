@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['negate',['negate',['../d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html#a2d82668c01a8ec2b0b79c2a6cd63253c',1,'com::aarrelaakso::drawl::SisuBigDecimal']]]
+  ['negate',['negate',['../d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a1093e80c570f85142255528e4d31820d',1,'com.aarrelaakso.drawl.DrawlNumber.negate()'],['../d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#a2386c00d733c84ee7c97ae11d7d05ea8',1,'com.aarrelaakso.drawl.SisuNumber.negate()']]]
 ];

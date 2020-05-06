@@ -1,3 +1,4 @@
 <map id="com.aarrelaakso.drawl.Shape" name="com.aarrelaakso.drawl.Shape">
-<area shape="rect" id="node2" href="$d7/d14/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_big_decimal.html" title="Class for mathematical operations with BigDecimal values that are not provided by the BigDecimal clas..." alt="" coords="280,118,463,159"/>
+<area shape="rect" id="node7" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html" title="com.aarrelaakso.drawl.Text" alt="" coords="433,437,616,464"/>
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="327,118,517,159"/>
 </map>

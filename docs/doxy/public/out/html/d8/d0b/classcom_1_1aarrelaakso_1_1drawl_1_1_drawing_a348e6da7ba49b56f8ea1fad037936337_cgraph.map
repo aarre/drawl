@@ -1,0 +1,6 @@
+<map id="com.aarrelaakso.drawl.Drawing.getExplicitHeight" name="com.aarrelaakso.drawl.Drawing.getExplicitHeight">
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#aab6723b4f59ce1f72f50b6104a598c13" title="Indicates whether another value is not equal to this SisuBigDecimal. " alt="" coords="298,5,489,47"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#aa3154a900c39b56463f485f7b8b3bb5a" title="Get the explicit width of this Drawing. " alt="" coords="280,71,507,112"/>
+<area shape="rect" id="node5" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a42d9f576373ff039f2ee03ef9bb9d079" title="Divides with DrawlNumber by another. " alt="" coords="298,136,489,177"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a0b7c86770556d17d8de1b59b01d70d4e" title="Returns whether this number is equal with the other number. " alt="" coords="555,5,745,47"/>
+</map>
