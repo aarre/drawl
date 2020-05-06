@@ -10,18 +10,20 @@
 
 package com.aarrelaakso.drawl;
 
+import org.assertj.core.api.BDDSoftAssertions;
+import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.assertj.core.api.BDDAssertions.then;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Tests the protected API of Shapes.
  */
-@DisplayName("Shapes - Private API")
-public abstract class ShapeTestProtected
-{
+@ExtendWith(SoftAssertionsExtension.class)
+@DisplayName("Shapes - Protected API")
+public abstract class ShapeTestProtected {
 
     Shape shape1;
     Shape shape2;
@@ -34,28 +36,24 @@ public abstract class ShapeTestProtected
     @Nested
     @DisplayName("XPosition")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class XPosition
-    {
+    class XPosition {
         /**
          * Tests the explicit x positions of Shapes
          */
         @Nested
         @DisplayName("Explicit")
         @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-        class Explicit
-        {
+        class Explicit {
             @Test
             @DisplayName("When a Shape is created, then it has an explicit center x position")
-            void whenAShapeIsCreatedThenItHasAnExplicitCenterXPosition()
-            {
+            void whenAShapeIsCreatedThenItHasAnExplicitCenterXPosition() {
                 DrawlNumber explicitXPositionCenter = shape1.getExplicitXPositionCenter();
                 then(explicitXPositionCenter).isEqualByComparingTo(DrawlNumber.ZERO);
             }
 
             @Test
             @DisplayName("When a Shape has explicit dimensions, then it has an explicit left x position")
-            void whenAShapeIsCreatedThenItHasAnExplicitLeftXPosition()
-            {
+            void whenAShapeIsCreatedThenItHasAnExplicitLeftXPosition() {
                 shape1.setExplicitWidth(DrawlNumber.valueOf(100));
                 DrawlNumber explicitXPositionLeft = shape1.getExplicitXPositionLeft();
                 then(explicitXPositionLeft).isEqualByComparingTo(DrawlNumber.valueOf(-50));
@@ -68,28 +66,24 @@ public abstract class ShapeTestProtected
         @Nested
         @DisplayName("Implicit")
         @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-        class Implicit
-        {
+        class Implicit {
             @Test
             @DisplayName("When a Shape is created, then it has an implicit center x position")
-            void whenAShapeIsCreatedThenItHasAnImplicitCenterXPosition()
-            {
+            void whenAShapeIsCreatedThenItHasAnImplicitCenterXPosition() {
                 DrawlNumber implicitXPositionCenter = shape1.getImplicitXPositionCenter();
                 then(implicitXPositionCenter).isEqualByComparingTo(DrawlNumber.ZERO);
             }
 
             @Test
             @DisplayName("When a Shape is created, then it has an implicit left x position")
-            void whenAShapeIsCreatedThenItHasAnImplicitLeftXPosition()
-            {
+            void whenAShapeIsCreatedThenItHasAnImplicitLeftXPosition() {
                 DrawlNumber implicitXPositionLeft = shape1.getImplicitXPositionLeft();
                 then(implicitXPositionLeft).isEqualByComparingTo(DrawlNumber.valueOf(-0.5));
             }
 
             @Test
             @DisplayName("When you set a Shape leftOf a default Shape, its implicit x-coordinate is -1")
-            void whenYouSetAShapeLeftOfADefaultShapeItsImplicitXCoordinateIsNeg1()
-            {
+            void whenYouSetAShapeLeftOfADefaultShapeItsImplicitXCoordinateIsNeg1() {
                 DrawlNumber x10 = shape1.getImplicitXPositionCenter();
                 DrawlNumber x20 = shape2.getImplicitXPositionCenter();
                 shape1.setLeftOf(shape2);
@@ -103,8 +97,7 @@ public abstract class ShapeTestProtected
 
             @Test
             @DisplayName("When you set a Shape rightOf another Shape, its implicit x-coordinate is 1")
-            void whenYouSetAShapeRightOfADefaultShapeItsImplicitXCoordinateIs1()
-            {
+            void whenYouSetAShapeRightOfADefaultShapeItsImplicitXCoordinateIs1() {
                 DrawlNumber x10 = shape1.getImplicitXPositionCenter();
                 DrawlNumber x20 = shape2.getImplicitXPositionCenter();
                 shape1.setRightOf(shape2);
@@ -125,20 +118,17 @@ public abstract class ShapeTestProtected
     @Nested
     @DisplayName("Y Position")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class YPosition
-    {
+    class YPosition {
         /**
          * Tests the explicit y positions of Shapes
          */
         @Nested
         @DisplayName("Explicit")
         @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-        class Explicit
-        {
+        class Explicit {
             @Test
             @DisplayName("When a Shape has explicit dimensions, then it has an explicit top y position")
-            void whenAShapeIsCreatedThenItHasAnExplicitTopXPosition()
-            {
+            void whenAShapeIsCreatedThenItHasAnExplicitTopXPosition() {
                 Drawing drawing = new Drawing();
                 drawing.add(shape1);
                 drawing.setExplicitDimensions(100, 100);
@@ -153,28 +143,24 @@ public abstract class ShapeTestProtected
         @Nested
         @DisplayName("Implicit")
         @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-        class Implicit
-        {
+        class Implicit {
             @Test
             @DisplayName("When a Shape is created, then it has an implicit center y position")
-            void whenShapeIsCreatedThenItHasAnImplicitCenterYPosition()
-            {
+            void whenShapeIsCreatedThenItHasAnImplicitCenterYPosition() {
                 DrawlNumber implicitYPositionCenter = shape1.getImplicitYPositionCenter();
                 then(implicitYPositionCenter).isEqualByComparingTo(DrawlNumber.ZERO);
             }
 
             @Test
             @DisplayName("When a Shape is created, then it has an implicit top y position")
-            void whenShapeIsCreatedThenItHasAnImplicitTopYPosition()
-            {
+            void whenShapeIsCreatedThenItHasAnImplicitTopYPosition() {
                 DrawlNumber implicitYPositionTop = shape1.getImplicitYPositionTop();
                 then(implicitYPositionTop).isEqualByComparingTo(DrawlNumber.valueOf(0.5));
             }
 
             @Test
             @DisplayName("When you set a default Shape above a default Shape, its implicit y-coordinate is 1")
-            void whenYouSetADefaultShapeAboveADefaultShapeItsImplicitYCoordinateIs1()
-            {
+            void whenYouSetADefaultShapeAboveADefaultShapeItsImplicitYCoordinateIs1() {
                 shape1.setAbove(shape2);
                 DrawlNumber y1 = shape1.getImplicitYPositionCenter();
                 DrawlNumber y2 = shape2.getImplicitYPositionCenter();
@@ -184,8 +170,7 @@ public abstract class ShapeTestProtected
 
             @Test
             @DisplayName("When you set a default Shape below a default Shape, its implicit y-coordinate is -1")
-            void whenYouSetADefaultShapeBelowADefaultShapeItsImplicitYCoordinateIsNeg1()
-            {
+            void whenYouSetADefaultShapeBelowADefaultShapeItsImplicitYCoordinateIsNeg1() {
                 shape1.setBelow(shape2);
                 DrawlNumber y1 = shape1.getImplicitYPositionCenter();
                 DrawlNumber y2 = shape2.getImplicitYPositionCenter();
@@ -198,21 +183,18 @@ public abstract class ShapeTestProtected
     @Nested
     @DisplayName("Given one default Shape")
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class GivenOneDefaultShape
-    {
+    class GivenOneDefaultShape {
 
         @Test
         @DisplayName("Then its explicit width is null")
-        void thenExplicitWidthIsNull()
-        {
+        void thenExplicitWidthIsNull() {
             DrawlNumber width = shape1.getExplicitWidth();
-            assertEquals(null, width, "The explicit width of a default Shape should be null.");
+            assertNull(width, "The explicit width of a default Shape should be null.");
         }
 
         @Test
         @DisplayName("Then its explicit x-coordinate is 0")
-        void thenExplicitXCoordinateIs0()
-        {
+        void thenExplicitXCoordinateIs0() {
             DrawlNumber x = shape1.getExplicitXPositionCenter();
             then(x).isEqualByComparingTo(DrawlNumber.ZERO);
             then("0").isEqualTo(x.toPlainString());
@@ -220,8 +202,7 @@ public abstract class ShapeTestProtected
 
         @Test
         @DisplayName("Then its explicit y-coordinate is 0")
-        void thenExplicitYCoordinateIs0()
-        {
+        void thenExplicitYCoordinateIs0() {
             DrawlNumber y = shape1.getExplicitYPositionCenter();
             assertAll("The y-coordinate of a default Circle should be exactly 0",
                     () -> assertEquals(DrawlNumber.ZERO, y),
@@ -231,40 +212,35 @@ public abstract class ShapeTestProtected
 
         @Test
         @DisplayName("Then its implicit height is 1")
-        void thenImplicitHeightIs1()
-        {
+        void thenImplicitHeightIs1() {
             DrawlNumber implicitHeight = shape1.getImplicitHeight();
             assertEquals(implicitHeight, DrawlNumber.ONE);
         }
 
         @Test
         @DisplayName("Then its implicit width is 1")
-        void thenImplicitWidthIs1()
-        {
+        void thenImplicitWidthIs1() {
             DrawlNumber width = shape1.getImplicitWidth();
             assertEquals(width, DrawlNumber.ONE);
         }
 
         @Test
         @DisplayName("Then its implicit x-coordinate is 0")
-        void thenImplicitXPositionIs0()
-        {
+        void thenImplicitXPositionIs0() {
             DrawlNumber x = shape1.getImplicitXPositionCenter();
             assertEquals(x, DrawlNumber.ZERO);
         }
 
         @Test
         @DisplayName("Then its implicit y-coordinate is 0")
-        void thenImplicitYPositionIs0()
-        {
+        void thenImplicitYPositionIs0() {
             DrawlNumber x = shape1.getImplicitYPositionCenter();
             assertEquals(x, DrawlNumber.ZERO);
         }
 
         @Test
         @DisplayName("Then setting the height and then getting the height give the same result")
-        void thenSettingTheHeightAndGettingTheHeightGiveTheSameResult()
-        {
+        void thenSettingTheHeightAndGettingTheHeightGiveTheSameResult() {
             DrawlNumber EXPECTED = DrawlNumber.valueOf(100);
             shape1.setExplicitHeight(EXPECTED);
             DrawlNumber ACTUAL = shape1.getExplicitHeight();
@@ -274,8 +250,7 @@ public abstract class ShapeTestProtected
 
         @Test
         @DisplayName("Then setting the width and then getting the width give the same result")
-        void thenSettingTheWidthAndGettingTheWidthGiveTheSameResult()
-        {
+        void thenSettingTheWidthAndGettingTheWidthGiveTheSameResult() {
             DrawlNumber EXPECTED = DrawlNumber.valueOf(100);
             shape1.setExplicitWidth(EXPECTED);
             DrawlNumber ACTUAL = shape1.getExplicitWidth();
@@ -286,12 +261,49 @@ public abstract class ShapeTestProtected
 
         @Test
         @DisplayName("Then you can set its x-coordinate and get it back")
-        void thenYouCanSetItsXCoordinateAndGetItBack()
-        {
+        void thenYouCanSetItsXCoordinateAndGetItBack() {
             shape1.setExplicitXPositionCenter(100);
             DrawlNumber x = shape1.getExplicitXPositionCenter();
             assertEquals(x, DrawlNumber.valueOf(100));
         }
 
+    }
+
+    @Nested
+    @DisplayName("Ports")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class Ports {
+
+        @Test
+        @DisplayName("When a shape is created, then its left port is positioned correctly")
+        void whenAShapeIsCreatedThenItsLeftPortIsPositionedCorrectly(BDDSoftAssertions softly) {
+            Point leftPort = shape1.getLeftPort();
+            softly.then(leftPort.getX()).isEqualTo(DrawlNumber.HALF.negate());
+            softly.then(leftPort.getY()).isEqualTo(DrawlNumber.ZERO);
+        }
+
+        @Test
+        @DisplayName("When a shape is created, then its right port is positioned correctly")
+        void whenAShapeIsCreatedThenItsRightPortIsPositionedCorrectly(BDDSoftAssertions softly) {
+            Point leftPort = shape1.getRightPort();
+            softly.then(leftPort.getX()).isEqualTo(DrawlNumber.HALF);
+            softly.then(leftPort.getY()).isEqualTo(DrawlNumber.ZERO);
+        }
+
+        @Test
+        @DisplayName("When a shape is created, then its top port is positioned correctly")
+        void whenAShapeIsCreatedThenItsTopPortIsPositionedCorrectly(BDDSoftAssertions softly) {
+            Point leftPort = shape1.getTopPort();
+            softly.then(leftPort.getX()).isEqualTo(DrawlNumber.ZERO);
+            softly.then(leftPort.getY()).isEqualTo(DrawlNumber.HALF);
+        }
+
+        @Test
+        @DisplayName("When a shape is created, then its bottom port is positioned correctly")
+        void whenAShapeIsCreatedThenItsBottomPortIsPositionedCorrectly(BDDSoftAssertions softly) {
+            Point leftPort = shape1.getBottomPort();
+            softly.then(leftPort.getX()).isEqualTo(DrawlNumber.ZERO);
+            softly.then(leftPort.getY()).isEqualTo(DrawlNumber.HALF.negate());
+        }
     }
 }

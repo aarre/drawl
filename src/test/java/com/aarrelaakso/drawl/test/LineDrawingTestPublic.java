@@ -8,58 +8,50 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.aarrelaakso.drawl;
+package com.aarrelaakso.drawl.test;
 
+import com.aarrelaakso.drawl.Line;
+import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import static org.assertj.core.api.BDDAssertions.then;
 
-/**
- * Tests the public API of Shapes.
- */
 @ExtendWith(SoftAssertionsExtension.class)
-@DisplayName("Text Drawings - Protected API")
-public class TextDrawingTestProtected extends ShapeDrawingTestProtected
-{
+@DisplayName("Line - Public API")
+public class LineDrawingTestPublic extends ShapeDrawingTestPublic {
+
 
     @BeforeEach
-    @DisplayName("Given three default Text objects")
-    void givenTheeDefaultTextObjects()
-    {
-        // These values override those in the superclass.
-        shape1 = new Text();
-        shape2 = new Text();
-        shape3 = new Text();
+    @DisplayName("Given three default Lines")
+    void givenTheeDefaultRectangles() {
+        shape1 = new Line();
+        shape2 = new Line();
+        shape3 = new Line();
     }
 
-    @Test
-    @DisplayName("When a user creates a Drawing with a Text object, then its explicit y position is correct")
-    void whenAUserCreatesADrawingWithATextObjectThenItsExplicitYPositionIsCorrect()
-    {
-        Drawing drawing = new Drawing();
-        Text text = new Text("Drawl");
-        drawing.add(text);
-        drawing.setExplicitDimensions(100,100);
-        then(text.getExplicitYPositionCenter()).isEqualTo(DrawlNumber.valueOf(50));
-    }
 
     @Test
-    @DisplayName("When Text is added to a Shape, then the Text shows up in the SVG")
-    void whenTextIsAddedToADrawingThenItInheritsAnXPosition()
-    {
-        if (shape1.getClass() == Text.class)
-        {
-            ((Text) shape1).setString("Drawl");
-        }
-        Text text = new Text("Drawl");
-        shape1.addText(text);
+    @DisplayName("When a drawing has a line, then it is represented correctly in the SVG")
+    void whenADrawingHasALineThenItIsRepresentedCorrectlyInTheSVG(BDDSoftAssertions softly) {
         drawing.add(shape1);
-        drawing.setExplicitDimensions(100, 100);
+        shape1.setStroke("blue");
+        drawing.add(shape2);
+        shape2.setStroke("green");
+        shape2.setRightOf(shape1, shape2.getWidth());
+        Line line = new Line(shape1.getRightPort(), shape2.getLeftPort());
+        line.setStroke("red");
+        drawing.add(line);
+        String svg = drawing.getSVG(100,100);
 
-        then(drawing.getSVG()).contains("Drawl");
+        softly.then(svg).contains("<line");
+        softly.then(svg).contains("y1=\"50\"");
+        softly.then(svg).contains("y2=\"50\"");
+        softly.then(svg).contains("x1=\"33.33333333");
+        softly.then(svg).contains("x2=\"66.66666666");
     }
+
+
 }

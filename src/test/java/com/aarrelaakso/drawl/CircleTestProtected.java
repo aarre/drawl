@@ -16,9 +16,9 @@ import static org.assertj.core.api.BDDAssertions.then;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Tests the protected API of Circles.
+ * Tests the protected API of the Circle class.
  */
-@DisplayName("Unit tests of Circle protected API")
+@DisplayName("Circles - Protected API")
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 public class CircleTestProtected extends ShapeTestProtected
 {

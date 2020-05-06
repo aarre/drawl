@@ -10,8 +10,8 @@
 
 package com.aarrelaakso.drawl;
 
+import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,47 +19,28 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import static org.assertj.core.api.BDDAssertions.then;
 
 /**
- * Tests the public API of Shapes.
+ * Tests the protected API of Points.
  */
 @ExtendWith(SoftAssertionsExtension.class)
-@DisplayName("Text Drawings - Protected API")
-public class TextDrawingTestProtected extends ShapeDrawingTestProtected
+@DisplayName("Points - Protected API")
+public class PointTestProtected
 {
-
-    @BeforeEach
-    @DisplayName("Given three default Text objects")
-    void givenTheeDefaultTextObjects()
+    @Test
+    @DisplayName("When you create a point then you can get X")
+    void whenYouCreateAPointThenYouCanGetX(BDDSoftAssertions softly)
     {
-        // These values override those in the superclass.
-        shape1 = new Text();
-        shape2 = new Text();
-        shape3 = new Text();
+        Point point = new Point(3, 19);
+        softly.then(point.getX()).isNotNull();
+        softly.then(point.getX()).isEqualTo(DrawlNumber.valueOf(3));
     }
 
     @Test
-    @DisplayName("When a user creates a Drawing with a Text object, then its explicit y position is correct")
-    void whenAUserCreatesADrawingWithATextObjectThenItsExplicitYPositionIsCorrect()
+    @DisplayName("When you create a point then you can get Y")
+    void whenYouCreateAPointThenYouCanGetY(BDDSoftAssertions softly)
     {
-        Drawing drawing = new Drawing();
-        Text text = new Text("Drawl");
-        drawing.add(text);
-        drawing.setExplicitDimensions(100,100);
-        then(text.getExplicitYPositionCenter()).isEqualTo(DrawlNumber.valueOf(50));
+        Point point = new Point(19, 17);
+        softly.then(point.getY()).isNotNull();
+        softly.then(point.getY()).isEqualTo(DrawlNumber.valueOf(17));
     }
 
-    @Test
-    @DisplayName("When Text is added to a Shape, then the Text shows up in the SVG")
-    void whenTextIsAddedToADrawingThenItInheritsAnXPosition()
-    {
-        if (shape1.getClass() == Text.class)
-        {
-            ((Text) shape1).setString("Drawl");
-        }
-        Text text = new Text("Drawl");
-        shape1.addText(text);
-        drawing.add(shape1);
-        drawing.setExplicitDimensions(100, 100);
-
-        then(drawing.getSVG()).contains("Drawl");
-    }
 }
