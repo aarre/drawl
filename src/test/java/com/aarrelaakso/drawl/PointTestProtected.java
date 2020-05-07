@@ -28,18 +28,18 @@ public class PointTestProtected
 {
     @Test
     @DisplayName("When you create a point then you can get X")
-    void whenYouCreateAPointThenYouCanGetX(@NotNull BDDSoftAssertions softly)
+    void whenYouCreateAPointThenYouCanGetX(@NotNull final BDDSoftAssertions softly)
     {
-        @NotNull Point point = new Point(3, 19);
+        @NotNull final Point point = new Point(3, 19);
         softly.then(point.getX()).isNotNull();
         softly.then(point.getX()).isEqualTo(DrawlNumber.valueOf(3));
     }
 
     @Test
     @DisplayName("When you create a point then you can get Y")
-    void whenYouCreateAPointThenYouCanGetY(@NotNull BDDSoftAssertions softly)
+    void whenYouCreateAPointThenYouCanGetY(@NotNull final BDDSoftAssertions softly)
     {
-        @NotNull Point point = new Point(19, 17);
+        @NotNull final Point point = new Point(19, 17);
         softly.then(point.getY()).isNotNull();
         softly.then(point.getY()).isEqualTo(DrawlNumber.valueOf(17));
     }

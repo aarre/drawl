@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class Measure
 {
-    private Number length;
+    private final Number length;
 
     /**
      * Creates a new Measure object from a DrawlNumber.
@@ -28,7 +28,7 @@ public class Measure
      *
      * @param length The length to associate with this Measure.
      */
-    protected Measure(Number length)
+    protected Measure(final Number length)
     {
         this.length = length;
     }
@@ -40,7 +40,7 @@ public class Measure
      *
      * @param length The length to associate with this Measure.
      */
-    public Measure(@NotNull Integer length)
+    public Measure(@NotNull final Integer length)
     {
         this.length = new DrawlNumber(length);
     }

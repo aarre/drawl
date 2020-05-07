@@ -21,14 +21,14 @@ import java.io.IOException;
  */
 public class ThreeCirclesHorizontal
 {
-    public static void main(String[] args) throws IOException {
-        @NotNull Drawing drawing = new Drawing();
-        @NotNull Circle circle1 = new Circle();
+    public static void main(final String[] args) throws IOException {
+        @NotNull final Drawing drawing = new Drawing();
+        @NotNull final Circle circle1 = new Circle();
         drawing.add(circle1);
-        @NotNull Circle circle2 = new Circle();
+        @NotNull final Circle circle2 = new Circle();
         drawing.add(circle2);
         circle2.setRightOf(circle1);
-        @NotNull Circle circle3 = new Circle();
+        @NotNull final Circle circle3 = new Circle();
         drawing.add(circle3);
         circle3.setRightOf(circle2);
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg", 200, 70);

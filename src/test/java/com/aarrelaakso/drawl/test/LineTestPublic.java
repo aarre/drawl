@@ -27,9 +27,9 @@ public class LineTestPublic extends ShapeTestPublic {
     @BeforeEach
     void givenRectangles() {
         // These values override those in ShapeTestPublic
-        shape1 = new Line();
-        shape2 = new Line();
-        shape3 = new Line();
+        this.shape1 = new Line();
+        this.shape2 = new Line();
+        this.shape3 = new Line();
     }
 
 

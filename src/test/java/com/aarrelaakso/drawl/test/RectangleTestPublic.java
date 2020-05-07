@@ -27,9 +27,9 @@ public class RectangleTestPublic extends ShapeTestPublic
     void givenRectangles()
     {
         // These values override those in ShapeTestPublic
-        shape1 = new Rectangle();
-        shape2 = new Rectangle();
-        shape3 = new Rectangle();
+        this.shape1 = new Rectangle();
+        this.shape2 = new Rectangle();
+        this.shape3 = new Rectangle();
     }
 
     @Nested
@@ -42,10 +42,10 @@ public class RectangleTestPublic extends ShapeTestPublic
         @DisplayName("When an asymmetric rectangle is created, then it is not null")
         void whenAnAsymmetricRectangleIsCreatedThenItIsNotNull()
         {
-            Integer height = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
-            Integer width = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
-            @NotNull Double aspectRatio = Double.valueOf(width / height);
-            @NotNull Rectangle rectangle = new Rectangle(aspectRatio);
+            final Integer height = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
+            final Integer width = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
+            @NotNull final Double aspectRatio = Double.valueOf(width / height);
+            @NotNull final Rectangle rectangle = new Rectangle(aspectRatio);
             then(rectangle).isNotNull();
         }
 

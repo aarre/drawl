@@ -34,7 +34,7 @@ public class Circle extends Shape
      *
      * @param implicitRadius The implicit radius of the new circle.
      */
-    protected Circle(Number implicitRadius)
+    protected Circle(final Number implicitRadius)
     {
         this.implicitRadius = implicitRadius;
     }
@@ -49,7 +49,7 @@ public class Circle extends Shape
     private Number getExplicitDiameter()
     {
         @Nullable Number result = null;
-        @Nullable Number radiusExplicitValue = this.getExplicitRadius();
+        @Nullable final Number radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue != null)
         {
             result = radiusExplicitValue.multiply(DrawlNumber.TWO, DrawlNumber.mcOperations);
@@ -102,7 +102,7 @@ public class Circle extends Shape
      */
     protected Number getImplicitDiameter()
     {
-        Number myImplicitRadius = this.getImplicitRadius();
+        final Number myImplicitRadius = this.getImplicitRadius();
         assert !myImplicitRadius.equals(DrawlNumber.ZERO) : "Implicit radius cannot be zero.";
         return myImplicitRadius.multiply(DrawlNumber.TWO, DrawlNumber.mcOperations);
     }
@@ -177,8 +177,8 @@ public class Circle extends Shape
     @Override
     public @NotNull String getSVG()
     {
-        String radiusStringValue;
-        @Nullable Number radiusExplicitValue = this.getExplicitRadius();
+        final String radiusStringValue;
+        @Nullable final Number radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue == null)
         {
             // If the explicit radius has not been set, use the implicit radius
@@ -186,7 +186,7 @@ public class Circle extends Shape
         }
         radiusStringValue = this.getExplicitRadius().toSVG();
 
-        @NotNull StringBuilder svgBuilder = new StringBuilder();
+        @NotNull final StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<circle ");
         svgBuilder.append("r=\"");
         svgBuilder.append(radiusStringValue);
@@ -224,7 +224,7 @@ public class Circle extends Shape
      *               height has not yet been determined.
      */
     @Override
-    protected void setExplicitHeight(@Nullable Number height)
+    protected void setExplicitHeight(@Nullable final Number height)
     {
         if (height == null)
         {
@@ -247,7 +247,7 @@ public class Circle extends Shape
      *
      * @param radius the fixed value
      */
-    protected void setExplicitRadius(@NotNull Number radius)
+    protected void setExplicitRadius(@NotNull final Number radius)
     {
         this.explicitRadius = radius;
     }
@@ -258,7 +258,7 @@ public class Circle extends Shape
      * @param radius The fixed value for the radius of this Circle. This method allows providing the value as an
      *               Integer to support common use cases.
      */
-    protected void setExplicitRadius(@NotNull Integer radius)
+    protected void setExplicitRadius(@NotNull final Integer radius)
     {
         this.explicitRadius = DrawlNumber.valueOf(radius);
     }
@@ -274,7 +274,7 @@ public class Circle extends Shape
      * @param width the new width of this Circle
      */
     @Override
-    protected void setExplicitWidth(@Nullable Number width)
+    protected void setExplicitWidth(@Nullable final Number width)
     {
         if (width == null)
         {

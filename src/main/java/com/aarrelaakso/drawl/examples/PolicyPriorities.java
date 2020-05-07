@@ -19,10 +19,10 @@ import java.io.IOException;
 
 public class PolicyPriorities
 {
-    public static void main(String[] args) throws IOException
+    public static void main(final String[] args) throws IOException
     {
-        @NotNull Drawing drawing = new Drawing();
-        @NotNull Text text = new Text("Drawl");
+        @NotNull final Drawing drawing = new Drawing();
+        @NotNull final Text text = new Text("Drawl");
         drawing.add(text);
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/PolicyPriorities.svg", 200, 100);
     }

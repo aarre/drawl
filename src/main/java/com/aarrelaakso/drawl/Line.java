@@ -43,16 +43,16 @@ public class Line extends Shape {
      * @param point1Implicit The origin of the line in implicit coordinates
      * @param point2Implicit The end of the line in implicit coordinates
      */
-    public Line(@NotNull Point point1Implicit, @NotNull Point point2Implicit) {
+    public Line(@NotNull final Point point1Implicit, @NotNull final Point point2Implicit) {
         this.point1Implicit = point1Implicit;
         this.point2Implicit = point2Implicit;
 
-        Number implicitWidth = point2Implicit.getX().subtract(point1Implicit.getX());
-        Number implicitHeight = point2Implicit.getY().subtract(point1Implicit.getY());
+        final Number implicitWidth = point2Implicit.getX().subtract(point1Implicit.getX());
+        final Number implicitHeight = point2Implicit.getY().subtract(point1Implicit.getY());
 
-        Number implicitCenterX = point1Implicit.getX().add(implicitWidth.divide(DrawlNumber.TWO,
+        final Number implicitCenterX = point1Implicit.getX().add(implicitWidth.divide(DrawlNumber.TWO,
                 DrawlNumber.mcOperations));
-        Number implicitCenterY = point1Implicit.getY().add(implicitHeight.divide(DrawlNumber.TWO,
+        final Number implicitCenterY = point1Implicit.getY().add(implicitHeight.divide(DrawlNumber.TWO,
                 DrawlNumber.mcOperations));
 
         this.setImplicitWidth(implicitWidth);
@@ -63,16 +63,16 @@ public class Line extends Shape {
 
     @Nullable
     protected Point getPoint1Explicit() {
-        Number point1ExplicitX = this.getExplicitXPositionLeft();
-        @NotNull Number point1ExplicitY = this.getExplicitYPositionBottom();
+        final Number point1ExplicitX = this.getExplicitXPositionLeft();
+        @NotNull final Number point1ExplicitY = this.getExplicitYPositionBottom();
 
         return new Point(point1ExplicitX, point1ExplicitY);
     }
 
     @Nullable
     protected Point getPoint2Explicit() {
-        Number point2ExplicitX = this.getExplicitXPositionRight();
-        @NotNull Number point2ExplicitY = this.getExplicitYPositionTop();
+        final Number point2ExplicitX = this.getExplicitXPositionRight();
+        @NotNull final Number point2ExplicitY = this.getExplicitYPositionTop();
 
         return new Point(point2ExplicitX, point2ExplicitY);
     }
@@ -91,7 +91,7 @@ public class Line extends Shape {
         if (this.getExplicitWidth() == null || this.getExplicitHeight() == null) {
             throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
         }
-        @NotNull StringBuilder svgBuilder = new StringBuilder();
+        @NotNull final StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("\n<line");
         svgBuilder.append(" x1=\"");
         svgBuilder.append(this.getPoint1Explicit().getX().toSVG());

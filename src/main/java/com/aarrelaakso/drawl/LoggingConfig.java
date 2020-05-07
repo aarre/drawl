@@ -19,7 +19,7 @@ public class LoggingConfig {
 
     public LoggingConfig() {
         try {
-            if (Boolean.TRUE.equals(SIMPLE_LOG_FORMAT))
+            if (TRUE.equals(LoggingConfig.SIMPLE_LOG_FORMAT))
             {
                 // Programmatic configuration
                 System.setProperty("java.util.logging.SimpleFormatter.format",
@@ -33,8 +33,8 @@ public class LoggingConfig {
 
             //System.setProperty("java.util.logging.config.file", path);
 
-            @NotNull Level consoleLevel = Level.WARNING;
-            @NotNull Level loggerLevel = consoleLevel;
+            @NotNull final Level consoleLevel = Level.WARNING;
+            @NotNull final Level loggerLevel = consoleLevel;
 
             final @NotNull ConsoleHandler consoleHandler = new ConsoleHandler();
             consoleHandler.setLevel(consoleLevel);
@@ -43,12 +43,12 @@ public class LoggingConfig {
             final Logger root = Logger.getLogger("");
 
             root.setLevel(loggerLevel);
-            for (@NotNull Handler handler : root.getHandlers()) {
+            for (@NotNull final Handler handler : root.getHandlers()) {
                 handler.setLevel(loggerLevel);
             }
             //root.log("Logging level set: " + loggerLevel.getName());
 
-        } catch (Exception e) {
+        } catch (final Exception e) {
             // The runtime won't show stack traces if the exception is thrown
             e.printStackTrace();
         }

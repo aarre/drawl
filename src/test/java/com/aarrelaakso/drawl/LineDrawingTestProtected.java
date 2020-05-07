@@ -28,26 +28,26 @@ public class LineDrawingTestProtected extends ShapeDrawingTestProtected {
     void givenTheeDefaultLines()
     {
         // These values override those in the superclass.
-        shape1 = new Line();
-        shape2 = new Line();
-        shape3 = new Line();
+        this.shape1 = new Line();
+        this.shape2 = new Line();
+        this.shape3 = new Line();
     }
 
     @Test
     @DisplayName("When a drawing has a Line, then the Line has the correct coordinates")
-    void whenADrawingHasALineThenItShowsUpInSVG(@NotNull BDDSoftAssertions softly) {
-        drawing.add(shape1);
-        shape1.setStroke("blue");
-        drawing.add(shape2);
-        shape2.setStroke("green");
-        shape2.setRightOf(shape1, shape2.getWidth());
-        @NotNull Line line = new Line(shape1.getRightPort(), shape2.getLeftPort());
+    void whenADrawingHasALineThenItShowsUpInSVG(@NotNull final BDDSoftAssertions softly) {
+        this.drawing.add(this.shape1);
+        this.shape1.setStroke("blue");
+        this.drawing.add(this.shape2);
+        this.shape2.setStroke("green");
+        this.shape2.setRightOf(this.shape1, this.shape2.getWidth());
+        @NotNull final Line line = new Line(this.shape1.getRightPort(), this.shape2.getLeftPort());
         line.setStroke("red");
-        drawing.add(line);
-        drawing.setExplicitDimensions(100,100);
+        this.drawing.add(line);
+        this.drawing.setExplicitDimensions(100,100);
 
-        @Nullable Point point1 = line.getPoint1Explicit();
-        @Nullable Point point2 = line.getPoint2Explicit();
+        @Nullable final Point point1 = line.getPoint1Explicit();
+        @Nullable final Point point2 = line.getPoint2Explicit();
 
         softly.then(point1).isNotNull();
         softly.then(point2).isNotNull();

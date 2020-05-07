@@ -77,8 +77,8 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
     @DisplayName("SVG: When a Circle is placed with an implicit position, the SVG contains a concrete position")
     void whenACircleIsPlacedWithAnImplicitPositionThenTheSVGContainsAConcretePosition()
     {
-        drawing.add(shape1);
-        final String svg = drawing.getSVG(100, 100);
+        this.drawing.add(this.shape1);
+        final String svg = this.drawing.getSVG(100, 100);
 
         then(svg).contains("circle r=\"50\" cx=\"50\" cy=\"50\"");
     }
@@ -95,8 +95,8 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
     @DisplayName("SVG: When a drawing has a tall canvas, a circle fills its width")
     void whenADrawingHasATallCanvasThenACircleFillsItsWidth()
     {
-        drawing.add(shape1);
-        final String svg = drawing.getSVG(100, 200);
+        this.drawing.add(this.shape1);
+        final String svg = this.drawing.getSVG(100, 200);
 
         then(svg).contains("circle r=\"50\"");
     }
@@ -106,8 +106,8 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
     void whenADrawingHasAWideCanvasThenACircleFillsItsHeight()
     {
 
-        drawing.add(shape1);
-        final String svg = drawing.getSVG(200, 100);
+        this.drawing.add(this.shape1);
+        final String svg = this.drawing.getSVG(200, 100);
 
         then(svg).contains("circle r=\"50\"");
     }
@@ -130,9 +130,9 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
     void whenADrawingHasTwoDefaultCirclesThenTheSVGContainsTwoCircles()
     {
 
-        drawing.add(shape1);
-        drawing.add(shape2);
-        final String svg = drawing.getSVG(100, 100);
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
+        final String svg = this.drawing.getSVG(100, 100);
         final int count = StringUtils.countMatches(svg, "circle");
 
         then(count).isEqualTo(2);
@@ -215,7 +215,7 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
             @NotNull final Integer width = 100;
             @NotNull final Integer height = 100;
             @NotNull final String svg = CircleDrawingTestPublic.this.drawing.getSVG(width, height);
-            CircleDrawingTestPublic.logger.atFine().log(svg);
+            logger.atFine().log(svg);
 
             softly.then(svg).contains("cy=\"16.666666\"");
             softly.then(svg).contains("cy=\"50\"");

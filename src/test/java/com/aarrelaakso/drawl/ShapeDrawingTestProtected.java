@@ -84,8 +84,8 @@ public abstract class ShapeDrawingTestProtected
     void whenADrawingHasOneDefaultShapeThenTheImplicitWidthOfTheDrawingIs1()
     {
 
-        drawing.add(shape1);
-        final Number implicitWidth = drawing.getImplicitWidth();
+        this.drawing.add(this.shape1);
+        final Number implicitWidth = this.drawing.getImplicitWidth();
 
         then(implicitWidth).isEqualTo(DrawlNumber.ONE);
 
@@ -96,8 +96,8 @@ public abstract class ShapeDrawingTestProtected
     void whenADrawingHasOneDefaultShapeThenTheImplicitWidthOfTheDrawingsContentsIs1()
     {
 
-        drawing.add(shape1);
-        final Number implicitWidthOfContents = drawing.getImplicitWidthOfContents();
+        this.drawing.add(this.shape1);
+        final Number implicitWidthOfContents = this.drawing.getImplicitWidthOfContents();
 
         then(implicitWidthOfContents).isEqualTo(DrawlNumber.ONE);
     }
@@ -107,8 +107,8 @@ public abstract class ShapeDrawingTestProtected
     void whenADrawingHasOneDefaultShapeThenTheImplicitWidthOfTheShapeIs1()
 
     {
-        drawing.add(shape1);
-        final Number implicitWidth = shape1.getImplicitWidth();
+        this.drawing.add(this.shape1);
+        final Number implicitWidth = this.shape1.getImplicitWidth();
 
         then(implicitWidth).isEqualTo(DrawlNumber.ONE);
     }
@@ -117,9 +117,9 @@ public abstract class ShapeDrawingTestProtected
     @DisplayName("SVG: When a drawing has two default Circles, the implicit width of the contents is the same as when it has one")
     void whenADrawingHasTwoDefaultShapesThenTheImplicitWidthOfTheContentsIsTheSameAsWhenItHasOne()
     {
-        drawing.add(shape1);
-        drawing.add(shape2);
-        final Number implicitWidthOfContents = drawing.getImplicitWidthOfContents();
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
+        final Number implicitWidthOfContents = this.drawing.getImplicitWidthOfContents();
 
         then(implicitWidthOfContents).isEqualTo(DrawlNumber.ONE);
     }
@@ -128,13 +128,13 @@ public abstract class ShapeDrawingTestProtected
     @DisplayName("WIDTH - IMPLICIT: When a square (100) drawing has two adjacent Circles, then their implicit widths are correct")
     void whenASquare100DrawingHasTwoAdjacentCirclesThenTheirImplicitWidthsAreCorrect(final BDDSoftAssertions softly)
     {
-        drawing.add(shape1);
-        drawing.add(shape2);
-        shape2.setRightOf(shape1);
-        drawing.setExplicitHeight(100);
-        drawing.setExplicitWidth(100);
-        final Number implicitWidth1 = shape1.getImplicitWidth();
-        final Number implicitWidth2 = shape2.getImplicitWidth();
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
+        this.shape2.setRightOf(this.shape1);
+        this.drawing.setExplicitHeight(100);
+        this.drawing.setExplicitWidth(100);
+        final Number implicitWidth1 = this.shape1.getImplicitWidth();
+        final Number implicitWidth2 = this.shape2.getImplicitWidth();
 
         softly.then(implicitWidth1).isEqualTo(DrawlNumber.ONE);
         softly.then(implicitWidth2).isEqualTo(DrawlNumber.ONE);
@@ -144,30 +144,30 @@ public abstract class ShapeDrawingTestProtected
     @DisplayName("SVG - WIDTH: When you add two adjacent Circles to a drawing, the drawing is still twice as wide after you get the SVG")
     void whenYouAddTwoAdjacenShapesToADrawingThenTheDrawingIsStillTwiceAsWideAfterYouGetTheSVG()
     {
-        shape2.setRightOf(shape1);
-        drawing.add(shape1);
-        drawing.add(shape2);
+        this.shape2.setRightOf(this.shape1);
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
 
-        then(drawing.getImplicitWidth()).isEqualTo(DrawlNumber.TWO);
+        then(this.drawing.getImplicitWidth()).isEqualTo(DrawlNumber.TWO);
 
-        final String svg = drawing.getSVG(100, 100);
+        final String svg = this.drawing.getSVG(100, 100);
 
-        then(drawing.getImplicitWidth()).isEqualTo(DrawlNumber.TWO);
+        then(this.drawing.getImplicitWidth()).isEqualTo(DrawlNumber.TWO);
     }
 
     @Test
     @DisplayName("SVG - WIDTH: When you add two default Shapes to a drawing, the drawing is still the same width after you get the SVG")
     void whenYouAddTwoDefaultShapesToADrawingThenTheDrawingIsStillTheSameWidthAfterYouGetTheSVG()
     {
-        drawing.add(shape1);
-        drawing.add(shape2);
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
 
-        final Number implicitWidth1 = drawing.getImplicitWidth();
+        final Number implicitWidth1 = this.drawing.getImplicitWidth();
         then(implicitWidth1).isEqualTo(DrawlNumber.ONE);
 
         final String svg = this.drawing.getSVG(100, 100);
 
-        final Number implicitWidth2 = drawing.getImplicitWidth();
+        final Number implicitWidth2 = this.drawing.getImplicitWidth();
         then(implicitWidth2).isEqualTo(DrawlNumber.ONE);
     }
 
@@ -176,10 +176,10 @@ public abstract class ShapeDrawingTestProtected
     void whenYouAddTwoDefaultShapesToADrawingThenTheDrawingStaysTheSameWidth()
     {
 
-        drawing.add(shape1);
-        drawing.add(shape2);
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
 
-        then(drawing.getImplicitWidth()).isEqualTo(DrawlNumber.ONE);
+        then(this.drawing.getImplicitWidth()).isEqualTo(DrawlNumber.ONE);
     }
 
     @Test
@@ -208,9 +208,9 @@ public abstract class ShapeDrawingTestProtected
     @DisplayName("WIDTH - EXPLICIT: You can set and get the explicit width of a Drawing")
     void youCanGetAndSetTheExplicitWidthOfADrawing()
     {
-        drawing.add(shape1);
-        drawing.setExplicitWidth(100);
-        final Number explicitWidth = drawing.getExplicitWidth();
+        this.drawing.add(this.shape1);
+        this.drawing.setExplicitWidth(100);
+        final Number explicitWidth = this.drawing.getExplicitWidth();
 
 
         then(explicitWidth).isEqualTo(DrawlNumber.valueOf(100));
@@ -224,7 +224,7 @@ public abstract class ShapeDrawingTestProtected
         this.drawing.setExplicitWidth(100);
         this.drawing.setExplicitHeight(100);
 
-        final Number explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        final Number explicitWidthPerObject = this.drawing.getExplicitWidthPerImplicitWidth();
 
         then(explicitWidthPerObject).isEqualTo(DrawlNumber.valueOf(100));
     }
@@ -234,13 +234,13 @@ public abstract class ShapeDrawingTestProtected
     void youCanGetTheExplicitWidthPerImplicitWidthForADrawingWithTwoAdjacentCirclesOtherOrder()
     {
 
-        shape1.setRightOf(shape2);
+        this.shape1.setRightOf(this.shape2);
 
-        drawing.add(shape1);
-        drawing.add(shape2);
-        drawing.setExplicitWidth(100);
-        drawing.setExplicitHeight(100);
-        final Number explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
+        this.drawing.setExplicitWidth(100);
+        this.drawing.setExplicitHeight(100);
+        final Number explicitWidthPerObject = this.drawing.getExplicitWidthPerImplicitWidth();
 
         then(explicitWidthPerObject).isEqualTo(DrawlNumber.valueOf(50));
     }
@@ -249,13 +249,13 @@ public abstract class ShapeDrawingTestProtected
     @DisplayName("WIDTH - EXPLICIT: You can get the explicit width per implicit width for a drawing with two adjacent Circles")
     void youCanGetTheExplicitWidthPerImplicitWidthForADrawingWithTwoAdjacentShapes()
     {
-        shape2.setRightOf(shape1);
+        this.shape2.setRightOf(this.shape1);
 
-        drawing.add(shape1);
-        drawing.add(shape2);
-        drawing.setExplicitWidth(100);
-        drawing.setExplicitHeight(100);
-        final Number explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
+        this.drawing.setExplicitWidth(100);
+        this.drawing.setExplicitHeight(100);
+        final Number explicitWidthPerObject = this.drawing.getExplicitWidthPerImplicitWidth();
 
         then(explicitWidthPerObject).isEqualTo(DrawlNumber.valueOf(50));
     }
@@ -264,11 +264,11 @@ public abstract class ShapeDrawingTestProtected
     @DisplayName("WIDTH - IMPLICIT: You can get the implicit width of a drawing with two adjacent objects (other order)")
     void youCanGetTheImplicitWidthOfADrawingWithTwoAdjacentObjectsOtherOrder()
     {
-        shape1.setRightOf(shape2);
+        this.shape1.setRightOf(this.shape2);
 
-        drawing.add(shape1);
-        drawing.add(shape2);
-        final Number implicitWidth = drawing.getImplicitWidth();
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
+        final Number implicitWidth = this.drawing.getImplicitWidth();
 
         then(implicitWidth).isEqualTo(DrawlNumber.TWO);
     }
@@ -278,11 +278,11 @@ public abstract class ShapeDrawingTestProtected
     void youCanGetTheImplicitWidthOfADrawingWithTwoAdjacentShapes()
     {
 
-        shape2.setRightOf(shape1);
+        this.shape2.setRightOf(this.shape1);
 
-        drawing.add(shape1);
-        drawing.add(shape2);
-        final Number implicitWidth = drawing.getImplicitWidth();
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
+        final Number implicitWidth = this.drawing.getImplicitWidth();
 
         then(implicitWidth).isEqualTo(DrawlNumber.TWO);
     }
@@ -440,13 +440,13 @@ public abstract class ShapeDrawingTestProtected
         @DisplayName("When a Drawing has three horizontally adjacent shapes, then its length is 3")
         void whenADrawingHasThreeHorizontallyAdjacenShapesThenItsLengthIs3()
         {
-            drawing.add(shape1);
-            drawing.add(shape2);
-            drawing.add(shape3);
-            shape2.setRightOf(shape1);
-            shape3.setRightOf(shape2);
+            ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+            ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+            ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape3);
+            ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
+            ShapeDrawingTestProtected.this.shape3.setRightOf(ShapeDrawingTestProtected.this.shape2);
 
-            then(drawing.getLength()).isEqualTo(3);
+            then(ShapeDrawingTestProtected.this.drawing.getLength()).isEqualTo(3);
         }
 
         @Test
@@ -455,11 +455,11 @@ public abstract class ShapeDrawingTestProtected
         @DisplayName("When a Drawing has three shapes, then its length is 3")
         void whenADrawingHasThreeShapesThenItsLengthIs3()
         {
-            drawing.add(shape1);
-            drawing.add(shape2);
-            drawing.add(shape3);
+            ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+            ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+            ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape3);
 
-            then(drawing.getLength()).isEqualTo(3);
+            then(ShapeDrawingTestProtected.this.drawing.getLength()).isEqualTo(3);
         }
 
         @Test
@@ -468,13 +468,13 @@ public abstract class ShapeDrawingTestProtected
         @DisplayName("When a Drawing has three vertically adjacent shapes, then its length is 3")
         void whenADrawingHasThreeVerticallyAdjacenShapesThenItsLengthIs3()
         {
-            drawing.add(shape1);
-            drawing.add(shape2);
-            drawing.add(shape3);
-            shape2.setAbove(shape1);
-            shape3.setAbove(shape2);
+            ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+            ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+            ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape3);
+            ShapeDrawingTestProtected.this.shape2.setAbove(ShapeDrawingTestProtected.this.shape1);
+            ShapeDrawingTestProtected.this.shape3.setAbove(ShapeDrawingTestProtected.this.shape2);
 
-            then(drawing.getLength()).isEqualTo(3);
+            then(ShapeDrawingTestProtected.this.drawing.getLength()).isEqualTo(3);
         }
     }
 
@@ -499,10 +499,10 @@ public abstract class ShapeDrawingTestProtected
             {
                 @NotNull final Integer size = 100;
                 @NotNull final Number EXPECTED = DrawlNumber.valueOf(size);
-                drawing.add(shape1);
-                drawing.setExplicitWidth(size);
-                drawing.setExplicitHeight(size);
-                @NotNull final Number widthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(size);
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(size);
+                @NotNull final Number widthPerObject = ShapeDrawingTestProtected.this.drawing.getExplicitWidthPerImplicitWidth();
 
                 then(widthPerObject).isEqualByComparingTo(EXPECTED);
             }
@@ -513,10 +513,10 @@ public abstract class ShapeDrawingTestProtected
             @DisplayName("WIDTH - EXPLICIT: When a drawing has one default Shape, the Shape's explicit width is the explicit width of the drawing")
             void widthExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitWidthIsTheExplicitWidthOfTheDrawing()
             {
-                drawing.add(shape1);
-                drawing.setExplicitWidth(100);
-                drawing.setExplicitHeight(100);
-                @Nullable final Number shapeExplicitWidth = shape1.getExplicitWidth();
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(100);
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(100);
+                @Nullable final Number shapeExplicitWidth = ShapeDrawingTestProtected.this.shape1.getExplicitWidth();
 
                 then(shapeExplicitWidth).isEqualByComparingTo(DrawlNumber.valueOf(100));
             }
@@ -527,13 +527,13 @@ public abstract class ShapeDrawingTestProtected
             @DisplayName("WIDTH - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit widths are correct")
             void widthExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitWidthsAreCorrect(@NotNull final BDDSoftAssertions softly)
             {
-                drawing.add(shape1);
-                drawing.add(shape2);
-                shape2.setRightOf(shape1);
-                drawing.setExplicitHeight(100);
-                drawing.setExplicitWidth(100);
-                @Nullable final Number explicitWidth1 = shape1.getExplicitWidth();
-                @Nullable final Number explicitWidth2 = shape2.getExplicitWidth();
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(100);
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(100);
+                @Nullable final Number explicitWidth1 = ShapeDrawingTestProtected.this.shape1.getExplicitWidth();
+                @Nullable final Number explicitWidth2 = ShapeDrawingTestProtected.this.shape2.getExplicitWidth();
 
                 softly.then(explicitWidth1).isEqualByComparingTo(DrawlNumber.valueOf(50));
                 softly.then(explicitWidth2).isEqualByComparingTo(DrawlNumber.valueOf(50));
@@ -597,15 +597,15 @@ public abstract class ShapeDrawingTestProtected
              */
             void test3Shapes(final Float widthFloat, final Float heightFloat, @NotNull final BDDSoftAssertions softly)
             {
-                drawing.add(shape1);
-                drawing.add(shape2);
-                drawing.add(shape3);
-                shape2.setRightOf(shape1);
-                shape3.setRightOf(shape2);
-                drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
-                drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape3);
+                ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.shape3.setRightOf(ShapeDrawingTestProtected.this.shape2);
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(widthFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(heightFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
                 // At this aspect ratio, the sizes of the shapes may be constrained by the height
                 @NotNull final Number heightNumber = DrawlNumber.valueOf(heightFloat);
@@ -632,7 +632,7 @@ public abstract class ShapeDrawingTestProtected
                     shape1ExpectedXPosition = shape1ExpectedXPosition.add(extraWidthLeft);
                 }
 
-                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExplicitXPosition = ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit x position of shape 1 to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -643,7 +643,7 @@ public abstract class ShapeDrawingTestProtected
                     shape2ExpectedXPosition = shape2ExpectedXPosition.add(extraWidthLeft);
                 }
 
-                @NotNull final Number shape2ExplicitXPosition = shape2.getExplicitXPositionCenter();
+                @NotNull final Number shape2ExplicitXPosition = ShapeDrawingTestProtected.this.shape2.getExplicitXPositionCenter();
                 softly.then(shape2ExplicitXPosition.compareToFuzzy(shape2ExpectedXPosition))
                         .as("Expecting the explicit x position of shape 2 to be " +
                                 shape2ExpectedXPosition + " but it was " + shape2ExplicitXPosition).isEqualTo(0);
@@ -654,7 +654,7 @@ public abstract class ShapeDrawingTestProtected
                 {
                     shape3ExpectedXPosition = shape3ExpectedXPosition.add(extraWidthLeft);
                 }
-                @NotNull final Number shape3ExplicitXPosition = shape3.getExplicitXPositionCenter();
+                @NotNull final Number shape3ExplicitXPosition = ShapeDrawingTestProtected.this.shape3.getExplicitXPositionCenter();
                 softly.then(shape3ExplicitXPosition.compareToFuzzy(shape3ExpectedXPosition))
                         .as("Expecting the explicit x position of shape 3 to be " +
                                 shape3ExpectedXPosition + " but it was " + shape3ExplicitXPosition).isEqualTo(0);
@@ -672,20 +672,20 @@ public abstract class ShapeDrawingTestProtected
             void whenADrawingHasOneShapeThenItsXPositionIsCorrectFloatMax(@NotNull final BDDSoftAssertions softly)
             {
                 // TODO [Issue No 16]
-                drawing.add(shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
                 final Float widthFloat = Float.MAX_VALUE;
                 final Float heightFloat = Float.MAX_VALUE;
-                drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
-                drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(widthFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(heightFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
                 @NotNull final Number widthBigDecimal = DrawlNumber.valueOf(widthFloat);
 
                 @NotNull final Number shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExplicitXPosition = ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
-                        .as("Expecting the explicit position of " + shape1 + "to be " +
+                        .as("Expecting the explicit position of " + ShapeDrawingTestProtected.this.shape1 + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
 
             }
@@ -702,20 +702,20 @@ public abstract class ShapeDrawingTestProtected
             void whenADrawingHasOneShapeThenItsXPositionIsCorrectFloatMaxMinus1(@NotNull final BDDSoftAssertions softly)
             {
                 // TODO [Issue No 16]
-                drawing.add(shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
                 @NotNull final Float widthFloat = Float.MAX_VALUE - 1;
                 @NotNull final Float heightFloat = Float.MAX_VALUE - 1;
-                drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
-                drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(widthFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(heightFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
                 @NotNull final Number widthBigDecimal = DrawlNumber.valueOf(widthFloat);
 
                 @NotNull final Number shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExplicitXPosition = ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
-                        .as("Expecting the explicit position of " + shape1 + "to be " +
+                        .as("Expecting the explicit position of " + ShapeDrawingTestProtected.this.shape1 + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
 
             }
@@ -733,20 +733,20 @@ public abstract class ShapeDrawingTestProtected
             void whenADrawingHasOneShapeThenItsXPositionIsCorrectRandomFailed(@NotNull final BDDSoftAssertions softly)
             {
                 // TODO [Issue No 16]
-                drawing.add(shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
                 @NotNull final Float widthFloat = Float.valueOf("2.149144E38");
                 @NotNull final Float heightFloat = Float.valueOf("5.567761E37");
-                drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
-                drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(widthFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(heightFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
                 @NotNull final Number widthBigDecimal = DrawlNumber.valueOf(widthFloat);
 
                 @NotNull final Number shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExplicitXPosition = ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
-                        .as("Expecting the explicit position of " + shape1 + "to be " +
+                        .as("Expecting the explicit position of " + ShapeDrawingTestProtected.this.shape1 + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
 
             }
@@ -764,20 +764,20 @@ public abstract class ShapeDrawingTestProtected
             void whenADrawingHasOneShapeThenItsXPositionIsCorrectRandomFailedLowValue(@NotNull final BDDSoftAssertions softly)
             {
                 // TODO [Issue No 16]
-                drawing.add(shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
                 @NotNull final Float widthFloat = Float.valueOf("214");
                 @NotNull final Float heightFloat = Float.valueOf("56");
-                drawing.setExplicitWidth(widthFloat);
-                softly.then(drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
-                drawing.setExplicitHeight(heightFloat);
-                softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(widthFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(heightFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
                 @NotNull final Number widthBigDecimal = DrawlNumber.valueOf(widthFloat);
 
                 @NotNull final Number shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExplicitXPosition = ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
-                        .as("Expecting the explicit position of " + shape1 + "to be " +
+                        .as("Expecting the explicit position of " + ShapeDrawingTestProtected.this.shape1 + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
 
             }
@@ -797,19 +797,19 @@ public abstract class ShapeDrawingTestProtected
             void whenADrawingHasOneShapeThenItsXPositionIsCorrectRandomFailedSetExplicitDimensions(@NotNull final BDDSoftAssertions softly)
             {
                 // TODO [Issue No 16]
-                drawing.add(shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
                 @NotNull final Float widthFloat = Float.valueOf("2.149144E38");
                 @NotNull final Float heightFloat = Float.valueOf("5.567761E37");
-                drawing.setExplicitDimensions(widthFloat, heightFloat);
-                softly.then(drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
-                softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
+                ShapeDrawingTestProtected.this.drawing.setExplicitDimensions(widthFloat, heightFloat);
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
+                softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
                 @NotNull final Number widthBigDecimal = DrawlNumber.valueOf(widthFloat);
 
                 @NotNull final Number shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExplicitXPosition = ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
-                        .as("Expecting the explicit position of " + shape1 + "to be " +
+                        .as("Expecting the explicit position of " + ShapeDrawingTestProtected.this.shape1 + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
 
             }
@@ -819,24 +819,24 @@ public abstract class ShapeDrawingTestProtected
             @DisplayName("When a drawing has three adjacent default circles added sequentially, then their explicit x-positions are correct (fixed)")
             void whenADrawingHasThreeAdjacentDefaultCirclesAddedSequentiallyThenTheirExplicitXPositionsAreCorrectFixed(@NotNull final BDDSoftAssertions softly)
             {
-                drawing.add(shape1);
-                drawing.add(shape2);
-                shape2.setRightOf(shape1);
-                drawing.add(shape3);
-                shape3.setRightOf(shape2);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape3);
+                ShapeDrawingTestProtected.this.shape3.setRightOf(ShapeDrawingTestProtected.this.shape2);
                 @NotNull final Integer width = 100;
                 @NotNull final Integer height = 100;
-                drawing.setExplicitWidth(width);
-                drawing.setExplicitHeight(height);
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(width);
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(height);
                 @NotNull final Number bigWidth = DrawlNumber.valueOf(width);
                 @NotNull final Number bigX1 = bigWidth.divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
                 @NotNull final Number bigX2 = bigWidth.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
                 @NotNull final Number fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
                 @NotNull final Number bigX3 = bigWidth.multiply(fraction, DrawlNumber.mcOperations);
 
-                @NotNull final Number actualExplicitXPositionCenter1 = shape1.getExplicitXPositionCenter();
-                @NotNull final Number actualExplicitXPositionCenter2 = shape2.getExplicitXPositionCenter();
-                @NotNull final Number actualExplicitXPositionCenter3 = shape3.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter1 = ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter2 = ShapeDrawingTestProtected.this.shape2.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter3 = ShapeDrawingTestProtected.this.shape3.getExplicitXPositionCenter();
 
                 then:
                 softly.then(bigX1).isEqualTo(actualExplicitXPositionCenter1);
@@ -849,24 +849,24 @@ public abstract class ShapeDrawingTestProtected
             @DisplayName("When a drawing has three adjacent default Circles, then their explicit x-positions are correct (fixed)")
             void whenADrawingHasThreeAdjacentDefaultCirclesThenTheirExplicitXPositionsAreCorrectFixed(@NotNull final BDDSoftAssertions softly)
             {
-                drawing.add(shape1);
-                drawing.add(shape2);
-                drawing.add(shape3);
-                shape2.setRightOf(shape1);
-                shape3.setRightOf(shape2);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape3);
+                ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.shape3.setRightOf(ShapeDrawingTestProtected.this.shape2);
                 @NotNull final Integer width = 100;
                 @NotNull final Integer height = 100;
-                drawing.setExplicitWidth(width);
-                drawing.setExplicitHeight(height);
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(width);
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(height);
                 @NotNull final Number bigWidth = DrawlNumber.valueOf(width);
                 @NotNull final Number expectedExplicitXPositionCenter1 = bigWidth.divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
                 @NotNull final Number expectedExplicitXPositionCenter2 = bigWidth.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
                 @NotNull final Number fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
                 @NotNull final Number expectedExplicitXPositionCenter3 = bigWidth.multiply(fraction, DrawlNumber.mcOperations);
 
-                @NotNull final Number actualExplicitXPositionCenter1 = shape1.getExplicitXPositionCenter();
-                @NotNull final Number actualExplicitXPositionCenter2 = shape2.getExplicitXPositionCenter();
-                @NotNull final Number actualExplicitXPositionCenter3 = shape3.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter1 = ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter2 = ShapeDrawingTestProtected.this.shape2.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter3 = ShapeDrawingTestProtected.this.shape3.getExplicitXPositionCenter();
 
                 softly.then(actualExplicitXPositionCenter1).isEqualTo(expectedExplicitXPositionCenter1);
                 softly.then(actualExplicitXPositionCenter2).isEqualTo(expectedExplicitXPositionCenter2);
@@ -878,15 +878,15 @@ public abstract class ShapeDrawingTestProtected
             @DisplayName("When a drawing has three adjacent default Shapes, then their explicit x-positions are correct (max size)")
             void whenADrawingHasThreeAdjacentDefaultShapesThenTheirExplicitXPositionsAreCorrectMaxSize(@NotNull final BDDSoftAssertions softly)
             {
-                drawing.add(shape1);
-                drawing.add(shape2);
-                drawing.add(shape3);
-                shape2.setRightOf(shape1);
-                shape3.setRightOf(shape2);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape3);
+                ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.shape3.setRightOf(ShapeDrawingTestProtected.this.shape2);
                 final Float width = Float.MAX_VALUE;
                 final Float height = Float.MAX_VALUE;
-                drawing.setExplicitWidth(width);
-                drawing.setExplicitHeight(height);
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(width);
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(height);
                 @NotNull final Number bigX1 = DrawlNumber.valueOf(width).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
                 @NotNull final Number bigX2 = DrawlNumber.valueOf(width).divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
                 @NotNull final Number fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
@@ -899,9 +899,9 @@ public abstract class ShapeDrawingTestProtected
                 softly.then(Float.MAX_VALUE).isGreaterThanOrEqualTo(bigX2f);
                 softly.then(Float.MAX_VALUE).isGreaterThanOrEqualTo(bigX3f);
 
-                softly.then(bigX1f).isEqualTo(shape1.getExplicitXPositionCenter().floatValue());
-                softly.then(bigX2f).isEqualTo(shape2.getExplicitXPositionCenter().floatValue());
-                softly.then(bigX3f).isEqualTo(shape3.getExplicitXPositionCenter().floatValue());
+                softly.then(bigX1f).isEqualTo(ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter().floatValue());
+                softly.then(bigX2f).isEqualTo(ShapeDrawingTestProtected.this.shape2.getExplicitXPositionCenter().floatValue());
+                softly.then(bigX3f).isEqualTo(ShapeDrawingTestProtected.this.shape3.getExplicitXPositionCenter().floatValue());
 
             }
 
@@ -1000,31 +1000,31 @@ public abstract class ShapeDrawingTestProtected
             @DisplayName("When a drawing has two adjacent default Circles, then their implicit x-positions are correct (fixed)")
             void whenADrawingHasTwoAdjacentDefaultCirclesThenTheirImplicitXPositionsAreCorrectFixed(@NotNull final BDDSoftAssertions softly)
             {
-                drawing.add(shape1);
-                drawing.add(shape2);
-                shape2.setRightOf(shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
 
-                softly.then(DrawlNumber.ZERO).isEqualTo(shape1.getImplicitXPositionCenter());
-                softly.then(DrawlNumber.ONE).isEqualTo(shape2.getImplicitXPositionCenter());
+                softly.then(DrawlNumber.ZERO).isEqualTo(ShapeDrawingTestProtected.this.shape1.getImplicitXPositionCenter());
+                softly.then(DrawlNumber.ONE).isEqualTo(ShapeDrawingTestProtected.this.shape2.getImplicitXPositionCenter());
             }
 
             @Test
             @DisplayName("X-POSITION - IMPLICIT: When a drawing has two adjacent default Circles, then their explicit x-positions are correct (fixed)")
             void whenADrawingHasTwoAdjacentDefaultShapesThenTheirExplicitXPositionsAreCorrectFixed(@NotNull final BDDSoftAssertions softly)
             {
-                drawing.add(shape1);
-                drawing.add(shape2);
-                shape2.setRightOf(shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
                 final int width = 100;
                 final int height = 100;
-                drawing.setExplicitWidth(width);
-                drawing.setExplicitHeight(height);
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(width);
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(height);
 
                 @NotNull final Number EXPECTED_1 = DrawlNumber.valueOf(width / 4);
                 @NotNull final Number EXPECTED_2 = DrawlNumber.valueOf((3 * width) / 4);
 
-                softly.then(EXPECTED_1).isEqualTo(shape1.getExplicitXPositionCenter());
-                softly.then(EXPECTED_2).isEqualTo(shape2.getExplicitXPositionCenter());
+                softly.then(EXPECTED_1).isEqualTo(ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter());
+                softly.then(EXPECTED_2).isEqualTo(ShapeDrawingTestProtected.this.shape2.getExplicitXPositionCenter());
             }
 
             @Tag("x-position")
@@ -1033,13 +1033,13 @@ public abstract class ShapeDrawingTestProtected
             void whenASquare100DrawingHasTwoAdjacentCirclesThenTheirExplicitXPositionsAreCorrect(@NotNull final BDDSoftAssertions softly)
             {
 
-                drawing.add(shape1);
-                drawing.add(shape2);
-                shape2.setRightOf(shape1);
-                drawing.setExplicitHeight(100);
-                drawing.setExplicitWidth(100);
-                @NotNull final Number explicitXPosition1 = shape1.getExplicitXPositionCenter();
-                @NotNull final Number explicitXPosition2 = shape2.getExplicitXPositionCenter();
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.setExplicitHeight(100);
+                ShapeDrawingTestProtected.this.drawing.setExplicitWidth(100);
+                @NotNull final Number explicitXPosition1 = ShapeDrawingTestProtected.this.shape1.getExplicitXPositionCenter();
+                @NotNull final Number explicitXPosition2 = ShapeDrawingTestProtected.this.shape2.getExplicitXPositionCenter();
 
                 then:
                 softly.then(explicitXPosition1).isEqualTo(DrawlNumber.valueOf(25));
@@ -1051,9 +1051,9 @@ public abstract class ShapeDrawingTestProtected
             void whenTextIsAddedToAShapeThenItInheritsExplicitXPosition()
             {
                 @NotNull final Text text = new Text("Drawl");
-                shape1.addText(text);
-                drawing.add(shape1);
-                drawing.setExplicitDimensions(100, 100);
+                ShapeDrawingTestProtected.this.shape1.addText(text);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.setExplicitDimensions(100, 100);
 
                 then(text.getExplicitXPositionCenter()).isEqualTo(DrawlNumber.valueOf(50));
             }
@@ -1063,9 +1063,9 @@ public abstract class ShapeDrawingTestProtected
             void whenTextIsAddedToAShapeThenItInheritsExplicitYPosition()
             {
                 @NotNull final Text text = new Text("Drawl");
-                shape1.addText(text);
-                drawing.add(shape1);
-                drawing.setExplicitDimensions(100, 100);
+                ShapeDrawingTestProtected.this.shape1.addText(text);
+                ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                ShapeDrawingTestProtected.this.drawing.setExplicitDimensions(100, 100);
 
                 then(text.getExplicitYPositionCenter()).isEqualTo(DrawlNumber.valueOf(50));
             }
@@ -1090,9 +1090,9 @@ public abstract class ShapeDrawingTestProtected
                 void yPositionExplicitWhenASquare100DrawingHasOneDefaultShapeThenItsExplicitYPositionIsCorrect()
                 {
                     @NotNull final Integer size = 100;
-                    drawing.add(shape1);
-                    drawing.setExplicitDimensions(size, size);
-                    @NotNull final Number yPosition = shape1.getExplicitYPositionCenter();
+                    ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                    ShapeDrawingTestProtected.this.drawing.setExplicitDimensions(size, size);
+                    @NotNull final Number yPosition = ShapeDrawingTestProtected.this.shape1.getExplicitYPositionCenter();
                     @NotNull final Number EXPECTED = DrawlNumber.valueOf(50);
 
                     then(yPosition).isEqualByComparingTo(EXPECTED);
@@ -1116,26 +1116,26 @@ public abstract class ShapeDrawingTestProtected
                     @NotNull final Integer SIZE = 100;
                     @NotNull final Number EXPECTED_Y_POS = DrawlNumber.valueOf(SIZE).divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
 
-                    drawing.add(shape1);
-                    drawing.add(shape2);
-                    shape2.setRightOf(shape1);
+                    ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                    ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                    ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
 
-                    drawing.setExplicitHeight(SIZE);
-                    softly.then(drawing.getExplicitToImplicitRatio())
+                    ShapeDrawingTestProtected.this.drawing.setExplicitHeight(SIZE);
+                    softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitToImplicitRatio())
                             .as("After setExplicitHeight, the explicit to implicit ratio should be %d", SIZE)
                             .isEqualByComparingTo(DrawlNumber.valueOf(SIZE));
 
-                    drawing.setExplicitWidth(SIZE);
-                    softly.then(drawing.getExplicitToImplicitRatio())
+                    ShapeDrawingTestProtected.this.drawing.setExplicitWidth(SIZE);
+                    softly.then(ShapeDrawingTestProtected.this.drawing.getExplicitToImplicitRatio())
                             .as("After setExplicitWidth, the explicit to implicit ratio should be %d", SIZE / 2.0)
                             .isEqualByComparingTo(DrawlNumber.valueOf(SIZE / 2.0));
 
-                    @NotNull final Number explicitYPosition1 = shape1.getExplicitYPositionCenter();
+                    @NotNull final Number explicitYPosition1 = ShapeDrawingTestProtected.this.shape1.getExplicitYPositionCenter();
                     softly.then(explicitYPosition1)
                             .as("The y position of shape1 should be %s", EXPECTED_Y_POS.toPlainString())
                             .isEqualByComparingTo(EXPECTED_Y_POS);
 
-                    @NotNull final Number explicitYPosition2 = shape2.getExplicitYPositionCenter();
+                    @NotNull final Number explicitYPosition2 = ShapeDrawingTestProtected.this.shape2.getExplicitYPositionCenter();
                     softly.then(explicitYPosition2)
                             .as("The y position of shape2 should be %s", EXPECTED_Y_POS.toPlainString())
                             .isEqualByComparingTo(EXPECTED_Y_POS);
@@ -1155,13 +1155,13 @@ public abstract class ShapeDrawingTestProtected
                 @DisplayName("Y-POSITION - EXPLICIT: When a square (100) drawing has two adjacent Shapes, then their explicit y positions are correct #1b")
                 void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrect01b(@NotNull final BDDSoftAssertions softly)
                 {
-                    drawing.add(shape1);
-                    drawing.add(shape2);
-                    shape2.setRightOf(shape1);
-                    drawing.setExplicitWidth(100);
-                    drawing.setExplicitHeight(100);
-                    @NotNull final Number explicitYPosition1 = shape1.getExplicitYPositionCenter();
-                    @NotNull final Number explicitYPosition2 = shape2.getExplicitYPositionCenter();
+                    ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                    ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                    ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
+                    ShapeDrawingTestProtected.this.drawing.setExplicitWidth(100);
+                    ShapeDrawingTestProtected.this.drawing.setExplicitHeight(100);
+                    @NotNull final Number explicitYPosition1 = ShapeDrawingTestProtected.this.shape1.getExplicitYPositionCenter();
+                    @NotNull final Number explicitYPosition2 = ShapeDrawingTestProtected.this.shape2.getExplicitYPositionCenter();
                     @NotNull final Number EXPECTED = DrawlNumber.valueOf(50);
 
                     softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
@@ -1177,51 +1177,51 @@ public abstract class ShapeDrawingTestProtected
                     @NotNull final Integer sizeOfDrawing = 100;
                     @NotNull final Number EXPECTED = DrawlNumber.valueOf(sizeOfDrawing).divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
 
-                    drawing.add(shape1);
-                    Number implicitYPosition1 = shape1.getImplicitYPositionCenter();
+                    ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                    Number implicitYPosition1 = ShapeDrawingTestProtected.this.shape1.getImplicitYPositionCenter();
                     softly.then(implicitYPosition1)
                             .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
                                     + " expected explicit y position: (" + 0 + ")")
                             .isEqualByComparingTo(DrawlNumber.ZERO);
 
-                    drawing.add(shape2);
-                    Number implicitYPosition2 = shape2.getImplicitYPositionCenter();
+                    ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                    Number implicitYPosition2 = ShapeDrawingTestProtected.this.shape2.getImplicitYPositionCenter();
                     softly.then(implicitYPosition2)
                             .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
                                     + " expected explicit y position: (" + 0 + ")")
                             .isEqualByComparingTo(DrawlNumber.ZERO);
 
-                    shape2.setRightOf(shape1);
-                    implicitYPosition1 = shape1.getImplicitYPositionCenter();
+                    ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
+                    implicitYPosition1 = ShapeDrawingTestProtected.this.shape1.getImplicitYPositionCenter();
                     softly.then(implicitYPosition1)
                             .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
                                     + " expected explicit y position: (" + 0 + ")")
                             .isEqualByComparingTo(DrawlNumber.ZERO);
-                    implicitYPosition2 = shape2.getImplicitYPositionCenter();
+                    implicitYPosition2 = ShapeDrawingTestProtected.this.shape2.getImplicitYPositionCenter();
                     softly.then(implicitYPosition2)
                             .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
                                     + " expected explicit y position: (" + 0 + ")")
                             .isEqualByComparingTo(DrawlNumber.ZERO);
 
-                    drawing.setExplicitDimensions(sizeOfDrawing, sizeOfDrawing);
-                    implicitYPosition1 = shape1.getImplicitYPositionCenter();
+                    ShapeDrawingTestProtected.this.drawing.setExplicitDimensions(sizeOfDrawing, sizeOfDrawing);
+                    implicitYPosition1 = ShapeDrawingTestProtected.this.shape1.getImplicitYPositionCenter();
                     softly.then(implicitYPosition1)
                             .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
                                     + " expected explicit y position: (" + 0 + ")")
                             .isEqualByComparingTo(DrawlNumber.ZERO);
-                    implicitYPosition2 = shape1.getImplicitYPositionCenter();
+                    implicitYPosition2 = ShapeDrawingTestProtected.this.shape1.getImplicitYPositionCenter();
                     softly.then(implicitYPosition2)
                             .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
                                     + " expected explicit y position: (" + 0 + ")")
                             .isEqualByComparingTo(DrawlNumber.ZERO);
 
-                    @NotNull final Number explicitYPosition1 = shape1.getExplicitYPositionCenter();
+                    @NotNull final Number explicitYPosition1 = ShapeDrawingTestProtected.this.shape1.getExplicitYPositionCenter();
                     softly.then(explicitYPosition1)
                             .as("The actual explicit y position of Shape 1 (" + explicitYPosition1 + ") should match the"
                                     + " expected explicit y position: (" + EXPECTED + ")")
                             .isEqualByComparingTo(EXPECTED);
 
-                    @NotNull final Number explicitYPosition2 = shape2.getExplicitYPositionCenter();
+                    @NotNull final Number explicitYPosition2 = ShapeDrawingTestProtected.this.shape2.getExplicitYPositionCenter();
                     softly.then(explicitYPosition2)
                             .as("The actual explicit y position of Shape 2 (" + explicitYPosition2 + ") should match the"
                                     + " expected explicit y position: (" + EXPECTED + ")")
@@ -1242,12 +1242,12 @@ public abstract class ShapeDrawingTestProtected
                 @DisplayName("When a drawing has two vertically adjacent default Circles, then their implicit y-positions are correct (fixed)")
                 void whenADrawingHasTwoAdjacentDefaultCirclesThenTheirImplicitYPositionsAreCorrect(@NotNull final BDDSoftAssertions softly)
                 {
-                    drawing.add(shape1);
-                    drawing.add(shape2);
-                    shape2.setAbove(shape1);
+                    ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
+                    ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
+                    ShapeDrawingTestProtected.this.shape2.setAbove(ShapeDrawingTestProtected.this.shape1);
 
-                    softly.then(DrawlNumber.ZERO).isEqualTo(shape1.getImplicitYPositionCenter());
-                    softly.then(DrawlNumber.ONE).isEqualTo(shape2.getImplicitYPositionCenter());
+                    softly.then(DrawlNumber.ZERO).isEqualTo(ShapeDrawingTestProtected.this.shape1.getImplicitYPositionCenter());
+                    softly.then(DrawlNumber.ONE).isEqualTo(ShapeDrawingTestProtected.this.shape2.getImplicitYPositionCenter());
                 }
             }
 
@@ -1264,7 +1264,7 @@ public abstract class ShapeDrawingTestProtected
             @DisplayName("When a Shape object is created, then the user can get the implicit y position of its bottom")
             void whenATextObjectIsCreatedThenTheUserCanGetTheBottomYPosition()
             {
-                then(shape1.getImplicitYPositionBottom()).isNotNull();
+                then(ShapeDrawingTestProtected.this.shape1.getImplicitYPositionBottom()).isNotNull();
             }
         }
 

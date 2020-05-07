@@ -21,11 +21,11 @@ import java.io.IOException;
  * Example of using Drawl to draw shapes separated by some distance.
  */
 public class Nonadjacency {
-    public static void main(String[] args) throws IOException
+    public static void main(final String[] args) throws IOException
     {
-        @NotNull Drawing drawing = new Drawing();
-        @NotNull Circle circle1 = new Circle();
-        @NotNull Circle circle2 = new Circle();
+        @NotNull final Drawing drawing = new Drawing();
+        @NotNull final Circle circle1 = new Circle();
+        @NotNull final Circle circle2 = new Circle();
         drawing.add(circle1);
         drawing.add(circle2);
 

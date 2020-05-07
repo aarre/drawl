@@ -32,17 +32,17 @@ public class TextDrawingTestProtected extends ShapeDrawingTestProtected
     void givenTheeDefaultTextObjects()
     {
         // These values override those in the superclass.
-        shape1 = new Text();
-        shape2 = new Text();
-        shape3 = new Text();
+        this.shape1 = new Text();
+        this.shape2 = new Text();
+        this.shape3 = new Text();
     }
 
     @Test
     @DisplayName("When a user creates a Drawing with a Text object, then its explicit y position is correct")
     void whenAUserCreatesADrawingWithATextObjectThenItsExplicitYPositionIsCorrect()
     {
-        @NotNull Drawing drawing = new Drawing();
-        @NotNull Text text = new Text("Drawl");
+        @NotNull final Drawing drawing = new Drawing();
+        @NotNull final Text text = new Text("Drawl");
         drawing.add(text);
         drawing.setExplicitDimensions(100,100);
         then(text.getExplicitYPositionCenter()).isEqualTo(DrawlNumber.valueOf(50));
@@ -52,15 +52,15 @@ public class TextDrawingTestProtected extends ShapeDrawingTestProtected
     @DisplayName("When Text is added to a Shape, then the Text shows up in the SVG")
     void whenTextIsAddedToADrawingThenItInheritsAnXPosition()
     {
-        if (shape1.getClass() == Text.class)
+        if (this.shape1.getClass() == Text.class)
         {
-            ((Text) shape1).setString("Drawl");
+            ((Text) this.shape1).setString("Drawl");
         }
-        @NotNull Text text = new Text("Drawl");
-        shape1.addText(text);
-        drawing.add(shape1);
-        drawing.setExplicitDimensions(100, 100);
+        @NotNull final Text text = new Text("Drawl");
+        this.shape1.addText(text);
+        this.drawing.add(this.shape1);
+        this.drawing.setExplicitDimensions(100, 100);
 
-        then(drawing.getSVG()).contains("Drawl");
+        then(this.drawing.getSVG()).contains("Drawl");
     }
 }

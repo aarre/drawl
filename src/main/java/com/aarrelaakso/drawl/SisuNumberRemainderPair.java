@@ -46,9 +46,9 @@ public final class SisuNumberRemainderPair
      * @param remainder remainder
      * @return number remainder pair
      */
-    public static @NotNull SisuNumberRemainderPair valueOf(SisuNumber number, SisuNumber remainder)
+    public static @NotNull SisuNumberRemainderPair valueOf(final SisuNumber number, final SisuNumber remainder)
     {
-        @NotNull SisuNumberRemainderPair res = new SisuNumberRemainderPair();
+        @NotNull final SisuNumberRemainderPair res = new SisuNumberRemainderPair();
         res.number = number;
         res.remainder = remainder;
         res.guardInvariants();
@@ -56,7 +56,7 @@ public final class SisuNumberRemainderPair
     }
 
     @Override
-    public boolean equals(Object obj)
+    public boolean equals(final Object obj)
     {
         return EqualsBuilder.reflectionEquals(this, obj);
     }
@@ -68,7 +68,7 @@ public final class SisuNumberRemainderPair
      */
     public SisuNumber getNumber()
     {
-        return number;
+        return this.number;
     }
 
     /**
@@ -78,7 +78,7 @@ public final class SisuNumberRemainderPair
      */
     public SisuNumber getRemainder()
     {
-        return remainder;
+        return this.remainder;
     }
 
     /**
@@ -86,11 +86,11 @@ public final class SisuNumberRemainderPair
      */
     private void guardInvariants()
     {
-        if (number == null)
+        if (this.number == null)
         {
             throw new UnsupportedOperationException("number cannot be null");
         }
-        if (remainder == null)
+        if (this.remainder == null)
         {
             throw new UnsupportedOperationException("remainder cannot be null");
         }
