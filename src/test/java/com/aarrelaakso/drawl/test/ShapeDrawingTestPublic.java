@@ -262,4 +262,20 @@ public abstract class ShapeDrawingTestPublic {
             then(measure).isEqualToComparingFieldByField(new Measure(1));
         }
     }
+
+    @Test
+    @DisplayName("SVG: When you get SVG twice from a Drawing, it is the same both times")
+    void whenYouGetSVGTwiceFromADrawingThenItIsTheSameBothTimes()
+    {
+        drawing.add(shape1);
+        drawing.add(shape2);
+        String svg1 = drawing.getSVG(100, 100);
+        String svg2 = drawing.getSVG(100, 100);
+
+        then(svg1).isEqualTo(svg2);
+    }
+
+
+
+
 }

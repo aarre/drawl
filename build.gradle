@@ -21,11 +21,12 @@ dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.3', ext: 'pom'
 
     // Apache Commons
+    // Lang3
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+    // Math3
     // https://mvnrepository.com/artifact/org.apache.commons/commons-math3
     compile group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
-
 
     // JetBrains Annotations
     compile 'org.jetbrains:annotations:16.0.2'
@@ -35,7 +36,8 @@ dependencies {
     runtime group: 'com.google.flogger', name: 'flogger-system-backend', version: '0.5.1'
 
     // Spock
-    compile 'org.spockframework:spock-core:1.3-groovy-2.5'
+    // https://mvnrepository.com/artifact/org.spockframework/spock-core/1.3-groovy-2.5
+    testCompile group: 'org.spockframework', name: 'spock-core', version: '1.3-groovy-2.5'
 
     // Google Guava libraries
     implementation("com.google.guava:guava:28.2-jre")
