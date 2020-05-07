@@ -47,12 +47,12 @@ public class Line extends Shape {
         this.point1Implicit = point1Implicit;
         this.point2Implicit = point2Implicit;
 
-        DrawlNumber implicitWidth = point2Implicit.getX().subtract(point1Implicit.getX());
-        DrawlNumber implicitHeight = point2Implicit.getY().subtract(point1Implicit.getY());
+        Number implicitWidth = point2Implicit.getX().subtract(point1Implicit.getX());
+        Number implicitHeight = point2Implicit.getY().subtract(point1Implicit.getY());
 
-        DrawlNumber implicitCenterX = point1Implicit.getX().add(implicitWidth.divide(DrawlNumber.TWO,
+        Number implicitCenterX = point1Implicit.getX().add(implicitWidth.divide(DrawlNumber.TWO,
                 DrawlNumber.mcOperations));
-        DrawlNumber implicitCenterY = point1Implicit.getY().add(implicitHeight.divide(DrawlNumber.TWO,
+        Number implicitCenterY = point1Implicit.getY().add(implicitHeight.divide(DrawlNumber.TWO,
                 DrawlNumber.mcOperations));
 
         this.setImplicitWidth(implicitWidth);
@@ -63,16 +63,16 @@ public class Line extends Shape {
 
     @Nullable
     protected Point getPoint1Explicit() {
-        DrawlNumber point1ExplicitX = this.getExplicitXPositionLeft();
-        @NotNull DrawlNumber point1ExplicitY = this.getExplicitYPositionBottom();
+        Number point1ExplicitX = this.getExplicitXPositionLeft();
+        @NotNull Number point1ExplicitY = this.getExplicitYPositionBottom();
 
         return new Point(point1ExplicitX, point1ExplicitY);
     }
 
     @Nullable
     protected Point getPoint2Explicit() {
-        DrawlNumber point2ExplicitX = this.getExplicitXPositionRight();
-        @NotNull DrawlNumber point2ExplicitY = this.getExplicitYPositionTop();
+        Number point2ExplicitX = this.getExplicitXPositionRight();
+        @NotNull Number point2ExplicitY = this.getExplicitYPositionTop();
 
         return new Point(point2ExplicitX, point2ExplicitY);
     }
