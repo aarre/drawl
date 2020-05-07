@@ -312,7 +312,7 @@ public class Drawing {
      *
      * @return the implicit total width of all contents in this drawing
      */
-    private DrawlNumber getImplicitWidthOfContents() {
+    DrawlNumber getImplicitWidthOfContents() {
         assert this.getImplicitXMaximum().isGreaterThanOrEqualTo(this.getImplicitXMinimum()) :
                 "The implicit x-coordinate maximum must be greater than or equal to the implicit x-coordinate minimum.";
         return this.getImplicitXMaximum().subtract(this.getImplicitXMinimum());
