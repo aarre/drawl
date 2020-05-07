@@ -33,7 +33,7 @@ public class DrawlNumber implements Number {
     /**
      * Zero.
      */
-    protected static @NotNull DrawlNumber ZERO = new DrawlNumber("0");
+    protected static @NotNull Number ZERO = new DrawlNumber("0");
 
     /**
      * Use this MathContext for comparisons.
@@ -167,7 +167,7 @@ public class DrawlNumber implements Number {
      *
      * @return absolute value of this number
      */
-    public @NotNull DrawlNumber abs() {
+    public @NotNull Number abs() {
         return valueOf(Math.abs(this.number));
     }
 
@@ -177,7 +177,7 @@ public class DrawlNumber implements Number {
      * @param augend other number
      * @return addition operation result
      */
-    public @NotNull DrawlNumber add(@NotNull final Number augend) {
+    public @NotNull Number add(@NotNull final Number augend) {
         return new DrawlNumber(this.doubleValue() + augend.doubleValue());
     }
 
@@ -187,7 +187,7 @@ public class DrawlNumber implements Number {
      * @param x other number
      * @return addition operation result
      */
-    public @NotNull DrawlNumber add(final double x) {
+    public @NotNull Number add(final double x) {
         return this.add(new DrawlNumber(String.valueOf(x)));
     }
 
@@ -203,7 +203,7 @@ public class DrawlNumber implements Number {
      * @version 1.0, 05/07/2020
      * @since 1.0, 05/07/2020
      */
-    public @NotNull DrawlNumber add(@NotNull final Number augend, final MathContext mc) {
+    public @NotNull Number add(@NotNull final Number augend, final MathContext mc) {
         return new DrawlNumber(this.doubleValue() + augend.doubleValue());
     }
 
@@ -233,21 +233,6 @@ public class DrawlNumber implements Number {
         return this.number.compareTo(comparator.doubleValue());
     }
 
-    /**
-     * Compares this DrawlNumber with the specified DrawlNumber. Two Number objects that are equal in value but have
-     * a different scale (like 2.0 and 2.00) are considered equal by this method.
-     * <p>
-     * This method overrides the compareTo method in the java.lang.Comparable interface.
-     *
-     * @param comparator Number to which this DrawlNumber is to be compared.
-     * @returns -1, 0, or 1 as this DrawlNumber is numerically less than, equal to, or greater than comparator.
-     * @author Aarre Laakso
-     * @version 1.0, 05/07/2020
-     * @since 1.0, 05/07/2020
-     */
-    public int compareTo(@NotNull final DrawlNumber comparator) {
-        return this.number.compareTo(comparator.doubleValue());
-    }
 
     /**
      * Compare this DrawlNumber to another using the default MathContext.
@@ -308,7 +293,7 @@ public class DrawlNumber implements Number {
      * @param mathContext Ignored. Retained for compatibility with SisuNumber interface.
      * @return This divided by val.
      */
-    public @NotNull DrawlNumber divide(@NotNull final Number divisor, final MathContext mathContext) {
+    public @NotNull Number divide(@NotNull final Number divisor, final MathContext mathContext) {
         return new DrawlNumber(this.doubleValue() / divisor.doubleValue());
     }
 
@@ -322,7 +307,7 @@ public class DrawlNumber implements Number {
      * @version 1.0, 05/07/2020
      * @since 1.0, 05/07/2020
      */
-    public final @NotNull DrawlNumber divide(@NotNull final Number divisor, final int precision) {
+    public final @NotNull Number divide(@NotNull final Number divisor, final int precision) {
         int actualPrecision = precision;
         final double quotient = this.number / divisor.doubleValue();
         final String quotientAsString = String.valueOf(quotient);
@@ -344,7 +329,7 @@ public class DrawlNumber implements Number {
      * @param precision precision of the result (see the class level comment for details)
      * @return division operation result
      */
-    public @NotNull DrawlNumber divide(final double x, final int precision) {
+    public @NotNull Number divide(final double x, final int precision) {
         return this.divide(new DrawlNumber(String.valueOf(x)), precision);
     }
 
@@ -569,7 +554,7 @@ public class DrawlNumber implements Number {
      * @param multiplicand other number
      * @return multiplication result
      */
-    public @NotNull DrawlNumber multiply(@NotNull final Number multiplicand) {
+    public @NotNull Number multiply(@NotNull final Number multiplicand) {
         return new DrawlNumber(this.doubleValue() * multiplicand.doubleValue());
     }
 
@@ -581,7 +566,7 @@ public class DrawlNumber implements Number {
      * @return this * multiplicand, rounded as necessary.
      * @throws ArithmeticException if the result is inexact but the rounding mode is UNNECESSARY.
      */
-    public @NotNull DrawlNumber multiply(@NotNull final Number multiplicand, final MathContext mc) {
+    public @NotNull Number multiply(@NotNull final Number multiplicand, final MathContext mc) {
         return new DrawlNumber(this.doubleValue() * multiplicand.doubleValue());
     }
 
@@ -591,7 +576,7 @@ public class DrawlNumber implements Number {
      * @param multiplicand other number
      * @return addition multiplication result
      */
-    public @NotNull DrawlNumber multiply(final double multiplicand) {
+    public @NotNull Number multiply(final double multiplicand) {
         return this.multiply(new DrawlNumber(String.valueOf(multiplicand)));
     }
 
@@ -600,7 +585,7 @@ public class DrawlNumber implements Number {
      *
      * @return negative of this number
      */
-    public @NotNull DrawlNumber negate() {
+    public @NotNull Number negate() {
         return valueOf(-number);
     }
 
@@ -611,7 +596,7 @@ public class DrawlNumber implements Number {
      * @param precision Ignored. Provided for compatibility with SisuBigDecimal interface.
      * @return power operation result
      */
-    public @NotNull DrawlNumber pow(final int n, final int precision) {
+    public @NotNull Number pow(final int n, final int precision) {
         return valueOf(Math.pow(number, n));
     }
 
@@ -621,7 +606,7 @@ public class DrawlNumber implements Number {
      * @param mc Ignored. Provided for interface compatibility with SisuBigDecimal.
      * @return A new instance of SisuBigDecimal that has the same value as this one rounded.
      */
-    public @NotNull DrawlNumber round(final MathContext mc) {
+    public @NotNull Number round(final MathContext mc) {
         return valueOf(Math.round(number));
     }
 
@@ -631,7 +616,7 @@ public class DrawlNumber implements Number {
      * @param places How many decimal places to preserve in the new instance
      * @return
      */
-    public @NotNull DrawlNumber round(final int places) {
+    public @NotNull Number round(final int places) {
         if (places < 0) throw new IllegalArgumentException();
 
         BigDecimal bd = new BigDecimal(Double.toString(number));
@@ -645,17 +630,7 @@ public class DrawlNumber implements Number {
      * @param subtrahend value to be subtracted from this DrawlNumber.
      * @return addition subtraction result
      */
-    public @NotNull DrawlNumber subtract(@NotNull final DrawlNumber subtrahend) {
-        return new DrawlNumber(this.number - subtrahend.number);
-    }
-
-    /**
-     * Performs subtraction operation.
-     *
-     * @param subtrahend value to be subtracted from this DrawlNumber.
-     * @return addition subtraction result
-     */
-    public @NotNull DrawlNumber subtract(@NotNull final Number subtrahend) {
+    public @NotNull Number subtract(@NotNull final Number subtrahend) {
         return new DrawlNumber(this.doubleValue() - subtrahend.doubleValue());
     }
 
@@ -669,26 +644,9 @@ public class DrawlNumber implements Number {
      * @return this - subtrahend, rounded as necessary
      * @throws ArithmeticException if the result is inexact but the rounding mode is UNNECESSARY.
      */
-    public @NotNull final DrawlNumber subtract(@NotNull final DrawlNumber subtrahend, final MathContext mc) {
-        return new DrawlNumber(number - subtrahend.number);
+    public @NotNull final Number subtract(@NotNull final Number subtrahend, final MathContext mc) {
+        return new DrawlNumber(number - subtrahend.doubleValue());
     }
-
-
-    /**
-     * Returns a DrawlNumber whose value is (this - subtrahend), with rounding according to the context settings. If
-     * subtrahend is zero, then this, rounded if necessary, is used as the result. If this is zero then the result is
-     * subtrahend.negate(mc).
-     *
-     * @param subtrahend value to be subtracted from this DrawlNumber.
-     * @param mc         Ignored. Preserved for compatibility with the Number interface.
-     * @return this - subtrahend, rounded as necessary
-     * @throws ArithmeticException if the result is inexact but the rounding mode is UNNECESSARY.
-     */
-    public @NotNull final DrawlNumber subtract(@NotNull final Number subtrahend, final MathContext mc) {
-        return new DrawlNumber(this.doubleValue() - subtrahend.doubleValue());
-    }
-
-
 
     /**
      * Performs subtraction operation.
@@ -696,7 +654,7 @@ public class DrawlNumber implements Number {
      * @param subtrahend value to be subtracted from this DrawlNumber.
      * @return addition subtraction result
      */
-    public @NotNull DrawlNumber subtract(final double subtrahend) {
+    public @NotNull Number subtract(final double subtrahend) {
         return this.subtract(new DrawlNumber(String.valueOf(subtrahend)));
     }
 

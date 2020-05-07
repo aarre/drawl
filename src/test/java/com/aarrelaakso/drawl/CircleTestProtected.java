@@ -49,7 +49,7 @@ public class CircleTestProtected extends ShapeTestProtected
         @Test
         @DisplayName("Then its implicit radius is 0.5")
         void thenImplicitRadiusIs05() {
-            DrawlNumber radius = shape1.getImplicitRadius();
+            Number radius = shape1.getImplicitRadius();
             assertEquals(DrawlNumber.valueOf(0.5), radius);
         }
 
@@ -60,9 +60,9 @@ public class CircleTestProtected extends ShapeTestProtected
         @DisplayName("Then you can set the explicit radius of a circle to a fixed value")
         void thenYouCanSetTheExplicitRadiusOfACircleToAFixedValue() {
             @NotNull Integer radius = 100;
-            @NotNull DrawlNumber EXPECTED = DrawlNumber.valueOf(radius);
+            @NotNull Number EXPECTED = DrawlNumber.valueOf(radius);
             shape1.setExplicitRadius(radius);
-            @Nullable DrawlNumber ACTUAL = shape1.getExplicitRadius();
+            @Nullable Number ACTUAL = shape1.getExplicitRadius();
 
             then(ACTUAL).isEqualByComparingTo(EXPECTED);
         }

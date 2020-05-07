@@ -49,7 +49,7 @@ public abstract class ShapeTestProtected {
             @Test
             @DisplayName("When a Shape is created, then it has an explicit center x position")
             void whenAShapeIsCreatedThenItHasAnExplicitCenterXPosition() {
-                @NotNull DrawlNumber explicitXPositionCenter = shape1.getExplicitXPositionCenter();
+                @NotNull Number explicitXPositionCenter = shape1.getExplicitXPositionCenter();
                 then(explicitXPositionCenter).isEqualByComparingTo(DrawlNumber.ZERO);
             }
 
@@ -57,7 +57,7 @@ public abstract class ShapeTestProtected {
             @DisplayName("When a Shape has explicit dimensions, then it has an explicit left x position")
             void whenAShapeIsCreatedThenItHasAnExplicitLeftXPosition() {
                 shape1.setExplicitWidth(DrawlNumber.valueOf(100));
-                DrawlNumber explicitXPositionLeft = shape1.getExplicitXPositionLeft();
+                Number explicitXPositionLeft = shape1.getExplicitXPositionLeft();
                 then(explicitXPositionLeft).isEqualByComparingTo(DrawlNumber.valueOf(-50));
             }
         }
@@ -72,25 +72,25 @@ public abstract class ShapeTestProtected {
             @Test
             @DisplayName("When a Shape is created, then it has an implicit center x position")
             void whenAShapeIsCreatedThenItHasAnImplicitCenterXPosition() {
-                DrawlNumber implicitXPositionCenter = shape1.getImplicitXPositionCenter();
+                Number implicitXPositionCenter = shape1.getImplicitXPositionCenter();
                 then(implicitXPositionCenter).isEqualByComparingTo(DrawlNumber.ZERO);
             }
 
             @Test
             @DisplayName("When a Shape is created, then it has an implicit left x position")
             void whenAShapeIsCreatedThenItHasAnImplicitLeftXPosition() {
-                DrawlNumber implicitXPositionLeft = shape1.getImplicitXPositionLeft();
+                Number implicitXPositionLeft = shape1.getImplicitXPositionLeft();
                 then(implicitXPositionLeft).isEqualByComparingTo(DrawlNumber.valueOf(-0.5));
             }
 
             @Test
             @DisplayName("When you set a Shape leftOf a default Shape, its implicit x-coordinate is -1")
             void whenYouSetAShapeLeftOfADefaultShapeItsImplicitXCoordinateIsNeg1() {
-                DrawlNumber x10 = shape1.getImplicitXPositionCenter();
-                DrawlNumber x20 = shape2.getImplicitXPositionCenter();
+                Number x10 = shape1.getImplicitXPositionCenter();
+                Number x20 = shape2.getImplicitXPositionCenter();
                 shape1.setLeftOf(shape2);
-                DrawlNumber x11 = shape1.getImplicitXPositionCenter();
-                DrawlNumber x21 = shape2.getImplicitXPositionCenter();
+                Number x11 = shape1.getImplicitXPositionCenter();
+                Number x21 = shape2.getImplicitXPositionCenter();
                 assertEquals(x10, DrawlNumber.ZERO);
                 assertEquals(x20, DrawlNumber.ZERO);
                 assertEquals(x11, DrawlNumber.valueOf(-1));
@@ -100,11 +100,11 @@ public abstract class ShapeTestProtected {
             @Test
             @DisplayName("When you set a Shape rightOf another Shape, its implicit x-coordinate is 1")
             void whenYouSetAShapeRightOfADefaultShapeItsImplicitXCoordinateIs1() {
-                DrawlNumber x10 = shape1.getImplicitXPositionCenter();
-                DrawlNumber x20 = shape2.getImplicitXPositionCenter();
+                Number x10 = shape1.getImplicitXPositionCenter();
+                Number x20 = shape2.getImplicitXPositionCenter();
                 shape1.setRightOf(shape2);
-                DrawlNumber x11 = shape1.getImplicitXPositionCenter();
-                DrawlNumber x21 = shape2.getImplicitXPositionCenter();
+                Number x11 = shape1.getImplicitXPositionCenter();
+                Number x21 = shape2.getImplicitXPositionCenter();
                 assertEquals(x10, DrawlNumber.ZERO);
                 assertEquals(x20, DrawlNumber.ZERO);
                 assertEquals(x11, DrawlNumber.ONE);
@@ -134,7 +134,7 @@ public abstract class ShapeTestProtected {
                 @NotNull Drawing drawing = new Drawing();
                 drawing.add(shape1);
                 drawing.setExplicitDimensions(100, 100);
-                @NotNull DrawlNumber explicitXPositionTop = shape1.getExplicitYPositionTop();
+                @NotNull Number explicitXPositionTop = shape1.getExplicitYPositionTop();
                 then(explicitXPositionTop).isEqualByComparingTo(DrawlNumber.valueOf(0));
             }
         }
@@ -149,14 +149,14 @@ public abstract class ShapeTestProtected {
             @Test
             @DisplayName("When a Shape is created, then it has an implicit center y position")
             void whenShapeIsCreatedThenItHasAnImplicitCenterYPosition() {
-                DrawlNumber implicitYPositionCenter = shape1.getImplicitYPositionCenter();
+                Number implicitYPositionCenter = shape1.getImplicitYPositionCenter();
                 then(implicitYPositionCenter).isEqualByComparingTo(DrawlNumber.ZERO);
             }
 
             @Test
             @DisplayName("When a Shape is created, then it has an implicit top y position")
             void whenShapeIsCreatedThenItHasAnImplicitTopYPosition() {
-                DrawlNumber implicitYPositionTop = shape1.getImplicitYPositionTop();
+                Number implicitYPositionTop = shape1.getImplicitYPositionTop();
                 then(implicitYPositionTop).isEqualByComparingTo(DrawlNumber.valueOf(0.5));
             }
 
@@ -164,8 +164,8 @@ public abstract class ShapeTestProtected {
             @DisplayName("When you set a default Shape above a default Shape, its implicit y-coordinate is 1")
             void whenYouSetADefaultShapeAboveADefaultShapeItsImplicitYCoordinateIs1() {
                 shape1.setAbove(shape2);
-                DrawlNumber y1 = shape1.getImplicitYPositionCenter();
-                DrawlNumber y2 = shape2.getImplicitYPositionCenter();
+                Number y1 = shape1.getImplicitYPositionCenter();
+                Number y2 = shape2.getImplicitYPositionCenter();
                 assertEquals(DrawlNumber.ONE, y1);
                 assertEquals(DrawlNumber.ZERO, y2);
             }
@@ -174,8 +174,8 @@ public abstract class ShapeTestProtected {
             @DisplayName("When you set a default Shape below a default Shape, its implicit y-coordinate is -1")
             void whenYouSetADefaultShapeBelowADefaultShapeItsImplicitYCoordinateIsNeg1() {
                 shape1.setBelow(shape2);
-                DrawlNumber y1 = shape1.getImplicitYPositionCenter();
-                DrawlNumber y2 = shape2.getImplicitYPositionCenter();
+                Number y1 = shape1.getImplicitYPositionCenter();
+                Number y2 = shape2.getImplicitYPositionCenter();
                 assertEquals(y1, DrawlNumber.valueOf(-1));
                 assertEquals(y2, DrawlNumber.ZERO);
             }
@@ -190,14 +190,14 @@ public abstract class ShapeTestProtected {
         @Test
         @DisplayName("Then its explicit width is null")
         void thenExplicitWidthIsNull() {
-            @Nullable DrawlNumber width = shape1.getExplicitWidth();
+            @Nullable Number width = shape1.getExplicitWidth();
             assertNull(width, "The explicit width of a default Shape should be null.");
         }
 
         @Test
         @DisplayName("Then its explicit x-coordinate is 0")
         void thenExplicitXCoordinateIs0() {
-            @NotNull DrawlNumber x = shape1.getExplicitXPositionCenter();
+            @NotNull Number x = shape1.getExplicitXPositionCenter();
             then(x).isEqualByComparingTo(DrawlNumber.ZERO);
             then("0").isEqualTo(x.toPlainString());
         }
@@ -205,7 +205,7 @@ public abstract class ShapeTestProtected {
         @Test
         @DisplayName("Then its explicit y-coordinate is 0")
         void thenExplicitYCoordinateIs0() {
-            @NotNull DrawlNumber y = shape1.getExplicitYPositionCenter();
+            @NotNull Number y = shape1.getExplicitYPositionCenter();
             assertAll("The y-coordinate of a default Circle should be exactly 0",
                     () -> assertEquals(DrawlNumber.ZERO, y),
                     () -> assertEquals("0", y.toPlainString())
@@ -215,37 +215,37 @@ public abstract class ShapeTestProtected {
         @Test
         @DisplayName("Then its implicit height is 1")
         void thenImplicitHeightIs1() {
-            @Nullable DrawlNumber implicitHeight = shape1.getImplicitHeight();
+            @Nullable Number implicitHeight = shape1.getImplicitHeight();
             assertEquals(implicitHeight, DrawlNumber.ONE);
         }
 
         @Test
         @DisplayName("Then its implicit width is 1")
         void thenImplicitWidthIs1() {
-            DrawlNumber width = shape1.getImplicitWidth();
+            Number width = shape1.getImplicitWidth();
             assertEquals(width, DrawlNumber.ONE);
         }
 
         @Test
         @DisplayName("Then its implicit x-coordinate is 0")
         void thenImplicitXPositionIs0() {
-            DrawlNumber x = shape1.getImplicitXPositionCenter();
+            Number x = shape1.getImplicitXPositionCenter();
             assertEquals(x, DrawlNumber.ZERO);
         }
 
         @Test
         @DisplayName("Then its implicit y-coordinate is 0")
         void thenImplicitYPositionIs0() {
-            DrawlNumber x = shape1.getImplicitYPositionCenter();
+            Number x = shape1.getImplicitYPositionCenter();
             assertEquals(x, DrawlNumber.ZERO);
         }
 
         @Test
         @DisplayName("Then setting the height and then getting the height give the same result")
         void thenSettingTheHeightAndGettingTheHeightGiveTheSameResult() {
-            @NotNull DrawlNumber EXPECTED = DrawlNumber.valueOf(100);
+            @NotNull Number EXPECTED = DrawlNumber.valueOf(100);
             shape1.setExplicitHeight(EXPECTED);
-            @Nullable DrawlNumber ACTUAL = shape1.getExplicitHeight();
+            @Nullable Number ACTUAL = shape1.getExplicitHeight();
 
             then(EXPECTED).isEqualByComparingTo(ACTUAL);
         }
@@ -253,9 +253,9 @@ public abstract class ShapeTestProtected {
         @Test
         @DisplayName("Then setting the width and then getting the width give the same result")
         void thenSettingTheWidthAndGettingTheWidthGiveTheSameResult() {
-            @NotNull DrawlNumber EXPECTED = DrawlNumber.valueOf(100);
+            @NotNull Number EXPECTED = DrawlNumber.valueOf(100);
             shape1.setExplicitWidth(EXPECTED);
-            @Nullable DrawlNumber ACTUAL = shape1.getExplicitWidth();
+            @Nullable Number ACTUAL = shape1.getExplicitWidth();
 
             then(EXPECTED).isEqualByComparingTo(ACTUAL);
         }
@@ -265,7 +265,7 @@ public abstract class ShapeTestProtected {
         @DisplayName("Then you can set its x-coordinate and get it back")
         void thenYouCanSetItsXCoordinateAndGetItBack() {
             shape1.setExplicitXPositionCenter(100);
-            @NotNull DrawlNumber x = shape1.getExplicitXPositionCenter();
+            @NotNull Number x = shape1.getExplicitXPositionCenter();
             assertEquals(x, DrawlNumber.valueOf(100));
         }
 

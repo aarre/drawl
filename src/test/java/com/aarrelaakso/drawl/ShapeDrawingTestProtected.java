@@ -85,7 +85,7 @@ public abstract class ShapeDrawingTestProtected
     {
 
         drawing.add(shape1);
-        final DrawlNumber implicitWidth = drawing.getImplicitWidth();
+        final Number implicitWidth = drawing.getImplicitWidth();
 
         then(implicitWidth).isEqualTo(DrawlNumber.ONE);
 
@@ -97,7 +97,7 @@ public abstract class ShapeDrawingTestProtected
     {
 
         drawing.add(shape1);
-        final DrawlNumber implicitWidthOfContents = drawing.getImplicitWidthOfContents();
+        final Number implicitWidthOfContents = drawing.getImplicitWidthOfContents();
 
         then(implicitWidthOfContents).isEqualTo(DrawlNumber.ONE);
     }
@@ -108,7 +108,7 @@ public abstract class ShapeDrawingTestProtected
 
     {
         drawing.add(shape1);
-        final DrawlNumber implicitWidth = shape1.getImplicitWidth();
+        final Number implicitWidth = shape1.getImplicitWidth();
 
         then(implicitWidth).isEqualTo(DrawlNumber.ONE);
     }
@@ -119,7 +119,7 @@ public abstract class ShapeDrawingTestProtected
     {
         drawing.add(shape1);
         drawing.add(shape2);
-        final DrawlNumber implicitWidthOfContents = drawing.getImplicitWidthOfContents();
+        final Number implicitWidthOfContents = drawing.getImplicitWidthOfContents();
 
         then(implicitWidthOfContents).isEqualTo(DrawlNumber.ONE);
     }
@@ -133,8 +133,8 @@ public abstract class ShapeDrawingTestProtected
         shape2.setRightOf(shape1);
         drawing.setExplicitHeight(100);
         drawing.setExplicitWidth(100);
-        final DrawlNumber implicitWidth1 = shape1.getImplicitWidth();
-        final DrawlNumber implicitWidth2 = shape2.getImplicitWidth();
+        final Number implicitWidth1 = shape1.getImplicitWidth();
+        final Number implicitWidth2 = shape2.getImplicitWidth();
 
         softly.then(implicitWidth1).isEqualTo(DrawlNumber.ONE);
         softly.then(implicitWidth2).isEqualTo(DrawlNumber.ONE);
@@ -162,12 +162,12 @@ public abstract class ShapeDrawingTestProtected
         drawing.add(shape1);
         drawing.add(shape2);
 
-        final DrawlNumber implicitWidth1 = drawing.getImplicitWidth();
+        final Number implicitWidth1 = drawing.getImplicitWidth();
         then(implicitWidth1).isEqualTo(DrawlNumber.ONE);
 
         final String svg = this.drawing.getSVG(100, 100);
 
-        final DrawlNumber implicitWidth2 = drawing.getImplicitWidth();
+        final Number implicitWidth2 = drawing.getImplicitWidth();
         then(implicitWidth2).isEqualTo(DrawlNumber.ONE);
     }
 
@@ -210,7 +210,7 @@ public abstract class ShapeDrawingTestProtected
     {
         drawing.add(shape1);
         drawing.setExplicitWidth(100);
-        final DrawlNumber explicitWidth = drawing.getExplicitWidth();
+        final Number explicitWidth = drawing.getExplicitWidth();
 
 
         then(explicitWidth).isEqualTo(DrawlNumber.valueOf(100));
@@ -224,7 +224,7 @@ public abstract class ShapeDrawingTestProtected
         this.drawing.setExplicitWidth(100);
         this.drawing.setExplicitHeight(100);
 
-        final DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        final Number explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then(explicitWidthPerObject).isEqualTo(DrawlNumber.valueOf(100));
     }
@@ -240,7 +240,7 @@ public abstract class ShapeDrawingTestProtected
         drawing.add(shape2);
         drawing.setExplicitWidth(100);
         drawing.setExplicitHeight(100);
-        final DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        final Number explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then(explicitWidthPerObject).isEqualTo(DrawlNumber.valueOf(50));
     }
@@ -255,7 +255,7 @@ public abstract class ShapeDrawingTestProtected
         drawing.add(shape2);
         drawing.setExplicitWidth(100);
         drawing.setExplicitHeight(100);
-        final DrawlNumber explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+        final Number explicitWidthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
         then(explicitWidthPerObject).isEqualTo(DrawlNumber.valueOf(50));
     }
@@ -268,7 +268,7 @@ public abstract class ShapeDrawingTestProtected
 
         drawing.add(shape1);
         drawing.add(shape2);
-        final DrawlNumber implicitWidth = drawing.getImplicitWidth();
+        final Number implicitWidth = drawing.getImplicitWidth();
 
         then(implicitWidth).isEqualTo(DrawlNumber.TWO);
     }
@@ -282,7 +282,7 @@ public abstract class ShapeDrawingTestProtected
 
         drawing.add(shape1);
         drawing.add(shape2);
-        final DrawlNumber implicitWidth = drawing.getImplicitWidth();
+        final Number implicitWidth = drawing.getImplicitWidth();
 
         then(implicitWidth).isEqualTo(DrawlNumber.TWO);
     }
@@ -308,11 +308,11 @@ public abstract class ShapeDrawingTestProtected
             {
                 ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
                 ShapeDrawingTestProtected.this.drawing.setExplicitHeight(100);
-                @Nullable final DrawlNumber explicitHeightOfDrawing = ShapeDrawingTestProtected.this.drawing.getExplicitHeight();
-                @Nullable final DrawlNumber explicitWidthOfDrawing = ShapeDrawingTestProtected.this.drawing.getExplicitWidth();
-                @Nullable final DrawlNumber explicitHeightOfShape = ShapeDrawingTestProtected.this.shape1.getExplicitHeight();
-                @Nullable final DrawlNumber explicitWidthOfShape = ShapeDrawingTestProtected.this.shape1.getExplicitWidth();
-                @NotNull final DrawlNumber EXPECTED = DrawlNumber.valueOf(100);
+                @Nullable final Number explicitHeightOfDrawing = ShapeDrawingTestProtected.this.drawing.getExplicitHeight();
+                @Nullable final Number explicitWidthOfDrawing = ShapeDrawingTestProtected.this.drawing.getExplicitWidth();
+                @Nullable final Number explicitHeightOfShape = ShapeDrawingTestProtected.this.shape1.getExplicitHeight();
+                @Nullable final Number explicitWidthOfShape = ShapeDrawingTestProtected.this.shape1.getExplicitWidth();
+                @NotNull final Number EXPECTED = DrawlNumber.valueOf(100);
 
                 softly.then(explicitHeightOfDrawing).isEqualByComparingTo(EXPECTED);
                 softly.then(explicitWidthOfDrawing).isEqualByComparingTo(EXPECTED);
@@ -327,13 +327,13 @@ public abstract class ShapeDrawingTestProtected
             void heightExplicitWhenASquare100DrawingHasOneDefaultShapeThenSettingItsExplicitWidthScalesItsExplicitHeightToFit(@NotNull final BDDSoftAssertions softly)
             {
                 @NotNull final Integer size = 100;
-                @NotNull final DrawlNumber EXPECTED = DrawlNumber.valueOf(size);
+                @NotNull final Number EXPECTED = DrawlNumber.valueOf(size);
                 ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape1);
                 ShapeDrawingTestProtected.this.drawing.setExplicitWidth(size);
-                @Nullable final DrawlNumber explicitHeightOfDrawing = ShapeDrawingTestProtected.this.drawing.getExplicitHeight();
-                @Nullable final DrawlNumber explicitWidthOfDrawing = ShapeDrawingTestProtected.this.drawing.getExplicitWidth();
-                @Nullable final DrawlNumber explicitHeightOfShape = ShapeDrawingTestProtected.this.shape1.getExplicitHeight();
-                @Nullable final DrawlNumber explicitWidthOfShape = ShapeDrawingTestProtected.this.shape1.getExplicitWidth();
+                @Nullable final Number explicitHeightOfDrawing = ShapeDrawingTestProtected.this.drawing.getExplicitHeight();
+                @Nullable final Number explicitWidthOfDrawing = ShapeDrawingTestProtected.this.drawing.getExplicitWidth();
+                @Nullable final Number explicitHeightOfShape = ShapeDrawingTestProtected.this.shape1.getExplicitHeight();
+                @Nullable final Number explicitWidthOfShape = ShapeDrawingTestProtected.this.shape1.getExplicitWidth();
 
                 softly.then(explicitHeightOfDrawing)
                         .as("Expecting explicit height of drawing to be %s but got %s",
@@ -369,9 +369,9 @@ public abstract class ShapeDrawingTestProtected
                 ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
                 ShapeDrawingTestProtected.this.drawing.setExplicitHeight(100);
                 ShapeDrawingTestProtected.this.drawing.setExplicitWidth(100);
-                @Nullable final DrawlNumber explicitHeight1 = ShapeDrawingTestProtected.this.shape1.getExplicitHeight();
-                @Nullable final DrawlNumber explicitHeight2 = ShapeDrawingTestProtected.this.shape2.getExplicitHeight();
-                @NotNull final DrawlNumber EXPECTED = DrawlNumber.valueOf(50);
+                @Nullable final Number explicitHeight1 = ShapeDrawingTestProtected.this.shape1.getExplicitHeight();
+                @Nullable final Number explicitHeight2 = ShapeDrawingTestProtected.this.shape2.getExplicitHeight();
+                @NotNull final Number EXPECTED = DrawlNumber.valueOf(50);
 
                 softly.then(explicitHeight1).isEqualByComparingTo(EXPECTED);
                 softly.then(explicitHeight2).isEqualByComparingTo(EXPECTED);
@@ -393,9 +393,9 @@ public abstract class ShapeDrawingTestProtected
                 ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
                 ShapeDrawingTestProtected.this.drawing.setExplicitWidth(100);
                 ShapeDrawingTestProtected.this.drawing.setExplicitHeight(100);
-                @Nullable final DrawlNumber explicitHeight1 = ShapeDrawingTestProtected.this.shape1.getExplicitHeight();
-                @Nullable final DrawlNumber explicitHeight2 = ShapeDrawingTestProtected.this.shape2.getExplicitHeight();
-                @NotNull final DrawlNumber EXPECTED = DrawlNumber.valueOf(50);
+                @Nullable final Number explicitHeight1 = ShapeDrawingTestProtected.this.shape1.getExplicitHeight();
+                @Nullable final Number explicitHeight2 = ShapeDrawingTestProtected.this.shape2.getExplicitHeight();
+                @NotNull final Number EXPECTED = DrawlNumber.valueOf(50);
 
                 softly.then(explicitHeight1).isEqualByComparingTo(EXPECTED);
                 softly.then(explicitHeight2).isEqualByComparingTo(EXPECTED);
@@ -411,9 +411,9 @@ public abstract class ShapeDrawingTestProtected
                 ShapeDrawingTestProtected.this.drawing.add(ShapeDrawingTestProtected.this.shape2);
                 ShapeDrawingTestProtected.this.shape2.setRightOf(ShapeDrawingTestProtected.this.shape1);
                 ShapeDrawingTestProtected.this.drawing.setExplicitDimensions(100, 100);
-                @Nullable final DrawlNumber explicitHeight1 = ShapeDrawingTestProtected.this.shape1.getExplicitHeight();
-                @Nullable final DrawlNumber explicitHeight2 = ShapeDrawingTestProtected.this.shape2.getExplicitHeight();
-                @NotNull final DrawlNumber expectedHeight = DrawlNumber.valueOf(50);
+                @Nullable final Number explicitHeight1 = ShapeDrawingTestProtected.this.shape1.getExplicitHeight();
+                @Nullable final Number explicitHeight2 = ShapeDrawingTestProtected.this.shape2.getExplicitHeight();
+                @NotNull final Number expectedHeight = DrawlNumber.valueOf(50);
 
                 softly.then(explicitHeight1)
                         .as("The explicit height of shape1 should be " + expectedHeight.toPlainString() + " but it was " + explicitHeight1)
@@ -498,11 +498,11 @@ public abstract class ShapeDrawingTestProtected
             void widthExplicitWhenADrawingHasOneDefaultShapeThenTheExplicitWidthPerObjectIsTheExplicitWidthOfTheDrawing()
             {
                 @NotNull final Integer size = 100;
-                @NotNull final DrawlNumber EXPECTED = DrawlNumber.valueOf(size);
+                @NotNull final Number EXPECTED = DrawlNumber.valueOf(size);
                 drawing.add(shape1);
                 drawing.setExplicitWidth(size);
                 drawing.setExplicitHeight(size);
-                @NotNull final DrawlNumber widthPerObject = drawing.getExplicitWidthPerImplicitWidth();
+                @NotNull final Number widthPerObject = drawing.getExplicitWidthPerImplicitWidth();
 
                 then(widthPerObject).isEqualByComparingTo(EXPECTED);
             }
@@ -516,7 +516,7 @@ public abstract class ShapeDrawingTestProtected
                 drawing.add(shape1);
                 drawing.setExplicitWidth(100);
                 drawing.setExplicitHeight(100);
-                @Nullable final DrawlNumber shapeExplicitWidth = shape1.getExplicitWidth();
+                @Nullable final Number shapeExplicitWidth = shape1.getExplicitWidth();
 
                 then(shapeExplicitWidth).isEqualByComparingTo(DrawlNumber.valueOf(100));
             }
@@ -532,8 +532,8 @@ public abstract class ShapeDrawingTestProtected
                 shape2.setRightOf(shape1);
                 drawing.setExplicitHeight(100);
                 drawing.setExplicitWidth(100);
-                @Nullable final DrawlNumber explicitWidth1 = shape1.getExplicitWidth();
-                @Nullable final DrawlNumber explicitWidth2 = shape2.getExplicitWidth();
+                @Nullable final Number explicitWidth1 = shape1.getExplicitWidth();
+                @Nullable final Number explicitWidth2 = shape2.getExplicitWidth();
 
                 softly.then(explicitWidth1).isEqualByComparingTo(DrawlNumber.valueOf(50));
                 softly.then(explicitWidth2).isEqualByComparingTo(DrawlNumber.valueOf(50));
@@ -608,53 +608,53 @@ public abstract class ShapeDrawingTestProtected
                 softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
                 // At this aspect ratio, the sizes of the shapes may be constrained by the height
-                @NotNull final DrawlNumber heightDrawlNumber = DrawlNumber.valueOf(heightFloat);
-                @NotNull final DrawlNumber widthDrawlNumber = DrawlNumber.valueOf(widthFloat);
+                @NotNull final Number heightNumber = DrawlNumber.valueOf(heightFloat);
+                @NotNull final Number widthNumber = DrawlNumber.valueOf(widthFloat);
 
-                @NotNull final DrawlNumber aspectRatio = DrawlNumber.valueOf(widthFloat / heightFloat);
+                @NotNull final Number aspectRatio = DrawlNumber.valueOf(widthFloat / heightFloat);
 
-                final DrawlNumber widthOfShapes;
+                final Number widthOfShapes;
                 if (aspectRatio.isGreaterThan(3))
                 {
-                    widthOfShapes = heightDrawlNumber.multiply(DrawlNumber.valueOf(3));
+                    widthOfShapes = heightNumber.multiply(DrawlNumber.valueOf(3));
                 }
                 else
                 {
-                    widthOfShapes = widthDrawlNumber;
+                    widthOfShapes = widthNumber;
                 }
 
-                @NotNull final DrawlNumber extraWidth = widthDrawlNumber.subtract(widthOfShapes);
-                @NotNull final DrawlNumber extraWidthLeft = extraWidth.divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
+                @NotNull final Number extraWidth = widthNumber.subtract(widthOfShapes);
+                @NotNull final Number extraWidthLeft = extraWidth.divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
 
-                @NotNull DrawlNumber shape1ExpectedXPosition = widthOfShapes.divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
+                @NotNull Number shape1ExpectedXPosition = widthOfShapes.divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
                 if (aspectRatio.isGreaterThan(3))
                 {
                     shape1ExpectedXPosition = shape1ExpectedXPosition.add(extraWidthLeft);
                 }
 
-                @NotNull final DrawlNumber shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit x position of shape 1 to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
 
-                @NotNull DrawlNumber shape2ExpectedXPosition = widthOfShapes.divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
+                @NotNull Number shape2ExpectedXPosition = widthOfShapes.divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
                 if (aspectRatio.isGreaterThan(3))
                 {
                     shape2ExpectedXPosition = shape2ExpectedXPosition.add(extraWidthLeft);
                 }
 
-                @NotNull final DrawlNumber shape2ExplicitXPosition = shape2.getExplicitXPositionCenter();
+                @NotNull final Number shape2ExplicitXPosition = shape2.getExplicitXPositionCenter();
                 softly.then(shape2ExplicitXPosition.compareToFuzzy(shape2ExpectedXPosition))
                         .as("Expecting the explicit x position of shape 2 to be " +
                                 shape2ExpectedXPosition + " but it was " + shape2ExplicitXPosition).isEqualTo(0);
 
-                @NotNull final DrawlNumber fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
-                @NotNull DrawlNumber shape3ExpectedXPosition = widthOfShapes.multiply(fraction, DrawlNumber.mcOperations);
+                @NotNull final Number fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
+                @NotNull Number shape3ExpectedXPosition = widthOfShapes.multiply(fraction, DrawlNumber.mcOperations);
                 if (aspectRatio.isGreaterThan(3))
                 {
                     shape3ExpectedXPosition = shape3ExpectedXPosition.add(extraWidthLeft);
                 }
-                @NotNull final DrawlNumber shape3ExplicitXPosition = shape3.getExplicitXPositionCenter();
+                @NotNull final Number shape3ExplicitXPosition = shape3.getExplicitXPositionCenter();
                 softly.then(shape3ExplicitXPosition.compareToFuzzy(shape3ExpectedXPosition))
                         .as("Expecting the explicit x position of shape 3 to be " +
                                 shape3ExpectedXPosition + " but it was " + shape3ExplicitXPosition).isEqualTo(0);
@@ -680,10 +680,10 @@ public abstract class ShapeDrawingTestProtected
                 drawing.setExplicitHeight(heightFloat);
                 softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
-                @NotNull final DrawlNumber widthBigDecimal = DrawlNumber.valueOf(widthFloat);
+                @NotNull final Number widthBigDecimal = DrawlNumber.valueOf(widthFloat);
 
-                @NotNull final DrawlNumber shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
+                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit position of " + shape1 + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -710,10 +710,10 @@ public abstract class ShapeDrawingTestProtected
                 drawing.setExplicitHeight(heightFloat);
                 softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
-                @NotNull final DrawlNumber widthBigDecimal = DrawlNumber.valueOf(widthFloat);
+                @NotNull final Number widthBigDecimal = DrawlNumber.valueOf(widthFloat);
 
-                @NotNull final DrawlNumber shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
+                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit position of " + shape1 + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -741,10 +741,10 @@ public abstract class ShapeDrawingTestProtected
                 drawing.setExplicitHeight(heightFloat);
                 softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
-                @NotNull final DrawlNumber widthBigDecimal = DrawlNumber.valueOf(widthFloat);
+                @NotNull final Number widthBigDecimal = DrawlNumber.valueOf(widthFloat);
 
-                @NotNull final DrawlNumber shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
+                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit position of " + shape1 + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -772,10 +772,10 @@ public abstract class ShapeDrawingTestProtected
                 drawing.setExplicitHeight(heightFloat);
                 softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
-                @NotNull final DrawlNumber widthBigDecimal = DrawlNumber.valueOf(widthFloat);
+                @NotNull final Number widthBigDecimal = DrawlNumber.valueOf(widthFloat);
 
-                @NotNull final DrawlNumber shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
+                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit position of " + shape1 + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -804,10 +804,10 @@ public abstract class ShapeDrawingTestProtected
                 softly.then(drawing.getExplicitWidth().equals(DrawlNumber.valueOf(widthFloat)));
                 softly.then(drawing.getExplicitHeight().equals(DrawlNumber.valueOf(heightFloat)));
 
-                @NotNull final DrawlNumber widthBigDecimal = DrawlNumber.valueOf(widthFloat);
+                @NotNull final Number widthBigDecimal = DrawlNumber.valueOf(widthFloat);
 
-                @NotNull final DrawlNumber shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
+                @NotNull final Number shape1ExpectedXPosition = widthBigDecimal.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
+                @NotNull final Number shape1ExplicitXPosition = shape1.getExplicitXPositionCenter();
                 softly.then(shape1ExplicitXPosition.compareToFuzzy(shape1ExpectedXPosition))
                         .as("Expecting the explicit position of " + shape1 + "to be " +
                                 shape1ExpectedXPosition + " but it was " + shape1ExplicitXPosition).isEqualTo(0);
@@ -828,15 +828,15 @@ public abstract class ShapeDrawingTestProtected
                 @NotNull final Integer height = 100;
                 drawing.setExplicitWidth(width);
                 drawing.setExplicitHeight(height);
-                @NotNull final DrawlNumber bigWidth = DrawlNumber.valueOf(width);
-                @NotNull final DrawlNumber bigX1 = bigWidth.divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber bigX2 = bigWidth.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber bigX3 = bigWidth.multiply(fraction, DrawlNumber.mcOperations);
+                @NotNull final Number bigWidth = DrawlNumber.valueOf(width);
+                @NotNull final Number bigX1 = bigWidth.divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
+                @NotNull final Number bigX2 = bigWidth.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
+                @NotNull final Number fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
+                @NotNull final Number bigX3 = bigWidth.multiply(fraction, DrawlNumber.mcOperations);
 
-                @NotNull final DrawlNumber actualExplicitXPositionCenter1 = shape1.getExplicitXPositionCenter();
-                @NotNull final DrawlNumber actualExplicitXPositionCenter2 = shape2.getExplicitXPositionCenter();
-                @NotNull final DrawlNumber actualExplicitXPositionCenter3 = shape3.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter1 = shape1.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter2 = shape2.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter3 = shape3.getExplicitXPositionCenter();
 
                 then:
                 softly.then(bigX1).isEqualTo(actualExplicitXPositionCenter1);
@@ -858,15 +858,15 @@ public abstract class ShapeDrawingTestProtected
                 @NotNull final Integer height = 100;
                 drawing.setExplicitWidth(width);
                 drawing.setExplicitHeight(height);
-                @NotNull final DrawlNumber bigWidth = DrawlNumber.valueOf(width);
-                @NotNull final DrawlNumber expectedExplicitXPositionCenter1 = bigWidth.divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber expectedExplicitXPositionCenter2 = bigWidth.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber expectedExplicitXPositionCenter3 = bigWidth.multiply(fraction, DrawlNumber.mcOperations);
+                @NotNull final Number bigWidth = DrawlNumber.valueOf(width);
+                @NotNull final Number expectedExplicitXPositionCenter1 = bigWidth.divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
+                @NotNull final Number expectedExplicitXPositionCenter2 = bigWidth.divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
+                @NotNull final Number fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
+                @NotNull final Number expectedExplicitXPositionCenter3 = bigWidth.multiply(fraction, DrawlNumber.mcOperations);
 
-                @NotNull final DrawlNumber actualExplicitXPositionCenter1 = shape1.getExplicitXPositionCenter();
-                @NotNull final DrawlNumber actualExplicitXPositionCenter2 = shape2.getExplicitXPositionCenter();
-                @NotNull final DrawlNumber actualExplicitXPositionCenter3 = shape3.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter1 = shape1.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter2 = shape2.getExplicitXPositionCenter();
+                @NotNull final Number actualExplicitXPositionCenter3 = shape3.getExplicitXPositionCenter();
 
                 softly.then(actualExplicitXPositionCenter1).isEqualTo(expectedExplicitXPositionCenter1);
                 softly.then(actualExplicitXPositionCenter2).isEqualTo(expectedExplicitXPositionCenter2);
@@ -887,10 +887,10 @@ public abstract class ShapeDrawingTestProtected
                 final Float height = Float.MAX_VALUE;
                 drawing.setExplicitWidth(width);
                 drawing.setExplicitHeight(height);
-                @NotNull final DrawlNumber bigX1 = DrawlNumber.valueOf(width).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber bigX2 = DrawlNumber.valueOf(width).divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
-                @NotNull final DrawlNumber bigX3 = DrawlNumber.valueOf(width).multiply(fraction, DrawlNumber.mcOperations);
+                @NotNull final Number bigX1 = DrawlNumber.valueOf(width).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
+                @NotNull final Number bigX2 = DrawlNumber.valueOf(width).divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
+                @NotNull final Number fraction = DrawlNumber.valueOf(5).divide(DrawlNumber.valueOf(6), DrawlNumber.mcOperations);
+                @NotNull final Number bigX3 = DrawlNumber.valueOf(width).multiply(fraction, DrawlNumber.mcOperations);
                 final float bigX1f = bigX1.floatValue();
                 final float bigX2f = bigX2.floatValue();
                 final float bigX3f = bigX3.floatValue();
@@ -1020,8 +1020,8 @@ public abstract class ShapeDrawingTestProtected
                 drawing.setExplicitWidth(width);
                 drawing.setExplicitHeight(height);
 
-                @NotNull final DrawlNumber EXPECTED_1 = DrawlNumber.valueOf(width / 4);
-                @NotNull final DrawlNumber EXPECTED_2 = DrawlNumber.valueOf((3 * width) / 4);
+                @NotNull final Number EXPECTED_1 = DrawlNumber.valueOf(width / 4);
+                @NotNull final Number EXPECTED_2 = DrawlNumber.valueOf((3 * width) / 4);
 
                 softly.then(EXPECTED_1).isEqualTo(shape1.getExplicitXPositionCenter());
                 softly.then(EXPECTED_2).isEqualTo(shape2.getExplicitXPositionCenter());
@@ -1038,12 +1038,12 @@ public abstract class ShapeDrawingTestProtected
                 shape2.setRightOf(shape1);
                 drawing.setExplicitHeight(100);
                 drawing.setExplicitWidth(100);
-                @NotNull final DrawlNumber explicitXPosition1 = shape1.getExplicitXPositionCenter();
-                @NotNull final DrawlNumber explicitXPosition2 = shape2.getExplicitXPositionCenter();
+                @NotNull final Number explicitXPosition1 = shape1.getExplicitXPositionCenter();
+                @NotNull final Number explicitXPosition2 = shape2.getExplicitXPositionCenter();
 
                 then:
                 softly.then(explicitXPosition1).isEqualTo(DrawlNumber.valueOf(25));
-                softly.then(explicitXPosition2).equals(DrawlNumber.valueOf(75));
+                softly.then(explicitXPosition2).isEqualTo(DrawlNumber.valueOf(75));
             }
 
             @Test
@@ -1092,8 +1092,8 @@ public abstract class ShapeDrawingTestProtected
                     @NotNull final Integer size = 100;
                     drawing.add(shape1);
                     drawing.setExplicitDimensions(size, size);
-                    @NotNull final DrawlNumber yPosition = shape1.getExplicitYPositionCenter();
-                    @NotNull final DrawlNumber EXPECTED = DrawlNumber.valueOf(50);
+                    @NotNull final Number yPosition = shape1.getExplicitYPositionCenter();
+                    @NotNull final Number EXPECTED = DrawlNumber.valueOf(50);
 
                     then(yPosition).isEqualByComparingTo(EXPECTED);
                 }
@@ -1114,7 +1114,7 @@ public abstract class ShapeDrawingTestProtected
                 {
 
                     @NotNull final Integer SIZE = 100;
-                    @NotNull final DrawlNumber EXPECTED_Y_POS = DrawlNumber.valueOf(SIZE).divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
+                    @NotNull final Number EXPECTED_Y_POS = DrawlNumber.valueOf(SIZE).divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
 
                     drawing.add(shape1);
                     drawing.add(shape2);
@@ -1130,12 +1130,12 @@ public abstract class ShapeDrawingTestProtected
                             .as("After setExplicitWidth, the explicit to implicit ratio should be %d", SIZE / 2.0)
                             .isEqualByComparingTo(DrawlNumber.valueOf(SIZE / 2.0));
 
-                    @NotNull final DrawlNumber explicitYPosition1 = shape1.getExplicitYPositionCenter();
+                    @NotNull final Number explicitYPosition1 = shape1.getExplicitYPositionCenter();
                     softly.then(explicitYPosition1)
                             .as("The y position of shape1 should be %s", EXPECTED_Y_POS.toPlainString())
                             .isEqualByComparingTo(EXPECTED_Y_POS);
 
-                    @NotNull final DrawlNumber explicitYPosition2 = shape2.getExplicitYPositionCenter();
+                    @NotNull final Number explicitYPosition2 = shape2.getExplicitYPositionCenter();
                     softly.then(explicitYPosition2)
                             .as("The y position of shape2 should be %s", EXPECTED_Y_POS.toPlainString())
                             .isEqualByComparingTo(EXPECTED_Y_POS);
@@ -1160,9 +1160,9 @@ public abstract class ShapeDrawingTestProtected
                     shape2.setRightOf(shape1);
                     drawing.setExplicitWidth(100);
                     drawing.setExplicitHeight(100);
-                    @NotNull final DrawlNumber explicitYPosition1 = shape1.getExplicitYPositionCenter();
-                    @NotNull final DrawlNumber explicitYPosition2 = shape2.getExplicitYPositionCenter();
-                    @NotNull final DrawlNumber EXPECTED = DrawlNumber.valueOf(50);
+                    @NotNull final Number explicitYPosition1 = shape1.getExplicitYPositionCenter();
+                    @NotNull final Number explicitYPosition2 = shape2.getExplicitYPositionCenter();
+                    @NotNull final Number EXPECTED = DrawlNumber.valueOf(50);
 
                     softly.then(explicitYPosition1).isEqualByComparingTo(EXPECTED);
                     softly.then(explicitYPosition2).isEqualByComparingTo(EXPECTED);
@@ -1175,17 +1175,17 @@ public abstract class ShapeDrawingTestProtected
                 void yPositionExplicitWhenASquare100DrawingHasTwoAdjacentShapesThenTheirExplicitYPositionsAreCorrectWithSetExplicitDimensions(@NotNull final BDDSoftAssertions softly)
                 {
                     @NotNull final Integer sizeOfDrawing = 100;
-                    @NotNull final DrawlNumber EXPECTED = DrawlNumber.valueOf(sizeOfDrawing).divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
+                    @NotNull final Number EXPECTED = DrawlNumber.valueOf(sizeOfDrawing).divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
 
                     drawing.add(shape1);
-                    DrawlNumber implicitYPosition1 = shape1.getImplicitYPositionCenter();
+                    Number implicitYPosition1 = shape1.getImplicitYPositionCenter();
                     softly.then(implicitYPosition1)
                             .as("The actual implicit y position of Shape 1 (" + implicitYPosition1 + ") should match the"
                                     + " expected explicit y position: (" + 0 + ")")
                             .isEqualByComparingTo(DrawlNumber.ZERO);
 
                     drawing.add(shape2);
-                    DrawlNumber implicitYPosition2 = shape2.getImplicitYPositionCenter();
+                    Number implicitYPosition2 = shape2.getImplicitYPositionCenter();
                     softly.then(implicitYPosition2)
                             .as("The actual implicit y position of Shape 2 (" + implicitYPosition2 + ") should match the"
                                     + " expected explicit y position: (" + 0 + ")")
@@ -1215,13 +1215,13 @@ public abstract class ShapeDrawingTestProtected
                                     + " expected explicit y position: (" + 0 + ")")
                             .isEqualByComparingTo(DrawlNumber.ZERO);
 
-                    @NotNull final DrawlNumber explicitYPosition1 = shape1.getExplicitYPositionCenter();
+                    @NotNull final Number explicitYPosition1 = shape1.getExplicitYPositionCenter();
                     softly.then(explicitYPosition1)
                             .as("The actual explicit y position of Shape 1 (" + explicitYPosition1 + ") should match the"
                                     + " expected explicit y position: (" + EXPECTED + ")")
                             .isEqualByComparingTo(EXPECTED);
 
-                    @NotNull final DrawlNumber explicitYPosition2 = shape2.getExplicitYPositionCenter();
+                    @NotNull final Number explicitYPosition2 = shape2.getExplicitYPositionCenter();
                     softly.then(explicitYPosition2)
                             .as("The actual explicit y position of Shape 2 (" + explicitYPosition2 + ") should match the"
                                     + " expected explicit y position: (" + EXPECTED + ")")

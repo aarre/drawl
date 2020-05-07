@@ -59,8 +59,8 @@ public class CircleDrawingTestProtected extends ShapeDrawingTestProtected
         shape2.setRightOf(shape1);
         drawing.setExplicitHeight(100);
         drawing.setExplicitWidth(100);
-        @Nullable DrawlNumber explicitRadius1 = shape1.getExplicitRadius();
-        @Nullable DrawlNumber explicitRadius2 = shape2.getExplicitRadius();
+        @Nullable Number explicitRadius1 = shape1.getExplicitRadius();
+        @Nullable Number explicitRadius2 = shape2.getExplicitRadius();
 
         assertEquals(DrawlNumber.valueOf(25), explicitRadius1);
         assertEquals(DrawlNumber.valueOf(25), explicitRadius2);
@@ -75,9 +75,9 @@ public class CircleDrawingTestProtected extends ShapeDrawingTestProtected
         shape2.setRightOf(shape1);
         drawing.setExplicitHeight(100);
         drawing.setExplicitWidth(100);
-        DrawlNumber actualImplicitRadius1 = shape1.getImplicitRadius();
-        DrawlNumber actualImplicitRadius2 = shape2.getImplicitRadius();
-        @NotNull DrawlNumber expectedValue = DrawlNumber.HALF;
+        Number actualImplicitRadius1 = shape1.getImplicitRadius();
+        Number actualImplicitRadius2 = shape2.getImplicitRadius();
+        @NotNull Number expectedValue = DrawlNumber.HALF;
 
         assertEquals(expectedValue, actualImplicitRadius1);
         assertEquals(expectedValue, actualImplicitRadius2);

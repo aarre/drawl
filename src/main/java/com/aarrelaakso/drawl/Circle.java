@@ -14,12 +14,12 @@ public class Circle extends Shape
     /**
      * The explicit radius of a Circle is null by default.
      */
-    private @Nullable DrawlNumber explicitRadius;
+    private @Nullable Number explicitRadius;
 
     /**
      * The implicit radius of a Circle is 0.5 by default, giving the default Circle an implicit diameter of 1.
      */
-    private DrawlNumber implicitRadius = DrawlNumber.HALF;
+    private Number implicitRadius = DrawlNumber.HALF;
 
     /**
      * Construct a circle with a default implicit radius.
@@ -34,7 +34,7 @@ public class Circle extends Shape
      *
      * @param implicitRadius The implicit radius of the new circle.
      */
-    protected Circle(DrawlNumber implicitRadius)
+    protected Circle(Number implicitRadius)
     {
         this.implicitRadius = implicitRadius;
     }
@@ -46,10 +46,10 @@ public class Circle extends Shape
      * not been set.
      */
     @Nullable
-    private DrawlNumber getExplicitDiameter()
+    private Number getExplicitDiameter()
     {
-        @Nullable DrawlNumber result = null;
-        @Nullable DrawlNumber radiusExplicitValue = this.getExplicitRadius();
+        @Nullable Number result = null;
+        @Nullable Number radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue != null)
         {
             result = radiusExplicitValue.multiply(DrawlNumber.TWO, DrawlNumber.mcOperations);
@@ -65,7 +65,7 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    protected DrawlNumber getExplicitHeight()
+    protected Number getExplicitHeight()
     {
         return this.getExplicitDiameter();
     }
@@ -77,7 +77,7 @@ public class Circle extends Shape
      * not been set.
      */
     @Nullable
-    protected DrawlNumber getExplicitRadius()
+    protected Number getExplicitRadius()
     {
         return this.explicitRadius;
     }
@@ -90,7 +90,7 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    protected DrawlNumber getExplicitWidth()
+    protected Number getExplicitWidth()
     {
         return this.getExplicitDiameter();
     }
@@ -100,9 +100,9 @@ public class Circle extends Shape
      *
      * @return the implicit diameter of this Circle.
      */
-    protected DrawlNumber getImplicitDiameter()
+    protected Number getImplicitDiameter()
     {
-        DrawlNumber myImplicitRadius = this.getImplicitRadius();
+        Number myImplicitRadius = this.getImplicitRadius();
         assert !myImplicitRadius.equals(DrawlNumber.ZERO) : "Implicit radius cannot be zero.";
         return myImplicitRadius.multiply(DrawlNumber.TWO, DrawlNumber.mcOperations);
     }
@@ -115,12 +115,12 @@ public class Circle extends Shape
      */
     @Nullable
     @Override
-    protected DrawlNumber getImplicitHeight()
+    protected Number getImplicitHeight()
     {
         return this.getImplicitDiameter();
     }
 
-    protected DrawlNumber getImplicitRadius()
+    protected Number getImplicitRadius()
     {
         return this.implicitRadius;
     }
@@ -131,7 +131,7 @@ public class Circle extends Shape
      * @return the implicit width of this Circle
      */
     @Override
-    protected DrawlNumber getImplicitWidth()
+    protected Number getImplicitWidth()
     {
         return this.getImplicitDiameter();
     }
@@ -142,7 +142,7 @@ public class Circle extends Shape
      * @return The implicit maximum (rightmost) x-position of this Circle.
      */
     @Override
-    protected DrawlNumber getImplicitXMaximum()
+    protected Number getImplicitXMaximum()
     {
         return this.getImplicitXPositionCenter().add(this.getImplicitRadius());
     }
@@ -153,7 +153,7 @@ public class Circle extends Shape
      * @return The implicit minimum (leftmost) x-position of this Circle.
      */
     @Override
-    protected DrawlNumber getImplicitXMinimum()
+    protected Number getImplicitXMinimum()
     {
         return this.getImplicitXPositionCenter().subtract(this.getImplicitRadius());
     }
@@ -164,7 +164,7 @@ public class Circle extends Shape
      * @return The implicit maximum (topmost) x-position of this Circle.
      */
     @Override
-    protected DrawlNumber getImplicitYPositionTop()
+    protected Number getImplicitYPositionTop()
     {
         return this.getImplicitYPositionCenter().add(this.getImplicitRadius());
     }
@@ -178,7 +178,7 @@ public class Circle extends Shape
     public @NotNull String getSVG()
     {
         String radiusStringValue;
-        @Nullable DrawlNumber radiusExplicitValue = this.getExplicitRadius();
+        @Nullable Number radiusExplicitValue = this.getExplicitRadius();
         if (radiusExplicitValue == null)
         {
             // If the explicit radius has not been set, use the implicit radius
@@ -224,7 +224,7 @@ public class Circle extends Shape
      *               height has not yet been determined.
      */
     @Override
-    protected void setExplicitHeight(@Nullable DrawlNumber height)
+    protected void setExplicitHeight(@Nullable Number height)
     {
         if (height == null)
         {
@@ -247,7 +247,7 @@ public class Circle extends Shape
      *
      * @param radius the fixed value
      */
-    protected void setExplicitRadius(@NotNull DrawlNumber radius)
+    protected void setExplicitRadius(@NotNull Number radius)
     {
         this.explicitRadius = radius;
     }
@@ -274,7 +274,7 @@ public class Circle extends Shape
      * @param width the new width of this Circle
      */
     @Override
-    protected void setExplicitWidth(@Nullable DrawlNumber width)
+    protected void setExplicitWidth(@Nullable Number width)
     {
         if (width == null)
         {

@@ -48,7 +48,7 @@ public class Rectangle extends Shape
      * @param implicitWidth the width of the new Rectangle.
      * @param implicitHeight the height of the new Rectangle.
      */
-    protected Rectangle(@NotNull DrawlNumber implicitWidth, @NotNull DrawlNumber implicitHeight)
+    protected Rectangle(@NotNull Number implicitWidth, @NotNull Number implicitHeight)
     {
         // This method is protected because the user should never have to deal with implicit dimensions.
         this.setImplicitHeight(implicitHeight);
