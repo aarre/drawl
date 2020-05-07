@@ -108,7 +108,7 @@ public class Shape {
      *
      * @param text a Text object representing the text to be drawn inside this Shape.
      */
-    public void addText(@Nullable Text text) {
+    public void addText(@Nullable final Text text) {
         this.text = text;
     }
 
@@ -120,8 +120,8 @@ public class Shape {
      */
     public @Nullable Shape getAbove() {
         @Nullable Shape returnValue = null;
-        if (this.angleToNeighbor.equals(DrawlNumber.ZERO)) {
-            returnValue = this.neighbor;
+        if (angleToNeighbor.equals(DrawlNumber.ZERO)) {
+            returnValue = neighbor;
         }
         return returnValue;
     }
@@ -131,8 +131,8 @@ public class Shape {
      *
      * @param shape The Shape that will be below this one.
      */
-    public void setAbove(@NotNull Shape shape) {
-        this.setAbove(shape, new Measure(0));
+    public void setAbove(@NotNull final Shape shape) {
+        setAbove(shape, new Measure(0));
     }
 
     /**
@@ -143,8 +143,8 @@ public class Shape {
      */
     public @Nullable Shape getBelow() {
         @Nullable Shape returnValue = null;
-        if (this.angleToNeighbor.equals(DrawlNumber.valueOf(180))) {
-            returnValue = this.neighbor;
+        if (angleToNeighbor.equals(DrawlNumber.valueOf(180))) {
+            returnValue = neighbor;
         }
         return returnValue;
     }
@@ -154,8 +154,8 @@ public class Shape {
      *
      * @param shape The Shape that will be above this one.
      */
-    public void setBelow(@NotNull Shape shape) {
-        this.setBelow(shape, new Measure(0));
+    public void setBelow(@NotNull final Shape shape) {
+        setBelow(shape, new Measure(0));
     }
 
     /**
@@ -164,8 +164,8 @@ public class Shape {
      * @return
      */
     public @NotNull Point getBottomPort() {
-        DrawlNumber xCoordinate = this.getImplicitXPositionCenter();
-        DrawlNumber yCoordinate = this.getImplicitYPositionBottom();
+        final DrawlNumber xCoordinate = getImplicitXPositionCenter();
+        final DrawlNumber yCoordinate = getImplicitYPositionBottom();
         return new Point(xCoordinate, yCoordinate);
     }
 
@@ -175,10 +175,10 @@ public class Shape {
      * @return half the explicit height of this Shape.
      */
     private DrawlNumber getExplicitHalfHeight() {
-        if (this.getExplicitHeight() == null) {
+        if (getExplicitHeight() == null) {
             throw new UnsupportedOperationException("Cannot calculate explicit height without dimensions");
         }
-        return this.getExplicitHeight().divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
+        return getExplicitHeight().divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
     }
 
     /**
@@ -187,10 +187,10 @@ public class Shape {
      * @return half the explicit width of this Shape.
      */
     protected DrawlNumber getExplicitHalfWidth() {
-        if (this.getExplicitWidth() == null) {
+        if (getExplicitWidth() == null) {
             throw new UnsupportedOperationException("Cannot calculate explicit width without dimensions");
         }
-        return this.getExplicitWidth().divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
+        return getExplicitWidth().divide(DrawlNumber.valueOf(2), DrawlNumber.mcOperations);
     }
 
     /**
@@ -200,7 +200,7 @@ public class Shape {
      * explicit height.
      */
     protected @Nullable DrawlNumber getExplicitHeight() {
-        return this.explicitHeight;
+        return explicitHeight;
     }
 
     /**
@@ -210,10 +210,10 @@ public class Shape {
      * @param height The new height of this Shape. Can be <code>null</code> to indicate that this Shape has not yet
      *               been assigned an explicit height.
      */
-    protected void setExplicitHeight(@Nullable DrawlNumber height) {
-        this.explicitHeight = height;
-        if (Boolean.TRUE.equals(this.hasText())) {
-            Objects.requireNonNull(this.getText()).setExplicitHeight(height);
+    protected void setExplicitHeight(@Nullable final DrawlNumber height) {
+        explicitHeight = height;
+        if (Boolean.TRUE.equals(hasText())) {
+            Objects.requireNonNull(getText()).setExplicitHeight(height);
         }
     }
 
@@ -224,7 +224,7 @@ public class Shape {
      * explicit width.
      */
     protected @Nullable DrawlNumber getExplicitWidth() {
-        return this.explicitWidth;
+        return explicitWidth;
     }
 
     /**
@@ -234,10 +234,10 @@ public class Shape {
      * @param width the new width of this Shape, or <code>null</code> to indicate that this Shape has not yet
      *              been assigned an explicit width.
      */
-    protected void setExplicitWidth(@Nullable DrawlNumber width) {
-        this.explicitWidth = width;
-        if (Boolean.TRUE.equals(this.hasText())) {
-            Objects.requireNonNull(this.getText()).setExplicitWidth(width);
+    protected void setExplicitWidth(@Nullable final DrawlNumber width) {
+        explicitWidth = width;
+        if (Boolean.TRUE.equals(hasText())) {
+            Objects.requireNonNull(getText()).setExplicitWidth(width);
         }
     }
 
@@ -248,7 +248,7 @@ public class Shape {
      */
     @NotNull
     protected DrawlNumber getExplicitXPositionCenter() {
-        return this.explicitXPositionCenter;
+        return explicitXPositionCenter;
     }
 
     /**
@@ -256,10 +256,10 @@ public class Shape {
      *
      * @param x the explicit x position of the center of this Shape.
      */
-    protected void setExplicitXPositionCenter(DrawlNumber x) {
-        this.explicitXPositionCenter = x;
-        if (Boolean.TRUE.equals(this.hasText())) {
-            Objects.requireNonNull(this.getText()).setExplicitXPositionCenter(x);
+    protected void setExplicitXPositionCenter(final DrawlNumber x) {
+        explicitXPositionCenter = x;
+        if (Boolean.TRUE.equals(hasText())) {
+            Objects.requireNonNull(getText()).setExplicitXPositionCenter(x);
         }
     }
 
@@ -268,8 +268,8 @@ public class Shape {
      *
      * @param x the explicit x position of the center of this Shape.
      */
-    protected void setExplicitXPositionCenter(Integer x) {
-        setExplicitXPositionCenter(DrawlNumber.valueOf(x));
+    protected void setExplicitXPositionCenter(final Integer x) {
+        this.setExplicitXPositionCenter(DrawlNumber.valueOf(x));
     }
 
     /**
@@ -278,7 +278,7 @@ public class Shape {
      * @return the explicit x position of the left edge of this Shape.
      */
     protected DrawlNumber getExplicitXPositionLeft() {
-        return this.explicitXPositionCenter.subtract(this.getExplicitHalfWidth());
+        return explicitXPositionCenter.subtract(getExplicitHalfWidth());
     }
 
     /**
@@ -287,7 +287,7 @@ public class Shape {
      * @return the explicit x position of the right edge of this Shape.
      */
     protected DrawlNumber getExplicitXPositionRight() {
-        return this.explicitXPositionCenter.add(this.getExplicitHalfWidth());
+        return explicitXPositionCenter.add(getExplicitHalfWidth());
     }
 
     /**
@@ -297,7 +297,7 @@ public class Shape {
      */
     @NotNull
     protected DrawlNumber getExplicitYPositionBottom() {
-        return this.getExplicitYPositionCenter().add(this.getExplicitHalfHeight());
+        return getExplicitYPositionCenter().add(getExplicitHalfHeight());
     }
 
     /**
@@ -307,7 +307,7 @@ public class Shape {
      */
     @NotNull
     protected DrawlNumber getExplicitYPositionCenter() {
-        return this.explicitYPositionCenter;
+        return explicitYPositionCenter;
     }
 
     /**
@@ -316,8 +316,8 @@ public class Shape {
      *
      * @param y The explicit y position of this shape.
      */
-    protected void setExplicitYPositionCenter(Integer y) {
-        this.setExplicitYPositionCenter(DrawlNumber.valueOf(y));
+    protected void setExplicitYPositionCenter(final Integer y) {
+        setExplicitYPositionCenter(DrawlNumber.valueOf(y));
     }
 
     /**
@@ -328,10 +328,10 @@ public class Shape {
      *
      * @param y The explicit y position of this Shape.
      */
-    protected void setExplicitYPositionCenter(DrawlNumber y) {
-        this.explicitYPositionCenter = y;
-        if (Boolean.TRUE.equals(this.hasText())) {
-            Objects.requireNonNull(this.getText()).setExplicitYPositionCenter(y);
+    protected void setExplicitYPositionCenter(final DrawlNumber y) {
+        explicitYPositionCenter = y;
+        if (Boolean.TRUE.equals(hasText())) {
+            Objects.requireNonNull(getText()).setExplicitYPositionCenter(y);
         }
     }
 
@@ -342,7 +342,7 @@ public class Shape {
      */
     @NotNull
     protected DrawlNumber getExplicitYPositionTop() {
-        return this.getExplicitYPositionCenter().subtract(this.getExplicitHalfHeight());
+        return getExplicitYPositionCenter().subtract(getExplicitHalfHeight());
     }
 
     /**
@@ -352,7 +352,7 @@ public class Shape {
      */
     @Nullable
     public String getFill() {
-        return this.fill;
+        return fill;
     }
 
     /**
@@ -360,8 +360,8 @@ public class Shape {
      *
      * @param s A string representing a fill color, e.g., "white".
      */
-    public void setFill(String s) {
-        this.fill = s;
+    public void setFill(final String s) {
+        fill = s;
     }
 
     /**
@@ -370,7 +370,7 @@ public class Shape {
      * @return a Measure object that represents the height of this Shape.
      */
     public @NotNull Measure getHeight() {
-        @Nullable DrawlNumber height = this.getImplicitHeight();
+        @Nullable final DrawlNumber height = getImplicitHeight();
         return new Measure(height);
     }
 
@@ -380,7 +380,7 @@ public class Shape {
      * @return half of the implicit height of this Shape.
      */
     protected DrawlNumber getImplicitHalfHeight() {
-        return Objects.requireNonNull(this.getImplicitHeight()).divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
+        return Objects.requireNonNull(getImplicitHeight()).divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
     }
 
     /**
@@ -389,7 +389,7 @@ public class Shape {
      * @return half of the implicit width of this Shape.
      */
     protected DrawlNumber getImplicitHalfWidth() {
-        return this.getImplicitWidth().divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
+        return getImplicitWidth().divide(DrawlNumber.TWO, DrawlNumber.mcOperations);
     }
 
     /**
@@ -398,7 +398,7 @@ public class Shape {
      * @return the implicit height of this Shape.
      */
     protected @Nullable DrawlNumber getImplicitHeight() {
-        return this.implicitHeight;
+        return implicitHeight;
     }
 
     /**
@@ -406,8 +406,8 @@ public class Shape {
      *
      * @param implicitHeight
      */
-    protected final void setImplicitHeight(@NotNull DrawlNumber implicitHeight) {
-        logger.atFine().log("Setting implicit height to %s", implicitHeight.toPlainString());
+    protected final void setImplicitHeight(@NotNull final DrawlNumber implicitHeight) {
+        Shape.logger.atFine().log("Setting implicit height to %s", implicitHeight.toPlainString());
         this.implicitHeight = implicitHeight;
     }
 
@@ -417,7 +417,7 @@ public class Shape {
      * @return the implicit width of this Shape.
      */
     protected DrawlNumber getImplicitWidth() {
-        return this.implicitWidth;
+        return implicitWidth;
     }
 
     /**
@@ -425,8 +425,8 @@ public class Shape {
      *
      * @param implicitWidth the implicit width of this Shape.
      */
-    protected final void setImplicitWidth(@NotNull DrawlNumber implicitWidth) {
-        logger.atFine().log("Setting implicit width to %s", implicitWidth.toPlainString());
+    protected final void setImplicitWidth(@NotNull final DrawlNumber implicitWidth) {
+        Shape.logger.atFine().log("Setting implicit width to %s", implicitWidth.toPlainString());
         this.implicitWidth = implicitWidth;
     }
 
@@ -436,7 +436,7 @@ public class Shape {
      * @return The implicit maximum (rightmost) x-position of this Shape.
      */
     protected DrawlNumber getImplicitXMaximum() {
-        return this.getImplicitXPositionCenter().add(this.getImplicitHalfWidth());
+        return getImplicitXPositionCenter().add(getImplicitHalfWidth());
     }
 
     /**
@@ -445,7 +445,7 @@ public class Shape {
      * @return The implicit minimum (leftmost) x-position of this Shape.
      */
     protected DrawlNumber getImplicitXMinimum() {
-        return this.getImplicitXPositionCenter().subtract(this.getImplicitHalfWidth());
+        return getImplicitXPositionCenter().subtract(getImplicitHalfWidth());
     }
 
     /**
@@ -454,7 +454,7 @@ public class Shape {
      * @return The implicit x position of the center of this Shape.
      */
     protected DrawlNumber getImplicitXPositionCenter() {
-        return this.implicitXPositionCenter;
+        return implicitXPositionCenter;
     }
 
     /**
@@ -462,10 +462,10 @@ public class Shape {
      *
      * @param x implicit x position of the center of this Shape.
      */
-    protected void setImplicitXPositionCenter(DrawlNumber x) {
-        this.implicitXPositionCenter = x;
-        if (Boolean.TRUE.equals(this.hasText())) {
-            Objects.requireNonNull(this.getText()).setImplicitXPositionCenter(x);
+    protected void setImplicitXPositionCenter(final DrawlNumber x) {
+        implicitXPositionCenter = x;
+        if (Boolean.TRUE.equals(hasText())) {
+            Objects.requireNonNull(getText()).setImplicitXPositionCenter(x);
         }
     }
 
@@ -475,7 +475,7 @@ public class Shape {
      * @return The implicit x position of the left edge of this Shape.
      */
     protected DrawlNumber getImplicitXPositionLeft() {
-        return this.getImplicitXPositionCenter().subtract(this.getImplicitHalfWidth());
+        return getImplicitXPositionCenter().subtract(getImplicitHalfWidth());
     }
 
     /**
@@ -484,7 +484,7 @@ public class Shape {
      * @return The implicit x position of the right edge of this Shape.
      */
     protected DrawlNumber getImplicitXPositionRight() {
-        return this.getImplicitXPositionCenter().add(this.getImplicitHalfWidth());
+        return getImplicitXPositionCenter().add(getImplicitHalfWidth());
     }
 
     /**
@@ -493,7 +493,7 @@ public class Shape {
      * @return The implicit minimum (bottommost) y-position of this Shape.
      */
     protected DrawlNumber getImplicitYPositionBottom() {
-        return this.getImplicitYPositionCenter().subtract(this.getImplicitHalfHeight());
+        return getImplicitYPositionCenter().subtract(getImplicitHalfHeight());
     }
 
     /**
@@ -502,7 +502,7 @@ public class Shape {
      * @return The implicit y position of the center of this Shape.
      */
     protected DrawlNumber getImplicitYPositionCenter() {
-        return this.implicitYPositionCenter;
+        return implicitYPositionCenter;
     }
 
     /**
@@ -513,10 +513,10 @@ public class Shape {
      *
      * @param y The implicit y position of this Shape.
      */
-    protected void setImplicitYPositionCenter(DrawlNumber y) {
-        this.implicitYPositionCenter = y;
-        if (Boolean.TRUE.equals(this.hasText())) {
-            Objects.requireNonNull(this.getText()).setImplicitYPositionCenter(y);
+    protected void setImplicitYPositionCenter(final DrawlNumber y) {
+        implicitYPositionCenter = y;
+        if (Boolean.TRUE.equals(hasText())) {
+            Objects.requireNonNull(getText()).setImplicitYPositionCenter(y);
         }
     }
 
@@ -526,7 +526,7 @@ public class Shape {
      * @return The implicit maximum (topmost) y-position of this Shape.
      */
     protected DrawlNumber getImplicitYPositionTop() {
-        return this.getImplicitYPositionCenter().add(this.getImplicitHalfHeight());
+        return getImplicitYPositionCenter().add(getImplicitHalfHeight());
     }
 
     /**
@@ -537,8 +537,8 @@ public class Shape {
      */
     public @Nullable Shape getLeftOf() {
         @Nullable Shape returnValue = null;
-        if ((this.angleToNeighbor != null) && (this.angleToNeighbor.equals(DrawlNumber.valueOf(90)))) {
-            returnValue = this.neighbor;
+        if ((angleToNeighbor != null) && (angleToNeighbor.equals(DrawlNumber.valueOf(90)))) {
+            returnValue = neighbor;
         }
         return returnValue;
     }
@@ -548,8 +548,8 @@ public class Shape {
      *
      * @param shape the Shape that will be to the right of this one.
      */
-    public void setLeftOf(@NotNull Shape shape) {
-        this.setLeftOf(shape, new Measure(0));
+    public void setLeftOf(@NotNull final Shape shape) {
+        setLeftOf(shape, new Measure(0));
     }
 
     /**
@@ -558,8 +558,8 @@ public class Shape {
      * @return
      */
     public @NotNull Point getLeftPort() {
-        DrawlNumber xCoordinate = this.getImplicitXPositionLeft();
-        DrawlNumber yCoordinate = this.getImplicitYPositionCenter();
+        final DrawlNumber xCoordinate = getImplicitXPositionLeft();
+        final DrawlNumber yCoordinate = getImplicitYPositionCenter();
         return new Point(xCoordinate, yCoordinate);
     }
 
@@ -572,7 +572,7 @@ public class Shape {
     public @Nullable Shape getRightOf() {
         @Nullable Shape returnValue = null;
         if ((this.angleToNeighbor != null) && (this.angleToNeighbor.isEqualTo(DrawlNumber.valueOf(270)))) {
-            returnValue = this.neighbor;
+            returnValue = neighbor;
         }
         return returnValue;
     }
@@ -582,8 +582,8 @@ public class Shape {
      *
      * @param shape the Shape to the left of this one
      */
-    public void setRightOf(@NotNull Shape shape) {
-        this.setRightOf(shape, new Measure(0));
+    public void setRightOf(@NotNull final Shape shape) {
+        setRightOf(shape, new Measure(0));
     }
 
     /**
@@ -592,8 +592,8 @@ public class Shape {
      * @return
      */
     public @NotNull Point getRightPort() {
-        DrawlNumber xCoordinate = this.getImplicitXPositionRight();
-        DrawlNumber yCoordinate = this.getImplicitYPositionCenter();
+        final DrawlNumber xCoordinate = getImplicitXPositionRight();
+        final DrawlNumber yCoordinate = getImplicitYPositionCenter();
         return new Point(xCoordinate, yCoordinate);
     }
 
@@ -608,7 +608,7 @@ public class Shape {
      */
     @Nullable
     public String getStroke() {
-        return this.stroke;
+        return stroke;
     }
 
     /**
@@ -616,8 +616,8 @@ public class Shape {
      *
      * @param s A stroke name.
      */
-    public void setStroke(String s) {
-        this.stroke = s;
+    public void setStroke(final String s) {
+        stroke = s;
     }
 
     /**
@@ -628,7 +628,7 @@ public class Shape {
      */
     @Nullable
     public Text getText() {
-        return this.text;
+        return text;
     }
 
     /**
@@ -637,8 +637,8 @@ public class Shape {
      * @return
      */
     public @NotNull Point getTopPort() {
-        DrawlNumber xCoordinate = this.getImplicitXPositionCenter();
-        DrawlNumber yCoordinate = this.getImplicitYPositionTop();
+        final DrawlNumber xCoordinate = getImplicitXPositionCenter();
+        final DrawlNumber yCoordinate = getImplicitYPositionTop();
         return new Point(xCoordinate, yCoordinate);
     }
 
@@ -648,7 +648,7 @@ public class Shape {
      * @return
      */
     public @NotNull Measure getWidth() {
-        DrawlNumber width = this.getImplicitWidth();
+        final DrawlNumber width = getImplicitWidth();
         return new Measure(width);
 
     }
@@ -660,7 +660,7 @@ public class Shape {
      */
     @NotNull
     public Boolean hasText() {
-        if (this.getText() == null) {
+        if (getText() == null) {
             return Boolean.FALSE;
         } else {
             return Boolean.TRUE;
@@ -672,23 +672,23 @@ public class Shape {
      *
      * @param shape The circle that will be below this one.
      */
-    public void setAbove(@NotNull Shape shape, @NotNull Measure offset) {
+    public void setAbove(@NotNull final Shape shape, @NotNull final Measure offset) {
         if (shape == this) {
-            throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
+            throw new UnsupportedOperationException(Shape.CANNOT_BE_ADJACENT_TO_ITSELF);
         }
-        this.neighbor = shape;
-        this.angleToNeighbor = DrawlNumber.valueOf(0);
+        neighbor = shape;
+        angleToNeighbor = DrawlNumber.valueOf(0);
 
         // Set the y position of this Shape
-        DrawlNumber topBoundaryOfShape = shape.getImplicitYPositionTop();
-        DrawlNumber thisImplicitYPosition = topBoundaryOfShape.add(this.getImplicitHalfHeight(),
+        final DrawlNumber topBoundaryOfShape = shape.getImplicitYPositionTop();
+        DrawlNumber thisImplicitYPosition = topBoundaryOfShape.add(getImplicitHalfHeight(),
                 DrawlNumber.mcOperations);
         thisImplicitYPosition = thisImplicitYPosition.add(offset.toDrawlNumber());
-        this.setImplicitYPositionCenter(thisImplicitYPosition);
+        setImplicitYPositionCenter(thisImplicitYPosition);
 
         // Set the x position of this Shape to match the one it is above
-        this.setImplicitXPositionCenter(shape.getImplicitXPositionCenter());
-        this.setExplicitXPositionCenter(shape.getExplicitXPositionCenter());
+        setImplicitXPositionCenter(shape.getImplicitXPositionCenter());
+        setExplicitXPositionCenter(shape.getExplicitXPositionCenter());
     }
 
     /**
@@ -696,21 +696,21 @@ public class Shape {
      *
      * @param shape The circle that will be above this one.
      */
-    public void setBelow(@NotNull Shape shape, @NotNull Measure offset) {
+    public void setBelow(@NotNull final Shape shape, @NotNull final Measure offset) {
         if (shape == this) {
-            throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
+            throw new UnsupportedOperationException(Shape.CANNOT_BE_ADJACENT_TO_ITSELF);
         }
-        this.neighbor = shape;
-        this.angleToNeighbor = DrawlNumber.valueOf(180);
-        DrawlNumber bottomBoundaryOfShape = shape.getImplicitYPositionBottom();
-        DrawlNumber thisImplicitYPosition = bottomBoundaryOfShape.subtract(this.getImplicitHalfHeight(),
+        neighbor = shape;
+        angleToNeighbor = DrawlNumber.valueOf(180);
+        final DrawlNumber bottomBoundaryOfShape = shape.getImplicitYPositionBottom();
+        DrawlNumber thisImplicitYPosition = bottomBoundaryOfShape.subtract(getImplicitHalfHeight(),
                 DrawlNumber.mcOperations);
         thisImplicitYPosition = thisImplicitYPosition.subtract(offset.toDrawlNumber());
-        this.setImplicitYPositionCenter(thisImplicitYPosition);
+        setImplicitYPositionCenter(thisImplicitYPosition);
 
         // Set the x position of this Shape to match the one it is above
-        this.setImplicitXPositionCenter(shape.getImplicitXPositionCenter());
-        this.setExplicitXPositionCenter(shape.getExplicitXPositionCenter());
+        setImplicitXPositionCenter(shape.getImplicitXPositionCenter());
+        setExplicitXPositionCenter(shape.getExplicitXPositionCenter());
     }
 
     /**
@@ -718,25 +718,25 @@ public class Shape {
      *
      * @param shape the Shape to the right of this one
      */
-    public void setLeftOf(@NotNull Shape shape, @NotNull Measure offset) {
+    public void setLeftOf(@NotNull final Shape shape, @NotNull final Measure offset) {
         if (shape == this) {
-            throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
+            throw new UnsupportedOperationException(Shape.CANNOT_BE_ADJACENT_TO_ITSELF);
         }
-        this.neighbor = shape;
-        this.angleToNeighbor = DrawlNumber.valueOf(90);
+        neighbor = shape;
+        angleToNeighbor = DrawlNumber.valueOf(90);
 
         // Set the x position of this shape
-        DrawlNumber leftBoundaryOfShape = shape.getImplicitXMinimum();
-        DrawlNumber thisImplicitXPosition = leftBoundaryOfShape.subtract(this.getImplicitHalfWidth(),
+        final DrawlNumber leftBoundaryOfShape = shape.getImplicitXMinimum();
+        DrawlNumber thisImplicitXPosition = leftBoundaryOfShape.subtract(getImplicitHalfWidth(),
                 DrawlNumber.mcOperations);
 
         thisImplicitXPosition = thisImplicitXPosition.subtract(offset.toDrawlNumber());
-        this.setImplicitXPositionCenter(thisImplicitXPosition);
+        setImplicitXPositionCenter(thisImplicitXPosition);
 
 
         // Set the y position of this shape to match the one it is to the left of
-        this.setImplicitYPositionCenter(shape.getImplicitYPositionCenter());
-        this.setExplicitYPositionCenter(shape.getExplicitYPositionCenter());
+        setImplicitYPositionCenter(shape.getImplicitYPositionCenter());
+        setExplicitYPositionCenter(shape.getExplicitYPositionCenter());
     }
 
     /**
@@ -745,22 +745,22 @@ public class Shape {
      * @param shape  The Shape to set to the right of which this one will be set.
      * @param offset The distance to offset the other Shape from this one.
      */
-    public void setRightOf(@NotNull Shape shape, @NotNull Measure offset) {
+    public void setRightOf(@NotNull final Shape shape, @NotNull final Measure offset) {
         if (shape == this) {
-            throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
+            throw new UnsupportedOperationException(Shape.CANNOT_BE_ADJACENT_TO_ITSELF);
         }
-        this.neighbor = shape;
-        this.angleToNeighbor = DrawlNumber.valueOf(270);
+        neighbor = shape;
+        angleToNeighbor = DrawlNumber.valueOf(270);
 
         // Set the x position of this Shape
-        DrawlNumber rightBoundaryOfShape = shape.getImplicitXMaximum();
-        DrawlNumber thisImplicitXPosition = rightBoundaryOfShape.add(this.getImplicitHalfWidth(),
+        final DrawlNumber rightBoundaryOfShape = shape.getImplicitXMaximum();
+        DrawlNumber thisImplicitXPosition = rightBoundaryOfShape.add(getImplicitHalfWidth(),
                 DrawlNumber.mcOperations);
         thisImplicitXPosition = thisImplicitXPosition.add(offset.toDrawlNumber());
-        this.setImplicitXPositionCenter(thisImplicitXPosition);
+        setImplicitXPositionCenter(thisImplicitXPosition);
 
         // Set the y position of this shape to match the one it is to the left of
-        this.setImplicitYPositionCenter(shape.getImplicitYPositionCenter());
-        this.setExplicitYPositionCenter(shape.getExplicitYPositionCenter());
+        setImplicitYPositionCenter(shape.getImplicitYPositionCenter());
+        setExplicitYPositionCenter(shape.getExplicitYPositionCenter());
     }
 }

@@ -1,6 +1,5 @@
 package com.aarrelaakso.drawl;
 
-import com.google.common.flogger.FluentLogger;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,7 +14,7 @@ import java.util.regex.Pattern;
  * Makes it easier to swap out a Double implementation for a BigDecimal implementation (SisuBigDecimal) as needs
  * dictate.
  */
-interface Number {
+interface Number extends Comparable<Number> {
 
     //Number HALF = Number.valueOf(0.5);
     //Number ONE = Number.valueOf(BigDecimal.ONE);
@@ -29,49 +28,13 @@ interface Number {
     /**
      * Use this MathContext for comparisons.
      */
-    @NotNull MathContext mcComparisons = new MathContext(SCALE_FOR_COMPARISONS, ROUNDING_MODE);
+    @NotNull MathContext mcComparisons = new MathContext(Number.SCALE_FOR_COMPARISONS, Number.ROUNDING_MODE);
 
     /**
      * Use this MathContext for other operations, such as multiplying and dividing.
      */
-    @NotNull MathContext mcOperations = new MathContext(SCALE_FOR_OPERATIONS, ROUNDING_MODE);
+    @NotNull MathContext mcOperations = new MathContext(Number.SCALE_FOR_OPERATIONS, Number.ROUNDING_MODE);
 
-
-    /**
-     * Creates new instance. This method is capable to parse any result of toFullString method.
-     *
-     * @param s source string
-     * @return created number
-     */
-    @Contract("_ -> new")
-    @NotNull Number valueOf(@NotNull final String s);
-
-    /**
-     * Creates new instance.
-     *
-     * @param number number
-     * @return created number
-     */
-    @Contract(value = "_ -> new", pure = true)
-    @NotNull Number valueOf(final double number);
-
-    /**
-     * Creates new instance.
-     *
-     * @param number number
-     * @return created number
-     */
-    @Contract("_ -> new")
-    @NotNull Number valueOf(@NotNull final BigDecimal number);
-
-    /**
-     * Creates a new instance.
-     *
-     * @param number The value of the new DrawlMath instance.
-     * @return The new DrawlMath instance.
-     */
-    @Contract("_ -> new")
-    @NotNull Number valueOf(@NotNull final Integer number);
 
     /**
      * Test whether a BigDecimal is a mathematical integer.
@@ -95,7 +58,7 @@ interface Number {
      *
      * @return absolute value of this number
      */
-     @NotNull Number abs();
+    @NotNull Number abs();
 
     /**
      * Performs addition operation.
