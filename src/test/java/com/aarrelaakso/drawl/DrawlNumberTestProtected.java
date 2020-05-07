@@ -43,7 +43,7 @@ public class DrawlNumberTestProtected
     @Test
     public void testAbs()
     {
-        Assertions.assertEquals(DrawlNumber.valueOf(0), DrawlNumber.valueOf(0).abs());
+        assertEquals(DrawlNumber.valueOf(0), DrawlNumber.valueOf(0).abs());
         assertEquals(DrawlNumber.valueOf(1), DrawlNumber.valueOf(1).abs());
         assertEquals(DrawlNumber.valueOf(1), DrawlNumber.valueOf(-1).abs());
     }
@@ -77,13 +77,13 @@ public class DrawlNumberTestProtected
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is low")
     public void testCompareToFuzzy()
     {
-        @NotNull DrawlNumber value1 = DrawlNumber.valueOf(1.0 / 3.0);
-        @NotNull DrawlNumber value2 = DrawlNumber.valueOf(1.0 / 2.999999999999999999999999999999999999999999999999999);
-        @NotNull Integer precision = 10;
-        Integer ACTUAL = value1.compareToFuzzy(value2, DrawlNumber.mcComparisons);
-        @NotNull Integer EXPECTED = 0;
+        @NotNull final DrawlNumber value1 = DrawlNumber.valueOf(1.0 / 3.0);
+        @NotNull final DrawlNumber value2 = DrawlNumber.valueOf(1.0 / 2.999999999999999999999999999999999999999999999999999);
+        @NotNull final Integer precision = 10;
+        final Integer ACTUAL = value1.compareToFuzzy(value2, DrawlNumber.mcComparisons);
+        @NotNull final Integer EXPECTED = 0;
 
-        then(ACTUAL).as("Fuzzily comparing " + value1.toString() + " to " + value2.toString() +
+        then(ACTUAL).as("Fuzzily comparing " + value1 + " to " + value2 +
                 " should result in a value of " + EXPECTED + " but got " + ACTUAL)
                 .isEqualTo(EXPECTED);
     }
@@ -95,14 +95,14 @@ public class DrawlNumberTestProtected
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is high #1")
     public void testCompareToFuzzyWhenPrecisionIsHigh01()
     {
-        @NotNull DrawlNumber value1 = DrawlNumber.valueOf("0.3333333333333333");
-        @NotNull DrawlNumber value2 = DrawlNumber.valueOf("0.3333333333333334");
+        @NotNull final DrawlNumber value1 = DrawlNumber.valueOf("0.3333333333333333");
+        @NotNull final DrawlNumber value2 = DrawlNumber.valueOf("0.3333333333333334");
 
-        @NotNull Integer precision = 100;
-        Integer ACTUAL = value1.compareToFuzzy(value2, DrawlNumber.mcOperations);
-        @NotNull Integer EXPECTED = -1;
+        @NotNull final Integer precision = 100;
+        final Integer ACTUAL = value1.compareToFuzzy(value2, DrawlNumber.mcOperations);
+        @NotNull final Integer EXPECTED = -1;
 
-        then(ACTUAL).as("Fuzzily comparing " + value1.toString() + " to " + value2.toString() +
+        then(ACTUAL).as("Fuzzily comparing " + value1 + " to " + value2 +
                 " should result in a value of " + EXPECTED + " but got " + ACTUAL)
                 .isEqualTo(EXPECTED);
     }
@@ -114,13 +114,13 @@ public class DrawlNumberTestProtected
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is high #2")
     public void testCompareToFuzzyWhenPrecisionIsHigh02()
     {
-        @NotNull DrawlNumber value1 = DrawlNumber.valueOf("0.3333333333333334");
-        @NotNull DrawlNumber value2 = DrawlNumber.valueOf("0.3333333333333333");
+        @NotNull final DrawlNumber value1 = DrawlNumber.valueOf("0.3333333333333334");
+        @NotNull final DrawlNumber value2 = DrawlNumber.valueOf("0.3333333333333333");
 
-        Integer ACTUAL = value1.compareToFuzzy(value2, DrawlNumber.mcOperations);
-        @NotNull Integer EXPECTED = 1;
+        final Integer ACTUAL = value1.compareToFuzzy(value2, DrawlNumber.mcOperations);
+        @NotNull final Integer EXPECTED = 1;
 
-        then(ACTUAL).as("Fuzzily comparing " + value1.toString() + " to " + value2.toString() +
+        then(ACTUAL).as("Fuzzily comparing " + value1 + " to " + value2 +
                 " should result in a value of " + EXPECTED + " but got " + ACTUAL)
                 .isEqualTo(EXPECTED);
     }

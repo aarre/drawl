@@ -41,21 +41,21 @@ public abstract class ShapeDrawingTestPublic {
 
     @BeforeEach
     void givenADrawing() {
-        drawing = new Drawing();
+        this.drawing = new Drawing();
     }
 
     @Test
     @DisplayName("LENGTH: Adding a circle to an empty drawing gives the drawing a length of 1")
     void lengthWhenADrawingHasOneShapeThenItsLengthIs1() {
-        drawing.add(shape1);
-        assertEquals(new Integer(1), drawing.getLength());
+        this.drawing.add(this.shape1);
+        assertEquals(new Integer(1), this.drawing.getLength());
     }
 
     @Test
     @DisplayName("SVG: Calling getSVG without parameters does not throw an exception")
     void svgWhenYouCallSVGWithoutParametersItDoesNotThrowAnException() {
         assertDoesNotThrow(() -> {
-            @NotNull String svg = drawing.getSVG();
+            @NotNull final String svg = this.drawing.getSVG();
         });
     }
 
@@ -72,9 +72,9 @@ public abstract class ShapeDrawingTestPublic {
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the fill is not set, then it does not appear in the SVG")
-        void whenTheFillIsNotSetThenItDoesNotAppearInTheSVG(@NotNull BDDSoftAssertions softly) {
-            drawing.add(shape1);
-            @NotNull String svg = drawing.getSVG(100, 100);
+        void whenTheFillIsNotSetThenItDoesNotAppearInTheSVG(@NotNull final BDDSoftAssertions softly) {
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape1);
+            @NotNull final String svg = ShapeDrawingTestPublic.this.drawing.getSVG(100, 100);
             softly.then(svg).doesNotContain("fill");
             softly.then(svg).doesNotContain("darkslategray");
         }
@@ -84,13 +84,13 @@ public abstract class ShapeDrawingTestPublic {
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the fill is set, then it appears in the SVG")
-        void whenTheFillIsSetThenItAppearsInTheSVG(@NotNull BDDSoftAssertions softly) {
-            if (shape1.getClass() == Text.class) {
-                ((Text) shape1).setString("Drawl");
+        void whenTheFillIsSetThenItAppearsInTheSVG(@NotNull final BDDSoftAssertions softly) {
+            if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
+                ((Text) ShapeDrawingTestPublic.this.shape1).setString("Drawl");
             }
-            drawing.add(shape1);
-            shape1.setFill("darkslategray");
-            @NotNull String svg = drawing.getSVG(100, 100);
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape1);
+            ShapeDrawingTestPublic.this.shape1.setFill("darkslategray");
+            @NotNull final String svg = ShapeDrawingTestPublic.this.drawing.getSVG(100, 100);
             softly.then(svg).contains("fill");
             softly.then(svg).contains("darkslategray");
         }
@@ -110,9 +110,9 @@ public abstract class ShapeDrawingTestPublic {
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the stroke is not set, then it does not appear in the SVG")
-        void whenTheStrokeIsNotSetThenItDoesNotAppearInTheSVG(@NotNull BDDSoftAssertions softly) {
-            drawing.add(shape1);
-            @NotNull String svg = drawing.getSVG(100, 100);
+        void whenTheStrokeIsNotSetThenItDoesNotAppearInTheSVG(@NotNull final BDDSoftAssertions softly) {
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape1);
+            @NotNull final String svg = ShapeDrawingTestPublic.this.drawing.getSVG(100, 100);
             softly.then(svg).doesNotContain("stroke");
             softly.then(svg).doesNotContain("darkslategray");
         }
@@ -122,13 +122,13 @@ public abstract class ShapeDrawingTestPublic {
         @Tag("svg")
         @Tag("public")
         @DisplayName("When the stroke is set, then it appears in the SVG")
-        void whenTheStrokeIsSetThenItAppearsInTheSVG(@NotNull BDDSoftAssertions softly) {
-            drawing.add(shape1);
-            if (shape1.getClass() == Text.class) {
-                ((Text) shape1).setString("Drawl");
+        void whenTheStrokeIsSetThenItAppearsInTheSVG(@NotNull final BDDSoftAssertions softly) {
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape1);
+            if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
+                ((Text) ShapeDrawingTestPublic.this.shape1).setString("Drawl");
             }
-            shape1.setStroke("darkslategray");
-            @NotNull String svg = drawing.getSVG(100, 100);
+            ShapeDrawingTestPublic.this.shape1.setStroke("darkslategray");
+            @NotNull final String svg = ShapeDrawingTestPublic.this.drawing.getSVG(100, 100);
             softly.then(svg).contains("stroke");
             softly.then(svg).contains("darkslategray");
         }
@@ -146,17 +146,17 @@ public abstract class ShapeDrawingTestPublic {
         @Test
         @DisplayName("When Text is added to a Shape, then it shows up in the SVG")
         void whenTextIsAddedToAShapeThenItShowsUpInTheSVG() {
-            if (shape1.getClass() == Text.class) {
+            if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
                 // If the outer Shape is a Text object but does not have a String, then it will not be issued to
                 // the SVG. Therefore, if the outer Shape is a Text object, we need to assign it a String.
-                ((Text) shape1).setString("Lward");
+                ((Text) ShapeDrawingTestPublic.this.shape1).setString("Lward");
             }
-            @NotNull Text text = new Text("Drawl");
-            shape1.addText(text);
-            drawing.add(shape1);
-            drawing.setExplicitDimensions(100, 100);
+            @NotNull final Text text = new Text("Drawl");
+            ShapeDrawingTestPublic.this.shape1.addText(text);
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape1);
+            ShapeDrawingTestPublic.this.drawing.setExplicitDimensions(100, 100);
 
-            then(drawing.getSVG()).contains("Drawl");
+            then(ShapeDrawingTestPublic.this.drawing.getSVG()).contains("Drawl");
         }
 
     }
@@ -171,68 +171,68 @@ public abstract class ShapeDrawingTestPublic {
         @Test
         @DisplayName("When a Shape is set nonadjacent right of another shape, then...")
         void whenAShapeIsSetNonAdjacentRightOfAnotherShapeThen() {
-            drawing.add(shape1);
-            drawing.add(shape2);
-            shape2.setRightOf(shape1, shape2.getWidth());
-            if (shape1.getClass() == Circle.class) {
-                then(drawing.getSVG(30, 10)).contains("x=\"25\"");
-            } else if (shape1.getClass() == Rectangle.class) {
-                then(drawing.getSVG(30, 10)).contains("x=\"20\"");
-            } else if (shape1.getClass() == Text.class) {
-                ((Text)shape1).setString("Drawl");
-                ((Text)shape2).setString("Lward");
-                then(drawing.getSVG(30, 10)).contains("x=\"25\"");
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape1);
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape2);
+            ShapeDrawingTestPublic.this.shape2.setRightOf(ShapeDrawingTestPublic.this.shape1, ShapeDrawingTestPublic.this.shape2.getWidth());
+            if (ShapeDrawingTestPublic.this.shape1.getClass() == Circle.class) {
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"25\"");
+            } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Rectangle.class) {
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"20\"");
+            } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
+                ((Text) ShapeDrawingTestPublic.this.shape1).setString("Drawl");
+                ((Text) ShapeDrawingTestPublic.this.shape2).setString("Lward");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"25\"");
             }
         }
 
         @Test
         @DisplayName("When a Shape is set nonadjacent left of another shape, then...")
         void whenAShapeIsSetNonAdjacentLeftOfAnotherShapeThen() {
-            drawing.add(shape1);
-            drawing.add(shape2);
-            shape2.setLeftOf(shape1, shape2.getWidth());
-            if (shape1.getClass() == Circle.class) {
-                then(drawing.getSVG(30, 10)).contains("x=\"25\"");
-            } else if (shape1.getClass() == Rectangle.class) {
-                then(drawing.getSVG(30, 10)).contains("x=\"20\"");
-            } else if (shape1.getClass() == Text.class) {
-                ((Text)shape1).setString("Drawl");
-                ((Text)shape2).setString("Lward");
-                then(drawing.getSVG(30, 10)).contains("x=\"25\"");
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape1);
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape2);
+            ShapeDrawingTestPublic.this.shape2.setLeftOf(ShapeDrawingTestPublic.this.shape1, ShapeDrawingTestPublic.this.shape2.getWidth());
+            if (ShapeDrawingTestPublic.this.shape1.getClass() == Circle.class) {
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"25\"");
+            } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Rectangle.class) {
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"20\"");
+            } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
+                ((Text) ShapeDrawingTestPublic.this.shape1).setString("Drawl");
+                ((Text) ShapeDrawingTestPublic.this.shape2).setString("Lward");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"25\"");
             }
         }
 
         @Test
         @DisplayName("When a Shape is set nonadjacent above another shape, then...")
         void whenAShapeIsSetNonAdjacentAboveAnotherShapeThen() {
-            drawing.add(shape1);
-            drawing.add(shape2);
-            shape2.setAbove(shape1, shape2.getWidth());
-            if (shape1.getClass() == Circle.class) {
-                then(drawing.getSVG(10, 30)).contains("y=\"25\"");
-            } else if (shape1.getClass() == Rectangle.class) {
-                then(drawing.getSVG(10, 30)).contains("y=\"20\"");
-            } else if (shape1.getClass() == Text.class) {
-                ((Text)shape1).setString("Drawl");
-                ((Text)shape2).setString("Lward");
-                then(drawing.getSVG(10, 30)).contains("y=\"25\"");
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape1);
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape2);
+            ShapeDrawingTestPublic.this.shape2.setAbove(ShapeDrawingTestPublic.this.shape1, ShapeDrawingTestPublic.this.shape2.getWidth());
+            if (ShapeDrawingTestPublic.this.shape1.getClass() == Circle.class) {
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"25\"");
+            } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Rectangle.class) {
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"20\"");
+            } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
+                ((Text) ShapeDrawingTestPublic.this.shape1).setString("Drawl");
+                ((Text) ShapeDrawingTestPublic.this.shape2).setString("Lward");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"25\"");
             }
         }
 
         @Test
         @DisplayName("When a Shape is set nonadjacent below another shape, then...")
         void whenAShapeIsSetNonAdjacentBelowAnotherShapeThen() {
-            drawing.add(shape1);
-            drawing.add(shape2);
-            shape2.setBelow(shape1, shape2.getWidth());
-            if (shape1.getClass() == Circle.class) {
-                then(drawing.getSVG(10, 30)).contains("y=\"25\"");
-            } else if (shape1.getClass() == Rectangle.class) {
-                then(drawing.getSVG(10, 30)).contains("y=\"20\"");
-            } else if (shape1.getClass() == Text.class) {
-                ((Text)shape1).setString("Drawl");
-                ((Text)shape2).setString("Lward");
-                then(drawing.getSVG(10, 30)).contains("y=\"25\"");
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape1);
+            ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape2);
+            ShapeDrawingTestPublic.this.shape2.setBelow(ShapeDrawingTestPublic.this.shape1, ShapeDrawingTestPublic.this.shape2.getWidth());
+            if (ShapeDrawingTestPublic.this.shape1.getClass() == Circle.class) {
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"25\"");
+            } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Rectangle.class) {
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"20\"");
+            } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
+                ((Text) ShapeDrawingTestPublic.this.shape1).setString("Drawl");
+                ((Text) ShapeDrawingTestPublic.this.shape2).setString("Lward");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"25\"");
             }
         }
     }
@@ -247,7 +247,7 @@ public abstract class ShapeDrawingTestPublic {
         @Test
         @DisplayName("whenAUserGetsTheWidthOfADefaultShapeThenItIs1")
         void whenAUserGetsTheWidthOfADefaultShapeThenItIs1() {
-            @NotNull Measure measure = shape1.getWidth();
+            @NotNull final Measure measure = ShapeDrawingTestPublic.this.shape1.getWidth();
             then(measure).isInstanceOf(Measure.class);
             then(measure).isNotEqualTo(0);
             then(measure).isEqualToComparingFieldByField(new Measure(1));
@@ -256,7 +256,7 @@ public abstract class ShapeDrawingTestPublic {
         @Test
         @DisplayName("whenAUserGetsTheHeightOfADefaultShapeThenItIs1")
         void whenAUserGetsTheHeightOfADefaultShapeThenItIs1() {
-            @NotNull Measure measure = shape1.getHeight();
+            @NotNull final Measure measure = ShapeDrawingTestPublic.this.shape1.getHeight();
             then(measure).isInstanceOf(Measure.class);
             then(measure).isNotEqualTo(0);
             then(measure).isEqualToComparingFieldByField(new Measure(1));
@@ -267,10 +267,10 @@ public abstract class ShapeDrawingTestPublic {
     @DisplayName("SVG: When you get SVG twice from a Drawing, it is the same both times")
     void whenYouGetSVGTwiceFromADrawingThenItIsTheSameBothTimes()
     {
-        drawing.add(shape1);
-        drawing.add(shape2);
-        String svg1 = drawing.getSVG(100, 100);
-        String svg2 = drawing.getSVG(100, 100);
+        this.drawing.add(this.shape1);
+        this.drawing.add(this.shape2);
+        final String svg1 = this.drawing.getSVG(100, 100);
+        final String svg2 = this.drawing.getSVG(100, 100);
 
         then(svg1).isEqualTo(svg2);
     }

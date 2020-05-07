@@ -50,7 +50,7 @@ public class Drawing {
     private static final float loadFactor = 0.75f;
 
     public Drawing() {
-        this.contents = new HashSet<>(initialCapacity, loadFactor);
+        this.contents = new HashSet<>(Drawing.initialCapacity, Drawing.loadFactor);
     }
 
     /**
@@ -58,11 +58,11 @@ public class Drawing {
      *
      * @param shape The shape to add
      */
-    public final void add(@NotNull Shape shape) {
+    public final void add(@NotNull final Shape shape) {
         if (this.isExplicitSet()) {
             throw new UnsupportedOperationException("Cannot add shapes after setting a drawing's explicit dimensions");
         }
-        contents.add(shape);
+        this.contents.add(shape);
         this.updateShape(shape);
     }
 
@@ -86,18 +86,18 @@ public class Drawing {
      *
      * @param drawingExplicitHeight The explicit height of the drawing.
      */
-    private void setExplicitHeight(@NotNull Number drawingExplicitHeight) {
-        logger.atFine().log("Setting explicit height");
+    private void setExplicitHeight(@NotNull final Number drawingExplicitHeight) {
+        Drawing.logger.atFine().log("Setting explicit height");
         // Note that this line, by changing this.explicitWidth, can change the explicit to implicit ratio
         this.setExplicitHeightInternal(drawingExplicitHeight);
         if (this.getExplicitWidth() == null) {
             // If this Drawing does not have an explicit width, make the explicit width of the Drawing as wide as it
             // needs to be to accommodate the contents.
-            logger.atFine().log("Adjusting explicit width to fit");
+            Drawing.logger.atFine().log("Adjusting explicit width to fit");
             this.setExplicitWidthInternal(this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio(),
                     DrawlNumber.mcOperations));
         }
-        for (@NotNull Shape shape : this.contents) {
+        for (@NotNull final Shape shape : this.contents) {
             this.updateShape(shape);
         }
     }
@@ -108,7 +108,7 @@ public class Drawing {
      * @param height the explicit height of the Drawing; it is a Float to match
      *               the precision allowed by the SVG spec.
      */
-    public final void setExplicitHeight(Float height) {
+    public final void setExplicitHeight(final Float height) {
         this.setExplicitHeight(DrawlNumber.valueOf(height));
     }
 
@@ -117,7 +117,7 @@ public class Drawing {
      *
      * @param height The explicit height of the Drawing; it is an Integer to allow for common use cases.
      */
-    public final void setExplicitHeight(Integer height) {
+    public final void setExplicitHeight(final Integer height) {
         this.setExplicitHeight(DrawlNumber.valueOf(height));
     }
 
@@ -127,8 +127,8 @@ public class Drawing {
      * @return The ratio of the explicit height of this Drawing to the implicit height of its contents
      */
     private Number getExplicitHeightPerImplicitHeight() {
-        Number implicitHeightOfContents = this.getImplicitHeightOfContents();
-        Number explicitHeightPerImplicitHeight;
+        final Number implicitHeightOfContents = this.getImplicitHeightOfContents();
+        final Number explicitHeightPerImplicitHeight;
         if (implicitHeightOfContents.isNotEqualTo(DrawlNumber.ZERO)) {
             if (this.getExplicitHeight() == null) {
                 // If the explicit height has no value, try to calculate using the explicit width
@@ -164,8 +164,8 @@ public class Drawing {
      */
     // TODO [Issue No. 1] Make this method private and factor out of unit tests.
     public final Number getExplicitToImplicitRatio() {
-        Number explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
-        @NotNull Number explicitWidthPerImplicitWidth = this.getExplicitWidthPerImplicitWidth();
+        final Number explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
+        @NotNull final Number explicitWidthPerImplicitWidth = this.getExplicitWidthPerImplicitWidth();
         if (explicitHeightPerImplicitHeight.isLessThanOrEqualTo(explicitWidthPerImplicitWidth)) {
             return explicitHeightPerImplicitHeight;
         } else {
@@ -191,8 +191,7 @@ public class Drawing {
      *
      * @param drawingExplicitWidth The explicit width of the drawing.
      */
-    private void setExplicitWidth(@NotNull Number drawingExplicitWidth) {
-        logger.atFine().log("Setting explicit width");
+    private void setExplicitWidth(@NotNull final Number drawingExplicitWidth) {
         // Note that this line, by changing this.explicitWidth, can change the explicit to implicit ratio
         this.setExplicitWidthInternal(drawingExplicitWidth);
         if (this.getExplicitHeight() == null) {
@@ -201,7 +200,7 @@ public class Drawing {
             this.setExplicitHeightInternal(this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio(),
                     DrawlNumber.mcOperations));
         }
-        for (@NotNull Shape shape : this.contents) {
+        for (@NotNull final Shape shape : this.contents) {
             this.updateShape(shape);
         }
     }
@@ -212,7 +211,7 @@ public class Drawing {
      * @param width the explicit width of the Drawing; it is a Float
      *              to match the precision allowed by the SVG spec.
      */
-    public final void setExplicitWidth(Float width) {
+    public final void setExplicitWidth(final Float width) {
         this.setExplicitWidth(DrawlNumber.valueOf(width));
 
     }
@@ -222,7 +221,7 @@ public class Drawing {
      *
      * @param width The explicit width of the Drawing; it is an Integer to allow for common use cases.
      */
-    public final void setExplicitWidth(Integer width) {
+    public final void setExplicitWidth(final Integer width) {
         this.setExplicitWidth(DrawlNumber.valueOf(width));
     }
 
@@ -234,10 +233,10 @@ public class Drawing {
     // TODO [Issue No. 1] Make this method private and factor out of unit tests.
     @NotNull
     public final Number getExplicitWidthPerImplicitWidth() {
-        Number implicitWidthOfContents = this.getImplicitWidthOfContents();
+        final Number implicitWidthOfContents = this.getImplicitWidthOfContents();
         assert implicitWidthOfContents.isGreaterThanOrEqualTo(DrawlNumber.ZERO) :
                 "The implicit width of the contents of a drawing must be positive (or zero).";
-        Number explicitWidthPerImplicitWidth;
+        final Number explicitWidthPerImplicitWidth;
         if (implicitWidthOfContents.isNotEqualTo(DrawlNumber.ZERO)) {
             if (this.getExplicitWidth() == null) {
                 // If the explicit width is null, try to use it to calculate using the explicit height
@@ -325,8 +324,8 @@ public class Drawing {
     @NotNull
     private Number getImplicitXMaximum() {
         Number xMaximum = DrawlNumber.valueOf(Double.MIN_VALUE);
-        for (@NotNull Shape content : this.contents) {
-            Number xMaximumCurrent = content.getImplicitXMaximum();
+        for (@NotNull final Shape content : this.contents) {
+            final Number xMaximumCurrent = content.getImplicitXMaximum();
             if (xMaximumCurrent.isGreaterThan(xMaximum)) {
                 xMaximum = xMaximumCurrent;
             }
@@ -345,8 +344,8 @@ public class Drawing {
     @NotNull
     private Number getImplicitXMinimum() {
         Number xMinimum = DrawlNumber.valueOf(Double.MAX_VALUE);
-        for (@NotNull Shape content : this.contents) {
-            Number xMinimumCurrent = content.getImplicitXMinimum();
+        for (@NotNull final Shape content : this.contents) {
+            final Number xMinimumCurrent = content.getImplicitXMinimum();
             if (xMinimumCurrent.isLessThan(xMinimum)) {
                 xMinimum = xMinimumCurrent;
             }
@@ -365,8 +364,8 @@ public class Drawing {
     @NotNull
     private Number getImplicitYMaximum() {
         Number yMaximum = DrawlNumber.valueOf(Double.MIN_VALUE);
-        for (@NotNull Shape content : this.contents) {
-            Number yMaximumCurrent = content.getImplicitYPositionTop();
+        for (@NotNull final Shape content : this.contents) {
+            final Number yMaximumCurrent = content.getImplicitYPositionTop();
             if (yMaximumCurrent.isGreaterThan(yMaximum)) {
                 yMaximum = yMaximumCurrent;
             }
@@ -385,8 +384,8 @@ public class Drawing {
     @NotNull
     private Number getImplicitYMinimum() {
         Number yMinimum = DrawlNumber.valueOf(Double.MAX_VALUE);
-        for (@NotNull Shape content : this.contents) {
-            Number yMinimumCurrent = content.getImplicitYPositionBottom();
+        for (@NotNull final Shape content : this.contents) {
+            final Number yMinimumCurrent = content.getImplicitYPositionBottom();
             if (yMinimumCurrent.isLessThan(yMinimum)) {
                 yMinimum = yMinimumCurrent;
             }
@@ -404,8 +403,7 @@ public class Drawing {
      * @param drawingHeight The desired height of the output; the type is Integer to allow for common use cases.
      * @return A string of valid SVG that depicts the drawing within the bounds of drawingWidth and drawingHeight.
      */
-    public @NotNull
-    final String getSVG(@NotNull Integer drawingWidth, @NotNull Integer drawingHeight) {
+    public final @NotNull String getSVG(@NotNull final Integer drawingWidth, @NotNull final Integer drawingHeight) {
         this.setExplicitDimensions(drawingWidth.floatValue(), drawingHeight.floatValue());
         return this.getSVG();
     }
@@ -417,31 +415,30 @@ public class Drawing {
      *
      * @return A string of valid SVG that depicts the drawing within the bounds of the explicit width and height
      */
-    public @NotNull
-    final String getSVG() {
+    public final @NotNull String getSVG() {
 
-        @NotNull StringBuilder svgBuilder = new StringBuilder("<?xml version=\"1.0\" standalone=\"no\"?>");
+        @NotNull final StringBuilder svgBuilder = new StringBuilder("<?xml version=\"1.0\" standalone=\"no\"?>");
         svgBuilder.append("<svg xmlns=\"http://www.w3.org/2000/svg\"");
 
-        @Nullable Number bdWidth = this.getExplicitWidth();
+        @Nullable final Number bdWidth = this.getExplicitWidth();
         if (bdWidth != null) {
             svgBuilder.append(" width=\"");
-            @NotNull String width = bdWidth.toSVG();
+            @NotNull final String width = bdWidth.toSVG();
             svgBuilder.append(width);
             svgBuilder.append("\"");
         }
 
-        @Nullable Number bdHeight = this.getExplicitHeight();
+        @Nullable final Number bdHeight = this.getExplicitHeight();
         if (bdHeight != null) {
             svgBuilder.append(" height=\"");
-            @NotNull String height = bdHeight.toSVG();
+            @NotNull final String height = bdHeight.toSVG();
             svgBuilder.append(height);
             svgBuilder.append("\"");
         }
 
         svgBuilder.append(">");
 
-        for (@NotNull Shape content : this.contents) {
+        for (@NotNull final Shape content : this.contents) {
             svgBuilder.append(content.getSVG());
         }
 
@@ -468,7 +465,7 @@ public class Drawing {
      * @return the number of items in this Drawing
      */
     public final Integer getLength() {
-        return contents.size();
+        return this.contents.size();
     }
 
     /**
@@ -479,11 +476,11 @@ public class Drawing {
      * @param explicitWidthOfDrawingFloat  The explicit width of the Drawing.
      * @param explicitHeightOfDrawingFloat The explicit height of the Drawing.
      */
-    public final void setExplicitDimensions(Float explicitWidthOfDrawingFloat, Float explicitHeightOfDrawingFloat) {
-        logger.atFine().log("Entering setExplicitDimensions");
+    public final void setExplicitDimensions(final Float explicitWidthOfDrawingFloat, final Float explicitHeightOfDrawingFloat) {
+        Drawing.logger.atFine().log("Entering setExplicitDimensions");
         // Calculate implicit aspect ratio
-        Number implicitHeightOfContents = this.getImplicitHeightOfContents();
-        Number implicitWidthOfContents = this.getImplicitWidthOfContents();
+        final Number implicitHeightOfContents = this.getImplicitHeightOfContents();
+        final Number implicitWidthOfContents = this.getImplicitWidthOfContents();
         Number implicitAspectRatio = DrawlNumber.ZERO;
         if (implicitHeightOfContents.isGreaterThan(DrawlNumber.ZERO)) {
             implicitAspectRatio = implicitWidthOfContents.divide(implicitHeightOfContents,
@@ -495,35 +492,30 @@ public class Drawing {
         this.setExplicitWidthInternal(DrawlNumber.valueOf(explicitWidthOfDrawingFloat));
         assert this.getExplicitWidth() != null;
         assert this.getExplicitHeight() != null;
-        Number explicitAspectRatio = this.getExplicitWidth().divide(this.getExplicitHeight(),
+        final Number explicitAspectRatio = this.getExplicitWidth().divide(this.getExplicitHeight(),
                 DrawlNumber.mcOperations);
-        logger.atFine().log("Explicit aspect ratio: " + explicitAspectRatio);
+        Drawing.logger.atFine().log("Explicit aspect ratio: " + explicitAspectRatio);
 
         if (FALSE) {
             if (implicitAspectRatio.isGreaterThan(explicitAspectRatio)) {
                 // The implicit aspect ratio is greater than the explicit aspect ratio.
                 // Therefore, we are constrained by width.
                 // Adjust the height to match.
-                logger.atFine().log("Adjusting height");
-                Number adjustedHeight = this.getExplicitWidth().divide(explicitAspectRatio,
+                final Number adjustedHeight = this.getExplicitWidth().divide(explicitAspectRatio,
                         DrawlNumber.mcOperations);
-                logger.atFine().log("Setting adjusted height, adjusted height: " + adjustedHeight.toPlainString());
                 this.setExplicitHeight(adjustedHeight);
-                logger.atFine().log("Setting explicit width");
                 this.setExplicitWidth(DrawlNumber.valueOf(explicitWidthOfDrawingFloat));
             } else if (implicitAspectRatio.isLessThan(explicitAspectRatio)) {
                 // The implicit aspect ratio is less than or equal to the explicit aspect ratio.
                 // Therefore, we are constrained by height.
                 // Adjust the width to match.
-                logger.atFine().log("Adjusting width");
-                Number adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio,
+                final Number adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio,
                         DrawlNumber.mcOperations);
                 this.setExplicitHeight(DrawlNumber.valueOf(explicitHeightOfDrawingFloat));
                 this.setExplicitWidth(adjustedWidth);
             }
         } else {
             // The two aspect ratios are equal, so no adjustment is necessary
-            logger.atFine().log("No adjustment necessary");
             this.setExplicitWidth(DrawlNumber.valueOf(explicitWidthOfDrawingFloat));
             this.setExplicitHeight(DrawlNumber.valueOf(explicitHeightOfDrawingFloat));
 
@@ -541,7 +533,7 @@ public class Drawing {
      * @param explicitWidthOfDrawing  The explicit width of the Drawing.
      * @param explicitHeightOfDrawing The explicit height of the Drawing.
      */
-    public final void setExplicitDimensions(@NotNull Integer explicitWidthOfDrawing, @NotNull Integer explicitHeightOfDrawing) {
+    public final void setExplicitDimensions(@NotNull final Integer explicitWidthOfDrawing, @NotNull final Integer explicitHeightOfDrawing) {
         this.setExplicitDimensions(explicitWidthOfDrawing.floatValue(), explicitHeightOfDrawing.floatValue());
     }
 
@@ -550,7 +542,7 @@ public class Drawing {
      *
      * @param drawingExplicitHeight the new explicit height of the Drawing.
      */
-    private void setExplicitHeightInternal(@NotNull Number drawingExplicitHeight) {
+    private void setExplicitHeightInternal(@NotNull final Number drawingExplicitHeight) {
         this.explicitHeight = drawingExplicitHeight;
     }
 
@@ -559,7 +551,7 @@ public class Drawing {
      *
      * @param drawingExplicitWidth the new explicit width of the Drawing.
      */
-    private void setExplicitWidthInternal(@NotNull Number drawingExplicitWidth) {
+    private void setExplicitWidthInternal(@NotNull final Number drawingExplicitWidth) {
         this.explicitWidth = drawingExplicitWidth;
     }
 
@@ -568,8 +560,8 @@ public class Drawing {
      * <p>
      * Called by setExplicitWidth()
      */
-    private void updateShape(@NotNull Shape shape) {
-        logger.atFine().log("Updating shape");
+    private void updateShape(@NotNull final Shape shape) {
+        Drawing.logger.atFine().log("Updating shape");
         this.updateExplicitHeightOfShape(shape);
         this.updateExplicitWidthOfShape(shape);
         this.updateExplicitYPositionOfShape(shape);
@@ -577,73 +569,73 @@ public class Drawing {
     }
 
 
-    private void updateExplicitHeightOfShape(@NotNull Shape shape) {
+    private void updateExplicitHeightOfShape(@NotNull final Shape shape) {
         // Update explicit height of shape
-        @Nullable Number implicitHeightOfShape = shape.getImplicitHeight();
+        @Nullable final Number implicitHeightOfShape = shape.getImplicitHeight();
         assert implicitHeightOfShape != null;
-        Number explicitHeightOfShape = implicitHeightOfShape.multiply(this.getExplicitToImplicitRatio(),
+        final Number explicitHeightOfShape = implicitHeightOfShape.multiply(this.getExplicitToImplicitRatio(),
                 DrawlNumber.mcOperations);
         shape.setExplicitHeight(explicitHeightOfShape);
     }
 
-    private void updateExplicitWidthOfShape(@NotNull Shape shape) {
+    private void updateExplicitWidthOfShape(@NotNull final Shape shape) {
         // Update explicit width of shape
-        logger.atFine().log("Updating explicit width of shape");
-        Number implicitWidthOfShape = shape.getImplicitWidth();
-        Number explicitWidthOfShape = implicitWidthOfShape.multiply(this.getExplicitToImplicitRatio(),
+        Drawing.logger.atFine().log("Updating explicit width of shape");
+        final Number implicitWidthOfShape = shape.getImplicitWidth();
+        final Number explicitWidthOfShape = implicitWidthOfShape.multiply(this.getExplicitToImplicitRatio(),
                 DrawlNumber.mcOperations);
         shape.setExplicitWidth(explicitWidthOfShape);
     }
 
-    private void updateExplicitXPositionOfShape(@NotNull Shape shape) {
+    private void updateExplicitXPositionOfShape(@NotNull final Shape shape) {
         // Update the explicit x position of the Shape
-        logger.atFine().log("Updating explicit x position");
-        Number implicitXPositionOfShape = shape.getImplicitXPositionCenter();
+        Drawing.logger.atFine().log("Updating explicit x position");
+        final Number implicitXPositionOfShape = shape.getImplicitXPositionCenter();
         // The fudge factor is to shift the diagram right so that all x coordinates are positive in explicit coordinate
         // space
-        @NotNull Number fudgeFactorX = this.getImplicitXMinimum();
-        Number fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX,
+        @NotNull final Number fudgeFactorX = this.getImplicitXMinimum();
+        final Number fudgedImplicitXPositionOfShape = implicitXPositionOfShape.subtract(fudgeFactorX,
                 DrawlNumber.mcOperations);
-        Number explicitXPositionOfShape = fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
+        final Number explicitXPositionOfShape = fudgedImplicitXPositionOfShape.multiply(this.getExplicitToImplicitRatio(),
                 DrawlNumber.mcOperations);
         shape.setExplicitXPositionCenter(explicitXPositionOfShape);
-        Number implicitWidthOfContents = this.getImplicitWidth();
-        Number explicitWidthOfContents = implicitWidthOfContents.multiply(this.getExplicitToImplicitRatio(),
+        final Number implicitWidthOfContents = this.getImplicitWidth();
+        final Number explicitWidthOfContents = implicitWidthOfContents.multiply(this.getExplicitToImplicitRatio(),
                 DrawlNumber.mcOperations);
         if (this.isExplicitSet()) {
-            @Nullable Number explicitWidthOfDrawing = this.getExplicitWidth();
+            @Nullable final Number explicitWidthOfDrawing = this.getExplicitWidth();
             assert explicitWidthOfDrawing != null;
-            Number explicitHorizontalWhitespace = explicitWidthOfDrawing.subtract(explicitWidthOfContents,
+            final Number explicitHorizontalWhitespace = explicitWidthOfDrawing.subtract(explicitWidthOfContents,
                     DrawlNumber.mcOperations);
-            Number explicitHorizontalWhitespaceLeft = explicitHorizontalWhitespace.divide(DrawlNumber.TWO,
+            final Number explicitHorizontalWhitespaceLeft = explicitHorizontalWhitespace.divide(DrawlNumber.TWO,
                     DrawlNumber.mcOperations);
-            Number finalExplicitXPositionOfShape = explicitXPositionOfShape.add(explicitHorizontalWhitespaceLeft,
+            final Number finalExplicitXPositionOfShape = explicitXPositionOfShape.add(explicitHorizontalWhitespaceLeft,
                     DrawlNumber.mcOperations);
             shape.setExplicitXPositionCenter(finalExplicitXPositionOfShape);
         }
     }
 
-    private void updateExplicitYPositionOfShape(@NotNull Shape shape) {
+    private void updateExplicitYPositionOfShape(@NotNull final Shape shape) {
         // Update the explicit y position of the Shape
-        Number implicitYPositionOfShape = shape.getImplicitYPositionCenter();
+        final Number implicitYPositionOfShape = shape.getImplicitYPositionCenter();
         // The fudge factor is to shift the diagram down so that all y coordinates are positive in explicit coordinate space
-        @NotNull Number fudgeFactorY = this.getImplicitYMaximum();
+        @NotNull final Number fudgeFactorY = this.getImplicitYMaximum();
         Number fudgedImplicitYPositionOfShape = implicitYPositionOfShape.subtract(fudgeFactorY);
         fudgedImplicitYPositionOfShape = fudgedImplicitYPositionOfShape.negate();
-        Number explicitToImplicitRatio = this.getExplicitToImplicitRatio();
-        Number explicitYPositionOfShape = fudgedImplicitYPositionOfShape.multiply(explicitToImplicitRatio,
+        final Number explicitToImplicitRatio = this.getExplicitToImplicitRatio();
+        final Number explicitYPositionOfShape = fudgedImplicitYPositionOfShape.multiply(explicitToImplicitRatio,
                 DrawlNumber.mcOperations);
-        Number implicitHeightOfContents = this.getImplicitHeight();
-        Number explicitHeightOfContents = implicitHeightOfContents.multiply(explicitToImplicitRatio,
+        final Number implicitHeightOfContents = this.getImplicitHeight();
+        final Number explicitHeightOfContents = implicitHeightOfContents.multiply(explicitToImplicitRatio,
                 DrawlNumber.mcOperations);
         if (this.isExplicitSet()) {
-            @Nullable Number explicitHeightOfDrawing = this.getExplicitHeight();
+            @Nullable final Number explicitHeightOfDrawing = this.getExplicitHeight();
             assert explicitHeightOfDrawing != null;
-            Number explicitVerticalWhitespace = explicitHeightOfDrawing.subtract(explicitHeightOfContents,
+            final Number explicitVerticalWhitespace = explicitHeightOfDrawing.subtract(explicitHeightOfContents,
                     DrawlNumber.mcOperations);
-            Number explicitVerticalWhitespaceBelow = explicitVerticalWhitespace.divide(DrawlNumber.TWO,
+            final Number explicitVerticalWhitespaceBelow = explicitVerticalWhitespace.divide(DrawlNumber.TWO,
                     DrawlNumber.mcOperations);
-            Number finalExplicitYPositionOfShape = explicitYPositionOfShape.add(explicitVerticalWhitespaceBelow,
+            final Number finalExplicitYPositionOfShape = explicitYPositionOfShape.add(explicitVerticalWhitespaceBelow,
                     DrawlNumber.mcOperations);
             shape.setExplicitYPositionCenter(finalExplicitYPositionOfShape);
         }
@@ -655,9 +647,9 @@ public class Drawing {
      * @param filename The name of the file to which to write.
      * @throws IOException If there is a problem writing to the file.
      */
-    public final void writeToFile(@NotNull String filename, @NotNull Integer width, @NotNull Integer height) throws IOException {
-        @NotNull String svg = this.getSVG(width, height);
-        try (@NotNull BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+    public final void writeToFile(@NotNull final String filename, @NotNull final Integer width, @NotNull final Integer height) throws IOException {
+        @NotNull final String svg = this.getSVG(width, height);
+        try (@NotNull final BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             writer.write(svg);
         }
     }

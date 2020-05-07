@@ -31,41 +31,41 @@ public class TextDrawingTestPublic extends ShapeDrawingTestPublic
     @DisplayName("Given three default Text objects")
     void givenTheeDefaultTextObjects()
     {
-        shape1 = new Text();
-        shape2 = new Text();
-        shape3 = new Text();
+        this.shape1 = new Text();
+        this.shape2 = new Text();
+        this.shape3 = new Text();
     }
 
     @Test
     @DisplayName("When a user creates a Drawing with Text, then its SVG contains a text element opening tag")
     void whenAUserCreatesADrawingWithTextThenItsSVGContainsATextElementOpeningTag()
     {
-        @NotNull Text text = new Text("Drawl");
-        drawing.add(text);
-        drawing.setExplicitDimensions(100, 100);
+        @NotNull final Text text = new Text("Drawl");
+        this.drawing.add(text);
+        this.drawing.setExplicitDimensions(100, 100);
 
-        then(drawing.getSVG()).contains("<text");
+        then(this.drawing.getSVG()).contains("<text");
     }
 
     @Test
     @DisplayName("When a user creates a Drawing with Text, then its SVG contains a text element opening tag")
     void whenAUserCreatesADrawingWithEmptyTextThenItsSVGDoesNotContainATextElementOpeningTag()
     {
-        @NotNull Text text = new Text();
-        drawing.add(text);
-        drawing.setExplicitDimensions(100, 100);
+        @NotNull final Text text = new Text();
+        this.drawing.add(text);
+        this.drawing.setExplicitDimensions(100, 100);
 
-        then(drawing.getSVG()).doesNotContain("<text");
+        then(this.drawing.getSVG()).doesNotContain("<text");
     }
 
     @Test
     @DisplayName("When a user creates a Drawing with Text, then the Text is placed at midline by default")
     void whenAUserCreatesADrawingWithTextThenTheTextIsPlacedAtMidlineByDefault()
     {
-        @NotNull Text text = new Text("Drawl");
-        drawing.add(text);
-        drawing.setExplicitDimensions(100, 100);
-        then(drawing.getSVG()).contains("y=\"50\"");
+        @NotNull final Text text = new Text("Drawl");
+        this.drawing.add(text);
+        this.drawing.setExplicitDimensions(100, 100);
+        then(this.drawing.getSVG()).contains("y=\"50\"");
     }
 
 } // end class

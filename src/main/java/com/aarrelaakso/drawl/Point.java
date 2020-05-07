@@ -17,8 +17,8 @@ import org.jetbrains.annotations.NotNull;
  */
 public class Point {
 
-    private Number implicitXCoordinate;
-    private Number implicitYCoordinate;
+    private final Number implicitXCoordinate;
+    private final Number implicitYCoordinate;
 
     /**
      * Constructs a new Point object.
@@ -26,13 +26,13 @@ public class Point {
      * @param implicitXCoordinate
      * @param implicitYCoordinate
      */
-    protected Point(Number implicitXCoordinate, Number implicitYCoordinate)
+    protected Point(final Number implicitXCoordinate, final Number implicitYCoordinate)
     {
         this.implicitXCoordinate = implicitXCoordinate;
         this.implicitYCoordinate = implicitYCoordinate;
     }
 
-    protected Point(@NotNull Integer implicitXCoordinate, @NotNull Integer implicitYCoordinate)
+    protected Point(@NotNull final Integer implicitXCoordinate, @NotNull final Integer implicitYCoordinate)
     {
         this.implicitXCoordinate = new DrawlNumber(implicitXCoordinate);
         this.implicitYCoordinate = new DrawlNumber(implicitYCoordinate);
@@ -40,13 +40,13 @@ public class Point {
 
     protected Number getX()
     {
-        return implicitXCoordinate;
+        return this.implicitXCoordinate;
     }
 
 
     protected Number getY()
     {
-        return implicitYCoordinate;
+        return this.implicitYCoordinate;
     }
 
 }

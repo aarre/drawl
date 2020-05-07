@@ -50,32 +50,32 @@ public abstract class ShapeTestPublic {
         @DisplayName("When Shape A is above Shape B, then Shape A is above Shape B")
         void whenShapeAIsAboveShapeBThenShapeAIsAboveShapeB()
         {
-            shape1.setAbove(shape2);
-            then(shape1.getAbove()).isEqualTo(shape2);
+            ShapeTestPublic.this.shape1.setAbove(ShapeTestPublic.this.shape2);
+            then(ShapeTestPublic.this.shape1.getAbove()).isEqualTo(ShapeTestPublic.this.shape2);
         }
 
         @Test
         @DisplayName("When Shape A is below Shape B, then Shape A is below Shape B")
         void whenShapeAIsBelowShapeBThenShapeAIsBelowShapeB()
         {
-            shape1.setBelow(shape2);
-            then(shape1.getBelow()).isEqualTo(shape2);
+            ShapeTestPublic.this.shape1.setBelow(ShapeTestPublic.this.shape2);
+            then(ShapeTestPublic.this.shape1.getBelow()).isEqualTo(ShapeTestPublic.this.shape2);
         }
 
         @Test
         @DisplayName("When Shape A is left of Shape B, then Shape A is left of Shape B")
         void whenShapeAIsLeftOfShapeBThenShapeAIsLeftOfShapeB()
         {
-            shape1.setLeftOf(shape2);
-            then(shape1.getLeftOf()).isEqualTo(shape2);
+            ShapeTestPublic.this.shape1.setLeftOf(ShapeTestPublic.this.shape2);
+            then(ShapeTestPublic.this.shape1.getLeftOf()).isEqualTo(ShapeTestPublic.this.shape2);
         }
 
         @Test
         @DisplayName("When Shape A is right of Shape B, then Shape A is right of Shape B")
         void whenShapeAIsRightOfShapeBThenShapeAIsRightOfShapeB()
         {
-            shape1.setRightOf(shape2);
-            then(shape1.getRightOf()).isEqualTo(shape2);
+            ShapeTestPublic.this.shape1.setRightOf(ShapeTestPublic.this.shape2);
+            then(ShapeTestPublic.this.shape1.getRightOf()).isEqualTo(ShapeTestPublic.this.shape2);
         }
 
     }
@@ -83,10 +83,10 @@ public abstract class ShapeTestPublic {
     @Test
     @DisplayName("When two shapes have been constructed, then it is possible to connect them with a Line")
     void whenTwoShapesHaveBeenConstructedThenItIsPossibleToConnectThemWithALine() {
-        shape1.setLeftOf(shape2, shape1.getWidth());
-        @NotNull Point pointA = shape1.getRightPort();
-        @NotNull Point pointB = shape2.getLeftPort();
-        @NotNull Line line = new Line(pointA, pointB);
+        this.shape1.setLeftOf(this.shape2, this.shape1.getWidth());
+        @NotNull final Point pointA = this.shape1.getRightPort();
+        @NotNull final Point pointB = this.shape2.getLeftPort();
+        @NotNull final Line line = new Line(pointA, pointB);
     }
 
     @Nested
@@ -97,8 +97,8 @@ public abstract class ShapeTestPublic {
         @Test
         @DisplayName("When you set three default Circles adjacent to one another, no exception is thrown")
         void whenYouSetThreeDefaultShapesAdjacentToOneAnotherThenNoExceptionIsThrown() {
-            shape2.setRightOf(shape1);
-            shape3.setRightOf(shape2);
+            ShapeTestPublic.this.shape2.setRightOf(ShapeTestPublic.this.shape1);
+            ShapeTestPublic.this.shape3.setRightOf(ShapeTestPublic.this.shape2);
         }
     }
 
@@ -110,8 +110,8 @@ public abstract class ShapeTestPublic {
         @Test
         @DisplayName("When you set a Circle rightOf another circle, you can recall that information")
         void whenYouSetAShapeRightOfADefaultShapeThenYouCanRecallThatInformation() {
-            shape1.setRightOf(shape2);
-            assertEquals(shape1.getRightOf(), shape2);
+            ShapeTestPublic.this.shape1.setRightOf(ShapeTestPublic.this.shape2);
+            assertEquals(ShapeTestPublic.this.shape1.getRightOf(), ShapeTestPublic.this.shape2);
         }
 
     }
@@ -126,7 +126,7 @@ public abstract class ShapeTestPublic {
         @DisplayName("Then you cannot make it adjacent to itself")
         void thenYouCannotMakeItAdjacentToItself() {
             assertThrows(UnsupportedOperationException.class, () -> {
-                shape1.setRightOf(shape1);
+                ShapeTestPublic.this.shape1.setRightOf(ShapeTestPublic.this.shape1);
             });
         }
     }
@@ -138,32 +138,32 @@ public abstract class ShapeTestPublic {
 
         @Test
         @DisplayName("whenAShapeIsCreatedThenItHasALeftPort")
-        void whenAShapeIsCreatedThenItHasALeftPort(@NotNull BDDSoftAssertions softly) {
-            @NotNull Point leftPort = shape1.getLeftPort();
+        void whenAShapeIsCreatedThenItHasALeftPort(@NotNull final BDDSoftAssertions softly) {
+            @NotNull final Point leftPort = ShapeTestPublic.this.shape1.getLeftPort();
             softly.then(leftPort).isNotNull();
             softly.then(leftPort).isInstanceOf(Point.class);
         }
 
         @Test
         @DisplayName("whenAShapeIsCreatedThenItHasARightPort")
-        void whenAShapeIsCreatedThenItHasARightPort(@NotNull BDDSoftAssertions softly) {
-            @NotNull Point leftPort = shape1.getRightPort();
+        void whenAShapeIsCreatedThenItHasARightPort(@NotNull final BDDSoftAssertions softly) {
+            @NotNull final Point leftPort = ShapeTestPublic.this.shape1.getRightPort();
             softly.then(leftPort).isNotNull();
             softly.then(leftPort).isInstanceOf(Point.class);
         }
 
         @Test
         @DisplayName("whenAShapeIsCreatedThenItHasATopPort")
-        void whenAShapeIsCreatedThenItHasATopPort(@NotNull BDDSoftAssertions softly) {
-            @NotNull Point leftPort = shape1.getTopPort();
+        void whenAShapeIsCreatedThenItHasATopPort(@NotNull final BDDSoftAssertions softly) {
+            @NotNull final Point leftPort = ShapeTestPublic.this.shape1.getTopPort();
             softly.then(leftPort).isNotNull();
             softly.then(leftPort).isInstanceOf(Point.class);
         }
 
         @Test
         @DisplayName("whenAShapeIsCreatedThenItHasABottomPort")
-        void whenAShapeIsCreatedThenItHasABottomPort(@NotNull BDDSoftAssertions softly) {
-            @NotNull Point leftPort = shape1.getBottomPort();
+        void whenAShapeIsCreatedThenItHasABottomPort(@NotNull final BDDSoftAssertions softly) {
+            @NotNull final Point leftPort = ShapeTestPublic.this.shape1.getBottomPort();
             softly.then(leftPort).isNotNull();
             softly.then(leftPort).isInstanceOf(Point.class);
         }

@@ -27,16 +27,16 @@ public class TextTestPublic extends ShapeTestPublic
     void givenText()
     {
         // These values override those in ShapeTestPublic
-        shape1 = new Text();
-        shape2 = new Text();
-        shape3 = new Text();
+        this.shape1 = new Text();
+        this.shape2 = new Text();
+        this.shape3 = new Text();
     }
 
     @Test
     @DisplayName("When a user creates a Text object, then he can initialize it with a String")
     void whenAUserCreatesATextObjectThenHeCanInitializeItWithAString()
     {
-        @NotNull Text text = new Text("Lorem ipsum");
+        @NotNull final Text text = new Text("Lorem ipsum");
         then(text.toString()).isEqualTo("Lorem ipsum");
     }
 
@@ -44,7 +44,7 @@ public class TextTestPublic extends ShapeTestPublic
     @DisplayName("When a user creates a Text object, then he can initialize it without a String")
     void whenAUserCreatesATextObjectThenHeCanInitializeItWithoutAString()
     {
-        @NotNull Text text = new Text();
+        @NotNull final Text text = new Text();
         then(text.toString()).isEqualTo(null);
     }
 
@@ -55,8 +55,8 @@ public class TextTestPublic extends ShapeTestPublic
     {
 
         // when
-        @NotNull Text text = new Text();
-        Throwable thrown = catchThrowable(() -> {
+        @NotNull final Text text = new Text();
+        final Throwable thrown = catchThrowable(() -> {
             text.getSVG();
         });
 

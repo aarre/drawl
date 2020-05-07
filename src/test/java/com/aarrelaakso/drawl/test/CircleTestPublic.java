@@ -30,12 +30,12 @@ public class CircleTestPublic extends ShapeTestPublic
 
     @BeforeEach
     void givenCircles() {
-        shape1 = new Circle();
-        shape2 = new Circle();
-        shape3 = new Circle();
-        CircleTestPublic.super.shape1 = shape1;
-        CircleTestPublic.super.shape2 = shape2;
-        CircleTestPublic.super.shape3 = shape3;
+        this.shape1 = new Circle();
+        this.shape2 = new Circle();
+        this.shape3 = new Circle();
+        CircleTestPublic.super.shape1 = this.shape1;
+        CircleTestPublic.super.shape2 = this.shape2;
+        CircleTestPublic.super.shape3 = this.shape3;
     }
 
 
@@ -47,14 +47,14 @@ public class CircleTestPublic extends ShapeTestPublic
         @Test
         @DisplayName("Then the SVG contains 'circle'")
         void thenSVGContainsCircle() {
-            @NotNull String svg = shape1.getSVG();
+            @NotNull final String svg = CircleTestPublic.this.shape1.getSVG();
             then(svg).contains("circle");
         }
 
         @Test
         @DisplayName("Then the SVG contains the radius")
         void thenSVGContainsRadius() {
-            @NotNull String svg = shape1.getSVG();
+            @NotNull final String svg = CircleTestPublic.this.shape1.getSVG();
             then(svg).contains("r=\"0.5\"");
         }
     }

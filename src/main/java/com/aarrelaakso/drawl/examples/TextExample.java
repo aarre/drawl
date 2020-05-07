@@ -21,9 +21,9 @@ import java.io.IOException;
  */
 public class TextExample
 {
-    public static void main(String[] args) throws IOException {
-        @NotNull Drawing drawing = new Drawing();
-        @NotNull Text text = new Text("Drawl");
+    public static void main(final String[] args) throws IOException {
+        @NotNull final Drawing drawing = new Drawing();
+        @NotNull final Text text = new Text("Drawl");
         drawing.add(text);
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/TextExample.svg", 200, 100);
     }

@@ -22,7 +22,7 @@ public class Rectangle extends Shape
      *
      * @param aspectRatio The aspect ratio of the new rectangle. The aspect ratio is expressed as width over height.
      */
-    public Rectangle (Double aspectRatio)
+    public Rectangle (final Double aspectRatio)
     {
         // This method is public because the user can deal with a ratio, which is dimensionless.
         this.setImplicitHeight(DrawlNumber.ONE);
@@ -35,7 +35,7 @@ public class Rectangle extends Shape
      * @param implicitWidth the width of the new Rectangle.
      * @param implicitHeight the height of the new Rectangle.
      */
-    protected Rectangle(Integer implicitWidth, Integer implicitHeight)
+    protected Rectangle(final Integer implicitWidth, final Integer implicitHeight)
     {
         // This method is protected because the user should never have to deal with implicit dimensions.
         this.setImplicitHeight(DrawlNumber.valueOf(implicitHeight));
@@ -48,7 +48,7 @@ public class Rectangle extends Shape
      * @param implicitWidth the width of the new Rectangle.
      * @param implicitHeight the height of the new Rectangle.
      */
-    protected Rectangle(@NotNull Number implicitWidth, @NotNull Number implicitHeight)
+    protected Rectangle(@NotNull final Number implicitWidth, @NotNull final Number implicitHeight)
     {
         // This method is protected because the user should never have to deal with implicit dimensions.
         this.setImplicitHeight(implicitHeight);
@@ -60,7 +60,7 @@ public class Rectangle extends Shape
         {
             throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
         }
-        @NotNull StringBuilder svgBuilder = new StringBuilder();
+        @NotNull final StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<rect");
         svgBuilder.append(" width=\"");
         svgBuilder.append(this.getExplicitWidth().toPlainString());

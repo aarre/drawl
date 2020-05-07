@@ -43,7 +43,7 @@ public class SisuNumberTestProtected
     @Test
     public void testAbs()
     {
-        Assertions.assertEquals(SisuNumber.valueOf(0), SisuNumber.valueOf(0).abs());
+        assertEquals(SisuNumber.valueOf(0), SisuNumber.valueOf(0).abs());
         assertEquals(SisuNumber.valueOf(1), SisuNumber.valueOf(1).abs());
         assertEquals(SisuNumber.valueOf(1), SisuNumber.valueOf(-1).abs());
     }
@@ -77,13 +77,13 @@ public class SisuNumberTestProtected
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is low")
     public void testCompareToFuzzy()
     {
-        @NotNull SisuNumber value1 = SisuNumber.valueOf(1.0/3.0);
-        @NotNull SisuNumber value2 = SisuNumber.valueOf(1.0/2.999999999999999999999999999999999999999999999999999);
-        @NotNull Integer precision = 10;
-        Integer ACTUAL =  value1.compareToFuzzy(value2, SisuNumber.mcComparisons);
-        @NotNull Integer EXPECTED = 0;
+        @NotNull final SisuNumber value1 = SisuNumber.valueOf(1.0/3.0);
+        @NotNull final SisuNumber value2 = SisuNumber.valueOf(1.0/2.999999999999999999999999999999999999999999999999999);
+        @NotNull final Integer precision = 10;
+        final Integer ACTUAL =  value1.compareToFuzzy(value2, SisuNumber.mcComparisons);
+        @NotNull final Integer EXPECTED = 0;
 
-        then(ACTUAL).as("Fuzzily comparing " + value1.toString() + " to " + value2.toString() +
+        then(ACTUAL).as("Fuzzily comparing " + value1 + " to " + value2 +
                 " should result in a value of " + EXPECTED + " but got " + ACTUAL)
                 .isEqualTo(EXPECTED);
     }
@@ -95,14 +95,14 @@ public class SisuNumberTestProtected
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is high #1")
     public void testCompareToFuzzyWhenPrecisionIsHigh01()
     {
-        @NotNull SisuNumber value1 = SisuNumber.valueOf("0.3333333333333333");
-        @NotNull SisuNumber value2 = SisuNumber.valueOf("0.3333333333333334");
+        @NotNull final SisuNumber value1 = SisuNumber.valueOf("0.3333333333333333");
+        @NotNull final SisuNumber value2 = SisuNumber.valueOf("0.3333333333333334");
 
-        @NotNull Integer precision = 100;
-        Integer ACTUAL =  value1.compareToFuzzy(value2, SisuNumber.mcOperations);
-        @NotNull Integer EXPECTED = -1;
+        @NotNull final Integer precision = 100;
+        final Integer ACTUAL =  value1.compareToFuzzy(value2, SisuNumber.mcOperations);
+        @NotNull final Integer EXPECTED = -1;
 
-        then(ACTUAL).as("Fuzzily comparing " + value1.toString() + " to " + value2.toString() +
+        then(ACTUAL).as("Fuzzily comparing " + value1 + " to " + value2 +
                 " should result in a value of " + EXPECTED + " but got " + ACTUAL)
                 .isEqualTo(EXPECTED);
     }
@@ -114,14 +114,14 @@ public class SisuNumberTestProtected
     @DisplayName("Test fuzzily comparing two SisuBigDecimal instances when precision is high #2")
     public void testCompareToFuzzyWhenPrecisionIsHigh02()
     {
-        @NotNull SisuNumber value1 = SisuNumber.valueOf("0.3333333333333334");
-        @NotNull SisuNumber value2 = SisuNumber.valueOf("0.3333333333333333");
+        @NotNull final SisuNumber value1 = SisuNumber.valueOf("0.3333333333333334");
+        @NotNull final SisuNumber value2 = SisuNumber.valueOf("0.3333333333333333");
 
-        @NotNull Integer precision = 100;
-        Integer ACTUAL =  value1.compareToFuzzy(value2, SisuNumber.mcOperations);
-        @NotNull Integer EXPECTED = 1;
+        @NotNull final Integer precision = 100;
+        final Integer ACTUAL =  value1.compareToFuzzy(value2, SisuNumber.mcOperations);
+        @NotNull final Integer EXPECTED = 1;
 
-        then(ACTUAL).as("Fuzzily comparing " + value1.toString() + " to " + value2.toString() +
+        then(ACTUAL).as("Fuzzily comparing " + value1 + " to " + value2 +
                 " should result in a value of " + EXPECTED + " but got " + ACTUAL)
                 .isEqualTo(EXPECTED);
     }

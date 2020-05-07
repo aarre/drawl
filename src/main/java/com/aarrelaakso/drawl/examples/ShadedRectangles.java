@@ -23,19 +23,19 @@ import java.io.IOException;
  */
 public class ShadedRectangles
 {
-    public static void main(String[] args) throws IOException
+    public static void main(final String[] args) throws IOException
     {
         for (int k = 0; k < 20; k++)
         {
-            @NotNull Drawing drawing = new Drawing();
+            @NotNull final Drawing drawing = new Drawing();
             @Nullable Rectangle currentRectangle = null;
             @Nullable Rectangle lastRectangle = null;
-            int MAXIMUM_RECTANGLES = 1000;
+            final int MAXIMUM_RECTANGLES = 1000;
 
             for (int i = 0; i < MAXIMUM_RECTANGLES; i++)
             {
                 currentRectangle = new Rectangle(0.01);
-                float lightness = i * 100 / MAXIMUM_RECTANGLES;
+                final float lightness = i * 100 / MAXIMUM_RECTANGLES;
                 currentRectangle.setFill("hsl(0, 100%, " + lightness + "%)");
                 drawing.add(currentRectangle);
                 if (lastRectangle != null)

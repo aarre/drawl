@@ -37,7 +37,7 @@ public class Text extends Shape
      *
      * @param string the text to associate with the new Text object.
      */
-    public Text(@NotNull String string)
+    public Text(@NotNull final String string)
     {
         this.string = string;
     }
@@ -56,7 +56,7 @@ public class Text extends Shape
         }
         if (this.toString() != null)
         {
-            @NotNull StringBuilder svgBuilder = new StringBuilder();
+            @NotNull final StringBuilder svgBuilder = new StringBuilder();
             svgBuilder.append("<text");
             svgBuilder.append(" x=\"");
             svgBuilder.append(this.getExplicitXPositionCenter().toSVG());
@@ -78,7 +78,7 @@ public class Text extends Shape
                 svgBuilder.append("\"");
             }
             svgBuilder.append(">");
-            svgBuilder.append(this.toString());
+            svgBuilder.append(this);
             svgBuilder.append("</text>");
             if (this.hasText())
             {
@@ -98,7 +98,7 @@ public class Text extends Shape
      * @param string The string to associate with this Text object. Use <code>null</code> to indicate that no string is
      *               associated with this Text object.
      */
-    public void setString(@Nullable String string)
+    public void setString(@Nullable final String string)
     {
         this.string = string;
     }

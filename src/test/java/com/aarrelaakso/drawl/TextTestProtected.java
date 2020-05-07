@@ -40,7 +40,7 @@ public class TextTestProtected
     @DisplayName("When a user creates a new Text object, then its implicit y position is correct")
     void whenAUserCreatesANewTextObjectThenItsImplicitYPositionIsCorrect()
     {
-        @NotNull Text text = new Text("Drawl");
+        @NotNull final Text text = new Text("Drawl");
 
         then(text.getImplicitYPositionCenter()).isEqualTo(DrawlNumber.ZERO);
     }

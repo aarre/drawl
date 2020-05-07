@@ -46,9 +46,9 @@ public final class DrawlNumberRemainderPair
      * @param remainder remainder
      * @return number remainder pair
      */
-    public static @NotNull DrawlNumberRemainderPair valueOf(DrawlNumber number, DrawlNumber remainder)
+    public static @NotNull DrawlNumberRemainderPair valueOf(final DrawlNumber number, final DrawlNumber remainder)
     {
-        @NotNull DrawlNumberRemainderPair res = new DrawlNumberRemainderPair();
+        @NotNull final DrawlNumberRemainderPair res = new DrawlNumberRemainderPair();
         res.number = number;
         res.remainder = remainder;
         res.guardInvariants();
@@ -56,7 +56,7 @@ public final class DrawlNumberRemainderPair
     }
 
     @Override
-    public boolean equals(Object obj)
+    public boolean equals(final Object obj)
     {
         return EqualsBuilder.reflectionEquals(this, obj);
     }
@@ -68,7 +68,7 @@ public final class DrawlNumberRemainderPair
      */
     public DrawlNumber getNumber()
     {
-        return number;
+        return this.number;
     }
 
     /**
@@ -78,7 +78,7 @@ public final class DrawlNumberRemainderPair
      */
     public DrawlNumber getRemainder()
     {
-        return remainder;
+        return this.remainder;
     }
 
     /**
@@ -86,11 +86,11 @@ public final class DrawlNumberRemainderPair
      */
     private void guardInvariants()
     {
-        if (number == null)
+        if (this.number == null)
         {
             throw new UnsupportedOperationException("number cannot be null");
         }
-        if (remainder == null)
+        if (this.remainder == null)
         {
             throw new UnsupportedOperationException("remainder cannot be null");
         }

@@ -28,12 +28,12 @@ interface Number extends Comparable<Number> {
     /**
      * Use this MathContext for comparisons.
      */
-    @NotNull MathContext mcComparisons = new MathContext(Number.SCALE_FOR_COMPARISONS, Number.ROUNDING_MODE);
+    @NotNull MathContext mcComparisons = new MathContext(SCALE_FOR_COMPARISONS, ROUNDING_MODE);
 
     /**
      * Use this MathContext for other operations, such as multiplying and dividing.
      */
-    @NotNull MathContext mcOperations = new MathContext(Number.SCALE_FOR_OPERATIONS, Number.ROUNDING_MODE);
+    @NotNull MathContext mcOperations = new MathContext(SCALE_FOR_OPERATIONS, ROUNDING_MODE);
 
 
     /**

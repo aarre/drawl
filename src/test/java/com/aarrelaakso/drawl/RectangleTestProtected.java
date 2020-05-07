@@ -35,9 +35,9 @@ public class RectangleTestProtected extends ShapeTestProtected
     void givenRectangles()
     {
         // These values override those in ShapeTestProtected
-        shape1 = new Rectangle();
-        shape2 = new Rectangle();
-        shape3 = new Rectangle();
+        this.shape1 = new Rectangle();
+        this.shape2 = new Rectangle();
+        this.shape3 = new Rectangle();
     }
 
     @Nested
@@ -48,21 +48,21 @@ public class RectangleTestProtected extends ShapeTestProtected
 
         @Test
         @DisplayName("When an asymmetric rectangle is created with an aspect ratio, then its implicit dimensions are correct")
-        void whenAnAsymmetricRectangleIsCreatedThenItsImplicitDimensionsAreCorrect(@NotNull BDDSoftAssertions softly)
+        void whenAnAsymmetricRectangleIsCreatedThenItsImplicitDimensionsAreCorrect(@NotNull final BDDSoftAssertions softly)
         {
-            Integer height = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
-            Integer width = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
-            @NotNull Double aspectRatio = Double.valueOf(width) / Double.valueOf(height);
-            @NotNull Rectangle rectangle = new Rectangle(aspectRatio);
-            logger.atFine().log("Rectangle created");
-            logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
-            @NotNull Number EXPECTED_HEIGHT = DrawlNumber.ONE;
-            @NotNull Number EXPECTED_WIDTH = DrawlNumber.valueOf(aspectRatio);
-            logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
-            @Nullable Number ACTUAL_HEIGHT = rectangle.getImplicitHeight();
-            logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
-            Number ACTUAL_WIDTH = rectangle.getImplicitWidth();
-            logger.atFine().log("Implicit width is %s", ACTUAL_WIDTH.toPlainString());
+            final Integer height = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
+            final Integer width = ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE);
+            @NotNull final Double aspectRatio = Double.valueOf(width) / Double.valueOf(height);
+            @NotNull final Rectangle rectangle = new Rectangle(aspectRatio);
+            RectangleTestProtected.logger.atFine().log("Rectangle created");
+            RectangleTestProtected.logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
+            @NotNull final Number EXPECTED_HEIGHT = DrawlNumber.ONE;
+            @NotNull final Number EXPECTED_WIDTH = DrawlNumber.valueOf(aspectRatio);
+            RectangleTestProtected.logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
+            @Nullable final Number ACTUAL_HEIGHT = rectangle.getImplicitHeight();
+            RectangleTestProtected.logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
+            final Number ACTUAL_WIDTH = rectangle.getImplicitWidth();
+            RectangleTestProtected.logger.atFine().log("Implicit width is %s", ACTUAL_WIDTH.toPlainString());
             softly.then(EXPECTED_HEIGHT)
                     .as("Expected implicit height to be %s but it was %s.",
                             EXPECTED_HEIGHT.toPlainString(),
@@ -77,21 +77,21 @@ public class RectangleTestProtected extends ShapeTestProtected
 
         @Test
         @DisplayName("When an asymmetric rectangle is created with SisuBigDecimal dimensions, then its implicit dimensions are correct")
-        void whenAnAsymmetricRectangleIsCreatedWithSisuBigDecimalDimensionsThenItsImplicitDimensionsAreCorrect(@NotNull BDDSoftAssertions softly)
+        void whenAnAsymmetricRectangleIsCreatedWithSisuBigDecimalDimensionsThenItsImplicitDimensionsAreCorrect(@NotNull final BDDSoftAssertions softly)
         {
-            @NotNull Number height = DrawlNumber.valueOf(ThreadLocalRandom.current().nextDouble(Double.MAX_VALUE));
-            @NotNull Number width = DrawlNumber.valueOf(ThreadLocalRandom.current().nextDouble(Double.MAX_VALUE));
-            @NotNull Rectangle rectangle = new Rectangle(width, height);
+            @NotNull final Number height = DrawlNumber.valueOf(ThreadLocalRandom.current().nextDouble(Double.MAX_VALUE));
+            @NotNull final Number width = DrawlNumber.valueOf(ThreadLocalRandom.current().nextDouble(Double.MAX_VALUE));
+            @NotNull final Rectangle rectangle = new Rectangle(width, height);
             then(rectangle).isNotNull();
-            logger.atFine().log("Rectangle created");
-            logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
-            @NotNull Number EXPECTED_HEIGHT = height;
-            @NotNull Number EXPECTED_WIDTH = width;
-            logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
-            @Nullable Number ACTUAL_HEIGHT = rectangle.getImplicitHeight();
-            logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
-            Number ACTUAL_WIDTH = rectangle.getImplicitWidth();
-            logger.atFine().log("Implicit width is %s", ACTUAL_WIDTH.toPlainString());
+            RectangleTestProtected.logger.atFine().log("Rectangle created");
+            RectangleTestProtected.logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
+            @NotNull final Number EXPECTED_HEIGHT = height;
+            @NotNull final Number EXPECTED_WIDTH = width;
+            RectangleTestProtected.logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
+            @Nullable final Number ACTUAL_HEIGHT = rectangle.getImplicitHeight();
+            RectangleTestProtected.logger.atFine().log("Implicit width is %s", rectangle.getImplicitWidth().toPlainString());
+            final Number ACTUAL_WIDTH = rectangle.getImplicitWidth();
+            RectangleTestProtected.logger.atFine().log("Implicit width is %s", ACTUAL_WIDTH.toPlainString());
             softly.then(EXPECTED_HEIGHT)
                     .as("Expected implicit height to be %s but it was %s.",
                             EXPECTED_HEIGHT.toPlainString(),

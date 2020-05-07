@@ -21,9 +21,9 @@ import java.util.regex.Pattern;
  */
 public class DrawlNumber implements Number {
 
-    protected static final DrawlNumber HALF = valueOf(0.5);
-    protected static final DrawlNumber ONE = valueOf(BigDecimal.ONE);
-    protected static final DrawlNumber TWO = valueOf(2);
+    protected static final DrawlNumber HALF = DrawlNumber.valueOf(0.5);
+    protected static final DrawlNumber ONE = DrawlNumber.valueOf(BigDecimal.ONE);
+    protected static final DrawlNumber TWO = DrawlNumber.valueOf(2);
     private static final @NotNull FluentLogger logger;
     private static final Pattern COMPILE = Pattern.compile("^0+(?!$)");
     protected static @NotNull RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
@@ -38,14 +38,14 @@ public class DrawlNumber implements Number {
     /**
      * Use this MathContext for comparisons.
      */
-    protected static @NotNull MathContext mcComparisons = new MathContext(DrawlNumber.SCALE_FOR_COMPARISONS,
-            DrawlNumber.ROUNDING_MODE);
+    protected static @NotNull MathContext mcComparisons = new MathContext(SCALE_FOR_COMPARISONS,
+            ROUNDING_MODE);
 
     /**
      * Use this MathContext for other operations, such as multiplying and dividing.
      */
-    protected static @NotNull MathContext mcOperations = new MathContext(DrawlNumber.SCALE_FOR_OPERATIONS,
-            DrawlNumber.ROUNDING_MODE);
+    protected static @NotNull MathContext mcOperations = new MathContext(SCALE_FOR_OPERATIONS,
+            ROUNDING_MODE);
 
     static {
         logger = FluentLogger.forEnclosingClass();
@@ -85,7 +85,7 @@ public class DrawlNumber implements Number {
      * @param s string representation
      */
     private DrawlNumber(@NotNull final String s) {
-        number = Double.valueOf(s);
+        this.number = Double.valueOf(s);
     }
 
     /**
@@ -168,7 +168,7 @@ public class DrawlNumber implements Number {
      * @return absolute value of this number
      */
     public @NotNull Number abs() {
-        return valueOf(Math.abs(this.number));
+        return DrawlNumber.valueOf(Math.abs(this.number));
     }
 
     /**
@@ -213,7 +213,7 @@ public class DrawlNumber implements Number {
      * @return this SisuBigDecimal converted to a BigDecimal.
      */
     public @NotNull BigDecimal bigDecimalValue() {
-        return BigDecimal.valueOf(number);
+        return BigDecimal.valueOf(this.number);
     }
 
     /**
@@ -244,7 +244,7 @@ public class DrawlNumber implements Number {
      * @since 1.0, 05/07/2020
      */
     public int compareToFuzzy(@NotNull final Number comparator) {
-        return this.compareToFuzzy(comparator, DrawlNumber.mcComparisons);
+        return this.compareToFuzzy(comparator, mcComparisons);
     }
 
     /**
@@ -270,9 +270,9 @@ public class DrawlNumber implements Number {
      * @return division operation result
      */
     public @NotNull DrawlNumberRemainderPair divWithRemainder(@NotNull final Number divisor, final int precision) {
-        @NotNull final Double div = number / divisor.doubleValue();
-        @NotNull final Double rem = number - (div * divisor.doubleValue());
-        return DrawlNumberRemainderPair.valueOf(valueOf(div), valueOf(rem));
+        @NotNull final Double div = this.number / divisor.doubleValue();
+        @NotNull final Double rem = this.number - (div * divisor.doubleValue());
+        return DrawlNumberRemainderPair.valueOf(DrawlNumber.valueOf(div), DrawlNumber.valueOf(rem));
     }
 
     /**
@@ -312,13 +312,13 @@ public class DrawlNumber implements Number {
         final double quotient = this.number / divisor.doubleValue();
         final String quotientAsString = String.valueOf(quotient);
         // Remove leading zeros
-        @NotNull final String noZerosQuotient = COMPILE.matcher(quotientAsString).replaceFirst("");
+        @NotNull final String noZerosQuotient = DrawlNumber.COMPILE.matcher(quotientAsString).replaceFirst("");
         if ((quotient > -1) && (quotient < 1)) {
             actualPrecision++;
         }
-        int digitsBeforeDecimal = (int) Math.log10(quotient) + 1;
-        int requiredScale = actualPrecision - digitsBeforeDecimal;
-        Double roundedQuotient = Precision.round(quotient, requiredScale);
+        final int digitsBeforeDecimal = (int) Math.log10(quotient) + 1;
+        final int requiredScale = actualPrecision - digitsBeforeDecimal;
+        final Double roundedQuotient = Precision.round(quotient, requiredScale);
         return new DrawlNumber(roundedQuotient);
     }
 
@@ -414,7 +414,7 @@ public class DrawlNumber implements Number {
      * @return this BigDecimal converted to an Integer.
      */
     public Integer intValue() {
-        return number.intValue();
+        return this.number.intValue();
     }
 
     /**
@@ -476,7 +476,7 @@ public class DrawlNumber implements Number {
      * @return true if this number is greater or equal to the other one
      */
     public boolean isGreaterThanOrEqualTo(final double val) {
-        return this.isGreaterThanOrEqualTo(valueOf(String.valueOf(val)));
+        return this.isGreaterThanOrEqualTo(DrawlNumber.valueOf(String.valueOf(val)));
     }
 
     /**
@@ -486,7 +486,7 @@ public class DrawlNumber implements Number {
      */
     @NotNull
     public boolean isIntegerValue() {
-        return (double)number.intValue() == number;
+        return (double) this.number.intValue() == this.number;
     }
 
     /**
@@ -509,7 +509,7 @@ public class DrawlNumber implements Number {
      * @return true if this number is less than the other one
      */
     public boolean isLessThan(final double val) {
-        return this.isLessThan(valueOf(String.valueOf(val)));
+        return this.isLessThan(DrawlNumber.valueOf(String.valueOf(val)));
     }
 
     /**
@@ -532,7 +532,7 @@ public class DrawlNumber implements Number {
      * @return true if this number is less than the other one
      */
     public boolean isLessThanOrEqualTo(final double val) {
-        return this.isLessThanOrEqualTo(valueOf(String.valueOf(val)));
+        return this.isLessThanOrEqualTo(DrawlNumber.valueOf(String.valueOf(val)));
     }
 
     /**
@@ -545,7 +545,7 @@ public class DrawlNumber implements Number {
      * @since 1.0, 04/28/2020
      */
     public @NotNull Boolean isNotEqualTo(@NotNull final Number val) {
-        return !equals(val);
+        return !this.equals(val);
     }
 
     /**
@@ -586,7 +586,7 @@ public class DrawlNumber implements Number {
      * @return negative of this number
      */
     public @NotNull Number negate() {
-        return valueOf(-number);
+        return DrawlNumber.valueOf(-this.number);
     }
 
     /**
@@ -597,7 +597,7 @@ public class DrawlNumber implements Number {
      * @return power operation result
      */
     public @NotNull Number pow(final int n, final int precision) {
-        return valueOf(Math.pow(number, n));
+        return DrawlNumber.valueOf(Math.pow(this.number, n));
     }
 
     /**
@@ -607,7 +607,7 @@ public class DrawlNumber implements Number {
      * @return A new instance of SisuBigDecimal that has the same value as this one rounded.
      */
     public @NotNull Number round(final MathContext mc) {
-        return valueOf(Math.round(number));
+        return DrawlNumber.valueOf(Math.round(this.number));
     }
 
     /**
@@ -619,9 +619,9 @@ public class DrawlNumber implements Number {
     public @NotNull Number round(final int places) {
         if (places < 0) throw new IllegalArgumentException();
 
-        BigDecimal bd = new BigDecimal(Double.toString(number));
+        BigDecimal bd = new BigDecimal(Double.toString(this.number));
         bd = bd.setScale(places, RoundingMode.HALF_UP);
-        return valueOf(bd.doubleValue());
+        return DrawlNumber.valueOf(bd.doubleValue());
     }
 
     /**
@@ -644,8 +644,8 @@ public class DrawlNumber implements Number {
      * @return this - subtrahend, rounded as necessary
      * @throws ArithmeticException if the result is inexact but the rounding mode is UNNECESSARY.
      */
-    public @NotNull final Number subtract(@NotNull final Number subtrahend, final MathContext mc) {
-        return new DrawlNumber(number - subtrahend.doubleValue());
+    public final @NotNull Number subtract(@NotNull final Number subtrahend, final MathContext mc) {
+        return new DrawlNumber(this.number - subtrahend.doubleValue());
     }
 
     /**
@@ -668,7 +668,7 @@ public class DrawlNumber implements Number {
      */
     public String toFixedDecimalString(final int numDecimals) {
         assert (numDecimals >= 0) : "numDecimals must be >= 0";
-        final String formato = String.format("%." + numDecimals + "f", number);
+        final String formato = String.format("%." + numDecimals + "f", this.number);
         return formato;
     }
 
@@ -681,22 +681,22 @@ public class DrawlNumber implements Number {
         //Option2, use decimalFormat.
         @NotNull final DecimalFormat df = new DecimalFormat("0");
         df.setMaximumFractionDigits(32);
-        return df.format(number);
+        return df.format(this.number);
     }
 
     /**
      * @returns a string representation of this SisuBigDecimal without an exponent field.
      */
     public String toPlainString() {
-        if (Boolean.TRUE.equals(isIntegerValue())) {
-            return String.valueOf(number.intValue());
+        if (Boolean.TRUE.equals(this.isIntegerValue())) {
+            return String.valueOf(this.number.intValue());
         } else {
-            return number.toString();
+            return this.number.toString();
         }
     }
 
     public @NotNull String toString() {
-        return "DrawlNumber[" + toFullString() + "]";
+        return "DrawlNumber[" + this.toFullString() + "]";
     }
 
 

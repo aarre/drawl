@@ -32,12 +32,12 @@ public class CircleTestProtected extends ShapeTestProtected
     @BeforeEach
     void givenCircles()
     {
-        shape1 = new Circle();
-        shape2 = new Circle();
-        shape3 = new Circle();
-        com.aarrelaakso.drawl.CircleTestProtected.super.shape1 = shape1;
-        com.aarrelaakso.drawl.CircleTestProtected.super.shape2 = shape2;
-        com.aarrelaakso.drawl.CircleTestProtected.super.shape3 = shape3;
+        this.shape1 = new Circle();
+        this.shape2 = new Circle();
+        this.shape3 = new Circle();
+        com.aarrelaakso.drawl.CircleTestProtected.super.shape1 = this.shape1;
+        com.aarrelaakso.drawl.CircleTestProtected.super.shape2 = this.shape2;
+        com.aarrelaakso.drawl.CircleTestProtected.super.shape3 = this.shape3;
     }
 
 
@@ -49,7 +49,7 @@ public class CircleTestProtected extends ShapeTestProtected
         @Test
         @DisplayName("Then its implicit radius is 0.5")
         void thenImplicitRadiusIs05() {
-            Number radius = shape1.getImplicitRadius();
+            final Number radius = CircleTestProtected.this.shape1.getImplicitRadius();
             assertEquals(DrawlNumber.valueOf(0.5), radius);
         }
 
@@ -59,10 +59,10 @@ public class CircleTestProtected extends ShapeTestProtected
         @Test
         @DisplayName("Then you can set the explicit radius of a circle to a fixed value")
         void thenYouCanSetTheExplicitRadiusOfACircleToAFixedValue() {
-            @NotNull Integer radius = 100;
-            @NotNull Number EXPECTED = DrawlNumber.valueOf(radius);
-            shape1.setExplicitRadius(radius);
-            @Nullable Number ACTUAL = shape1.getExplicitRadius();
+            @NotNull final Integer radius = 100;
+            @NotNull final Number EXPECTED = DrawlNumber.valueOf(radius);
+            CircleTestProtected.this.shape1.setExplicitRadius(radius);
+            @Nullable final Number ACTUAL = CircleTestProtected.this.shape1.getExplicitRadius();
 
             then(ACTUAL).isEqualByComparingTo(EXPECTED);
         }
@@ -70,8 +70,8 @@ public class CircleTestProtected extends ShapeTestProtected
         @Test
         @DisplayName("Then you can set the radius of a circle to be the same as the radius of another circle that has an implicit radius")
         void thenYouCanSetTheRadiusOfACircleToBeTheSameAsTheRadiusOfAnotherCircle() {
-            @NotNull Circle circle2 = new Circle(shape1.getImplicitRadius());
-            assertEquals(shape1.getImplicitRadius(), circle2.getImplicitRadius());
+            @NotNull final Circle circle2 = new Circle(CircleTestProtected.this.shape1.getImplicitRadius());
+            assertEquals(CircleTestProtected.this.shape1.getImplicitRadius(), circle2.getImplicitRadius());
         }
     }
 }
