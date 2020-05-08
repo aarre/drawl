@@ -58,6 +58,8 @@ public class Shape {
      */
     private @Nullable Number explicitWidth;
 
+    private Point explicitPositionCenter = new Point(0, 0);
+
     /**
      * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
      */
