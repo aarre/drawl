@@ -41,45 +41,6 @@ public abstract class ShapeTestPublic {
     Shape shape2;
     Shape shape3;
 
-    @Nested
-    @DisplayName("Above - Below - Left - Right")
-    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
-    class AboveBelowLeftRight {
-
-        @Test
-        @DisplayName("When Shape A is above Shape B, then Shape A is above Shape B")
-        void whenShapeAIsAboveShapeBThenShapeAIsAboveShapeB()
-        {
-            ShapeTestPublic.this.shape1.setAbove(ShapeTestPublic.this.shape2);
-            then(ShapeTestPublic.this.shape1.getAbove()).isEqualTo(ShapeTestPublic.this.shape2);
-        }
-
-        @Test
-        @DisplayName("When Shape A is below Shape B, then Shape A is below Shape B")
-        void whenShapeAIsBelowShapeBThenShapeAIsBelowShapeB()
-        {
-            ShapeTestPublic.this.shape1.setBelow(ShapeTestPublic.this.shape2);
-            then(ShapeTestPublic.this.shape1.getBelow()).isEqualTo(ShapeTestPublic.this.shape2);
-        }
-
-        @Test
-        @DisplayName("When Shape A is left of Shape B, then Shape A is left of Shape B")
-        void whenShapeAIsLeftOfShapeBThenShapeAIsLeftOfShapeB()
-        {
-            ShapeTestPublic.this.shape1.setLeftOf(ShapeTestPublic.this.shape2);
-            then(ShapeTestPublic.this.shape1.getLeftOf()).isEqualTo(ShapeTestPublic.this.shape2);
-        }
-
-        @Test
-        @DisplayName("When Shape A is right of Shape B, then Shape A is right of Shape B")
-        void whenShapeAIsRightOfShapeBThenShapeAIsRightOfShapeB()
-        {
-            ShapeTestPublic.this.shape1.setRightOf(ShapeTestPublic.this.shape2);
-            then(ShapeTestPublic.this.shape1.getRightOf()).isEqualTo(ShapeTestPublic.this.shape2);
-        }
-
-    }
-
     @Test
     @DisplayName("When two shapes have been constructed, then it is possible to connect them with a Line")
     void whenTwoShapesHaveBeenConstructedThenItIsPossibleToConnectThemWithALine() {
@@ -87,6 +48,43 @@ public abstract class ShapeTestPublic {
         @NotNull final Point pointA = this.shape1.getRightPort();
         @NotNull final Point pointB = this.shape2.getLeftPort();
         @NotNull final Line line = new Line(pointA, pointB);
+    }
+
+    @Nested
+    @DisplayName("Above - Below - Left - Right")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class AboveBelowLeftRight {
+
+        @Test
+        @DisplayName("When Shape A is above Shape B, then Shape A is above Shape B")
+        void whenShapeAIsAboveShapeBThenShapeAIsAboveShapeB() {
+            ShapeTestPublic.this.shape1.setAbove(ShapeTestPublic.this.shape2);
+            final Shape shapeAbove = ShapeTestPublic.this.shape1.getAbove();
+            then(shapeAbove).isEqualTo(ShapeTestPublic.this.shape2);
+        }
+
+        @Test
+        @DisplayName("When Shape A is below Shape B, then Shape A is below Shape B")
+        void whenShapeAIsBelowShapeBThenShapeAIsBelowShapeB() {
+            ShapeTestPublic.this.shape1.setBelow(ShapeTestPublic.this.shape2);
+            final Shape shapeBelow = ShapeTestPublic.this.shape1.getBelow();
+            then(shapeBelow).isEqualTo(ShapeTestPublic.this.shape2);
+        }
+
+        @Test
+        @DisplayName("When Shape A is left of Shape B, then Shape A is left of Shape B")
+        void whenShapeAIsLeftOfShapeBThenShapeAIsLeftOfShapeB() {
+            ShapeTestPublic.this.shape1.setLeftOf(ShapeTestPublic.this.shape2);
+            then(ShapeTestPublic.this.shape1.getLeftOf()).isEqualTo(ShapeTestPublic.this.shape2);
+        }
+
+        @Test
+        @DisplayName("When Shape A is right of Shape B, then Shape A is right of Shape B")
+        void whenShapeAIsRightOfShapeBThenShapeAIsRightOfShapeB() {
+            ShapeTestPublic.this.shape1.setRightOf(ShapeTestPublic.this.shape2);
+            then(ShapeTestPublic.this.shape1.getRightOf()).isEqualTo(ShapeTestPublic.this.shape2);
+        }
+
     }
 
     @Nested

@@ -30,6 +30,11 @@ import java.util.Objects;
  */
 public class Shape {
 
+    private static final Number ABOVE = DrawlNumber.ZERO;
+    private static final Number BELOW = DrawlNumber.valueOf(180);
+    private static final Number LEFT = DrawlNumber.valueOf(270);
+    private static final Number RIGHT = DrawlNumber.valueOf(90);
+
     private static final String CANNOT_BE_ADJACENT_TO_ITSELF = "A circle cannot be adjacent to itself";
     private static final @NotNull FluentLogger logger;
 
@@ -120,7 +125,7 @@ public class Shape {
      */
     public @Nullable Shape getAbove() {
         @Nullable Shape returnValue = null;
-        if (this.angleToNeighbor.equals(DrawlNumber.ZERO)) {
+        if (this.angleToNeighbor.equals(Shape.BELOW)) {
             returnValue = this.neighbor;
         }
         return returnValue;
@@ -143,7 +148,7 @@ public class Shape {
      */
     public @Nullable Shape getBelow() {
         @Nullable Shape returnValue = null;
-        if (this.angleToNeighbor.equals(DrawlNumber.valueOf(180))) {
+        if (this.angleToNeighbor.equals(Shape.ABOVE)) {
             returnValue = this.neighbor;
         }
         return returnValue;
@@ -537,7 +542,7 @@ public class Shape {
      */
     public @Nullable Shape getLeftOf() {
         @Nullable Shape returnValue = null;
-        if (DrawlNumber.valueOf(90).equals(this.angleToNeighbor)) {
+        if (RIGHT.equals(this.angleToNeighbor)) {
             returnValue = this.neighbor;
         }
         return returnValue;
@@ -571,7 +576,7 @@ public class Shape {
      */
     public @Nullable Shape getRightOf() {
         @Nullable Shape returnValue = null;
-        if ((this.angleToNeighbor != null) && (this.angleToNeighbor.isEqualTo(DrawlNumber.valueOf(270)))) {
+        if ((this.angleToNeighbor != null) && (this.angleToNeighbor.isEqualTo(LEFT))) {
             returnValue = this.neighbor;
         }
         return returnValue;
@@ -677,7 +682,7 @@ public class Shape {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
-        this.angleToNeighbor = DrawlNumber.valueOf(0);
+        this.angleToNeighbor = BELOW;
 
         // Set the y position of this Shape
         final Number topBoundaryOfShape = shape.getImplicitYPositionTop();
@@ -701,7 +706,7 @@ public class Shape {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
-        this.angleToNeighbor = DrawlNumber.valueOf(180);
+        this.angleToNeighbor = Shape.ABOVE;
         final Number bottomBoundaryOfShape = shape.getImplicitYPositionBottom();
         Number thisImplicitYPosition = bottomBoundaryOfShape.subtract(this.getImplicitHalfHeight(),
                 DrawlNumber.mcOperations);
@@ -723,7 +728,7 @@ public class Shape {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
-        this.angleToNeighbor = DrawlNumber.valueOf(90);
+        this.angleToNeighbor = RIGHT;
 
         // Set the x position of this shape
         final Number leftBoundaryOfShape = shape.getImplicitXMinimum();
@@ -750,7 +755,7 @@ public class Shape {
             throw new UnsupportedOperationException(CANNOT_BE_ADJACENT_TO_ITSELF);
         }
         this.neighbor = shape;
-        this.angleToNeighbor = DrawlNumber.valueOf(270);
+        this.angleToNeighbor = LEFT;
 
         // Set the x position of this Shape
         final Number rightBoundaryOfShape = shape.getImplicitXMaximum();
