@@ -29,9 +29,9 @@ public class SisuNumber implements Comparable<SisuNumber>
     protected static final SisuNumber HALF = valueOf(0.5);
     protected static final SisuNumber ONE = valueOf(BigDecimal.ONE);
     protected static final SisuNumber TWO = valueOf(2);
-    protected static @NotNull RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
-    protected static int SCALE_FOR_COMPARISONS = 32;
-    protected static int SCALE_FOR_OPERATIONS = 64;
+    private static @NotNull RoundingMode ROUNDING_MODE = RoundingMode.HALF_UP;
+    private static final int SCALE_FOR_COMPARISONS = 32;
+    private static final int SCALE_FOR_OPERATIONS = 64;
     /**
      * Zero.
      */
