@@ -17,8 +17,8 @@ import org.jetbrains.annotations.NotNull;
  */
 public class Point {
 
-    private final Number xCoordinate;
-    private final Number yCoordinate;
+    private Number xCoordinate;
+    private Number yCoordinate;
 
     /**
      * Constructs a new Point object.
@@ -26,27 +26,61 @@ public class Point {
      * @param xCoordinate
      * @param yCoordinate
      */
-    protected Point(final Number xCoordinate, final Number yCoordinate)
-    {
+    protected Point(final Number xCoordinate, final Number yCoordinate) {
         this.xCoordinate = xCoordinate;
         this.yCoordinate = yCoordinate;
     }
 
-    protected Point(@NotNull final Integer xCoordinate, @NotNull final Integer yCoordinate)
-    {
+    protected Point(@NotNull final Integer xCoordinate, @NotNull final Integer yCoordinate) {
         this.xCoordinate = new DrawlNumber(xCoordinate);
         this.yCoordinate = new DrawlNumber(yCoordinate);
     }
 
-    protected Number getX()
-    {
+    /**
+     * Gets the x coordinate of this Point.
+     *
+     * @return
+     * @author Aarre Laakso
+     * @version 1, 05/08/2020
+     * @since 05/08/2020
+     */
+    protected Number getX() {
         return this.xCoordinate;
     }
 
+    /**
+     * Sets the x coordinate of this Point.
+     *
+     * @param x the new x coordinate of this Point.
+     * @author Aarre Laakso
+     * @version 1, 05/08/2020
+     * @since 05/08/2020
+     */
+    protected void setX(final Number x) {
+        this.xCoordinate = x;
+    }
 
-    protected Number getY()
-    {
+    /**
+     * Gets the y coordinate of this Point.
+     *
+     * @return
+     * @author Aarre Laakso
+     * @version 1, 05/08/2020
+     * @since 05/08/2020
+     */
+    protected Number getY() {
         return this.yCoordinate;
     }
 
+    /**
+     * Sets the y coordinate of this Point.
+     *
+     * @param y the new y coordinate of this Point.
+     * @author Aarre Laakso
+     * @version 1, 05/08/2020
+     * @since 05/08/2020
+     */
+    void setY(final Number y) {
+        this.yCoordinate = y;
+    }
 }

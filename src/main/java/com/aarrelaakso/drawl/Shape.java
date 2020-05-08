@@ -58,17 +58,10 @@ public class Shape {
      */
     private @Nullable Number explicitWidth;
 
+    /**
+     * A default Shape is centered at (0,0) in explicit coordinates
+     */
     private Point explicitPositionCenter = new Point(0, 0);
-
-    /**
-     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
-     */
-    private Number explicitXPositionCenter = DrawlNumber.ZERO;
-
-    /**
-     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
-     */
-    private Number explicitYPositionCenter = DrawlNumber.ZERO;
 
     /**
      * The fill of this Shape. Defaults to null, meaning the SVG default.
@@ -255,7 +248,7 @@ public class Shape {
      */
     @NotNull
     protected Number getExplicitXPositionCenter() {
-        return this.explicitXPositionCenter;
+        return this.explicitPositionCenter.getX();
     }
 
     /**
@@ -264,7 +257,7 @@ public class Shape {
      * @param x the explicit x position of the center of this Shape.
      */
     protected void setExplicitXPositionCenter(final Number x) {
-        this.explicitXPositionCenter = x;
+        this.explicitPositionCenter.setX(x);
         if (Boolean.TRUE.equals(this.hasText())) {
             Objects.requireNonNull(this.getText()).setExplicitXPositionCenter(x);
         }
@@ -285,7 +278,7 @@ public class Shape {
      * @return the explicit x position of the left edge of this Shape.
      */
     protected Number getExplicitXPositionLeft() {
-        return this.explicitXPositionCenter.subtract(this.getExplicitHalfWidth());
+        return this.explicitPositionCenter.getX().subtract(this.getExplicitHalfWidth());
     }
 
     /**
@@ -294,7 +287,7 @@ public class Shape {
      * @return the explicit x position of the right edge of this Shape.
      */
     protected Number getExplicitXPositionRight() {
-        return this.explicitXPositionCenter.add(this.getExplicitHalfWidth());
+        return this.explicitPositionCenter.getX().add(this.getExplicitHalfWidth());
     }
 
     /**
@@ -314,7 +307,7 @@ public class Shape {
      */
     @NotNull
     protected Number getExplicitYPositionCenter() {
-        return this.explicitYPositionCenter;
+        return this.explicitPositionCenter.getY();
     }
 
     /**
@@ -336,7 +329,7 @@ public class Shape {
      * @param y The explicit y position of this Shape.
      */
     protected void setExplicitYPositionCenter(final Number y) {
-        this.explicitYPositionCenter = y;
+        this.explicitPositionCenter.setY(y);
         if (Boolean.TRUE.equals(this.hasText())) {
             Objects.requireNonNull(this.getText()).setExplicitYPositionCenter(y);
         }
