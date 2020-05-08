@@ -79,14 +79,9 @@ public class Shape {
     private Number implicitWidth = DrawlNumber.ONE;
 
     /**
-     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
+     * A default Shape is centered at (0,0) in implicit coordinates.
      */
-    private Number implicitXPositionCenter = DrawlNumber.ZERO;
-
-    /**
-     * A default Shape is centered at (0,0) in both explicit and implicit coordinates.
-     */
-    private Number implicitYPositionCenter = DrawlNumber.ZERO;
+    private Point implicitPositionCenter = new Point(0, 0);
 
     /**
      * A shape adjacent to this one, if any
@@ -454,7 +449,7 @@ public class Shape {
      * @return The implicit x position of the center of this Shape.
      */
     protected Number getImplicitXPositionCenter() {
-        return this.implicitXPositionCenter;
+        return this.implicitPositionCenter.getX();
     }
 
     /**
@@ -463,7 +458,7 @@ public class Shape {
      * @param x implicit x position of the center of this Shape.
      */
     protected void setImplicitXPositionCenter(final Number x) {
-        this.implicitXPositionCenter = x;
+        this.implicitPositionCenter.setX(x);
         if (Boolean.TRUE.equals(this.hasText())) {
             Objects.requireNonNull(this.getText()).setImplicitXPositionCenter(x);
         }
@@ -502,7 +497,7 @@ public class Shape {
      * @return The implicit y position of the center of this Shape.
      */
     protected Number getImplicitYPositionCenter() {
-        return this.implicitYPositionCenter;
+        return this.implicitPositionCenter.getY();
     }
 
     /**
@@ -514,7 +509,7 @@ public class Shape {
      * @param y The implicit y position of this Shape.
      */
     protected void setImplicitYPositionCenter(final Number y) {
-        this.implicitYPositionCenter = y;
+        this.implicitPositionCenter.setY(y);
         if (Boolean.TRUE.equals(this.hasText())) {
             Objects.requireNonNull(this.getText()).setImplicitYPositionCenter(y);
         }
