@@ -18,6 +18,9 @@ import org.jetbrains.annotations.Nullable;
  */
 public class Line extends Shape {
 
+    @Nullable
+    private Arrowhead arrowhead;
+
     @NotNull
     private Point point1Implicit = new Point(0, 0);
 
@@ -35,6 +38,10 @@ public class Line extends Shape {
      */
     public Line() {
 
+    }
+
+    public Arrowhead getArrowhead() {
+        return this.arrowhead;
     }
 
     /**
@@ -59,6 +66,10 @@ public class Line extends Shape {
         this.setImplicitHeight(implicitHeight);
         this.setImplicitXPositionCenter(implicitCenterX);
         this.setImplicitYPositionCenter(implicitCenterY);
+    }
+
+    public void addArrowhead(final Arrowhead arrowhead) {
+        this.arrowhead = arrowhead;
     }
 
     @Nullable
@@ -92,6 +103,9 @@ public class Line extends Shape {
             throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
         }
         @NotNull final StringBuilder svgBuilder = new StringBuilder();
+        if (this.hasArrowhead()) {
+            svgBuilder.append(this.getArrowhead().getSVGDef());
+        }
         svgBuilder.append("\n<line");
         svgBuilder.append(" x1=\"");
         svgBuilder.append(this.getPoint1Explicit().getX().toSVG());
@@ -116,11 +130,27 @@ public class Line extends Shape {
             svgBuilder.append(this.getStroke());
             svgBuilder.append("\"");
         }
+
+        if (this.hasArrowhead()) {
+            svgBuilder.append("marker-end='url(#head)'");
+        }
+
         svgBuilder.append(" />");
         if (this.getText() != null) {
             svgBuilder.append(this.getText().getSVG());
         }
         return svgBuilder.toString();
+    }
+
+    public boolean hasArrowhead() {
+        if (this.arrowhead != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }
