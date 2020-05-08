@@ -10,43 +10,8 @@
 
 package com.aarrelaakso.drawl;
 
-import org.jetbrains.annotations.NotNull;
+public class ShapeExplicit {
 
-/**
- * Represents a point on the drawing canvas.
- */
-public class Point {
-
-    private final Number xCoordinate;
-    private final Number yCoordinate;
-
-    /**
-     * Constructs a new Point object.
-     *
-     * @param xCoordinate
-     * @param yCoordinate
-     */
-    protected Point(final Number xCoordinate, final Number yCoordinate)
-    {
-        this.xCoordinate = xCoordinate;
-        this.yCoordinate = yCoordinate;
-    }
-
-    protected Point(@NotNull final Integer xCoordinate, @NotNull final Integer yCoordinate)
-    {
-        this.xCoordinate = new DrawlNumber(xCoordinate);
-        this.yCoordinate = new DrawlNumber(yCoordinate);
-    }
-
-    protected Number getX()
-    {
-        return this.xCoordinate;
-    }
-
-
-    protected Number getY()
-    {
-        return this.yCoordinate;
-    }
+    private Point center;
 
 }

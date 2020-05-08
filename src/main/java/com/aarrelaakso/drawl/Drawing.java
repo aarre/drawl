@@ -87,13 +87,11 @@ public class Drawing {
      * @param drawingExplicitHeight The explicit height of the drawing.
      */
     private void setExplicitHeight(@NotNull final Number drawingExplicitHeight) {
-        Drawing.logger.atFine().log("Setting explicit height");
         // Note that this line, by changing this.explicitWidth, can change the explicit to implicit ratio
         this.setExplicitHeightInternal(drawingExplicitHeight);
         if (this.getExplicitWidth() == null) {
             // If this Drawing does not have an explicit width, make the explicit width of the Drawing as wide as it
             // needs to be to accommodate the contents.
-            Drawing.logger.atFine().log("Adjusting explicit width to fit");
             this.setExplicitWidthInternal(this.getImplicitWidthOfContents().multiply(this.getExplicitToImplicitRatio(),
                     DrawlNumber.mcOperations));
         }
@@ -162,8 +160,7 @@ public class Drawing {
      *
      * @return The ratio of explicit measures to implicit measures for this diagram as a whole.
      */
-    // TODO [Issue No. 1] Make this method private and factor out of unit tests.
-    public final Number getExplicitToImplicitRatio() {
+    protected final Number getExplicitToImplicitRatio() {
         final Number explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
         @NotNull final Number explicitWidthPerImplicitWidth = this.getExplicitWidthPerImplicitWidth();
         if (explicitHeightPerImplicitHeight.isLessThanOrEqualTo(explicitWidthPerImplicitWidth)) {
@@ -230,9 +227,8 @@ public class Drawing {
      *
      * @return The ratio of the explicit width of this drawing to the implicit width of its contents.
      */
-    // TODO [Issue No. 1] Make this method private and factor out of unit tests.
     @NotNull
-    public final Number getExplicitWidthPerImplicitWidth() {
+    protected final Number getExplicitWidthPerImplicitWidth() {
         final Number implicitWidthOfContents = this.getImplicitWidthOfContents();
         assert implicitWidthOfContents.isGreaterThanOrEqualTo(DrawlNumber.ZERO) :
                 "The implicit width of the contents of a drawing must be positive (or zero).";
