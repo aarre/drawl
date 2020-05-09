@@ -1,9 +1,11 @@
 :doctype: book
 :source-highlighter: highlightjs
-:favicon: ../../img/favicon/favicon-32x32.png
+:docinfo: shared-head
+
 = Drawl
 Aarre Laakso <aarre.laakso@gmail.com>
 :toc: left
+:favicon: images/favicon/favicon-32x32.png
 
 Drawl is the world's best drawing language.
 
