@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.5">
 <meta name="author" content="Aarre Laakso">
-<title>Drawl Documentation</title>
+<title>Drawl</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -419,19 +419,173 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .show-for-print{display:inherit!important}}
 </style>
 </head>
-<body class="book">
+<body class="book toc2 toc-left">
 <div id="header">
-<h1>Drawl Documentation</h1>
+<h1>Drawl</h1>
 <div class="details">
 <span id="author" class="author">Aarre Laakso</span><br>
 <span id="email" class="email"><a href="mailto:aarre.laakso@gmail.com">aarre.laakso@gmail.com</a></span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_example">Example</a></li>
+<li><a href="#_user_s_guide">User&#8217;s Guide</a>
+<ul class="sectlevel1">
+<li><a href="#__a_id_port_a_s"><a id="Port"></a>s</a></li>
+<li><a href="#__version_history">[[Version History]]</a></li>
+</ul>
+</li>
+<li><a href="#_developer_s_manual">Developer&#8217;s Manual</a>
+<ul class="sectlevel1">
+<li><a href="#__coding_conventions">[[Coding Conventions]]</a></li>
+<li><a href="#__release_process">[[Release Process]]</a></li>
+</ul>
+</li>
+<li><a href="#_design_philosophy">Design Philosophy</a>
+<ul class="sectlevel1">
+<li><a href="#_arrows">Arrows</a>
+<ul class="sectlevel2">
+<li><a href="#_asymptote">Asymptote</a></li>
+<li><a href="#_graphviz">Graphviz</a></li>
+<li><a href="#_pstricks">PSTRicks</a></li>
+<li><a href="#_tikz_pgf">TikZ/PGF</a></li>
+</ul>
+</li>
+<li><a href="#_api_documentation">API Documentation</a>
+<ul class="sectlevel2">
+<li><a href="#_public_api">Public API</a></li>
+<li><a href="#_protected_api">Protected API</a></li>
+</ul>
+</li>
+<li><a href="#_references">References</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>There are a number of '''alternatives''' to Drawl.</p>
+<p>Drawl is the world&#8217;s best drawing language.</p>
+</div>
+<div class="paragraph">
+<p>Welcome to the drawl wiki! Drawl is the world&#8217;s best drawing language.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example">Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here&#8217;s a simple example. The following code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java" data-lang="java">    package com.aarrelaakso.drawl.examples;
+
+    import com.aarrelaakso.drawl.Circle;
+    import com.aarrelaakso.drawl.Drawing;
+
+    import java.io.IOException;
+
+    public class ThreeCirclesHorizontal
+    {
+        public static void main(String[] args) throws IOException
+        {
+            Drawing drawing = new Drawing();
+            Circle circle1 = new Circle();
+            drawing.add(circle1);
+            Circle circle2 = new Circle();
+            drawing.add(circle2);
+            circle2.setRightOf(circle1);
+            Circle circle3 = new Circle();
+            drawing.add(circle3);
+            circle3.setRightOf(circle2);
+            drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg", 200, 70);
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Gives us a drawing with three horizontally adjacent circles:</p>
+</div>
+<div class="paragraph">
+<p>![Three horizontally adjacent circles](<a href="https://raw.githubusercontent.com/aarre/drawl/299199cf69685270ae79ba8c3826aebcc427fa41/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg" class="bare">https://raw.githubusercontent.com/aarre/drawl/299199cf69685270ae79ba8c3826aebcc427fa41/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg</a>)</p>
+</div>
+<div class="paragraph">
+<p>Note how we did not have to specify any coordinates to lay out this drawing. The only numbers we used were to specify the desired size of the final drawing. Moreover, by simply changing <code>setRightOf()</code> to <code>setAbove()</code> as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java" data-lang="java">    import com.aarrelaakso.drawl.Circle;
+    import com.aarrelaakso.drawl.Drawing;
+
+    import java.io.IOException;
+
+    public class ThreeCirclesVertical
+    {
+        public static void main(String[] args) throws IOException {
+            Drawing drawing = new Drawing();
+            Circle circle1 = new Circle();
+            drawing.add(circle1);
+            Circle circle2 = new Circle();
+            drawing.add(circle2);
+            circle2.setAbove(circle1);
+            Circle circle3 = new Circle();
+            drawing.add(circle3);
+            circle3.setAbove(circle2);
+            drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg", 70, 200);
+        }
+    }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We get a drawing with three vertically adjacent circles instead!</p>
+</div>
+<div class="paragraph">
+<p>![Three vertically adjacent circles](<a href="https://raw.githubusercontent.com/aarre/drawl/3af1ab1a9e51640ecfe95d75b7df7c2d6c99476e/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg" class="bare">https://raw.githubusercontent.com/aarre/drawl/3af1ab1a9e51640ecfe95d75b7df7c2d6c99476e/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg</a>)</p>
+</div>
+<div class="paragraph">
+<p>Again, no explicit coordinates were specified.</p>
+</div>
+</div>
+</div>
+<h1 id="_user_s_guide" class="sect0">User&#8217;s Guide</h1>
+<div class="sect1">
+<h2 id="__a_id_port_a_s"><a id="Port"></a>s</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="__version_history">[[Version History]]</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<h1 id="_developer_s_manual" class="sect0">Developer&#8217;s Manual</h1>
+<div class="sect1">
+<h2 id="__coding_conventions">[[Coding Conventions]]</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="__release_process">[[Release Process]]</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<h1 id="_design_philosophy" class="sect0">Design Philosophy</h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p>This part documents the design philosophy behind Drawl.</p>
+</div>
+<div class="paragraph">
+<p>There are a number of alternatives to Drawl.</p>
 </div>
 <div class="paragraph">
 <p>Several of them are tightly integrated with LaTeX. In this regard, [<a href="https://tug.org/PSTricks/main.cgi/" class="bare">https://tug.org/PSTricks/main.cgi/</a> pstricks] and TikZ are especially noteworthy. There are also the standard LaTex {picture} environment, the xypic package, the dratex package, the metapost program, and the xfig program.</p>
@@ -488,19 +642,19 @@ configurations.<a href="#graphviz-arrows">[graphviz-arrows]</a></p>
 <div class="sect2">
 <h3 id="_public_api">Public API</h3>
 <div class="paragraph">
-<p><a href="https://aarre.github.io/drawl/doxy/public/html/index.html" class="bare">https://aarre.github.io/drawl/doxy/public/html/index.html</a></p>
+<p><a href="https://aarre.github.io/drawl/doxy/public/out/html/index.html" class="bare">https://aarre.github.io/drawl/doxy/public/out/html/index.html</a></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_protected_api">Protected API</h3>
 <div class="paragraph">
-<p><a href="https://aarre.github.io/drawl/doxy/protected/html/index.html" class="bare">https://aarre.github.io/drawl/doxy/protected/html/index.html</a></p>
+<p><a href="https://aarre.github.io/drawl/doxy/protected/out/html/index.html" class="bare">https://aarre.github.io/drawl/doxy/protected/out/html/index.html</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_references">References =</h2>
+<h2 id="_references">References</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a id="asymptote"></a>Hammerlindl, A., Bowman, J., &amp; Prince, T. (n.d.). Asymptote: The Vector Graphics Language (For Version 2.65). Retrieved May 8, 2020, from <a href="https://asymptote.sourceforge.io/asymptote.pdf" class="bare">https://asymptote.sourceforge.io/asymptote.pdf</a></p>
@@ -519,8 +673,11 @@ configurations.<a href="#graphviz-arrows">[graphviz-arrows]</a></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-09 12:14:46 EDT
+Last updated 2020-05-09 13:38:25 EDT
 </div>
 </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+<script>hljs.initHighlighting()</script>
 </body>
 </html>

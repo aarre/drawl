@@ -1,13 +1,102 @@
 :doctype: book
+:source-highlighter: highlightjs
 
-= Drawl Documentation
+= Drawl
 Aarre Laakso <aarre.laakso@gmail.com>
+:toc: left
 
-There are a number of '''alternatives''' to Drawl.
+Drawl is the world's best drawing language.
+
+Welcome to the drawl wiki! Drawl is the world's best drawing language.
+
+== Example
+
+Here's a simple example. The following code:
+
+[source,java]
+----
+package com.aarrelaakso.drawl.examples;
+
+import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.Drawing;
+
+import java.io.IOException;
+
+public class ThreeCirclesHorizontal
+{
+    public static void main(String[] args) throws IOException
+    {
+        Drawing drawing = new Drawing();
+        Circle circle1 = new Circle();
+        drawing.add(circle1);
+        Circle circle2 = new Circle();
+        drawing.add(circle2);
+        circle2.setRightOf(circle1);
+        Circle circle3 = new Circle();
+        drawing.add(circle3);
+        circle3.setRightOf(circle2);
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg", 200, 70);
+    }
+}
+----
+
+Gives us a drawing with three horizontally adjacent circles:
+
+![Three horizontally adjacent circles](https://raw.githubusercontent.com/aarre/drawl/299199cf69685270ae79ba8c3826aebcc427fa41/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg)
+
+Note how we did not have to specify any coordinates to lay out this drawing. The only numbers we used were to specify the desired size of the final drawing. Moreover, by simply changing `setRightOf()` to `setAbove()` as follows:
+
+[source,java]
+----
+import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.Drawing;
+
+import java.io.IOException;
+
+public class ThreeCirclesVertical
+{
+    public static void main(String[] args) throws IOException {
+        Drawing drawing = new Drawing();
+        Circle circle1 = new Circle();
+        drawing.add(circle1);
+        Circle circle2 = new Circle();
+        drawing.add(circle2);
+        circle2.setAbove(circle1);
+        Circle circle3 = new Circle();
+        drawing.add(circle3);
+        circle3.setAbove(circle2);
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg", 70, 200);
+    }
+}
+----
+
+We get a drawing with three vertically adjacent circles instead!
+
+![Three vertically adjacent circles](https://raw.githubusercontent.com/aarre/drawl/3af1ab1a9e51640ecfe95d75b7df7c2d6c99476e/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg)
+
+Again, no explicit coordinates were specified.
+
+= User's Guide
+
+== [[Port]]s
+== [[Version History]]
+
+= Developer's Manual
+
+== [[Coding Conventions]]
+== [[Release Process]]
+
+= Design Philosophy
+[partintro]
+--
+This part documents the design philosophy behind Drawl.
+
+There are a number of alternatives to Drawl.
 
 Several of them are tightly integrated with LaTeX. In this regard, [https://tug.org/PSTricks/main.cgi/ pstricks] and TikZ are especially noteworthy. There are also the standard LaTex {picture} environment, the xypic package, the dratex package, the metapost program, and the xfig program.
 
 Others stand alone to various degrees. These include Asymptote, Graphviz, and Diagrams.
+--
 
 == Arrows
 
@@ -45,7 +134,7 @@ https://aarre.github.io/drawl/doxy/public/out/html/index.html
 https://aarre.github.io/drawl/doxy/protected/out/html/index.html
 
 [bibliography]
-== References =
+== References
 
 [[asymptote]]Hammerlindl, A., Bowman, J., & Prince, T. (n.d.). Asymptote: The Vector Graphics Language (For Version 2.65). Retrieved May 8, 2020, from https://asymptote.sourceforge.io/asymptote.pdf
 
