@@ -10,14 +10,36 @@
 
 package com.aarrelaakso.drawl;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Represents heads or tails on the ends of Line
  */
 public class Arrowhead {
 
+    private Arrowhead.Type arrowheadType = Type.DEFAULT;
+
+    public enum Type {
+        DEFAULT
+    }
+
+    /**
+     * Constructs a default arrowhead.
+     *
+     */
     public Arrowhead()
     {
 
+    }
+
+    /**
+     * Constructs an arrowhead of a particular type.
+     *
+     * @param type
+     */
+    public Arrowhead(@NotNull Arrowhead.Type type)
+    {
+        this.arrowheadType = type;
     }
 
     protected String getSVGDef() {

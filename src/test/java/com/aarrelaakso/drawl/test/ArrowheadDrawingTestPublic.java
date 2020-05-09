@@ -20,6 +20,11 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
+import org.junit.jupiter.params.provider.ValueSource;
+
+import static org.assertj.core.api.BDDAssertions.then;
 
 /**
  * Tests the public API of Arrowheads.
@@ -60,5 +65,14 @@ public class ArrowheadDrawingTestPublic {
         softly.then(svg).contains("/>");
         softly.then(svg).contains("</marker>");
         softly.then(svg).contains("</defs>");
+    }
+
+
+    @DisplayName("when An Arrowhead Is Constructed Then The Type Can Be Set")
+    @ParameterizedTest
+    @EnumSource(Arrowhead.Type.class)
+    void whenAnArrowheadIsConstructedThenTheTypeCanBeSet(Arrowhead.Type type) {
+        final Arrowhead arrowhead = new Arrowhead(type);
+        then(arrowhead).isNotNull();
     }
 }
