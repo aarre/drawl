@@ -457,12 +457,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_tikz_pgf">TikZ/PGF</a></li>
 </ul>
 </li>
-<li><a href="#_api_documentation">API Documentation</a>
-<ul class="sectlevel2">
-<li><a href="#_public_api">Public API</a></li>
-<li><a href="#_protected_api">Protected API</a></li>
 </ul>
 </li>
+<li><a href="#_api_documentation">API Documentation</a>
+<ul class="sectlevel1">
+<li><a href="#_public_api">Public API</a></li>
+<li><a href="#_protected_api">Protected API</a></li>
 </ul>
 </li>
 <li><a href="#_references">References</a></li>
@@ -476,7 +476,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Drawl is the world&#8217;s best drawing language.</p>
 </div>
 <div class="paragraph">
-<p>Welcome to the drawl wiki! Drawl is the world&#8217;s best drawing language.</p>
+<p>Drawl is an object-oriented domain-specific language for creating vector graphics using Java.
+In comparison to alternatives like TikZ/PGF, Asymptote, and Processing/Processing.js, Drawl has one clear advantage:
+all dimensions are relative. This means that you don&#8217;t need to explicitly place objects at particular coordinates,
+something you might not know in advance without a lot of planning. Instead, you place objects relative to each other.
+This is a more intuitive way to draw. The only other drawing language that has this feature is Diagrams, which is
+written in Haskell.</p>
 </div>
 </div>
 </div>
@@ -729,20 +734,20 @@ configurations.<a href="#graphviz-arrows">[graphviz-arrows]</a></p>
 </div>
 </div>
 </div>
+<h1 id="_api_documentation" class="sect0">API Documentation</h1>
 <div class="sect1">
-<h2 id="_api_documentation">API Documentation</h2>
+<h2 id="_public_api">Public API</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_public_api">Public API</h3>
 <div class="paragraph">
 <p><a href="https://aarre.github.io/drawl/doxy/public/out/html/index.html" class="bare">https://aarre.github.io/drawl/doxy/public/out/html/index.html</a></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_protected_api">Protected API</h3>
+</div>
+<div class="sect1">
+<h2 id="_protected_api">Protected API</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://aarre.github.io/drawl/doxy/protected/out/html/index.html" class="bare">https://aarre.github.io/drawl/doxy/protected/out/html/index.html</a></p>
-</div>
 </div>
 </div>
 </div>
@@ -766,7 +771,7 @@ configurations.<a href="#graphviz-arrows">[graphviz-arrows]</a></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-09 13:57:34 EDT
+Last updated 2020-05-09 14:34:49 EDT
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
