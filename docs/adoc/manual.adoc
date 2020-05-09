@@ -1,6 +1,6 @@
 :doctype: book
 :source-highlighter: highlightjs
-
+:favicon: ../../img/favicon/favicon-32x32.png
 = Drawl
 Aarre Laakso <aarre.laakso@gmail.com>
 :toc: left
@@ -170,11 +170,11 @@ TikZ/PGF offers a large number of parameterized arrow types.<<tigzpgf>>
 
 = API Documentation
 
-=== Public API
+== Public API
 
 https://aarre.github.io/drawl/doxy/public/out/html/index.html
 
-=== Protected API
+== Protected API
 
 https://aarre.github.io/drawl/doxy/protected/out/html/index.html
 
