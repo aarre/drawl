@@ -125,14 +125,17 @@ public class Line extends Shape {
             svgBuilder.append(this.getFill());
             svgBuilder.append("\"");
         }
+        svgBuilder.append(" stroke=\"");
         if (this.getStroke() != null) {
-            svgBuilder.append(" stroke=\"");
             svgBuilder.append(this.getStroke());
-            svgBuilder.append("\"");
+        } else {
+            //Our lines are visible by default....
+            svgBuilder.append("black");
         }
+        svgBuilder.append("\"");
 
         if (this.hasArrowhead()) {
-            svgBuilder.append("marker-end='url(#head)'");
+            svgBuilder.append(" marker-end='url(#head)'");
         }
 
         svgBuilder.append(" />");
