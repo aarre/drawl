@@ -63,3 +63,5 @@ Doxygen/example1.svg
 test.svg.bak
 
 wiki/
+
+*.swp
