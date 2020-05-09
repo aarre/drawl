@@ -1,0 +1,46 @@
+:doctype: book
+
+= Drawl Documentation
+Aarre Laakso <aarre.laakso@gmail.com>
+
+There are a number of '''alternatives''' to Drawl.
+
+Several of them are tightly integrated with LaTeX. In this regard, [https://tug.org/PSTricks/main.cgi/ pstricks] and TikZ are especially noteworthy. There are also the standard LaTex {picture} environment, the xypic package, the dratex package, the metapost program, and the xfig program.
+
+Others stand alone to various degrees. These include Asymptote, Graphviz, and Diagrams.
+
+== Arrows
+
+=== Asymptote
+
+The Asymptote documentation<<asymptote>> does not say much about arrowheads, but it appears there are four types:
+`DefaultHead`, `SimpleHead`, `HookHead`, and `TeXHead`.
+
+=== Graphviz
+
+Graphviz offers 41 unique arrowheads and allows using them in combination, for more than 3 million possible
+configurations.<<graphviz-arrows>>
+
+image::https://raw.githubusercontent.com/aarre/drawl/master/docs/images/arrowheads-graphviz.png[Graphviz arrowheads,250,350]
+
+=== PSTRicks
+
+PSTricks offers 14 types of arrowheads, as follows (ignoring line ending options):<<pstricks>>
+
+
+image::https://raw.githubusercontent.com/aarre/drawl/master/docs/images/arrowheads-pstricks.png[Arrowheads in PSTricks,250,350]
+
+=== TikZ/PGF
+
+TikZ/PGF offers a large number of parameterized arrow types.<<tigzpgf>>
+
+[bibliography]
+== References ==
+
+[[asymptote]]Hammerlindl, A., Bowman, J., & Prince, T. (n.d.). Asymptote: The Vector Graphics Language (For Version 2.65). Retrieved May 8, 2020, from https://asymptote.sourceforge.io/asymptote.pdf
+
+[[graphviz-arrows]]Arrow Shapes. (n.d.). Retrieved May 8, 2020, from https://www.graphviz.org/doc/info/arrows.html
+
+[[pstricks]]Van Zandt, T. (2007). PSTricks User’s Guide (Version 1.5). http://mirror.las.iastate.edu/tex-archive/graphics/pstricks/base/doc/pst-user.pdf
+
+[[tikzpgf]]Tantau, T. (2017). TikZ & PGF Manual for Version 3.0.1. http://pgf.sourceforge.net/pgf_CVS.pdf
