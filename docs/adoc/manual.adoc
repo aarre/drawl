@@ -8,8 +8,10 @@
 Aarre Laakso <aarre.laakso@gmail.com>
 :toc: left
 :favicon: images/favicon/favicon-32x32.png
-
+[partintro]
+--
 Drawl is the world's best drawing language.
+--
 
 Drawl is an object-oriented domain-specific language for creating vector graphics using Java.
 In comparison to alternatives like TikZ/PGF, Asymptote, and Processing/Processing.js, Drawl has one clear advantage:
@@ -93,7 +95,6 @@ Again, no explicit coordinates were specified.
 [partintro]
 --
 This part contains information useful for Drawl users.
-
 --
 
 == Port
