@@ -432,14 +432,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_example">Example</a></li>
 <li><a href="#_user_s_guide">User&#8217;s Guide</a>
 <ul class="sectlevel1">
-<li><a href="#__a_id_port_a_s"><a id="Port"></a>s</a></li>
-<li><a href="#__version_history">[[Version History]]</a></li>
+<li><a href="#_port">Port</a></li>
+<li><a href="#_version_history">Version History</a>
+<ul class="sectlevel2">
+<li><a href="#_version_0_2_0_may_1_2020">Version 0.2.0 - May 1, 2020</a></li>
+<li><a href="#_version_0_1_0_april_8_2020">Version 0.1.0 - April 8, 2020</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_developer_s_manual">Developer&#8217;s Manual</a>
 <ul class="sectlevel1">
-<li><a href="#__coding_conventions">[[Coding Conventions]]</a></li>
-<li><a href="#__release_process">[[Release Process]]</a></li>
+<li><a href="#_coding_conventions">Coding Conventions</a></li>
+<li><a href="#_release_process">Release Process</a></li>
 </ul>
 </li>
 <li><a href="#_design_philosophy">Design Philosophy</a>
@@ -458,9 +463,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_protected_api">Protected API</a></li>
 </ul>
 </li>
-<li><a href="#_references">References</a></li>
 </ul>
 </li>
+<li><a href="#_references">References</a></li>
 </ul>
 </div>
 </div>
@@ -483,69 +488,73 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">    package com.aarrelaakso.drawl.examples;
+<pre class="highlightjs highlight"><code class="language-java" data-lang="java">package com.aarrelaakso.drawl.examples;
 
-    import com.aarrelaakso.drawl.Circle;
-    import com.aarrelaakso.drawl.Drawing;
+import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.Drawing;
 
-    import java.io.IOException;
+import java.io.IOException;
 
-    public class ThreeCirclesHorizontal
+public class ThreeCirclesHorizontal
+{
+    public static void main(String[] args) throws IOException
     {
-        public static void main(String[] args) throws IOException
-        {
-            Drawing drawing = new Drawing();
-            Circle circle1 = new Circle();
-            drawing.add(circle1);
-            Circle circle2 = new Circle();
-            drawing.add(circle2);
-            circle2.setRightOf(circle1);
-            Circle circle3 = new Circle();
-            drawing.add(circle3);
-            circle3.setRightOf(circle2);
-            drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg", 200, 70);
-        }
-    }</code></pre>
+        Drawing drawing = new Drawing();
+        Circle circle1 = new Circle();
+        drawing.add(circle1);
+        Circle circle2 = new Circle();
+        drawing.add(circle2);
+        circle2.setRightOf(circle1);
+        Circle circle3 = new Circle();
+        drawing.add(circle3);
+        circle3.setRightOf(circle2);
+        drawing.writeToFile("ThreeCirclesHorizontal.svg", 200, 70);
+    }
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Gives us a drawing with three horizontally adjacent circles:</p>
 </div>
-<div class="paragraph">
-<p>![Three horizontally adjacent circles](<a href="https://raw.githubusercontent.com/aarre/drawl/299199cf69685270ae79ba8c3826aebcc427fa41/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg" class="bare">https://raw.githubusercontent.com/aarre/drawl/299199cf69685270ae79ba8c3826aebcc427fa41/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg</a>)</p>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/aarre/drawl/299199cf69685270ae79ba8c3826aebcc427fa41/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg" alt="Three horizontally adjacent circles">
+</div>
 </div>
 <div class="paragraph">
 <p>Note how we did not have to specify any coordinates to lay out this drawing. The only numbers we used were to specify the desired size of the final drawing. Moreover, by simply changing <code>setRightOf()</code> to <code>setAbove()</code> as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java" data-lang="java">    import com.aarrelaakso.drawl.Circle;
-    import com.aarrelaakso.drawl.Drawing;
+<pre class="highlightjs highlight"><code class="language-java" data-lang="java">import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.Drawing;
 
-    import java.io.IOException;
+import java.io.IOException;
 
-    public class ThreeCirclesVertical
-    {
-        public static void main(String[] args) throws IOException {
-            Drawing drawing = new Drawing();
-            Circle circle1 = new Circle();
-            drawing.add(circle1);
-            Circle circle2 = new Circle();
-            drawing.add(circle2);
-            circle2.setAbove(circle1);
-            Circle circle3 = new Circle();
-            drawing.add(circle3);
-            circle3.setAbove(circle2);
-            drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg", 70, 200);
-        }
-    }</code></pre>
+public class ThreeCirclesVertical
+{
+    public static void main(String[] args) throws IOException {
+        Drawing drawing = new Drawing();
+        Circle circle1 = new Circle();
+        drawing.add(circle1);
+        Circle circle2 = new Circle();
+        drawing.add(circle2);
+        circle2.setAbove(circle1);
+        Circle circle3 = new Circle();
+        drawing.add(circle3);
+        circle3.setAbove(circle2);
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg", 70, 200);
+    }
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>We get a drawing with three vertically adjacent circles instead!</p>
 </div>
-<div class="paragraph">
-<p>![Three vertically adjacent circles](<a href="https://raw.githubusercontent.com/aarre/drawl/3af1ab1a9e51640ecfe95d75b7df7c2d6c99476e/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg" class="bare">https://raw.githubusercontent.com/aarre/drawl/3af1ab1a9e51640ecfe95d75b7df7c2d6c99476e/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg</a>)</p>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/aarre/drawl/3af1ab1a9e51640ecfe95d75b7df7c2d6c99476e/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg" alt="Three vertically adjacent circles">
+</div>
 </div>
 <div class="paragraph">
 <p>Again, no explicit coordinates were specified.</p>
@@ -553,29 +562,113 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <h1 id="_user_s_guide" class="sect0">User&#8217;s Guide</h1>
-<div class="sect1">
-<h2 id="__a_id_port_a_s"><a id="Port"></a>s</h2>
-<div class="sectionbody">
-
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p>This part contains information useful for Drawl users.</p>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="__version_history">[[Version History]]</h2>
+<h2 id="_port">Port</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>The notion of a '''port''' in Drawl draws from similar notions in several other packages.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_version_history">Version History</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_version_0_2_0_may_1_2020">Version 0.2.0 - May 1, 2020</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Squares and rectangles</p>
+</li>
+<li>
+<p>Adjacency—left, right, above, below</p>
+</li>
+<li>
+<p>Fill and stroke</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_version_0_1_0_april_8_2020">Version 0.1.0 - April 8, 2020</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Circles</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <h1 id="_developer_s_manual" class="sect0">Developer&#8217;s Manual</h1>
-<div class="sect1">
-<h2 id="__coding_conventions">[[Coding Conventions]]</h2>
-<div class="sectionbody">
-
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p>This part contains information necessary for software developers working on Drawl. This information is not necessary
+for end users who are making diagrams.</p>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="__release_process">[[Release Process]]</h2>
+<h2 id="_coding_conventions">Coding Conventions</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Regarding method names, we follow the following convention:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>asX takes an object of one type and creates a view of that object of a different type.</p>
+</li>
+<li>
+<p>getX gets a property of the object.</p>
+</li>
+<li>
+<p>toX takes an input object and creates a new object of a different type, initialized by the input object.</p>
+</li>
+<li>
+<p>xValue - Converts to a primitive type. For example, <code>BigDecimal</code> has methods <code>doubleValue</code>, <code>floatValue</code>, <code>intValue</code>, <code>longValue</code>, and so on.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="https://stackoverflow.com/questions/25610624/java-method-naming-conventions-totype-and-astype-differences" class="bare">https://stackoverflow.com/questions/25610624/java-method-naming-conventions-totype-and-astype-differences</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_release_process">Release Process</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check in all files</p>
+</li>
+<li>
+<p>Push to origin</p>
+</li>
+<li>
+<p>Create release in GitHub</p>
+</li>
+<li>
+<p>Update the version number in Doxyfile</p>
+</li>
+<li>
+<p>Run Doxygen to update API documentation</p>
+</li>
+<li>
+<p>Pushed updated documentation to GitHub Pages</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <h1 id="_design_philosophy" class="sect0">Design Philosophy</h1>
@@ -673,7 +766,7 @@ configurations.<a href="#graphviz-arrows">[graphviz-arrows]</a></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-09 13:38:25 EDT
+Last updated 2020-05-09 13:57:34 EDT
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
