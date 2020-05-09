@@ -34,8 +34,18 @@ image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/arr
 
 TikZ/PGF offers a large number of parameterized arrow types.<<tigzpgf>>
 
+== API Documentation
+
+=== Public API
+
+https://aarre.github.io/drawl/doxy/public/html/index.html
+
+=== Protected API
+
+https://aarre.github.io/drawl/doxy/protected/html/index.html
+
 [bibliography]
-== References ==
+== References =
 
 [[asymptote]]Hammerlindl, A., Bowman, J., & Prince, T. (n.d.). Asymptote: The Vector Graphics Language (For Version 2.65). Retrieved May 8, 2020, from https://asymptote.sourceforge.io/asymptote.pdf
 
