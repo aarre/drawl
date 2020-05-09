@@ -21,14 +21,14 @@ The Asymptote documentation<<asymptote>> does not say much about arrowheads, but
 Graphviz offers 41 unique arrowheads and allows using them in combination, for more than 3 million possible
 configurations.<<graphviz-arrows>>
 
-image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/arrowheads-graphviz.png[Graphviz arrowheads,250,350]
+image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/arrowheads-graphviz.png[Graphviz arrowheads,350,350]
 
 === PSTRicks
 
 PSTricks offers 14 types of arrowheads, as follows (ignoring line ending options):<<pstricks>>
 
 
-image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/arrowheads-pstricks.png[Arrowheads in PSTricks,250,350]
+image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/arrowheads-pstricks.png[Arrowheads in PSTricks,350,350]
 
 === TikZ/PGF
 
