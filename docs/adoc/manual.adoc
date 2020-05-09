@@ -38,11 +38,11 @@ TikZ/PGF offers a large number of parameterized arrow types.<<tigzpgf>>
 
 === Public API
 
-https://aarre.github.io/drawl/doxy/public/html/index.html
+https://aarre.github.io/drawl/doxy/public/out/html/index.html
 
 === Protected API
 
-https://aarre.github.io/drawl/doxy/protected/html/index.html
+https://aarre.github.io/drawl/doxy/protected/out/html/index.html
 
 [bibliography]
 == References =
