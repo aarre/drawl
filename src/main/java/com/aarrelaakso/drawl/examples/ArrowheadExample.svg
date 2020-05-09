@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><defs>
+<marker id='head' orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>
+<path d='M0,0 V4 L2,2 Z' fill='red' />
+</marker>
+</defs>
+
+<line x1="0" y1="100" x2="100" y2="0" stroke="black" marker-end='url(#head)' /></svg>
