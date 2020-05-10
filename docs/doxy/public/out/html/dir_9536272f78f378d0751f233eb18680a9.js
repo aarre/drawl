@@ -27,6 +27,7 @@ var dir_9536272f78f378d0751f233eb18680a9 =
       [ "Measure", "d9/df3/classcom_1_1aarrelaakso_1_1drawl_1_1_measure.html", "d9/df3/classcom_1_1aarrelaakso_1_1drawl_1_1_measure" ]
     ] ],
     [ "Number.java", "db/d69/_number_8java.html", null ],
+    [ "package-info.java", "d7/db4/package-info_8java.html", null ],
     [ "Point.java", "d0/d5f/_point_8java.html", [
       [ "Point", "de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html", "de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point" ]
     ] ],
