@@ -35,7 +35,9 @@ public class LineTestPublic extends ShapeTestPublic {
 
     @Test
     @DisplayName("When a line is being constructed, then the user can specify the direction to be horizontal")
-    void whenALineIsBeingConstructedThenTheUserCanSpecifyTheDirectionToBeHorizontal()
+    void whenALineIsBeingConstructedThenTheUserCanSpecifyTheDirectionToBeHorizontal() {
+
+    }
 
 
 
