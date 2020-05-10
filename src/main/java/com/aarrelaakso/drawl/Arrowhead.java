@@ -20,7 +20,38 @@ public class Arrowhead {
     private Arrowhead.Type arrowheadType = Type.DEFAULT;
 
     public enum Type {
-        DEFAULT
+        DEFAULT,
+        NORMAL,
+        TRIANGLE,
+        BOX, SQUARE,
+        TURNED_SQUARE, DIAMOND, OPEN_DIAMOND,
+        CROW,
+        DOT, DISK,
+        CIRCLE, ODOT,
+        INVERTED,
+        TEE,
+        VEE,
+        CURVE,
+        PARENTHESIS,
+        ARC_BARB,
+        ROUNDED,
+        RAYS,
+        BRACKET,
+        HOOKS,
+        STRAIGHT_BARB,
+        TEE_BARB,
+        CLASSICAL_TIKZ_RIGHTARROW,
+        COMPUTER_MODERN_RIGHTARROW,
+        ELLIPSE, OPEN_ELLIPSE,
+        KITE,
+        LATEX,
+        RECTANGLE,
+        STEALTH,
+        BUTT_CAP,
+        FAST_ROUND,
+        FAST_TRIANGLE,
+        ROUND_CAP,
+        TRIANGLE_CAP
     }
 
     /**
@@ -41,6 +72,11 @@ public class Arrowhead {
     {
         this.arrowheadType = type;
     }
+
+    // TODO: Need a new constructor (or method/s) to allow for half arrows (right, left)
+
+    // TODO: Need a new constructor (or method/s) to allow for multiple arrows
+
 
     protected String getSVGDef() {
         String newLine = System.getProperty("line.separator");
