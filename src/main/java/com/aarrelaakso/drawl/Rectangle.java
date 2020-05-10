@@ -62,27 +62,27 @@ public class Rectangle extends Shape
         }
         @NotNull final StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<rect");
-        svgBuilder.append(" width=\"");
+        svgBuilder.append(" width='");
         svgBuilder.append(this.getExplicitWidth().toPlainString());
-        svgBuilder.append("\"");
-        svgBuilder.append(" height=\"");
+        svgBuilder.append("'");
+        svgBuilder.append(" height='");
         svgBuilder.append(this.getExplicitHeight().toPlainString());
-        svgBuilder.append("\"");
+        svgBuilder.append("'");
         if (this.getExplicitXPositionLeft() != null) {
-            svgBuilder.append(" x=\"");
+            svgBuilder.append(" x='");
             svgBuilder.append(this.getExplicitXPositionLeft().toSVG());
-            svgBuilder.append("\"");
+            svgBuilder.append("'");
         }
         if (this.getExplicitYPositionTop() != null) {
-            svgBuilder.append(" y=\"");
+            svgBuilder.append(" y='");
             svgBuilder.append(this.getExplicitYPositionTop().toSVG());
-            svgBuilder.append("\"");
+            svgBuilder.append("'");
         }
         if (this.getFill() != null)
         {
-            svgBuilder.append(" fill=\"");
+            svgBuilder.append(" fill='");
             svgBuilder.append(this.getFill());
-            svgBuilder.append("\"");
+            svgBuilder.append("'");
         }
         if (this.getStroke() != null)
         {

@@ -44,7 +44,7 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         this.drawing.add(this.shape1);
         @NotNull final String svg = this.drawing.getSVG(100, 100);
 
-        then(svg).isEqualTo("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><circle r=\"50\" cx=\"50\" cy=\"50\" /></svg>");
+        then(svg).isEqualTo("<?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle r='50' cx='50' cy='50' /></svg>");
     }
 
 
@@ -55,7 +55,7 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         this.drawing.add(this.shape1);
         @NotNull final String svg = this.drawing.getSVG(100, 100);
 
-        assertTrue(svg.contains("circle r=\"50\""));
+        assertTrue(svg.contains("circle r='50'"));
     }
 
     @Test
@@ -67,9 +67,9 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         this.shape2.setRightOf(this.shape1);
         @NotNull final String svg = this.drawing.getSVG(100, 100);
 
-        softly.then(svg).contains("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">")
-                .contains("<circle r=\"25\" cx=\"25\" cy=\"50\" />")
-                .contains("<circle r=\"25\" cx=\"75\" cy=\"50\" />")
+        softly.then(svg).contains("<?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'>")
+                .contains("<circle r='25' cx='25' cy='50' />")
+                .contains("<circle r='25' cx='75' cy='50' />")
                 .contains("</svg>");
     }
 
@@ -80,7 +80,7 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         this.drawing.add(this.shape1);
         final String svg = this.drawing.getSVG(100, 100);
 
-        then(svg).contains("circle r=\"50\" cx=\"50\" cy=\"50\"");
+        then(svg).contains("circle r='50' cx='50' cy='50'");
     }
 
     @Test
@@ -98,7 +98,7 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         this.drawing.add(this.shape1);
         final String svg = this.drawing.getSVG(100, 200);
 
-        then(svg).contains("circle r=\"50\"");
+        then(svg).contains("circle r='50'");
     }
 
     @Test
@@ -109,7 +109,7 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         this.drawing.add(this.shape1);
         final String svg = this.drawing.getSVG(200, 100);
 
-        then(svg).contains("circle r=\"50\"");
+        then(svg).contains("circle r='50'");
     }
 
     @Test
@@ -121,8 +121,8 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         this.drawing.add(this.shape2);
         final String svg = this.drawing.getSVG(200, 100);
 
-        then(svg).contains("circle r=\"50\" cx=\"50\" cy=\"50\"");
-        then(svg).contains("circle r=\"50\" cx=\"150\" cy=\"50\"");
+        then(svg).contains("circle r='50' cx='50' cy='50'");
+        then(svg).contains("circle r='50' cx='150' cy='50'");
     }
 
     @Test
@@ -147,7 +147,7 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         this.drawing.add(this.shape2);
         final String svg = this.drawing.getSVG(200, 200);
 
-        then(svg).isEqualTo("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\"><circle r=\"100\" cx=\"100\" cy=\"100\" /><circle r=\"100\" cx=\"100\" cy=\"100\" /></svg>");
+        then(svg).isEqualTo("<?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><circle r='100' cx='100' cy='100' /><circle r='100' cx='100' cy='100' /></svg>");
     }
 
     @Test
@@ -160,8 +160,8 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         this.shape2.setRightOf(this.shape1);
         final String svg = this.drawing.getSVG(200, 200);
 
-        then(svg).contains("<circle r=\"50\" cx=\"50\" cy=\"100\" />");
-        then(svg).contains("<circle r=\"50\" cx=\"150\" cy=\"100\" />");
+        then(svg).contains("<circle r='50' cx='50' cy='100' />");
+        then(svg).contains("<circle r='50' cx='150' cy='100' />");
     }
 
     @Test
@@ -173,8 +173,8 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
         this.drawing.add(this.shape2);
         final String svg = this.drawing.getSVG(200, 100);
 
-        then(svg).contains("circle r=\"50\" cx=\"50\" cy=\"50\"");
-        then(svg).contains("circle r=\"50\" cx=\"150\" cy=\"50\"");
+        then(svg).contains("circle r='50' cx='50' cy='50'");
+        then(svg).contains("circle r='50' cx='150' cy='50'");
     }
 
     /**
@@ -198,9 +198,9 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
             @NotNull final Integer height = 100;
             @NotNull final String svg = CircleDrawingTestPublic.this.drawing.getSVG(width, height);
 
-            softly.then(svg).contains("cx=\"16.666666\"");
-            softly.then(svg).contains("cx=\"50\"");
-            softly.then(svg).contains("cx=\"83.333336\"");
+            softly.then(svg).contains("cx='16.666666'");
+            softly.then(svg).contains("cx='50'");
+            softly.then(svg).contains("cx='83.333336'");
         }
 
         @Test
@@ -217,9 +217,9 @@ public class CircleDrawingTestPublic extends ShapeDrawingTestPublic
             @NotNull final String svg = CircleDrawingTestPublic.this.drawing.getSVG(width, height);
             logger.atFine().log(svg);
 
-            softly.then(svg).contains("cy=\"16.666666\"");
-            softly.then(svg).contains("cy=\"50\"");
-            softly.then(svg).contains("cy=\"83.333336\"");
+            softly.then(svg).contains("cy='16.666666'");
+            softly.then(svg).contains("cy='50'");
+            softly.then(svg).contains("cy='83.333336'");
         }
     }
 

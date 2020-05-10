@@ -65,7 +65,7 @@ public class TextDrawingTestPublic extends ShapeDrawingTestPublic
         @NotNull final Text text = new Text("Drawl");
         this.drawing.add(text);
         this.drawing.setExplicitDimensions(100, 100);
-        then(this.drawing.getSVG()).contains("y=\"50\"");
+        then(this.drawing.getSVG()).contains("y='50'");
     }
 
 } // end class

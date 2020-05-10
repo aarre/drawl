@@ -8,6 +8,11 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+/**
+ * \file
+ * Defines the Line class and associated constructs.
+ */
+
 package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
@@ -18,20 +23,34 @@ import org.jetbrains.annotations.Nullable;
  */
 public class Line extends Shape {
 
+    /**
+     * How the line should be oriented.
+     */
+    public enum Orientation {
+        HORIZONTAL,       /*!< Orient a Line horizontally. */
+        VERTICAL          /*!< Orient a Line vertically. */
+    }
+
+    /**
+     * What type of arrowhead should be on the line.
+     */
     @Nullable
     private Arrowhead arrowhead;
 
+    @Nullable
+    private Orientation orientation;
+
+    /**
+     * The implicit coordinates of one end of this Line.
+     */
     @NotNull
     private Point point1Implicit = new Point(0, 0);
 
+    /**
+     * The implicit coordinates of the other end of this this line.
+     */
     @NotNull
     private Point point2Implicit = new Point(0, 0);
-
-    @Nullable
-    private Point point1Explicit;
-
-    @Nullable
-    private Point point2Explicit;
 
     /**
      * Constructs a default line whose ends are unknown.
@@ -40,8 +59,24 @@ public class Line extends Shape {
 
     }
 
-    public Arrowhead getArrowhead() {
-        return this.arrowhead;
+    /**
+     * Constructs a line at a particular orientation.
+     *
+     * @param orientation how the line should be oriented.
+     */
+    public Line(Orientation orientation) {
+
+        this.orientation = orientation;
+        if (this.orientation == Orientation.HORIZONTAL) {
+            this.point1Implicit = new Point(0.0, 0.5);
+            this.point2Implicit = new Point(1.0, 0.5);
+        } else if (this.orientation == Orientation.VERTICAL) {
+            this.point1Implicit = new Point(0.5, 0.0);
+            this.point2Implicit = new Point(0.5, 1.0);
+        } else {
+            throw new UnsupportedOperationException("Orientation must be horizontal or vertical");
+        }
+        this.constructFromPoints(point1Implicit, point2Implicit);
     }
 
     /**
@@ -51,6 +86,16 @@ public class Line extends Shape {
      * @param point2Implicit The end of the line in implicit coordinates
      */
     public Line(@NotNull final Point point1Implicit, @NotNull final Point point2Implicit) {
+        this.constructFromPoints(point1Implicit, point2Implicit);
+    }
+
+    /**
+     * Constructs a Line from one point to another. Called by multiple constructors.
+     *
+     * @param point1Implicit The origin of the Line in implicit coordinates.
+     * @param point2Implicit The end of the Line in implicit coordinates.
+     */
+    private void constructFromPoints(Point point1Implicit, Point point2Implicit) {
         this.point1Implicit = point1Implicit;
         this.point2Implicit = point2Implicit;
 
@@ -70,6 +115,10 @@ public class Line extends Shape {
 
     public void addArrowhead(final Arrowhead arrowhead) {
         this.arrowhead = arrowhead;
+    }
+
+    private Arrowhead getArrowhead() {
+        return this.arrowhead;
     }
 
     @Nullable
@@ -107,32 +156,32 @@ public class Line extends Shape {
             svgBuilder.append(this.getArrowhead().getSVGDef());
         }
         svgBuilder.append("\n<line");
-        svgBuilder.append(" x1=\"");
+        svgBuilder.append(" x1='");
         svgBuilder.append(this.getPoint1Explicit().getX().toSVG());
-        svgBuilder.append("\"");
-        svgBuilder.append(" y1=\"");
+        svgBuilder.append("'");
+        svgBuilder.append(" y1='");
         svgBuilder.append(this.getPoint1Explicit().getY().toSVG());
-        svgBuilder.append("\"");
-        svgBuilder.append(" x2=\"");
+        svgBuilder.append("'");
+        svgBuilder.append(" x2='");
         svgBuilder.append(this.getPoint2Explicit().getX().toSVG());
-        svgBuilder.append("\"");
-        svgBuilder.append(" y2=\"");
+        svgBuilder.append("'");
+        svgBuilder.append(" y2='");
         svgBuilder.append(this.getPoint2Explicit().getY().toSVG());
-        svgBuilder.append("\"");
+        svgBuilder.append("'");
 
         if (this.getFill() != null) {
-            svgBuilder.append(" fill=\"");
+            svgBuilder.append(" fill='");
             svgBuilder.append(this.getFill());
-            svgBuilder.append("\"");
+            svgBuilder.append("'");
         }
-        svgBuilder.append(" stroke=\"");
+        svgBuilder.append(" stroke='");
         if (this.getStroke() != null) {
             svgBuilder.append(this.getStroke());
         } else {
             //Our lines are visible by default....
             svgBuilder.append("black");
         }
-        svgBuilder.append("\"");
+        svgBuilder.append("'");
 
         if (this.hasArrowhead()) {
             svgBuilder.append(" marker-end='url(#head)'");
@@ -146,12 +195,9 @@ public class Line extends Shape {
     }
 
     public boolean hasArrowhead() {
-        if (this.arrowhead != null)
-        {
+        if (this.arrowhead != null) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }

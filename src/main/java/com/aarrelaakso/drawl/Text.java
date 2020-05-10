@@ -58,24 +58,24 @@ public class Text extends Shape
         {
             @NotNull final StringBuilder svgBuilder = new StringBuilder();
             svgBuilder.append("<text");
-            svgBuilder.append(" x=\"");
+            svgBuilder.append(" x='");
             svgBuilder.append(this.getExplicitXPositionCenter().toSVG());
-            svgBuilder.append("\"");
-            svgBuilder.append(" y=\"");
+            svgBuilder.append("'");
+            svgBuilder.append(" y='");
             svgBuilder.append(this.getExplicitYPositionCenter().toSVG());
-            svgBuilder.append("\"");
-            svgBuilder.append(" dominant-baseline=\"middle\" text-anchor=\"middle\"");
+            svgBuilder.append("'");
+            svgBuilder.append(" dominant-baseline='middle' text-anchor='middle'");
             if (this.getStroke() != null)
             {
-                svgBuilder.append(" stroke=\"");
+                svgBuilder.append(" stroke='");
                 svgBuilder.append(this.getStroke());
-                svgBuilder.append("\"");
+                svgBuilder.append("'");
             }
             if (this.getFill() != null)
             {
-                svgBuilder.append(" fill=\"");
+                svgBuilder.append(" fill='");
                 svgBuilder.append(this.getFill());
-                svgBuilder.append("\"");
+                svgBuilder.append("'");
             }
             svgBuilder.append(">");
             svgBuilder.append(this);

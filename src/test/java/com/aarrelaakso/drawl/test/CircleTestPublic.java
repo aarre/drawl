@@ -55,7 +55,7 @@ public class CircleTestPublic extends ShapeTestPublic
         @DisplayName("Then the SVG contains the radius")
         void thenSVGContainsRadius() {
             @NotNull final String svg = CircleTestPublic.this.shape1.getSVG();
-            then(svg).contains("r=\"0.5\"");
+            then(svg).contains("r='0.5'");
         }
     }
 

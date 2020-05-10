@@ -47,8 +47,8 @@ public class RectangleDrawingTestProtected extends ShapeDrawingTestProtected
         this.shape1.setExplicitXPositionCenter(x);
         this.shape1.setExplicitYPositionCenter(y);
         @NotNull final String svg = this.drawing.getSVG();
-        softly.then(svg).contains("x=\"0\"")
-                .contains("y=\"0\"");
+        softly.then(svg).contains("x='0'")
+                .contains("y='0'");
     }
 
     @Nested

@@ -11,12 +11,20 @@
 package com.aarrelaakso.drawl.test;
 
 
+import com.aarrelaakso.drawl.Arrowhead;
+import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Line;
+import org.apache.commons.lang3.StringUtils;
+import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
+
+import static org.assertj.core.api.BDDAssertions.then;
 
 /**
  * Tests the public API of Lines.
@@ -33,12 +41,31 @@ public class LineTestPublic extends ShapeTestPublic {
         this.shape3 = new Line();
     }
 
-    @Test
-    @DisplayName("When a line is being constructed, then the user can specify the direction to be horizontal")
-    void whenALineIsBeingConstructedThenTheUserCanSpecifyTheDirectionToBeHorizontal() {
 
+    @DisplayName("When a line is being constructed, then the user can specify the orientation")
+    @ParameterizedTest
+    @EnumSource(Line.Orientation.class)
+    void whenALineIsBeingConstructedThenTheUserCanSpecifyTheOrientation(Line.Orientation orientation) {
+        Line line = new Line(orientation);
+        then(line).isNotNull();
     }
 
+    @DisplayName("When a horizontal line is constructed, then the y coordinates are the same")
+    @Test
+    void whenAHorizontalLineIsConstructedThenTheYCoordinatesAreTheSame(BDDSoftAssertions softly) {
+        final Line line = new Line(Line.Orientation.HORIZONTAL);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG(100,100);
 
+        final String EXPECTED = "y='50'";
+        final int count = StringUtils.countMatches(svg, EXPECTED);
+        softly.then(count)
+                .as("Expecting " + svg + " to contain two instances of " + EXPECTED)
+                .isEqualTo(2);
+
+        softly.then(svg).contains("x1='0'");
+        softly.then(svg).contains("x2='100'");
+    }
 
 }
