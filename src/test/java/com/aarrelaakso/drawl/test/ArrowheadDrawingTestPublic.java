@@ -86,7 +86,7 @@ public class ArrowheadDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<marker id='triangle'");
+        softly.then(svg).contains("<marker id='TRIANGLE'");
     }
 
     @Test
@@ -99,7 +99,7 @@ public class ArrowheadDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<marker id='triangle'");
+        softly.then(svg).contains("<marker id='TRIANGLE'");
     }
 
     @Test
@@ -112,7 +112,7 @@ public class ArrowheadDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<marker id='triangle'");
+        softly.then(svg).contains("<marker id='TRIANGLE'");
     }
 
 }
