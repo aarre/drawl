@@ -8,35 +8,4 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.aarrelaakso.drawl.test;
-
-
-import com.aarrelaakso.drawl.Line;
-import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-
-/**
- * Tests the public API of Lines.
- */
-@ExtendWith(SoftAssertionsExtension.class)
-@DisplayName("Lines - Public API")
-public class LineTestPublic extends ShapeTestPublic {
-
-    @BeforeEach
-    void setUp() {
-        // These values override those in ShapeTestPublic
-        this.shape1 = new Line();
-        this.shape2 = new Line();
-        this.shape3 = new Line();
-    }
-
-    @Test
-    @DisplayName("When a line is being constructed, then the user can specify the direction to be horizontal")
-    void whenALineIsBeingConstructedThenTheUserCanSpecifyTheDirectionToBeHorizontal()
-
-
-
-}
+package com.aarrelaakso.drawl;

@@ -8,20 +8,28 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+/** \file
+ * Defines the Arrowhead class.
+ */
+
 package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Represents heads or tails on the ends of Line
+ * Represents heads or tails on the ends of Lines.
  */
 public class Arrowhead {
 
     private Arrowhead.Type arrowheadType = Type.DEFAULT;
 
+    /**
+     * Defines the different types of arrowheads that are available.
+     */
     public enum Type {
-        DEFAULT, NORMAL, /*!< The default arrowhead, also known as NORMAL */
-        TRIANGLE,
+        DEFAULT,        /*!< The default arrowhead. Synonyms: NORMAL, TRIANGLE. */
+        NORMAL,         /*!< The default arrowhead. Synonyms: DEFAULT, TRIANGLE. */
+        TRIANGLE,       /*!< The default arrowhead. Synonyms: DEFAULT, NORMAL */
         BOX, SQUARE,
         TURNED_SQUARE, DIAMOND, OPEN_DIAMOND,
         CROW,
