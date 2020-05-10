@@ -13,6 +13,7 @@ package com.aarrelaakso.drawl.examples;
 import com.aarrelaakso.drawl.Arrowhead;
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Line;
+import com.aarrelaakso.drawl.Text;
 
 import java.io.IOException;
 
@@ -20,12 +21,14 @@ public class ArrowheadExample {
 
     public static void main(final String[] args) throws IOException {
 
+        final Text text = new Text("DEFAULT, NORMAL, TRIANGLE");
         final Line line = new Line();
         final Arrowhead arrowhead = new Arrowhead();
         line.addArrowhead(arrowhead);
+        line.setRightOf(text);
         final Drawing drawing = new Drawing();
         drawing.add(line);
-        final String svg = drawing.getSVG();
+        drawing.add(text);
 
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 100, 100);
     }
