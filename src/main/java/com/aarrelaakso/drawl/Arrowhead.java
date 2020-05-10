@@ -20,8 +20,7 @@ public class Arrowhead {
     private Arrowhead.Type arrowheadType = Type.DEFAULT;
 
     public enum Type {
-        DEFAULT,
-        NORMAL,
+        DEFAULT, NORMAL, /*!< The default arrowhead, also known as NORMAL */
         TRIANGLE,
         BOX, SQUARE,
         TURNED_SQUARE, DIAMOND, OPEN_DIAMOND,
@@ -83,7 +82,9 @@ public class Arrowhead {
         StringBuilder svg = new StringBuilder();
 
         svg.append("<defs>" + newLine);
-        svg.append("<marker id='head' orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>" + newLine);
+        svg.append("<marker id='");
+        svg.append(this.arrowheadType);
+        svg.append("' orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>" + newLine);
         svg.append("<path d='M0,0 V4 L2,2 Z' fill='red' />" + newLine);
         svg.append("</marker>" + newLine);
         svg.append("</defs>" + newLine);

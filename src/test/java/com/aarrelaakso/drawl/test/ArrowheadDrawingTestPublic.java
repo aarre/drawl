@@ -75,4 +75,44 @@ public class ArrowheadDrawingTestPublic {
         final Arrowhead arrowhead = new Arrowhead(type);
         then(arrowhead).isNotNull();
     }
+
+    @Test
+    @DisplayName("whenALineHasADefaultArrowheadThenItShowsUpInTheSVG")
+    void whenALineHasADefaultArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
+    {
+        final Line line = new Line();
+        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DEFAULT);
+        line.addArrowhead(arrowhead);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='triangle'");
+    }
+
+    @Test
+    @DisplayName("whenALineHasANormalArrowheadThenItShowsUpInTheSVG")
+    void whenALineHasANormalArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
+    {
+        final Line line = new Line();
+        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.NORMAL);
+        line.addArrowhead(arrowhead);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='triangle'");
+    }
+
+    @Test
+    @DisplayName("when A Line Has A triangle ArrowheadThenItShowsUpInTheSVG")
+    void whenALineHasATriangleArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
+    {
+        final Line line = new Line();
+        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.TRIANGLE);
+        line.addArrowhead(arrowhead);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='triangle'");
+    }
+
 }
