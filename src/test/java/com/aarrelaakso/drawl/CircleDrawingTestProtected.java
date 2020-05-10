@@ -96,8 +96,8 @@ public class CircleDrawingTestProtected extends ShapeDrawingTestProtected
         this.shape1.setExplicitXPositionCenter(x);
         this.shape1.setExplicitYPositionCenter(y);
         @NotNull final String svg = this.drawing.getSVG();
-        final String expectedSvgX = "cx=\"50\"";
-        final String expectedSvgY = "cy=\"50\"";
+        final String expectedSvgX = "cx='50'";
+        final String expectedSvgY = "cy='50'";
         softly.then(svg).contains(expectedSvgX)
                 .contains(expectedSvgY);
     }

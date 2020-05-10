@@ -188,26 +188,26 @@ public class Circle extends Shape
 
         @NotNull final StringBuilder svgBuilder = new StringBuilder();
         svgBuilder.append("<circle ");
-        svgBuilder.append("r=\"");
+        svgBuilder.append("r='");
         svgBuilder.append(radiusStringValue);
-        svgBuilder.append("\"");
-        svgBuilder.append(" cx=\"");
+        svgBuilder.append("'");
+        svgBuilder.append(" cx='");
         svgBuilder.append(this.getExplicitXPositionCenter().toSVG());
-        svgBuilder.append("\"");
-        svgBuilder.append(" cy=\"");
+        svgBuilder.append("'");
+        svgBuilder.append(" cy='");
         svgBuilder.append(this.getExplicitYPositionCenter().toSVG());
-        svgBuilder.append("\"");
+        svgBuilder.append("'");
         if (this.getFill() != null)
         {
-            svgBuilder.append(" fill=\"");
+            svgBuilder.append(" fill='");
             svgBuilder.append(this.getFill());
-            svgBuilder.append("\"");
+            svgBuilder.append("'");
         }
         if (this.getStroke() != null)
         {
-            svgBuilder.append(" stroke=\"");
+            svgBuilder.append(" stroke='");
             svgBuilder.append(this.getStroke());
-            svgBuilder.append("\"");
+            svgBuilder.append("'");
         }
         svgBuilder.append(" />");
         if (Boolean.TRUE.equals(this.hasText()))

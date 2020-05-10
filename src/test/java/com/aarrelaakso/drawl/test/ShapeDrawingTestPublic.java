@@ -182,13 +182,13 @@ public abstract class ShapeDrawingTestPublic {
             ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape2);
             ShapeDrawingTestPublic.this.shape2.setRightOf(ShapeDrawingTestPublic.this.shape1, ShapeDrawingTestPublic.this.shape2.getWidth());
             if (ShapeDrawingTestPublic.this.shape1.getClass() == Circle.class) {
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"25\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x='25'");
             } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Rectangle.class) {
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"20\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x='20'");
             } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
                 ((Text) ShapeDrawingTestPublic.this.shape1).setString("Drawl");
                 ((Text) ShapeDrawingTestPublic.this.shape2).setString("Lward");
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"25\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x='25'");
             }
         }
 
@@ -199,13 +199,13 @@ public abstract class ShapeDrawingTestPublic {
             ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape2);
             ShapeDrawingTestPublic.this.shape2.setLeftOf(ShapeDrawingTestPublic.this.shape1, ShapeDrawingTestPublic.this.shape2.getWidth());
             if (ShapeDrawingTestPublic.this.shape1.getClass() == Circle.class) {
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"25\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x='25'");
             } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Rectangle.class) {
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"20\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x='20'");
             } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
                 ((Text) ShapeDrawingTestPublic.this.shape1).setString("Drawl");
                 ((Text) ShapeDrawingTestPublic.this.shape2).setString("Lward");
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x=\"25\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(30, 10)).contains("x='25'");
             }
         }
 
@@ -216,13 +216,13 @@ public abstract class ShapeDrawingTestPublic {
             ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape2);
             ShapeDrawingTestPublic.this.shape2.setAbove(ShapeDrawingTestPublic.this.shape1, ShapeDrawingTestPublic.this.shape2.getWidth());
             if (ShapeDrawingTestPublic.this.shape1.getClass() == Circle.class) {
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"25\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y='25'");
             } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Rectangle.class) {
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"20\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y='20'");
             } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
                 ((Text) ShapeDrawingTestPublic.this.shape1).setString("Drawl");
                 ((Text) ShapeDrawingTestPublic.this.shape2).setString("Lward");
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"25\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y='25'");
             }
         }
 
@@ -233,13 +233,13 @@ public abstract class ShapeDrawingTestPublic {
             ShapeDrawingTestPublic.this.drawing.add(ShapeDrawingTestPublic.this.shape2);
             ShapeDrawingTestPublic.this.shape2.setBelow(ShapeDrawingTestPublic.this.shape1, ShapeDrawingTestPublic.this.shape2.getWidth());
             if (ShapeDrawingTestPublic.this.shape1.getClass() == Circle.class) {
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"25\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y='25'");
             } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Rectangle.class) {
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"20\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y='20'");
             } else if (ShapeDrawingTestPublic.this.shape1.getClass() == Text.class) {
                 ((Text) ShapeDrawingTestPublic.this.shape1).setString("Drawl");
                 ((Text) ShapeDrawingTestPublic.this.shape2).setString("Lward");
-                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y=\"25\"");
+                then(ShapeDrawingTestPublic.this.drawing.getSVG(10, 30)).contains("y='25'");
             }
         }
     }

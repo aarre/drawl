@@ -48,9 +48,9 @@ public class RectangleDrawingTestPublic extends ShapeDrawingTestPublic
             RectangleDrawingTestPublic.this.shape2.setRightOf(RectangleDrawingTestPublic.this.shape1);
             @NotNull final String svg = RectangleDrawingTestPublic.this.drawing.getSVG(100, 100);
 
-            softly.then(svg).contains("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">")
-                    .contains("<rect width=\"50\" height=\"50\" x=\"0\" y=\"25\" />")
-                    .contains("<rect width=\"50\" height=\"50\" x=\"50\" y=\"25\" />")
+            softly.then(svg).contains("<?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'>")
+                    .contains("<rect width='50' height='50' x='0' y='25' />")
+                    .contains("<rect width='50' height='50' x='50' y='25' />")
                     .contains("</svg>");
         }
     }
@@ -72,9 +72,9 @@ public class RectangleDrawingTestPublic extends ShapeDrawingTestPublic
             RectangleDrawingTestPublic.this.shape2.setRightOf(RectangleDrawingTestPublic.this.shape1);
             @NotNull final String svg = RectangleDrawingTestPublic.this.drawing.getSVG(100, 100);
 
-            softly.then(svg).contains("<?xml version=\"1.0\" standalone=\"no\"?><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">")
-                    .contains("<rect width=\"80\" height=\"40\" x=\"20\" y=\"30\" />")
-                    .contains("<rect width=\"20\" height=\"40\" x=\"0\" y=\"30\" />")
+            softly.then(svg).contains("<?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'>")
+                    .contains("<rect width='80' height='40' x='20' y='30' />")
+                    .contains("<rect width='20' height='40' x='0' y='30' />")
                     .contains("</svg>");
         }
 
@@ -93,9 +93,9 @@ public class RectangleDrawingTestPublic extends ShapeDrawingTestPublic
         @NotNull final Integer height = 100;
         @NotNull final String svg = this.drawing.getSVG(width, height);
 
-        softly.then(svg).contains("x=\"0\"");
-        softly.then(svg).contains("x=\"33.333332\"");
-        softly.then(svg).contains("x=\"66.666664\"");
+        softly.then(svg).contains("x='0'");
+        softly.then(svg).contains("x='33.333332'");
+        softly.then(svg).contains("x='66.666664'");
     }
     @Test
     @DisplayName("When a drawing has three vertically adjacent default Rectangles, then the generated SVG is correct")
@@ -110,9 +110,9 @@ public class RectangleDrawingTestPublic extends ShapeDrawingTestPublic
         @NotNull final Integer height = 100;
         @NotNull final String svg = this.drawing.getSVG(width, height);
 
-        softly.then(svg).contains("y=\"0\"");
-        softly.then(svg).contains("y=\"33.333332\"");
-        softly.then(svg).contains("y=\"66.666664\"");
+        softly.then(svg).contains("y='0'");
+        softly.then(svg).contains("y='33.333332'");
+        softly.then(svg).contains("y='66.666664'");
     }
 
 

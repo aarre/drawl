@@ -62,20 +62,20 @@ public abstract class ShapeDrawingTestProtected
         @NotNull final String svg = this.drawing.getSVG();
         if (this.shape1.getClass() == Rectangle.class)
         {
-            softly.then(svg).contains("x=\"0\"")
-                    .contains("y=\"0\"");
+            softly.then(svg).contains("x='0'")
+                    .contains("y='0'");
         }
         else if (this.shape1.getClass() == Line.class)
         {
-            softly.then(svg).contains("x1=\"0\"");
-            softly.then(svg).contains("y1=\"100\"");
-            softly.then(svg).contains("x2=\"100\"");
-            softly.then(svg).contains("y2=\"0\"");
+            softly.then(svg).contains("x1='0'");
+            softly.then(svg).contains("y1='100'");
+            softly.then(svg).contains("x2='100'");
+            softly.then(svg).contains("y2='0'");
         }
         else
         {
-            softly.then(svg).contains("x=\"" + X + "\"")
-                    .contains("y=\"" + Y + "\"");
+            softly.then(svg).contains("x='" + X + "'")
+                    .contains("y='" + Y + "'");
         }
     }
 

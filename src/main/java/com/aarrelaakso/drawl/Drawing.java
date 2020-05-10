@@ -413,23 +413,23 @@ public class Drawing {
      */
     public final @NotNull String getSVG() {
 
-        @NotNull final StringBuilder svgBuilder = new StringBuilder("<?xml version=\"1.0\" standalone=\"no\"?>");
-        svgBuilder.append("<svg xmlns=\"http://www.w3.org/2000/svg\"");
+        @NotNull final StringBuilder svgBuilder = new StringBuilder("<?xml version='1.0' standalone='no'?>");
+        svgBuilder.append("<svg xmlns='http://www.w3.org/2000/svg'");
 
         @Nullable final Number bdWidth = this.getExplicitWidth();
         if (bdWidth != null) {
-            svgBuilder.append(" width=\"");
+            svgBuilder.append(" width='");
             @NotNull final String width = bdWidth.toSVG();
             svgBuilder.append(width);
-            svgBuilder.append("\"");
+            svgBuilder.append("'");
         }
 
         @Nullable final Number bdHeight = this.getExplicitHeight();
         if (bdHeight != null) {
-            svgBuilder.append(" height=\"");
+            svgBuilder.append(" height='");
             @NotNull final String height = bdHeight.toSVG();
             svgBuilder.append(height);
-            svgBuilder.append("\"");
+            svgBuilder.append("'");
         }
 
         svgBuilder.append(">");

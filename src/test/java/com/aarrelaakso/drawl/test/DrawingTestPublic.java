@@ -39,8 +39,8 @@ public class DrawingTestPublic
     void whenSVGIsGeneratedFromADrawingThenItContainsWidthAndHeight() {
         @NotNull final String svg = this.drawing.getSVG(100, 100);
 
-        assertTrue(svg.indexOf("width=\"100\"") > -1);
-        assertTrue(svg.indexOf("height=\"100\"") > -1);
+        assertTrue(svg.indexOf("width='100'") > -1);
+        assertTrue(svg.indexOf("height='100'") > -1);
     }
 
 }

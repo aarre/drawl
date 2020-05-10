@@ -36,6 +36,10 @@ public class Point {
         this.yCoordinate = new DrawlNumber(yCoordinate);
     }
 
+    protected Point(@NotNull final Double xCoordinate, @NotNull final Double yCoordinate) {
+        this.xCoordinate = new DrawlNumber(xCoordinate);
+        this.yCoordinate = new DrawlNumber(yCoordinate);
+    }
     /**
      * Gets the x coordinate of this Point.
      *
