@@ -84,6 +84,25 @@ public class Arrowhead {
 
     // TODO: Need a new constructor (or method/s) to allow for multiple arrows
 
+    // TODO: Need to figure out how to do inverted (outline) arrows
+
+    /**
+     * Returns the canonical representation of this Arrowhead type.
+     *
+     * For example, this function returns Type.TRIANGLE if the Arrowhead type is Type.DEFAULT, Type.NORMAL, or
+     * Type.TRIANGLE.
+     *
+     * @return the canonical representation of this Arrowhead type.
+     */
+    private Type getArrowheadType() {
+        if ((this.arrowheadType == Type.DEFAULT) ||
+                (this.arrowheadType == Type.NORMAL) ||
+                (this.arrowheadType == Type.TRIANGLE)) {
+            return Type.TRIANGLE;
+        } else {
+            return Type.ARC_BARB;
+        }
+    }
 
     protected String getSVGDef() {
         String newLine = System.getProperty("line.separator");
@@ -91,7 +110,7 @@ public class Arrowhead {
 
         svg.append("<defs>" + newLine);
         svg.append("<marker id='");
-        svg.append(this.arrowheadType);
+        svg.append(this.getArrowheadType());
         svg.append("' orient='auto' markerWidth='2' markerHeight='4' refX='0.1' refY='2'>" + newLine);
         svg.append("<path d='M0,0 V4 L2,2 Z' fill='red' />" + newLine);
         svg.append("</marker>" + newLine);
