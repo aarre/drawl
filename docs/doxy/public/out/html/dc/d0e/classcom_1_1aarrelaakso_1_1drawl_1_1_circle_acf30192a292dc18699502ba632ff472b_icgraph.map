@@ -1,0 +1,9 @@
+<map id="com.aarrelaakso.drawl.Circle.getImplicitRadius" name="com.aarrelaakso.drawl.Circle.getImplicitRadius">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#af47784230133956dc4c5ab243d6db1ca" title="Get the implicit diameter of this Circle. " alt="" coords="281,37,494,79"/>
+<area shape="rect" id="node5" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#ac3dd52c69d9c7901f2f24a9ce5f1f57d" title="Get the implicit maximum (rightmost) x&#45;position of this Circle. " alt="" coords="281,103,494,144"/>
+<area shape="rect" id="node6" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a90bb381d5844d5e7519592ad93f9bb57" title="Get the implicit minimum (leftmost) x&#45;position of this Circle. " alt="" coords="281,168,494,209"/>
+<area shape="rect" id="node7" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a1c7a586b8aaf6c801a87d83d646b9918" title="Get the implicit maximum (topmost) y&#45;position of this Circle. " alt="" coords="281,233,494,275"/>
+<area shape="rect" id="node8" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="267,299,508,326"/>
+<area shape="rect" id="node3" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#aa09b7201f7db4d2496a778c0f8a3c195" title="Get the implicit height of this Circle. " alt="" coords="556,5,769,47"/>
+<area shape="rect" id="node4" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a23ce5b287f8126ef727852ff09bd6324" title="Get the implicit width of this Circle. " alt="" coords="556,71,769,112"/>
+</map>

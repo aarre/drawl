@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.Shape.getExplicitXPositionCenter" name="com.aarrelaakso.drawl.Shape.getExplicitXPositionCenter">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="269,5,511,32"/>
+<area shape="rect" id="node3" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html#ab1a6091b007ea4da41de26bc8c6ea021" title="Gets the SVG associated with this Text object. " alt="" coords="273,56,507,83"/>
+</map>

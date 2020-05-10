@@ -1,0 +1,12 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitWidth" name="com.aarrelaakso.drawl.Shape.getImplicitWidth">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a02d73887a309bcd1178b142ad0c7edd9" title="Gets half of the implicit width of this Shape. " alt="" coords="269,152,485,193"/>
+<area shape="rect" id="node11" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a3e2c58984f1bcbc2e9e86cf30868561e" title="Returns a Measure object that represents the width of this Shape. " alt="" coords="269,217,485,259"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0903079fd35e3cfdd6cdc299548a9680" title="Get the implicit maximum (rightmost) x&#45;position of this Shape. " alt="" coords="533,5,749,47"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a89e85848d24dca0fa60ff68d169eef11" title="Sets this Shape&#39;s neighbor to the left with an offset. " alt="" coords="797,49,1013,91"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a264da8a94218b09267c2e177ff0b0951" title="Get the implicit minimum (leftmost) x&#45;position of this Shape. " alt="" coords="533,123,749,164"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8012a3823982d77b563ef61787ccb523" title="Sets this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="797,137,1013,179"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a2f272e8bfa625bb7959d1f722d5ac3df" title="Gets the implicit x position of the left edge of this Shape. " alt="" coords="533,240,749,281"/>
+<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a15599ef4ee30a0ddd372f7cf1b155ce1" title="Gets the implicit x position of the right edge of this Shape. " alt="" coords="533,305,749,347"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aeffa96786ca552adf46924ec77da9555" title="Returns a Point object representing this Shape&#39;s left port. " alt="" coords="797,240,1013,281"/>
+<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a319c78d425ec91e1aef1072a95e349ad" title="Returns a Point object representing this Shape&#39;s left port. " alt="" coords="797,305,1013,347"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitYPositionCenter" name="com.aarrelaakso.drawl.Shape.getImplicitYPositionCenter">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a1c7a586b8aaf6c801a87d83d646b9918" title="Get the implicit maximum (topmost) y&#45;position of this Circle. " alt="" coords="271,5,484,47"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8d44b02976656bf4a81055a2dbae66cb" title="Gets the implicit bottommost y&#45;position of this Shape. " alt="" coords="269,71,485,112"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6a52176302dd9b5d2bfc2d25409c310e" title="Gets the implicit topmost y position of this Shape. " alt="" coords="269,136,485,177"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aeffa96786ca552adf46924ec77da9555" title="Returns a Point object representing this Shape&#39;s left port. " alt="" coords="269,201,485,243"/>
+<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a319c78d425ec91e1aef1072a95e349ad" title="Returns a Point object representing this Shape&#39;s left port. " alt="" coords="269,267,485,308"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aba14efe9a16c0808580963c66b171082" title="Returns a Point object representing this Shape&#39;s bottom port. " alt="" coords="533,71,749,112"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aed4e9caa294aacc973b7a531a960e9e5" title="Returns a Point object representing this Shape&#39;s top port. " alt="" coords="533,136,749,177"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad0b2fb173c0112b71b06cf90709acc3" title="Sets this Shape above another Shape. " alt="" coords="533,201,749,243"/>
+</map>

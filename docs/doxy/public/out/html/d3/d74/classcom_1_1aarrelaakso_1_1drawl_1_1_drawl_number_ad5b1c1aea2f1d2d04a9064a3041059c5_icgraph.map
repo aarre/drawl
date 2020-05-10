@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.DrawlNumber.equals" name="com.aarrelaakso.drawl.DrawlNumber.equals">
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a09dfa96894d84cc9734e41bf4a88ae3b" title="Returns whether this number is equal with the other number. " alt="" coords="244,5,435,47"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a9d60605e816e0cb6430545fa3ea28b19" title="Indicates whether another value is not equal to this SisuBigDecimal. " alt="" coords="244,71,435,112"/>
+</map>

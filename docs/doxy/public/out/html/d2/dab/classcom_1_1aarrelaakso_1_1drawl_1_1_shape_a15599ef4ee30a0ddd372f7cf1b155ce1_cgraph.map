@@ -1,0 +1,6 @@
+<map id="com.aarrelaakso.drawl.Shape.getImplicitXPositionRight" name="com.aarrelaakso.drawl.Shape.getImplicitXPositionRight">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a9632097be62eb03e09145763852bda85" title="Get the implicit x position of the center of this Shape. " alt="" coords="269,5,485,47"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a02d73887a309bcd1178b142ad0c7edd9" title="Gets half of the implicit width of this Shape. " alt="" coords="269,71,485,112"/>
+<area shape="rect" id="node3" href="$de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html#a39d39c84f2d05c9a2551cbc584c47bfc" title="Gets the x coordinate of this Point. " alt="" coords="533,13,752,39"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af8182545b3b1c85ecaee849474f63c6b" title="Gets the implicit width of this Shape. " alt="" coords="535,71,751,112"/>
+</map>

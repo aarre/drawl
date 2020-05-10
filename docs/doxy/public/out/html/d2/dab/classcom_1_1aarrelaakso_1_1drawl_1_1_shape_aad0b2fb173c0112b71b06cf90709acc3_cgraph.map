@@ -1,0 +1,12 @@
+<map id="com.aarrelaakso.drawl.Shape.setAbove" name="com.aarrelaakso.drawl.Shape.setAbove">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6a52176302dd9b5d2bfc2d25409c310e" title="Gets the implicit topmost y position of this Shape. " alt="" coords="269,12,485,53"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a4af0fd7e309ea01bced73076510ef897" title="Gets half of the implicit height of this Shape. " alt="" coords="547,71,763,112"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a79c79420c626b8b2d2534b6c9aa64d8f" title="Sets the implicit y position of this Shape. " alt="" coords="269,129,485,171"/>
+<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a945597709a9d79688e48a9802c86b13b" title="Sets the implicit x position of the center of this Shape. " alt="" coords="269,260,485,301"/>
+<area shape="rect" id="node11" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a28c766b414be0cd8767093f9be557dbd" title="Sets the explicit center position of this Shape. " alt="" coords="269,195,485,236"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a1f27f0adc1716dc60691a7d0c14f2ace" title="Gets the implicit y position of the center of this Shape. " alt="" coords="547,5,763,47"/>
+<area shape="rect" id="node4" href="$de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html#a8247f55c36600e067be27a1586255767" title="Gets the y coordinate of this Point. " alt="" coords="824,13,1043,39"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a3b0ad73b41fe8c9ae66d20f7fc1de7c9" title="Gets the implicit height of this Shape. " alt="" coords="825,71,1041,112"/>
+<area shape="rect" id="node8" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26" title="Returns a Text object that belongs to this Shape, if there is one. " alt="" coords="533,202,776,229"/>
+<area shape="rect" id="node10" href="$de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html#acf1cca24c7cf879f402e1b549a5e3864" title="Sets the x coordinate of this Point. " alt="" coords="545,259,764,286"/>
+</map>

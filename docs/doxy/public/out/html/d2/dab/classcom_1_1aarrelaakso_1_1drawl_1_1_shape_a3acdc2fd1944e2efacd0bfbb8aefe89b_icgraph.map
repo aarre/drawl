@@ -1,0 +1,8 @@
+<map id="com.aarrelaakso.drawl.Shape.getExplicitHalfWidth" name="com.aarrelaakso.drawl.Shape.getExplicitHalfWidth">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#abd7f6c77e2c62100bb72d8ad3085e288" title="Gets the explicit x position of the left edge of this Shape. " alt="" coords="269,57,485,99"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a86920ba43a76d5a02977e5f9ea3509ac" title="Gets the explicit x position of the right edge of this Shape. " alt="" coords="269,123,485,164"/>
+<area shape="rect" id="node3" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#ac8344112f3a5d24cfa4b732f3625af08" title="com.aarrelaakso.drawl.Line.get\lPoint1Explicit" alt="" coords="565,5,768,47"/>
+<area shape="rect" id="node5" href="$d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="533,71,800,98"/>
+<area shape="rect" id="node4" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a54dd70515b691c8afa88f980e10698" title="com.aarrelaakso.drawl.Line.getSVG" alt="" coords="848,71,1079,98"/>
+<area shape="rect" id="node7" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a1f2be99b388cc8bfb6f2bb866c21138f" title="com.aarrelaakso.drawl.Line.get\lPoint2Explicit" alt="" coords="565,123,768,164"/>
+</map>

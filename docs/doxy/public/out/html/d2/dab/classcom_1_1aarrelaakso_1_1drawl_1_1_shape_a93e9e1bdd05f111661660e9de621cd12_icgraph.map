@@ -1,0 +1,4 @@
+<map id="com.aarrelaakso.drawl.Shape.setExplicitYPositionCenter" name="com.aarrelaakso.drawl.Shape.setExplicitYPositionCenter">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8012a3823982d77b563ef61787ccb523" title="Sets this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="269,5,485,47"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a89e85848d24dca0fa60ff68d169eef11" title="Sets this Shape&#39;s neighbor to the left with an offset. " alt="" coords="269,71,485,112"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="com.aarrelaakso.drawl.Shape.getExplicitYPositionCenter" name="com.aarrelaakso.drawl.Shape.getExplicitYPositionCenter">
+<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="269,5,511,32"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a28b8e03381be6afdc7c5c8da48c80afe" title="Gets the explicit y position of the bottom of this Shape. " alt="" coords="282,57,498,98"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8c65dff2026744ae10648de3908165e5" title="Gets the explicit y&#45;position of the top of this Shape. " alt="" coords="282,122,498,163"/>
+<area shape="rect" id="node9" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html#ab1a6091b007ea4da41de26bc8c6ea021" title="Gets the SVG associated with this Text object. " alt="" coords="273,188,507,215"/>
+<area shape="rect" id="node4" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#ac8344112f3a5d24cfa4b732f3625af08" title="com.aarrelaakso.drawl.Line.get\lPoint1Explicit" alt="" coords="591,57,793,98"/>
+<area shape="rect" id="node5" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a54dd70515b691c8afa88f980e10698" title="com.aarrelaakso.drawl.Line.getSVG" alt="" coords="873,97,1104,124"/>
+<area shape="rect" id="node7" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a1f2be99b388cc8bfb6f2bb866c21138f" title="com.aarrelaakso.drawl.Line.get\lPoint2Explicit" alt="" coords="591,122,793,163"/>
+<area shape="rect" id="node8" href="$d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="559,188,825,215"/>
+</map>

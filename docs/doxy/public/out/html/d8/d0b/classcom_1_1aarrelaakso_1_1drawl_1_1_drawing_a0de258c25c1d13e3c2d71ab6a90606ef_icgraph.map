@@ -1,0 +1,12 @@
+<map id="com.aarrelaakso.drawl.Drawing.getExplicitWidth" name="com.aarrelaakso.drawl.Drawing.getExplicitWidth">
+<area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ade424cd3d355473603555ad6ce746e23" title="Get the explicit height of this Drawing. " alt="" coords="280,121,507,163"/>
+<area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a58214bce0e8aa1f15a88f6daaf0e85c6" title="Set the explicit height of this Drawing. " alt="" coords="569,5,795,47"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#afd070929603e97a649a65a888b5f76da" title="Get the ratio of the explicit width of this drawing to the implicit width of its contents. " alt="" coords="569,71,795,112"/>
+<area shape="rect" id="node7" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ada7c8b8df06ba84c1334e98751730500" title="Get the SVG for this Drawing. " alt="" coords="555,305,809,331"/>
+<area shape="rect" id="node11" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a4ac8a97ae89af08cf9ab01dbbe3dc010" title="Sets the explicit dimensions of this Drawing. " alt="" coords="569,239,795,280"/>
+<area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a9b47750a4d38fc2db164f0a0cb0e4a42" title="Get the ratio of explicit measures to implicit measures for this Drawing as a whole. " alt="" coords="871,129,1098,171"/>
+<area shape="rect" id="node6" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a79952c781df3b19936f0f47e2810951d" title="Set the explicit dimensions of this Drawing. " alt="" coords="1160,171,1387,212"/>
+<area shape="rect" id="node8" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ac005562185c059c5cd14a1df92b335d6" title="Get the SVG for this drawing. " alt="" coords="857,246,1112,273"/>
+<area shape="rect" id="node10" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a3cf3359170b92a63cdcb5ab67a18562e" title="Write SVG representing this drawing to a file. " alt="" coords="866,297,1103,339"/>
+<area shape="rect" id="node9" href="$d4/d67/classcom_1_1aarrelaakso_1_1drawl_1_1examples_1_1_arrowhead_example.html#ad77c13fdb08b2be4a9517048463ba379" title="com.aarrelaakso.drawl.examples.\lArrowheadExample.main" alt="" coords="1165,257,1382,299"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.Drawing.getExplicitWidth" name="com.aarrelaakso.drawl.Drawing.getExplicitWidth">
+<area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ade424cd3d355473603555ad6ce746e23" title="Get the explicit height of this Drawing. " alt="" coords="280,60,507,101"/>
+<area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a9b47750a4d38fc2db164f0a0cb0e4a42" title="Get the ratio of explicit measures to implicit measures for this Drawing as a whole. " alt="" coords="555,5,781,47"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#afd070929603e97a649a65a888b5f76da" title="Get the ratio of the explicit width of this drawing to the implicit width of its contents. " alt="" coords="829,64,1056,105"/>
+</map>

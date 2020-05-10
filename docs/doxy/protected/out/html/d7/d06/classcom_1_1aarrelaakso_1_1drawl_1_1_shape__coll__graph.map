@@ -1,4 +1,5 @@
 <map id="com.aarrelaakso.drawl.Shape" name="com.aarrelaakso.drawl.Shape">
-<area shape="rect" id="node7" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html" title="Represents text on a drawing. " alt="" coords="433,437,616,464"/>
-<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="327,118,517,159"/>
+<area shape="rect" id="node9" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html" title="Represents text on a drawing. " alt="" coords="1303,173,1485,200"/>
+<area shape="rect" id="node2" href="$de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html" title="Represents a point on the drawing canvas. " alt="" coords="667,173,853,200"/>
+<area shape="rect" id="node3" href="$d5/d8a/interfacecom_1_1aarrelaakso_1_1drawl_1_1_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="341,143,544,169"/>
 </map>

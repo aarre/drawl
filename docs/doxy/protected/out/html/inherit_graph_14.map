@@ -1,7 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html" title="Abstract class represents shapes such as circles, rectangles, and lines. " alt="" coords="5,81,200,108"/>
-<area shape="rect" id="node2" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html" title="Represents circles. " alt="" coords="261,5,451,32"/>
-<area shape="rect" id="node3" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html" title="Represents lines. " alt="" coords="265,56,447,83"/>
-<area shape="rect" id="node4" href="$d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html" title="Represents rectangles. " alt="" coords="248,107,464,133"/>
-<area shape="rect" id="node5" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html" title="Represents text on a drawing. " alt="" coords="265,157,447,184"/>
+<area shape="rect" id="node2" href="$d5/d8a/interfacecom_1_1aarrelaakso_1_1drawl_1_1_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="145,13,348,39"/>
+<area shape="rect" id="node4" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html" title="Class for mathematical operations with BigDecimal values that are not provided by the BigDecimal clas..." alt="" coords="155,64,338,105"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="396,5,587,47"/>
 </map>

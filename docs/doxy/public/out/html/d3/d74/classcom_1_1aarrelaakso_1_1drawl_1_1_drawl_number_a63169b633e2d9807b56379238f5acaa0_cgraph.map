@@ -1,0 +1,5 @@
+<map id="com.aarrelaakso.drawl.DrawlNumber.toSVG" name="com.aarrelaakso.drawl.DrawlNumber.toSVG">
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a520419e41b314adf719cfcd5939dee01" title="Determines whether this DrawlNumber is an integer. " alt="" coords="244,5,435,47"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a8022d04415c5449344ac1e23658f8802" title="Converts this BigDecimal to an Integer. " alt="" coords="244,71,435,112"/>
+<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ae8442cbd5cc7ab0c35c0302b196b3819" title="Converts this BigDecimal to a Float. " alt="" coords="244,136,435,177"/>
+</map>

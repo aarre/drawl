@@ -1,0 +1,7 @@
+<map id="com.aarrelaakso.drawl.Shape.setImplicitYPositionCenter" name="com.aarrelaakso.drawl.Shape.setImplicitYPositionCenter">
+<area shape="rect" id="node2" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a9e956655eba16543d82728923c3eb4f6" title="Constructs a line from one point to another. " alt="" coords="273,5,482,32"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad0b2fb173c0112b71b06cf90709acc3" title="Sets this Shape above another Shape. " alt="" coords="269,57,485,98"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a63c902c4e79235901744c6d83544fa54" title="Sets this circle below another circle. " alt="" coords="269,122,485,163"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8012a3823982d77b563ef61787ccb523" title="Sets this Shape&#39;s neighbor to the right (this Shape is to the left of that one). " alt="" coords="269,187,485,229"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a89e85848d24dca0fa60ff68d169eef11" title="Sets this Shape&#39;s neighbor to the left with an offset. " alt="" coords="269,253,485,294"/>
+</map>

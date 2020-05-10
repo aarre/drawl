@@ -1,5 +1,6 @@
 <map id="com.aarrelaakso.drawl.Rectangle" name="com.aarrelaakso.drawl.Rectangle">
-<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html" title="Abstract class represents shapes such as circles, rectangles, and lines. " alt="" coords="427,348,622,375"/>
-<area shape="rect" id="node8" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html" title="Represents text on a drawing. " alt="" coords="477,437,660,464"/>
-<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="327,118,517,159"/>
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html" title="Abstract class represents shapes such as circles, rectangles, and lines. " alt="" coords="1033,173,1228,200"/>
+<area shape="rect" id="node10" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html" title="Represents text on a drawing. " alt="" coords="1319,199,1502,225"/>
+<area shape="rect" id="node3" href="$de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html" title="Represents a point on the drawing canvas. " alt="" coords="667,173,853,200"/>
+<area shape="rect" id="node4" href="$d5/d8a/interfacecom_1_1aarrelaakso_1_1drawl_1_1_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="341,143,544,169"/>
 </map>

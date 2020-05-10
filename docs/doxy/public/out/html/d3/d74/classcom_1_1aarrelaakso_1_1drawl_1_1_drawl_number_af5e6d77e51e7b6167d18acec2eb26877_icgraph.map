@@ -1,3 +1,11 @@
 <map id="com.aarrelaakso.drawl.DrawlNumber.doubleValue" name="com.aarrelaakso.drawl.DrawlNumber.doubleValue">
-<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ae5746d5e9b11498f3f081bf4b02da1b3" title="Creates a new instance. " alt="" coords="244,5,435,47"/>
+<area shape="rect" id="node2" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a484120b1cacb13f1266bf1d3f002ce3d" title="Performs addition operation. " alt="" coords="244,5,435,47"/>
+<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a67bb221c313ba22d920db646d130d66f" title="Compares this DrawlNumber to another Number fuzzily. " alt="" coords="244,71,435,112"/>
+<area shape="rect" id="node5" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ad6350a9965757a1ffeb859d71ee0219e" title="Divides with DrawlNumber by another. " alt="" coords="244,136,435,177"/>
+<area shape="rect" id="node7" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ad26a515fb406363d921543b82c428b46" title="Performs multiplication operation. " alt="" coords="244,201,435,243"/>
+<area shape="rect" id="node9" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ab5072a1d6694648646b386c3f7e65b0e" title="Performs subtraction operation. " alt="" coords="244,267,435,308"/>
+<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#adf7216ecb118a2bbd1d4aba6a51110bc" title="Performs addition operation. " alt="" coords="483,5,673,47"/>
+<area shape="rect" id="node6" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a4ba0f1728e95fe494d440c04228041f7" title="Divides this DrawlNumber by a Double. " alt="" coords="483,136,673,177"/>
+<area shape="rect" id="node8" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a5595b3908527eb8a893f9c0a5d061677" title="Performs multiplication operation. " alt="" coords="483,201,673,243"/>
+<area shape="rect" id="node10" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ade985c4a55ea33886939801ceacd254c" title="Performs subtraction operation. " alt="" coords="483,267,673,308"/>
 </map>

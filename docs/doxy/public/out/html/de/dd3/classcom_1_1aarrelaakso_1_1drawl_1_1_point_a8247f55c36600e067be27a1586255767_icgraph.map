@@ -1,0 +1,20 @@
+<map id="com.aarrelaakso.drawl.Point.getY" name="com.aarrelaakso.drawl.Point.getY">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a1e46cc626d5f5e1360d9d35d23cc50ea" title="Gets the explicit y&#45;position of the center of this Shape. " alt="" coords="272,122,488,163"/>
+<area shape="rect" id="node11" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a1f27f0adc1716dc60691a7d0c14f2ace" title="Gets the implicit y position of the center of this Shape. " alt="" coords="272,337,488,378"/>
+<area shape="rect" id="node3" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03" title="Get SVG representing this Circle. " alt="" coords="536,5,777,32"/>
+<area shape="rect" id="node4" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a28b8e03381be6afdc7c5c8da48c80afe" title="Gets the explicit y position of the bottom of this Shape. " alt="" coords="549,57,765,98"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8c65dff2026744ae10648de3908165e5" title="Gets the explicit y&#45;position of the top of this Shape. " alt="" coords="549,122,765,163"/>
+<area shape="rect" id="node10" href="$dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html#ab1a6091b007ea4da41de26bc8c6ea021" title="Gets the SVG associated with this Text object. " alt="" coords="540,188,773,215"/>
+<area shape="rect" id="node5" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#ac8344112f3a5d24cfa4b732f3625af08" title="com.aarrelaakso.drawl.Line.get\lPoint1Explicit" alt="" coords="857,57,1060,98"/>
+<area shape="rect" id="node6" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a54dd70515b691c8afa88f980e10698" title="com.aarrelaakso.drawl.Line.getSVG" alt="" coords="1140,97,1371,124"/>
+<area shape="rect" id="node8" href="$df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a1f2be99b388cc8bfb6f2bb866c21138f" title="com.aarrelaakso.drawl.Line.get\lPoint2Explicit" alt="" coords="857,122,1060,163"/>
+<area shape="rect" id="node9" href="$d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7" title="com.aarrelaakso.drawl.Rectangle.getSVG" alt="" coords="825,188,1092,215"/>
+<area shape="rect" id="node12" href="$dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a1c7a586b8aaf6c801a87d83d646b9918" title="Get the implicit maximum (topmost) y&#45;position of this Circle. " alt="" coords="550,239,763,281"/>
+<area shape="rect" id="node13" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8d44b02976656bf4a81055a2dbae66cb" title="Gets the implicit bottommost y&#45;position of this Shape. " alt="" coords="549,305,765,346"/>
+<area shape="rect" id="node15" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6a52176302dd9b5d2bfc2d25409c310e" title="Gets the implicit topmost y position of this Shape. " alt="" coords="549,370,765,411"/>
+<area shape="rect" id="node18" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aeffa96786ca552adf46924ec77da9555" title="Returns a Point object representing this Shape&#39;s left port. " alt="" coords="549,435,765,477"/>
+<area shape="rect" id="node19" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a319c78d425ec91e1aef1072a95e349ad" title="Returns a Point object representing this Shape&#39;s left port. " alt="" coords="549,501,765,542"/>
+<area shape="rect" id="node14" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aba14efe9a16c0808580963c66b171082" title="Returns a Point object representing this Shape&#39;s bottom port. " alt="" coords="851,305,1067,346"/>
+<area shape="rect" id="node16" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aed4e9caa294aacc973b7a531a960e9e5" title="Returns a Point object representing this Shape&#39;s top port. " alt="" coords="851,370,1067,411"/>
+<area shape="rect" id="node17" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aad0b2fb173c0112b71b06cf90709acc3" title="Sets this Shape above another Shape. " alt="" coords="851,435,1067,477"/>
+</map>

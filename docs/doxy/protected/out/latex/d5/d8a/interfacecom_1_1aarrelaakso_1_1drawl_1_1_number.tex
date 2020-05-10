@@ -1,0 +1,1251 @@
+\hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{}\section{com.\+aarrelaakso.\+drawl.\+Number Interface Reference}
+\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}\index{com.\+aarrelaakso.\+drawl.\+Number@{com.\+aarrelaakso.\+drawl.\+Number}}
+
+
+Class for mathematical operations with Double values that have a similar A\+PI to that of the Big\+Decimal class.  
+
+
+
+
+Inheritance diagram for com.\+aarrelaakso.\+drawl.\+Number\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{d5/de2/interfacecom_1_1aarrelaakso_1_1drawl_1_1_number__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for com.\+aarrelaakso.\+drawl.\+Number\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d78/interfacecom_1_1aarrelaakso_1_1drawl_1_1_number__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a5bba650d5d9651e83c4ff4364d6f6abc}{is\+Integer\+Value} (@Not\+Null final Big\+Decimal bd)
+\begin{DoxyCompactList}\small\item\em Test whether a Big\+Decimal is a mathematical integer. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a731dbb91dcfd46319662f57c26fcf06a}{is\+Integer\+Value} (final float val)
+\begin{DoxyCompactList}\small\item\em Test whether a float is a mathematical integer. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a62af4c1c24c3f9c70dabfe3318e53ac3}{abs} ()
+\begin{DoxyCompactList}\small\item\em Returns absolute value of this number. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a05193401712bbba333a586751633c5f6}{add} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} x)
+\begin{DoxyCompactList}\small\item\em Performs addition operation. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abd063ef436254888b283a30da6fff78a}{add} (final double x)
+\begin{DoxyCompactList}\small\item\em Performs addition operation. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad71ea7d41bcc751bc6e08ccd0d5f9885}{add} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} augend, final Math\+Context mc)
+\begin{DoxyCompactList}\small\item\em Returns a Sisu\+Big\+Decimal whose value is (this + augend), with rounding according to the context settings. \end{DoxyCompactList}\item 
+Big\+Decimal \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a88d32e8ed7137662dc845ac6937107e6}{big\+Decimal\+Value} ()
+\begin{DoxyCompactList}\small\item\em Converts this Sisu\+Big\+Decimal to a Big\+Decimal. \end{DoxyCompactList}\item 
+int \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a8182808f41dc9573e32884e7155f2776}{compare\+To} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} val)
+\begin{DoxyCompactList}\small\item\em Compares this Big\+Decimal with the specified Big\+Decimal. \end{DoxyCompactList}\item 
+int \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abe6993852fed7bc6f13dbda74b78dde3}{compare\+To\+Fuzzy} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} val)
+\begin{DoxyCompactList}\small\item\em Compare this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} to another using the default Math\+Context. \end{DoxyCompactList}\item 
+int \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afb73cae0a12c1d25e450be6270eecfb1}{compare\+To\+Fuzzy} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} val, final Math\+Context mc)
+\begin{DoxyCompactList}\small\item\em Compare this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} to another fuzzily. \end{DoxyCompactList}\item 
+\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_remainder_pair}{Drawl\+Number\+Remainder\+Pair} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abf7f5f2ea47601b2dbf399c68e4bf895}{div\+With\+Remainder} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} x, final int precision)
+\begin{DoxyCompactList}\small\item\em Performs division operation and returns the result with remainder. \end{DoxyCompactList}\item 
+\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_remainder_pair}{Drawl\+Number\+Remainder\+Pair} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ae3fd76a012e2afc4d71a3ccb93bace92}{div\+With\+Remainder} (final double x, final int precision)
+\begin{DoxyCompactList}\small\item\em Performs division operation and returns the result with remainder. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_adfd6e1a6e96cbface21eef9b2d8860d0}{divide} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} divisor, final Math\+Context math\+Context)
+\begin{DoxyCompactList}\small\item\em Divides with \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} by another. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_acfcd993a82faa41956430086986084e7}{divide} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} divisor, final int precision)
+\begin{DoxyCompactList}\small\item\em Divides this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} by another. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aa4a70324e7a3dfd7da7fae72cb7fe5b5}{divide} (final double x, final int precision)
+\begin{DoxyCompactList}\small\item\em Divides this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} by a Double. \end{DoxyCompactList}\item 
+double \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad409a636270d5fcc2591791a4e862179}{double\+Value} ()
+\begin{DoxyCompactList}\small\item\em Returns double representation of this number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afe7ed1040e76bfb7a01c1e3835218827}{equals} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} x)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is equal with the other number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a102dab4f981a76317b20d69d352ddb15}{equals} (final double x)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is equal with the other number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a9cf883b0a5979a9f0420cca2c2ff9d89}{equals} (final Object obj)
+\begin{DoxyCompactList}\small\item\em Compares this Sisu\+Big\+Decimal with the specified Object for equality. \end{DoxyCompactList}\item 
+Float \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad6df5caf5478cc3f85cc808cf39a0610}{float\+Value} ()
+\begin{DoxyCompactList}\small\item\em Converts this Big\+Decimal to a Float. \end{DoxyCompactList}\item 
+int \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a493e402b6856cded24d43022bd1b816a}{hash\+Code} ()
+\begin{DoxyCompactList}\small\item\em Returns the hash code for this Sisu\+Big\+Decimal. \end{DoxyCompactList}\item 
+Integer \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a82bd01108e6f99cba2e83759fa363f39}{int\+Value} ()
+\begin{DoxyCompactList}\small\item\em Converts this Big\+Decimal to an Integer. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aa8ef6fc2e77da054f3a42f2cd81ec8a6}{is\+Equal\+To} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} val)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is equal with another number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a487be710eb911b7f3395014ee8cd4155}{is\+Greater\+Than} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} val)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is greater than the other number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ab3c02c742e083e6850ee6d2fe88e985b}{is\+Greater\+Than} (final double val)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is greater than the other number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a9c3df12a860251807827d670994b89a4}{is\+Greater\+Than\+Or\+Equal\+To} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} val)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is greater or equal to the other number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ae41d4d8a98ecc4a8e9e3be80d1a6b291}{is\+Greater\+Than\+Or\+Equal\+To} (final double val)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is greater or equal to the other number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a33d0b6d8f3aeb0ccb9f710739c80f6e7}{is\+Integer\+Value} ()
+\begin{DoxyCompactList}\small\item\em Determines whether this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} is an integer. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_acc7fec3a209cb27e09a45f17ed9fd4e1}{is\+Less\+Than} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} val)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is less than the other number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a82b299428c48204fb05229dbea2b439b}{is\+Less\+Than} (final double val)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is less than the other number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a195d37075fcef873df2907194e794836}{is\+Less\+Than\+Or\+Equal\+To} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} val)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is less or equal to the other number. \end{DoxyCompactList}\item 
+boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a99ddc795a01b241e97345cfd6b85e00b}{is\+Less\+Than\+Or\+Equal\+To} (final double val)
+\begin{DoxyCompactList}\small\item\em Returns whether this number is less or equal to the other number. \end{DoxyCompactList}\item 
+Boolean \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a4684335f60995aca55e4b972fbb3b8ca}{is\+Not\+Equal\+To} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} val)
+\begin{DoxyCompactList}\small\item\em Indicates whether another value is not equal to this Sisu\+Big\+Decimal. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a4748fed26ef4d662d7a277dc2687acca}{multiply} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} multiplicand)
+\begin{DoxyCompactList}\small\item\em Performs multiplication operation. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a8e43a4a565fb62b7f71a809aa791ecc2}{multiply} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} multiplicand, final Math\+Context mc)
+\begin{DoxyCompactList}\small\item\em Returns a Big\+Decimal whose value is (this × multiplicand), with rounding according to the context settings. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a47435944efde1dec963b401dbdf45d62}{multiply} (final double multiplicand)
+\begin{DoxyCompactList}\small\item\em Performs multiplication operation. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abeb61241a83c318464f15c0059d65885}{negate} ()
+\begin{DoxyCompactList}\small\item\em Negates this number. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a38679e8f0f11db201ee07e3b0541b6a4}{pow} (final int n, final int precision)
+\begin{DoxyCompactList}\small\item\em Returns this number powered by n. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aa49b7b3b06a362bdef37241652f35a44}{round} (final Math\+Context mc)
+\begin{DoxyCompactList}\small\item\em Create a new instance that has same value as this one rounded. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a0d76b3c8e56e9f18a3ce9baf42be705f}{round} (final int places)
+\begin{DoxyCompactList}\small\item\em Create a new instance that has the same value as this one rounded. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ac28e81198ea485a48568a9a543cb5293}{subtract} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} subtrahend)
+\begin{DoxyCompactList}\small\item\em Performs subtraction operation. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aae7cf801905b2510138d37ff932c4d30}{subtract} (@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} subtrahend, final Math\+Context mc)
+\begin{DoxyCompactList}\small\item\em Returns a Big\+Decimal whose value is (this -\/ subtrahend), with rounding according to the context settings. \end{DoxyCompactList}\item 
+\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ac04969f656d823c91e55a798df7d6913}{subtract} (final double subtrahend)
+\begin{DoxyCompactList}\small\item\em Performs subtraction operation. \end{DoxyCompactList}\item 
+String \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a8e672210b2f919571e6b09d4cb95c569}{to\+Fixed\+Decimal\+String} (final int num\+Decimals)
+\begin{DoxyCompactList}\small\item\em Converts number to the string with fixed decimal digits. \end{DoxyCompactList}\item 
+String \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_accc9efbfff1dfc0ff3d6352e3c1cfd4e}{to\+Full\+String} ()
+\begin{DoxyCompactList}\small\item\em Converts this number to the full, containing everything that can be restored. \end{DoxyCompactList}\item 
+String \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a0c6dd9fbd93fdb6d7e487f507d55ba43}{to\+Plain\+String} ()
+\item 
+String \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a9dc0aea5633aebc8f5888b5a194dcd81}{to\+String} ()
+\item 
+String \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a1cb9c85b621dc2669b2f52a4e82bdd3c}{to\+S\+VG} ()
+\begin{DoxyCompactList}\small\item\em Convert this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} to a String for \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g}{S\+VG}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Pattern \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad6cff21beec53c9eb5d47ee035e67aa7}{C\+O\+M\+P\+I\+LE} = Pattern.\+compile(\char`\"{}$^\wedge$0+(?!\$)\char`\"{})
+\item 
+Rounding\+Mode \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a98fc7994c62ec7d9a44b11ba2a5b1b02}{R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE} = Rounding\+Mode.\+H\+A\+L\+F\+\_\+\+UP
+\item 
+int \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a026ad95b5d9df801218f36987bc1982e}{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+NS} = 32
+\item 
+int \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afdeba9a614751537318fdb3500ffea79}{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+NS} = 64
+\item 
+Math\+Context \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad58946b10553ff37f8b02913de34b664}{mc\+Comparisons} = new Math\+Context(\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a026ad95b5d9df801218f36987bc1982e}{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+NS}, \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a98fc7994c62ec7d9a44b11ba2a5b1b02}{R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE})
+\begin{DoxyCompactList}\small\item\em Use this Math\+Context for comparisons. \end{DoxyCompactList}\item 
+Math\+Context \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aee829b12bd1d3dc81ecf7bdf4207f778}{mc\+Operations} = new Math\+Context(\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afdeba9a614751537318fdb3500ffea79}{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+NS}, \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a98fc7994c62ec7d9a44b11ba2a5b1b02}{R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE})
+\begin{DoxyCompactList}\small\item\em Use this Math\+Context for other operations, such as multiplying and dividing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for mathematical operations with Double values that have a similar A\+PI to that of the Big\+Decimal class. 
+
+Makes it easier to swap out a Double implementation for a Big\+Decimal implementation (Sisu\+Big\+Decimal) as needs dictate. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a62af4c1c24c3f9c70dabfe3318e53ac3}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a62af4c1c24c3f9c70dabfe3318e53ac3}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!abs@{abs}}
+\index{abs@{abs}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{abs()}{abs()}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+abs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns absolute value of this number. 
+
+\begin{DoxyReturn}{Returns}
+absolute value of this number 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a2bdcf6f7da129ae45c46f7e91bc65636}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a05193401712bbba333a586751633c5f6}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a05193401712bbba333a586751633c5f6}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!add@{add}}
+\index{add@{add}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+add (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{x }\end{DoxyParamCaption})}
+
+
+
+Performs addition operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & other number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+addition operation result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a484120b1cacb13f1266bf1d3f002ce3d}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abd063ef436254888b283a30da6fff78a}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abd063ef436254888b283a30da6fff78a}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!add@{add}}
+\index{add@{add}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+add (\begin{DoxyParamCaption}\item[{final double}]{x }\end{DoxyParamCaption})}
+
+
+
+Performs addition operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & other number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+addition operation result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_adf7216ecb118a2bbd1d4aba6a51110bc}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad71ea7d41bcc751bc6e08ccd0d5f9885}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad71ea7d41bcc751bc6e08ccd0d5f9885}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!add@{add}}
+\index{add@{add}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+add (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{augend,  }\item[{final Math\+Context}]{mc }\end{DoxyParamCaption})}
+
+
+
+Returns a Sisu\+Big\+Decimal whose value is (this + augend), with rounding according to the context settings. 
+
+If either number is zero and the precision setting is nonzero, then the other number, rounded if necessary, is used as the result.
+
+
+\begin{DoxyParams}{Parameters}
+{\em augend} & value to be added to this Sisu\+Big\+Decimal. \\
+\hline
+{\em mc} & the Math\+Context to use. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this + augend, rounded as necessary 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a1ecd88ae492b29cf92013f7441f488f8}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a88d32e8ed7137662dc845ac6937107e6}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a88d32e8ed7137662dc845ac6937107e6}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!big\+Decimal\+Value@{big\+Decimal\+Value}}
+\index{big\+Decimal\+Value@{big\+Decimal\+Value}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{big\+Decimal\+Value()}{bigDecimalValue()}}
+{\footnotesize\ttfamily Big\+Decimal com.\+aarrelaakso.\+drawl.\+Number.\+big\+Decimal\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converts this Sisu\+Big\+Decimal to a Big\+Decimal. 
+
+\begin{DoxyReturn}{Returns}
+this Sisu\+Big\+Decimal converted to a Big\+Decimal. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_acf97abc572acd173a4d8cd6c5b5c2ecd}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a8182808f41dc9573e32884e7155f2776}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a8182808f41dc9573e32884e7155f2776}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!compare\+To@{compare\+To}}
+\index{compare\+To@{compare\+To}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{compare\+To()}{compareTo()}}
+{\footnotesize\ttfamily int com.\+aarrelaakso.\+drawl.\+Number.\+compare\+To (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{val }\end{DoxyParamCaption})}
+
+
+
+Compares this Big\+Decimal with the specified Big\+Decimal. 
+
+Two Big\+Decimal objects that are equal in value but have a different scale (like 2.\+0 and 2.\+00) are considered equal by this method. 
+
+This method overrides the compare\+To method in the java.\+lang.\+Comparable interface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Big\+Decimal to which this Big\+Decimal is to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1, 0, or 1 as this Big\+Decimal is numerically less than, equal to, or greater than val. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a40d2c6535f85306aaf5b6e5886c51266}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abe6993852fed7bc6f13dbda74b78dde3}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abe6993852fed7bc6f13dbda74b78dde3}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!compare\+To\+Fuzzy@{compare\+To\+Fuzzy}}
+\index{compare\+To\+Fuzzy@{compare\+To\+Fuzzy}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{compare\+To\+Fuzzy()}{compareToFuzzy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int com.\+aarrelaakso.\+drawl.\+Number.\+compare\+To\+Fuzzy (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{val }\end{DoxyParamCaption})}
+
+
+
+Compare this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} to another using the default Math\+Context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The other \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} to compare to this one. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1, 0, or 1 as this Big\+Decimal is numerically less than, equal to, or greater than val. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_ab2624aa98592bb5dd20990c7f5921024}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afb73cae0a12c1d25e450be6270eecfb1}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afb73cae0a12c1d25e450be6270eecfb1}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!compare\+To\+Fuzzy@{compare\+To\+Fuzzy}}
+\index{compare\+To\+Fuzzy@{compare\+To\+Fuzzy}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{compare\+To\+Fuzzy()}{compareToFuzzy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int com.\+aarrelaakso.\+drawl.\+Number.\+compare\+To\+Fuzzy (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{val,  }\item[{final Math\+Context}]{mc }\end{DoxyParamCaption})}
+
+
+
+Compare this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} to another fuzzily. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The other \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} to compare to this one. \\
+\hline
+{\em mc} & A Math\+Context object. The precision field (total number of significant digits) is used as the scale (number of digits to the right of the decimal place) for this operation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1, 0, or 1 as this Big\+Decimal is numerically less than, equal to, or greater than val. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a67bb221c313ba22d920db646d130d66f}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_adfd6e1a6e96cbface21eef9b2d8860d0}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_adfd6e1a6e96cbface21eef9b2d8860d0}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!divide@{divide}}
+\index{divide@{divide}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{divide()}{divide()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+divide (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{divisor,  }\item[{final Math\+Context}]{math\+Context }\end{DoxyParamCaption})}
+
+
+
+Divides with \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} by another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em divisor} & The divisor. \\
+\hline
+{\em math\+Context} & Ignored. Retained for compatibility with \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number}{Sisu\+Number} interface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This divided by val. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_ad6350a9965757a1ffeb859d71ee0219e}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_acfcd993a82faa41956430086986084e7}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_acfcd993a82faa41956430086986084e7}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!divide@{divide}}
+\index{divide@{divide}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{divide()}{divide()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+divide (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{divisor,  }\item[{final int}]{precision }\end{DoxyParamCaption})}
+
+
+
+Divides this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} by another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em divisor} & divisor number \\
+\hline
+{\em precision} & The precision (number of significant digits) of the result. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+division operation result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a24ee9901f4d84a2fc086d4e727bf40c7}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aa4a70324e7a3dfd7da7fae72cb7fe5b5}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aa4a70324e7a3dfd7da7fae72cb7fe5b5}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!divide@{divide}}
+\index{divide@{divide}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{divide()}{divide()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+divide (\begin{DoxyParamCaption}\item[{final double}]{x,  }\item[{final int}]{precision }\end{DoxyParamCaption})}
+
+
+
+Divides this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} by a Double. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & divisor number \\
+\hline
+{\em precision} & precision of the result (see the class level comment for details) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+division operation result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a4ba0f1728e95fe494d440c04228041f7}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abf7f5f2ea47601b2dbf399c68e4bf895}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abf7f5f2ea47601b2dbf399c68e4bf895}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!div\+With\+Remainder@{div\+With\+Remainder}}
+\index{div\+With\+Remainder@{div\+With\+Remainder}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{div\+With\+Remainder()}{divWithRemainder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_remainder_pair}{Drawl\+Number\+Remainder\+Pair} com.\+aarrelaakso.\+drawl.\+Number.\+div\+With\+Remainder (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{x,  }\item[{final int}]{precision }\end{DoxyParamCaption})}
+
+
+
+Performs division operation and returns the result with remainder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & divisor number \\
+\hline
+{\em precision} & This parameter is ignored. It is preserved for interface compatibility with Sisu\+Big\+Decimal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+division operation result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a452c8b23180fe298592093adde0fa87e}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ae3fd76a012e2afc4d71a3ccb93bace92}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ae3fd76a012e2afc4d71a3ccb93bace92}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!div\+With\+Remainder@{div\+With\+Remainder}}
+\index{div\+With\+Remainder@{div\+With\+Remainder}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{div\+With\+Remainder()}{divWithRemainder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_remainder_pair}{Drawl\+Number\+Remainder\+Pair} com.\+aarrelaakso.\+drawl.\+Number.\+div\+With\+Remainder (\begin{DoxyParamCaption}\item[{final double}]{x,  }\item[{final int}]{precision }\end{DoxyParamCaption})}
+
+
+
+Performs division operation and returns the result with remainder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & divisor number \\
+\hline
+{\em precision} & precision of the result (see the class level comment for details) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+division operation result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a6dc7cefb2574b9675ab3bc099760cbd2}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad409a636270d5fcc2591791a4e862179}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad409a636270d5fcc2591791a4e862179}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!double\+Value@{double\+Value}}
+\index{double\+Value@{double\+Value}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{double\+Value()}{doubleValue()}}
+{\footnotesize\ttfamily double com.\+aarrelaakso.\+drawl.\+Number.\+double\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns double representation of this number. 
+
+Conversion might ended up by loosing the precision.
+
+\begin{DoxyReturn}{Returns}
+double representation of this value 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_af5e6d77e51e7b6167d18acec2eb26877}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afe7ed1040e76bfb7a01c1e3835218827}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afe7ed1040e76bfb7a01c1e3835218827}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!equals@{equals}}
+\index{equals@{equals}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{equals()}{equals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+equals (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{x }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is equal with the other number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is equal to the other number 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_ad5b1c1aea2f1d2d04a9064a3041059c5}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a102dab4f981a76317b20d69d352ddb15}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a102dab4f981a76317b20d69d352ddb15}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!equals@{equals}}
+\index{equals@{equals}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{equals()}{equals()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+equals (\begin{DoxyParamCaption}\item[{final double}]{x }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is equal with the other number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is equal to the other number 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a09dfa96894d84cc9734e41bf4a88ae3b}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a9cf883b0a5979a9f0420cca2c2ff9d89}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a9cf883b0a5979a9f0420cca2c2ff9d89}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!equals@{equals}}
+\index{equals@{equals}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{equals()}{equals()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+equals (\begin{DoxyParamCaption}\item[{final Object}]{obj }\end{DoxyParamCaption})}
+
+
+
+Compares this Sisu\+Big\+Decimal with the specified Object for equality. 
+
+Unlike compare\+To, this method considers two Sisu\+Big\+Decimal objects equal only if they are equal in value and scale (thus 2.\+0 is not equal to 2.\+00 when compared by this method).
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & Object to which this Big\+Decimal is to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if and only if the specified Object is a Sisu\+Big\+Decimal whose value and scale are equal to this Sisu\+Big\+Decimal\textquotesingle{}s. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a54d65831347b02b14569ddfc021a4ade}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad6df5caf5478cc3f85cc808cf39a0610}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad6df5caf5478cc3f85cc808cf39a0610}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!float\+Value@{float\+Value}}
+\index{float\+Value@{float\+Value}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{float\+Value()}{floatValue()}}
+{\footnotesize\ttfamily Float com.\+aarrelaakso.\+drawl.\+Number.\+float\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converts this Big\+Decimal to a Float. 
+
+This conversion is similar to the narrowing primitive conversion from double to float as defined in section 5.\+1.\+3 of The Java™ Language Specification\+: if this Big\+Decimal has too great a magnitude to represent as a Float, it will be converted to Float.\+N\+E\+G\+A\+T\+I\+V\+E\+\_\+\+I\+N\+F\+I\+N\+I\+TY or Float.\+P\+O\+S\+I\+T\+I\+V\+E\+\_\+\+I\+N\+F\+I\+N\+I\+TY as appropriate. Note that even when the return value is finite, this conversion can lose information about the precision of the Big\+Decimal value.
+
+\begin{DoxyReturn}{Returns}
+this Sisu\+Big\+Decimal converted to a Float. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_ae8442cbd5cc7ab0c35c0302b196b3819}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a493e402b6856cded24d43022bd1b816a}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a493e402b6856cded24d43022bd1b816a}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!hash\+Code@{hash\+Code}}
+\index{hash\+Code@{hash\+Code}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{hash\+Code()}{hashCode()}}
+{\footnotesize\ttfamily int com.\+aarrelaakso.\+drawl.\+Number.\+hash\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the hash code for this Sisu\+Big\+Decimal. 
+
+Note that two Sisu\+Big\+Decimal objects that are numerically equal but differ in scale (like 2.\+0 and 2.\+00) will generally not have the same hash code.
+
+\begin{DoxyReturn}{Returns}
+hash code for this Big\+Decimal. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a0048361007923e4b902a4581eb9ba45c}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a82bd01108e6f99cba2e83759fa363f39}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a82bd01108e6f99cba2e83759fa363f39}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!int\+Value@{int\+Value}}
+\index{int\+Value@{int\+Value}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{int\+Value()}{intValue()}}
+{\footnotesize\ttfamily Integer com.\+aarrelaakso.\+drawl.\+Number.\+int\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converts this Big\+Decimal to an Integer. 
+
+This conversion is analogous to the narrowing primitive conversion from double to short as defined in section 5.\+1.\+3 of The Java™ Language Specification\+: any fractional part of this Big\+Decimal will be discarded, and if the resulting \char`\"{}\+Big\+Integer\char`\"{} is too big to fit in an int, only the low-\/order 32 bits are returned. Note that this conversion can lose information about the overall magnitude and precision of this Big\+Decimal value as well as return a result with the opposite sign.
+
+\begin{DoxyReturn}{Returns}
+this Big\+Decimal converted to an Integer. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a8022d04415c5449344ac1e23658f8802}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aa8ef6fc2e77da054f3a42f2cd81ec8a6}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aa8ef6fc2e77da054f3a42f2cd81ec8a6}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Equal\+To@{is\+Equal\+To}}
+\index{is\+Equal\+To@{is\+Equal\+To}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Equal\+To()}{isEqualTo()}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Equal\+To (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{val }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is equal with another number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is equal to the other number 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Aarre Laakso 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0, 04/28/2020 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+04/28/2020 
+\end{DoxySince}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_af9c62a136858a5eae279039658a2cfdc}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a487be710eb911b7f3395014ee8cd4155}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a487be710eb911b7f3395014ee8cd4155}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Greater\+Than@{is\+Greater\+Than}}
+\index{is\+Greater\+Than@{is\+Greater\+Than}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Greater\+Than()}{isGreaterThan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Greater\+Than (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{val }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is greater than the other number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is greater than the other one 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a17616696cef2e7b72d2614481182293a}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ab3c02c742e083e6850ee6d2fe88e985b}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ab3c02c742e083e6850ee6d2fe88e985b}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Greater\+Than@{is\+Greater\+Than}}
+\index{is\+Greater\+Than@{is\+Greater\+Than}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Greater\+Than()}{isGreaterThan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Greater\+Than (\begin{DoxyParamCaption}\item[{final double}]{val }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is greater than the other number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is greater than the other one 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_ae60f5bdfeec3c50dec35e5310f163fa4}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a9c3df12a860251807827d670994b89a4}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a9c3df12a860251807827d670994b89a4}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Greater\+Than\+Or\+Equal\+To@{is\+Greater\+Than\+Or\+Equal\+To}}
+\index{is\+Greater\+Than\+Or\+Equal\+To@{is\+Greater\+Than\+Or\+Equal\+To}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Greater\+Than\+Or\+Equal\+To()}{isGreaterThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Greater\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{val }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is greater or equal to the other number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is greater or equal to the other one 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a4818a61a5d26f43b0d5e11cb9f22551f}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ae41d4d8a98ecc4a8e9e3be80d1a6b291}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ae41d4d8a98ecc4a8e9e3be80d1a6b291}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Greater\+Than\+Or\+Equal\+To@{is\+Greater\+Than\+Or\+Equal\+To}}
+\index{is\+Greater\+Than\+Or\+Equal\+To@{is\+Greater\+Than\+Or\+Equal\+To}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Greater\+Than\+Or\+Equal\+To()}{isGreaterThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Greater\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{final double}]{val }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is greater or equal to the other number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is greater or equal to the other one 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a372a1c39c58497d16d02476d7ecd8299}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a5bba650d5d9651e83c4ff4364d6f6abc}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a5bba650d5d9651e83c4ff4364d6f6abc}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Integer\+Value@{is\+Integer\+Value}}
+\index{is\+Integer\+Value@{is\+Integer\+Value}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Integer\+Value()}{isIntegerValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Integer\+Value (\begin{DoxyParamCaption}\item[{@Not\+Null final Big\+Decimal}]{bd }\end{DoxyParamCaption})}
+
+
+
+Test whether a Big\+Decimal is a mathematical integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bd} & the Big\+Decimal value to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if bd is a mathematical integer, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_aae7f631882c9400f8fcc7d5c04441d2b}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a731dbb91dcfd46319662f57c26fcf06a}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a731dbb91dcfd46319662f57c26fcf06a}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Integer\+Value@{is\+Integer\+Value}}
+\index{is\+Integer\+Value@{is\+Integer\+Value}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Integer\+Value()}{isIntegerValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Integer\+Value (\begin{DoxyParamCaption}\item[{final float}]{val }\end{DoxyParamCaption})}
+
+
+
+Test whether a float is a mathematical integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a6400df8bf99b502371a39347f8d7dff2}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a33d0b6d8f3aeb0ccb9f710739c80f6e7}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a33d0b6d8f3aeb0ccb9f710739c80f6e7}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Integer\+Value@{is\+Integer\+Value}}
+\index{is\+Integer\+Value@{is\+Integer\+Value}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Integer\+Value()}{isIntegerValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Integer\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Determines whether this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} is an integer. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily T\+R\+UE} if this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} is an integer, {\ttfamily F\+A\+L\+SE} otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a520419e41b314adf719cfcd5939dee01}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_acc7fec3a209cb27e09a45f17ed9fd4e1}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_acc7fec3a209cb27e09a45f17ed9fd4e1}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Less\+Than@{is\+Less\+Than}}
+\index{is\+Less\+Than@{is\+Less\+Than}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Less\+Than()}{isLessThan()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Less\+Than (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{val }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is less than the other number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is less than the other one 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a6b5501320af37fd5aa623ed4bcbbd104}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a82b299428c48204fb05229dbea2b439b}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a82b299428c48204fb05229dbea2b439b}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Less\+Than@{is\+Less\+Than}}
+\index{is\+Less\+Than@{is\+Less\+Than}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Less\+Than()}{isLessThan()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Less\+Than (\begin{DoxyParamCaption}\item[{final double}]{val }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is less than the other number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is less than the other one 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a01bc433270b27f6b50ea59fd0d5fcc90}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a195d37075fcef873df2907194e794836}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a195d37075fcef873df2907194e794836}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Less\+Than\+Or\+Equal\+To@{is\+Less\+Than\+Or\+Equal\+To}}
+\index{is\+Less\+Than\+Or\+Equal\+To@{is\+Less\+Than\+Or\+Equal\+To}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Less\+Than\+Or\+Equal\+To()}{isLessThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Less\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{val }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is less or equal to the other number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is less than the other one 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_af3936483f84eec933c41b7dc78bb473a}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a99ddc795a01b241e97345cfd6b85e00b}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a99ddc795a01b241e97345cfd6b85e00b}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Less\+Than\+Or\+Equal\+To@{is\+Less\+Than\+Or\+Equal\+To}}
+\index{is\+Less\+Than\+Or\+Equal\+To@{is\+Less\+Than\+Or\+Equal\+To}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Less\+Than\+Or\+Equal\+To()}{isLessThanOrEqualTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Less\+Than\+Or\+Equal\+To (\begin{DoxyParamCaption}\item[{final double}]{val }\end{DoxyParamCaption})}
+
+
+
+Returns whether this number is less or equal to the other number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & tested number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this number is less than the other one 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_af112edcaa36d2518baab553fe11d39fe}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a4684335f60995aca55e4b972fbb3b8ca}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a4684335f60995aca55e4b972fbb3b8ca}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!is\+Not\+Equal\+To@{is\+Not\+Equal\+To}}
+\index{is\+Not\+Equal\+To@{is\+Not\+Equal\+To}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{is\+Not\+Equal\+To()}{isNotEqualTo()}}
+{\footnotesize\ttfamily Boolean com.\+aarrelaakso.\+drawl.\+Number.\+is\+Not\+Equal\+To (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{val }\end{DoxyParamCaption})}
+
+
+
+Indicates whether another value is not equal to this Sisu\+Big\+Decimal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this Sisu\+Big\+Decimal are not equal, False if they are. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Aarre Laakso 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0, 04/28/2020 
+\end{DoxyVersion}
+\begin{DoxySince}{Since}
+1.\+0, 04/28/2020 
+\end{DoxySince}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a9d60605e816e0cb6430545fa3ea28b19}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a4748fed26ef4d662d7a277dc2687acca}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a4748fed26ef4d662d7a277dc2687acca}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!multiply@{multiply}}
+\index{multiply@{multiply}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+multiply (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{multiplicand }\end{DoxyParamCaption})}
+
+
+
+Performs multiplication operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em multiplicand} & other number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+multiplication result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_ad26a515fb406363d921543b82c428b46}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a8e43a4a565fb62b7f71a809aa791ecc2}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a8e43a4a565fb62b7f71a809aa791ecc2}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!multiply@{multiply}}
+\index{multiply@{multiply}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+multiply (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{multiplicand,  }\item[{final Math\+Context}]{mc }\end{DoxyParamCaption})}
+
+
+
+Returns a Big\+Decimal whose value is (this × multiplicand), with rounding according to the context settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em multiplicand} & value to be multiplied by this Big\+Decimal. \\
+\hline
+{\em mc} & Ignored. Preserved for interface compatibility with Sisu\+Big\+Decimal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this $\ast$ multiplicand, rounded as necessary. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & if the result is inexact but the rounding mode is U\+N\+N\+E\+C\+E\+S\+S\+A\+RY. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a11144527a91f9a750b9042a3ac84f631}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a47435944efde1dec963b401dbdf45d62}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a47435944efde1dec963b401dbdf45d62}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!multiply@{multiply}}
+\index{multiply@{multiply}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+multiply (\begin{DoxyParamCaption}\item[{final double}]{multiplicand }\end{DoxyParamCaption})}
+
+
+
+Performs multiplication operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em multiplicand} & other number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+addition multiplication result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a5595b3908527eb8a893f9c0a5d061677}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abeb61241a83c318464f15c0059d65885}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_abeb61241a83c318464f15c0059d65885}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!negate@{negate}}
+\index{negate@{negate}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{negate()}{negate()}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+negate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Negates this number. 
+
+\begin{DoxyReturn}{Returns}
+negative of this number 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a7cfa9c1e6042505b82277cb795cc84e3}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a38679e8f0f11db201ee07e3b0541b6a4}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a38679e8f0f11db201ee07e3b0541b6a4}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!pow@{pow}}
+\index{pow@{pow}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{pow()}{pow()}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+pow (\begin{DoxyParamCaption}\item[{final int}]{n,  }\item[{final int}]{precision }\end{DoxyParamCaption})}
+
+
+
+Returns this number powered by n. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & power \\
+\hline
+{\em precision} & Ignored. Provided for compatibility with Sisu\+Big\+Decimal interface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+power operation result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a13f1ea57cce88e852cd7e01b0b3e8cf2}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aa49b7b3b06a362bdef37241652f35a44}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aa49b7b3b06a362bdef37241652f35a44}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!round@{round}}
+\index{round@{round}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{round()}{round()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+round (\begin{DoxyParamCaption}\item[{final Math\+Context}]{mc }\end{DoxyParamCaption})}
+
+
+
+Create a new instance that has same value as this one rounded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mc} & Ignored. Provided for interface compatibility with Sisu\+Big\+Decimal. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new instance of Sisu\+Big\+Decimal that has the same value as this one rounded. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_aec6cdb055d029b375d5dc72f87926a11}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a0d76b3c8e56e9f18a3ce9baf42be705f}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a0d76b3c8e56e9f18a3ce9baf42be705f}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!round@{round}}
+\index{round@{round}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{round()}{round()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+round (\begin{DoxyParamCaption}\item[{final int}]{places }\end{DoxyParamCaption})}
+
+
+
+Create a new instance that has the same value as this one rounded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em places} & How many decimal places to preserve in the new instance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a9755cb62f7e9df1377379aa6781b8de0}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ac28e81198ea485a48568a9a543cb5293}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ac28e81198ea485a48568a9a543cb5293}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!subtract@{subtract}}
+\index{subtract@{subtract}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+subtract (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{subtrahend }\end{DoxyParamCaption})}
+
+
+
+Performs subtraction operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subtrahend} & value to be subtracted from this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+addition subtraction result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_ab5072a1d6694648646b386c3f7e65b0e}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aae7cf801905b2510138d37ff932c4d30}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aae7cf801905b2510138d37ff932c4d30}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!subtract@{subtract}}
+\index{subtract@{subtract}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+subtract (\begin{DoxyParamCaption}\item[{@Not\+Null final \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number}}]{subtrahend,  }\item[{final Math\+Context}]{mc }\end{DoxyParamCaption})}
+
+
+
+Returns a Big\+Decimal whose value is (this -\/ subtrahend), with rounding according to the context settings. 
+
+If subtrahend is zero, then this, rounded if necessary, is used as the result. If this is zero then the result is subtrahend.\+negate(mc).
+
+
+\begin{DoxyParams}{Parameters}
+{\em subtrahend} & value to be subtracted from this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number}. \\
+\hline
+{\em mc} & Ignored. Preserved for compatibility with the Sisu\+Big\+Decimal interface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this -\/ subtrahend, rounded as necessary 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Arithmetic\+Exception} & if the result is inexact but the rounding mode is U\+N\+N\+E\+C\+E\+S\+S\+A\+RY. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_aaf0d1f797d24144d3ec2dba861217cb9}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ac04969f656d823c91e55a798df7d6913}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ac04969f656d823c91e55a798df7d6913}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!subtract@{subtract}}
+\index{subtract@{subtract}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{subtract()}{subtract()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number}{Number} com.\+aarrelaakso.\+drawl.\+Number.\+subtract (\begin{DoxyParamCaption}\item[{final double}]{subtrahend }\end{DoxyParamCaption})}
+
+
+
+Performs subtraction operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em subtrahend} & value to be subtracted from this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+addition subtraction result 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_ade985c4a55ea33886939801ceacd254c}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a8e672210b2f919571e6b09d4cb95c569}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a8e672210b2f919571e6b09d4cb95c569}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!to\+Fixed\+Decimal\+String@{to\+Fixed\+Decimal\+String}}
+\index{to\+Fixed\+Decimal\+String@{to\+Fixed\+Decimal\+String}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{to\+Fixed\+Decimal\+String()}{toFixedDecimalString()}}
+{\footnotesize\ttfamily String com.\+aarrelaakso.\+drawl.\+Number.\+to\+Fixed\+Decimal\+String (\begin{DoxyParamCaption}\item[{final int}]{num\+Decimals }\end{DoxyParamCaption})}
+
+
+
+Converts number to the string with fixed decimal digits. 
+
+This method might truncate some numbers or add extra zeros at the end.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Decimals} & number of decimals, must be non negative \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number as a plain string with specified number of decimals 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a5fe84caaf56b210850be966218f70ca9}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_accc9efbfff1dfc0ff3d6352e3c1cfd4e}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_accc9efbfff1dfc0ff3d6352e3c1cfd4e}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!to\+Full\+String@{to\+Full\+String}}
+\index{to\+Full\+String@{to\+Full\+String}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{to\+Full\+String()}{toFullString()}}
+{\footnotesize\ttfamily String com.\+aarrelaakso.\+drawl.\+Number.\+to\+Full\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Converts this number to the full, containing everything that can be restored. 
+
+\begin{DoxyReturn}{Returns}
+number in it\textquotesingle{}s string representation 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_afa8d185aa5f961e7d54e62c96d788660}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a0c6dd9fbd93fdb6d7e487f507d55ba43}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a0c6dd9fbd93fdb6d7e487f507d55ba43}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!to\+Plain\+String@{to\+Plain\+String}}
+\index{to\+Plain\+String@{to\+Plain\+String}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{to\+Plain\+String()}{toPlainString()}}
+{\footnotesize\ttfamily String com.\+aarrelaakso.\+drawl.\+Number.\+to\+Plain\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+a string representation of this Sisu\+Big\+Decimal without an exponent field. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a07c4c1c3a0e81ae9aef3325bef3e0152}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a9dc0aea5633aebc8f5888b5a194dcd81}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a9dc0aea5633aebc8f5888b5a194dcd81}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String com.\+aarrelaakso.\+drawl.\+Number.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a24775bf5217d477c4b39149596210184}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a1cb9c85b621dc2669b2f52a4e82bdd3c}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a1cb9c85b621dc2669b2f52a4e82bdd3c}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!to\+S\+VG@{to\+S\+VG}}
+\index{to\+S\+VG@{to\+S\+VG}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{to\+S\+V\+G()}{toSVG()}}
+{\footnotesize\ttfamily String com.\+aarrelaakso.\+drawl.\+Number.\+to\+S\+VG (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Convert this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number}{Drawl\+Number} to a String for \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g}{S\+VG}. 
+
+The number will be represented with as many decimal points as necessary for \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g}{S\+VG} and no more than \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g}{S\+VG} can handle. 
+
+Implemented in \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_a63169b633e2d9807b56379238f5acaa0}{com.\+aarrelaakso.\+drawl.\+Drawl\+Number}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad6cff21beec53c9eb5d47ee035e67aa7}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad6cff21beec53c9eb5d47ee035e67aa7}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!C\+O\+M\+P\+I\+LE@{C\+O\+M\+P\+I\+LE}}
+\index{C\+O\+M\+P\+I\+LE@{C\+O\+M\+P\+I\+LE}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{C\+O\+M\+P\+I\+LE}{COMPILE}}
+{\footnotesize\ttfamily Pattern com.\+aarrelaakso.\+drawl.\+Number.\+C\+O\+M\+P\+I\+LE = Pattern.\+compile(\char`\"{}$^\wedge$0+(?!\$)\char`\"{})}
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad58946b10553ff37f8b02913de34b664}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_ad58946b10553ff37f8b02913de34b664}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!mc\+Comparisons@{mc\+Comparisons}}
+\index{mc\+Comparisons@{mc\+Comparisons}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{mc\+Comparisons}{mcComparisons}}
+{\footnotesize\ttfamily Math\+Context com.\+aarrelaakso.\+drawl.\+Number.\+mc\+Comparisons = new Math\+Context(\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a026ad95b5d9df801218f36987bc1982e}{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+NS}, \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a98fc7994c62ec7d9a44b11ba2a5b1b02}{R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE})}
+
+
+
+Use this Math\+Context for comparisons. 
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aee829b12bd1d3dc81ecf7bdf4207f778}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_aee829b12bd1d3dc81ecf7bdf4207f778}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!mc\+Operations@{mc\+Operations}}
+\index{mc\+Operations@{mc\+Operations}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{mc\+Operations}{mcOperations}}
+{\footnotesize\ttfamily Math\+Context com.\+aarrelaakso.\+drawl.\+Number.\+mc\+Operations = new Math\+Context(\hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afdeba9a614751537318fdb3500ffea79}{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+NS}, \hyperlink{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a98fc7994c62ec7d9a44b11ba2a5b1b02}{R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE})}
+
+
+
+Use this Math\+Context for other operations, such as multiplying and dividing. 
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a98fc7994c62ec7d9a44b11ba2a5b1b02}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a98fc7994c62ec7d9a44b11ba2a5b1b02}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE@{R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE}}
+\index{R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE@{R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE}{ROUNDING\_MODE}}
+{\footnotesize\ttfamily Rounding\+Mode com.\+aarrelaakso.\+drawl.\+Number.\+R\+O\+U\+N\+D\+I\+N\+G\+\_\+\+M\+O\+DE = Rounding\+Mode.\+H\+A\+L\+F\+\_\+\+UP}
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a026ad95b5d9df801218f36987bc1982e}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_a026ad95b5d9df801218f36987bc1982e}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+NS@{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+NS}}
+\index{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+NS@{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+NS}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+NS}{SCALE\_FOR\_COMPARISONS}}
+{\footnotesize\ttfamily int com.\+aarrelaakso.\+drawl.\+Number.\+S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+C\+O\+M\+P\+A\+R\+I\+S\+O\+NS = 32}
+
+\mbox{\Hypertarget{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afdeba9a614751537318fdb3500ffea79}\label{interfacecom_1_1aarrelaakso_1_1drawl_1_1_number_afdeba9a614751537318fdb3500ffea79}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}!S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+NS@{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+NS}}
+\index{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+NS@{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+NS}!com\+::aarrelaakso\+::drawl\+::\+Number@{com\+::aarrelaakso\+::drawl\+::\+Number}}
+\subsubsection{\texorpdfstring{S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+NS}{SCALE\_FOR\_OPERATIONS}}
+{\footnotesize\ttfamily int com.\+aarrelaakso.\+drawl.\+Number.\+S\+C\+A\+L\+E\+\_\+\+F\+O\+R\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+NS = 64}
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/d/\+One\+Drive/\+Documents/src/drawl/src/main/java/com/aarrelaakso/drawl/\hyperlink{_number_8java}{Number.\+java}\end{DoxyCompactItemize}

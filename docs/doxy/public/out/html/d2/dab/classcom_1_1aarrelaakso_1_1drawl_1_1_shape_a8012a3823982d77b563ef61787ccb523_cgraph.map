@@ -1,0 +1,12 @@
+<map id="com.aarrelaakso.drawl.Shape.setLeftOf" name="com.aarrelaakso.drawl.Shape.setLeftOf">
+<area shape="rect" id="node2" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a264da8a94218b09267c2e177ff0b0951" title="Get the implicit minimum (leftmost) x&#45;position of this Shape. " alt="" coords="269,12,485,53"/>
+<area shape="rect" id="node5" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a02d73887a309bcd1178b142ad0c7edd9" title="Gets half of the implicit width of this Shape. " alt="" coords="547,71,763,112"/>
+<area shape="rect" id="node7" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a945597709a9d79688e48a9802c86b13b" title="Sets the implicit x position of the center of this Shape. " alt="" coords="269,129,485,171"/>
+<area shape="rect" id="node10" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a79c79420c626b8b2d2534b6c9aa64d8f" title="Sets the implicit y position of this Shape. " alt="" coords="269,195,485,236"/>
+<area shape="rect" id="node11" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a93e9e1bdd05f111661660e9de621cd12" title="Sets the explicit y&#45;position of the center of this Shape. " alt="" coords="269,260,485,301"/>
+<area shape="rect" id="node3" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a9632097be62eb03e09145763852bda85" title="Get the implicit x position of the center of this Shape. " alt="" coords="547,5,763,47"/>
+<area shape="rect" id="node4" href="$de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html#a39d39c84f2d05c9a2551cbc584c47bfc" title="Gets the x coordinate of this Point. " alt="" coords="824,13,1043,39"/>
+<area shape="rect" id="node6" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af8182545b3b1c85ecaee849474f63c6b" title="Gets the implicit width of this Shape. " alt="" coords="825,71,1041,112"/>
+<area shape="rect" id="node8" href="$de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html#acf1cca24c7cf879f402e1b549a5e3864" title="Sets the x coordinate of this Point. " alt="" coords="545,137,764,163"/>
+<area shape="rect" id="node9" href="$d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26" title="Returns a Text object that belongs to this Shape, if there is one. " alt="" coords="533,194,776,221"/>
+</map>
