@@ -53,6 +53,12 @@ public class Line extends Shape {
     private Point point2Implicit = new Point(0, 0);
 
     /**
+     * The line thickness
+     */
+    private Double thickness;
+
+
+    /**
      * Constructs a default line whose ends are unknown.
      */
     public Line() {
@@ -187,6 +193,12 @@ public class Line extends Shape {
         }
         svgBuilder.append("'");
 
+        if (this.thickness != null) {
+            svgBuilder.append(" stroke-width='");
+            svgBuilder.append(DrawlNumber.valueOf(this.getThickness()).toSVG());
+            svgBuilder.append("'");
+        }
+
         if (this.hasArrowhead()) {
             svgBuilder.append(" marker-end='url(#");
             svgBuilder.append(this.arrowhead.getArrowheadType());
@@ -198,6 +210,14 @@ public class Line extends Shape {
             svgBuilder.append(this.getText().getSVG());
         }
         return svgBuilder.toString();
+    }
+
+    public void setThickness(double thickness) {
+        this.thickness = thickness;
+    }
+
+    public double getThickness() {
+        return this.thickness;
     }
 
     public boolean hasArrowhead() {

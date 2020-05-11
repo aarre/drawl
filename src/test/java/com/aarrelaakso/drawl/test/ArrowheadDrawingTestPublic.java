@@ -115,4 +115,87 @@ public class ArrowheadDrawingTestPublic {
         softly.then(svg).contains("<marker id='TRIANGLE'");
     }
 
+    @Test
+    @DisplayName("When a line has a box arrowhead then it shows up in the SVG")
+    void whenALineHasABoxArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
+    {
+        final Line line = new Line();
+        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.BOX);
+        line.addArrowhead(arrowhead);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='BOX'");
+        softly.then(svg).contains("<path d='M0,0 L0,6 L6,6 L6,0 z'");
+    }
+
+    @Test
+    @DisplayName("When a line has a square arrowhead then it shows up in the SVG")
+    void whenALineHasASquareArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
+    {
+        final Line line = new Line();
+        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.SQUARE);
+        line.addArrowhead(arrowhead);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='BOX'");
+        softly.then(svg).contains("<path d='M0,0 L0,6 L6,6 L6,0 z'");
+    }
+
+    @Test
+    @DisplayName("When a line has a diamond arrowhead, then it shows up in the SVG")
+    void whenALineHasADiamondArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
+    {
+        final Line line = new Line();
+        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DIAMOND);
+        line.addArrowhead(arrowhead);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='DIAMOND'");
+        softly.then(svg).contains("<path d='M3,0 L6,3 L3,6 L0,3 z'");
+    }
+
+    @Test
+    @DisplayName("When a line has a turned square arrowhead, then it shows up in the SVG")
+    void whenALineHasATurnedSquareArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
+    {
+        final Line line = new Line();
+        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.TURNED_SQUARE);
+        line.addArrowhead(arrowhead);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='DIAMOND'");
+        softly.then(svg).contains("<path d='M3,0 L6,3 L3,6 L0,3 z'");
+    }
+
+    @Test
+    @DisplayName("When a line has a disk arrowhead, then it shows up in the SVG")
+    void whenALineHasADiskArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
+    {
+        final Line line = new Line();
+        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DISK);
+        line.addArrowhead(arrowhead);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='DOT' orient='auto' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='5' markerHeight='5'>");
+        softly.then(svg).contains("<circle cx='5' cy='5' r='5' fill='red' />");
+    }
+
+    @Test
+    @DisplayName("When a line has a dot arrowhead, then it shows up in the SVG")
+    void whenALineHasADotArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
+    {
+        final Line line = new Line();
+        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DOT);
+        line.addArrowhead(arrowhead);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='DOT' orient='auto' viewBox='0 0 10 10' refX='5' refY='5' markerWidth='5' markerHeight='5'>");
+        softly.then(svg).contains("<circle cx='5' cy='5' r='5' fill='red' />");
+    }
 }
