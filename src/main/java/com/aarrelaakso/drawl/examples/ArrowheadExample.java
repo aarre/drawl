@@ -10,10 +10,7 @@
 
 package com.aarrelaakso.drawl.examples;
 
-import com.aarrelaakso.drawl.Arrowhead;
-import com.aarrelaakso.drawl.Drawing;
-import com.aarrelaakso.drawl.Line;
-import com.aarrelaakso.drawl.Text;
+import com.aarrelaakso.drawl.*;
 
 import java.io.IOException;
 
@@ -22,7 +19,9 @@ public class ArrowheadExample {
     public static void main(final String[] args) throws IOException {
 
         final Text text = new Text("DEFAULT, NORMAL, TRIANGLE");
+        Measure textWidth = text.getWidth();
         final Line line = new Line(Line.Orientation.HORIZONTAL);
+        line.setWidth(textWidth);
         final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DEFAULT);
         line.addArrowhead(arrowhead);
         line.setRightOf(text);

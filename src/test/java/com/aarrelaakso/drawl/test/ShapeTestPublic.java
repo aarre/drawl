@@ -11,6 +11,7 @@
 package com.aarrelaakso.drawl.test;
 
 import com.aarrelaakso.drawl.Line;
+import com.aarrelaakso.drawl.Measure;
 import com.aarrelaakso.drawl.Point;
 import com.aarrelaakso.drawl.Shape;
 import com.google.common.flogger.FluentLogger;
@@ -167,4 +168,28 @@ public abstract class ShapeTestPublic {
         }
     }
 
+    /**
+     * Tests getting the width of Shapes.
+     */
+    @Nested
+    @DisplayName("Width")
+    @TestMethodOrder(MethodOrderer.Alphanumeric.class)
+    class Width {
+
+        @Test
+        @DisplayName("When a shape is created, then you can get its width")
+        void whenAShapeIsCreatedThenYouCanGetItsWidth(BDDSoftAssertions softly) {
+            Measure width = shape1.getWidth();
+            softly.then(width).isNotNull();
+        }
+
+        @Test
+        @DisplayName("When a shape has been created, then you can set its width")
+        void whenAShapeHasBeenCreatedThenYouCanSetItsWidth(BDDSoftAssertions softly) {
+            Measure width = shape1.getWidth();
+            shape2.setWidth(width);
+            Measure width2 = shape2.getWidth();
+            softly.then(width2).isEqualByComparingTo(width);
+        }
+    }
 }

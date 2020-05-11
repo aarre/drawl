@@ -57,7 +57,7 @@ public class LineTestPublic extends ShapeTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG(100,100);
-        
+
         softly.then(svg).contains("x1='0'");
         softly.then(svg).contains("y1='50'");
         softly.then(svg).contains("x2='100'");

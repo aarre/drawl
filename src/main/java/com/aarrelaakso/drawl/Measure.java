@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  * Defines a public Measure class to represent measures on the diagram without exposing internal numerical
  * measurements to the user.
  */
-public class Measure
+public class Measure implements Comparable<Measure>
 {
     private final Number length;
 
@@ -45,6 +45,13 @@ public class Measure
         this.length = new DrawlNumber(length);
     }
 
+
+    @Override
+    public final int compareTo(Measure other)
+    {
+        return this.toDrawlNumber().compareTo(other.toDrawlNumber());
+    }
+
     /**
      * Converts this Measure to a DrawlNumber.
      *
@@ -53,5 +60,9 @@ public class Measure
     protected Number toDrawlNumber()
     {
         return this.length;
+    }
+
+    public String toSVG() {
+        return this.length.toSVG();
     }
 }

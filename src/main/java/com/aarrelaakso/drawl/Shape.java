@@ -638,6 +638,13 @@ public class Shape {
     }
 
     /**
+     * Sets the width of this object.
+     */
+    public void setWidth(Measure width) {
+        this.setImplicitWidth(width.toDrawlNumber());
+    }
+
+    /**
      * Returns a Measure object that represents the width of this Shape.
      *
      * @return
