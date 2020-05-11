@@ -64,4 +64,17 @@ public class LineTestPublic extends ShapeTestPublic {
         softly.then(svg).contains("y2='50'");
     }
 
+    @Test
+    @DisplayName("When a line has been constructed, then the user can specify the thickness")
+    void whenALineHasBeenConstructedThenTheUserCanSpecifyTheThickness() {
+        Line line = new Line();
+        double EXPECTED = 3;
+        line.setThickness(EXPECTED);
+        double ACTUAL = line.getThickness();
+        then(ACTUAL).isEqualTo(EXPECTED);
+    }
+
+
+
+
 }

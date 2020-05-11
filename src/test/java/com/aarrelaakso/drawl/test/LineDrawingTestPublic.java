@@ -19,6 +19,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import static org.assertj.core.api.BDDAssertions.then;
+
 
 @ExtendWith(SoftAssertionsExtension.class)
 @DisplayName("Line Drawing - Public API")
@@ -53,6 +55,18 @@ public class LineDrawingTestPublic extends ShapeDrawingTestPublic {
         softly.then(svg).contains("y2='50'");
         softly.then(svg).contains("x1='33.333332");
         softly.then(svg).contains("x2='66.666664");
+    }
+
+    @Test
+    @DisplayName("When a line thickness has been set, then it shows up in the SVG")
+    void whenALineThicknessHasBeenSetThenItShowsUpInTheSVG() {
+        Line line = new Line();
+        double EXPECTED = 3;
+        line.setThickness(EXPECTED);
+        this.drawing.add(line);
+
+        @NotNull final String svg = this.drawing.getSVG(100,100);
+        then(svg).contains("stroke-width='3'");
     }
 
 
