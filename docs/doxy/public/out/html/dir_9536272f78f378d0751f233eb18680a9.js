@@ -18,7 +18,8 @@ var dir_9536272f78f378d0751f233eb18680a9 =
       [ "DrawlNumberRemainderPair", "d9/de9/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_remainder_pair.html", "d9/de9/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_remainder_pair" ]
     ] ],
     [ "Line.java", "d5/d66/_line_8java.html", [
-      [ "Line", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line" ]
+      [ "Line", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line" ],
+      [ "Orientation", "d9/d88/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_1_1_orientation.html", "d9/d88/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_1_1_orientation" ]
     ] ],
     [ "LoggingConfig.java", "d9/dfc/_logging_config_8java.html", [
       [ "LoggingConfig", "d9/de6/classcom_1_1aarrelaakso_1_1drawl_1_1_logging_config.html", "d9/de6/classcom_1_1aarrelaakso_1_1drawl_1_1_logging_config" ]

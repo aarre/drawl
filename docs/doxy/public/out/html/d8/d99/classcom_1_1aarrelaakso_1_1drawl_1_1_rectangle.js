@@ -60,5 +60,6 @@ var classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle =
     [ "setLeftOf", "d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a8012a3823982d77b563ef61787ccb523", null ],
     [ "setRightOf", "d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a3cada5e03bd1552a79702d2945c7ed01", null ],
     [ "setRightOf", "d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a89e85848d24dca0fa60ff68d169eef11", null ],
-    [ "setStroke", "d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a75685cbfea36858836df8e1fb4f8b821", null ]
+    [ "setStroke", "d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a75685cbfea36858836df8e1fb4f8b821", null ],
+    [ "setWidth", "d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a8b5f19ff40445c0cf8cad2688d7df810", null ]
 ];

@@ -1,5 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$d5/d8a/interfacecom_1_1aarrelaakso_1_1drawl_1_1_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="145,13,348,39"/>
-<area shape="rect" id="node4" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html" title="Class for mathematical operations with BigDecimal values that are not provided by the BigDecimal clas..." alt="" coords="155,64,338,105"/>
-<area shape="rect" id="node3" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="396,5,587,47"/>
+<area shape="rect" id="node2" href="$d9/df3/classcom_1_1aarrelaakso_1_1drawl_1_1_measure.html" title="Defines a public Measure class to represent measures on the diagram without exposing internal numeric..." alt="" coords="145,5,352,32"/>
+<area shape="rect" id="node3" href="$d5/d8a/interfacecom_1_1aarrelaakso_1_1drawl_1_1_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="147,56,350,83"/>
+<area shape="rect" id="node5" href="$d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html" title="Class for mathematical operations with BigDecimal values that are not provided by the BigDecimal clas..." alt="" coords="157,107,340,149"/>
+<area shape="rect" id="node4" href="$d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html" title="Class for mathematical operations with Double values that have a similar API to that of the BigDecima..." alt="" coords="400,49,591,90"/>
 </map>

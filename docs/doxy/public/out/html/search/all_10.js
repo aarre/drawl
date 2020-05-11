@@ -20,6 +20,8 @@ var searchData=
   ['setscale',['setScale',['../d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#a3c4d186b36b3eb9efac741e435f94024',1,'com::aarrelaakso::drawl::SisuNumber']]],
   ['setstring',['setString',['../dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html#a8fec7a478b7a7f4a141e36ee52a66a42',1,'com::aarrelaakso::drawl::Text']]],
   ['setstroke',['setStroke',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a75685cbfea36858836df8e1fb4f8b821',1,'com::aarrelaakso::drawl::Shape']]],
+  ['setthickness',['setThickness',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#af58511076072e05cf42641ee44d0d0d7',1,'com::aarrelaakso::drawl::Line']]],
+  ['setwidth',['setWidth',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a8b5f19ff40445c0cf8cad2688d7df810',1,'com::aarrelaakso::drawl::Shape']]],
   ['setx',['setX',['../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html#acf1cca24c7cf879f402e1b549a5e3864',1,'com::aarrelaakso::drawl::Point']]],
   ['shadedrectangles',['ShadedRectangles',['../d1/d1f/classcom_1_1aarrelaakso_1_1drawl_1_1examples_1_1_shaded_rectangles.html',1,'com::aarrelaakso::drawl::examples']]],
   ['shadedrectangles_2ejava',['ShadedRectangles.java',['../da/d51/_shaded_rectangles_8java.html',1,'']]],

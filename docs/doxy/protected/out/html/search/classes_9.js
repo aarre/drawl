@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['text',['Text',['../dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html',1,'com::aarrelaakso::drawl']]],
-  ['textexample',['TextExample',['../de/dfb/classcom_1_1aarrelaakso_1_1drawl_1_1examples_1_1_text_example.html',1,'com::aarrelaakso::drawl::examples']]],
-  ['threecircleshorizontal',['ThreeCirclesHorizontal',['../d5/dfa/classcom_1_1aarrelaakso_1_1drawl_1_1examples_1_1_three_circles_horizontal.html',1,'com::aarrelaakso::drawl::examples']]],
-  ['threecirclesvertical',['ThreeCirclesVertical',['../d9/d63/classcom_1_1aarrelaakso_1_1drawl_1_1examples_1_1_three_circles_vertical.html',1,'com::aarrelaakso::drawl::examples']]],
-  ['type',['Type',['../df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html',1,'com::aarrelaakso::drawl::Arrowhead']]]
+  ['shadedrectangles',['ShadedRectangles',['../d1/d1f/classcom_1_1aarrelaakso_1_1drawl_1_1examples_1_1_shaded_rectangles.html',1,'com::aarrelaakso::drawl::examples']]],
+  ['shape',['Shape',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html',1,'com::aarrelaakso::drawl']]],
+  ['shapeexplicit',['ShapeExplicit',['../d8/dbd/classcom_1_1aarrelaakso_1_1drawl_1_1_shape_explicit.html',1,'com::aarrelaakso::drawl']]],
+  ['sisunumber',['SisuNumber',['../d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html',1,'com::aarrelaakso::drawl']]],
+  ['sisunumberremainderpair',['SisuNumberRemainderPair',['../d9/d77/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number_remainder_pair.html',1,'com::aarrelaakso::drawl']]],
+  ['svg',['SVG',['../d7/d81/classcom_1_1aarrelaakso_1_1drawl_1_1_s_v_g.html',1,'com::aarrelaakso::drawl']]]
 ];

@@ -1,11 +1,12 @@
 var classcom_1_1aarrelaakso_1_1drawl_1_1_line =
 [
+    [ "Orientation", "d9/d88/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_1_1_orientation.html", "d9/d88/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_1_1_orientation" ],
     [ "Line", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#af96a733c80d52bf419cab52fb09bc514", null ],
+    [ "Line", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#aaeb9fdd60eeec26d881cb88a23c116b5", null ],
     [ "Line", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a9e956655eba16543d82728923c3eb4f6", null ],
     [ "addArrowhead", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a7c54922855fda2590c962ac8e03c220c", null ],
     [ "addText", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#af6fea9610721de462c18ee640043aba7", null ],
     [ "getAbove", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#acebea2aa57031322323c9bf50ee447db", null ],
-    [ "getArrowhead", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a9659e69575b1fd2bd2f6dbfc7e11521b", null ],
     [ "getBelow", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a53de5ab609d879719cd3b372dfe8df58", null ],
     [ "getBottomPort", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#aba14efe9a16c0808580963c66b171082", null ],
     [ "getExplicitHalfWidth", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a3acdc2fd1944e2efacd0bfbb8aefe89b", null ],
@@ -42,6 +43,7 @@ var classcom_1_1aarrelaakso_1_1drawl_1_1_line =
     [ "getStroke", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a4e1d54c7e161e3af5053939ddefdf9e6", null ],
     [ "getSVG", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a54dd70515b691c8afa88f980e10698", null ],
     [ "getText", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6f876978d4102974fedc5b41c93c7b26", null ],
+    [ "getThickness", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#aa25b4985b90dd7ebad4cbdc403f22a42", null ],
     [ "getTopPort", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#aed4e9caa294aacc973b7a531a960e9e5", null ],
     [ "getWidth", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a3e2c58984f1bcbc2e9e86cf30868561e", null ],
     [ "hasArrowhead", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a422ac149cee14f3123989e44477d78d2", null ],
@@ -65,5 +67,7 @@ var classcom_1_1aarrelaakso_1_1drawl_1_1_line =
     [ "setLeftOf", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a8012a3823982d77b563ef61787ccb523", null ],
     [ "setRightOf", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a3cada5e03bd1552a79702d2945c7ed01", null ],
     [ "setRightOf", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a89e85848d24dca0fa60ff68d169eef11", null ],
-    [ "setStroke", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a75685cbfea36858836df8e1fb4f8b821", null ]
+    [ "setStroke", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a75685cbfea36858836df8e1fb4f8b821", null ],
+    [ "setThickness", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#af58511076072e05cf42641ee44d0d0d7", null ],
+    [ "setWidth", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a8b5f19ff40445c0cf8cad2688d7df810", null ]
 ];

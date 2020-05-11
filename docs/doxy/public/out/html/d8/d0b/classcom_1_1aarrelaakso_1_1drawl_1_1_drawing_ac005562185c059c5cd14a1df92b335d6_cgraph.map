@@ -1,8 +1,8 @@
 <map id="com.aarrelaakso.drawl.Drawing.getSVG" name="com.aarrelaakso.drawl.Drawing.getSVG">
-<area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a4ac8a97ae89af08cf9ab01dbbe3dc010" title="Sets the explicit dimensions of this Drawing. " alt="" coords="322,31,549,72"/>
-<area shape="rect" id="node7" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ada7c8b8df06ba84c1334e98751730500" title="Get the SVG for this Drawing. " alt="" coords="308,97,563,123"/>
-<area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a0de258c25c1d13e3c2d71ab6a90606ef" title="Get the explicit width of this Drawing. " alt="" coords="611,60,837,101"/>
-<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ade424cd3d355473603555ad6ce746e23" title="Get the explicit height of this Drawing. " alt="" coords="885,60,1112,101"/>
-<area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a9b47750a4d38fc2db164f0a0cb0e4a42" title="Get the ratio of explicit measures to implicit measures for this Drawing as a whole. " alt="" coords="1160,5,1387,47"/>
-<area shape="rect" id="node6" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#afd070929603e97a649a65a888b5f76da" title="Get the ratio of the explicit width of this drawing to the implicit width of its contents. " alt="" coords="1435,64,1661,105"/>
+<area shape="rect" id="node2" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a4ac8a97ae89af08cf9ab01dbbe3dc010" title="Sets the explicit dimensions of this Drawing. " alt="" coords="322,5,549,47"/>
+<area shape="rect" id="node3" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ada7c8b8df06ba84c1334e98751730500" title="Get the SVG for this Drawing. " alt="" coords="308,71,563,98"/>
+<area shape="rect" id="node4" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a0de258c25c1d13e3c2d71ab6a90606ef" title="Get the explicit width of this Drawing. " alt="" coords="611,93,837,135"/>
+<area shape="rect" id="node5" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ade424cd3d355473603555ad6ce746e23" title="Get the explicit height of this Drawing. " alt="" coords="885,35,1112,76"/>
+<area shape="rect" id="node6" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a9b47750a4d38fc2db164f0a0cb0e4a42" title="Get the ratio of explicit measures to implicit measures for this Drawing as a whole. " alt="" coords="1160,89,1387,131"/>
+<area shape="rect" id="node7" href="$d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#afd070929603e97a649a65a888b5f76da" title="Get the ratio of the explicit width of this drawing to the implicit width of its contents. " alt="" coords="1435,89,1661,131"/>
 </map>
