@@ -22,14 +22,14 @@ public class ArrowheadExample {
     public static void main(final String[] args) throws IOException {
 
         final Text text = new Text("DEFAULT, NORMAL, TRIANGLE");
-        final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead();
+        final Line line = new Line(Line.Orientation.HORIZONTAL);
+        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DEFAULT);
         line.addArrowhead(arrowhead);
         line.setRightOf(text);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         drawing.add(text);
 
-        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 100, 100);
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 1000, 500);
     }
 }

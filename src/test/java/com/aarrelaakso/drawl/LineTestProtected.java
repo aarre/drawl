@@ -10,9 +10,12 @@
 
 package com.aarrelaakso.drawl;
 
+import org.apache.commons.lang3.StringUtils;
+import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 /**
@@ -30,6 +33,24 @@ public class LineTestProtected extends ShapeTestProtected {
         this.shape1 = new Line();
         this.shape2 = new Line();
         this.shape3 = new Line();
+    }
+
+
+    @DisplayName("When a horizontal line is constructed, then the coordinates are correct")
+    @Test
+    void whenAHorizontalLineIsConstructedThenTheYCoordinatesAreTheSame(BDDSoftAssertions softly) {
+
+        final Line line = new Line(Line.Orientation.HORIZONTAL);
+
+        softly.then(line.getPoint1Implicit().getX()).isEqualTo(DrawlNumber.ZERO);
+        softly.then(line.getPoint1Implicit().getY()).isEqualTo(DrawlNumber.HALF);
+        softly.then(line.getPoint2Implicit().getX()).isEqualTo(DrawlNumber.ONE);
+        softly.then(line.getPoint2Implicit().getY()).isEqualTo(DrawlNumber.HALF);
+        softly.then(line.getImplicitHalfHeight()).isEqualTo(DrawlNumber.ZERO);
+        softly.then(line.getImplicitHeight()).isEqualTo(DrawlNumber.ZERO);
+        softly.then(line.getImplicitHalfWidth()).isEqualTo(DrawlNumber.HALF);
+        softly.then(line.getImplicitWidth()).isEqualTo(DrawlNumber.ONE);
+
     }
 
 

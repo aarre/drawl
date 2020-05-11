@@ -161,11 +161,23 @@ public class Drawing {
      * @return The ratio of explicit measures to implicit measures for this diagram as a whole.
      */
     protected final Number getExplicitToImplicitRatio() {
-        final Number explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
+        @NotNull final Number explicitHeightPerImplicitHeight = this.getExplicitHeightPerImplicitHeight();
         @NotNull final Number explicitWidthPerImplicitWidth = this.getExplicitWidthPerImplicitWidth();
-        if (explicitHeightPerImplicitHeight.isLessThanOrEqualTo(explicitWidthPerImplicitWidth)) {
+        if ((explicitHeightPerImplicitHeight.isEqualTo(DrawlNumber.ZERO)) &&
+                ((explicitWidthPerImplicitWidth.isEqualTo(DrawlNumber.ZERO)))) {
+            return DrawlNumber.ZERO;
+        } else if (explicitHeightPerImplicitHeight.isEqualTo(DrawlNumber.ZERO)) {
+            // The explicit:implicit height ratio is zero, but the corresponding width ratio is non-zero
+            return explicitWidthPerImplicitWidth;
+        } else if (explicitWidthPerImplicitWidth.isEqualTo(DrawlNumber.ZERO)) {
+            // The explicit:implicit width ratio is zero, but the corresponding height ratio is non-zero
+            return explicitHeightPerImplicitHeight;
+        }
+        else if (explicitHeightPerImplicitHeight.isLessThanOrEqualTo(explicitWidthPerImplicitWidth)) {
+            // Both are non-zero but we are constrained by height
             return explicitHeightPerImplicitHeight;
         } else {
+            // Both are non-zero but we are constrained by width
             return explicitWidthPerImplicitWidth;
         }
     }
@@ -473,49 +485,9 @@ public class Drawing {
      * @param explicitHeightOfDrawingFloat The explicit height of the Drawing.
      */
     public final void setExplicitDimensions(final Float explicitWidthOfDrawingFloat, final Float explicitHeightOfDrawingFloat) {
-        Drawing.logger.atFine().log("Entering setExplicitDimensions");
-        // Calculate implicit aspect ratio
-        final Number implicitHeightOfContents = this.getImplicitHeightOfContents();
-        final Number implicitWidthOfContents = this.getImplicitWidthOfContents();
-        Number implicitAspectRatio = DrawlNumber.ZERO;
-        if (implicitHeightOfContents.isGreaterThan(DrawlNumber.ZERO)) {
-            implicitAspectRatio = implicitWidthOfContents.divide(implicitHeightOfContents,
-                    DrawlNumber.mcOperations);
-        }
 
-        // Calculate explicit aspect ratio
-        this.setExplicitHeightInternal(DrawlNumber.valueOf(explicitWidthOfDrawingFloat));
-        this.setExplicitWidthInternal(DrawlNumber.valueOf(explicitWidthOfDrawingFloat));
-        assert this.getExplicitWidth() != null;
-        assert this.getExplicitHeight() != null;
-        final Number explicitAspectRatio = this.getExplicitWidth().divide(this.getExplicitHeight(),
-                DrawlNumber.mcOperations);
-        Drawing.logger.atFine().log("Explicit aspect ratio: " + explicitAspectRatio);
-
-        if (FALSE) {
-            if (implicitAspectRatio.isGreaterThan(explicitAspectRatio)) {
-                // The implicit aspect ratio is greater than the explicit aspect ratio.
-                // Therefore, we are constrained by width.
-                // Adjust the height to match.
-                final Number adjustedHeight = this.getExplicitWidth().divide(explicitAspectRatio,
-                        DrawlNumber.mcOperations);
-                this.setExplicitHeight(adjustedHeight);
-                this.setExplicitWidth(DrawlNumber.valueOf(explicitWidthOfDrawingFloat));
-            } else if (implicitAspectRatio.isLessThan(explicitAspectRatio)) {
-                // The implicit aspect ratio is less than or equal to the explicit aspect ratio.
-                // Therefore, we are constrained by height.
-                // Adjust the width to match.
-                final Number adjustedWidth = this.getExplicitHeight().multiply(explicitAspectRatio,
-                        DrawlNumber.mcOperations);
-                this.setExplicitHeight(DrawlNumber.valueOf(explicitHeightOfDrawingFloat));
-                this.setExplicitWidth(adjustedWidth);
-            }
-        } else {
-            // The two aspect ratios are equal, so no adjustment is necessary
-            this.setExplicitWidth(DrawlNumber.valueOf(explicitWidthOfDrawingFloat));
-            this.setExplicitHeight(DrawlNumber.valueOf(explicitHeightOfDrawingFloat));
-
-        }
+        this.setExplicitWidth(DrawlNumber.valueOf(explicitWidthOfDrawingFloat));
+        this.setExplicitHeight(DrawlNumber.valueOf(explicitHeightOfDrawingFloat));
 
     }
 
@@ -543,7 +515,7 @@ public class Drawing {
     }
 
     /**
-     * Set the explicit width of this Drawing. Use this to allow logging changes to internal height.
+     * Sets the explicit width of this Drawing. Use this to allow logging changes to internal height.
      *
      * @param drawingExplicitWidth the new explicit width of the Drawing.
      */
@@ -576,7 +548,6 @@ public class Drawing {
 
     private void updateExplicitWidthOfShape(@NotNull final Shape shape) {
         // Update explicit width of shape
-        Drawing.logger.atFine().log("Updating explicit width of shape");
         final Number implicitWidthOfShape = shape.getImplicitWidth();
         final Number explicitWidthOfShape = implicitWidthOfShape.multiply(this.getExplicitToImplicitRatio(),
                 DrawlNumber.mcOperations);
@@ -585,7 +556,6 @@ public class Drawing {
 
     private void updateExplicitXPositionOfShape(@NotNull final Shape shape) {
         // Update the explicit x position of the Shape
-        Drawing.logger.atFine().log("Updating explicit x position");
         final Number implicitXPositionOfShape = shape.getImplicitXPositionCenter();
         // The fudge factor is to shift the diagram right so that all x coordinates are positive in explicit coordinate
         // space

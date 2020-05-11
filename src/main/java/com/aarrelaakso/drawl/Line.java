@@ -68,8 +68,10 @@ public class Line extends Shape {
 
         this.orientation = orientation;
         if (this.orientation == Orientation.HORIZONTAL) {
-            this.point1Implicit = new Point(0.0, 0.5);
-            this.point2Implicit = new Point(1.0, 0.5);
+            //this.point1Implicit = new Point(0.0, 0.49);
+            this.point1Implicit = new Point(0.0, 0.50);
+            //this.point2Implicit = new Point(1.0, 0.51);
+            this.point2Implicit = new Point(1.0, 0.50);
         } else if (this.orientation == Orientation.VERTICAL) {
             this.point1Implicit = new Point(0.5, 0.0);
             this.point2Implicit = new Point(0.5, 1.0);
@@ -95,21 +97,23 @@ public class Line extends Shape {
      * @param point1Implicit The origin of the Line in implicit coordinates.
      * @param point2Implicit The end of the Line in implicit coordinates.
      */
-    private void constructFromPoints(Point point1Implicit, Point point2Implicit) {
+    private void constructFromPoints(@NotNull Point point1Implicit, @NotNull Point point2Implicit) {
         this.point1Implicit = point1Implicit;
         this.point2Implicit = point2Implicit;
 
         final Number implicitWidth = point2Implicit.getX().subtract(point1Implicit.getX());
-        final Number implicitHeight = point2Implicit.getY().subtract(point1Implicit.getY());
+        this.setImplicitWidth(implicitWidth);
+
+        //final Number implicitHeight = point2Implicit.getY().subtract(point1Implicit.getY());
+        final Number implicitHeight = DrawlNumber.ZERO;
+        this.setImplicitHeight(implicitHeight);
 
         final Number implicitCenterX = point1Implicit.getX().add(implicitWidth.divide(DrawlNumber.TWO,
                 DrawlNumber.mcOperations));
+        this.setImplicitXPositionCenter(implicitCenterX);
+
         final Number implicitCenterY = point1Implicit.getY().add(implicitHeight.divide(DrawlNumber.TWO,
                 DrawlNumber.mcOperations));
-
-        this.setImplicitWidth(implicitWidth);
-        this.setImplicitHeight(implicitHeight);
-        this.setImplicitXPositionCenter(implicitCenterX);
         this.setImplicitYPositionCenter(implicitCenterY);
     }
 
@@ -184,7 +188,9 @@ public class Line extends Shape {
         svgBuilder.append("'");
 
         if (this.hasArrowhead()) {
-            svgBuilder.append(" marker-end='url(#head)'");
+            svgBuilder.append(" marker-end='url(#");
+            svgBuilder.append(this.arrowhead.getArrowheadType());
+            svgBuilder.append(")'");
         }
 
         svgBuilder.append(" />");

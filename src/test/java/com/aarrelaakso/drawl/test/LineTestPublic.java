@@ -50,22 +50,18 @@ public class LineTestPublic extends ShapeTestPublic {
         then(line).isNotNull();
     }
 
-    @DisplayName("When a horizontal line is constructed, then the y coordinates are the same")
+    @DisplayName("When a horizontal line is constructed, then the coordinates are correct")
     @Test
-    void whenAHorizontalLineIsConstructedThenTheYCoordinatesAreTheSame(BDDSoftAssertions softly) {
+    void whenAHorizontalLineIsConstructedThenTheCoordinatesAreCorrect(BDDSoftAssertions softly) {
         final Line line = new Line(Line.Orientation.HORIZONTAL);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG(100,100);
-
-        final String EXPECTED = "y='50'";
-        final int count = StringUtils.countMatches(svg, EXPECTED);
-        softly.then(count)
-                .as("Expecting " + svg + " to contain two instances of " + EXPECTED)
-                .isEqualTo(2);
-
+        
         softly.then(svg).contains("x1='0'");
+        softly.then(svg).contains("y1='50'");
         softly.then(svg).contains("x2='100'");
+        softly.then(svg).contains("y2='50'");
     }
 
 }
