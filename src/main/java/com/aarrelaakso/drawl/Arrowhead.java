@@ -94,7 +94,7 @@ public class Arrowhead {
      *
      * @return the canonical representation of this Arrowhead type.
      */
-    private Type getArrowheadType() {
+    protected Type getArrowheadType() {
         if ((this.arrowheadType == Type.DEFAULT) ||
                 (this.arrowheadType == Type.NORMAL) ||
                 (this.arrowheadType == Type.TRIANGLE)) {

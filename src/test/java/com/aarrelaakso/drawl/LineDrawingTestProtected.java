@@ -59,4 +59,25 @@ public class LineDrawingTestProtected extends ShapeDrawingTestProtected {
         softly.then(point2.getY()).isEqualTo(DrawlNumber.valueOf(50));
     }
 
+    @DisplayName("When a horizontal line is constructed, then the coordinates are correct")
+    @Test
+    void whenAHorizontalLineIsConstructedThenTheCoordinatesAreCorrect(BDDSoftAssertions softly) {
+
+        final Line line = new Line(Line.Orientation.HORIZONTAL);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        drawing.setExplicitDimensions(100,100);
+
+        softly.then(line.getPoint1Explicit().getX())
+                .as("x1: Got " + line.getPoint1Explicit().getX() + " but expected: " + DrawlNumber.ZERO)
+                .isEqualTo(DrawlNumber.ZERO);
+        softly.then(line.getPoint1Explicit().getY()).isEqualTo(DrawlNumber.valueOf(50));
+        softly.then(line.getPoint2Explicit().getX())
+                .as("x2: Got " + line.getPoint2Explicit().getX() + ", but expected: " + DrawlNumber.valueOf(100))
+                .isEqualTo(DrawlNumber.valueOf(100));
+        softly.then(line.getPoint2Explicit().getY()).isEqualTo(DrawlNumber.valueOf(50));
+
+    }
+
+
 }
