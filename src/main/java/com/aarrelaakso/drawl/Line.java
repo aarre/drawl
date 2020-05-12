@@ -123,7 +123,7 @@ public class Line extends Shape {
         this.setImplicitYPositionCenter(implicitCenterY);
     }
 
-    public void addArrowhead(final LineEnding lineEnding) {
+    public void addLineEnding(final LineEnding lineEnding) {
         this.lineEnding = lineEnding;
     }
 

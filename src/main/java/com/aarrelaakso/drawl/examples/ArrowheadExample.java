@@ -26,7 +26,7 @@ public class ArrowheadExample {
         line1.setWidth(textWidth);
         line1.setThickness(5);
         final LineEnding lineEnding = new LineEnding(LineEnding.Type.DEFAULT);
-        line1.addArrowhead(lineEnding);
+        line1.addLineEnding(lineEnding);
         line1.setBelow(text1);
         drawing.add(text1);
         drawing.add(line1);
@@ -37,7 +37,7 @@ public class ArrowheadExample {
         line2.setWidth(textWidth);
         line2.setThickness(5);
         final LineEnding lineEnding2 = new LineEnding(LineEnding.Type.BOX);
-        line2.addArrowhead(lineEnding2);
+        line2.addLineEnding(lineEnding2);
         line2.setBelow(text2);
         drawing.add(text2);
         drawing.add(line2);
@@ -48,7 +48,7 @@ public class ArrowheadExample {
         line3.setWidth(textWidth);
         line3.setThickness(5);
         final LineEnding lineEnding3 = new LineEnding(LineEnding.Type.DIAMOND);
-        line3.addArrowhead(lineEnding3);
+        line3.addLineEnding(lineEnding3);
         line3.setBelow(text3);
         drawing.add(text3);
         drawing.add(line3);
@@ -59,13 +59,24 @@ public class ArrowheadExample {
         line4.setWidth(textWidth);
         line4.setThickness(5);
         final LineEnding lineEnding4 = new LineEnding(LineEnding.Type.DOT);
-        line4.addArrowhead(lineEnding4);
+        line4.addLineEnding(lineEnding4);
         line4.setBelow(text4);
         drawing.add(text4);
         drawing.add(line4);
 
+        final Text text5 = new Text("CIRCLE, ODOT");
+        text5.setBelow(line4);
+        final Line line5 = new Line(Line.Orientation.HORIZONTAL);
+        line5.setWidth(textWidth);
+        line5.setThickness(5);
+        final LineEnding lineEnding5 = new LineEnding(LineEnding.Type.CIRCLE);
+        line5.addLineEnding(lineEnding5);
+        line5.setBelow(text5);
+        drawing.add(text5);
+        drawing.add(line5);
+
         final Text bottomSpacer = new Text("");
-        bottomSpacer.setBelow(line4);
+        bottomSpacer.setBelow(line5);
         drawing.add(bottomSpacer);
 
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 1000, 500);
