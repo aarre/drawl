@@ -25,8 +25,8 @@ public class ArrowheadExample {
         final Line line1 = new Line(Line.Orientation.HORIZONTAL);
         line1.setWidth(textWidth);
         line1.setThickness(5);
-        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DEFAULT);
-        line1.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DEFAULT);
+        line1.addArrowhead(lineEnding);
         line1.setBelow(text1);
         drawing.add(text1);
         drawing.add(line1);
@@ -36,8 +36,8 @@ public class ArrowheadExample {
         final Line line2 = new Line(Line.Orientation.HORIZONTAL);
         line2.setWidth(textWidth);
         line2.setThickness(5);
-        final Arrowhead arrowhead2 = new Arrowhead(Arrowhead.Type.BOX);
-        line2.addArrowhead(arrowhead2);
+        final LineEnding lineEnding2 = new LineEnding(LineEnding.Type.BOX);
+        line2.addArrowhead(lineEnding2);
         line2.setBelow(text2);
         drawing.add(text2);
         drawing.add(line2);
@@ -47,8 +47,8 @@ public class ArrowheadExample {
         final Line line3 = new Line(Line.Orientation.HORIZONTAL);
         line3.setWidth(textWidth);
         line3.setThickness(5);
-        final Arrowhead arrowhead3 = new Arrowhead(Arrowhead.Type.DIAMOND);
-        line3.addArrowhead(arrowhead3);
+        final LineEnding lineEnding3 = new LineEnding(LineEnding.Type.DIAMOND);
+        line3.addArrowhead(lineEnding3);
         line3.setBelow(text3);
         drawing.add(text3);
         drawing.add(line3);
@@ -58,8 +58,8 @@ public class ArrowheadExample {
         final Line line4 = new Line(Line.Orientation.HORIZONTAL);
         line4.setWidth(textWidth);
         line4.setThickness(5);
-        final Arrowhead arrowhead4 = new Arrowhead(Arrowhead.Type.DOT);
-        line4.addArrowhead(arrowhead4);
+        final LineEnding lineEnding4 = new LineEnding(LineEnding.Type.DOT);
+        line4.addArrowhead(lineEnding4);
         line4.setBelow(text4);
         drawing.add(text4);
         drawing.add(line4);

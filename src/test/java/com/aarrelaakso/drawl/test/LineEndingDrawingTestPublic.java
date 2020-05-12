@@ -10,7 +10,7 @@
 
 package com.aarrelaakso.drawl.test;
 
-import com.aarrelaakso.drawl.Arrowhead;
+import com.aarrelaakso.drawl.LineEnding;
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Line;
 import org.assertj.core.api.BDDSoftAssertions;
@@ -22,7 +22,6 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
@@ -32,15 +31,15 @@ import static org.assertj.core.api.BDDAssertions.then;
 @DisplayName("Arrowheads - Public API")
 @TestMethodOrder(MethodOrderer.Alphanumeric.class)
 @ExtendWith(SoftAssertionsExtension.class)
-public class ArrowheadDrawingTestPublic {
+public class LineEndingDrawingTestPublic {
 
     @Test
     @DisplayName("whenALineHasBeenConstructedThenYouCanAddAnArrowheadToIt")
     void whenALineHasBeenConstructedThenYouCanAddAnArrowheadToIt()
     {
         Line line = new Line();
-        Arrowhead arrowhead = new Arrowhead();
-        line.addArrowhead(arrowhead);
+        LineEnding lineEnding = new LineEnding();
+        line.addArrowhead(lineEnding);
     }
 
     @Test
@@ -48,8 +47,8 @@ public class ArrowheadDrawingTestPublic {
     void whenALineHasAnArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead();
-        line.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding();
+        line.addArrowhead(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
@@ -70,10 +69,10 @@ public class ArrowheadDrawingTestPublic {
 
     @DisplayName("when An Arrowhead Is Constructed Then The Type Can Be Set")
     @ParameterizedTest
-    @EnumSource(Arrowhead.Type.class)
-    void whenAnArrowheadIsConstructedThenTheTypeCanBeSet(Arrowhead.Type type) {
-        final Arrowhead arrowhead = new Arrowhead(type);
-        then(arrowhead).isNotNull();
+    @EnumSource(LineEnding.Type.class)
+    void whenAnArrowheadIsConstructedThenTheTypeCanBeSet(LineEnding.Type type) {
+        final LineEnding lineEnding = new LineEnding(type);
+        then(lineEnding).isNotNull();
     }
 
     @Test
@@ -81,8 +80,8 @@ public class ArrowheadDrawingTestPublic {
     void whenALineHasADefaultArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DEFAULT);
-        line.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DEFAULT);
+        line.addArrowhead(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
@@ -94,8 +93,8 @@ public class ArrowheadDrawingTestPublic {
     void whenALineHasANormalArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.NORMAL);
-        line.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.NORMAL);
+        line.addArrowhead(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
@@ -107,8 +106,8 @@ public class ArrowheadDrawingTestPublic {
     void whenALineHasATriangleArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.TRIANGLE);
-        line.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.TRIANGLE);
+        line.addArrowhead(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
@@ -120,8 +119,8 @@ public class ArrowheadDrawingTestPublic {
     void whenALineHasABoxArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.BOX);
-        line.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.BOX);
+        line.addArrowhead(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
@@ -134,8 +133,8 @@ public class ArrowheadDrawingTestPublic {
     void whenALineHasASquareArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.SQUARE);
-        line.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.SQUARE);
+        line.addArrowhead(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
@@ -148,8 +147,8 @@ public class ArrowheadDrawingTestPublic {
     void whenALineHasADiamondArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DIAMOND);
-        line.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DIAMOND);
+        line.addArrowhead(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
@@ -162,8 +161,8 @@ public class ArrowheadDrawingTestPublic {
     void whenALineHasATurnedSquareArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.TURNED_SQUARE);
-        line.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.TURNED_SQUARE);
+        line.addArrowhead(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
@@ -176,8 +175,8 @@ public class ArrowheadDrawingTestPublic {
     void whenALineHasADiskArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DISK);
-        line.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DISK);
+        line.addArrowhead(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
@@ -190,8 +189,8 @@ public class ArrowheadDrawingTestPublic {
     void whenALineHasADotArrowheadThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final Arrowhead arrowhead = new Arrowhead(Arrowhead.Type.DOT);
-        line.addArrowhead(arrowhead);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DOT);
+        line.addArrowhead(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();

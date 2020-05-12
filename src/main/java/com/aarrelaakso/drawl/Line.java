@@ -35,7 +35,7 @@ public class Line extends Shape {
      * What type of arrowhead should be on the line.
      */
     @Nullable
-    private Arrowhead arrowhead;
+    private LineEnding lineEnding;
 
     @Nullable
     private Orientation orientation;
@@ -123,12 +123,12 @@ public class Line extends Shape {
         this.setImplicitYPositionCenter(implicitCenterY);
     }
 
-    public void addArrowhead(final Arrowhead arrowhead) {
-        this.arrowhead = arrowhead;
+    public void addArrowhead(final LineEnding lineEnding) {
+        this.lineEnding = lineEnding;
     }
 
-    private Arrowhead getArrowhead() {
-        return this.arrowhead;
+    private LineEnding getLineEnding() {
+        return this.lineEnding;
     }
 
     @Nullable
@@ -163,7 +163,7 @@ public class Line extends Shape {
         }
         @NotNull final StringBuilder svgBuilder = new StringBuilder();
         if (this.hasArrowhead()) {
-            svgBuilder.append(this.getArrowhead().getSVGDef());
+            svgBuilder.append(this.getLineEnding().getSVGDef());
         }
         svgBuilder.append("\n<line");
         svgBuilder.append(" x1='");
@@ -201,7 +201,7 @@ public class Line extends Shape {
 
         if (this.hasArrowhead()) {
             svgBuilder.append(" marker-end='url(#");
-            svgBuilder.append(this.arrowhead.getArrowheadType());
+            svgBuilder.append(this.lineEnding.getLineEndingType());
             svgBuilder.append(")'");
         }
 
@@ -221,7 +221,7 @@ public class Line extends Shape {
     }
 
     public boolean hasArrowhead() {
-        if (this.arrowhead != null) {
+        if (this.lineEnding != null) {
             return true;
         } else {
             return false;
