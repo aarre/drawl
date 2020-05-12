@@ -134,7 +134,7 @@ public class LineEnding {
 
         OPEN_DIAMOND,
 
-        CROW,
+
 
         DOT,
         /*!< A dot-shaped line ending. Synonyms: DISK
@@ -159,6 +159,7 @@ public class LineEnding {
         /*!< A disk-shaped line ending. Synonyms: DOT           */
 
         CIRCLE, ODOT,
+        CROW,
         INVERTED,
         TEE,
         VEE,
@@ -210,6 +211,8 @@ public class LineEnding {
 
     // TODO: Need to figure out how to do inverted (outline) arrows
 
+    // TODO: Reverse/inverse arrows
+
     /**
      * Returns the canonical representation of this line ending type.
      *
@@ -232,6 +235,9 @@ public class LineEnding {
         } else if ((this.lineEndingType == Type.DISK) ||
                 (this.lineEndingType == Type.DOT)) {
             return Type.DOT;
+        } else if ((this.lineEndingType == Type.CIRCLE) ||
+                (this.lineEndingType == Type.ODOT)) {
+            return Type.CIRCLE;
         } else {
             throw new UnsupportedOperationException("Unknown line ending type: " + this.lineEndingType);
         }
@@ -254,24 +260,31 @@ public class LineEnding {
             svg.append(" viewBox='0 0 " + height + " " + width + "'");
             svg.append(" markerWidth='" + height + "' markerHeight='" + width + "'");
             svg.append(" refX='" + height/2.0 + "' refY='" + width/2.0 + "'>" + newLine);
-            svg.append("<path d='M0,0 L0," + width + " L" + height + "," + width/2.0 + " z' fill='red' />" + newLine);
+            svg.append("<path d='M0,0 L0," + width + " L" + height + "," + width/2.0 + " z' stroke='black' fill='black' />" + newLine);
         } else if (this.getLineEndingType() == Type.BOX) {
             svg.append(" viewBox='0 0 4 4' markerWidth='4' markerHeight='4' refX='2' refY='2'>" + newLine);
-            svg.append("<path d='M0,0 L0,4 L4,4 L4,0 z' fill='red' />" + newLine);
+            svg.append("<path d='M0,0 L0,4 L4,4 L4,0 z' stroke='black' fill='black' />" + newLine);
         } else if (this.getLineEndingType() == Type.DIAMOND) {
             double diagonal = 4 * sqrt(2);
             double half_diag = diagonal / 2;
             svg.append(" viewBox='0 0 " + diagonal + " " + diagonal + "'");
             svg.append(" markerWidth='" + diagonal + "' markerHeight='" + diagonal + "'");
             svg.append(" refX='" + diagonal/2 + "' refY='" + diagonal/2 + "'>" + newLine);
-            svg.append("<path d='M" + half_diag + ",0 L" + diagonal + "," + half_diag + " L" + half_diag + "," + diagonal + " L0," + half_diag + " z' fill='red' />" + newLine);
+            svg.append("<path d='M" + half_diag + ",0 L" + diagonal + "," + half_diag + " L" + half_diag + "," + diagonal + " L0," + half_diag + " z' stroke='black' fill='black' />" + newLine);
         } else if (this.getLineEndingType() == Type.DOT) {
             double radius = 4 / sqrt( Math.PI );
             double diameter = 2 * radius;
             svg.append(" viewBox='0 0 " + diameter + " " + diameter +"'");
             svg.append(" markerWidth='" + diameter + "' markerHeight='" + diameter + "'");
             svg.append(" refX='" + radius + "' refY='" + radius + "'>" + newLine);
-            svg.append("<circle cx='" + radius + "' cy='" + radius +"' r='" + radius + "' fill='red' />" + newLine);
+            svg.append("<circle cx='" + radius + "' cy='" + radius +"' r='" + radius + "' stroke='black' fill='black' />" + newLine);
+        } else if (this.getLineEndingType() == Type.CIRCLE) {
+            double radius = 4 / sqrt( Math.PI );
+            double diameter = 2 * radius;
+            svg.append(" viewBox='0 0 " + diameter + " " + diameter +"'");
+            svg.append(" markerWidth='" + diameter + "' markerHeight='" + diameter + "'");
+            svg.append(" refX='" + radius + "' refY='" + radius + "'>" + newLine);
+            svg.append("<circle cx='" + radius + "' cy='" + radius +"' r='" + radius + "' stroke='black' fill='white' />" + newLine);
         } else {
             throw new UnsupportedOperationException("Unknown line ending type: " + this.getLineEndingType());
         }

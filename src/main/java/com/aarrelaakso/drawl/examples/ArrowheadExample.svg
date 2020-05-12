@@ -1,25 +1,31 @@
 <?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='1000' height='500'><defs>
 <marker id='DOT' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>
-<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' fill='red' />
+<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025'  stroke='black' fill='red' />
 </marker>
 </defs>
 
-<line x1='450' y1='400' x2='550' y2='400' stroke='black' stroke-width='5' marker-end='url(#DOT)' /><defs>
+<line x1='458.33334' y1='333.33334' x2='541.6667' y2='333.33334' stroke='black' stroke-width='5' marker-end='url(#DOT)' /><defs>
 <marker id='TRIANGLE' orient='auto' viewBox='0 0 7.871958685061721 4.065061985236918' markerWidth='7.871958685061721' markerHeight='4.065061985236918' refX='3.9359793425308607' refY='2.032530992618459'>
-<path d='M0,0 L0,4.065061985236918 L7.871958685061721,2.032530992618459 z' fill='red' />
+<path d='M0,0 L0,4.065061985236918 L7.871958685061721,2.032530992618459 z' stroke='black' fill='red' />
 </marker>
 </defs>
 
-<line x1='450' y1='100' x2='550' y2='100' stroke='black' stroke-width='5' marker-end='url(#TRIANGLE)' /><defs>
+<line x1='458.33334' y1='83.333336' x2='541.6667' y2='83.333336' stroke='black' stroke-width='5' marker-end='url(#TRIANGLE)' /><defs>
 <marker id='BOX' orient='auto' viewBox='0 0 4 4' markerWidth='4' markerHeight='4' refX='2' refY='2'>
-<path d='M0,0 L0,4 L4,4 L4,0 z' fill='red' />
+<path d='M0,0 L0,4 L4,4 L4,0 z'  stroke='black' fill='red' />
 </marker>
 </defs>
 
-<line x1='450' y1='200' x2='550' y2='200' stroke='black' stroke-width='5' marker-end='url(#BOX)' /><text x='500' y='450' dominant-baseline='middle' text-anchor='middle'></text><defs>
+<line x1='458.33334' y1='166.66667' x2='541.6667' y2='166.66667' stroke='black' stroke-width='5' marker-end='url(#BOX)' /><text x='500' y='458.33334' dominant-baseline='middle' text-anchor='middle'></text><text x='500' y='375' dominant-baseline='middle' text-anchor='middle'>CIRCLE, ODOT</text><defs>
 <marker id='DIAMOND' orient='auto' viewBox='0 0 5.656854249492381 5.656854249492381' markerWidth='5.656854249492381' markerHeight='5.656854249492381' refX='2.8284271247461903' refY='2.8284271247461903'>
-<path d='M2.8284271247461903,0 L5.656854249492381,2.8284271247461903 L2.8284271247461903,5.656854249492381 L0,2.8284271247461903 z' fill='red' />
+<path d='M2.8284271247461903,0 L5.656854249492381,2.8284271247461903 L2.8284271247461903,5.656854249492381 L0,2.8284271247461903 z'  stroke='black' fill='red' />
 </marker>
 </defs>
 
-<line x1='450' y1='300' x2='550' y2='300' stroke='black' stroke-width='5' marker-end='url(#DIAMOND)' /><text x='500' y='50' dominant-baseline='middle' text-anchor='middle'>DEFAULT, NORMAL, TRIANGLE</text><text x='500' y='250' dominant-baseline='middle' text-anchor='middle'>DIAMOND, TURNED_SQUARE</text><text x='500' y='150' dominant-baseline='middle' text-anchor='middle'>BOX, SQUARE</text><text x='500' y='350' dominant-baseline='middle' text-anchor='middle'>DISK, DOT</text></svg>
+<line x1='458.33334' y1='250' x2='541.6667' y2='250' stroke='black' stroke-width='5' marker-end='url(#DIAMOND)' /><defs>
+<marker id='CIRCLE' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>
+<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='white' />
+</marker>
+</defs>
+
+<line x1='458.33334' y1='416.66666' x2='541.6667' y2='416.66666' stroke='black' stroke-width='5' marker-end='url(#CIRCLE)' /><text x='500' y='41.666668' dominant-baseline='middle' text-anchor='middle'>DEFAULT, NORMAL, TRIANGLE</text><text x='500' y='208.33333' dominant-baseline='middle' text-anchor='middle'>DIAMOND, TURNED_SQUARE</text><text x='500' y='125' dominant-baseline='middle' text-anchor='middle'>BOX, SQUARE</text><text x='500' y='291.66666' dominant-baseline='middle' text-anchor='middle'>DISK, DOT</text></svg>
