@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Drawl: com.aarrelaakso.drawl.Arrowhead.Type Enum Reference</title>
+<title>Drawl: com.aarrelaakso.drawl.LineEnding.Type Enum Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -68,7 +68,7 @@ $(function() {
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="../../d1/dae/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">com.aarrelaakso.drawl.Arrowhead.Type Enum Reference</div>  </div>
+<div class="title">com.aarrelaakso.drawl.LineEnding.Type Enum Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -164,7 +164,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.ARC_BARB</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.ARC_BARB</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -178,11 +178,11 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.BOX</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.BOX</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A square (box) arrowhead. Synonyms: SQUARE </p>
+<p>A square (box) lineEnding. Synonyms: SQUARE </p>
 
 </div>
 </div>
@@ -193,7 +193,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.BRACKET</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.BRACKET</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -207,7 +207,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.BUTT_CAP</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.BUTT_CAP</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -221,7 +221,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.CIRCLE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.CIRCLE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -235,7 +235,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.CLASSICAL_TIKZ_RIGHTARROW</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.CLASSICAL_TIKZ_RIGHTARROW</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -249,7 +249,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.COMPUTER_MODERN_RIGHTARROW</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.COMPUTER_MODERN_RIGHTARROW</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -263,7 +263,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.CROW</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.CROW</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -277,7 +277,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.CURVE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.CURVE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -291,12 +291,90 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.DEFAULT</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.DEFAULT</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The default arrowhead. Synonyms: NORMAL, TRIANGLE. </p>
-
+<p>The default lineEnding. Synonyms: NORMAL, TRIANGLE.</p>
+<p>For the default lineEnding, we set the constraint of having the legs have twice the length of the base. </p><pre class="fragment">      /\
+     /  \
+    /    \  2x
+   /      \
+   --------
+      x
+</pre><p>Half of this triangle is: </p><pre class="fragment">    |\
+    | \
+   h|  \  2x
+    |   \
+    ------
+     x/2
+</pre><p>The height of this triangle can be calculated as:</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[h^2 + (\frac{x}{2})^2 = (2x)^2\]" src="../../form_0.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[h^2 + \frac{x^2}{4} = 4x^2\]" src="../../form_1.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[h^2 = 4x^2 - \frac{x^2}{4}\]" src="../../form_2.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[h^2 = \frac{16x^2}{4} - \frac{x^2}{4}\]" src="../../form_3.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[h^2 = \frac{15x^2}{4}\]" src="../../form_4.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[h = \sqrt{\frac{15x^2}{4}}\]" src="../../form_5.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[h = \frac{x \sqrt{15}}{2}\]" src="../../form_6.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[\frac{xh}{2}\]" src="../../form_7.png"/>
+</p>
+<p>Given that we want the area to be 16:</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[ \frac{xh}{2} = 16\]" src="../../form_8.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[xh = 32\]" src="../../form_9.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[x \frac{x \sqrt{15}}{2} = 32\]" src="../../form_10.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[\frac{x^2 \sqrt{15}}{2} = 32\]" src="../../form_11.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[ x^2 \sqrt{15} = 64\]" src="../../form_12.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[15 x^4 = 4096\]" src="../../form_13.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[x^4 = \frac{4096}{15}\]" src="../../form_14.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[x = \sqrt[4]{\frac{4096}{15}}\]" src="../../form_15.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[x \approx 4.07\]" src="../../form_16.png"/>
+</p>
+<p>Then, to calculate the height of the triangle h:</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[\frac{xh}{2} = 16\]" src="../../form_17.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[xh = 32\]" src="../../form_9.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[h = \frac{32}{x}\]" src="../../form_18.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[h \approx 7.87\]" src="../../form_19.png"/>
+</p>
+ 
 </div>
 </div>
 <a id="a038817b0bde4231adfc55dd4f507df5c"></a>
@@ -306,12 +384,16 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.DIAMOND</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.DIAMOND</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A diamond-shaped arrowhead. Synonyms: TURNED_SQUARE </p>
-
+<p>A diamond-shaped lineEnding. Synonyms: TURNED_SQUARE</p>
+<p>To get a diamond shape with an area of 16, we need to set the crossways dimensions at</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[4 sqrt(2) \approx 5.66\]" src="../../form_20.png"/>
+</p>
+ 
 </div>
 </div>
 <a id="a474091c67ecdac839f2402301a46dc5d"></a>
@@ -321,7 +403,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.DISK</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.DISK</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -336,12 +418,29 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.DOT</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.DOT</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A dot-shaped arrowhead. Synonyms: DISK </p>
-
+<p>A dot-shaped lineEnding. Synonyms: DISK</p>
+<p>For the dot/disk lineEnding, we need</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[\pi r^2 = 16\]" src="../../form_21.png"/>
+</p>
+<p>so</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[r^2 = 16/\pi\]" src="../../form_22.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[r = \sqrt{\frac{16}{\pi}}\]" src="../../form_23.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[r = \frac{4}{\sqrt \pi}\]" src="../../form_24.png"/>
+</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[r \approx 2.26\]" src="../../form_25.png"/>
+</p>
+ 
 </div>
 </div>
 <a id="a7243ba4efe6f7013ec9ec3e66f581fd8"></a>
@@ -351,7 +450,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.ELLIPSE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.ELLIPSE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -365,7 +464,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.FAST_ROUND</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.FAST_ROUND</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -379,7 +478,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.FAST_TRIANGLE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.FAST_TRIANGLE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -393,7 +492,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.HOOKS</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.HOOKS</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -407,7 +506,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.INVERTED</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.INVERTED</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -421,7 +520,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.KITE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.KITE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -435,7 +534,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.LATEX</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.LATEX</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -449,11 +548,11 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.NORMAL</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.NORMAL</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The default arrowhead. Synonyms: DEFAULT, TRIANGLE. </p>
+<p>The default lineEnding. Synonyms: DEFAULT, TRIANGLE. </p>
 
 </div>
 </div>
@@ -464,7 +563,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.ODOT</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.ODOT</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -478,7 +577,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.OPEN_DIAMOND</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.OPEN_DIAMOND</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -492,7 +591,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.OPEN_ELLIPSE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.OPEN_ELLIPSE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -506,7 +605,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.PARENTHESIS</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.PARENTHESIS</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -520,7 +619,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.RAYS</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.RAYS</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -534,7 +633,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.RECTANGLE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.RECTANGLE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -548,7 +647,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.ROUND_CAP</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.ROUND_CAP</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -562,7 +661,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.ROUNDED</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.ROUNDED</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -576,11 +675,11 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.SQUARE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.SQUARE</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A square (box) arrowhead. Synonyms: BOX </p>
+<p>A square (box) lineEnding. Synonyms: BOX </p>
 
 </div>
 </div>
@@ -591,7 +690,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.STEALTH</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.STEALTH</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -605,7 +704,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.STRAIGHT_BARB</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.STRAIGHT_BARB</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -619,7 +718,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.TEE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.TEE</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -633,7 +732,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.TEE_BARB</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.TEE_BARB</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -647,11 +746,11 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.TRIANGLE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.TRIANGLE</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The default arrowhead. Synonyms: DEFAULT, NORMAL </p>
+<p>The default lineEnding. Synonyms: DEFAULT, NORMAL </p>
 
 </div>
 </div>
@@ -662,7 +761,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.TRIANGLE_CAP</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.TRIANGLE_CAP</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -676,11 +775,11 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.TURNED_SQUARE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.TURNED_SQUARE</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A diamond-shaped arrowhead. Synonyms: DIAMOND </p>
+<p>A diamond-shaped lineEnding. Synonyms: DIAMOND </p>
 
 </div>
 </div>
@@ -691,7 +790,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Type.VEE</td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.VEE</td>
         </tr>
       </table>
 </div><div class="memdoc">

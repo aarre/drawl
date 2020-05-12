@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "Drawl", "index.html", [
+    [ "Main Page", "index.html", null ],
     [ "Packages", null, [
       [ "Packages", "namespaces.html", "namespaces" ]
     ] ],

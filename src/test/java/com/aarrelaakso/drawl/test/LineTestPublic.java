@@ -11,10 +11,8 @@
 package com.aarrelaakso.drawl.test;
 
 
-import com.aarrelaakso.drawl.Arrowhead;
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Line;
-import org.apache.commons.lang3.StringUtils;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.BeforeEach;

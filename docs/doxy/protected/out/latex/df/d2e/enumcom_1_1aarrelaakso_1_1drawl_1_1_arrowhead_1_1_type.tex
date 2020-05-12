@@ -102,7 +102,7 @@ Defines the different types of arrowheads that are available.
 \subsubsection{\texorpdfstring{B\+OX}{BOX}}
 {\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Arrowhead.\+Type.\+B\+OX}
 
-A square (box) arrowhead. Synonyms\+: S\+Q\+U\+A\+RE \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a1752cfa6d6458e674f51b591c1f13982}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a1752cfa6d6458e674f51b591c1f13982}} 
+A square (box) lineEnding. Synonyms\+: S\+Q\+U\+A\+RE \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a1752cfa6d6458e674f51b591c1f13982}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a1752cfa6d6458e674f51b591c1f13982}}
 \index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}!B\+R\+A\+C\+K\+ET@{B\+R\+A\+C\+K\+ET}}
 \index{B\+R\+A\+C\+K\+ET@{B\+R\+A\+C\+K\+ET}!com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}}
 \subsubsection{\texorpdfstring{B\+R\+A\+C\+K\+ET}{BRACKET}}
@@ -150,13 +150,83 @@ A square (box) arrowhead. Synonyms\+: S\+Q\+U\+A\+RE \mbox{\Hypertarget{enumcom_
 \subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+LT}{DEFAULT}}
 {\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Arrowhead.\+Type.\+D\+E\+F\+A\+U\+LT}
 
-The default arrowhead. Synonyms\+: N\+O\+R\+M\+AL, T\+R\+I\+A\+N\+G\+LE. \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a038817b0bde4231adfc55dd4f507df5c}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a038817b0bde4231adfc55dd4f507df5c}} 
+The default lineEnding. Synonyms\+: N\+O\+R\+M\+AL, T\+R\+I\+A\+N\+G\+LE.
+
+For the default lineEnding, we set the constraint of having the legs have twice the length of the base. \begin{DoxyVerb}      /\
+     /  \
+    /    \  2x
+   /      \
+   --------
+      x
+\end{DoxyVerb}
+
+
+Half of this triangle is\+: \begin{DoxyVerb}    |\
+    | \
+   h|  \  2x
+    |   \
+    ------
+     x/2
+\end{DoxyVerb}
+
+
+The height of this triangle can be calculated as\+:
+
+\[h^2 + (\frac{x}{2})^2 = (2x)^2\]
+
+\[h^2 + \frac{x^2}{4} = 4x^2\]
+
+\[h^2 = 4x^2 - \frac{x^2}{4}\]
+
+\[h^2 = \frac{16x^2}{4} - \frac{x^2}{4}\]
+
+\[h^2 = \frac{15x^2}{4}\]
+
+\[h = \sqrt{\frac{15x^2}{4}}\]
+
+\[h = \frac{x \sqrt{15}}{2}\]
+
+\[\frac{xh}{2}\]
+
+Given that we want the area to be 16\+:
+
+\[ \frac{xh}{2} = 16\]
+
+\[xh = 32\]
+
+\[x \frac{x \sqrt{15}}{2} = 32\]
+
+\[\frac{x^2 \sqrt{15}}{2} = 32\]
+
+\[ x^2 \sqrt{15} = 64\]
+
+\[15 x^4 = 4096\]
+
+\[x^4 = \frac{4096}{15}\]
+
+\[x = \sqrt[4]{\frac{4096}{15}}\]
+
+\[x \approx 4.07\]
+
+Then, to calculate the height of the triangle h\+:
+
+\[\frac{xh}{2} = 16\]
+
+\[xh = 32\]
+
+\[h = \frac{32}{x}\]
+
+\[h \approx 7.87\] \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a038817b0bde4231adfc55dd4f507df5c}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a038817b0bde4231adfc55dd4f507df5c}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}!D\+I\+A\+M\+O\+ND@{D\+I\+A\+M\+O\+ND}}
 \index{D\+I\+A\+M\+O\+ND@{D\+I\+A\+M\+O\+ND}!com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}}
 \subsubsection{\texorpdfstring{D\+I\+A\+M\+O\+ND}{DIAMOND}}
 {\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Arrowhead.\+Type.\+D\+I\+A\+M\+O\+ND}
 
-A diamond-\/shaped arrowhead. Synonyms\+: T\+U\+R\+N\+E\+D\+\_\+\+S\+Q\+U\+A\+RE \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a474091c67ecdac839f2402301a46dc5d}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a474091c67ecdac839f2402301a46dc5d}} 
+A diamond-\/shaped lineEnding. Synonyms\+: T\+U\+R\+N\+E\+D\+\_\+\+S\+Q\+U\+A\+RE
+
+To get a diamond shape with an area of 16, we need to set the crossways dimensions at
+
+\[4 sqrt(2) \approx 5.66\] \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a474091c67ecdac839f2402301a46dc5d}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a474091c67ecdac839f2402301a46dc5d}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}!D\+I\+SK@{D\+I\+SK}}
 \index{D\+I\+SK@{D\+I\+SK}!com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}}
 \subsubsection{\texorpdfstring{D\+I\+SK}{DISK}}
@@ -168,7 +238,21 @@ A disk-\/shaped line ending. Synonyms\+: D\+OT \mbox{\Hypertarget{enumcom_1_1aar
 \subsubsection{\texorpdfstring{D\+OT}{DOT}}
 {\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Arrowhead.\+Type.\+D\+OT}
 
-A dot-\/shaped arrowhead. Synonyms\+: D\+I\+SK \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a7243ba4efe6f7013ec9ec3e66f581fd8}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a7243ba4efe6f7013ec9ec3e66f581fd8}} 
+A dot-\/shaped lineEnding. Synonyms\+: D\+I\+SK
+
+For the dot/disk lineEnding, we need
+
+\[\pi r^2 = 16\]
+
+so
+
+\[r^2 = 16/\pi\]
+
+\[r = \sqrt{\frac{16}{\pi}}\]
+
+\[r = \frac{4}{\sqrt \pi}\]
+
+\[r \approx 2.26\] \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a7243ba4efe6f7013ec9ec3e66f581fd8}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a7243ba4efe6f7013ec9ec3e66f581fd8}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}!E\+L\+L\+I\+P\+SE@{E\+L\+L\+I\+P\+SE}}
 \index{E\+L\+L\+I\+P\+SE@{E\+L\+L\+I\+P\+SE}!com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}}
 \subsubsection{\texorpdfstring{E\+L\+L\+I\+P\+SE}{ELLIPSE}}
@@ -216,7 +300,7 @@ A dot-\/shaped arrowhead. Synonyms\+: D\+I\+SK \mbox{\Hypertarget{enumcom_1_1aar
 \subsubsection{\texorpdfstring{N\+O\+R\+M\+AL}{NORMAL}}
 {\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Arrowhead.\+Type.\+N\+O\+R\+M\+AL}
 
-The default arrowhead. Synonyms\+: D\+E\+F\+A\+U\+LT, T\+R\+I\+A\+N\+G\+LE. \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a70d3e12a9991fd0a941d9c25138476a7}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a70d3e12a9991fd0a941d9c25138476a7}} 
+The default lineEnding. Synonyms\+: D\+E\+F\+A\+U\+LT, T\+R\+I\+A\+N\+G\+LE. \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a70d3e12a9991fd0a941d9c25138476a7}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a70d3e12a9991fd0a941d9c25138476a7}}
 \index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}!O\+D\+OT@{O\+D\+OT}}
 \index{O\+D\+OT@{O\+D\+OT}!com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}}
 \subsubsection{\texorpdfstring{O\+D\+OT}{ODOT}}
@@ -270,7 +354,7 @@ The default arrowhead. Synonyms\+: D\+E\+F\+A\+U\+LT, T\+R\+I\+A\+N\+G\+LE. \mbo
 \subsubsection{\texorpdfstring{S\+Q\+U\+A\+RE}{SQUARE}}
 {\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Arrowhead.\+Type.\+S\+Q\+U\+A\+RE}
 
-A square (box) arrowhead. Synonyms\+: B\+OX \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a300d91ce1b8770d4f39c39479528a9d5}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a300d91ce1b8770d4f39c39479528a9d5}} 
+A square (box) lineEnding. Synonyms\+: B\+OX \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a300d91ce1b8770d4f39c39479528a9d5}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a300d91ce1b8770d4f39c39479528a9d5}}
 \index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}!S\+T\+E\+A\+L\+TH@{S\+T\+E\+A\+L\+TH}}
 \index{S\+T\+E\+A\+L\+TH@{S\+T\+E\+A\+L\+TH}!com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}}
 \subsubsection{\texorpdfstring{S\+T\+E\+A\+L\+TH}{STEALTH}}
@@ -300,7 +384,7 @@ A square (box) arrowhead. Synonyms\+: B\+OX \mbox{\Hypertarget{enumcom_1_1aarrel
 \subsubsection{\texorpdfstring{T\+R\+I\+A\+N\+G\+LE}{TRIANGLE}}
 {\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Arrowhead.\+Type.\+T\+R\+I\+A\+N\+G\+LE}
 
-The default arrowhead. Synonyms\+: D\+E\+F\+A\+U\+LT, N\+O\+R\+M\+AL \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a2b5a534d002a522553112995369db66e}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a2b5a534d002a522553112995369db66e}} 
+The default lineEnding. Synonyms\+: D\+E\+F\+A\+U\+LT, N\+O\+R\+M\+AL \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a2b5a534d002a522553112995369db66e}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a2b5a534d002a522553112995369db66e}}
 \index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}!T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+AP@{T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+AP}}
 \index{T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+AP@{T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+AP}!com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}}
 \subsubsection{\texorpdfstring{T\+R\+I\+A\+N\+G\+L\+E\+\_\+\+C\+AP}{TRIANGLE\_CAP}}
@@ -312,7 +396,7 @@ The default arrowhead. Synonyms\+: D\+E\+F\+A\+U\+LT, N\+O\+R\+M\+AL \mbox{\Hype
 \subsubsection{\texorpdfstring{T\+U\+R\+N\+E\+D\+\_\+\+S\+Q\+U\+A\+RE}{TURNED\_SQUARE}}
 {\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Arrowhead.\+Type.\+T\+U\+R\+N\+E\+D\+\_\+\+S\+Q\+U\+A\+RE}
 
-A diamond-\/shaped arrowhead. Synonyms\+: D\+I\+A\+M\+O\+ND \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a8301a8818926413534a5604df1e91dac}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a8301a8818926413534a5604df1e91dac}} 
+A diamond-\/shaped lineEnding. Synonyms\+: D\+I\+A\+M\+O\+ND \mbox{\Hypertarget{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a8301a8818926413534a5604df1e91dac}\label{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_a8301a8818926413534a5604df1e91dac}}
 \index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}!V\+EE@{V\+EE}}
 \index{V\+EE@{V\+EE}!com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead\+::\+Type}}
 \subsubsection{\texorpdfstring{V\+EE}{VEE}}

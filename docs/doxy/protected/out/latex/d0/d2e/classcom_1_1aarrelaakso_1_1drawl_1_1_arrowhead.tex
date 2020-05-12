@@ -5,15 +5,6 @@
 Represents heads or tails on the ends of Lines.  
 
 
-
-
-Collaboration diagram for com.\+aarrelaakso.\+drawl.\+Arrowhead\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=332pt]{d2/db3/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,9 +14,9 @@ enum \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type}{Type}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a866fb3900ad67226bad5962031cc7817}{Arrowhead} ()
-\begin{DoxyCompactList}\small\item\em Constructs a default arrowhead. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Constructs a default lineEnding. \end{DoxyCompactList}\item
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a43464dd3355fda0d6e295d4282433828}{Arrowhead} (@Not\+Null Arrowhead.\+Type type)
-\begin{DoxyCompactList}\small\item\em Constructs an arrowhead of a particular type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs an lineEnding of a particular type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,12 +27,16 @@ String \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a0094c4f48945d7
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Arrowhead.\+Type \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a72183bdf6672377d73b2d9810b6d0ed7}{arrowhead\+Type} = \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_ae4c70d3cd0853637fba791f2bb29cd8e}{Type.\+D\+E\+F\+A\+U\+LT}
+Arrowhead.\+Type \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a72183bdf6672377d73b2d9810b6d0ed7}{lineEnding\+Type} = \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_ae4c70d3cd0853637fba791f2bb29cd8e}{Type.\+D\+E\+F\+A\+U\+LT}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Represents heads or tails on the ends of Lines. 
+
+One of the design goals in creating arrowheads for Drawl was to make the lineEnding shapes subsume the same area at their default sizes. This makes the various line endings subsume approximately the same visual weight. It means, however, that they do not all share a common dimension, either width or height.
+
+We take as default a square with sides of length 4, which sets the area at 16. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a866fb3900ad67226bad5962031cc7817}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a866fb3900ad67226bad5962031cc7817}} 
@@ -52,7 +47,7 @@ Represents heads or tails on the ends of Lines.
 
 
 
-Constructs a default arrowhead. 
+Constructs a default lineEnding.
 
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a43464dd3355fda0d6e295d4282433828}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a43464dd3355fda0d6e295d4282433828}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead}!Arrowhead@{Arrowhead}}
@@ -62,7 +57,7 @@ Constructs a default arrowhead.
 
 
 
-Constructs an arrowhead of a particular type. 
+Constructs an lineEnding of a particular type.
 
 
 \begin{DoxyParams}{Parameters}
@@ -97,10 +92,10 @@ the canonical representation of this \hyperlink{classcom_1_1aarrelaakso_1_1drawl
 
 \subsection{Member Data Documentation}
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a72183bdf6672377d73b2d9810b6d0ed7}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a72183bdf6672377d73b2d9810b6d0ed7}} 
-\index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead}!arrowhead\+Type@{arrowhead\+Type}}
-\index{arrowhead\+Type@{arrowhead\+Type}!com\+::aarrelaakso\+::drawl\+::\+Arrowhead@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead}}
-\subsubsection{\texorpdfstring{arrowhead\+Type}{arrowheadType}}
-{\footnotesize\ttfamily Arrowhead.\+Type com.\+aarrelaakso.\+drawl.\+Arrowhead.\+arrowhead\+Type = \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_ae4c70d3cd0853637fba791f2bb29cd8e}{Type.\+D\+E\+F\+A\+U\+LT}\hspace{0.3cm}{\ttfamily [private]}}
+\index{com\+::aarrelaakso\+::drawl\+::\+Arrowhead@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead}!lineEnding\+Type@{lineEnding\+Type}}
+\index{lineEnding\+Type@{lineEnding\+Type}!com\+::aarrelaakso\+::drawl\+::\+Arrowhead@{com\+::aarrelaakso\+::drawl\+::\+Arrowhead}}
+\subsubsection{\texorpdfstring{lineEnding\+Type}{arrowheadType}}
+{\footnotesize\ttfamily Arrowhead.\+Type com.\+aarrelaakso.\+drawl.\+Arrowhead.\+lineEnding\+Type = \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type_ae4c70d3cd0853637fba791f2bb29cd8e}{Type.\+D\+E\+F\+A\+U\+LT}\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

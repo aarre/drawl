@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Drawl: com.aarrelaakso.drawl.Arrowhead Class Reference</title>
+<title>Drawl: com.aarrelaakso.drawl.LineEnding Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -87,18 +87,16 @@ $(document).ready(function(){initNavTree('d0/d2e/classcom_1_1aarrelaakso_1_1draw
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="../../de/dce/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">com.aarrelaakso.drawl.Arrowhead Class Reference</div>  </div>
+<div class="title">com.aarrelaakso.drawl.LineEnding Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Represents heads or tails on the ends of Lines.  
  <a href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for com.aarrelaakso.drawl.Arrowhead:</div>
+Collaboration diagram for com.aarrelaakso.drawl.LineEnding:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/db3/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead__coll__graph.png" border="0" usemap="#com_8aarrelaakso_8drawl_8_arrowhead_coll__map" alt="Collaboration graph"/></div>
-<map name="com_8aarrelaakso_8drawl_8_arrowhead_coll__map" id="com_8aarrelaakso_8drawl_8_arrowhead_coll__map">
-</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -110,10 +108,10 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a866fb3900ad67226bad5962031cc7817"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html#a866fb3900ad67226bad5962031cc7817">Arrowhead</a> ()</td></tr>
-<tr class="memdesc:a866fb3900ad67226bad5962031cc7817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a default arrowhead.  <a href="#a866fb3900ad67226bad5962031cc7817">More...</a><br /></td></tr>
+<tr class="memdesc:a866fb3900ad67226bad5962031cc7817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a default lineEnding.  <a href="#a866fb3900ad67226bad5962031cc7817">More...</a><br /></td></tr>
 <tr class="separator:a866fb3900ad67226bad5962031cc7817"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43464dd3355fda0d6e295d4282433828"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html#a43464dd3355fda0d6e295d4282433828">Arrowhead</a> (@NotNull Arrowhead.Type type)</td></tr>
-<tr class="memdesc:a43464dd3355fda0d6e295d4282433828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an arrowhead of a particular type.  <a href="#a43464dd3355fda0d6e295d4282433828">More...</a><br /></td></tr>
+<tr class="memdesc:a43464dd3355fda0d6e295d4282433828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an lineEnding of a particular type.  <a href="#a43464dd3355fda0d6e295d4282433828">More...</a><br /></td></tr>
 <tr class="separator:a43464dd3355fda0d6e295d4282433828"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -126,6 +124,8 @@ Protected Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents heads or tails on the ends of Lines. </p>
+<p>One of the design goals in creating arrowheads for Drawl was to make the lineEnding shapes subsume the same area at their default sizes. This makes the various line endings subsume approximately the same visual weight. It means, however, that they do not all share a common dimension, either width or height.</p>
+<p>We take as default a square with sides of length 4, which sets the area at 16. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a866fb3900ad67226bad5962031cc7817"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a866fb3900ad67226bad5962031cc7817">&#9670;&nbsp;</a></span>Arrowhead() <span class="overload">[1/2]</span></h2>
@@ -134,7 +134,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Arrowhead </td>
+          <td class="memname">LineEnding </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -142,7 +142,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a default arrowhead. </p>
+<p>Constructs a default lineEnding. </p>
 
 </div>
 </div>
@@ -153,7 +153,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">com.aarrelaakso.drawl.Arrowhead.Arrowhead </td>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Arrowhead </td>
           <td>(</td>
           <td class="paramtype">@NotNull Arrowhead.Type&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
@@ -162,7 +162,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs an arrowhead of a particular type. </p>
+<p>Constructs an lineEnding of a particular type. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">type</td><td></td></tr>
@@ -183,7 +183,7 @@ Protected Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html">Type</a> com.aarrelaakso.drawl.Arrowhead.getArrowheadType </td>
+          <td class="memname"><a class="el" href="../../df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html">Type</a> com.aarrelaakso.drawl.LineEnding.getArrowheadType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -204,7 +204,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a9826ae8d6876c83ff6e61f12b5afcd1a_icgraph.png" border="0" usemap="#d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a9826ae8d6876c83ff6e61f12b5afcd1a_icgraph" alt=""/></div>
 <map name="d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a9826ae8d6876c83ff6e61f12b5afcd1a_icgraph" id="d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_a9826ae8d6876c83ff6e61f12b5afcd1a_icgraph">
-<area shape="rect" id="node2" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html#a0094c4f48945d782b7e474b15ef06561" title="com.aarrelaakso.drawl.Arrowhead.get\lSVGDef" alt="" coords="295,5,536,47"/>
+<area shape="rect" id="node2" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html#a0094c4f48945d782b7e474b15ef06561" title="com.aarrelaakso.drawl.LineEnding.get\lSVGDef" alt="" coords="295,5,536,47"/>
 </map>
 </div>
 
@@ -220,7 +220,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">String com.aarrelaakso.drawl.Arrowhead.getSVGDef </td>
+          <td class="memname">String com.aarrelaakso.drawl.LineEnding.getSVGDef </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -252,7 +252,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/dee/namespacecom.html">com</a></li><li class="navelem"><a class="el" href="../../d4/d61/namespacecom_1_1aarrelaakso.html">aarrelaakso</a></li><li class="navelem"><a class="el" href="../../dd/d8e/namespacecom_1_1aarrelaakso_1_1drawl.html">drawl</a></li><li class="navelem"><a class="el" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html">Arrowhead</a></li>
-    <li class="footer">Generated on Mon May 11 2020 19:56:03 for Drawl by
+    <li class="footer">Generated on Mon May 11 2020 21:02:30 for Drawl by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

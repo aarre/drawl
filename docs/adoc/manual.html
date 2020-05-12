@@ -623,196 +623,7 @@ public class ThreeCirclesVertical
 <div class="sect1">
 <h2 id="_arrowheads">Arrowheads</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>One of the design goals in creating arrowheads for Drawl was to make the arrowhead shapes subsume the same
-area at their default sizes. This makes the various line endings subsume approximately the same
-visual weight. It means, however, that they do not all share a common dimension, either width or height.</p>
-</div>
-<div class="paragraph">
-<p>We take as default a square with sides of length 4, which sets the area at 16.</p>
-</div>
-<div class="paragraph">
-<p>To get a diamond shape with the same area, we need to set the crossways dimensions at</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[4 sqrt(2) \approx 5.66\]
-</div>
-</div>
-<div class="paragraph">
-<p>For the dot/disk arrowhead, we need</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\pi r^2 = 16\]
-</div>
-</div>
-<div class="paragraph">
-<p>so</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[r^2 = 16/\pi\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[r = \sqrt{\dfrac{16}{\pi}}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[r = \dfrac{4}{\sqrt \pi}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[r \approx 2.26\]
-</div>
-</div>
-<div class="paragraph">
-<p>For the default arrowhead, we set the constraint of having the legs have twice the length of the base.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>   /\
-  /  \
- /    \  2x
-/      \
---------
-  x</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Half of this triangle is:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre> |\
- | \
-h|  \  2x
- |   \
- ------
-  x/2</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The height of this triangle can be calculated as:</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h^2 + (\dfrac{x}{2})^2 = (2x)^2\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h^2 + \dfrac{x^2}{4} = 4x^2\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h^2 = 4x^2 - \dfrac{x^2}{4}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h^2 = \dfrac{16x^2}{4} - \dfrac{x^2}{4}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h^2 = \dfrac{15x^2}{4}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h = \sqrt{\dfrac{15x^2}{4}}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h = \dfrac{x \sqrt{15}}{2}\]
-</div>
-</div>
-<div class="paragraph">
-<p>The area of the whole triangle can then be calculated as:</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\dfrac{xh}{2}\]
-</div>
-</div>
-<div class="paragraph">
-<p>Given that we want the area to be 16:</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\dfrac{xh}{2} = 16\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[xh = 32\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[x \dfrac{x \sqrt{15}}{2} = 32\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\dfrac{x^2 \sqrt{15}}{2} = 32\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[x^2 \sqrt{15} = 64\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[15 x^4  = 4096\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[x^4  = \dfrac{4096}{15}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[x  = \sqrt[4]{\dfrac{4096}{15}}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[x \approx 4.07\]
-</div>
-</div>
-<div class="paragraph">
-<p>Then, to calculate the height of the triangle h:</p>
-</div>
-<div class="stemblock">
-<div class="content">
-\[\dfrac{xh}{2} = 16\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[xh = 32\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h = \dfrac{32}{x}\]
-</div>
-</div>
-<div class="stemblock">
-<div class="content">
-\[h \approx 7.87\]
-</div>
-</div>
+
 </div>
 </div>
 <div class="sect1">
@@ -955,7 +766,7 @@ These include Asymptote, Graphviz, Diagrams, and ggplot.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In general, Drawl allows users to do things in several different ways rather than forcing them to
-do things in only one way. The system of arrowhead types is a good example.</p>
+do things in only one way. The system of lineEnding types is a good example.</p>
 </div>
 </div>
 </div>
@@ -1036,7 +847,7 @@ do things in only one way. The system of arrowhead types is a good example.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-11 19:53:15 -0400
+Last updated 2020-05-11 21:01:10 -0400
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
