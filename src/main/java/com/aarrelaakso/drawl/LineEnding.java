@@ -157,7 +157,7 @@ public class LineEnding {
 
         DISK,
         /*!< A disk-shaped line ending. Synonyms: DOT           */
-        
+
         CIRCLE, ODOT,
         INVERTED,
         TEE,
