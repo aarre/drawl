@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.8.13-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,7 +13,17 @@
 <link href="../../search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../search/searchdata.js"></script>
 <script type="text/javascript" src="../../search/search.js"></script>
-<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -22,7 +33,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Drawl
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.0-alpha1</span>
    </div>
    <div id="projectbrief">The world&#39;s best drawing language.</div>
   </td>
@@ -97,8 +108,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e956655eba16543d82728923c3eb4f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a9e956655eba16543d82728923c3eb4f6">Line</a> (@NotNull final <a class="el" href="../../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html">Point</a> <a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a48220286707ae05387f9c99d9e08784c">point1Implicit</a>, @NotNull final <a class="el" href="../../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html">Point</a> <a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a055d1e743c66cc808f108664b38d7de2">point2Implicit</a>)</td></tr>
 <tr class="memdesc:a9e956655eba16543d82728923c3eb4f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a line from one point to another.  <a href="#a9e956655eba16543d82728923c3eb4f6">More...</a><br /></td></tr>
 <tr class="separator:a9e956655eba16543d82728923c3eb4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c54922855fda2590c962ac8e03c220c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a7c54922855fda2590c962ac8e03c220c">addArrowhead</a> (final <a class="el" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html">Arrowhead</a> <a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a82ee992a758049f71dfbb22c597149">lineEnding</a>)</td></tr>
-<tr class="separator:a7c54922855fda2590c962ac8e03c220c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae596a9a32b970e2b5157db03dc023afc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#ae596a9a32b970e2b5157db03dc023afc">addLineEnding</a> (final <a class="el" href="../../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html">LineEnding</a> <a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a8b339d5d292d8584536ba0c19478bb27">lineEnding</a>)</td></tr>
+<tr class="separator:ae596a9a32b970e2b5157db03dc023afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a54dd70515b691c8afa88f980e10698"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a54dd70515b691c8afa88f980e10698">getSVG</a> ()</td></tr>
 <tr class="separator:a6a54dd70515b691c8afa88f980e10698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af58511076072e05cf42641ee44d0d0d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#af58511076072e05cf42641ee44d0d0d7">setThickness</a> (double <a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a314ae0371f5665cf70ad99742d44934a">thickness</a>)</td></tr>
@@ -300,14 +311,14 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ae037bf2dd2bb2a21ba2d45a752cad9f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#ae037bf2dd2bb2a21ba2d45a752cad9f5">constructFromPoints</a> (@NotNull <a class="el" href="../../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html">Point</a> <a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a48220286707ae05387f9c99d9e08784c">point1Implicit</a>, @NotNull <a class="el" href="../../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html">Point</a> <a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a055d1e743c66cc808f108664b38d7de2">point2Implicit</a>)</td></tr>
 <tr class="memdesc:ae037bf2dd2bb2a21ba2d45a752cad9f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html" title="Represents lines. ">Line</a> from one point to another.  <a href="#ae037bf2dd2bb2a21ba2d45a752cad9f5">More...</a><br /></td></tr>
 <tr class="separator:ae037bf2dd2bb2a21ba2d45a752cad9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9659e69575b1fd2bd2f6dbfc7e11521b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html">Arrowhead</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a9659e69575b1fd2bd2f6dbfc7e11521b">getArrowhead</a> ()</td></tr>
-<tr class="separator:a9659e69575b1fd2bd2f6dbfc7e11521b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87a0f6162575962d65f6f8e186334787"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html">LineEnding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a87a0f6162575962d65f6f8e186334787">getLineEnding</a> ()</td></tr>
+<tr class="separator:a87a0f6162575962d65f6f8e186334787"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a6a82ee992a758049f71dfbb22c597149"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html">Arrowhead</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a82ee992a758049f71dfbb22c597149">lineEnding</a></td></tr>
-<tr class="memdesc:a6a82ee992a758049f71dfbb22c597149"><td class="mdescLeft">&#160;</td><td class="mdescRight">What type of lineEnding should be on the line.  <a href="#a6a82ee992a758049f71dfbb22c597149">More...</a><br /></td></tr>
-<tr class="separator:a6a82ee992a758049f71dfbb22c597149"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b339d5d292d8584536ba0c19478bb27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html">LineEnding</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a8b339d5d292d8584536ba0c19478bb27">lineEnding</a></td></tr>
+<tr class="memdesc:a8b339d5d292d8584536ba0c19478bb27"><td class="mdescLeft">&#160;</td><td class="mdescRight">What type of arrowhead should be on the line.  <a href="#a8b339d5d292d8584536ba0c19478bb27">More...</a><br /></td></tr>
+<tr class="separator:a8b339d5d292d8584536ba0c19478bb27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a441ce546831b219e01f5fd0f7e0bb3b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d88/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_1_1_orientation.html">Orientation</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a441ce546831b219e01f5fd0f7e0bb3b1">orientation</a></td></tr>
 <tr class="separator:a441ce546831b219e01f5fd0f7e0bb3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48220286707ae05387f9c99d9e08784c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a48220286707ae05387f9c99d9e08784c">point1Implicit</a> = new <a class="el" href="../../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html">Point</a>(0, 0)</td></tr>
@@ -431,16 +442,16 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7c54922855fda2590c962ac8e03c220c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c54922855fda2590c962ac8e03c220c">&#9670;&nbsp;</a></span>addArrowhead()</h2>
+<a id="ae596a9a32b970e2b5157db03dc023afc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae596a9a32b970e2b5157db03dc023afc">&#9670;&nbsp;</a></span>addLineEnding()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void com.aarrelaakso.drawl.Line.addArrowhead </td>
+          <td class="memname">void com.aarrelaakso.drawl.Line.addLineEnding </td>
           <td>(</td>
-          <td class="paramtype">final <a class="el" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html">Arrowhead</a>&#160;</td>
+          <td class="paramtype">final <a class="el" href="../../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html">LineEnding</a>&#160;</td>
           <td class="paramname"><em>lineEnding</em></td><td>)</td>
           <td></td>
         </tr>
@@ -554,31 +565,6 @@ Private Attributes</h2></td></tr>
 
 <p>Gets this <a class="el" href="../../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html" title="Abstract class represents shapes such as circles, rectangles, and lines. ">Shape</a>'s neighbor above (this <a class="el" href="../../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html" title="Abstract class represents shapes such as circles, rectangles, and lines. ">Shape</a> is below that one), if any. </p>
 <dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="../../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html" title="Abstract class represents shapes such as circles, rectangles, and lines. ">Shape</a> to the right of this one, if any; <code>null</code> otherwise. </dd></dl>
-
-</div>
-</div>
-<a id="a9659e69575b1fd2bd2f6dbfc7e11521b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9659e69575b1fd2bd2f6dbfc7e11521b">&#9670;&nbsp;</a></span>getArrowhead()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html">Arrowhead</a> getLineEnding </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -1337,6 +1323,31 @@ Private Attributes</h2></td></tr>
 
 <p>Returns a <a class="el" href="../../de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html" title="Represents a point on the drawing canvas. ">Point</a> object representing this <a class="el" href="../../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html" title="Abstract class represents shapes such as circles, rectangles, and lines. ">Shape</a>'s left port. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a87a0f6162575962d65f6f8e186334787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a0f6162575962d65f6f8e186334787">&#9670;&nbsp;</a></span>getLineEnding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html">LineEnding</a> com.aarrelaakso.drawl.Line.getLineEnding </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -2459,8 +2470,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6a82ee992a758049f71dfbb22c597149"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a82ee992a758049f71dfbb22c597149">&#9670;&nbsp;</a></span>lineEnding</h2>
+<a id="a8b339d5d292d8584536ba0c19478bb27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b339d5d292d8584536ba0c19478bb27">&#9670;&nbsp;</a></span>lineEnding</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2469,7 +2480,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html">Arrowhead</a> com.aarrelaakso.drawl.Line.lineEndingg</td>
+          <td class="memname"><a class="el" href="../../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html">LineEnding</a> com.aarrelaakso.drawl.Line.lineEnding</td>
         </tr>
       </table>
   </td>
@@ -2479,7 +2490,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>What type of lineEnding should be on the line. </p>
+<p>What type of arrowhead should be on the line. </p>
 
 </div>
 </div>
@@ -2583,7 +2594,7 @@ Private Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 12 2020 22:05:20 for Drawl by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

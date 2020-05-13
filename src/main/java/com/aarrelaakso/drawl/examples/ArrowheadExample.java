@@ -42,12 +42,12 @@ public class ArrowheadExample {
         drawing.add(text2);
         drawing.add(line2);
 
-        final Text text3 = new Text("DIAMOND, TURNED_SQUARE");
+        final Text text3 = new Text("TURNED_SQUARE");
         text3.setBelow(line2);
         final Line line3 = new Line(Line.Orientation.HORIZONTAL);
         line3.setWidth(textWidth);
         line3.setThickness(5);
-        final LineEnding lineEnding3 = new LineEnding(LineEnding.Type.DIAMOND);
+        final LineEnding lineEnding3 = new LineEnding(LineEnding.Type.TURNED_SQUARE);
         line3.addLineEnding(lineEnding3);
         line3.setBelow(text3);
         drawing.add(text3);
@@ -64,7 +64,7 @@ public class ArrowheadExample {
         drawing.add(text4);
         drawing.add(line4);
 
-        final Text text5 = new Text("CIRCLE, ODOT");
+        final Text text5 = new Text("CIRCLE, OPEN_DOT");
         text5.setBelow(line4);
         final Line line5 = new Line(Line.Orientation.HORIZONTAL);
         line5.setWidth(textWidth);
@@ -75,10 +75,32 @@ public class ArrowheadExample {
         drawing.add(text5);
         drawing.add(line5);
 
+        final Text text6 = new Text("DIAMOND, RHOMBUS");
+        text6.setBelow(line5);
+        final Line line6 = new Line(Line.Orientation.HORIZONTAL);
+        line6.setWidth(textWidth);
+        line6.setThickness(5);
+        final LineEnding lineEnding6 = new LineEnding(LineEnding.Type.DIAMOND);
+        line6.addLineEnding(lineEnding6);
+        line6.setBelow(text6);
+        drawing.add(text6);
+        drawing.add(line6);
+
+        final Text text7 = new Text("OPEN_DIAMOND");
+        text7.setBelow(line6);
+        final Line line7 = new Line(Line.Orientation.HORIZONTAL);
+        line7.setWidth(textWidth);
+        line7.setThickness(5);
+        final LineEnding lineEnding7 = new LineEnding(LineEnding.Type.OPEN_DIAMOND);
+        line7.addLineEnding(lineEnding7);
+        line7.setBelow(text7);
+        drawing.add(text7);
+        drawing.add(line7);
+
         final Text bottomSpacer = new Text("");
-        bottomSpacer.setBelow(line5);
+        bottomSpacer.setBelow(line7);
         drawing.add(bottomSpacer);
 
-        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 1000, 500);
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 500, 500);
     }
 }

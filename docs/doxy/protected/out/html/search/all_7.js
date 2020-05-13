@@ -1,8 +1,6 @@
 var searchData=
 [
   ['getabove',['getAbove',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#acebea2aa57031322323c9bf50ee447db',1,'com::aarrelaakso::drawl::Shape']]],
-  ['getarrowhead',['getArrowhead',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a9659e69575b1fd2bd2f6dbfc7e11521b',1,'com::aarrelaakso::drawl::Line']]],
-  ['getarrowheadtype',['getArrowheadType',['../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html#a9826ae8d6876c83ff6e61f12b5afcd1a',1,'com::aarrelaakso::drawl::Arrowhead']]],
   ['getbelow',['getBelow',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a53de5ab609d879719cd3b372dfe8df58',1,'com::aarrelaakso::drawl::Shape']]],
   ['getbottomport',['getBottomPort',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aba14efe9a16c0808580963c66b171082',1,'com::aarrelaakso::drawl::Shape']]],
   ['getexplicitdiameter',['getExplicitDiameter',['../dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#a20eab5fc5c2dee6f97909ed24c7d53ec',1,'com::aarrelaakso::drawl::Circle']]],
@@ -43,6 +41,8 @@ var searchData=
   ['getleftof',['getLeftOf',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a2b19d5964ac46d545a7bae3133df6532',1,'com::aarrelaakso::drawl::Shape']]],
   ['getleftport',['getLeftPort',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aeffa96786ca552adf46924ec77da9555',1,'com::aarrelaakso::drawl::Shape']]],
   ['getlength',['getLength',['../d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a3977c6a791f29d87eaad10771ed8eb80',1,'com::aarrelaakso::drawl::Drawing']]],
+  ['getlineending',['getLineEnding',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a87a0f6162575962d65f6f8e186334787',1,'com::aarrelaakso::drawl::Line']]],
+  ['getlineendingtype',['getLineEndingType',['../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html#a37d765d892d173660eef0f321781f455',1,'com::aarrelaakso::drawl::LineEnding']]],
   ['getnumber',['getNumber',['../d9/de9/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_remainder_pair.html#a0924839905a2c81b8bd4b2fd749e9783',1,'com.aarrelaakso.drawl.DrawlNumberRemainderPair.getNumber()'],['../d9/d77/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number_remainder_pair.html#a0811842d4cf4746c09c81fca090f98e1',1,'com.aarrelaakso.drawl.SisuNumberRemainderPair.getNumber()']]],
   ['getpoint1explicit',['getPoint1Explicit',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#ac8344112f3a5d24cfa4b732f3625af08',1,'com::aarrelaakso::drawl::Line']]],
   ['getpoint1implicit',['getPoint1Implicit',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a687f4da61c3f8760840713ff2da6ecaa',1,'com::aarrelaakso::drawl::Line']]],
@@ -53,7 +53,7 @@ var searchData=
   ['getrightport',['getRightPort',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a319c78d425ec91e1aef1072a95e349ad',1,'com::aarrelaakso::drawl::Shape']]],
   ['getstroke',['getStroke',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a4e1d54c7e161e3af5053939ddefdf9e6',1,'com::aarrelaakso::drawl::Shape']]],
   ['getsvg',['getSVG',['../dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html#adc826cc2d93eb4e78318035c86d00f03',1,'com.aarrelaakso.drawl.Circle.getSVG()'],['../d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ac005562185c059c5cd14a1df92b335d6',1,'com.aarrelaakso.drawl.Drawing.getSVG(@NotNull final Integer drawingWidth, @NotNull final Integer drawingHeight)'],['../d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ada7c8b8df06ba84c1334e98751730500',1,'com.aarrelaakso.drawl.Drawing.getSVG()'],['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a54dd70515b691c8afa88f980e10698',1,'com.aarrelaakso.drawl.Line.getSVG()'],['../d8/d99/classcom_1_1aarrelaakso_1_1drawl_1_1_rectangle.html#a175f326e054b08426648a81a246904a7',1,'com.aarrelaakso.drawl.Rectangle.getSVG()'],['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aca74cc0c71117040f28329744eebde9d',1,'com.aarrelaakso.drawl.Shape.getSVG()'],['../dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html#ab1a6091b007ea4da41de26bc8c6ea021',1,'com.aarrelaakso.drawl.Text.getSVG()']]],
-  ['getsvgdef',['getSVGDef',['../d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html#a0094c4f48945d782b7e474b15ef06561',1,'com::aarrelaakso::drawl::Arrowhead']]],
+  ['getsvgdef',['getSVGDef',['../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html#a30fe25c0bc92fe34abffcd1b16248605',1,'com::aarrelaakso::drawl::LineEnding']]],
   ['gettext',['getText',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a6f876978d4102974fedc5b41c93c7b26',1,'com::aarrelaakso::drawl::Shape']]],
   ['getthickness',['getThickness',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#aa25b4985b90dd7ebad4cbdc403f22a42',1,'com::aarrelaakso::drawl::Line']]],
   ['gettopport',['getTopPort',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#aed4e9caa294aacc973b7a531a960e9e5',1,'com::aarrelaakso::drawl::Shape']]],

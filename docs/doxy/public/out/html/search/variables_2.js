@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['circle',['CIRCLE',['../df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#aa798da36e5c99f20a9becce5adc4a8bd',1,'com::aarrelaakso::drawl::Arrowhead::Type']]],
-  ['classical_5ftikz_5frightarrow',['CLASSICAL_TIKZ_RIGHTARROW',['../df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a7d11f7c30dc23c5697f520b5e1230efe',1,'com::aarrelaakso::drawl::Arrowhead::Type']]],
-  ['computer_5fmodern_5frightarrow',['COMPUTER_MODERN_RIGHTARROW',['../df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a23ba1f0a86e5037ac9327f2743a4bede',1,'com::aarrelaakso::drawl::Arrowhead::Type']]],
-  ['crow',['CROW',['../df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#af2ade96c668c81e82484da17f28ccf13',1,'com::aarrelaakso::drawl::Arrowhead::Type']]],
-  ['curve',['CURVE',['../df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#acf2cc415237f597e19ef2cbca0059cbb',1,'com::aarrelaakso::drawl::Arrowhead::Type']]]
+  ['circle',['CIRCLE',['../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#af07aa0aa4f1de58f3eb19da4f8fc4ba2',1,'com::aarrelaakso::drawl::LineEnding::Type']]],
+  ['classical_5ftikz_5frightarrow',['CLASSICAL_TIKZ_RIGHTARROW',['../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a2ad7fc532e223e6160cc8ac18aea591c',1,'com::aarrelaakso::drawl::LineEnding::Type']]],
+  ['computer_5fmodern_5frightarrow',['COMPUTER_MODERN_RIGHTARROW',['../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#ad62a65c0f5a67f55d55bb27e5b4d6d10',1,'com::aarrelaakso::drawl::LineEnding::Type']]],
+  ['crow',['CROW',['../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a737096505b608f3236b4a0dad32f72d2',1,'com::aarrelaakso::drawl::LineEnding::Type']]],
+  ['curve',['CURVE',['../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a404e12e66371490b4e465777a3e9ff8c',1,'com::aarrelaakso::drawl::LineEnding::Type']]]
 ];

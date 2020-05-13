@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ellipse',['ELLIPSE',['../df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a7243ba4efe6f7013ec9ec3e66f581fd8',1,'com::aarrelaakso::drawl::Arrowhead::Type']]]
+  ['ellipse',['ELLIPSE',['../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a8e62fdb30e281b4d639d729ce0134a0d',1,'com::aarrelaakso::drawl::LineEnding::Type']]]
 ];

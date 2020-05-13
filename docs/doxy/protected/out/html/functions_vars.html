@@ -1,3 +1,4 @@
+<!-- HTML header for doxygen 1.8.13-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,7 +13,17 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js", "TeX.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -22,7 +33,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Drawl
-   &#160;<span id="projectnumber">0.2.0</span>
+   &#160;<span id="projectnumber">0.3.0-alpha1</span>
    </div>
    <div id="projectbrief">The world&#39;s best drawing language.</div>
   </td>
@@ -70,13 +81,7 @@ $(function() {
 : <a class="el" href="d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a0281d9f3d35d7ff5db2be3c3f9362c9f">com.aarrelaakso.drawl.Shape</a>
 </li>
 <li>ARC_BARB
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#ab1a7fc7ccf7d089ac3b9b542d5658a7d">com.aarrelaakso.drawl.LineEnding.Type</a>
-</li>
-<li>lineEnding
-: <a class="el" href="df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a6a82ee992a758049f71dfbb22c597149">com.aarrelaakso.drawl.Line</a>
-</li>
-<li>arrowheadType
-: <a class="el" href="d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html#a72183bdf6672377d73b2d9810b6d0ed7">com.aarrelaakso.drawl.LineEnding</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#ad58d73beccd7d4d4ab015eca51fbc508">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 </ul>
 
@@ -86,13 +91,13 @@ $(function() {
 : <a class="el" href="d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#af670d34e6a0155ea0c350312d8ebc39f">com.aarrelaakso.drawl.Shape</a>
 </li>
 <li>BOX
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a823c7c75a5a70ecf72ee123eb4bec04f">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a1a09668e1434b10944872ae23112e058">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>BRACKET
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a1752cfa6d6458e674f51b591c1f13982">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a2e689a2d9c5d72e21453e993b72d25d2">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>BUTT_CAP
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a11a1867d678f006db71e1a288df31079">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a48e7e5ca4218f75225d453077cc5fb96">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 </ul>
 
@@ -105,49 +110,49 @@ $(function() {
 : <a class="el" href="d8/dbd/classcom_1_1aarrelaakso_1_1drawl_1_1_shape_explicit.html#aecea9209d9d5d5803acd7ff7b8ec9642">com.aarrelaakso.drawl.ShapeExplicit</a>
 </li>
 <li>CIRCLE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#aa798da36e5c99f20a9becce5adc4a8bd">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#af07aa0aa4f1de58f3eb19da4f8fc4ba2">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>CLASSICAL_TIKZ_RIGHTARROW
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a7d11f7c30dc23c5697f520b5e1230efe">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a2ad7fc532e223e6160cc8ac18aea591c">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>COMPILE
 : <a class="el" href="d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a1264dfbcaff0b610a0b6a5e5a6b37e72">com.aarrelaakso.drawl.DrawlNumber</a>
 , <a class="el" href="d5/d8a/interfacecom_1_1aarrelaakso_1_1drawl_1_1_number.html#ad6cff21beec53c9eb5d47ee035e67aa7">com.aarrelaakso.drawl.Number</a>
 </li>
 <li>COMPUTER_MODERN_RIGHTARROW
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a23ba1f0a86e5037ac9327f2743a4bede">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#ad62a65c0f5a67f55d55bb27e5b4d6d10">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>contents
 : <a class="el" href="d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#ab9ec6030e9f21d42852b308c482b3ccf">com.aarrelaakso.drawl.Drawing</a>
 </li>
 <li>CROW
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#af2ade96c668c81e82484da17f28ccf13">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a737096505b608f3236b4a0dad32f72d2">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>CURVE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#acf2cc415237f597e19ef2cbca0059cbb">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a404e12e66371490b4e465777a3e9ff8c">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 </ul>
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>DEFAULT
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#ae4c70d3cd0853637fba791f2bb29cd8e">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a60839eb2ed0486a6f9f987c64d27e313">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>DIAMOND
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a038817b0bde4231adfc55dd4f507df5c">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#aa3ce0f93b6befa8383c516df010aeed4">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>DISK
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a474091c67ecdac839f2402301a46dc5d">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a14bdc0c42274d49c43f5da7a2920ec49">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>DOT
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#ad1e2ede480af8de60271d06f2eeff6ca">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a396196f34ff54525c071d7d061abd5f4">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 </ul>
 
 
 <h3><a id="index_e"></a>- e -</h3><ul>
 <li>ELLIPSE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a7243ba4efe6f7013ec9ec3e66f581fd8">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a8e62fdb30e281b4d639d729ce0134a0d">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>explicitHeight
 : <a class="el" href="d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#af4ab83c7d30a2f1d1d54f247c78e3b51">com.aarrelaakso.drawl.Drawing</a>
@@ -168,10 +173,10 @@ $(function() {
 
 <h3><a id="index_f"></a>- f -</h3><ul>
 <li>FAST_ROUND
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#abc18d5d09da2af023716c6a170f19dd7">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a8666b75fa6d9cbd89c55c1931002d01e">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>FAST_TRIANGLE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#ab17746e47ec7e8ee2177e11bcee3201a">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a280550505a48050e5b05282b51460e25">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>fill
 : <a class="el" href="d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ade398fbc41c7814eebb5b4c7a62861f6">com.aarrelaakso.drawl.Shape</a>
@@ -185,7 +190,7 @@ $(function() {
 , <a class="el" href="d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#afae3e6d652b8c125dccab3e110d038b0">com.aarrelaakso.drawl.SisuNumber</a>
 </li>
 <li>HOOKS
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#ac7785804ee71d88f541c4aab8b1c7855">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a6747e97b9a9fde7c13857040c9c74e71">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>HORIZONTAL
 : <a class="el" href="d9/d88/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_1_1_orientation.html#a8400c9a90a482778ae963b47fca3ec1f">com.aarrelaakso.drawl.Line.Orientation</a>
@@ -210,27 +215,33 @@ $(function() {
 : <a class="el" href="d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a151c12e3dc5c72fe0f1e3186de42db70">com.aarrelaakso.drawl.Drawing</a>
 </li>
 <li>INVERTED
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a47f58944f623a14d0f2b7ea990ba33c9">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#aa3080aaf76179d5fad30ee1b3d561cb4">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 </ul>
 
 
 <h3><a id="index_k"></a>- k -</h3><ul>
 <li>KITE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a3d093a6479d611b91fd4802da7d4afc3">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a8154683c83e45ef8147726f2f3845fc8">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 </ul>
 
 
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>LATEX
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#adca44209b56fad76f36cc6e8ad546c68">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a58c18082a756b4d126cd08a01ede6bef">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>LEFT
 : <a class="el" href="d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a682479373a5944ae84fc33fd65324e9d">com.aarrelaakso.drawl.Shape</a>
 </li>
 <li>length
 : <a class="el" href="d9/df3/classcom_1_1aarrelaakso_1_1drawl_1_1_measure.html#aef040b9b0dd7d4a925448d0854c2444a">com.aarrelaakso.drawl.Measure</a>
+</li>
+<li>lineEnding
+: <a class="el" href="df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a8b339d5d292d8584536ba0c19478bb27">com.aarrelaakso.drawl.Line</a>
+</li>
+<li>lineEndingType
+: <a class="el" href="d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html#a0f407b000ff81f764af791028e8e34b6">com.aarrelaakso.drawl.LineEnding</a>
 </li>
 <li>loadFactor
 : <a class="el" href="d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a853a2ba75750f3ece0036c3617ac169f">com.aarrelaakso.drawl.Drawing</a>
@@ -262,7 +273,7 @@ $(function() {
 : <a class="el" href="d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a57da030925a9bfc11bc49333b63a2e0f">com.aarrelaakso.drawl.Shape</a>
 </li>
 <li>NORMAL
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#abd0879a22002109b53e3d6af939c0734">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a1f96f154af5043259b200495ec8b2af6">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>number
 : <a class="el" href="d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a9fe9f40163a4f5581b35d61ecf63f278">com.aarrelaakso.drawl.DrawlNumber</a>
@@ -274,18 +285,18 @@ $(function() {
 
 
 <h3><a id="index_o"></a>- o -</h3><ul>
-<li>ODOT
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a70d3e12a9991fd0a941d9c25138476a7">com.aarrelaakso.drawl.LineEnding.Type</a>
-</li>
 <li>ONE
 : <a class="el" href="d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a0cd06e1d6344869ed300bc99afcde20a">com.aarrelaakso.drawl.DrawlNumber</a>
 , <a class="el" href="d4/de1/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number.html#ad74e537df980406b3282861605df259c">com.aarrelaakso.drawl.SisuNumber</a>
 </li>
 <li>OPEN_DIAMOND
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a7bedad9291c6683881dbcdfdc4370035">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a13f6d6fbec0c37e1b87096ceb067ee6b">com.aarrelaakso.drawl.LineEnding.Type</a>
+</li>
+<li>OPEN_DOT
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a4c9d73e9e0f20637712c6a8183742eee">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>OPEN_ELLIPSE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a2a469be7b814da9b632d56e431565b37">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#ac2a4c476b50f85245602abdbfe1bf8a7">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>orientation
 : <a class="el" href="df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a441ce546831b219e01f5fd0f7e0bb3b1">com.aarrelaakso.drawl.Line</a>
@@ -295,7 +306,7 @@ $(function() {
 
 <h3><a id="index_p"></a>- p -</h3><ul>
 <li>PARENTHESIS
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a9de2bdf02534510c099f856ded0500e3">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a8058f6d787c7453202af99a83390488d">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>point1Implicit
 : <a class="el" href="df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a48220286707ae05387f9c99d9e08784c">com.aarrelaakso.drawl.Line</a>
@@ -308,23 +319,26 @@ $(function() {
 
 <h3><a id="index_r"></a>- r -</h3><ul>
 <li>RAYS
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a586dd8decad3018c6d7c69b98aa2fee5">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a1b2d6225c4b994d65a68fd6e3b8382db">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>RECTANGLE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a8380490ae211a6681e81fd6835388edf">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a6428f3ac47109c9dbe046dddda0e25b3">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>remainder
 : <a class="el" href="d9/de9/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_remainder_pair.html#a95c7e55169d65822bbceb08ff2f800dc">com.aarrelaakso.drawl.DrawlNumberRemainderPair</a>
 , <a class="el" href="d9/d77/classcom_1_1aarrelaakso_1_1drawl_1_1_sisu_number_remainder_pair.html#a2db9bc3ff60d0078b3341f75dd830890">com.aarrelaakso.drawl.SisuNumberRemainderPair</a>
 </li>
+<li>RHOMBUS
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a08590ccad906f75be8d0a27215bd07e2">com.aarrelaakso.drawl.LineEnding.Type</a>
+</li>
 <li>RIGHT
 : <a class="el" href="d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ad4f620afc88ad5d6fadc698f443cbe38">com.aarrelaakso.drawl.Shape</a>
 </li>
 <li>ROUND_CAP
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#ae9b576cd80e0be2d2c1655d8939b2064">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a811892a581ba487630b2860401a7d078">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>ROUNDED
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a44ab18e4cfb9887938af1017cb7db82f">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a8507c279835c7028f0539915cbd5c402">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>ROUNDING_MODE
 : <a class="el" href="d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#ab4b44bb0675da90d8f435286911b711e">com.aarrelaakso.drawl.DrawlNumber</a>
@@ -349,13 +363,13 @@ $(function() {
 : <a class="el" href="d9/de6/classcom_1_1aarrelaakso_1_1drawl_1_1_logging_config.html#a1cfdfab19a9fd0f78da68dc8bcce3144">com.aarrelaakso.drawl.LoggingConfig</a>
 </li>
 <li>SQUARE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a39ad0ea537ea80479c845425c4643abf">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#aef742b7c544e685f8e670db7a1b1cc4b">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>STEALTH
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a300d91ce1b8770d4f39c39479528a9d5">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a36723b935663bf0b801d6e525d0625a9">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>STRAIGHT_BARB
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a7500173be6145013e3c1d5aa7068b431">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#abc910ba1ec1030cfb2673926b6a335db">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>string
 : <a class="el" href="dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html#a94bf15b06c72349f5d5a1bfc56496685">com.aarrelaakso.drawl.Text</a>
@@ -368,10 +382,10 @@ $(function() {
 
 <h3><a id="index_t"></a>- t -</h3><ul>
 <li>TEE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a5820127f9ecd65921ffcfb02e2d2eb08">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a58f67cf6cf471ec618c92e5f5a5bdc6e">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>TEE_BARB
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a80a60c14eb16a71b758fd9cfc81e2952">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a3e773d9cc2fe5a8fe7fb0bea67a9c731">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>text
 : <a class="el" href="d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#ab54afc2d95d3447532f5ecf3fec3faa8">com.aarrelaakso.drawl.Shape</a>
@@ -380,13 +394,13 @@ $(function() {
 : <a class="el" href="df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a314ae0371f5665cf70ad99742d44934a">com.aarrelaakso.drawl.Line</a>
 </li>
 <li>TRIANGLE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a84bfc9a808825452b04017d73f63f99e">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a175880412926b2126d70c22ae7396009">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>TRIANGLE_CAP
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a2b5a534d002a522553112995369db66e">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#ae14c36781bb0be94cc274ab7e258fa9c">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>TURNED_SQUARE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a463ab7af648a68ee790781ab09c04b49">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#ae2bef871a847ab802cf25e83853a3372">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>TWO
 : <a class="el" href="d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html#a2bb7476cfb1cc76e2742cd00feb463c3">com.aarrelaakso.drawl.DrawlNumber</a>
@@ -397,7 +411,7 @@ $(function() {
 
 <h3><a id="index_v"></a>- v -</h3><ul>
 <li>VEE
-: <a class="el" href="df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#a8301a8818926413534a5604df1e91dac">com.aarrelaakso.drawl.LineEnding.Type</a>
+: <a class="el" href="d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a19cae46d0b7da7cea3da79f650474a98">com.aarrelaakso.drawl.LineEnding.Type</a>
 </li>
 <li>VERTICAL
 : <a class="el" href="d9/d88/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_1_1_orientation.html#ae5abbefd554c0775da068445e8bd65ae">com.aarrelaakso.drawl.Line.Orientation</a>
@@ -428,7 +442,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 12 2020 22:05:21 for Drawl by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.13
 </small></address>

@@ -19,7 +19,7 @@ enum \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_1_1_orientation}{Orient
 \begin{DoxyCompactList}\small\item\em Constructs a line at a particular orientation. \end{DoxyCompactList}\item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a9e956655eba16543d82728923c3eb4f6}{Line} (@Not\+Null final \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a48220286707ae05387f9c99d9e08784c}{point1\+Implicit}, @Not\+Null final \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a055d1e743c66cc808f108664b38d7de2}{point2\+Implicit})
 \begin{DoxyCompactList}\small\item\em Constructs a line from one point to another. \end{DoxyCompactList}\item 
-void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a7c54922855fda2590c962ac8e03c220c}{add\+Arrowhead} (final \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead}{Arrowhead} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a6a82ee992a758049f71dfbb22c597149}{lineEnding})
+void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ae596a9a32b970e2b5157db03dc023afc}{add\+Line\+Ending} (final \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending}{Line\+Ending} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a8b339d5d292d8584536ba0c19478bb27}{line\+Ending})
 \item 
 String \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a6a54dd70515b691c8afa88f980e10698}{get\+S\+VG} ()
 \item 
@@ -164,13 +164,13 @@ void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a79c79420c626b8b2d253
 \item 
 void \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ae037bf2dd2bb2a21ba2d45a752cad9f5}{construct\+From\+Points} (@Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a48220286707ae05387f9c99d9e08784c}{point1\+Implicit}, @Not\+Null \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a055d1e743c66cc808f108664b38d7de2}{point2\+Implicit})
 \begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line}{Line} from one point to another. \end{DoxyCompactList}\item 
-\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead}{Arrowhead} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a9659e69575b1fd2bd2f6dbfc7e11521b}{get\+Arrowhead} ()
+\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending}{Line\+Ending} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a87a0f6162575962d65f6f8e186334787}{get\+Line\+Ending} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead}{Arrowhead} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a6a82ee992a758049f71dfbb22c597149}{lineEnding}
-\begin{DoxyCompactList}\small\item\em What type of lineEnding should be on the line. \end{DoxyCompactList}\item
+\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending}{Line\+Ending} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a8b339d5d292d8584536ba0c19478bb27}{line\+Ending}
+\begin{DoxyCompactList}\small\item\em What type of arrowhead should be on the line. \end{DoxyCompactList}\item 
 \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_1_1_orientation}{Orientation} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a441ce546831b219e01f5fd0f7e0bb3b1}{orientation}
 \item 
 \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a48220286707ae05387f9c99d9e08784c}{point1\+Implicit} = new \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point}(0, 0)
@@ -236,11 +236,11 @@ Constructs a line from one point to another.
 \subsubsection{\texorpdfstring{[static initializer]()}{[static initializer]()}}
 {\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Shape.\mbox{[}static initializer\mbox{]} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [package]}, {\ttfamily [inherited]}}
 
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a7c54922855fda2590c962ac8e03c220c}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a7c54922855fda2590c962ac8e03c220c}} 
-\index{com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}!add\+Arrowhead@{add\+Arrowhead}}
-\index{add\+Arrowhead@{add\+Arrowhead}!com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}}
-\subsubsection{\texorpdfstring{add\+Arrowhead()}{addArrowhead()}}
-{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Line.\+add\+Arrowhead (\begin{DoxyParamCaption}\item[{final \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead}{Arrowhead}}]{lineEnding }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ae596a9a32b970e2b5157db03dc023afc}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ae596a9a32b970e2b5157db03dc023afc}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}!add\+Line\+Ending@{add\+Line\+Ending}}
+\index{add\+Line\+Ending@{add\+Line\+Ending}!com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}}
+\subsubsection{\texorpdfstring{add\+Line\+Ending()}{addLineEnding()}}
+{\footnotesize\ttfamily void com.\+aarrelaakso.\+drawl.\+Line.\+add\+Line\+Ending (\begin{DoxyParamCaption}\item[{final \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending}{Line\+Ending}}]{line\+Ending }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af6fea9610721de462c18ee640043aba7}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_af6fea9610721de462c18ee640043aba7}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}!add\+Text@{add\+Text}}
@@ -289,12 +289,6 @@ Gets this \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape}\textquot
 \begin{DoxyReturn}{Returns}
 the \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_shape}{Shape} to the right of this one, if any; {\ttfamily null} otherwise. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a9659e69575b1fd2bd2f6dbfc7e11521b}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a9659e69575b1fd2bd2f6dbfc7e11521b}} 
-\index{com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}!get\+Arrowhead@{get\+Arrowhead}}
-\index{get\+Arrowhead@{get\+Arrowhead}!com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}}
-\subsubsection{\texorpdfstring{get\+Arrowhead()}{getArrowhead()}}
-{\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead}{Arrowhead} com.\+aarrelaakso.\+drawl.\+Line.\+get\+Arrowhead (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
-
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a53de5ab609d879719cd3b372dfe8df58}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_shape_a53de5ab609d879719cd3b372dfe8df58}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}!get\+Below@{get\+Below}}
 \index{get\+Below@{get\+Below}!com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}}
@@ -650,6 +644,12 @@ Returns a \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_point}{Point} object r
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a87a0f6162575962d65f6f8e186334787}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a87a0f6162575962d65f6f8e186334787}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}!get\+Line\+Ending@{get\+Line\+Ending}}
+\index{get\+Line\+Ending@{get\+Line\+Ending}!com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}}
+\subsubsection{\texorpdfstring{get\+Line\+Ending()}{getLineEnding()}}
+{\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending}{Line\+Ending} com.\+aarrelaakso.\+drawl.\+Line.\+get\+Line\+Ending (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ac8344112f3a5d24cfa4b732f3625af08}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ac8344112f3a5d24cfa4b732f3625af08}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}!get\+Point1\+Explicit@{get\+Point1\+Explicit}}
 \index{get\+Point1\+Explicit@{get\+Point1\+Explicit}!com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}}
@@ -1112,15 +1112,15 @@ Sets the width of this object.
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a6a82ee992a758049f71dfbb22c597149}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a6a82ee992a758049f71dfbb22c597149}} 
-\index{com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}!lineEnding@{lineEnding}}
-\index{lineEnding@{lineEnding}!com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}}
-\subsubsection{\texorpdfstring{lineEnding}{lineEnding}}
-{\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead}{Arrowhead} com.\+aarrelaakso.\+drawl.\+Line.\+lineEnding\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a8b339d5d292d8584536ba0c19478bb27}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a8b339d5d292d8584536ba0c19478bb27}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}!line\+Ending@{line\+Ending}}
+\index{line\+Ending@{line\+Ending}!com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}}
+\subsubsection{\texorpdfstring{line\+Ending}{lineEnding}}
+{\footnotesize\ttfamily \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending}{Line\+Ending} com.\+aarrelaakso.\+drawl.\+Line.\+line\+Ending\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-What type of lineEnding should be on the line.
+What type of arrowhead should be on the line. 
 
 \mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a441ce546831b219e01f5fd0f7e0bb3b1}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_a441ce546831b219e01f5fd0f7e0bb3b1}} 
 \index{com\+::aarrelaakso\+::drawl\+::\+Line@{com\+::aarrelaakso\+::drawl\+::\+Line}!orientation@{orientation}}

@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['latex',['LATEX',['../df/d2e/enumcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead_1_1_type.html#adca44209b56fad76f36cc6e8ad546c68',1,'com::aarrelaakso::drawl::Arrowhead::Type']]],
+  ['latex',['LATEX',['../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a58c18082a756b4d126cd08a01ede6bef',1,'com::aarrelaakso::drawl::LineEnding::Type']]],
   ['left',['LEFT',['../d2/dab/classcom_1_1aarrelaakso_1_1drawl_1_1_shape.html#a682479373a5944ae84fc33fd65324e9d',1,'com::aarrelaakso::drawl::Shape']]],
   ['length',['length',['../d9/df3/classcom_1_1aarrelaakso_1_1drawl_1_1_measure.html#aef040b9b0dd7d4a925448d0854c2444a',1,'com::aarrelaakso::drawl::Measure']]],
   ['line',['Line',['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html',1,'com.aarrelaakso.drawl.Line'],['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#af96a733c80d52bf419cab52fb09bc514',1,'com.aarrelaakso.drawl.Line.Line()'],['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#aaeb9fdd60eeec26d881cb88a23c116b5',1,'com.aarrelaakso.drawl.Line.Line(Orientation orientation)'],['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a9e956655eba16543d82728923c3eb4f6',1,'com.aarrelaakso.drawl.Line.Line(@NotNull final Point point1Implicit, @NotNull final Point point2Implicit)']]],
   ['line_2ejava',['Line.java',['../d5/d66/_line_8java.html',1,'']]],
+  ['lineending',['LineEnding',['../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html',1,'com.aarrelaakso.drawl.LineEnding'],['../df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a8b339d5d292d8584536ba0c19478bb27',1,'com.aarrelaakso.drawl.Line.lineEnding()'],['../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html#ae3ae4bbd1469b24e585b8626872c66a9',1,'com.aarrelaakso.drawl.LineEnding.LineEnding()'],['../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html#acd36154a030301e72b9c41de1b42d8bf',1,'com.aarrelaakso.drawl.LineEnding.LineEnding(@NotNull LineEnding.Type type)']]],
+  ['lineending_2ejava',['LineEnding.java',['../d5/d72/_line_ending_8java.html',1,'']]],
+  ['lineendingtype',['lineEndingType',['../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html#a0f407b000ff81f764af791028e8e34b6',1,'com::aarrelaakso::drawl::LineEnding']]],
   ['lineexample',['LineExample',['../d6/d1c/classcom_1_1aarrelaakso_1_1drawl_1_1examples_1_1_line_example.html',1,'com::aarrelaakso::drawl::examples']]],
   ['lineexample_2ejava',['LineExample.java',['../d9/d1a/_line_example_8java.html',1,'']]],
   ['loadfactor',['loadFactor',['../d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html#a853a2ba75750f3ece0036c3617ac169f',1,'com::aarrelaakso::drawl::Drawing']]],

@@ -1,0 +1,104 @@
+\hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending}{}\section{com.\+aarrelaakso.\+drawl.\+Line\+Ending Class Reference}
+\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending}\index{com.\+aarrelaakso.\+drawl.\+Line\+Ending@{com.\+aarrelaakso.\+drawl.\+Line\+Ending}}
+
+
+Represents heads or tails on the ends of Lines.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type}{Type}
+\begin{DoxyCompactList}\small\item\em Drawl defines many types of line endings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_ae3ae4bbd1469b24e585b8626872c66a9}{Line\+Ending} ()
+\begin{DoxyCompactList}\small\item\em Constructs a default line ending. \end{DoxyCompactList}\item 
+\hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_acd36154a030301e72b9c41de1b42d8bf}{Line\+Ending} (@Not\+Null Line\+Ending.\+Type type)
+\begin{DoxyCompactList}\small\item\em Constructs an line ending of a particular type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type}{Type} \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_a37d765d892d173660eef0f321781f455}{get\+Line\+Ending\+Type} ()
+\begin{DoxyCompactList}\small\item\em Returns the canonical representation of this line ending type. \end{DoxyCompactList}\item 
+String \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_a30fe25c0bc92fe34abffcd1b16248605}{get\+S\+V\+G\+Def} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Line\+Ending.\+Type \hyperlink{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_a0f407b000ff81f764af791028e8e34b6}{line\+Ending\+Type} = \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type_a60839eb2ed0486a6f9f987c64d27e313}{Type.\+D\+E\+F\+A\+U\+LT}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents heads or tails on the ends of Lines. 
+
+One of the design goals in creating line endings for Drawl was to make the line ending shapes subsume the same area at their default sizes. This makes the various line endings subsume approximately the same visual weight. It means, however, that they do not all share a common dimension, either width or height.
+
+We take as default a square with sides of length 4, which sets the area at 16. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_ae3ae4bbd1469b24e585b8626872c66a9}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_ae3ae4bbd1469b24e585b8626872c66a9}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending@{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending}!Line\+Ending@{Line\+Ending}}
+\index{Line\+Ending@{Line\+Ending}!com\+::aarrelaakso\+::drawl\+::\+Line\+Ending@{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending}}
+\subsubsection{\texorpdfstring{Line\+Ending()}{LineEnding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Line\+Ending.\+Line\+Ending (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a default line ending. 
+
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_acd36154a030301e72b9c41de1b42d8bf}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_acd36154a030301e72b9c41de1b42d8bf}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending@{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending}!Line\+Ending@{Line\+Ending}}
+\index{Line\+Ending@{Line\+Ending}!com\+::aarrelaakso\+::drawl\+::\+Line\+Ending@{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending}}
+\subsubsection{\texorpdfstring{Line\+Ending()}{LineEnding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily com.\+aarrelaakso.\+drawl.\+Line\+Ending.\+Line\+Ending (\begin{DoxyParamCaption}\item[{@Not\+Null Line\+Ending.\+Type}]{type }\end{DoxyParamCaption})}
+
+
+
+Constructs an line ending of a particular type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_a37d765d892d173660eef0f321781f455}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_a37d765d892d173660eef0f321781f455}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending@{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending}!get\+Line\+Ending\+Type@{get\+Line\+Ending\+Type}}
+\index{get\+Line\+Ending\+Type@{get\+Line\+Ending\+Type}!com\+::aarrelaakso\+::drawl\+::\+Line\+Ending@{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending}}
+\subsubsection{\texorpdfstring{get\+Line\+Ending\+Type()}{getLineEndingType()}}
+{\footnotesize\ttfamily \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type}{Type} com.\+aarrelaakso.\+drawl.\+Line\+Ending.\+get\+Line\+Ending\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Returns the canonical representation of this line ending type. 
+
+For example, this function returns \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type_a175880412926b2126d70c22ae7396009}{Type.\+T\+R\+I\+A\+N\+G\+LE} if the line ending type is \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type_a60839eb2ed0486a6f9f987c64d27e313}{Type.\+D\+E\+F\+A\+U\+LT}, \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type_a1f96f154af5043259b200495ec8b2af6}{Type.\+N\+O\+R\+M\+AL}, or \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type_a175880412926b2126d70c22ae7396009}{Type.\+T\+R\+I\+A\+N\+G\+LE}.
+
+\begin{DoxyReturn}{Returns}
+the canonical representation of this line ending type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_a30fe25c0bc92fe34abffcd1b16248605}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_a30fe25c0bc92fe34abffcd1b16248605}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending@{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending}!get\+S\+V\+G\+Def@{get\+S\+V\+G\+Def}}
+\index{get\+S\+V\+G\+Def@{get\+S\+V\+G\+Def}!com\+::aarrelaakso\+::drawl\+::\+Line\+Ending@{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending}}
+\subsubsection{\texorpdfstring{get\+S\+V\+G\+Def()}{getSVGDef()}}
+{\footnotesize\ttfamily String com.\+aarrelaakso.\+drawl.\+Line\+Ending.\+get\+S\+V\+G\+Def (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_a0f407b000ff81f764af791028e8e34b6}\label{classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_a0f407b000ff81f764af791028e8e34b6}} 
+\index{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending@{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending}!line\+Ending\+Type@{line\+Ending\+Type}}
+\index{line\+Ending\+Type@{line\+Ending\+Type}!com\+::aarrelaakso\+::drawl\+::\+Line\+Ending@{com\+::aarrelaakso\+::drawl\+::\+Line\+Ending}}
+\subsubsection{\texorpdfstring{line\+Ending\+Type}{lineEndingType}}
+{\footnotesize\ttfamily Line\+Ending.\+Type com.\+aarrelaakso.\+drawl.\+Line\+Ending.\+line\+Ending\+Type = \hyperlink{enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type_a60839eb2ed0486a6f9f987c64d27e313}{Type.\+D\+E\+F\+A\+U\+LT}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/d/\+One\+Drive/\+Documents/src/drawl/src/main/java/com/aarrelaakso/drawl/\hyperlink{_line_ending_8java}{Line\+Ending.\+java}\end{DoxyCompactItemize}

@@ -4,7 +4,7 @@ var classcom_1_1aarrelaakso_1_1drawl_1_1_line =
     [ "Line", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#af96a733c80d52bf419cab52fb09bc514", null ],
     [ "Line", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#aaeb9fdd60eeec26d881cb88a23c116b5", null ],
     [ "Line", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a9e956655eba16543d82728923c3eb4f6", null ],
-    [ "addArrowhead", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a7c54922855fda2590c962ac8e03c220c", null ],
+    [ "addLineEnding", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#ae596a9a32b970e2b5157db03dc023afc", null ],
     [ "addText", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#af6fea9610721de462c18ee640043aba7", null ],
     [ "getAbove", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#acebea2aa57031322323c9bf50ee447db", null ],
     [ "getBelow", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html#a53de5ab609d879719cd3b372dfe8df58", null ],

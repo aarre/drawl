@@ -1,12 +1,12 @@
 var namespacecom_1_1aarrelaakso_1_1drawl =
 [
     [ "examples", "d7/df9/namespacecom_1_1aarrelaakso_1_1drawl_1_1examples.html", "d7/df9/namespacecom_1_1aarrelaakso_1_1drawl_1_1examples" ],
-    [ "Arrowhead", "d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead.html", "d0/d2e/classcom_1_1aarrelaakso_1_1drawl_1_1_arrowhead" ],
     [ "Circle", "dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle.html", "dc/d0e/classcom_1_1aarrelaakso_1_1drawl_1_1_circle" ],
     [ "Drawing", "d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing.html", "d8/d0b/classcom_1_1aarrelaakso_1_1drawl_1_1_drawing" ],
     [ "DrawlNumber", "d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number.html", "d3/d74/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number" ],
     [ "DrawlNumberRemainderPair", "d9/de9/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_remainder_pair.html", "d9/de9/classcom_1_1aarrelaakso_1_1drawl_1_1_drawl_number_remainder_pair" ],
     [ "Line", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line.html", "df/dbf/classcom_1_1aarrelaakso_1_1drawl_1_1_line" ],
+    [ "LineEnding", "d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html", "d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending" ],
     [ "LoggingConfig", "d9/de6/classcom_1_1aarrelaakso_1_1drawl_1_1_logging_config.html", "d9/de6/classcom_1_1aarrelaakso_1_1drawl_1_1_logging_config" ],
     [ "Measure", "d9/df3/classcom_1_1aarrelaakso_1_1drawl_1_1_measure.html", "d9/df3/classcom_1_1aarrelaakso_1_1drawl_1_1_measure" ],
     [ "Point", "de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point.html", "de/dd3/classcom_1_1aarrelaakso_1_1drawl_1_1_point" ],
