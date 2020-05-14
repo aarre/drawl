@@ -1,0 +1,214 @@
+:doctype: book
+:source-highlighter: highlightjs
+:docinfo: shared-head
+:bibtex-file: drawl.bib
+:bibtex-style: apa
+:stem: latexmath
+
+= Drawl
+Aarre Laakso <aarre.laakso@gmail.com>
+:toc: left
+:favicon: images/favicon/favicon-32x32.png
+[partintro]
+--
+Drawl is the world's best drawing language.
+--
+
+Drawl is an object-oriented domain-specific language for creating vector graphics using Java.
+In comparison to alternatives like TikZ/PGF, Asymptote, and Processing/Processing.js, Drawl has one clear advantage:
+all dimensions are relative.
+This means that you don't need to explicitly place objects at particular coordinates,
+something you might not know in advance without a lot of planning.
+Instead, you place objects relative to each other.
+This is a more intuitive way to draw.
+The only other drawing language that has this feature is Diagrams, which is written in Haskell.
+
+== Example
+
+Here's a simple example.
+The following code:
+
+[source,java]
+----
+package com.aarrelaakso.drawl.examples;
+
+import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.Drawing;
+
+import java.io.IOException;
+
+public class ThreeCirclesHorizontal
+{
+    public static void main(String[] args) throws IOException
+    {
+        Drawing drawing = new Drawing();
+        Circle circle1 = new Circle();
+        drawing.add(circle1);
+        Circle circle2 = new Circle();
+        drawing.add(circle2);
+        circle2.setRightOf(circle1);
+        Circle circle3 = new Circle();
+        drawing.add(circle3);
+        circle3.setRightOf(circle2);
+        drawing.writeToFile("ThreeCirclesHorizontal.svg", 200, 70);
+    }
+}
+----
+
+Gives us a drawing with three horizontally adjacent circles:
+
+image::https://raw.githubusercontent.com/aarre/drawl/299199cf69685270ae79ba8c3826aebcc427fa41/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesHorizontal.svg[Three horizontally adjacent circles]
+
+Note how we did not have to specify any coordinates to lay out this drawing.
+The only numbers we used were to specify the desired size of the final drawing.
+Moreover, by simply changing `setRightOf()` to `setAbove()` as follows:
+
+[source,java]
+----
+import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.Drawing;
+
+import java.io.IOException;
+
+public class ThreeCirclesVertical
+{
+    public static void main(String[] args) throws IOException {
+        Drawing drawing = new Drawing();
+        Circle circle1 = new Circle();
+        drawing.add(circle1);
+        Circle circle2 = new Circle();
+        drawing.add(circle2);
+        circle2.setAbove(circle1);
+        Circle circle3 = new Circle();
+        drawing.add(circle3);
+        circle3.setAbove(circle2);
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg", 70, 200);
+    }
+}
+----
+
+We get a drawing with three vertically adjacent circles instead!
+
+image::https://raw.githubusercontent.com/aarre/drawl/3af1ab1a9e51640ecfe95d75b7df7c2d6c99476e/src/main/java/com/aarrelaakso/drawl/examples/ThreeCirclesVertical.svg[Three vertically adjacent circles]
+
+Again, no explicit coordinates were specified.
+
+= User's Guide
+[partintro]
+--
+This part contains information useful for Drawl users.
+--
+
+== Arrowheads
+
+
+== Port
+
+The notion of a '''port''' in Drawl draws from similar notions in several other packages.
+
+== Version History
+
+=== Version 0.3.0 - June 1, 2020
+
+* Text
+* Lines and arrows
+
+=== Version 0.2.0 - May 1, 2020
+
+* Squares and rectangles
+* Adjacency—left, right, above, below
+* Fill and stroke
+
+=== Version 0.1.0 - April 8, 2020
+
+* Circles
+
+= Developer's Manual
+[partintro]
+--
+
+This part contains information necessary for software developers working on Drawl.
+This information is not necessary for end users who are making diagrams.
+
+--
+
+== Coding Conventions
+
+Regarding method names, we follow the following convention:
+
+* asX takes an object of one type and creates a view of that object of a different type.
+* getX gets a property of the object.
+* toX takes an input object and creates a new object of a different type, initialized by the input object.
+* xValue - Converts to a primitive type.
+For example, `BigDecimal` has methods `doubleValue`, `floatValue`, `intValue`, `longValue`, and so on.
+
+See https://stackoverflow.com/questions/25610624/java-method-naming-conventions-totype-and-astype-differences
+
+== Release Process
+
+1. Check in all files
+2. Push to origin
+3. Create release in GitHub
+4. Update the version number in Doxyfile
+5. Run Doxygen to update API documentation
+6. Pushed updated documentation to GitHub Pages
+
+
+= Design Philosophy
+[partintro]
+--
+This part documents the design philosophy behind Drawl.
+
+There are a number of alternatives to Drawl.
+Several of them are tightly integrated with LaTeX. In this regard, https://tug.org/PSTricks/main.cgi/[pstricks]
+and TikZ are especially noteworthy.
+There are also the standard LaTex {picture} environment, the xypic package, the dratex package, the metapost program,
+and the xfig program.
+
+Others stand alone to various degrees.
+These include Asymptote, Graphviz, Diagrams, and ggplot.
+--
+
+== There's More Than One Way To Do It
+
+In general, Drawl allows users to do things in several different ways rather than forcing them to
+do things in only one way. The system of lineEnding types is a good example.
+
+== Arrows
+
+=== Asymptote
+
+The Asymptote documentation cite:[Hammerlindl_Bowman_Prince] does not say much about arrowheads, but it appears there are four types:
+`DefaultHead`, `SimpleHead`, `HookHead`, and `TeXHead`.
+
+=== Graphviz
+
+Graphviz offers 41 unique arrowheads and allows using them in combination, for more than 3 million possible configurations cite:[Graphviz_Arrow_Shapes].
+
+image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/arrowheads-graphviz.png[Graphviz arrowheads,350,350]
+
+=== PSTRicks
+
+PSTricks offers 14 types of arrowheads, as follows (ignoring line ending options) cite:[Van_Zandt_2007]:
+
+
+image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/arrowheads-pstricks.png[Arrowheads in PSTricks,350,350]
+
+=== TikZ/PGF
+
+TikZ/PGF offers a large number of parameterized arrow types.cite:[Tantau_2017].
+
+= API Documentation
+
+== Public API
+
+https://aarre.github.io/drawl/doxy/public/out/html/index.html
+
+== Protected API
+
+https://aarre.github.io/drawl/doxy/protected/out/html/index.html
+
+[bibliography]
+= References
+
+bibliography::[]
