@@ -97,8 +97,19 @@ public class ArrowheadExample {
         drawing.add(text7);
         drawing.add(line7);
 
+        final Text text8 = new Text("INVERSE, REVERSE");
+        text8.setBelow(line7);
+        final Line line8 = new Line(Line.Orientation.HORIZONTAL);
+        line8.setWidth(textWidth);
+        line8.setThickness(5);
+        final LineEnding lineEnding8 = new LineEnding(LineEnding.Type.REVERSE);
+        line8.addLineEnding(lineEnding8);
+        line8.setBelow(text8);
+        drawing.add(text8);
+        drawing.add(line8);
+
         final Text bottomSpacer = new Text("");
-        bottomSpacer.setBelow(line7);
+        bottomSpacer.setBelow(line8);
         drawing.add(bottomSpacer);
 
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 500, 500);
