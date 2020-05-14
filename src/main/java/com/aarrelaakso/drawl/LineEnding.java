@@ -47,8 +47,10 @@ public class LineEnding {
 
         BRACKET,
         BUTT_CAP,
+
         CIRCLE,
         /*!< A circular line ending. Synonym: OPEN_DOT */
+        
         CLASSICAL_TIKZ_RIGHTARROW,
         COMPUTER_MODERN_RIGHTARROW,
         CROW,
