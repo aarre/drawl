@@ -163,10 +163,10 @@ public class LineEndingDrawingTestPublic {
         final String svg = drawing.getSVG();
         softly.then(svg).contains("<marker id='DIAMOND'");
         softly.then(svg).contains("<defs>" + newLine +
-                "<marker id='DIAMOND' orient='auto' viewBox='0 0 5.656854249492381 5.656854249492381' markerWidth='5.656854249492381' markerHeight='5.656854249492381' refX='2.8284271247461903' refY='2.8284271247461903'>" + newLine +
-                "<path d='M2.8284271247461903,0 L5.656854249492381,2.8284271247461903 L2.8284271247461903,5.656854249492381 L0,2.8284271247461903 z' stroke='black' fill='black' />" + newLine +
-                "</marker>" + newLine +
-                "</defs>");
+                        "<marker id='DIAMOND' orient='auto' viewBox='0 0 7.4448388728167965 4.298279727294168' markerWidth='7.4448388728167965' markerHeight='4.298279727294168' refX='3.7224194364083982' refY='2.149139863647084'>" + newLine +
+                        "<path d='M0,2.149139863647084 L3.7224194364083982,4.298279727294168 L7.4448388728167965,2.149139863647084L3.7224194364083982,0 z' stroke='black' fill='black' />" + newLine +
+                        "</marker>" + newLine +
+                        "</defs>");
     }
 
     @Test
@@ -180,7 +180,7 @@ public class LineEndingDrawingTestPublic {
         drawing.add(line);
         final String svg = drawing.getSVG();
         softly.then(svg).contains("<defs>" + newLine +
-                "<marker id='DIAMOND' orient='auto' viewBox='0 0 5.656854249492381 5.656854249492381' markerWidth='5.656854249492381' markerHeight='5.656854249492381' refX='2.8284271247461903' refY='2.8284271247461903'>" + newLine +
+                "<marker id='TURNED_SQUARE' orient='auto' viewBox='0 0 5.656854249492381 5.656854249492381' markerWidth='5.656854249492381' markerHeight='5.656854249492381' refX='2.8284271247461903' refY='2.8284271247461903'>" + newLine +
                 "<path d='M2.8284271247461903,0 L5.656854249492381,2.8284271247461903 L2.8284271247461903,5.656854249492381 L0,2.8284271247461903 z' stroke='black' fill='black' />" + newLine +
                 "</marker>" + newLine +
                 "</defs>");
@@ -238,11 +238,11 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
-    @DisplayName("When a line has an ODOT LineEnding, then it shows up in the SVG")
+    @DisplayName("When a line has an OPEN_DOT LineEnding, then it shows up in the SVG")
     void whenALineHasAnOdotLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly)
     {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.ODOT);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.OPEN_DOT);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -252,5 +252,29 @@ public class LineEndingDrawingTestPublic {
                 "<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='white' />" + newLine +
                 "</marker>" + newLine +
                 "</defs>");
+    }
+
+    @Test
+    @DisplayName("When a line has an INVERTED line ending, then it is the same as a REVERSE line ending")
+    void whenALineHasAnInvertedLineEndingThenItIsTheSameAsAReverseLineEnding()
+    {
+        final Line lineInverted = new Line();
+        final LineEnding lineEndingInverted = new LineEnding(LineEnding.Type.INVERTED);
+        lineInverted.addLineEnding(lineEndingInverted);
+
+        final Line lineReverse = new Line();
+        final LineEnding lineEndingReverse = new LineEnding(LineEnding.Type.REVERSE);
+        lineReverse.addLineEnding(lineEndingReverse);
+
+        final Drawing drawingInverted = new Drawing();
+        drawingInverted.add(lineInverted);
+        final String svgInverted = drawingInverted.getSVG();
+
+        final Drawing drawingReverse = new Drawing();
+        drawingReverse.add(lineReverse);
+        final String svgReverse = drawingReverse.getSVG();
+
+        then(svgInverted).isEqualTo(svgReverse);
+
     }
 }

@@ -153,6 +153,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a1b2d6225c4b994d65a68fd6e3b8382db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6428f3ac47109c9dbe046dddda0e25b3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a6428f3ac47109c9dbe046dddda0e25b3">RECTANGLE</a></td></tr>
 <tr class="separator:a6428f3ac47109c9dbe046dddda0e25b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab602598817bb21d6650d890b1af64ee8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#ab602598817bb21d6650d890b1af64ee8">REVERSE</a></td></tr>
+<tr class="separator:ab602598817bb21d6650d890b1af64ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08590ccad906f75be8d0a27215bd07e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a08590ccad906f75be8d0a27215bd07e2">RHOMBUS</a></td></tr>
 <tr class="separator:a08590ccad906f75be8d0a27215bd07e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a811892a581ba487630b2860401a7d078"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html#a811892a581ba487630b2860401a7d078">ROUND_CAP</a></td></tr>
@@ -322,83 +324,77 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The default line ending. Synonyms: NORMAL, TRIANGLE.</p>
-<p>For the default line ending, we set the constraint of having the legs have twice the length of the base. </p><pre class="fragment">      /\
-     /  \
-    /    \  2x
-   /      \
-   --------
-      x
-</pre><p>Half of this triangle is: </p><pre class="fragment">    |\
-    | \
-   h|  \  2x
-    |   \
-    ------
-     x/2
-</pre><p>The height of this triangle can be calculated as:</p>
+<p>For the default line ending, we set the constraint of having the legs have twice the length of the base.</p>
+<div class="image">
+<object type="image/svg+xml" data="../../triangle.svg" width="300">triangle.svg</object>
+</div>
+<p>The width of this triangle can be calculated as:</p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[h^2 + (\frac{x}{2})^2 = (2x)^2\]" src="../../form_0.png"/>
+<img class="formulaDsp" alt="\[w^2 + (\frac{h}{2})^2 = (2h)^2\]" src="../../form_74.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[h^2 + \frac{x^2}{4} = 4x^2\]" src="../../form_1.png"/>
+<img class="formulaDsp" alt="\[w^2 + \frac{h^2}{4} = 4h^2\]" src="../../form_75.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[h^2 = 4x^2 - \frac{x^2}{4}\]" src="../../form_2.png"/>
+<img class="formulaDsp" alt="\[w^2 = 4h^2 - \frac{h^2}{4}\]" src="../../form_76.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[h^2 = \frac{16x^2}{4} - \frac{x^2}{4}\]" src="../../form_3.png"/>
+<img class="formulaDsp" alt="\[w^2 = \frac{16h^2}{4} - \frac{h^2}{4}\]" src="../../form_77.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[h^2 = \frac{15x^2}{4}\]" src="../../form_4.png"/>
+<img class="formulaDsp" alt="\[w^2 = \frac{15h^2}{4}\]" src="../../form_78.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[h = \sqrt{\frac{15x^2}{4}}\]" src="../../form_5.png"/>
+<img class="formulaDsp" alt="\[w = \sqrt{\frac{15h^2}{4}}\]" src="../../form_79.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[h = \frac{x \sqrt{15}}{2}\]" src="../../form_6.png"/>
+<img class="formulaDsp" alt="\[w = \frac{h \sqrt{15}}{2}\]" src="../../form_80.png"/>
 </p>
+<p>To calculate the area of the triangle:</p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[\frac{xh}{2}\]" src="../../form_7.png"/>
+<img class="formulaDsp" alt="\[Area = \frac{hw}{2}\]" src="../../form_84.png"/>
 </p>
 <p>Given that we want the area to be 16:</p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[ \frac{xh}{2} = 16\]" src="../../form_8.png"/>
+<img class="formulaDsp" alt="\[ \frac{hw}{2} = 16\]" src="../../form_82.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[xh = 32\]" src="../../form_9.png"/>
+<img class="formulaDsp" alt="\[hw = 32\]" src="../../form_83.png"/>
+</p>
+<p>Substituting in our formula for w</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[h \frac{h \sqrt{15}}{2} = 32\]" src="../../form_85.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[x \frac{x \sqrt{15}}{2} = 32\]" src="../../form_10.png"/>
+<img class="formulaDsp" alt="\[\frac{h^2 \sqrt{15}}{2} = 32\]" src="../../form_86.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[\frac{x^2 \sqrt{15}}{2} = 32\]" src="../../form_11.png"/>
+<img class="formulaDsp" alt="\[h^2 \sqrt{15} = 64\]" src="../../form_87.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[ x^2 \sqrt{15} = 64\]" src="../../form_12.png"/>
+<img class="formulaDsp" alt="\[15 h^4 = 4096\]" src="../../form_88.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[15 x^4 = 4096\]" src="../../form_13.png"/>
+<img class="formulaDsp" alt="\[h^4 = \frac{4096}{15}\]" src="../../form_89.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[x^4 = \frac{4096}{15}\]" src="../../form_14.png"/>
+<img class="formulaDsp" alt="\[h = \sqrt[4]{\frac{4096}{15}}\]" src="../../form_90.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[x = \sqrt[4]{\frac{4096}{15}}\]" src="../../form_15.png"/>
+<img class="formulaDsp" alt="\[h \approx 4.07\]" src="../../form_91.png"/>
+</p>
+<p>Then, to calculate the width of the triangle:</p>
+<p class="formulaDsp">
+<img class="formulaDsp" alt="\[\frac{wh}{2} = 16\]" src="../../form_92.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[x \approx 4.07\]" src="../../form_16.png"/>
-</p>
-<p>Then, to calculate the height of the triangle h:</p>
-<p class="formulaDsp">
-<img class="formulaDsp" alt="\[\frac{xh}{2} = 16\]" src="../../form_17.png"/>
+<img class="formulaDsp" alt="\[wh = 32\]" src="../../form_93.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[xh = 32\]" src="../../form_9.png"/>
+<img class="formulaDsp" alt="\[w = \frac{32}{h}\]" src="../../form_94.png"/>
 </p>
 <p class="formulaDsp">
-<img class="formulaDsp" alt="\[h = \frac{32}{x}\]" src="../../form_18.png"/>
-</p>
-<p class="formulaDsp">
-<img class="formulaDsp" alt="\[h \approx 7.87\]" src="../../form_19.png"/>
+<img class="formulaDsp" alt="\[w \approx 7.87\]" src="../../form_95.png"/>
 </p>
  
 </div>
@@ -416,7 +412,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>A diamond-shaped line ending. Synonyms: RHOMBUS</p>
 <div class="image">
-<object type="image/svg+xml" data="../../rhombus.svg">rhombus.svg</object>
+<object type="image/svg+xml" data="../../rhombus.svg" width="300">rhombus.svg</object>
 </div>
 <p>We set the height of the rhombus to be equal to its sides:</p>
 <p class="formulaDsp">
@@ -584,6 +580,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>An inverted (reverse) version of the NORMAL line ending. Synonyms REVERSE </p>
 
 </div>
 </div>
@@ -713,6 +710,21 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab602598817bb21d6650d890b1af64ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab602598817bb21d6650d890b1af64ee8">&#9670;&nbsp;</a></span>REVERSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">com.aarrelaakso.drawl.LineEnding.Type.REVERSE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>A reverse (inverted) version of the NORMAL line ending. Synonyms: INVERTED </p>
 
 </div>
 </div>
@@ -901,7 +913,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../d8/dee/namespacecom.html">com</a></li><li class="navelem"><a class="el" href="../../d4/d61/namespacecom_1_1aarrelaakso.html">aarrelaakso</a></li><li class="navelem"><a class="el" href="../../dd/d8e/namespacecom_1_1aarrelaakso_1_1drawl.html">drawl</a></li><li class="navelem"><a class="el" href="../../d2/d07/classcom_1_1aarrelaakso_1_1drawl_1_1_line_ending.html">LineEnding</a></li><li class="navelem"><a class="el" href="../../d5/dfd/enumcom_1_1aarrelaakso_1_1drawl_1_1_line_ending_1_1_type.html">Type</a></li>
-    <li class="footer">Generated on Tue May 12 2020 22:04:38 for Drawl by
+    <li class="footer">Generated on Wed May 13 2020 19:45:31 for Drawl by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>

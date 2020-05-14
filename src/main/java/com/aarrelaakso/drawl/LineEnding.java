@@ -36,150 +36,129 @@ public class LineEnding {
      * Drawl defines many types of line endings.
      */
     public enum Type {
+        ARC_BARB,
+
+        BOX,
+        /*!< A square (box) line ending. Synonyms: SQUARE
+        *
+        * The area of this line ending is 16, so its sides are of length 4.
+        *
+        */
+
+        BRACKET,
+        BUTT_CAP,
+        CIRCLE,
+        /*!< A circular line ending. Synonym: OPEN_DOT */
+        CLASSICAL_TIKZ_RIGHTARROW,
+        COMPUTER_MODERN_RIGHTARROW,
+        CROW,
+        CURVE,
         DEFAULT,
         /*!< The default line ending. Synonyms: NORMAL, TRIANGLE.
 
         For the default line ending, we set the constraint of having the legs have twice the length of the base.
 
-                  /\
-                 /  \
-                /    \  2x
-               /      \
-               --------
-                  x
+        * \image html triangle.svg width=300
 
-        Half of this triangle is:
+        The width of this triangle can be calculated as:
 
-                |\
-                | \
-               h|  \  2x
-                |   \
-                ------
-                 x/2
+        \f[w^2 + (\frac{h}{2})^2 = (2h)^2\f]
 
-        The height of this triangle can be calculated as:
+        \f[w^2 + \frac{h^2}{4} = 4h^2\f]
 
-        \f[h^2 + (\frac{x}{2})^2 = (2x)^2\f]
+        \f[w^2 = 4h^2 - \frac{h^2}{4}\f]
 
-        \f[h^2 + \frac{x^2}{4} = 4x^2\f]
+        \f[w^2 = \frac{16h^2}{4} - \frac{h^2}{4}\f]
 
-        \f[h^2 = 4x^2 - \frac{x^2}{4}\f]
+        \f[w^2 = \frac{15h^2}{4}\f]
 
-        \f[h^2 = \frac{16x^2}{4} - \frac{x^2}{4}\f]
+        \f[w = \sqrt{\frac{15h^2}{4}}\f]
 
-        \f[h^2 = \frac{15x^2}{4}\f]
+        \f[w = \frac{h \sqrt{15}}{2}\f]
 
-        \f[h = \sqrt{\frac{15x^2}{4}}\f]
+        To calculate the area of the triangle:
 
-        \f[h = \frac{x \sqrt{15}}{2}\f]
-
-        \f[\frac{xh}{2}\f]
+        \f[Area = \frac{hw}{2}\f]
 
         Given that we want the area to be 16:
 
-        \f[ \frac{xh}{2} = 16\f]
+        \f[ \frac{hw}{2} = 16\f]
 
-        \f[xh = 32\f]
+        \f[hw = 32\f]
 
-        \f[x \frac{x \sqrt{15}}{2} = 32\f]
+        Substituting in our formula for w
 
-        \f[\frac{x^2 \sqrt{15}}{2} = 32\f]
+        \f[h \frac{h \sqrt{15}}{2} = 32\f]
 
-        \f[ x^2 \sqrt{15} = 64\f]
+        \f[\frac{h^2 \sqrt{15}}{2} = 32\f]
 
-        \f[15 x^4  = 4096\f]
+        \f[h^2 \sqrt{15} = 64\f]
 
-        \f[x^4  = \frac{4096}{15}\f]
+        \f[15 h^4  = 4096\f]
 
-        \f[x = \sqrt[4]{\frac{4096}{15}}\f]
+        \f[h^4  = \frac{4096}{15}\f]
 
-        \f[x \approx 4.07\f]
+        \f[h = \sqrt[4]{\frac{4096}{15}}\f]
 
-        Then, to calculate the height of the triangle h:
+        \f[h \approx 4.07\f]
 
-        \f[\frac{xh}{2} = 16\f]
+        Then, to calculate the width of the triangle:
 
-        \f[xh = 32\f]
+        \f[\frac{wh}{2} = 16\f]
 
-        \f[h = \frac{32}{x}\f]
+        \f[wh = 32\f]
 
-        \f[h \approx 7.87\f]
+        \f[w = \frac{32}{h}\f]
 
-        */
-        NORMAL,
-        /*!< The default line ending. Synonyms: DEFAULT, TRIANGLE. */
-
-        TRIANGLE,
-        /*!< The default line ending. Synonyms: DEFAULT, NORMAL    */
-
-        BOX,
-        /*!< A square (box) line ending. Synonyms: SQUARE
-
-        The area of this line ending is 16, so its sides are of length 4.
+        \f[w \approx 7.87\f]
 
         */
-
-        SQUARE,
-        /*!< A synonym for BOX             */
-
         DIAMOND,
         /*!< A diamond-shaped line ending. Synonyms: RHOMBUS
-        *
-        * \image html rhombus.svg
-        *
-        * We set the height of the rhombus to be equal to its sides:
-        *
-        * \f[h = x\f]
-        *
-        * \f[Area = \frac{w \times h}{2}\f]
-        *
-        * Solving for width in terms of height:
-        *
-        * \f[h^2 = (\frac{h}{2})^2 + (\frac{w}{2})^2\f]
-        *
-        * \f[(\frac{w}{2})^2 = h^2 - (\frac{h}{2})^2\f]
-        *
-        * \f[\frac{w^2}{4} = h^2 - \frac{h^2}{4}\f]
-        *
-        * \f[w^2 = 4h^2 - h^2\f]
-        *
-        * \f[w^2 = 3h^2\f]
-        *
-        * \f[w = h \sqrt{3}\f]
-        *
-        * Substituting into the formula for area:
-        *
-        * \f[16 = \frac{h^2 \sqrt{3}}{2}\f]
-        *
-        * \f[32 = h^2 \sqrt{3}\f]
-        *
-        * \f[h^2 = \frac{32}{\sqrt{3}}\f]
-        *
-        *  \f[h = \frac{\sqrt{32}}{\sqrt[4]{3}}\f]
-        *
-        *  \f[h \approx 4.3\f]
-        *
-        * Now calculating w:
-        *
-        * \f[w = \sqrt{3} \frac{\sqrt{32}}{\sqrt[4]{3}}\f]
-        *
-        * \f[w \approx 7.44\f]
-        */
+         *
+         * \image html rhombus.svg width=300
+         *
+         * We set the height of the rhombus to be equal to its sides:
+         *
+         * \f[h = x\f]
+         *
+         * \f[Area = \frac{w \times h}{2}\f]
+         *
+         * Solving for width in terms of height:
+         *
+         * \f[h^2 = (\frac{h}{2})^2 + (\frac{w}{2})^2\f]
+         *
+         * \f[(\frac{w}{2})^2 = h^2 - (\frac{h}{2})^2\f]
+         *
+         * \f[\frac{w^2}{4} = h^2 - \frac{h^2}{4}\f]
+         *
+         * \f[w^2 = 4h^2 - h^2\f]
+         *
+         * \f[w^2 = 3h^2\f]
+         *
+         * \f[w = h \sqrt{3}\f]
+         *
+         * Substituting into the formula for area:
+         *
+         * \f[16 = \frac{h^2 \sqrt{3}}{2}\f]
+         *
+         * \f[32 = h^2 \sqrt{3}\f]
+         *
+         * \f[h^2 = \frac{32}{\sqrt{3}}\f]
+         *
+         *  \f[h = \frac{\sqrt{32}}{\sqrt[4]{3}}\f]
+         *
+         *  \f[h \approx 4.3\f]
+         *
+         * Now calculating w:
+         *
+         * \f[w = \sqrt{3} \frac{\sqrt{32}}{\sqrt[4]{3}}\f]
+         *
+         * \f[w \approx 7.44\f]
+         */
 
-        RHOMBUS,
-        /*!< A synonym for DIAMOND */
-
-        TURNED_SQUARE,
-        /*!< A special case of the DIAMOND/RHOMBUS line ending in which the angles are all 90 degrees.
-
-        To get a turned square shape with an area of 16, we set the crossways dimensions at
-
-        \f[4 sqrt(2) \approx 5.66\f]
-
-        */
-
-        OPEN_DIAMOND,
-        /*!< As a DIAMOND, but with fill='white' */
+        DISK,
+        /*!< A disk-shaped line ending. Synonyms: DOT           */
 
         DOT,
         /*!< A dot-shaped line ending. Synonyms: DISK
@@ -199,41 +178,51 @@ public class LineEnding {
         \f[r \approx 2.26\f]
 
         */
-
-        DISK,
-        /*!< A disk-shaped line ending. Synonyms: DOT           */
-
-        CIRCLE,
-        /*!< A circular line ending. Synonym: OPEN_DOT */
-
-        OPEN_DOT,
-        /*!< A synonym for CIRCLE */
-
-        CROW,
-        INVERTED,
-        TEE,
-        VEE,
-        CURVE,
-        PARENTHESIS,
-        ARC_BARB,
-        ROUNDED,
-        RAYS,
-        BRACKET,
-        HOOKS,
-        STRAIGHT_BARB,
-        TEE_BARB,
-        CLASSICAL_TIKZ_RIGHTARROW,
-        COMPUTER_MODERN_RIGHTARROW,
-        ELLIPSE, OPEN_ELLIPSE,
-        KITE,
-        LATEX,
-        RECTANGLE,
-        STEALTH,
-        BUTT_CAP,
+        ELLIPSE,
         FAST_ROUND,
         FAST_TRIANGLE,
+        HOOKS,
+        INVERTED,
+        /*!< An inverted (reverse) version of the NORMAL line ending. Synonyms REVERSE */
+        LATEX,
+        KITE,
+        NORMAL,
+        /*!< The default line ending. Synonyms: DEFAULT, TRIANGLE. */
+        OPEN_DIAMOND,
+        /*!< As a DIAMOND, but with fill='white' */
+        OPEN_DOT,
+        /*!< A synonym for CIRCLE */
+        OPEN_ELLIPSE,
+        PARENTHESIS,
+        RAYS,
+        RECTANGLE,
+        REVERSE,
+        /*!< A reverse (inverted) version of the NORMAL line ending. Synonyms: INVERTED */
+        RHOMBUS,
+        /*!< A synonym for DIAMOND */
+        ROUNDED,
         ROUND_CAP,
-        TRIANGLE_CAP
+        SQUARE,
+        /*!< A synonym for BOX             */
+        STRAIGHT_BARB,
+
+        STEALTH,
+        TEE,
+        TEE_BARB,
+        TRIANGLE,
+        /*!< The default line ending. Synonyms: DEFAULT, NORMAL    */
+        TRIANGLE_CAP,
+        TURNED_SQUARE,
+        /*!< A special case of the DIAMOND/RHOMBUS line ending in which the angles are all 90 degrees.
+
+        To get a turned square shape with an area of 16, we set the crossways dimensions at
+
+        \f[4 sqrt(2) \approx 5.66\f]
+
+        */
+
+        VEE
+
     }
 
     /**
@@ -290,6 +279,9 @@ public class LineEnding {
         } else if ((this.lineEndingType == Type.CIRCLE) ||
                 (this.lineEndingType == Type.OPEN_DOT)) {
             return Type.CIRCLE;
+        } else if ((this.lineEndingType == Type.REVERSE) ||
+                (this.lineEndingType == Type.INVERTED)) {
+            return Type.REVERSE;
         } else {
             return this.lineEndingType;
         }
@@ -304,15 +296,15 @@ public class LineEnding {
         svg.append(this.getLineEndingType());
         svg.append("' orient='auto'");
         if (this.getLineEndingType() == Type.TRIANGLE) {
-            // See the User's Guide for the rationale for these calculations
+            // See the API documentation for the rationale for these calculations
             double quotient = 4096.0 / 15.0;
             // Take the 4th root of of the quotient
-            double width = pow(quotient, 1.0/4.0);                      // approx. 4.07
-            double height = 32.0 / width;                                    // approx. 7.87
-            svg.append(" viewBox='0 0 " + height + " " + width + "'");
-            svg.append(" markerWidth='" + height + "' markerHeight='" + width + "'");
-            svg.append(" refX='" + height/2.0 + "' refY='" + width/2.0 + "'>" + newLine);
-            svg.append("<path d='M0,0 L0," + width + " L" + height + "," + width/2.0 + " z' stroke='black' fill='black' />" + newLine);
+            double height = pow(quotient, 1.0/4.0);                      // approx. 4.07
+            double width = 32.0 / height;                                    // approx. 7.87
+            svg.append(" viewBox='0 0 " + width + " " + height + "'");
+            svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
+            svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
+            svg.append("<path d='M0,0 L0," + height + " L" + width + "," + height/2.0 + " z' stroke='black' fill='black' />" + newLine);
         } else if (this.getLineEndingType() == Type.BOX) {
             svg.append(" viewBox='0 0 4 4' markerWidth='4' markerHeight='4' refX='2' refY='2'>" + newLine);
             svg.append("<path d='M0,0 L0,4 L4,4 L4,0 z' stroke='black' fill='black' />" + newLine);
@@ -351,7 +343,20 @@ public class LineEnding {
             svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
             svg.append(" refX='" + width / 2.0 + "' refY='" + height / 2.0 + "'>" + newLine);
             svg.append("<path d='M0," + height / 2.0 + " L" + width / 2.0 + "," + height + " L" + width + "," + height / 2.0 + "L" + width / 2.0 + ",0 z' stroke='black' fill='white' />" + newLine);
-        } else {
+        } else if (this.getLineEndingType() == Type.REVERSE) {
+            // See the API documentation for the rationale for these calculations
+            double quotient = 4096.0 / 15.0;
+            // Take the 4th root of of the quotient
+            double height = pow(quotient, 1.0/4.0);                      // approx. 4.07
+            double width = 32.0 / height;                                    // approx. 7.87
+            svg.append(" viewBox='0 0 " + width + " " + height + "'");
+            svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
+            svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
+            svg.append("<path d='M0," + height/2.0 + "L" + width + "," + height + " L" + width + "," + 0 + " z' stroke='black' fill='black' />" + newLine);
+        }
+
+
+        else {
             throw new UnsupportedOperationException("Unknown line ending type: " + this.getLineEndingType());
         }
         svg.append("</marker>" + newLine);

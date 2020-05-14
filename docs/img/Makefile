@@ -5,13 +5,17 @@ FIGURE=rhombus  # set the path to your TeX file here
 SHELL=/bin/bash   # for the while loop below
 
  ## Compile paper
-all:	rhombus.svg
 
-rhombus.pdf:	rhombus.tex
-	rubber --pdf rhombus.tex
 
-rhombus.svg:	rhombus.pdf
-	pdf2svg rhombus.pdf rhombus.svg
+all:	rhombus.svg triangle.svg
+
+.PRECIOUS: %.pdf
+
+%.pdf:	%.tex
+	rubber --pdf $<
+
+%.svg:	%.pdf
+	pdf2svg $< $@
 
 clean:  ## Clean output files
 	rubber --clean rhombus.tex

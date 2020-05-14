@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"dc/d94/classcom_1_1aarrelaakso_1_1drawl_1_1_text.html#af8182545b3b1c85ecaee849474f63c6b":[2,0,0,0,0,16,20],
 "dc/dcc/_shape_explicit_8java.html":[3,0,0,0,0,0,0,0,14],
 "dc/dd1/_arrowhead_example_8java.html":[3,0,0,0,0,0,0,0,0,0],
 "dc/de9/_drawl_number_remainder_pair_8java.html":[3,0,0,0,0,0,0,0,4],
@@ -95,15 +96,15 @@ var NAVTREEINDEX2 =
 "dir_d892ea7cc918216d6a4d28bfb2725e21.html":[3,0,0,0,0,0,0],
 "dir_fd3f6763802dee1ad875f6c80eac0bda.html":[3,0,0,0,0],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
 "functions_e.html":[2,3,0,4],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1,0],
 "functions_func.html":[2,3,1],
+"functions_func.html":[2,3,1,0],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],
@@ -138,8 +139,8 @@ var NAVTREEINDEX2 =
 "functions_w.html":[2,3,0,19],
 "functions_z.html":[2,3,0,20],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "namespaces.html":[1,0],
 "pages.html":[]
 };
