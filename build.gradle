@@ -52,7 +52,7 @@ dependencies {
 
     test {
         useJUnitPlatform {
-            includeTags "explicit", "width"
+            //includeTags "explicit", "width"
             // excludeTags 'slow', 'ci'
             //includeEngines 'junit-jupiter'
             // excludeEngines 'junit-vintage'

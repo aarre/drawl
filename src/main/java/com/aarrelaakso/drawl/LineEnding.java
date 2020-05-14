@@ -367,9 +367,13 @@ public class LineEnding {
 
         svg.append(" stroke='black'");
 
-        svg.append(" fill='" + fillColor + "'");
-
-        svg.append(" />" + newLine);
+        svg.append(" fill='");
+        if (this.getLineEndingType()==Type.CIRCLE) {
+            svg.append("white");
+        } else {
+            svg.append(fillColor);
+        }
+        svg.append("' />" + newLine);
 
         svg.append("</marker>" + newLine);
         svg.append("</defs>" + newLine);
