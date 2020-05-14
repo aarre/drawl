@@ -16,6 +16,8 @@ package com.aarrelaakso.drawl;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.EnumSet;
+
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
@@ -233,6 +235,11 @@ public class LineEnding {
     }
 
     /**
+     * Enumerates the LineEnding types that have open figures.
+     */
+    public static EnumSet<Type> OpenType = EnumSet.of(Type.CIRCLE, Type.OPEN_DIAMOND, Type.OPEN_DOT);
+
+    /**
      * Constructs a default line ending.
      *
      */
@@ -367,14 +374,16 @@ public class LineEnding {
 
         svg.append(" stroke='black'");
 
+        // Fill color
         svg.append(" fill='");
-        if (this.getLineEndingType()==Type.CIRCLE) {
-            svg.append("white");
-        } else {
-            svg.append(fillColor);
+        if ((this.getLineEndingType()==Type.CIRCLE) ||
+                (this.getLineEndingType() == Type.OPEN_DIAMOND)){
+            this.fillColor = "white";
         }
-        svg.append("' />" + newLine);
+        svg.append(fillColor);
 
+        // Closing tags
+        svg.append("' />" + newLine);
         svg.append("</marker>" + newLine);
         svg.append("</defs>" + newLine);
 

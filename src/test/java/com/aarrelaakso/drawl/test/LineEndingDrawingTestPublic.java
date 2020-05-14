@@ -295,4 +295,30 @@ public class LineEndingDrawingTestPublic {
         then(svg).contains("fill='red'");
     }
 
+
+    @DisplayName("When a filled LineEnding is created, then the fill color is black")
+    @ParameterizedTest
+    @EnumSource(LineEnding.Type.class)
+    void whenAFilledLineEndingIsCreatedThenTheFillColorIsBlack(LineEnding.Type type) {
+        final LineEnding lineEnding = new LineEnding(type);
+        final Line line = new Line();
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        try {
+        String svg = drawing.getSVG();
+            if ((type == LineEnding.Type.CIRCLE) ||
+                    (type == LineEnding.Type.OPEN_DIAMOND) ||
+                    (type == LineEnding.Type.OPEN_DOT)) {
+                then(svg).contains("fill='white'");
+                then(svg).doesNotContain("fill='black'");
+
+            } else {
+                then(svg).contains("fill='black'");
+                then(svg).doesNotContain("fill='white'");
+            }
+        } catch(UnsupportedOperationException e) {
+            // These are LineEndings not yet implemented
+        }
+    }
 }
