@@ -88,7 +88,7 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<marker id='TRIANGLE'");
+        softly.then(svg).contains("<marker id='TRIANGLE-");
     }
 
     @Test
@@ -101,7 +101,7 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<marker id='TRIANGLE'");
+        softly.then(svg).contains("<marker id='TRIANGLE-");
     }
 
     @Test
@@ -114,7 +114,7 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<marker id='TRIANGLE'");
+        softly.then(svg).contains("<marker id='TRIANGLE-");
     }
 
     @Test
@@ -127,8 +127,9 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>" + newLine +
-                "<marker id='BOX' orient='auto' viewBox='0 0 4 4' markerWidth='4' markerHeight='4' refX='2' refY='2'>" + newLine +
+        softly.then(svg).contains("<defs>" + newLine)
+                .contains("<marker id='BOX-")
+                .contains("' orient='auto' viewBox='0 0 4 4' markerWidth='4' markerHeight='4' refX='2' refY='2'>" + newLine +
                 "<path d='M0,0 L0,4 L4,4 L4,0 z' stroke='black' fill='black' />" + newLine +
                 "</marker>" + newLine +
                 "</defs>");
@@ -144,8 +145,9 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>" + newLine +
-                "<marker id='BOX' orient='auto' viewBox='0 0 4 4' markerWidth='4' markerHeight='4' refX='2' refY='2'>" + newLine +
+        softly.then(svg).contains("<defs>" + newLine)
+                .contains("<marker id='BOX-")
+                .contains("' orient='auto' viewBox='0 0 4 4' markerWidth='4' markerHeight='4' refX='2' refY='2'>" + newLine +
                 "<path d='M0,0 L0,4 L4,4 L4,0 z' stroke='black' fill='black' />" + newLine +
                 "</marker>" + newLine +
                 "</defs>");
@@ -161,9 +163,9 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<marker id='DIAMOND'");
-        softly.then(svg).contains("<defs>" + newLine +
-                        "<marker id='DIAMOND' orient='auto' viewBox='0 0 7.4448388728167965 4.298279727294168' markerWidth='7.4448388728167965' markerHeight='4.298279727294168' refX='3.7224194364083982' refY='2.149139863647084'>" + newLine +
+        softly.then(svg).contains("<marker id='DIAMOND-");
+        softly.then(svg).contains("<defs>");
+        softly.then(svg).contains("orient='auto' viewBox='0 0 7.4448388728167965 4.298279727294168' markerWidth='7.4448388728167965' markerHeight='4.298279727294168' refX='3.7224194364083982' refY='2.149139863647084'>" + newLine +
                         "<path d='M0,2.149139863647084 L3.7224194364083982,4.298279727294168 L7.4448388728167965,2.149139863647084L3.7224194364083982,0 z' stroke='black' fill='black' />" + newLine +
                         "</marker>" + newLine +
                         "</defs>");
@@ -179,8 +181,9 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>" + newLine +
-                "<marker id='TURNED_SQUARE' orient='auto' viewBox='0 0 5.656854249492381 5.656854249492381' markerWidth='5.656854249492381' markerHeight='5.656854249492381' refX='2.8284271247461903' refY='2.8284271247461903'>" + newLine +
+        softly.then(svg).contains("<defs>")
+                        .contains("<marker id='TURNED_SQUARE-")
+                        .contains("' orient='auto' viewBox='0 0 5.656854249492381 5.656854249492381' markerWidth='5.656854249492381' markerHeight='5.656854249492381' refX='2.8284271247461903' refY='2.8284271247461903'>" + newLine +
                 "<path d='M2.8284271247461903,0 L5.656854249492381,2.8284271247461903 L2.8284271247461903,5.656854249492381 L0,2.8284271247461903 z' stroke='black' fill='black' />" + newLine +
                 "</marker>" + newLine +
                 "</defs>");
@@ -196,8 +199,9 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>" + newLine +
-                "<marker id='DOT' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
+        softly.then(svg).contains("<defs>")
+                .contains("<marker id='DOT-")
+                .contains("' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
                 "<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='black' />" + newLine +
                 "</marker>" + newLine +
                 "</defs>");
@@ -213,8 +217,9 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>" + newLine +
-                "<marker id='DOT' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
+        softly.then(svg).contains("<defs>")
+                .contains("<marker id='DOT-")
+                .contains("' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
                 "<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='black' />" + newLine +
                 "</marker>" + newLine +
                 "</defs>");
@@ -230,8 +235,9 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>" + newLine +
-                "<marker id='CIRCLE' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
+        softly.then(svg).contains("<defs>")
+                .contains("<marker id='CIRCLE-")
+                .contains("' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
                 "<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='white' />" + newLine +
                 "</marker>" + newLine +
                 "</defs>");
@@ -247,8 +253,9 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>" + newLine +
-                "<marker id='CIRCLE' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
+        softly.then(svg).contains("<defs>")
+                .contains("<marker id='CIRCLE-")
+                .contains("' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
                 "<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='white' />" + newLine +
                 "</marker>" + newLine +
                 "</defs>");
@@ -269,12 +276,14 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawingInverted = new Drawing();
         drawingInverted.add(lineInverted);
         final String svgInverted = drawingInverted.getSVG();
+        final String svgInvertedClean = svgInverted.replaceAll("REVERSE-[0-9]*", "");
 
         final Drawing drawingReverse = new Drawing();
         drawingReverse.add(lineReverse);
         final String svgReverse = drawingReverse.getSVG();
+        final String svgReverseClean = svgReverse.replaceAll("REVERSE-[0-9]*", "");
 
-        then(svgInverted).isEqualTo(svgReverse);
+        then(svgInvertedClean).isEqualTo(svgReverseClean);
 
     }
 
@@ -321,4 +330,7 @@ public class LineEndingDrawingTestPublic {
             // These are LineEndings not yet implemented
         }
     }
+
+
+
 }

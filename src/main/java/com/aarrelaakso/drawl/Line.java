@@ -158,14 +158,17 @@ public class Line extends Shape {
     }
 
     public @NotNull String getSVG() {
+
         if (this.getExplicitWidth() == null || this.getExplicitHeight() == null) {
             throw new UnsupportedOperationException("Cannot get SVG without setting explicit dimensions");
         }
+
+        String newLine = System.getProperty("line.separator");
         @NotNull final StringBuilder svgBuilder = new StringBuilder();
         if (this.hasArrowhead()) {
             svgBuilder.append(this.getLineEnding().getSVGDef());
         }
-        svgBuilder.append("\n<line");
+        svgBuilder.append(newLine + "<line");
         svgBuilder.append(" x1='");
         svgBuilder.append(this.getPoint1Explicit().getX().toSVG());
         svgBuilder.append("'");
@@ -202,6 +205,8 @@ public class Line extends Shape {
         if (this.hasArrowhead()) {
             svgBuilder.append(" marker-end='url(#");
             svgBuilder.append(this.lineEnding.getLineEndingType());
+            svgBuilder.append("-");
+            svgBuilder.append(this.lineEnding.getUniqueId());
             svgBuilder.append(")'");
         }
 

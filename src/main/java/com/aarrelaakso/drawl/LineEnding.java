@@ -17,6 +17,7 @@ package com.aarrelaakso.drawl;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.EnumSet;
+import java.util.concurrent.atomic.AtomicLong;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
@@ -35,9 +36,25 @@ import static java.lang.Math.sqrt;
 public class LineEnding {
 
     @NotNull
-    String fillColor = "black";
+    private String fillColor = "black";
+
+    @NotNull
+    private double height = 1.0;
+
+    @NotNull
+    private double width = 1.0;
+
+    private String uniqueId;
 
     private LineEnding.Type lineEndingType = Type.DEFAULT;
+
+    private static AtomicLong idCounter = new AtomicLong();
+
+    public static String createID()
+    {
+        return String.valueOf(idCounter.getAndIncrement());
+    }
+
 
     /**
      * Drawl defines many types of line endings.
@@ -308,6 +325,8 @@ public class LineEnding {
         svg.append("<defs>" + newLine);
         svg.append("<marker id='");
         svg.append(this.getLineEndingType());
+        svg.append("-");
+        svg.append(this.getUniqueId());
         svg.append("' orient='auto'");
         if (this.getLineEndingType() == Type.TRIANGLE) {
             // See the API documentation for the rationale for these calculations
@@ -315,6 +334,8 @@ public class LineEnding {
             // Take the 4th root of of the quotient
             double height = pow(quotient, 1.0/4.0);                      // approx. 4.07
             double width = 32.0 / height;                                    // approx. 7.87
+            width = width * this.getWidth();
+            height = height * this.getHeight();
             svg.append(" viewBox='0 0 " + width + " " + height + "'");
             svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
             svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
@@ -346,6 +367,8 @@ public class LineEnding {
         } else if (this.getLineEndingType() == Type.DIAMOND) {
             double height = sqrt(32.0) / pow(3.0, 1.0 / 4.0);                       // Approx. 4.3
             double width = sqrt(3.0) * height;                                      // Approx. 7.44
+            width = width * this.getWidth();
+            height = height * this.getHeight();
             svg.append(" viewBox='0 0 " + width + " " + height + "'");
             svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
             svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
@@ -353,6 +376,8 @@ public class LineEnding {
         } else if (this.getLineEndingType() == Type.OPEN_DIAMOND) {
             double height = sqrt(32.0) / pow(3.0, 1.0 / 4.0);                       // Approx. 4.3
             double width = sqrt(3.0) * height;                                      // Approx. 7.44
+            width = width * this.getWidth();
+            height = height * this.getHeight();
             svg.append(" viewBox='0 0 " + width + " " + height + "'");
             svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
             svg.append(" refX='" + width / 2.0 + "' refY='" + height / 2.0 + "'>" + newLine);
@@ -363,6 +388,8 @@ public class LineEnding {
             // Take the 4th root of of the quotient
             double height = pow(quotient, 1.0/4.0);                      // approx. 4.07
             double width = 32.0 / height;                                    // approx. 7.87
+            width = width * this.getWidth();
+            height = height * this.getHeight();
             svg.append(" viewBox='0 0 " + width + " " + height + "'");
             svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
             svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
@@ -392,5 +419,30 @@ public class LineEnding {
 
     public void setFill(String fillColor) {
         this.fillColor = fillColor;
+    }
+
+    double getHeight() {
+        return this.height;
+    }
+
+    String getUniqueId() {
+        if (this.uniqueId == null) {
+            this.uniqueId = createID();
+        }
+        return this.uniqueId;
+    }
+
+    double getWidth() {
+        return this.width;
+    }
+
+    /**
+     * Sets the size of this LineEnding as a proportion of the default size.
+     *
+     * @param size the proportion of the default size to which to set the size of this LineEnding
+     */
+    public void setSize(double size) {
+        this.height = size;
+        this.width = size;
     }
 }
