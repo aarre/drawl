@@ -277,4 +277,22 @@ public class LineEndingDrawingTestPublic {
         then(svgInverted).isEqualTo(svgReverse);
 
     }
+
+    @Test
+    @DisplayName("When a LineEnding has been created, the user can set the fill color")
+    void whenALineEndingHasBeenCreatedThenTheUserCanSetTheFillColor()
+    {
+        final Line line = new Line();
+        LineEnding lineEnding = new LineEnding();
+        lineEnding.setFill("red");
+        line.addLineEnding(lineEnding);
+
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+
+        String svg = drawing.getSVG();
+
+        then(svg).contains("fill='red'");
+    }
+
 }

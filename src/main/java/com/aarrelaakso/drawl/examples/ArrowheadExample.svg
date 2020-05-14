@@ -30,7 +30,7 @@
 
 <line x1='222.22223' y1='166.66667' x2='277.77777' y2='166.66667' stroke='black' stroke-width='5' marker-end='url(#TURNED_SQUARE)' /><defs>
 <marker id='CIRCLE' orient='auto' viewBox='0 0 4.51351666838205 4.51351666838205' markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>
-<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='white' />
+<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='black' />
 </marker>
 </defs>
 
@@ -42,7 +42,7 @@
 
 <line x1='222.22223' y1='333.33334' x2='277.77777' y2='333.33334' stroke='black' stroke-width='5' marker-end='url(#DIAMOND)' /><defs>
 <marker id='OPEN_DIAMOND' orient='auto' viewBox='0 0 7.4448388728167965 4.298279727294168' markerWidth='7.4448388728167965' markerHeight='4.298279727294168' refX='3.7224194364083982' refY='2.149139863647084'>
-<path d='M0,2.149139863647084 L3.7224194364083982,4.298279727294168 L7.4448388728167965,2.149139863647084L3.7224194364083982,0 z' stroke='black' fill='white' />
+<path d='M0,2.149139863647084 L3.7224194364083982,4.298279727294168 L7.4448388728167965,2.149139863647084L3.7224194364083982,0 z' stroke='black' fill='black' />
 </marker>
 </defs>
 
