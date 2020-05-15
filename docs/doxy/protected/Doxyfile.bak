@@ -1,4 +1,4 @@
-# Doxyfile 1.8.18
+# Doxyfile 1.8.13
 
 # This file describes the settings to be used by the documentation system
 # doxygen (www.doxygen.org) for a project.
@@ -52,11 +52,14 @@ PROJECT_BRIEF          = "The world's best drawing language."
 # the logo to the output directory.
 
 PROJECT_LOGO           =
+
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
-OUTPUT_DIRECTORY       = ../../../../drawl-docs/docs/doxy/public/out
+
+OUTPUT_DIRECTORY       = ../../../../drawl-docs/docs/doxy/protected/out
+
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
 # will distribute the generated files over these directories. Enabling this
@@ -64,6 +67,7 @@ OUTPUT_DIRECTORY       = ../../../../drawl-docs/docs/doxy/public/out
 # putting all generated files in the same directory would otherwise causes
 # performance problems for the file system.
 # The default value is: NO.
+
 CREATE_SUBDIRS         = YES
 
 # If the ALLOW_UNICODE_NAMES tag is set to YES, doxygen will allow non-ASCII
@@ -184,12 +188,13 @@ SHORT_NAMES            = NO
 # The default value is: NO.
 
 JAVADOC_AUTOBRIEF      = YES
-JAVADOC_BANNER         = NO
+
 # If the QT_AUTOBRIEF tag is set to YES then doxygen will interpret the first
 # line (until the first dot) of a Qt-style comment as the brief description. If
 # set to NO, the Qt-style will behave just like regular Qt-style comments (thus
 # requiring an explicit \brief command for a brief description.)
 # The default value is: NO.
+
 QT_AUTOBRIEF           = NO
 
 # The MULTILINE_CPP_IS_BRIEF tag can be set to YES to make doxygen treat a
@@ -268,7 +273,7 @@ OPTIMIZE_FOR_FORTRAN   = NO
 # The default value is: NO.
 
 OPTIMIZE_OUTPUT_VHDL   = NO
-OPTIMIZE_OUTPUT_SLICE  = NO
+
 # Doxygen selects the parser to use depending on the extension of the files it
 # parses. With this tag you can assign which parser to use for a given
 # extension. Doxygen has a built-in mapping, but you can override or extend it
@@ -285,6 +290,7 @@ OPTIMIZE_OUTPUT_SLICE  = NO
 #
 # Note that for custom extensions you also need to set FILE_PATTERNS otherwise
 # the files are not read by doxygen.
+
 EXTENSION_MAPPING      =
 
 # If the MARKDOWN_SUPPORT tag is enabled then doxygen pre-processes all comments
@@ -296,12 +302,14 @@ EXTENSION_MAPPING      =
 # The default value is: YES.
 
 MARKDOWN_SUPPORT       = YES
+
 # When the TOC_INCLUDE_HEADINGS tag is set to a non-zero value, all headings up
 # to that level are automatically included in the table of contents, even if
 # they do not have an id attribute.
 # Note: This feature currently applies only to Markdown headings.
 # Minimum value: 0, maximum value: 99, default value: 0.
 # This tag requires that the tag MARKDOWN_SUPPORT is set to YES.
+
 TOC_INCLUDE_HEADINGS   = 5
 
 # When enabled doxygen tries to link words that correspond to documented
@@ -414,6 +422,7 @@ TYPEDEF_HIDES_STRUCT   = NO
 # Minimum value: 0, maximum value: 9, default value: 0.
 
 LOOKUP_CACHE_SIZE      = 0
+
 #---------------------------------------------------------------------------
 # Build related configuration options
 #---------------------------------------------------------------------------
@@ -427,18 +436,23 @@ LOOKUP_CACHE_SIZE      = 0
 # The default value is: NO.
 
 EXTRACT_ALL            = YES
+
 # If the EXTRACT_PRIVATE tag is set to YES, all private members of a class will
 # be included in the documentation.
 # The default value is: NO.
-EXTRACT_PRIVATE        = NO
+
+EXTRACT_PRIVATE        = YES
 EXTRACT_PRIV_VIRTUAL   = NO
 # If the EXTRACT_PACKAGE tag is set to YES, all members with package or internal
 # scope will be included in the documentation.
 # The default value is: NO.
-EXTRACT_PACKAGE        = NO
+
+EXTRACT_PACKAGE        = YES
+
 # If the EXTRACT_STATIC tag is set to YES, all static members of a file will be
 # included in the documentation.
 # The default value is: NO.
+
 EXTRACT_STATIC         = YES
 
 # If the EXTRACT_LOCAL_CLASSES tag is set to YES, classes (and structs) defined
@@ -448,35 +462,45 @@ EXTRACT_STATIC         = YES
 # The default value is: YES.
 
 EXTRACT_LOCAL_CLASSES  = YES
+
 # This flag is only useful for Objective-C code. If set to YES, local methods,
 # which are defined in the implementation section but not in the interface are
 # included in the documentation. If set to NO, only methods in the interface are
 # included.
 # The default value is: NO.
-EXTRACT_LOCAL_METHODS  = YES
+
+EXTRACT_LOCAL_METHODS  = NO
+
 # If this flag is set to YES, the members of anonymous namespaces will be
 # extracted and appear in the documentation as a namespace called
 # 'anonymous_namespace{file}', where file will be replaced with the base name of
 # the file that contains the anonymous namespace. By default anonymous namespace
 # are hidden.
 # The default value is: NO.
-EXTRACT_ANON_NSPACES   = YES
+
+EXTRACT_ANON_NSPACES   = NO
+
 # If the HIDE_UNDOC_MEMBERS tag is set to YES, doxygen will hide all
 # undocumented members inside documented classes or files. If set to NO these
 # members will be included in the various overviews, but no documentation
 # section is generated. This option has no effect if EXTRACT_ALL is enabled.
 # The default value is: NO.
+
 HIDE_UNDOC_MEMBERS     = NO
+
 # If the HIDE_UNDOC_CLASSES tag is set to YES, doxygen will hide all
 # undocumented classes that are normally visible in the class hierarchy. If set
 # to NO, these classes will be included in the various overviews. This option
 # has no effect if EXTRACT_ALL is enabled.
 # The default value is: NO.
+
 HIDE_UNDOC_CLASSES     = NO
+
 # If the HIDE_FRIEND_COMPOUNDS tag is set to YES, doxygen will hide all friend
 # (class|struct|union) declarations. If set to NO, these declarations will be
 # included in the documentation.
 # The default value is: NO.
+
 HIDE_FRIEND_COMPOUNDS  = NO
 
 # If the HIDE_IN_BODY_DOCS tag is set to YES, doxygen will hide any
@@ -690,6 +714,7 @@ LAYOUT_FILE            =
 # search path. See also \cite for info how to create references.
 
 CITE_BIB_FILES         =
+
 #---------------------------------------------------------------------------
 # Configuration options related to warning and progress messages
 #---------------------------------------------------------------------------
@@ -754,6 +779,7 @@ WARN_FORMAT            = "$file:$line: $text"
 # error (stderr).
 
 WARN_LOGFILE           =
+
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
@@ -854,13 +880,16 @@ EXCLUDE                =
 # The default value is: NO.
 
 EXCLUDE_SYMLINKS       = NO
+
 # If the value of the INPUT tag contains directories, you can use the
 # EXCLUDE_PATTERNS tag to specify one or more wildcard patterns to exclude
 # certain files from those directories.
 #
 # Note that the wildcards are matched against the file with absolute path, so to
 # exclude all test directories for example use the pattern */test/*
-EXCLUDE_PATTERNS       = */test/*
+
+EXCLUDE_PATTERNS       =
+
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names
 # (namespaces, classes, functions, etc.) that should be excluded from the
 # output. The symbol name can be a fully qualified name, a word, or if the
@@ -869,6 +898,7 @@ EXCLUDE_PATTERNS       = */test/*
 #
 # Note that the wildcards are matched against the file with absolute path, so to
 # exclude all test directories use the pattern */test/*
+
 EXCLUDE_SYMBOLS        =
 
 # The EXAMPLE_PATH tag can be used to specify one or more files or directories
@@ -952,6 +982,7 @@ FILTER_SOURCE_PATTERNS =
 # and want to reuse the introduction page also for the doxygen output.
 
 USE_MDFILE_AS_MAINPAGE =
+
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing
 #---------------------------------------------------------------------------
@@ -970,14 +1001,18 @@ SOURCE_BROWSER         = NO
 # The default value is: NO.
 
 INLINE_SOURCES         = NO
+
 # Setting the STRIP_CODE_COMMENTS tag to YES will instruct doxygen to hide any
 # special comment blocks from generated source code fragments. Normal C, C++ and
 # Fortran comments will always remain visible.
 # The default value is: YES.
-STRIP_CODE_COMMENTS    = YES
+
+STRIP_CODE_COMMENTS    = NO
+
 # If the REFERENCED_BY_RELATION tag is set to YES then for each documented
 # function all documented functions referencing it will be listed.
 # The default value is: NO.
+
 REFERENCED_BY_RELATION = NO
 
 # If the REFERENCES_RELATION tag is set to YES then for each documented function
@@ -1078,6 +1113,7 @@ COLS_IN_ALPHA_INDEX    = 5
 # This tag requires that the tag ALPHABETICAL_INDEX is set to YES.
 
 IGNORE_PREFIX          =
+
 #---------------------------------------------------------------------------
 # Configuration options related to the HTML output
 #---------------------------------------------------------------------------
@@ -1495,7 +1531,9 @@ FORMULA_MACROFILE      =
 # to it using the MATHJAX_RELPATH option.
 # The default value is: NO.
 # This tag requires that the tag GENERATE_HTML is set to YES.
+
 USE_MATHJAX            = YES
+
 # When MathJax is enabled you can set the default output format to be used for
 # the MathJax output. See the MathJax site (see:
 # http://docs.mathjax.org/en/latest/output.html) for more details.
@@ -1503,6 +1541,7 @@ USE_MATHJAX            = YES
 # compatibility), NativeMML (i.e. MathML) and SVG.
 # The default value is: HTML-CSS.
 # This tag requires that the tag USE_MATHJAX is set to YES.
+
 MATHJAX_FORMAT         = HTML-CSS
 
 # When MathJax is enabled you need to specify the location relative to the HTML
@@ -1618,6 +1657,7 @@ EXTERNAL_SEARCH_ID     =
 # This tag requires that the tag SEARCHENGINE is set to YES.
 
 EXTRA_SEARCH_MAPPINGS  =
+
 #---------------------------------------------------------------------------
 # Configuration options related to the LaTeX output
 #---------------------------------------------------------------------------
@@ -1852,6 +1892,7 @@ RTF_EXTENSIONS_FILE    =
 # This tag requires that the tag GENERATE_RTF is set to YES.
 
 RTF_SOURCE_CODE        = NO
+
 #---------------------------------------------------------------------------
 # Configuration options related to the man page output
 #---------------------------------------------------------------------------
@@ -1895,6 +1936,7 @@ MAN_SUBDIR             =
 # This tag requires that the tag GENERATE_MAN is set to YES.
 
 MAN_LINKS              = NO
+
 #---------------------------------------------------------------------------
 # Configuration options related to the XML output
 #---------------------------------------------------------------------------
@@ -1948,6 +1990,7 @@ DOCBOOK_OUTPUT         = docbook
 # This tag requires that the tag GENERATE_DOCBOOK is set to YES.
 
 DOCBOOK_PROGRAMLISTING = NO
+
 #---------------------------------------------------------------------------
 # Configuration options for the AutoGen Definitions output
 #---------------------------------------------------------------------------
@@ -1959,6 +2002,7 @@ DOCBOOK_PROGRAMLISTING = NO
 # The default value is: NO.
 
 GENERATE_AUTOGEN_DEF   = NO
+
 #---------------------------------------------------------------------------
 # Configuration options related to the Perl module output
 #---------------------------------------------------------------------------
@@ -1996,6 +2040,7 @@ PERLMOD_PRETTY         = YES
 # This tag requires that the tag GENERATE_PERLMOD is set to YES.
 
 PERLMOD_MAKEVAR_PREFIX =
+
 #---------------------------------------------------------------------------
 # Configuration options related to the preprocessor
 #---------------------------------------------------------------------------
@@ -2073,6 +2118,7 @@ EXPAND_AS_DEFINED      =
 # This tag requires that the tag ENABLE_PREPROCESSING is set to YES.
 
 SKIP_FUNCTION_MACROS   = YES
+
 #---------------------------------------------------------------------------
 # Configuration options related to external references
 #---------------------------------------------------------------------------

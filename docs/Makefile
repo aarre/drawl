@@ -1,5 +1,4 @@
 ALL:
-	cd doxy/public && doxygen
-	cd doxy/protected && doxygen
+	cd doxy && make
 	cd adoc && make
 	cd img && make

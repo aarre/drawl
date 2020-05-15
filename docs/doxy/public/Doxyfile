@@ -4,9 +4,9 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = Drawl
-PROJECT_NUMBER         = 0.2.0
-PROJECT_BRIEF          = "The world's best drawing language"
+PROJECT_NAME           = "Drawl"
+PROJECT_NUMBER         = 0.3.0-alpha1
+PROJECT_BRIEF          = "The world's best drawing language."
 PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = ../../../../drawl-docs/docs/doxy/public/out
 CREATE_SUBDIRS         = YES
@@ -84,7 +84,7 @@ SHOW_GROUPED_MEMB_INC  = NO
 FORCE_LOCAL_INCLUDES   = NO
 INLINE_INFO            = YES
 SORT_MEMBER_DOCS       = YES
-SORT_BRIEF_DOCS        = YES
+SORT_BRIEF_DOCS        = NO
 SORT_MEMBERS_CTORS_1ST = YES
 SORT_GROUP_NAMES       = NO
 SORT_BY_SCOPE_NAME     = NO
@@ -108,7 +108,7 @@ QUIET                  = NO
 WARNINGS               = YES
 WARN_IF_UNDOCUMENTED   = YES
 WARN_IF_DOC_ERROR      = YES
-WARN_NO_PARAMDOC       = YES
+WARN_NO_PARAMDOC       = NO
 WARN_AS_ERROR          = NO
 WARN_FORMAT            = "$file:$line: $text"
 WARN_LOGFILE           =
@@ -159,6 +159,7 @@ FILE_PATTERNS          = *.c \
                          *.f18 \
                          *.f \
                          *.for \
+                         *.tcl \
                          *.vhd \
                          *.vhdl \
                          *.ucf \
@@ -183,7 +184,7 @@ USE_MDFILE_AS_MAINPAGE =
 #---------------------------------------------------------------------------
 SOURCE_BROWSER         = NO
 INLINE_SOURCES         = NO
-STRIP_CODE_COMMENTS    = NO
+STRIP_CODE_COMMENTS    = YES
 REFERENCED_BY_RELATION = NO
 REFERENCES_RELATION    = NO
 REFERENCES_LINK_SOURCE = YES
@@ -205,7 +206,7 @@ IGNORE_PREFIX          =
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
 HTML_FILE_EXTENSION    = .html
-HTML_HEADER            =
+HTML_HEADER            = header.html
 HTML_FOOTER            =
 HTML_STYLESHEET        =
 HTML_EXTRA_STYLESHEET  =
@@ -248,10 +249,10 @@ HTML_FORMULA_FORMAT    = png
 FORMULA_FONTSIZE       = 10
 FORMULA_TRANSPARENT    = YES
 FORMULA_MACROFILE      =
-USE_MATHJAX            = NO
+USE_MATHJAX            = YES
 MATHJAX_FORMAT         = HTML-CSS
 MATHJAX_RELPATH        = https://cdn.jsdelivr.net/npm/mathjax@2
-MATHJAX_EXTENSIONS     =
+MATHJAX_EXTENSIONS     = TeX
 MATHJAX_CODEFILE       =
 SEARCHENGINE           = YES
 SERVER_BASED_SEARCH    = NO
@@ -265,11 +266,11 @@ EXTRA_SEARCH_MAPPINGS  =
 #---------------------------------------------------------------------------
 GENERATE_LATEX         = NO
 LATEX_OUTPUT           = latex
-LATEX_CMD_NAME         =
+LATEX_CMD_NAME         = latex
 MAKEINDEX_CMD_NAME     = makeindex
 LATEX_MAKEINDEX_CMD    = makeindex
 COMPACT_LATEX          = NO
-PAPER_TYPE             = a4
+PAPER_TYPE             = letter
 EXTRA_PACKAGES         =
 LATEX_HEADER           =
 LATEX_FOOTER           =
@@ -368,7 +369,7 @@ CALL_GRAPH             = NO
 CALLER_GRAPH           = NO
 GRAPHICAL_HIERARCHY    = NO
 DIRECTORY_GRAPH        = NO
-DOT_IMAGE_FORMAT       = png
+DOT_IMAGE_FORMAT       = svg
 INTERACTIVE_SVG        = YES
 DOT_PATH               = /usr/bin/dot
 DOTFILE_DIRS           =
