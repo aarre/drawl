@@ -334,52 +334,50 @@ public class LineEnding {
             double width = 32.0 / height;                                    // approx. 7.87
             width = width / this.getWidth();
             height = height / this.getHeight();
-            svg.append(" viewBox='0 0 " + width + 2 + " " + height + 2 + "'");
-            svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
-            svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
-            svg.append("<path d='M0,0 L0," + height + " L" + width + "," + height/2.0 + " z'");
+            svg.append(" viewBox='0 0 " + (width + 3) + " " + (height + 2) + "'");
+            svg.append(" markerWidth='" + (width + 3) + "' markerHeight='" + (height + 2) + "'");
+            svg.append(" refX='" + (width/2.0 + 1) + "' refY='" + (height/2.0 + 1) + "'>" + newLine);
+            svg.append("<path d='M1,1 L1," + (height + 1) + " L" + (width + 1) + "," + (height/2.0 + 1) + " z'");
         } else if (this.getLineEndingType() == Type.BOX) {
-            svg.append(" viewBox='0 0 4 4' markerWidth='4' markerHeight='4' refX='2' refY='2'>" + newLine);
-            svg.append("<path d='M0,0 L0,4 L4,4 L4,0 z'");
+            svg.append(" viewBox='0 0 6 6' markerWidth='6' markerHeight='6' refX='3' refY='3'>" + newLine);
+            svg.append("<path d='M1,1 L1,5 L5,5 L5,1 z'");
         } else if (this.getLineEndingType() == Type.TURNED_SQUARE) {
             double diagonal = 4 * sqrt(2);
             double half_diag = diagonal / 2;
-            svg.append(" viewBox='0 0 " + diagonal + 2 + " " + diagonal + 2 + "'");
-            svg.append(" markerWidth='" + diagonal + "' markerHeight='" + diagonal + "'");
-            svg.append(" refX='" + diagonal/2 + "' refY='" + diagonal/2 + "'>" + newLine);
-            svg.append("<path d='M" + half_diag + ",0 L" + diagonal + "," + half_diag + " L" + half_diag + "," + diagonal + " L0," + half_diag + " z'");
+            svg.append(" viewBox='0 0 " + (diagonal + 2) + " " + (diagonal + 2) + "'");
+            svg.append(" markerWidth='" + (diagonal + 2) + "' markerHeight='" + (diagonal + 2) + "'");
+            svg.append(" refX='" + (half_diag + 1) + "' refY='" + (half_diag + 1) + "'>" + newLine);
+            svg.append("<path d='M" + (half_diag + 1) + ",1 L" + (diagonal + 1) + "," + (half_diag + 1) + " L" + (half_diag + 1) + "," + (diagonal + 1) + " L1," + (half_diag + 1) + " z'");
         } else if (this.getLineEndingType() == Type.DOT) {
             double radius = 4 / sqrt( Math.PI );
             double diameter = 2 * radius;
-            svg.append(" viewBox='0 0 " + diameter + 2 + " " + diameter + 2 +"'");
-            svg.append(" markerWidth='" + diameter + "' markerHeight='" + diameter + "'");
-            svg.append(" refX='" + radius + "' refY='" + radius + "'>" + newLine);
-            svg.append("<circle cx='" + radius + "' cy='" + radius +"' r='" + radius + "'");
+            svg.append(" viewBox='0 0 " + (diameter + 2) + " " + (diameter + 2) +"'");
+            svg.append(" markerWidth='" + (diameter + 2) + "' markerHeight='" + (diameter + 2) + "'");
+            svg.append(" refX='" + (radius + 1) + "' refY='" + (radius + 1) + "'>" + newLine);
+            svg.append("<circle cx='" + (radius + 1) + "' cy='" + (radius + 1) +"' r='" + radius + "'");
         } else if (this.getLineEndingType() == Type.CIRCLE) {
             double radius = 4 / sqrt(Math.PI);
             double diameter = 2 * radius;
-            svg.append(" viewBox='0 0 " + diameter + 2  + " " + diameter + 2 + "'");
-            svg.append(" markerWidth='" + diameter + "' markerHeight='" + diameter + "'");
-            svg.append(" refX='" + radius + "' refY='" + radius + "'>" + newLine);
-            svg.append("<circle cx='" + radius + "' cy='" + radius + "' r='" + radius + "'");
+            svg.append(" viewBox='0 0 " + (diameter + 2) + " " + (diameter + 2) + "'");
+            svg.append(" markerWidth='" + (diameter + 2) + "' markerHeight='" + (diameter + 2) + "'");
+            svg.append(" refX='" + (radius + 1) + "' refY='" + (radius + 1) + "'>" + newLine);
+            svg.append("<circle cx='" + (radius + 1) + "' cy='" + (radius + 1) + "' r='" + radius + "'");
         } else if (this.getLineEndingType() == Type.DIAMOND) {
             double height = sqrt(32.0) / pow(3.0, 1.0 / 4.0);                       // Approx. 4.3
             double width = sqrt(3.0) * height;                                      // Approx. 7.44
             width = width * this.getWidth();
             height = height * this.getHeight();
-            svg.append(" viewBox='0 0 " + width + 2 + " " + height + 2 + "'");
-            svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
-            svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
-            svg.append("<path d='M0," + height/2.0 + " L" + width/2.0 + "," + height + " L" + width + "," + height/2.0 + "L" + width/2.0 + ",0 z'");
+            svg.append(" viewBox='0 0 " + (width + 2) + " " + (height + 2) + "'");
+            svg.append(" markerWidth='" + (width + 2) + "' markerHeight='" + (height + 2) + "'");
+            svg.append(" refX='" + (width/2.0 + 1) + "' refY='" + (height/2.0 + 1) + "'>" + newLine);
+            svg.append("<path d='M1," + (height/2.0 + 1) + " L" + (width/2.0 + 1) + "," + (height + 1) + " L" + (width + 1) + "," + (height/2.0 + 1) + " L" + (width/2.0 + 1) + ",1 z'");
         } else if (this.getLineEndingType() == Type.OPEN_DIAMOND) {
             double height = sqrt(32.0) / pow(3.0, 1.0 / 4.0);                       // Approx. 4.3
             double width = sqrt(3.0) * height;                                      // Approx. 7.44
-            width = width * this.getWidth();
-            height = height * this.getHeight();
-            svg.append(" viewBox='0 0 " + width + 2 + " " + height + 2 + "'");
-            svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
-            svg.append(" refX='" + width / 2.0 + "' refY='" + height / 2.0 + "'>" + newLine);
-            svg.append("<path d='M0," + height / 2.0 + " L" + width / 2.0 + "," + height + " L" + width + "," + height / 2.0 + "L" + width / 2.0 + ",0 z'");
+            svg.append(" viewBox='0 0 " + (width + 2) + " " + (height + 2) + "'");
+            svg.append(" markerWidth='" + (width + 2) + "' markerHeight='" + (height + 2) + "'");
+            svg.append(" refX='" + (width / 2.0 + 1) + "' refY='" + (height / 2.0 + 1) + "'>" + newLine);
+            svg.append("<path d='M1," + (height / 2.0 + 1) + " L" + (width / 2.0 + 1) + "," + (height + 1) + " L" + (width + 1) + "," + (height / 2.0 + 1) + "L" + (width / 2.0 + 1) + ",1 z'");
         } else if (this.getLineEndingType() == Type.REVERSE) {
             // See the API documentation for the rationale for these calculations
             double quotient = 4096.0 / 15.0;
@@ -388,10 +386,10 @@ public class LineEnding {
             double width = 32.0 / height;                                    // approx. 7.87
             width = width * this.getWidth();
             height = height * this.getHeight();
-            svg.append(" viewBox='0 0 " + width + 2 + " " + height + 2 + "'");
-            svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
-            svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
-            svg.append("<path d='M0," + height/2.0 + "L" + width + "," + height + " L" + width + "," + 0 + " z'");
+            svg.append(" viewBox='0 0 " + (width + 2) + " " + (height + 2) + "'");
+            svg.append(" markerWidth='" + (width + 2) + "' markerHeight='" + (height + 2) + "'");
+            svg.append(" refX='" + (width/2.0 + 1) + "' refY='" + (height/2.0 + 1) + "'>" + newLine);
+            svg.append("<path d='M1," + (height/2.0 + 1) + "L" + (width+1) + "," + (height+1) + " L" + (width+1) + "," + 1 + " z'");
         }
         else {
             throw new UnsupportedOperationException("Unknown line ending type: " + this.getLineEndingType());

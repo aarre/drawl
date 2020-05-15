@@ -10,9 +10,9 @@
 
 package com.aarrelaakso.drawl.test;
 
-import com.aarrelaakso.drawl.LineEnding;
 import com.aarrelaakso.drawl.Drawing;
 import com.aarrelaakso.drawl.Line;
+import com.aarrelaakso.drawl.LineEnding;
 import org.assertj.core.api.BDDSoftAssertions;
 import org.assertj.core.api.junit.jupiter.SoftAssertionsExtension;
 import org.junit.jupiter.api.DisplayName;
@@ -123,10 +123,17 @@ public class LineEndingDrawingTestPublic {
         final String svg = drawing.getSVG();
         softly.then(svg).contains("<defs>" + newLine)
                 .contains("<marker id='BOX-")
-                .contains("' orient='auto' viewBox='0 0 4 4' markerWidth='4' markerHeight='4' refX='2' refY='2'>" + newLine +
-                        "<path d='M0,0 L0,4 L4,4 L4,0 z' stroke='black' fill='black' />" + newLine +
-                        "</marker>" + newLine +
-                        "</defs>");
+                .contains("' orient='auto'")
+                .contains("viewBox='0 0 6 6'")
+                .contains("markerWidth='6'")
+                .contains("markerHeight='6'")
+                .contains("refX='3'")
+                .contains("refY='3'>")
+                .contains("<path d='M1,1 L1,5 L5,5 L5,1 z'")
+                .contains("stroke='black'")
+                .contains("fill='black' />")
+                .contains("</marker>")
+                .contains("</defs>");
     }
 
     @Test
@@ -140,10 +147,17 @@ public class LineEndingDrawingTestPublic {
         final String svg = drawing.getSVG();
         softly.then(svg).contains("<defs>" + newLine)
                 .contains("<marker id='BOX-")
-                .contains("' orient='auto' viewBox='0 0 4 4' markerWidth='4' markerHeight='4' refX='2' refY='2'>" + newLine +
-                        "<path d='M0,0 L0,4 L4,4 L4,0 z' stroke='black' fill='black' />" + newLine +
-                        "</marker>" + newLine +
-                        "</defs>");
+                .contains("' orient='auto'")
+                .contains("viewBox='0 0 6 6'")
+                .contains("markerWidth='6'")
+                .contains("markerHeight='6'")
+                .contains("refX='3'")
+                .contains("refY='3'>")
+                .contains("<path d='M1,1 L1,5 L5,5 L5,1 z'")
+                .contains("stroke='black'")
+                .contains("fill='black' />")
+                .contains("</marker>")
+                .contains("</defs>");
     }
 
     @Test
@@ -157,16 +171,18 @@ public class LineEndingDrawingTestPublic {
         final String svg = drawing.getSVG();
         softly.then(svg).contains("<marker id='DIAMOND-");
         softly.then(svg).contains("<defs>");
-        softly.then(svg).contains("orient='auto' viewBox='0 0 ")
-                .contains("7.4448388728167")
-                .contains("4.2982797272941")
-                .contains("markerWidth='7.44483887281679")
-                .contains("markerHeight='4.29827972729416")
-                .contains("refX='3.7224194364083982'")
-                .contains("refY='2.149139863647084'>")
-                .contains("<path d='M0,2.149139863647084 L3.7224194364083982,4.298279727294168 L7.4448388728167965,2.149139863647084L3.7224194364083982,0 z' stroke='black' fill='black' />" + newLine +
-                        "</marker>" + newLine +
-                        "</defs>");
+        softly.then(svg).contains("orient='auto' viewBox='0 0 ");
+        softly.then(svg).contains("9.4448388728167");
+        softly.then(svg).contains("6.2982797272941");
+        softly.then(svg).contains("markerWidth='9.44483887281679");
+        softly.then(svg).contains("markerHeight='6.29827972729416");
+        softly.then(svg).contains("refX='4.722419436408");
+        softly.then(svg).contains("refY='3.149139863647");
+        softly.then(svg).contains(",5.298279727294168");
+        softly.then(svg).contains("L8.444838872816796");
+        softly.then(svg).contains(",3.149139863647084");
+        softly.then(svg).contains("L4.722419436408398");
+        softly.then(svg).contains(",1 z' stroke='black' fill='black' />" + newLine + "</marker>" + newLine + "</defs>");
     }
 
     @Test
@@ -181,12 +197,12 @@ public class LineEndingDrawingTestPublic {
         softly.then(svg).contains("<defs>")
                 .contains("<marker id='TURNED_SQUARE-")
                 .contains("' orient='auto'")
-                .contains("viewBox='0 0 5.6568542494923")
-                .contains("markerWidth='5.6568542494923")
-                .contains("markerHeight='5.6568542494923")
-                .contains("refX='2.8284271247461903'")
-                .contains("refY='2.8284271247461903'>")
-                .contains("<path d='M2.8284271247461903,0 L5.656854249492381,2.8284271247461903 L2.8284271247461903,5.656854249492381 L0,2.8284271247461903 z'")
+                .contains("viewBox='0 0 7.6568542494923")
+                .contains("markerWidth='7.6568542494923")
+                .contains("markerHeight='7.6568542494923")
+                .contains("refX='3.8284271247461903'")
+                .contains("refY='3.8284271247461903'>")
+                .contains("<path d='M3.8284271247461903,1 L6.656854249492381,3.8284271247461903 L3.8284271247461903,6.656854249492381 L1,3.8284271247461903 z'")
                 .contains("stroke='black'")
                 .contains("fill='black'")
                 .contains("/>")
@@ -206,15 +222,15 @@ public class LineEndingDrawingTestPublic {
         softly.then(svg).contains("<defs>")
                 .contains("<marker id='DOT-")
                 .contains("' orient='auto' ")
-                .contains("viewBox='0 0 4.513516668382")
-                .contains("4.513516668382")
-                .contains("markerWidth='4.513516668382")
-                .contains("markerHeight='4.513516668382")
-                .contains("refX='2.2567583341910")
-                .contains("refY='2.2567583341910")
-                .contains("<circle cx='2.2567583341910")
-                .contains("cy='2.2567583341910")
-                .contains("r='2.25675833419102")
+                .contains("viewBox='0 0 6.513516668382")
+                .contains("6.513516668382")
+                .contains("markerWidth='6.513516668382")
+                .contains("markerHeight='6.513516668382")
+                .contains("refX='3.2567583341910")
+                .contains("refY='3.2567583341910")
+                .contains("<circle cx='3.2567583341910")
+                .contains("cy='3.2567583341910")
+                .contains("r='2.2567583341910")
                 .contains("stroke='black' fill='black' />" + newLine)
                 .contains("</marker>" + newLine + "</defs>");
     }
@@ -230,11 +246,18 @@ public class LineEndingDrawingTestPublic {
         final String svg = drawing.getSVG();
         softly.then(svg).contains("<defs>")
                 .contains("<marker id='DOT-")
-                .contains("' orient='auto' viewBox='0 0 4.513516668382")
-                .contains("markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
-                        "<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='black' />" + newLine +
-                        "</marker>" + newLine +
-                        "</defs>");
+                .contains("' orient='auto' ")
+                .contains("viewBox='0 0 6.513516668382")
+                .contains("6.513516668382")
+                .contains("markerWidth='6.513516668382")
+                .contains("markerHeight='6.513516668382")
+                .contains("refX='3.2567583341910")
+                .contains("refY='3.2567583341910")
+                .contains("<circle cx='3.2567583341910")
+                .contains("cy='3.2567583341910")
+                .contains("r='2.2567583341910")
+                .contains("stroke='black' fill='black' />" + newLine)
+                .contains("</marker>" + newLine + "</defs>");
     }
 
     @Test
@@ -248,11 +271,18 @@ public class LineEndingDrawingTestPublic {
         final String svg = drawing.getSVG();
         softly.then(svg).contains("<defs>")
                 .contains("<marker id='CIRCLE-")
-                .contains("' orient='auto' viewBox='0 0 4.513516668382")
-                .contains("markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
-                        "<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='white' />" + newLine +
-                        "</marker>" + newLine +
-                        "</defs>");
+                .contains("' orient='auto' ")
+                .contains("viewBox='0 0 6.513516668382")
+                .contains("6.513516668382")
+                .contains("markerWidth='6.513516668382")
+                .contains("markerHeight='6.513516668382")
+                .contains("refX='3.2567583341910")
+                .contains("refY='3.2567583341910")
+                .contains("<circle cx='3.2567583341910")
+                .contains("cy='3.2567583341910")
+                .contains("r='2.2567583341910")
+                .contains("stroke='black' fill='white' />" + newLine)
+                .contains("</marker>" + newLine + "</defs>");
     }
 
     @Test
@@ -266,11 +296,18 @@ public class LineEndingDrawingTestPublic {
         final String svg = drawing.getSVG();
         softly.then(svg).contains("<defs>")
                 .contains("<marker id='CIRCLE-")
-                .contains("' orient='auto' viewBox='0 0 4.513516668382")
-                .contains("markerWidth='4.51351666838205' markerHeight='4.51351666838205' refX='2.256758334191025' refY='2.256758334191025'>" + newLine +
-                        "<circle cx='2.256758334191025' cy='2.256758334191025' r='2.256758334191025' stroke='black' fill='white' />" + newLine +
-                        "</marker>" + newLine +
-                        "</defs>");
+                .contains("' orient='auto' ")
+                .contains("viewBox='0 0 6.513516668382")
+                .contains("6.513516668382")
+                .contains("markerWidth='6.513516668382")
+                .contains("markerHeight='6.513516668382")
+                .contains("refX='3.2567583341910")
+                .contains("refY='3.2567583341910")
+                .contains("<circle cx='3.2567583341910")
+                .contains("cy='3.2567583341910")
+                .contains("r='2.2567583341910")
+                .contains("stroke='black' fill='white' />" + newLine)
+                .contains("</marker>" + newLine + "</defs>");
     }
 
     @Test
