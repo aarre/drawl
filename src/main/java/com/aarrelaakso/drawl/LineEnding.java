@@ -38,10 +38,8 @@ public class LineEnding {
     @NotNull
     private String fillColor = "black";
 
-    @NotNull
     private double height = 1.0;
 
-    @NotNull
     private double width = 1.0;
 
     private String uniqueId;
@@ -318,11 +316,11 @@ public class LineEnding {
         }
     }
 
-    protected String getSVGDef() {
+    protected String getSVGDef(double lineWidth) {
         String newLine = System.getProperty("line.separator");
         StringBuilder svg = new StringBuilder();
 
-        svg.append("<defs>" + newLine);
+        svg.append(newLine + "<defs>" + newLine);
         svg.append("<marker id='");
         svg.append(this.getLineEndingType());
         svg.append("-");
@@ -334,9 +332,9 @@ public class LineEnding {
             // Take the 4th root of of the quotient
             double height = pow(quotient, 1.0/4.0);                      // approx. 4.07
             double width = 32.0 / height;                                    // approx. 7.87
-            width = width * this.getWidth();
-            height = height * this.getHeight();
-            svg.append(" viewBox='0 0 " + width + " " + height + "'");
+            width = width / this.getWidth();
+            height = height / this.getHeight();
+            svg.append(" viewBox='0 0 " + width + 2 + " " + height + 2 + "'");
             svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
             svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
             svg.append("<path d='M0,0 L0," + height + " L" + width + "," + height/2.0 + " z'");
@@ -346,21 +344,21 @@ public class LineEnding {
         } else if (this.getLineEndingType() == Type.TURNED_SQUARE) {
             double diagonal = 4 * sqrt(2);
             double half_diag = diagonal / 2;
-            svg.append(" viewBox='0 0 " + diagonal + " " + diagonal + "'");
+            svg.append(" viewBox='0 0 " + diagonal + 2 + " " + diagonal + 2 + "'");
             svg.append(" markerWidth='" + diagonal + "' markerHeight='" + diagonal + "'");
             svg.append(" refX='" + diagonal/2 + "' refY='" + diagonal/2 + "'>" + newLine);
             svg.append("<path d='M" + half_diag + ",0 L" + diagonal + "," + half_diag + " L" + half_diag + "," + diagonal + " L0," + half_diag + " z'");
         } else if (this.getLineEndingType() == Type.DOT) {
             double radius = 4 / sqrt( Math.PI );
             double diameter = 2 * radius;
-            svg.append(" viewBox='0 0 " + diameter + " " + diameter +"'");
+            svg.append(" viewBox='0 0 " + diameter + 2 + " " + diameter + 2 +"'");
             svg.append(" markerWidth='" + diameter + "' markerHeight='" + diameter + "'");
             svg.append(" refX='" + radius + "' refY='" + radius + "'>" + newLine);
             svg.append("<circle cx='" + radius + "' cy='" + radius +"' r='" + radius + "'");
         } else if (this.getLineEndingType() == Type.CIRCLE) {
             double radius = 4 / sqrt(Math.PI);
             double diameter = 2 * radius;
-            svg.append(" viewBox='0 0 " + diameter + " " + diameter + "'");
+            svg.append(" viewBox='0 0 " + diameter + 2  + " " + diameter + 2 + "'");
             svg.append(" markerWidth='" + diameter + "' markerHeight='" + diameter + "'");
             svg.append(" refX='" + radius + "' refY='" + radius + "'>" + newLine);
             svg.append("<circle cx='" + radius + "' cy='" + radius + "' r='" + radius + "'");
@@ -369,7 +367,7 @@ public class LineEnding {
             double width = sqrt(3.0) * height;                                      // Approx. 7.44
             width = width * this.getWidth();
             height = height * this.getHeight();
-            svg.append(" viewBox='0 0 " + width + " " + height + "'");
+            svg.append(" viewBox='0 0 " + width + 2 + " " + height + 2 + "'");
             svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
             svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
             svg.append("<path d='M0," + height/2.0 + " L" + width/2.0 + "," + height + " L" + width + "," + height/2.0 + "L" + width/2.0 + ",0 z'");
@@ -378,7 +376,7 @@ public class LineEnding {
             double width = sqrt(3.0) * height;                                      // Approx. 7.44
             width = width * this.getWidth();
             height = height * this.getHeight();
-            svg.append(" viewBox='0 0 " + width + " " + height + "'");
+            svg.append(" viewBox='0 0 " + width + 2 + " " + height + 2 + "'");
             svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
             svg.append(" refX='" + width / 2.0 + "' refY='" + height / 2.0 + "'>" + newLine);
             svg.append("<path d='M0," + height / 2.0 + " L" + width / 2.0 + "," + height + " L" + width + "," + height / 2.0 + "L" + width / 2.0 + ",0 z'");
@@ -390,7 +388,7 @@ public class LineEnding {
             double width = 32.0 / height;                                    // approx. 7.87
             width = width * this.getWidth();
             height = height * this.getHeight();
-            svg.append(" viewBox='0 0 " + width + " " + height + "'");
+            svg.append(" viewBox='0 0 " + width + 2 + " " + height + 2 + "'");
             svg.append(" markerWidth='" + width + "' markerHeight='" + height + "'");
             svg.append(" refX='" + width/2.0 + "' refY='" + height/2.0 + "'>" + newLine);
             svg.append("<path d='M0," + height/2.0 + "L" + width + "," + height + " L" + width + "," + 0 + " z'");

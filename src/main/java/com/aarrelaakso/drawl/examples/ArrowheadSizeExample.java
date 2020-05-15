@@ -14,7 +14,7 @@ public class ArrowheadSizeExample {
         Measure textWidth = text1.getWidth();
         final Line line1 = new Line(Line.Orientation.HORIZONTAL);
         line1.setWidth(textWidth);
-        line1.setThickness(5);
+        line1.setThickness(1);
         final LineEnding lineEnding = new LineEnding(LineEnding.Type.DEFAULT);
         lineEnding.setSize(0.5);
         line1.addLineEnding(lineEnding);
@@ -26,8 +26,9 @@ public class ArrowheadSizeExample {
         text2.setBelow(line1);
         final Line line2 = new Line(Line.Orientation.HORIZONTAL);
         line2.setWidth(textWidth);
-        line2.setThickness(5);
+        line2.setThickness(1);
         final LineEnding lineEnding2 = new LineEnding(LineEnding.Type.DEFAULT);
+        lineEnding2.setSize(1.0);
         line2.addLineEnding(lineEnding2);
         line2.setBelow(text2);
         drawing.add(text2);
@@ -37,9 +38,9 @@ public class ArrowheadSizeExample {
         text3.setBelow(line2);
         final Line line3 = new Line(Line.Orientation.HORIZONTAL);
         line3.setWidth(textWidth);
-        line3.setThickness(5);
+        line3.setThickness(1);
         final LineEnding lineEnding3 = new LineEnding(LineEnding.Type.DEFAULT);
-        lineEnding.setSize(2.0);
+        lineEnding3.setSize(2.0);
         line3.addLineEnding(lineEnding3);
         line3.setBelow(text3);
         drawing.add(text3);

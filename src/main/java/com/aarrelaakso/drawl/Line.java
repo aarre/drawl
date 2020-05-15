@@ -53,9 +53,9 @@ public class Line extends Shape {
     private Point point2Implicit = new Point(0, 0);
 
     /**
-     * The line thickness
+     * The line thickness (stroke width)
      */
-    private Double thickness;
+    private double thickness = 1.0;
 
 
     /**
@@ -166,7 +166,7 @@ public class Line extends Shape {
         String newLine = System.getProperty("line.separator");
         @NotNull final StringBuilder svgBuilder = new StringBuilder();
         if (this.hasArrowhead()) {
-            svgBuilder.append(this.getLineEnding().getSVGDef());
+            svgBuilder.append(this.getLineEnding().getSVGDef(this.getThickness()));
         }
         svgBuilder.append(newLine + "<line");
         svgBuilder.append(" x1='");
@@ -196,11 +196,9 @@ public class Line extends Shape {
         }
         svgBuilder.append("'");
 
-        if (this.thickness != null) {
-            svgBuilder.append(" stroke-width='");
-            svgBuilder.append(DrawlNumber.valueOf(this.getThickness()).toSVG());
-            svgBuilder.append("'");
-        }
+        svgBuilder.append(" stroke-width='");
+        svgBuilder.append(DrawlNumber.valueOf(this.getThickness()).toSVG());
+        svgBuilder.append("'");
 
         if (this.hasArrowhead()) {
             svgBuilder.append(" marker-end='url(#");
@@ -211,6 +209,7 @@ public class Line extends Shape {
         }
 
         svgBuilder.append(" />");
+        svgBuilder.append(newLine);
         if (this.getText() != null) {
             svgBuilder.append(this.getText().getSVG());
         }
