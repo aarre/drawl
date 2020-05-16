@@ -7,7 +7,7 @@ SHELL=/bin/bash   # for the while loop below
  ## Compile paper
 
 
-all:	rhombus.svg triangle.svg
+all:	rectangle.svg rhombus.svg triangle.svg
 
 .PRECIOUS: %.pdf
 

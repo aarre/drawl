@@ -220,6 +220,8 @@ public class LineEnding {
         PARENTHESIS,
         RAYS,
         RECTANGLE,
+        /*!< A rectangle is a generalization of square that has different width and height */
+
         REVERSE,
         /*!< A reverse (inverted) version of the NORMAL line ending. Synonyms: INVERTED */
         RHOMBUS,
@@ -276,8 +278,6 @@ public class LineEnding {
     // TODO: Need a new constructor (or method/s) to allow for half arrows (right, left)
 
     // TODO: Need a new constructor (or method/s) to allow for multiple arrows
-
-    // TODO: Need to figure out how to do inverted (outline) arrows
 
     // TODO: Reverse/inverse arrows
 
@@ -378,6 +378,15 @@ public class LineEnding {
             svg.append(" markerWidth='" + (width + 2) + "' markerHeight='" + (height + 2) + "'");
             svg.append(" refX='" + (width / 2.0 + 1) + "' refY='" + (height / 2.0 + 1) + "'>" + newLine);
             svg.append("<path d='M1," + (height / 2.0 + 1) + " L" + (width / 2.0 + 1) + "," + (height + 1) + " L" + (width + 1) + "," + (height / 2.0 + 1) + "L" + (width / 2.0 + 1) + ",1 z'");
+        } else if (this.getLineEndingType() == Type.RECTANGLE) {
+            double height = 2.0 * sqrt(2.0);
+            double width = 2.0 * height;
+            svg.append(" viewBox='0 0 " + (width + 2) + " " + (height + 2) + "'");
+            svg.append(" markerWidth='" + (width + 2) + "'");
+            svg.append(" markerHeight='" + (height + 2) + "'");
+            svg.append(" refX='" + (width / 2.0 + 1) + "'");
+            svg.append(" refY='" + (height / 2.0 + 1) + "'>" + newLine);
+            svg.append("<path d='M1,1 L1," + (height + 1) + " L" + (width + 1) + "," + (height + 1) + " L" + (width + 1) + ",1 z'");
         } else if (this.getLineEndingType() == Type.REVERSE) {
             // See the API documentation for the rationale for these calculations
             double quotient = 4096.0 / 15.0;

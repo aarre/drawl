@@ -108,8 +108,19 @@ public class ArrowheadExample {
         drawing.add(text8);
         drawing.add(line8);
 
+        final Text text9 = new Text("RECTANGLE");
+        text9.setBelow(line8);
+        final Line line9 = new Line(Line.Orientation.HORIZONTAL);
+        line9.setWidth(textWidth);
+        line9.setThickness(5);
+        final LineEnding lineEnding9 = new LineEnding(LineEnding.Type.RECTANGLE);
+        line9.addLineEnding(lineEnding9);
+        line9.setBelow(text9);
+        drawing.add(text9);
+        drawing.add(line9);
+
         final Text bottomSpacer = new Text("");
-        bottomSpacer.setBelow(line8);
+        bottomSpacer.setBelow(line9);
         drawing.add(bottomSpacer);
 
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 500, 500);

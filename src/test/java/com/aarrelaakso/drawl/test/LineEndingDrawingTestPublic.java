@@ -311,6 +311,30 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
+    @DisplayName("When a line has a rectangle LineEnding then it shows up in the SVG")
+    void whenALineHasARectangleLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.RECTANGLE);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<defs>" + newLine)
+                .contains("<marker id='RECTANGLE-")
+                .contains("' orient='auto'")
+                .contains("viewBox='0 0 7.656854249492381 4.82842712474619'")
+                .contains("markerWidth='7.656854249492381'")
+                .contains("markerHeight='4.82842712474619'")
+                .contains("refX='3.8284271247461903'")
+                .contains("refY='2.414213562373095'>")
+                .contains("<path d='M1,1 L1,3.8284271247461903 L6.656854249492381,3.8284271247461903 L6.656854249492381,1 z'")
+                .contains("stroke='black'")
+                .contains("fill='black' />")
+                .contains("</marker>")
+                .contains("</defs>");
+    }
+
+    @Test
     @DisplayName("When a line has an INVERTED line ending, then it is the same as a REVERSE line ending")
     void whenALineHasAnInvertedLineEndingThenItIsTheSameAsAReverseLineEnding() {
         final Line lineInverted = new Line();

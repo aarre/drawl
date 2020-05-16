@@ -210,10 +210,25 @@ Others stand alone to various degrees.
 These include Asymptote, Graphviz, Diagrams, and ggplot.
 --
 
+== Clarity
+
+Drawl is written in such a way as to encourage programmers to write clear programs. Drawl programs should
+be readable even by someone who does not know Drawl, and an occasional Drawl programmer should be able
+to understand a Drawl program he wrote more than five years ago.
+
 == There's More Than One Way To Do It
 
 In general, Drawl allows users to do things in several different ways rather than forcing them to
 do things in only one way. The system of lineEnding types is a good example.
+
+== Object Orientation
+
+Drawl uses an object-oriented programming paradigm. Although this programming style is more verbose
+than alternatives, it is also clearer.
+
+= Design Inspirations
+[partintro]
+--
 
 == Arrows
 
