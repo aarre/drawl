@@ -550,7 +550,7 @@ The following code:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="java" class="language-java hljs">package com.aarrelaakso.drawl.examples;
+<pre class="prettyprint highlight"><code data-lang="java">package com.aarrelaakso.drawl.examples;
 
 import com.aarrelaakso.drawl.Circle;
 import com.aarrelaakso.drawl.Drawing;
@@ -590,7 +590,7 @@ Moreover, by simply changing <code>setRightOf()</code> to <code>setAbove()</code
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="java" class="language-java hljs">import com.aarrelaakso.drawl.Circle;
+<pre class="prettyprint highlight"><code data-lang="java">import com.aarrelaakso.drawl.Circle;
 import com.aarrelaakso.drawl.Drawing;
 
 import java.io.IOException;
@@ -646,10 +646,38 @@ public class ThreeCirclesVertical
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_circles">Circles</h3>
+<div class="paragraph">
+<p>Producing a circle is simple:</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 1. Drawl code to draw a circle</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">package com.aarrelaakso.drawl.adoc;
+
+import com.aarrelaakso.drawl.Circle;
+import com.aarrelaakso.drawl.Drawing;
+
+import java.io.IOException;
+
+/**
+ * Example of using Drawl to draw a circle
+ */
+public class CircleDemo
+{
+    public static void main(final String[] args) throws IOException {
+        Drawing drawing = new Drawing();
+        Circle circle = new Circle();
+        drawing.add(circle);
+        drawing.writeToFile("docs/adoc/images/Circle.svg", 100, 100);
+    }
+}</code></pre>
+</div>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/Circle.svg" alt="Circle" width="100" height="100">
 </div>
+<div class="title">Figure 1. A circle drawn by Drawl</div>
 </div>
 </div>
 <div class="sect2">
@@ -905,12 +933,11 @@ do things in only one way. The system of lineEnding types is a good example.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-15 22:24:27 -0400
+Last updated 2020-05-15 22:48:54 -0400
 </div>
 </div>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-<script>hljs.initHighlighting()</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   messageStyle: "none",

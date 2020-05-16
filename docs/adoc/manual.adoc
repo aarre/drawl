@@ -1,9 +1,15 @@
 :doctype: book
-:source-highlighter: highlightjs
+:source-highlighter: prettify
 :docinfo: shared-head
 :bibtex-file: drawl.bib
 :bibtex-style: apa
 :stem: latexmath
+// Enable numbered captions
+// for listing blocks.
+// We define the constant Listing
+// as a caption value. This will be
+// followed by a counter.
+:listing-caption: Listing
 
 = Drawl
 Aarre Laakso <aarre.laakso@gmail.com>
@@ -107,6 +113,15 @@ The Drawing in Drawl is the canvas upon which one places shapes and other object
 
 === Circles
 
+Producing a circle is simple:
+
+.Drawl code to draw a circle
+[source,java]
+----
+include::../../src/main/java/com/aarrelaakso/drawl/adoc/CircleDemo.java[]
+----
+
+.A circle drawn by Drawl
 image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/Circle.svg[Circle,100,100]
 
 
