@@ -466,7 +466,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_example">Example</a></li>
 <li><a href="#_users_guide">User&#8217;s Guide</a>
 <ul class="sectlevel1">
-<li><a href="#_arrowheads">Arrowheads</a></li>
+<li><a href="#_drawings">Drawings</a></li>
+<li><a href="#_shapes">Shapes</a>
+<ul class="sectlevel2">
+<li><a href="#_circles">Circles</a></li>
+<li><a href="#_rectangles">Rectangles</a></li>
+<li><a href="#_text">Text</a></li>
+</ul>
+</li>
+<li><a href="#_line_endings">Line Endings</a>
+<ul class="sectlevel2">
+<li><a href="#_line_ending_types">Line Ending Types</a></li>
+<li><a href="#_line_ending_parameters">Line Ending Parameters</a></li>
+</ul>
+</li>
 <li><a href="#_port">Port</a></li>
 <li><a href="#_version_history">Version History</a>
 <ul class="sectlevel2">
@@ -621,9 +634,54 @@ public class ThreeCirclesVertical
 </div>
 </div>
 <div class="sect1">
-<h2 id="_arrowheads">Arrowheads</h2>
+<h2 id="_drawings">Drawings</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The Drawing in Drawl is the canvas upon which one places shapes and other objects.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_shapes">Shapes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_circles">Circles</h3>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/Circle.svg" alt="Circle" width="100" height="100">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rectangles">Rectangles</h3>
 
+</div>
+<div class="sect2">
+<h3 id="_text">Text</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_line_endings">Line Endings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Line endings in Drawl generalize the notion of arrowheads. They are, conceptually, anything
+one might use to decorate the beginning or end of a line.</p>
+</div>
+<div class="sect2">
+<h3 id="_line_ending_types">Line Ending Types</h3>
+<div class="paragraph">
+<p>Drawl defines a large number of line ending types.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_line_ending_parameters">Line Ending Parameters</h3>
+<div class="paragraph">
+<p>Drawl&#8217;s line endings are also parameterized, meaning that there are systematic ways to
+modify them.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -847,7 +905,7 @@ do things in only one way. The system of lineEnding types is a good example.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-15 21:43:18 -0400
+Last updated 2020-05-15 22:24:27 -0400
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
