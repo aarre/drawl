@@ -99,8 +99,34 @@ Again, no explicit coordinates were specified.
 This part contains information useful for Drawl users.
 --
 
-== Arrowheads
+== Drawings
 
+The Drawing in Drawl is the canvas upon which one places shapes and other objects.
+
+== Shapes
+
+=== Circles
+
+image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/arrowheads-graphviz.png[Circle,100,100]
+
+
+=== Rectangles
+
+=== Text
+
+== Line Endings
+
+Line endings in Drawl generalize the notion of arrowheads. They are, conceptually, anything
+one might use to decorate the beginning or end of a line.
+
+=== Line Ending Types
+
+Drawl defines a large number of line ending types.
+
+=== Line Ending Parameters
+
+Drawl's line endings are also parameterized, meaning that there are systematic ways to
+modify them.
 
 == Port
 
