@@ -202,11 +202,11 @@ TikZ/PGF offers a large number of parameterized arrow types.cite:[Tantau_2017].
 
 == Public API
 
-https://aarre.github.io/drawl/doxy/public/out/html/index.html
+https://aarre.github.io/drawl-docs/doxy/public/out/html/index.html
 
 == Protected API
 
-https://aarre.github.io/drawl/doxy/protected/out/html/index.html
+https://aarre.github.io/drawl-docs/doxy/protected/out/html/index.html
 
 [bibliography]
 = References
