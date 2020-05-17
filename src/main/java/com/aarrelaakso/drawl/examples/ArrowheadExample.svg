@@ -1,11 +1,11 @@
-<?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='500' height='500'><text x='250' y='175' dominant-baseline='middle' text-anchor='middle'>DISK, DOT</text><text x='250' y='25' dominant-baseline='middle' text-anchor='middle'>DEFAULT, NORMAL, TRIANGLE</text><text x='250' y='75' dominant-baseline='middle' text-anchor='middle'>BOX, SQUARE</text>
+<?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='500' height='500'><text x='250' y='159.09091' dominant-baseline='middle' text-anchor='middle'>DISK, DOT</text><text x='250' y='22.727272' dominant-baseline='middle' text-anchor='middle'>DEFAULT, NORMAL, TRIANGLE</text><text x='250' y='68.181816' dominant-baseline='middle' text-anchor='middle'>BOX, SQUARE</text><text x='250' y='477.27274' dominant-baseline='middle' text-anchor='middle'></text>
 <defs>
 <marker id='DOT-0' orient='auto' viewBox='0 0 6.51351666838205 6.51351666838205' markerWidth='6.51351666838205' markerHeight='6.51351666838205' refX='3.256758334191025' refY='3.256758334191025'>
 <circle cx='3.256758334191025' cy='3.256758334191025' r='2.256758334191025' stroke='black' fill='black' />
 </marker>
 </defs>
 
-<line x1='225' y1='200' x2='275' y2='200' stroke='black' stroke-width='5' marker-end='url(#DOT-0)' />
+<line x1='227.27272' y1='181.81818' x2='272.72726' y2='181.81818' stroke='black' stroke-width='5' marker-end='url(#DOT-0)' />
 
 <defs>
 <marker id='DIAMOND-1' orient='auto' viewBox='0 0 9.444838872816796 6.298279727294168' markerWidth='9.444838872816796' markerHeight='6.298279727294168' refX='4.722419436408398' refY='3.149139863647084'>
@@ -13,7 +13,7 @@
 </marker>
 </defs>
 
-<line x1='225' y1='300' x2='275' y2='300' stroke='black' stroke-width='5' marker-end='url(#DIAMOND-1)' />
+<line x1='227.27272' y1='272.72726' x2='272.72726' y2='272.72726' stroke='black' stroke-width='5' marker-end='url(#DIAMOND-1)' />
 
 <defs>
 <marker id='OPEN_DIAMOND-2' orient='auto' viewBox='0 0 9.444838872816796 6.298279727294168' markerWidth='9.444838872816796' markerHeight='6.298279727294168' refX='4.722419436408398' refY='3.149139863647084'>
@@ -21,53 +21,61 @@
 </marker>
 </defs>
 
-<line x1='225' y1='350' x2='275' y2='350' stroke='black' stroke-width='5' marker-end='url(#OPEN_DIAMOND-2)' />
+<line x1='227.27272' y1='318.18182' x2='272.72726' y2='318.18182' stroke='black' stroke-width='5' marker-end='url(#OPEN_DIAMOND-2)' />
 
 <defs>
-<marker id='BOX-3' orient='auto' viewBox='0 0 6 6' markerWidth='6' markerHeight='6' refX='3' refY='3'>
+<marker id='BAR-3' orient='auto' viewBox='0 0 3.0 8.0' markerWidth='3.0' markerHeight='8.0' refX='1.5' refY='4.0'>
+<path d='M1,1 L1,7.0 L2.0,7.0 L2.0,1 z' fill='black' />
+</marker>
+</defs>
+
+<line x1='227.27272' y1='454.54544' x2='272.72726' y2='454.54544' stroke='black' stroke-width='5' marker-end='url(#BAR-3)' />
+
+<defs>
+<marker id='BOX-4' orient='auto' viewBox='0 0 6 6' markerWidth='6' markerHeight='6' refX='3' refY='3'>
 <path d='M1,1 L1,5 L5,5 L5,1 z' stroke='black' fill='black' />
 </marker>
 </defs>
 
-<line x1='225' y1='100' x2='275' y2='100' stroke='black' stroke-width='5' marker-end='url(#BOX-3)' />
+<line x1='227.27272' y1='90.90909' x2='272.72726' y2='90.90909' stroke='black' stroke-width='5' marker-end='url(#BOX-4)' />
 
 <defs>
-<marker id='TURNED_SQUARE-4' orient='auto' viewBox='0 0 7.656854249492381 7.656854249492381' markerWidth='7.656854249492381' markerHeight='7.656854249492381' refX='3.8284271247461903' refY='3.8284271247461903'>
+<marker id='TURNED_SQUARE-5' orient='auto' viewBox='0 0 7.656854249492381 7.656854249492381' markerWidth='7.656854249492381' markerHeight='7.656854249492381' refX='3.8284271247461903' refY='3.8284271247461903'>
 <path d='M3.8284271247461903,1 L6.656854249492381,3.8284271247461903 L3.8284271247461903,6.656854249492381 L1,3.8284271247461903 z' stroke='black' fill='black' />
 </marker>
 </defs>
 
-<line x1='225' y1='150' x2='275' y2='150' stroke='black' stroke-width='5' marker-end='url(#TURNED_SQUARE-4)' />
-<text x='250' y='475' dominant-baseline='middle' text-anchor='middle'></text>
+<line x1='227.27272' y1='136.36363' x2='272.72726' y2='136.36363' stroke='black' stroke-width='5' marker-end='url(#TURNED_SQUARE-5)' />
+<text x='250' y='431.81818' dominant-baseline='middle' text-anchor='middle'>BAR</text>
 <defs>
-<marker id='REVERSE-5' orient='auto' viewBox='0 0 9.87195868506172 6.065061985236918' markerWidth='9.87195868506172' markerHeight='6.065061985236918' refX='4.93597934253086' refY='3.032530992618459'>
+<marker id='REVERSE-6' orient='auto' viewBox='0 0 9.87195868506172 6.065061985236918' markerWidth='9.87195868506172' markerHeight='6.065061985236918' refX='4.93597934253086' refY='3.032530992618459'>
 <path d='M1,3.032530992618459L8.87195868506172,5.065061985236918 L8.87195868506172,1 z' stroke='black' fill='black' />
 </marker>
 </defs>
 
-<line x1='225' y1='400' x2='275' y2='400' stroke='black' stroke-width='5' marker-end='url(#REVERSE-5)' />
-<text x='250' y='375' dominant-baseline='middle' text-anchor='middle'>INVERSE, REVERSE</text>
+<line x1='227.27272' y1='363.63635' x2='272.72726' y2='363.63635' stroke='black' stroke-width='5' marker-end='url(#REVERSE-6)' />
+<text x='250' y='340.9091' dominant-baseline='middle' text-anchor='middle'>INVERSE, REVERSE</text>
 <defs>
-<marker id='CIRCLE-6' orient='auto' viewBox='0 0 6.51351666838205 6.51351666838205' markerWidth='6.51351666838205' markerHeight='6.51351666838205' refX='3.256758334191025' refY='3.256758334191025'>
+<marker id='CIRCLE-7' orient='auto' viewBox='0 0 6.51351666838205 6.51351666838205' markerWidth='6.51351666838205' markerHeight='6.51351666838205' refX='3.256758334191025' refY='3.256758334191025'>
 <circle cx='3.256758334191025' cy='3.256758334191025' r='2.256758334191025' stroke='black' fill='white' />
 </marker>
 </defs>
 
-<line x1='225' y1='250' x2='275' y2='250' stroke='black' stroke-width='5' marker-end='url(#CIRCLE-6)' />
-<text x='250' y='125' dominant-baseline='middle' text-anchor='middle'>TURNED_SQUARE</text><text x='250' y='225' dominant-baseline='middle' text-anchor='middle'>CIRCLE, OPEN_DOT</text>
+<line x1='227.27272' y1='227.27272' x2='272.72726' y2='227.27272' stroke='black' stroke-width='5' marker-end='url(#CIRCLE-7)' />
+<text x='250' y='113.63636' dominant-baseline='middle' text-anchor='middle'>TURNED_SQUARE</text><text x='250' y='204.54546' dominant-baseline='middle' text-anchor='middle'>CIRCLE, OPEN_DOT</text>
 <defs>
-<marker id='TRIANGLE-7' orient='auto' viewBox='0 0 10.87195868506172 6.065061985236918' markerWidth='10.87195868506172' markerHeight='6.065061985236918' refX='4.93597934253086' refY='3.032530992618459'>
+<marker id='RECTANGLE-8' orient='auto' viewBox='0 0 10.87195868506172 6.065061985236918' markerWidth='10.87195868506172' markerHeight='6.065061985236918' refX='4.93597934253086' refY='3.032530992618459'>
 <path d='M1,1 L1,5.065061985236918 L8.87195868506172,3.032530992618459 z' stroke='black' fill='black' />
 </marker>
 </defs>
 
-<line x1='225' y1='50' x2='275' y2='50' stroke='black' stroke-width='5' marker-end='url(#TRIANGLE-7)' />
-<text x='250' y='275' dominant-baseline='middle' text-anchor='middle'>DIAMOND, RHOMBUS</text><text x='250' y='425' dominant-baseline='middle' text-anchor='middle'>RECTANGLE</text>
+<line x1='227.27272' y1='45.454544' x2='272.72726' y2='45.454544' stroke='black' stroke-width='5' marker-end='url(#RECTANGLE-8)' />
+<text x='250' y='250' dominant-baseline='middle' text-anchor='middle'>DIAMOND, RHOMBUS</text><text x='250' y='386.36365' dominant-baseline='middle' text-anchor='middle'>RECTANGLE</text>
 <defs>
-<marker id='RECTANGLE-8' orient='auto' viewBox='0 0 7.656854249492381 4.82842712474619' markerWidth='7.656854249492381' markerHeight='4.82842712474619' refX='3.8284271247461903' refY='2.414213562373095'>
+<marker id='RECTANGLE-9' orient='auto' viewBox='0 0 7.656854249492381 4.82842712474619' markerWidth='7.656854249492381' markerHeight='4.82842712474619' refX='3.8284271247461903' refY='2.414213562373095'>
 <path d='M1,1 L1,3.8284271247461903 L6.656854249492381,3.8284271247461903 L6.656854249492381,1 z' stroke='black' fill='black' />
 </marker>
 </defs>
 
-<line x1='225' y1='450' x2='275' y2='450' stroke='black' stroke-width='5' marker-end='url(#RECTANGLE-8)' />
-<text x='250' y='325' dominant-baseline='middle' text-anchor='middle'>OPEN_DIAMOND</text></svg>
+<line x1='227.27272' y1='409.0909' x2='272.72726' y2='409.0909' stroke='black' stroke-width='5' marker-end='url(#RECTANGLE-9)' />
+<text x='250' y='295.45456' dominant-baseline='middle' text-anchor='middle'>OPEN_DIAMOND</text></svg>

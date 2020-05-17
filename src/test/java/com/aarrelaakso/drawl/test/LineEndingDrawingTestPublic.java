@@ -113,6 +113,22 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
+    @DisplayName("When a line has a BAR LineEnding, then it shows up in the SVG")
+    void whenALineHasABarLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.BAR);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<defs>" + newLine +
+                "<marker id='BAR-42' orient='auto' viewBox='0 0 3.0 8.0' markerWidth='3.0' markerHeight='8.0' refX='1.5' refY='4.0'>" + newLine +
+                "<path d='M1,1 L1,7.0 L2.0,7.0 L2.0,1 z' fill='black' />" + newLine +
+                "</marker>" + newLine +
+                "</defs>");
+    }
+
+    @Test
     @DisplayName("When a line has a box LineEnding then it shows up in the SVG")
     void whenALineHasABoxLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();

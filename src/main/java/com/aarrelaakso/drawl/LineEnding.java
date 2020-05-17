@@ -62,6 +62,8 @@ public class LineEnding implements LineEndingInterface {
     public enum Type {
         ARC_BARB,
 
+        BAR,
+
         BOX,
         /*!< A square (box) line ending. Synonyms: SQUARE
         *
@@ -281,12 +283,16 @@ public class LineEnding implements LineEndingInterface {
     public static LineEnding newInstance(LineEnding.Type type) {
         if ((type == Type.DEFAULT) || (type== Type.NORMAL) || (type== Type.TRIANGLE)) {
             return new LineEndingTriangle();
+        } else if (type == Type.BAR) {
+            return new LineEndingBar();
         } else if ((type == Type.BOX) || (type == Type.SQUARE)) {
             return new LineEndingSquare();
         } else if (type == Type.TURNED_SQUARE) {
             return new LineEndingTurnedSquare();
         } else if ((type == Type.DIAMOND) || (type == Type.RHOMBUS)) {
             return new LineEndingDiamond();
+        } else if (type == Type.OPEN_DIAMOND) {
+            return new LineEndingOpenDiamond();
         } else if ((type == Type.DISK) || (type == Type.DOT)) {
             return new LineEndingDot();
         } else if ((type == Type.CIRCLE) || (type == Type.OPEN_DOT)) {
@@ -372,7 +378,9 @@ public class LineEnding implements LineEndingInterface {
         svg.append(this.getUniqueId());
         svg.append("' orient='auto'");
         svg.append(getSVG());
-        svg.append(" stroke='black'");
+        if (this.getLineEndingType() != Type.BAR) {
+            svg.append(" stroke='black'");
+        }
 
         // Fill color
         svg.append(" fill='");

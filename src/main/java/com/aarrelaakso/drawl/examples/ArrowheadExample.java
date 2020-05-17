@@ -25,7 +25,7 @@ public class ArrowheadExample {
         final Line line1 = new Line(Line.Orientation.HORIZONTAL);
         line1.setWidth(textWidth);
         line1.setThickness(5);
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DEFAULT);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.DEFAULT);
         line1.addLineEnding(lineEnding);
         line1.setBelow(text1);
         drawing.add(text1);
@@ -36,7 +36,7 @@ public class ArrowheadExample {
         final Line line2 = new Line(Line.Orientation.HORIZONTAL);
         line2.setWidth(textWidth);
         line2.setThickness(5);
-        final LineEnding lineEnding2 = new LineEnding(LineEnding.Type.BOX);
+        final LineEnding lineEnding2 = LineEnding.newInstance(LineEnding.Type.BOX);
         line2.addLineEnding(lineEnding2);
         line2.setBelow(text2);
         drawing.add(text2);
@@ -47,7 +47,7 @@ public class ArrowheadExample {
         final Line line3 = new Line(Line.Orientation.HORIZONTAL);
         line3.setWidth(textWidth);
         line3.setThickness(5);
-        final LineEnding lineEnding3 = new LineEnding(LineEnding.Type.TURNED_SQUARE);
+        final LineEnding lineEnding3 = LineEnding.newInstance(LineEnding.Type.TURNED_SQUARE);
         line3.addLineEnding(lineEnding3);
         line3.setBelow(text3);
         drawing.add(text3);
@@ -58,7 +58,7 @@ public class ArrowheadExample {
         final Line line4 = new Line(Line.Orientation.HORIZONTAL);
         line4.setWidth(textWidth);
         line4.setThickness(5);
-        final LineEnding lineEnding4 = new LineEnding(LineEnding.Type.DOT);
+        final LineEnding lineEnding4 = LineEnding.newInstance(LineEnding.Type.DOT);
         line4.addLineEnding(lineEnding4);
         line4.setBelow(text4);
         drawing.add(text4);
@@ -69,7 +69,7 @@ public class ArrowheadExample {
         final Line line5 = new Line(Line.Orientation.HORIZONTAL);
         line5.setWidth(textWidth);
         line5.setThickness(5);
-        final LineEnding lineEnding5 = new LineEnding(LineEnding.Type.CIRCLE);
+        final LineEnding lineEnding5 = LineEnding.newInstance(LineEnding.Type.CIRCLE);
         line5.addLineEnding(lineEnding5);
         line5.setBelow(text5);
         drawing.add(text5);
@@ -80,7 +80,7 @@ public class ArrowheadExample {
         final Line line6 = new Line(Line.Orientation.HORIZONTAL);
         line6.setWidth(textWidth);
         line6.setThickness(5);
-        final LineEnding lineEnding6 = new LineEnding(LineEnding.Type.DIAMOND);
+        final LineEnding lineEnding6 = LineEnding.newInstance(LineEnding.Type.DIAMOND);
         line6.addLineEnding(lineEnding6);
         line6.setBelow(text6);
         drawing.add(text6);
@@ -91,7 +91,7 @@ public class ArrowheadExample {
         final Line line7 = new Line(Line.Orientation.HORIZONTAL);
         line7.setWidth(textWidth);
         line7.setThickness(5);
-        final LineEnding lineEnding7 = new LineEnding(LineEnding.Type.OPEN_DIAMOND);
+        final LineEnding lineEnding7 = LineEnding.newInstance(LineEnding.Type.OPEN_DIAMOND);
         line7.addLineEnding(lineEnding7);
         line7.setBelow(text7);
         drawing.add(text7);
@@ -102,7 +102,7 @@ public class ArrowheadExample {
         final Line line8 = new Line(Line.Orientation.HORIZONTAL);
         line8.setWidth(textWidth);
         line8.setThickness(5);
-        final LineEnding lineEnding8 = new LineEnding(LineEnding.Type.REVERSE);
+        final LineEnding lineEnding8 = LineEnding.newInstance(LineEnding.Type.REVERSE);
         line8.addLineEnding(lineEnding8);
         line8.setBelow(text8);
         drawing.add(text8);
@@ -113,14 +113,25 @@ public class ArrowheadExample {
         final Line line9 = new Line(Line.Orientation.HORIZONTAL);
         line9.setWidth(textWidth);
         line9.setThickness(5);
-        final LineEnding lineEnding9 = new LineEnding(LineEnding.Type.RECTANGLE);
+        final LineEnding lineEnding9 = LineEnding.newInstance(LineEnding.Type.RECTANGLE);
         line9.addLineEnding(lineEnding9);
         line9.setBelow(text9);
         drawing.add(text9);
         drawing.add(line9);
 
+        final Text text10 = new Text("BAR");
+        text10.setBelow(line9);
+        final Line line10 = new Line(Line.Orientation.HORIZONTAL);
+        line10.setWidth(textWidth);
+        line10.setThickness(5);
+        final LineEnding lineEnding10 = LineEnding.newInstance(LineEnding.Type.BAR);
+        line10.addLineEnding(lineEnding10);
+        line10.setBelow(text10);
+        drawing.add(text10);
+        drawing.add(line10);
+
         final Text bottomSpacer = new Text("");
-        bottomSpacer.setBelow(line9);
+        bottomSpacer.setBelow(line10);
         drawing.add(bottomSpacer);
 
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 500, 500);
