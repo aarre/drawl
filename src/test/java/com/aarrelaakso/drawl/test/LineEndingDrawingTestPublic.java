@@ -314,7 +314,8 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a line has a rectangle LineEnding then it shows up in the SVG")
     void whenALineHasARectangleLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.RECTANGLE);
+        //final LineEnding lineEnding = new LineEnding(LineEnding.Type.RECTANGLE);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.RECTANGLE);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);

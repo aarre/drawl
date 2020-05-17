@@ -33,12 +33,14 @@ import static java.lang.Math.sqrt;
  *
  * We take as default a square with sides of length 4, which sets the area at 16.
  */
-public class LineEnding {
+public class LineEnding implements LineEndingInterface {
 
     @NotNull
     private String fillColor = "black";
 
     private double height = 1.0;
+
+    protected static final String newLine = System.getProperty("line.separator");
 
     private double width = 1.0;
 
@@ -266,7 +268,34 @@ public class LineEnding {
     }
 
     /**
-     * Constructs an line ending of a particular type.
+     * Static factory method is the preferred way to create a LineEnding.
+     *
+     */
+    public static LineEnding newInstance(LineEnding.Type type) {
+        if ((type == Type.DEFAULT) || (type== Type.NORMAL) || (type== Type.TRIANGLE)) {
+            return new LineEndingTriangle();
+        } else if ((type == Type.BOX) || (type == Type.SQUARE)) {
+            return new LineEndingSquare();
+        } else if (type == Type.TURNED_SQUARE) {
+            return new LineEndingTurnedSquare();
+        } else if ((type == Type.DIAMOND) || (type == Type.RHOMBUS)) {
+            return new LineEndingDiamond();
+        } else if ((type == Type.DISK) || (type == Type.DOT)) {
+            return new LineEndingDot();
+        } else if ((type == Type.CIRCLE) || (type == Type.OPEN_DOT)) {
+            return new LineEndingCircle();
+        } else if ((type == Type.REVERSE) || (type == Type.INVERTED)) {
+            return new LineEndingReverse();
+        } else if (type == Type.RECTANGLE) {
+            return new LineEndingRectangle();
+        } else {
+            throw new UnsupportedOperationException("Unknown type: " + type);
+        }
+    }
+
+
+    /**
+     * Constructs a line ending of a particular type.
      *
      * @param type
      */
@@ -316,8 +345,17 @@ public class LineEnding {
         }
     }
 
+    /**
+     * It is up to subclasses to override this method.
+     *
+     * @return
+     */
+    protected String getSVG() {
+        return "Override me!";
+    }
+
     protected String getSVGDef(double lineWidth) {
-        String newLine = System.getProperty("line.separator");
+
         StringBuilder svg = new StringBuilder();
 
         svg.append(newLine + "<defs>" + newLine);
@@ -379,14 +417,7 @@ public class LineEnding {
             svg.append(" refX='" + (width / 2.0 + 1) + "' refY='" + (height / 2.0 + 1) + "'>" + newLine);
             svg.append("<path d='M1," + (height / 2.0 + 1) + " L" + (width / 2.0 + 1) + "," + (height + 1) + " L" + (width + 1) + "," + (height / 2.0 + 1) + "L" + (width / 2.0 + 1) + ",1 z'");
         } else if (this.getLineEndingType() == Type.RECTANGLE) {
-            double height = 2.0 * sqrt(2.0);
-            double width = 2.0 * height;
-            svg.append(" viewBox='0 0 " + (width + 2) + " " + (height + 2) + "'");
-            svg.append(" markerWidth='" + (width + 2) + "'");
-            svg.append(" markerHeight='" + (height + 2) + "'");
-            svg.append(" refX='" + (width / 2.0 + 1) + "'");
-            svg.append(" refY='" + (height / 2.0 + 1) + "'>" + newLine);
-            svg.append("<path d='M1,1 L1," + (height + 1) + " L" + (width + 1) + "," + (height + 1) + " L" + (width + 1) + ",1 z'");
+            svg.append(getSVG());
         } else if (this.getLineEndingType() == Type.REVERSE) {
             // See the API documentation for the rationale for these calculations
             double quotient = 4096.0 / 15.0;
@@ -426,7 +457,7 @@ public class LineEnding {
         this.fillColor = fillColor;
     }
 
-    double getHeight() {
+    protected double getHeight() {
         return this.height;
     }
 
@@ -437,7 +468,7 @@ public class LineEnding {
         return this.uniqueId;
     }
 
-    double getWidth() {
+    protected double getWidth() {
         return this.width;
     }
 
