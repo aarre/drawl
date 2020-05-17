@@ -116,7 +116,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a line has a box LineEnding then it shows up in the SVG")
     void whenALineHasABoxLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.BOX);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.BOX);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -140,7 +140,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a line has a square LineEnding then it shows up in the SVG")
     void whenALineHasASquareLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.SQUARE);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.SQUARE);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -164,7 +164,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a line has a diamond LineEnding, then it shows up in the SVG")
     void whenALineHasADiamondLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DIAMOND);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.DIAMOND);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -189,7 +189,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a line has a turned square LineEnding, then it shows up in the SVG")
     void whenALineHasATurnedSquareLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.TURNED_SQUARE);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.TURNED_SQUARE);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -264,7 +264,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a line has a circle LineEnding, then it shows up in the SVG")
     void whenALineHasCircleLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.CIRCLE);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.CIRCLE);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -289,7 +289,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a line has an OPEN_DOT LineEnding, then it shows up in the SVG")
     void whenALineHasAnOdotLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.OPEN_DOT);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.OPEN_DOT);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);

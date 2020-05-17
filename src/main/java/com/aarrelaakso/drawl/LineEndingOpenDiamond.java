@@ -3,11 +3,11 @@ package com.aarrelaakso.drawl;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
-public class LineEndingDiamond extends LineEnding {
+public class LineEndingOpenDiamond extends LineEnding {
 
     @Override
     protected Type getLineEndingType() {
-        return Type.DIAMOND;
+        return Type.OPEN_DIAMOND;
     }
 
     @Override
@@ -15,12 +15,13 @@ public class LineEndingDiamond extends LineEnding {
         StringBuilder svg = new StringBuilder();
         double height = sqrt(32.0) / pow(3.0, 1.0 / 4.0);                       // Approx. 4.3
         double width = sqrt(3.0) * height;                                      // Approx. 7.44
-        width = width * this.getWidth();
-        height = height * this.getHeight();
         svg.append(" viewBox='0 0 " + (width + 2) + " " + (height + 2) + "'");
         svg.append(" markerWidth='" + (width + 2) + "' markerHeight='" + (height + 2) + "'");
         svg.append(" refX='" + (width / 2.0 + 1) + "' refY='" + (height / 2.0 + 1) + "'>" + newLine);
-        svg.append("<path d='M1," + (height / 2.0 + 1) + " L" + (width / 2.0 + 1) + "," + (height + 1) + " L" + (width + 1) + "," + (height / 2.0 + 1) + " L" + (width / 2.0 + 1) + ",1 z'");
+        svg.append("<path d='M1," + (height / 2.0 + 1) + " L" + (width / 2.0 + 1) + "," + (height + 1) + " L" + (width + 1) + "," + (height / 2.0 + 1) + "L" + (width / 2.0 + 1) + ",1 z'");
         return svg.toString();
     }
+
+
+
 }
