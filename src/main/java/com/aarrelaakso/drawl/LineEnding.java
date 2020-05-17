@@ -260,20 +260,23 @@ public class LineEnding implements LineEndingInterface {
 
     /**
      * Constructs a default line ending.
-     *
      */
     public LineEnding()
     {
 
     }
 
+    /**
+     * Returns a new instance of the default LineEnding subclass (a triangle).
+     */
     public static LineEnding newInstance() {
         return newInstance(Type.TRIANGLE);
     }
 
     /**
-     * Static factory method is the preferred way to create a LineEnding.
+     * Returns a new instance of a LineEnding subclass.
      *
+     * This static factory method is the preferred way to create a LineEnding.
      */
     public static LineEnding newInstance(LineEnding.Type type) {
         if ((type == Type.DEFAULT) || (type== Type.NORMAL) || (type== Type.TRIANGLE)) {
