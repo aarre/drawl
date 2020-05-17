@@ -267,6 +267,10 @@ public class LineEnding implements LineEndingInterface {
 
     }
 
+    public static LineEnding newInstance() {
+        return newInstance(Type.TRIANGLE);
+    }
+    
     /**
      * Static factory method is the preferred way to create a LineEnding.
      *
@@ -365,17 +369,7 @@ public class LineEnding implements LineEndingInterface {
         svg.append(this.getUniqueId());
         svg.append("' orient='auto'");
         if (this.getLineEndingType() == Type.TRIANGLE) {
-            // See the API documentation for the rationale for these calculations
-            double quotient = 4096.0 / 15.0;
-            // Take the 4th root of of the quotient
-            double height = pow(quotient, 1.0/4.0);                      // approx. 4.07
-            double width = 32.0 / height;                                    // approx. 7.87
-            width = width / this.getWidth();
-            height = height / this.getHeight();
-            svg.append(" viewBox='0 0 " + (width + 3) + " " + (height + 2) + "'");
-            svg.append(" markerWidth='" + (width + 3) + "' markerHeight='" + (height + 2) + "'");
-            svg.append(" refX='" + (width/2.0 + 1) + "' refY='" + (height/2.0 + 1) + "'>" + newLine);
-            svg.append("<path d='M1,1 L1," + (height + 1) + " L" + (width + 1) + "," + (height/2.0 + 1) + " z'");
+            svg.append(getSVG());
         } else if (this.getLineEndingType() == Type.BOX) {
             svg.append(" viewBox='0 0 6 6' markerWidth='6' markerHeight='6' refX='3' refY='3'>" + newLine);
             svg.append("<path d='M1,1 L1,5 L5,5 L5,1 z'");
@@ -387,12 +381,7 @@ public class LineEnding implements LineEndingInterface {
             svg.append(" refX='" + (half_diag + 1) + "' refY='" + (half_diag + 1) + "'>" + newLine);
             svg.append("<path d='M" + (half_diag + 1) + ",1 L" + (diagonal + 1) + "," + (half_diag + 1) + " L" + (half_diag + 1) + "," + (diagonal + 1) + " L1," + (half_diag + 1) + " z'");
         } else if (this.getLineEndingType() == Type.DOT) {
-            double radius = 4 / sqrt( Math.PI );
-            double diameter = 2 * radius;
-            svg.append(" viewBox='0 0 " + (diameter + 2) + " " + (diameter + 2) +"'");
-            svg.append(" markerWidth='" + (diameter + 2) + "' markerHeight='" + (diameter + 2) + "'");
-            svg.append(" refX='" + (radius + 1) + "' refY='" + (radius + 1) + "'>" + newLine);
-            svg.append("<circle cx='" + (radius + 1) + "' cy='" + (radius + 1) +"' r='" + radius + "'");
+            svg.append(getSVG());
         } else if (this.getLineEndingType() == Type.CIRCLE) {
             double radius = 4 / sqrt(Math.PI);
             double diameter = 2 * radius;

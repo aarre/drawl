@@ -44,10 +44,10 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
-    @DisplayName("whenALineHasAnLineEndingThenItShowsUpInTheSVG")
-    void whenALineHasAnLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+    @DisplayName("When a line has a line ending then it shows up in the SVG")
+    void whenALineHasALineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding();
+        final LineEnding lineEnding = LineEnding.newInstance();
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -214,7 +214,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a line has a disk LineEnding, then it shows up in the SVG")
     void whenALineHasADiskLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DISK);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.DISK);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -239,7 +239,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a line has a dot LineEnding, then it shows up in the SVG")
     void whenALineHasADotLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DOT);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.DOT);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
