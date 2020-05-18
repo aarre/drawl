@@ -223,6 +223,23 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
+    @DisplayName("when a line Has a KITE line ending then it shows up in the SVG")
+    void whenALineHasAKiteLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.KITE);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<defs>" + newLine +
+                "<marker id='KITE")
+                .contains("' orient='auto' viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>" + newLine +
+                "<path d='M1,4 L3,7 L7,4 L3,1 z' stroke='black' fill='black' />" + newLine +
+                "</marker>" + newLine +
+                "</defs>");
+    }
+
+    @Test
     @DisplayName("When a line has a line ending then it shows up in the SVG")
     void whenALineHasALineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();

@@ -141,10 +141,21 @@ public class ArrowheadExample {
         drawing.add(text11);
         drawing.add(line11);
 
+        final Text text12 = new Text("KITE");
+        text12.setBelow(line11);
+        final Line line12 = new Line(Line.Orientation.HORIZONTAL);
+        line12.setWidth(textWidth);
+        line12.setThickness(5);
+        final LineEnding lineEnding12 = LineEnding.newInstance(LineEnding.Type.KITE);
+        line12.addLineEnding(lineEnding12);
+        line12.setBelow(text12);
+        drawing.add(text12);
+        drawing.add(line12);
+
         final Text bottomSpacer = new Text("");
-        bottomSpacer.setBelow(line11);
+        bottomSpacer.setBelow(line12);
         drawing.add(bottomSpacer);
 
-        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 500, 500);
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 500, 1000);
     }
 }

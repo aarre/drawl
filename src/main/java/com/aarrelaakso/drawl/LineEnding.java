@@ -110,6 +110,8 @@ public class LineEnding implements LineEndingInterface {
             case CROW:
             case STEALTH:
                 return new LineEndingStealth();
+            case KITE:
+                return new LineEndingKite();
             default:
                 throw new UnsupportedOperationException("Unknown type: " + type);
         }
@@ -241,7 +243,7 @@ public class LineEnding implements LineEndingInterface {
         CIRCLE,           /*!< A circular line ending. Synonym: OPEN_DOT */
         CLASSICAL_TIKZ_RIGHTARROW,
         COMPUTER_MODERN_RIGHTARROW,
-        CROW,
+        CROW,              /*!< A synonym for STEALTH                                                       */
         CURVE,
         DEFAULT,           /*!< The default line ending. Synonyms: NORMAL, TRIANGLE.                        */
         DIAMOND,           /*!< A diamond-shaped line ending. Synonyms: RHOMBUS                             */

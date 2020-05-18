@@ -1,0 +1,13 @@
+\documentclass[crop,tikz]{standalone}
+
+% Optional PGF/TikZ libraries
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{document}
+    \begin{tikzpicture}
+        \draw[help lines] (0,0) grid (8,8);
+        \draw [->,thick] (0,8) -- (0,0) node (yaxis) [below] {$y$};
+        \draw [->,thick] (0,8) -- (8,8) node (xaxis) [right] {$x$};
+        \draw (1,4) node [left] {$(1,4)$} --  (3,7) node[above] {($3,1$)} -- (7,4) node[right] {$(7,4)$} -- (3,1)  node[below] {$(3,7)$}--  cycle;
+    \end{tikzpicture}
+\end{document}
