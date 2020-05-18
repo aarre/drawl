@@ -35,81 +35,46 @@ public class LineEndingDrawingTestPublic {
 
     String newLine = System.getProperty("line.separator");
 
-    @Test
-    @DisplayName("whenALineHasBeenConstructedThenYouCanAddAnLineEndingToIt")
-    void whenALineHasBeenConstructedThenYouCanAddAnLineEndingToIt() {
-        Line line = new Line();
-        LineEnding lineEnding = new LineEnding();
-        line.addLineEnding(lineEnding);
-    }
-
-    @Test
-    @DisplayName("When a line has a line ending then it shows up in the SVG")
-    void whenALineHasALineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
-        final Line line = new Line();
-        final LineEnding lineEnding = LineEnding.newInstance();
-        line.addLineEnding(lineEnding);
-        final Drawing drawing = new Drawing();
-        drawing.add(line);
-        final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>");
-        softly.then(svg).contains("<marker id=");
-        softly.then(svg).contains("orient='auto'");
-        softly.then(svg).contains("markerWidth=");
-        softly.then(svg).contains("markerHeight=");
-        softly.then(svg).contains("refX=");
-        softly.then(svg).contains("refY=");
-        softly.then(svg).contains("<path d=");
-        softly.then(svg).contains("stroke='black'");
-        softly.then(svg).contains("fill='black'");
-        softly.then(svg).contains("/>");
-        softly.then(svg).contains("</marker>");
-        softly.then(svg).contains("</defs>");
-    }
-
-
-    @DisplayName("when An Arrowhead Is Constructed Then The Type Can Be Set")
+    @DisplayName("When a filled LineEnding is created, then the fill color is black")
     @ParameterizedTest
     @EnumSource(LineEnding.Type.class)
-    void whenAnLineEndingIsConstructedThenTheTypeCanBeSet(LineEnding.Type type) {
+    void whenAFilledLineEndingIsCreatedThenTheFillColorIsBlack(LineEnding.Type type) {
         final LineEnding lineEnding = new LineEnding(type);
-        then(lineEnding).isNotNull();
-    }
-
-    @Test
-    @DisplayName("whenALineHasADefaultLineEndingThenItShowsUpInTheSVG")
-    void whenALineHasADefaultLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DEFAULT);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
-        final String svg = drawing.getSVG();
-        softly.then(svg).contains("<marker id='TRIANGLE-");
+        try {
+            String svg = drawing.getSVG();
+            if ((type == LineEnding.Type.CIRCLE) ||
+                    (type == LineEnding.Type.OPEN_DIAMOND) ||
+                    (type == LineEnding.Type.OPEN_DOT)) {
+                then(svg).contains("fill='white'");
+                then(svg).doesNotContain("fill='black'");
+
+            } else {
+                then(svg).contains("fill='black'");
+                then(svg).doesNotContain("fill='white'");
+            }
+        } catch (UnsupportedOperationException e) {
+            // These are LineEndings not yet implemented
+        }
     }
 
     @Test
-    @DisplayName("whenALineHasANormalLineEndingThenItShowsUpInTheSVG")
-    void whenALineHasANormalLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+    @DisplayName("When a LineEnding has been created, the user can set the fill color")
+    void whenALineEndingHasBeenCreatedThenTheUserCanSetTheFillColor() {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.NORMAL);
+        LineEnding lineEnding = new LineEnding();
+        lineEnding.setFill("red");
         line.addLineEnding(lineEnding);
-        final Drawing drawing = new Drawing();
-        drawing.add(line);
-        final String svg = drawing.getSVG();
-        softly.then(svg).contains("<marker id='TRIANGLE-");
-    }
 
-    @Test
-    @DisplayName("when A Line Has A triangle LineEndingThenItShowsUpInTheSVG")
-    void whenALineHasATriangleLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
-        final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.TRIANGLE);
-        line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
-        final String svg = drawing.getSVG();
-        softly.then(svg).contains("<marker id='TRIANGLE-");
+
+        String svg = drawing.getSVG();
+
+        then(svg).contains("fill='red'");
     }
 
     @Test
@@ -122,7 +87,8 @@ public class LineEndingDrawingTestPublic {
         drawing.add(line);
         final String svg = drawing.getSVG();
         softly.then(svg).contains("<defs>" + newLine +
-                "<marker id='BAR-42' orient='auto' viewBox='0 0 3.0 8.0' markerWidth='3.0' markerHeight='8.0' refX='1.5' refY='4.0'>" + newLine +
+                "<marker id='BAR")
+                .contains("' orient='auto' viewBox='0 0 3.0 8.0' markerWidth='3.0' markerHeight='8.0' refX='1.5' refY='4.0'>" + newLine +
                 "<path d='M1,1 L1,7.0 L2.0,7.0 L2.0,1 z' fill='black' />" + newLine +
                 "</marker>" + newLine +
                 "</defs>");
@@ -153,27 +119,32 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
-    @DisplayName("When a line has a square LineEnding then it shows up in the SVG")
-    void whenALineHasASquareLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+    @DisplayName("When a line has a CROW LineEnding, then it shows up in the SVG")
+    void whenALineHasACrowLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.SQUARE);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.STEALTH);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>" + newLine)
-                .contains("<marker id='BOX-")
-                .contains("' orient='auto'")
-                .contains("viewBox='0 0 6 6'")
-                .contains("markerWidth='6'")
-                .contains("markerHeight='6'")
-                .contains("refX='3'")
-                .contains("refY='3'>")
-                .contains("<path d='M1,1 L1,5 L5,5 L5,1 z'")
-                .contains("stroke='black'")
-                .contains("fill='black' />")
-                .contains("</marker>")
-                .contains("</defs>");
+        softly.then(svg).contains("<defs>" + newLine +
+                        "<marker id='STEALTH")
+                .contains("' orient='auto' viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>" + newLine +
+                        "<path d='M1,1 L4,4 L1,7 L7,4 z' fill='black' />" + newLine +
+                        "</marker>" + newLine +
+                        "</defs>");
+    }
+
+    @Test
+    @DisplayName("whenALineHasADefaultLineEndingThenItShowsUpInTheSVG")
+    void whenALineHasADefaultLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DEFAULT);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='TRIANGLE-");
     }
 
     @Test
@@ -199,31 +170,6 @@ public class LineEndingDrawingTestPublic {
         softly.then(svg).contains(",3.149139863647084");
         softly.then(svg).contains("L4.722419436408398");
         softly.then(svg).contains(",1 z' stroke='black' fill='black' />" + newLine + "</marker>" + newLine + "</defs>");
-    }
-
-    @Test
-    @DisplayName("When a line has a turned square LineEnding, then it shows up in the SVG")
-    void whenALineHasATurnedSquareLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
-        final Line line = new Line();
-        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.TURNED_SQUARE);
-        line.addLineEnding(lineEnding);
-        final Drawing drawing = new Drawing();
-        drawing.add(line);
-        final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>")
-                .contains("<marker id='TURNED_SQUARE-")
-                .contains("' orient='auto'")
-                .contains("viewBox='0 0 7.6568542494923")
-                .contains("markerWidth='7.6568542494923")
-                .contains("markerHeight='7.6568542494923")
-                .contains("refX='3.8284271247461903'")
-                .contains("refY='3.8284271247461903'>")
-                .contains("<path d='M3.8284271247461903,1 L6.656854249492381,3.8284271247461903 L3.8284271247461903,6.656854249492381 L1,3.8284271247461903 z'")
-                .contains("stroke='black'")
-                .contains("fill='black'")
-                .contains("/>")
-                .contains("</marker>")
-                .contains("</defs>");
     }
 
     @Test
@@ -277,53 +223,39 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
-    @DisplayName("When a line has a circle LineEnding, then it shows up in the SVG")
-    void whenALineHasCircleLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+    @DisplayName("When a line has a line ending then it shows up in the SVG")
+    void whenALineHasALineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.CIRCLE);
+        final LineEnding lineEnding = LineEnding.newInstance();
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>")
-                .contains("<marker id='CIRCLE-")
-                .contains("' orient='auto' ")
-                .contains("viewBox='0 0 6.513516668382")
-                .contains("6.513516668382")
-                .contains("markerWidth='6.513516668382")
-                .contains("markerHeight='6.513516668382")
-                .contains("refX='3.2567583341910")
-                .contains("refY='3.2567583341910")
-                .contains("<circle cx='3.2567583341910")
-                .contains("cy='3.2567583341910")
-                .contains("r='2.2567583341910")
-                .contains("stroke='black' fill='white' />" + newLine)
-                .contains("</marker>" + newLine + "</defs>");
+        softly.then(svg).contains("<defs>");
+        softly.then(svg).contains("<marker id=");
+        softly.then(svg).contains("orient='auto'");
+        softly.then(svg).contains("markerWidth=");
+        softly.then(svg).contains("markerHeight=");
+        softly.then(svg).contains("refX=");
+        softly.then(svg).contains("refY=");
+        softly.then(svg).contains("<path d=");
+        softly.then(svg).contains("stroke='black'");
+        softly.then(svg).contains("fill='black'");
+        softly.then(svg).contains("/>");
+        softly.then(svg).contains("</marker>");
+        softly.then(svg).contains("</defs>");
     }
 
     @Test
-    @DisplayName("When a line has an OPEN_DOT LineEnding, then it shows up in the SVG")
-    void whenALineHasAnOdotLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+    @DisplayName("whenALineHasANormalLineEndingThenItShowsUpInTheSVG")
+    void whenALineHasANormalLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.OPEN_DOT);
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.NORMAL);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>")
-                .contains("<marker id='CIRCLE-")
-                .contains("' orient='auto' ")
-                .contains("viewBox='0 0 6.513516668382")
-                .contains("6.513516668382")
-                .contains("markerWidth='6.513516668382")
-                .contains("markerHeight='6.513516668382")
-                .contains("refX='3.2567583341910")
-                .contains("refY='3.2567583341910")
-                .contains("<circle cx='3.2567583341910")
-                .contains("cy='3.2567583341910")
-                .contains("r='2.2567583341910")
-                .contains("stroke='black' fill='white' />" + newLine)
-                .contains("</marker>" + newLine + "</defs>");
+        softly.then(svg).contains("<marker id='TRIANGLE-");
     }
 
     @Test
@@ -347,6 +279,84 @@ public class LineEndingDrawingTestPublic {
                 .contains("<path d='M1,1 L1,3.8284271247461903 L6.656854249492381,3.8284271247461903 L6.656854249492381,1 z'")
                 .contains("stroke='black'")
                 .contains("fill='black' />")
+                .contains("</marker>")
+                .contains("</defs>");
+    }
+
+    @Test
+    @DisplayName("When a line has a square LineEnding then it shows up in the SVG")
+    void whenALineHasASquareLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.SQUARE);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<defs>" + newLine)
+                .contains("<marker id='BOX-")
+                .contains("' orient='auto'")
+                .contains("viewBox='0 0 6 6'")
+                .contains("markerWidth='6'")
+                .contains("markerHeight='6'")
+                .contains("refX='3'")
+                .contains("refY='3'>")
+                .contains("<path d='M1,1 L1,5 L5,5 L5,1 z'")
+                .contains("stroke='black'")
+                .contains("fill='black' />")
+                .contains("</marker>")
+                .contains("</defs>");
+    }
+
+    @Test
+    @DisplayName("When a line has a STEALTH LineEnding, then it shows up in the SVG")
+    void whenALineHasAStealthLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.STEALTH);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<defs>" + newLine +
+                "<marker id='STEALTH")
+                .contains("' orient='auto' viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>" + newLine +
+                        "<path d='M1,1 L4,4 L1,7 L7,4 z' fill='black' />" + newLine +
+                        "</marker>" + newLine +
+                        "</defs>");
+    }
+
+    @Test
+    @DisplayName("when A Line Has A triangle LineEndingThenItShowsUpInTheSVG")
+    void whenALineHasATriangleLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = new LineEnding(LineEnding.Type.TRIANGLE);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<marker id='TRIANGLE-");
+    }
+
+    @Test
+    @DisplayName("When a line has a turned square LineEnding, then it shows up in the SVG")
+    void whenALineHasATurnedSquareLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.TURNED_SQUARE);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<defs>")
+                .contains("<marker id='TURNED_SQUARE-")
+                .contains("' orient='auto'")
+                .contains("viewBox='0 0 7.6568542494923")
+                .contains("markerWidth='7.6568542494923")
+                .contains("markerHeight='7.6568542494923")
+                .contains("refX='3.8284271247461903'")
+                .contains("refY='3.8284271247461903'>")
+                .contains("<path d='M3.8284271247461903,1 L6.656854249492381,3.8284271247461903 L3.8284271247461903,6.656854249492381 L1,3.8284271247461903 z'")
+                .contains("stroke='black'")
+                .contains("fill='black'")
+                .contains("/>")
                 .contains("</marker>")
                 .contains("</defs>");
     }
@@ -377,46 +387,69 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
-    @DisplayName("When a LineEnding has been created, the user can set the fill color")
-    void whenALineEndingHasBeenCreatedThenTheUserCanSetTheFillColor() {
+    @DisplayName("When a line has an OPEN_DOT LineEnding, then it shows up in the SVG")
+    void whenALineHasAnOdotLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        LineEnding lineEnding = new LineEnding();
-        lineEnding.setFill("red");
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.OPEN_DOT);
         line.addLineEnding(lineEnding);
-
         final Drawing drawing = new Drawing();
         drawing.add(line);
-
-        String svg = drawing.getSVG();
-
-        then(svg).contains("fill='red'");
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<defs>")
+                .contains("<marker id='CIRCLE-")
+                .contains("' orient='auto' ")
+                .contains("viewBox='0 0 6.513516668382")
+                .contains("6.513516668382")
+                .contains("markerWidth='6.513516668382")
+                .contains("markerHeight='6.513516668382")
+                .contains("refX='3.2567583341910")
+                .contains("refY='3.2567583341910")
+                .contains("<circle cx='3.2567583341910")
+                .contains("cy='3.2567583341910")
+                .contains("r='2.2567583341910")
+                .contains("stroke='black' fill='white' />" + newLine)
+                .contains("</marker>" + newLine + "</defs>");
     }
 
+    @Test
+    @DisplayName("whenALineHasBeenConstructedThenYouCanAddAnLineEndingToIt")
+    void whenALineHasBeenConstructedThenYouCanAddAnLineEndingToIt() {
+        Line line = new Line();
+        LineEnding lineEnding = new LineEnding();
+        line.addLineEnding(lineEnding);
+    }
 
-    @DisplayName("When a filled LineEnding is created, then the fill color is black")
-    @ParameterizedTest
-    @EnumSource(LineEnding.Type.class)
-    void whenAFilledLineEndingIsCreatedThenTheFillColorIsBlack(LineEnding.Type type) {
-        final LineEnding lineEnding = new LineEnding(type);
+    @Test
+    @DisplayName("When a line has a circle LineEnding, then it shows up in the SVG")
+    void whenALineHasACircleLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.CIRCLE);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
-        try {
-            String svg = drawing.getSVG();
-            if ((type == LineEnding.Type.CIRCLE) ||
-                    (type == LineEnding.Type.OPEN_DIAMOND) ||
-                    (type == LineEnding.Type.OPEN_DOT)) {
-                then(svg).contains("fill='white'");
-                then(svg).doesNotContain("fill='black'");
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<defs>")
+                .contains("<marker id='CIRCLE-")
+                .contains("' orient='auto' ")
+                .contains("viewBox='0 0 6.513516668382")
+                .contains("6.513516668382")
+                .contains("markerWidth='6.513516668382")
+                .contains("markerHeight='6.513516668382")
+                .contains("refX='3.2567583341910")
+                .contains("refY='3.2567583341910")
+                .contains("<circle cx='3.2567583341910")
+                .contains("cy='3.2567583341910")
+                .contains("r='2.2567583341910")
+                .contains("stroke='black' fill='white' />" + newLine)
+                .contains("</marker>" + newLine + "</defs>");
+    }
 
-            } else {
-                then(svg).contains("fill='black'");
-                then(svg).doesNotContain("fill='white'");
-            }
-        } catch (UnsupportedOperationException e) {
-            // These are LineEndings not yet implemented
-        }
+    @DisplayName("when An Arrowhead Is Constructed Then The Type Can Be Set")
+    @ParameterizedTest
+    @EnumSource(LineEnding.Type.class)
+    void whenAnLineEndingIsConstructedThenTheTypeCanBeSet(LineEnding.Type type) {
+        final LineEnding lineEnding = new LineEnding(type);
+        then(lineEnding).isNotNull();
     }
 
 

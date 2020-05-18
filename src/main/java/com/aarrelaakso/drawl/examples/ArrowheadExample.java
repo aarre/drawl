@@ -130,8 +130,19 @@ public class ArrowheadExample {
         drawing.add(text10);
         drawing.add(line10);
 
+        final Text text11 = new Text("STEALTH");
+        text11.setBelow(line10);
+        final Line line11 = new Line(Line.Orientation.HORIZONTAL);
+        line11.setWidth(textWidth);
+        line11.setThickness(5);
+        final LineEnding lineEnding11 = LineEnding.newInstance(LineEnding.Type.STEALTH);
+        line11.addLineEnding(lineEnding11);
+        line11.setBelow(text11);
+        drawing.add(text11);
+        drawing.add(line11);
+
         final Text bottomSpacer = new Text("");
-        bottomSpacer.setBelow(line10);
+        bottomSpacer.setBelow(line11);
         drawing.add(bottomSpacer);
 
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 500, 500);

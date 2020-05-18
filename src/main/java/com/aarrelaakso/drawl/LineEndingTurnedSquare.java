@@ -2,6 +2,13 @@ package com.aarrelaakso.drawl;
 
 import static java.lang.Math.sqrt;
 
+/**
+ * < A special case of the DIAMOND/RHOMBUS line ending in which the angles are all 90 degrees.
+ *
+ * To get a turned square shape with an area of 16, we set the crossways dimensions at
+ *
+ * \f[4 sqrt(2) \approx 5.66\f]
+ */
 public class LineEndingTurnedSquare extends LineEnding {
 
     @Override

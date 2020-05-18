@@ -3,6 +3,49 @@ package com.aarrelaakso.drawl;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
+/**
+ * !< A diamond-shaped line ending. Synonyms: RHOMBUS
+ * <p>
+ * \image html rhombus.svg width=300
+ * <p>
+ * We set the height of the rhombus to be equal to its sides:
+ * <p>
+ * \f[h = x\f]
+ * <p>
+ * \f[Area = \frac{w \times h}{2}\f]
+ * <p>
+ * Solving for width in terms of height:
+ * <p>
+ * \f[h^2 = (\frac{h}{2})^2 + (\frac{w}{2})^2\f]
+ * <p>
+ * \f[(\frac{w}{2})^2 = h^2 - (\frac{h}{2})^2\f]
+ * <p>
+ * \f[\frac{w^2}{4} = h^2 - \frac{h^2}{4}\f]
+ * <p>
+ * \f[w^2 = 4h^2 - h^2\f]
+ * <p>
+ * \f[w^2 = 3h^2\f]
+ * <p>
+ * \f[w = h \sqrt{3}\f]
+ * <p>
+ * Substituting into the formula for area:
+ * <p>
+ * \f[16 = \frac{h^2 \sqrt{3}}{2}\f]
+ * <p>
+ * \f[32 = h^2 \sqrt{3}\f]
+ * <p>
+ * \f[h^2 = \frac{32}{\sqrt{3}}\f]
+ * <p>
+ * \f[h = \frac{\sqrt{32}}{\sqrt[4]{3}}\f]
+ * <p>
+ * \f[h \approx 4.3\f]
+ * <p>
+ * Now calculating w:
+ * <p>
+ * \f[w = \sqrt{3} \frac{\sqrt{32}}{\sqrt[4]{3}}\f]
+ * <p>
+ * \f[w \approx 7.44\f]
+ */
 public class LineEndingDiamond extends LineEnding {
 
     @Override

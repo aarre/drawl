@@ -2,6 +2,9 @@ package com.aarrelaakso.drawl;
 
 import static java.lang.Math.sqrt;
 
+/**
+ * A rectangle is a generalization of square that has different width and height
+ */
 public class LineEndingRectangle extends LineEnding {
 
     @Override

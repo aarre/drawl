@@ -8,7 +8,8 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-/** \file
+/**
+ * \file
  * Defines the line ending class.
  */
 
@@ -18,10 +19,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.EnumSet;
 import java.util.concurrent.atomic.AtomicLong;
-
-import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;
-
 
 
 /**
@@ -35,237 +32,38 @@ import static java.lang.Math.sqrt;
  */
 public class LineEnding implements LineEndingInterface {
 
-    @NotNull
-    private String fillColor = "black";
-
-    private double height = 1.0;
-
     protected static final String newLine = System.getProperty("line.separator");
-
-    private double width = 1.0;
-
-    private String uniqueId;
-
-    private LineEnding.Type lineEndingType = Type.DEFAULT;
-
-    private static AtomicLong idCounter = new AtomicLong();
-
-    public static String createID()
-    {
-        return String.valueOf(idCounter.getAndIncrement());
-    }
-
-
-    /**
-     * Drawl defines many types of line endings.
-     */
-    public enum Type {
-        ARC_BARB,
-
-        BAR,
-
-        BOX,
-        /*!< A square (box) line ending. Synonyms: SQUARE
-        *
-        * The area of this line ending is 16, so its sides are of length 4.
-        *
-        */
-
-        BRACKET,
-        BUTT_CAP,
-
-        CIRCLE,
-        /*!< A circular line ending. Synonym: OPEN_DOT */
-        
-        CLASSICAL_TIKZ_RIGHTARROW,
-        COMPUTER_MODERN_RIGHTARROW,
-        CROW,
-        CURVE,
-        DEFAULT,
-        /*!< The default line ending. Synonyms: NORMAL, TRIANGLE.
-
-        For the default line ending, we set the constraint of having the legs have twice the length of the base.
-
-        * \image html triangle.svg width=300
-
-        The width of this triangle can be calculated as:
-
-        \f[w^2 + (\frac{h}{2})^2 = (2h)^2\f]
-
-        \f[w^2 + \frac{h^2}{4} = 4h^2\f]
-
-        \f[w^2 = 4h^2 - \frac{h^2}{4}\f]
-
-        \f[w^2 = \frac{16h^2}{4} - \frac{h^2}{4}\f]
-
-        \f[w^2 = \frac{15h^2}{4}\f]
-
-        \f[w = \sqrt{\frac{15h^2}{4}}\f]
-
-        \f[w = \frac{h \sqrt{15}}{2}\f]
-
-        To calculate the area of the triangle:
-
-        \f[Area = \frac{hw}{2}\f]
-
-        Given that we want the area to be 16:
-
-        \f[ \frac{hw}{2} = 16\f]
-
-        \f[hw = 32\f]
-
-        Substituting in our formula for w
-
-        \f[h \frac{h \sqrt{15}}{2} = 32\f]
-
-        \f[\frac{h^2 \sqrt{15}}{2} = 32\f]
-
-        \f[h^2 \sqrt{15} = 64\f]
-
-        \f[15 h^4  = 4096\f]
-
-        \f[h^4  = \frac{4096}{15}\f]
-
-        \f[h = \sqrt[4]{\frac{4096}{15}}\f]
-
-        \f[h \approx 4.07\f]
-
-        Then, to calculate the width of the triangle:
-
-        \f[\frac{wh}{2} = 16\f]
-
-        \f[wh = 32\f]
-
-        \f[w = \frac{32}{h}\f]
-
-        \f[w \approx 7.87\f]
-
-        */
-        DIAMOND,
-        /*!< A diamond-shaped line ending. Synonyms: RHOMBUS
-         *
-         * \image html rhombus.svg width=300
-         *
-         * We set the height of the rhombus to be equal to its sides:
-         *
-         * \f[h = x\f]
-         *
-         * \f[Area = \frac{w \times h}{2}\f]
-         *
-         * Solving for width in terms of height:
-         *
-         * \f[h^2 = (\frac{h}{2})^2 + (\frac{w}{2})^2\f]
-         *
-         * \f[(\frac{w}{2})^2 = h^2 - (\frac{h}{2})^2\f]
-         *
-         * \f[\frac{w^2}{4} = h^2 - \frac{h^2}{4}\f]
-         *
-         * \f[w^2 = 4h^2 - h^2\f]
-         *
-         * \f[w^2 = 3h^2\f]
-         *
-         * \f[w = h \sqrt{3}\f]
-         *
-         * Substituting into the formula for area:
-         *
-         * \f[16 = \frac{h^2 \sqrt{3}}{2}\f]
-         *
-         * \f[32 = h^2 \sqrt{3}\f]
-         *
-         * \f[h^2 = \frac{32}{\sqrt{3}}\f]
-         *
-         *  \f[h = \frac{\sqrt{32}}{\sqrt[4]{3}}\f]
-         *
-         *  \f[h \approx 4.3\f]
-         *
-         * Now calculating w:
-         *
-         * \f[w = \sqrt{3} \frac{\sqrt{32}}{\sqrt[4]{3}}\f]
-         *
-         * \f[w \approx 7.44\f]
-         */
-
-        DISK,
-        /*!< A disk-shaped line ending. Synonyms: DOT           */
-
-        DOT,
-        /*!< A dot-shaped line ending. Synonyms: DISK
-
-        For the dot/disk line ending, we need
-
-        \f[\pi r^2 = 16\f]
-
-        so
-
-        \f[r^2 = 16/\pi\f]
-
-        \f[r = \sqrt{\frac{16}{\pi}}\f]
-
-        \f[r = \frac{4}{\sqrt \pi}\f]
-
-        \f[r \approx 2.26\f]
-
-        */
-        ELLIPSE,
-        FAST_ROUND,
-        FAST_TRIANGLE,
-        HOOKS,
-        INVERTED,
-        /*!< An inverted (reverse) version of the NORMAL line ending. Synonyms REVERSE */
-        LATEX,
-        KITE,
-        NORMAL,
-        /*!< The default line ending. Synonyms: DEFAULT, TRIANGLE. */
-        OPEN_DIAMOND,
-        /*!< As a DIAMOND, but with fill='white' */
-        OPEN_DOT,
-        /*!< A synonym for CIRCLE */
-        OPEN_ELLIPSE,
-        PARENTHESIS,
-        RAYS,
-        RECTANGLE,
-        /*!< A rectangle is a generalization of square that has different width and height */
-
-        REVERSE,
-        /*!< A reverse (inverted) version of the NORMAL line ending. Synonyms: INVERTED */
-        RHOMBUS,
-        /*!< A synonym for DIAMOND */
-        ROUNDED,
-        ROUND_CAP,
-        SQUARE,
-        /*!< A synonym for BOX             */
-        STRAIGHT_BARB,
-
-        STEALTH,
-        TEE,
-        TEE_BARB,
-        TRIANGLE,
-        /*!< The default line ending. Synonyms: DEFAULT, NORMAL    */
-        TRIANGLE_CAP,
-        TURNED_SQUARE,
-        /*!< A special case of the DIAMOND/RHOMBUS line ending in which the angles are all 90 degrees.
-
-        To get a turned square shape with an area of 16, we set the crossways dimensions at
-
-        \f[4 sqrt(2) \approx 5.66\f]
-
-        */
-
-        VEE
-
-    }
-
+    private static final AtomicLong idCounter = new AtomicLong();
     /**
      * Enumerates the LineEnding types that have open figures.
      */
     public static EnumSet<Type> OpenType = EnumSet.of(Type.CIRCLE, Type.OPEN_DIAMOND, Type.OPEN_DOT);
+    @NotNull
+    private String fillColor = "black";
+    private double height = 1.0;
+    private double width = 1.0;
+    private String uniqueId;
+    private LineEnding.Type lineEndingType = Type.DEFAULT;
+
 
     /**
      * Constructs a default line ending.
      */
-    public LineEnding()
-    {
+    public LineEnding() {
 
+    }
+
+    /**
+     * Constructs a line ending of a particular type.
+     *
+     * @param type
+     */
+    public LineEnding(@NotNull LineEnding.Type type) {
+        this.lineEndingType = type;
+    }
+
+    public static String createID() {
+        return String.valueOf(idCounter.getAndIncrement());
     }
 
     /**
@@ -281,40 +79,44 @@ public class LineEnding implements LineEndingInterface {
      * This static factory method is the preferred way to create a LineEnding.
      */
     public static LineEnding newInstance(LineEnding.Type type) {
-        if ((type == Type.DEFAULT) || (type== Type.NORMAL) || (type== Type.TRIANGLE)) {
-            return new LineEndingTriangle();
-        } else if (type == Type.BAR) {
-            return new LineEndingBar();
-        } else if ((type == Type.BOX) || (type == Type.SQUARE)) {
-            return new LineEndingSquare();
-        } else if (type == Type.TURNED_SQUARE) {
-            return new LineEndingTurnedSquare();
-        } else if ((type == Type.DIAMOND) || (type == Type.RHOMBUS)) {
-            return new LineEndingDiamond();
-        } else if (type == Type.OPEN_DIAMOND) {
-            return new LineEndingOpenDiamond();
-        } else if ((type == Type.DISK) || (type == Type.DOT)) {
-            return new LineEndingDot();
-        } else if ((type == Type.CIRCLE) || (type == Type.OPEN_DOT)) {
-            return new LineEndingCircle();
-        } else if ((type == Type.REVERSE) || (type == Type.INVERTED)) {
-            return new LineEndingReverse();
-        } else if (type == Type.RECTANGLE) {
-            return new LineEndingRectangle();
-        } else {
-            throw new UnsupportedOperationException("Unknown type: " + type);
+        switch (type) {
+            case DEFAULT:
+            case NORMAL:
+            case TRIANGLE:
+                return new LineEndingTriangle();
+            case BAR:
+                return new LineEndingBar();
+            case BOX:
+            case SQUARE:
+                return new LineEndingSquare();
+            case TURNED_SQUARE:
+                return new LineEndingTurnedSquare();
+            case DIAMOND:
+            case RHOMBUS:
+                return new LineEndingDiamond();
+            case OPEN_DIAMOND:
+                return new LineEndingOpenDiamond();
+            case DISK:
+            case DOT:
+                return new LineEndingDot();
+            case CIRCLE:
+            case OPEN_DOT:
+                return new LineEndingCircle();
+            case REVERSE:
+            case INVERTED:
+                return new LineEndingReverse();
+            case RECTANGLE:
+                return new LineEndingRectangle();
+            case CROW:
+            case STEALTH:
+                return new LineEndingStealth();
+            default:
+                throw new UnsupportedOperationException("Unknown type: " + type);
         }
     }
 
-
-    /**
-     * Constructs a line ending of a particular type.
-     *
-     * @param type
-     */
-    public LineEnding(@NotNull LineEnding.Type type)
-    {
-        this.lineEndingType = type;
+    protected double getHeight() {
+        return this.height;
     }
 
     // TODO: Need a new constructor (or method/s) to allow for half arrows (right, left)
@@ -353,6 +155,9 @@ public class LineEnding implements LineEndingInterface {
         } else if ((this.lineEndingType == Type.REVERSE) ||
                 (this.lineEndingType == Type.INVERTED)) {
             return Type.REVERSE;
+        } else if ((this.lineEndingType == Type.BAR) ||
+                (this.lineEndingType == Type.TEE)) {
+            return Type.TEE;
         } else {
             return this.lineEndingType;
         }
@@ -378,14 +183,15 @@ public class LineEnding implements LineEndingInterface {
         svg.append(this.getUniqueId());
         svg.append("' orient='auto'");
         svg.append(getSVG());
-        if (this.getLineEndingType() != Type.BAR) {
+        if ((this.getLineEndingType() != Type.BAR) &&
+        (this.getLineEndingType() != Type.STEALTH)){
             svg.append(" stroke='black'");
         }
 
         // Fill color
         svg.append(" fill='");
-        if ((this.getLineEndingType()==Type.CIRCLE) ||
-                (this.getLineEndingType() == Type.OPEN_DIAMOND)){
+        if ((this.getLineEndingType() == Type.CIRCLE) ||
+                (this.getLineEndingType() == Type.OPEN_DIAMOND)) {
             this.fillColor = "white";
         }
         svg.append(fillColor);
@@ -396,14 +202,6 @@ public class LineEnding implements LineEndingInterface {
         svg.append("</defs>" + newLine);
 
         return svg.toString();
-    }
-
-    public void setFill(String fillColor) {
-        this.fillColor = fillColor;
-    }
-
-    protected double getHeight() {
-        return this.height;
     }
 
     String getUniqueId() {
@@ -417,6 +215,10 @@ public class LineEnding implements LineEndingInterface {
         return this.width;
     }
 
+    public void setFill(String fillColor) {
+        this.fillColor = fillColor;
+    }
+
     /**
      * Sets the size of this LineEnding as a proportion of the default size.
      *
@@ -425,5 +227,54 @@ public class LineEnding implements LineEndingInterface {
     public void setSize(double size) {
         this.height = size;
         this.width = size;
+    }
+
+    /**
+     * Drawl defines many types of line endings.
+     */
+    public enum Type {
+        ARC_BARB,
+        BAR,              /*!< A simple bar at the end of the line                                         */
+        BOX,              /*!< A square (box) line ending. Synonyms: SQUARE */
+        BRACKET,          /*!< A line ending that looks like a square bracket at the end of the line.       */
+        BUTT_CAP,
+        CIRCLE,           /*!< A circular line ending. Synonym: OPEN_DOT */
+        CLASSICAL_TIKZ_RIGHTARROW,
+        COMPUTER_MODERN_RIGHTARROW,
+        CROW,
+        CURVE,
+        DEFAULT,           /*!< The default line ending. Synonyms: NORMAL, TRIANGLE.                        */
+        DIAMOND,           /*!< A diamond-shaped line ending. Synonyms: RHOMBUS                             */
+        DISK,              /*!< A disk-shaped line ending. Synonyms: DOT                                    */
+        DOT,               /*!< A dot-shaped line ending. Synonyms: DISK                                    */
+        ELLIPSE,
+        FAST_ROUND,
+        FAST_TRIANGLE,
+        HOOKS,
+        INVERTED,           /*!< An inverted (reverse) version of the NORMAL line ending. Synonyms REVERSE  */
+        LATEX,
+        KITE,
+        NORMAL,             /*!< The default line ending. Synonyms: DEFAULT, TRIANGLE.                      */
+        OPEN_DIAMOND,       /*!< As a DIAMOND, but with fill='white' */
+        OPEN_DOT,           /*!< A synonym for CIRCLE */
+        OPEN_ELLIPSE,
+        PARENTHESIS,
+        RAYS,
+        RECTANGLE,          /*!< A rectangle is a generalization of square that has different width and height */
+        REVERSE,            /*!< A reverse (inverted) version of the NORMAL line ending. Synonyms: INVERTED */
+        RHOMBUS,            /*!< A synonym for DIAMOND */
+        ROUNDED,
+        ROUND_CAP,
+        SQUARE,             /*!< A synonym for BOX             */
+        STRAIGHT_BARB,
+        STEALTH,            /*!< A synonym for CROW.                                                        */
+        TEE,                /*!< A synonym for BAR.                                                         */
+        TEE_BARB,
+        TRIANGLE,           /*!< The default line ending. Synonyms: DEFAULT, NORMAL                         */
+        TRIANGLE_CAP,
+        TURNED_SQUARE,      /*!< A special case of the DIAMOND/RHOMBUS line ending in which the angles are all 90 degrees.*/
+
+        VEE
+
     }
 }

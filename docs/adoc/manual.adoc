@@ -226,6 +226,14 @@ do things in only one way. The system of lineEnding types is a good example.
 Drawl uses an object-oriented programming paradigm. Although this programming style is more verbose
 than alternatives, it is also clearer.
 
+== Relation to SVG ==
+
+Drawl is not beholden to SVG. Although Drawl outputs SVG, it does not strictly follows the structure
+of SVG. On the one hand, Drawl introduces concepts that are independent
+of SVG. For example, the various line endings are built on top of SVG and not part of SVG itself. On the
+other hand, where it is convenient to do so, Drawl lets the use specify things "the SVG way." This is
+most notable in the specification of colors.
+
 = Design Inspirations
 [partintro]
 --
