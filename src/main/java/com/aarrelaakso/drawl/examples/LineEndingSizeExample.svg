@@ -1,0 +1,41 @@
+<?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='500' height='500'><text x='250' y='291.66666' dominant-baseline='middle' text-anchor='middle'>Width = 2, Height = 0.5</text><text x='250' y='41.666668' dominant-baseline='middle' text-anchor='middle'>Default size</text><text x='250' y='125' dominant-baseline='middle' text-anchor='middle'>Size 2</text>
+<defs>
+<marker id='TRIANGLE-0' orient='auto' viewBox='0 0 6.93597934253086 10.130123970473836' markerWidth='6.93597934253086' markerHeight='10.130123970473836' refX='2.96798967126543' refY='5.065061985236918'>
+<path d='M1,1 L1,9.130123970473836 L4.93597934253086,5.065061985236918 z' stroke='black' fill='black' />
+</marker>
+</defs>
+
+<line x1='208.33333' y1='416.66666' x2='291.66666' y2='416.66666' stroke='black' stroke-width='1' marker-end='url(#TRIANGLE-0)' />
+
+<defs>
+<marker id='TRIANGLE-1' orient='auto' viewBox='0 0 18.74391737012344 4.032530992618459' markerWidth='18.74391737012344' markerHeight='4.032530992618459' refX='8.87195868506172' refY='2.0162654963092295'>
+<path d='M1,1 L1,3.032530992618459 L16.74391737012344,2.0162654963092295 z' stroke='black' fill='black' />
+</marker>
+</defs>
+
+<line x1='208.33333' y1='333.33334' x2='291.66666' y2='333.33334' stroke='black' stroke-width='1' marker-end='url(#TRIANGLE-1)' />
+<text x='250' y='208.33333' dominant-baseline='middle' text-anchor='middle'>Size 0.5</text><text x='250' y='375' dominant-baseline='middle' text-anchor='middle'>Width = 0.5, Height = 2</text>
+<defs>
+<marker id='TRIANGLE-2' orient='auto' viewBox='0 0 18.74391737012344 10.130123970473836' markerWidth='18.74391737012344' markerHeight='10.130123970473836' refX='8.87195868506172' refY='5.065061985236918'>
+<path d='M1,1 L1,9.130123970473836 L16.74391737012344,5.065061985236918 z' stroke='black' fill='black' />
+</marker>
+</defs>
+
+<line x1='208.33333' y1='166.66667' x2='291.66666' y2='166.66667' stroke='black' stroke-width='1' marker-end='url(#TRIANGLE-2)' />
+
+<defs>
+<marker id='TRIANGLE-3' orient='auto' viewBox='0 0 10.87195868506172 6.065061985236918' markerWidth='10.87195868506172' markerHeight='6.065061985236918' refX='4.93597934253086' refY='3.032530992618459'>
+<path d='M1,1 L1,5.065061985236918 L8.87195868506172,3.032530992618459 z' stroke='black' fill='black' />
+</marker>
+</defs>
+
+<line x1='208.33333' y1='83.333336' x2='291.66666' y2='83.333336' stroke='black' stroke-width='1' marker-end='url(#TRIANGLE-3)' />
+
+<defs>
+<marker id='TRIANGLE-4' orient='auto' viewBox='0 0 6.93597934253086 4.032530992618459' markerWidth='6.93597934253086' markerHeight='4.032530992618459' refX='2.96798967126543' refY='2.0162654963092295'>
+<path d='M1,1 L1,3.032530992618459 L4.93597934253086,2.0162654963092295 z' stroke='black' fill='black' />
+</marker>
+</defs>
+
+<line x1='208.33333' y1='250' x2='291.66666' y2='250' stroke='black' stroke-width='1' marker-end='url(#TRIANGLE-4)' />
+<text x='250' y='458.33334' dominant-baseline='middle' text-anchor='middle'></text></svg>

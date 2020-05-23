@@ -23,11 +23,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
-import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.regex.MatchResult;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
@@ -40,6 +36,32 @@ import static org.assertj.core.api.BDDAssertions.then;
 public class LineEndingDrawingTestPublic {
 
     String newLine = System.getProperty("line.separator");
+
+    @DisplayName("When creating a LineEnding the user can set the height and width")
+    @ParameterizedTest
+    @EnumSource(LineEnding.Type.class)
+    void whenCreatingALineEndingTheUserCanSetTheHeightAndWidth(LineEnding.Type type, BDDSoftAssertions softly) {
+        double height = ThreadLocalRandom.current().nextDouble(10);
+        double width = ThreadLocalRandom.current().nextDouble(10);
+        final LineEnding lineEnding = LineEnding.newInstance(type, width, height);
+        softly.then(lineEnding).isNotNull();
+        softly.then(lineEnding.getWidth()).isEqualTo(width);
+        softly.then(lineEnding.getHeight()).isEqualTo(height);
+    }
+
+    @DisplayName("When a LineEnding has been created, then the user can set the height and width")
+    @ParameterizedTest
+    @EnumSource(LineEnding.Type.class)
+    void whenALineEndingHasBeenCreatedThenTheUserCanSetTheHeightAndWidth(LineEnding.Type type, BDDSoftAssertions softly) {
+        double height = ThreadLocalRandom.current().nextDouble(10);
+        double width = ThreadLocalRandom.current().nextDouble(10);
+        final LineEnding lineEnding = LineEnding.newInstance(type);
+        softly.then(lineEnding).isNotNull();
+        lineEnding.setWidth(width);
+        lineEnding.setHeight(height);
+        softly.then(lineEnding.getWidth()).isEqualTo(width);
+        softly.then(lineEnding.getHeight()).isEqualTo(height);
+    }
 
     @DisplayName("When a filled LineEnding is created, then the fill color is black")
     @ParameterizedTest
@@ -55,7 +77,7 @@ public class LineEndingDrawingTestPublic {
             if ((type == LineEnding.Type.CIRCLE) ||
                     (type == LineEnding.Type.OPEN_DIAMOND) ||
                     (type == LineEnding.Type.OPEN_DOT) ||
-                    (type == LineEnding.Type.BRACKET))  {
+                    (type == LineEnding.Type.BRACKET)) {
                 then(svg).contains("fill='white'");
                 then(svg).doesNotContain("fill='black'");
 
@@ -84,6 +106,14 @@ public class LineEndingDrawingTestPublic {
         then(svg).contains("fill='red'");
     }
 
+    @DisplayName("when A LineEnding Is Constructed Then The Type Can Be Set")
+    @ParameterizedTest
+    @EnumSource(LineEnding.Type.class)
+    void whenALineEndingIsConstructedThenTheTypeCanBeSet(LineEnding.Type type) {
+        final LineEnding lineEnding = LineEnding.newInstance(type);
+        then(lineEnding).isNotNull();
+    }
+
     @DisplayName("When a LineEnding is created, then the user can set the relative size")
     @ParameterizedTest
     @EnumSource(LineEnding.Type.class)
@@ -109,8 +139,6 @@ public class LineEndingDrawingTestPublic {
 
     }
 
-
-
     @Test
     @DisplayName("When a line has a BAR LineEnding, then it shows up in the SVG")
     void whenALineHasABarLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
@@ -123,9 +151,9 @@ public class LineEndingDrawingTestPublic {
         softly.then(svg).contains("<defs>" + newLine +
                 "<marker id='BAR")
                 .contains("' orient='auto' viewBox='0 0 3.0 8.0' markerWidth='3.0' markerHeight='8.0' refX='1.5' refY='4.0'>" + newLine +
-                "<path d='M1,1 L1,7.0 L2.0,7.0 L2.0,1 z' fill='black' />" + newLine +
-                "</marker>" + newLine +
-                "</defs>");
+                        "<path d='M1,1 L1,7.0 L2.0,7.0 L2.0,1 z' fill='black' />" + newLine +
+                        "</marker>" + newLine +
+                        "</defs>");
     }
 
     @Test
@@ -165,6 +193,31 @@ public class LineEndingDrawingTestPublic {
                         "<path d='M1,1 L4,1 L4,7 L1,7' stroke='black' fill='white' fill-opacity='0.0' />" + newLine +
                         "</marker>" + newLine +
                         "</defs>");
+    }
+
+    @Test
+    @DisplayName("When a line has a circle LineEnding, then it shows up in the SVG")
+    void whenALineHasACircleLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.CIRCLE);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<defs>")
+                .contains("<marker id='CIRCLE-")
+                .contains("' orient='auto' ")
+                .contains("viewBox='0 0 6.513516668382")
+                .contains("6.513516668382")
+                .contains("markerWidth='6.513516668382")
+                .contains("markerHeight='6.513516668382")
+                .contains("refX='3.2567583341910")
+                .contains("refY='3.2567583341910")
+                .contains("<circle cx='3.2567583341910")
+                .contains("cy='3.2567583341910")
+                .contains("r='2.2567583341910")
+                .contains("stroke='black' fill='white' />" + newLine)
+                .contains("</marker>" + newLine + "</defs>");
     }
 
     @Test
@@ -310,9 +363,9 @@ public class LineEndingDrawingTestPublic {
         softly.then(svg).contains("<defs>" + newLine +
                 "<marker id='KITE")
                 .contains("' orient='auto' viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>" + newLine +
-                "<path d='M1,4 L3,7 L7,4 L3,1 z' stroke='black' fill='black' />" + newLine +
-                "</marker>" + newLine +
-                "</defs>");
+                        "<path d='M1,4 L3,7 L7,4 L3,1 z' stroke='black' fill='black' />" + newLine +
+                        "</marker>" + newLine +
+                        "</defs>");
     }
 
     @Test
@@ -511,39 +564,5 @@ public class LineEndingDrawingTestPublic {
         LineEnding lineEnding = new LineEnding();
         line.addLineEnding(lineEnding);
     }
-
-    @Test
-    @DisplayName("When a line has a circle LineEnding, then it shows up in the SVG")
-    void whenALineHasACircleLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
-        final Line line = new Line();
-        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.CIRCLE);
-        line.addLineEnding(lineEnding);
-        final Drawing drawing = new Drawing();
-        drawing.add(line);
-        final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>")
-                .contains("<marker id='CIRCLE-")
-                .contains("' orient='auto' ")
-                .contains("viewBox='0 0 6.513516668382")
-                .contains("6.513516668382")
-                .contains("markerWidth='6.513516668382")
-                .contains("markerHeight='6.513516668382")
-                .contains("refX='3.2567583341910")
-                .contains("refY='3.2567583341910")
-                .contains("<circle cx='3.2567583341910")
-                .contains("cy='3.2567583341910")
-                .contains("r='2.2567583341910")
-                .contains("stroke='black' fill='white' />" + newLine)
-                .contains("</marker>" + newLine + "</defs>");
-    }
-
-    @DisplayName("when An Arrowhead Is Constructed Then The Type Can Be Set")
-    @ParameterizedTest
-    @EnumSource(LineEnding.Type.class)
-    void whenAnLineEndingIsConstructedThenTheTypeCanBeSet(LineEnding.Type type) {
-        final LineEnding lineEnding = LineEnding.newInstance(type);
-        then(lineEnding).isNotNull();
-    }
-
 
 }

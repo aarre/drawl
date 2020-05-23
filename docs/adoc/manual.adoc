@@ -138,6 +138,15 @@ one might use to decorate the beginning or end of a line.
 
 Drawl defines a large number of line ending types.
 
+.Drawl code to demonstrate line ending types
+[source,java]
+----
+include::../../src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.java[]
+----
+
+.A selection of line ending types in Drawl
+image::https://raw.githubusercontent.com/aarre/drawl/master/src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg[Arrowheads,500,100]
+
 === Line Ending Parameters
 
 Drawl's line endings are also parameterized, meaning that there are systematic ways to

@@ -40,11 +40,11 @@ public class LineEnding implements LineEndingInterface {
     public static EnumSet<Type> OpenType = EnumSet.of(Type.CIRCLE, Type.OPEN_DIAMOND, Type.OPEN_DOT);
     @NotNull
     private String fill = "black";
-    private String stroke = "";
+    private final String stroke = "";
     private double height = 1.0;
     private double width = 1.0;
     private String uniqueId;
-    private LineEnding.Type lineEndingType = Type.DEFAULT;
+    private final LineEnding.Type lineEndingType = Type.DEFAULT;
 
 
     public static String createID() {
@@ -56,6 +56,13 @@ public class LineEnding implements LineEndingInterface {
      */
     public static LineEnding newInstance() {
         return newInstance(Type.TRIANGLE);
+    }
+
+    public static LineEnding newInstance(LineEnding.Type type, double width, double height) {
+        LineEnding result = newInstance(type);
+        result.setWidth(width);
+        result.setHeight(height);
+        return result;
     }
 
     /**
@@ -107,19 +114,13 @@ public class LineEnding implements LineEndingInterface {
         }
     }
 
-    protected double getHeight() {
-        return this.height;
+    protected String getFill() {
+        return this.fill;
     }
 
-    protected String getFill() {return this.fill;}
-
-    protected String getStroke() {return this.stroke;}
-
-    // TODO: Need a new constructor (or method/s) to allow for half arrows (right, left)
-
-    // TODO: Need a new constructor (or method/s) to allow for multiple arrows
-
-    // TODO: Reverse/inverse arrows
+    public double getHeight() {
+        return this.height;
+    }
 
     /**
      * Returns the canonical representation of this line ending type.
@@ -159,6 +160,12 @@ public class LineEnding implements LineEndingInterface {
         }
     }
 
+    // TODO: Need a new constructor (or method/s) to allow for half arrows (right, left)
+
+    // TODO: Need a new constructor (or method/s) to allow for multiple arrows
+
+    // TODO: Reverse/inverse arrows
+
     /**
      * It is up to subclasses to override this method.
      *
@@ -188,6 +195,10 @@ public class LineEnding implements LineEndingInterface {
         return svg.toString();
     }
 
+    protected String getStroke() {
+        return this.stroke;
+    }
+
     String getUniqueId() {
         if (this.uniqueId == null) {
             this.uniqueId = createID();
@@ -195,12 +206,16 @@ public class LineEnding implements LineEndingInterface {
         return this.uniqueId;
     }
 
-    protected double getWidth() {
+    public double getWidth() {
         return this.width;
     }
 
     public void setFill(String fill) {
         this.fill = fill;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
     }
 
     /**
@@ -211,6 +226,10 @@ public class LineEnding implements LineEndingInterface {
     public void setSize(double size) {
         this.height = size;
         this.width = size;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
     }
 
     /**

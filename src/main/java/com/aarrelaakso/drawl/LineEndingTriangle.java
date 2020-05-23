@@ -75,8 +75,8 @@ public class LineEndingTriangle extends LineEnding {
         // Take the 4th root of of the quotient
         double height = pow(quotient, 1.0 / 4.0);                      // approx. 4.07
         double width = 32.0 / height;                                    // approx. 7.87
-        width = width / this.getWidth();
-        height = height / this.getHeight();
+        width = width * this.getWidth();
+        height = height * this.getHeight();
         svg.append(" viewBox='0 0 " + (width + 3) + " " + (height + 2) + "'");
         svg.append(" markerWidth='" + (width + 3) + "' markerHeight='" + (height + 2) + "'");
         svg.append(" refX='" + (width / 2.0 + 1) + "' refY='" + (height / 2.0 + 1) + "'>" + newLine);
