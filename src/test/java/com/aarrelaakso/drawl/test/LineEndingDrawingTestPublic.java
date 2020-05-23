@@ -277,6 +277,28 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
+    @DisplayName("When a line has an ELLIPSE LineEnding then it shows up in the SVG")
+    void whenALineHasAEllipseLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.ELLIPSE);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        LineEndingSVG lineEndingSVG = new LineEndingSVG(svg);
+        softly.then(lineEndingSVG.type).isEqualTo("ELLIPSE");
+        softly.then(lineEndingSVG.viewBoxX1).isEqualTo(0);
+        softly.then(lineEndingSVG.viewBoxY1).isEqualTo(0);
+        softly.then(lineEndingSVG.viewBoxX2).isEqualTo(8);
+        softly.then(lineEndingSVG.viewBoxY2).isEqualTo(6);
+        softly.then(lineEndingSVG.markerWidth).isEqualTo(8);
+        softly.then(lineEndingSVG.markerHeight).isEqualTo(6);
+        softly.then(lineEndingSVG.refX).isEqualTo(4);
+        softly.then(lineEndingSVG.refY).isEqualTo(3);
+        softly.then(lineEndingSVG.path).isEqualTo("<ellipse cx='4' cy='3' rx='3' ry='2' stroke='black' fill='black' />");
+    }
+
+    @Test
     @DisplayName("when a line Has a KITE line ending then it shows up in the SVG")
     void whenALineHasAKiteLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();

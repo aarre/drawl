@@ -163,8 +163,19 @@ public class ArrowheadExample {
         drawing.add(text13);
         drawing.add(line13);
 
+        final Text text14 = new Text("ELLIPSE");
+        text14.setBelow(line13);
+        final Line line14 = new Line(Line.Orientation.HORIZONTAL);
+        line14.setWidth(textWidth);
+        line14.setThickness(5);
+        final LineEnding lineEnding14 = LineEnding.newInstance(LineEnding.Type.ELLIPSE);
+        line14.addLineEnding(lineEnding14);
+        line14.setBelow(text14);
+        drawing.add(text14);
+        drawing.add(line14);
+
         final Text bottomSpacer = new Text("");
-        bottomSpacer.setBelow(line13);
+        bottomSpacer.setBelow(line14);
         drawing.add(bottomSpacer);
 
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 500, 1000);

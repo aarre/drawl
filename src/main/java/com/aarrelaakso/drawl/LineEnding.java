@@ -47,22 +47,6 @@ public class LineEnding implements LineEndingInterface {
     private LineEnding.Type lineEndingType = Type.DEFAULT;
 
 
-    /**
-     * Constructs a default line ending.
-     */
-    //public LineEnding() {
-    //
-    //}
-
-    /**
-     * Constructs a line ending of a particular type.
-     *
-     * @param type
-     */
-    //public LineEnding(@NotNull LineEnding.Type type) {
-    //    this.lineEndingType = type;
-    //}
-
     public static String createID() {
         return String.valueOf(idCounter.getAndIncrement());
     }
@@ -116,6 +100,8 @@ public class LineEnding implements LineEndingInterface {
                 return new LineEndingKite();
             case BRACKET:
                 return new LineEndingBracket();
+            case ELLIPSE:
+                return new LineEndingEllipse();
             default:
                 throw new UnsupportedOperationException("Unknown type: " + type);
         }
@@ -245,7 +231,7 @@ public class LineEnding implements LineEndingInterface {
         DIAMOND,           /*!< A diamond-shaped line ending. Synonyms: RHOMBUS                             */
         DISK,              /*!< A disk-shaped line ending. Synonyms: DOT                                    */
         DOT,               /*!< A dot-shaped line ending. Synonyms: DISK                                    */
-        //ELLIPSE,
+        ELLIPSE,
         //FAST_ROUND,
         //FAST_TRIANGLE,
         //HOOKS,
