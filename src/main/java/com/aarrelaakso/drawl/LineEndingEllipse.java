@@ -4,6 +4,10 @@ import static java.lang.Math.sqrt;
 
 public class LineEndingEllipse extends LineEnding {
 
+    public LineEndingEllipse() {
+        this.setStroke("black");
+    }
+
     @Override
     protected Type getLineEndingType() {
         return Type.ELLIPSE;
@@ -41,7 +45,11 @@ public class LineEndingEllipse extends LineEnding {
         svg.append("' ry='");
         svg.append(new DrawlNumber(radiusY).toSVG());
         svg.append("'");
-        svg.append(" stroke='black'");
+        if (this.getStroke() != "") {
+            svg.append(" stroke='");
+            svg.append(this.getStroke());
+            svg.append("'");
+        }
         svg.append(" fill='");
         svg.append(this.getFill());
         svg.append("'");

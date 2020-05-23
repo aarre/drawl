@@ -47,6 +47,11 @@ public class LineEndingStealth extends LineEndingRectangle {
         svg.append(",");
         svg.append(new DrawlNumber(height / 2.0 + 1.0).toSVG());
         svg.append(" z'");
+        if (this.getStroke() != "") {
+            svg.append(" stroke='");
+            svg.append(this.getStroke());
+            svg.append("'");
+        }
         svg.append(" fill='");
         svg.append(this.getFill());
         svg.append("'");

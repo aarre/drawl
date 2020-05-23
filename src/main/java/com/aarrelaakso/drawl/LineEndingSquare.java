@@ -7,6 +7,10 @@ package com.aarrelaakso.drawl;
  */
 public class LineEndingSquare extends LineEndingRectangle {
 
+    public LineEndingSquare() {
+        this.setStroke("black");
+    }
+
     @Override
     protected Type getLineEndingType() {
         return Type.BOX;
@@ -42,7 +46,11 @@ public class LineEndingSquare extends LineEndingRectangle {
         svg.append(" L");
         svg.append(new DrawlNumber(width + 1.0).toSVG());
         svg.append(",1 z'");
-        svg.append(" stroke='black'");
+        if (this.getStroke() != "") {
+            svg.append(" stroke='");
+            svg.append(this.getStroke());
+            svg.append("'");
+        }
         svg.append(" fill='");
         svg.append(this.getFill());
         svg.append("'");

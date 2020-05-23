@@ -48,6 +48,10 @@ import static java.lang.Math.sqrt;
  */
 public class LineEndingDiamond extends LineEnding {
 
+    public LineEndingDiamond() {
+        this.setStroke("black");
+    }
+
     @Override
     protected Type getLineEndingType() {
         return Type.DIAMOND;
@@ -64,7 +68,11 @@ public class LineEndingDiamond extends LineEnding {
         svg.append(" markerWidth='" + (width + 2) + "' markerHeight='" + (height + 2) + "'");
         svg.append(" refX='" + (width / 2.0 + 1) + "' refY='" + (height / 2.0 + 1) + "'>" + newLine);
         svg.append("<path d='M1," + (height / 2.0 + 1) + " L" + (width / 2.0 + 1) + "," + (height + 1) + " L" + (width + 1) + "," + (height / 2.0 + 1) + " L" + (width / 2.0 + 1) + ",1 z'");
-        svg.append(" stroke='black'");
+        if (this.getStroke() != "") {
+            svg.append(" stroke='");
+            svg.append(this.getStroke());
+            svg.append("'");
+        }
         svg.append(" fill='");
         svg.append(this.getFill());
         svg.append("'");

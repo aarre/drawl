@@ -5,6 +5,10 @@ package com.aarrelaakso.drawl;
  */
 public class LineEndingKite extends LineEndingRectangle {
 
+    public LineEndingKite() {
+        this.setStroke("black");
+    }
+
     @Override
     protected Type getLineEndingType() {
         return Type.KITE;
@@ -42,7 +46,11 @@ public class LineEndingKite extends LineEndingRectangle {
         svg.append(" L");
         svg.append(3);
         svg.append(",1 z'");
-        svg.append(" stroke='black'");
+        if (this.getStroke() != "") {
+            svg.append(" stroke='");
+            svg.append(this.getStroke());
+            svg.append("'");
+        }
         svg.append(" fill='");
         svg.append(this.getFill());
         svg.append("'");

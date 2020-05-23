@@ -2,6 +2,11 @@ package com.aarrelaakso.drawl;
 
 public class LineEndingBracket extends LineEnding {
 
+    public LineEndingBracket() {
+        this.setStroke("black");
+        this.setFill("white");
+    }
+
     @Override
     protected Type getLineEndingType() {
         return Type.BRACKET;
@@ -39,8 +44,14 @@ public class LineEndingBracket extends LineEnding {
         svg.append(" L1,");
         svg.append(new DrawlNumber(height + 1.0).toSVG());
         svg.append("'");
-        svg.append(" stroke='black'");
-        svg.append(" fill='white'");
+        if (this.getStroke() != "") {
+            svg.append(" stroke='");
+            svg.append(this.getStroke());
+            svg.append("'");
+        }
+        svg.append(" fill='");
+        svg.append(this.getFill());
+        svg.append("'");
         svg.append(" fill-opacity='0.0'");
         return svg.toString();
     }

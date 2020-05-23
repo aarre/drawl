@@ -24,7 +24,11 @@ public class LineEndingReverse extends LineEnding {
         svg.append(" markerWidth='" + (width + 2) + "' markerHeight='" + (height + 2) + "'");
         svg.append(" refX='" + (width / 2.0 + 1) + "' refY='" + (height / 2.0 + 1) + "'>" + newLine);
         svg.append("<path d='M1," + (height / 2.0 + 1) + "L" + (width + 1) + "," + (height + 1) + " L" + (width + 1) + "," + 1 + " z'");
-        svg.append(" stroke='black'");
+        if (this.getStroke() != "") {
+            svg.append(" stroke='");
+            svg.append(this.getStroke());
+            svg.append("'");
+        }
         svg.append(" fill='");
         svg.append(this.getFill());
         svg.append("'");

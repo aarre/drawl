@@ -23,6 +23,10 @@ import static java.lang.Math.sqrt;
 
 public class LineEndingDot extends LineEnding {
 
+    LineEndingDot() {
+        this.setStroke("black");
+    }
+
     @Override
     protected Type getLineEndingType() {
         return Type.DOT;
@@ -37,7 +41,11 @@ public class LineEndingDot extends LineEnding {
         svg.append(" markerWidth='" + (diameter + 2) + "' markerHeight='" + (diameter + 2) + "'");
         svg.append(" refX='" + (radius + 1) + "' refY='" + (radius + 1) + "'>" + newLine);
         svg.append("<circle cx='" + (radius + 1) + "' cy='" + (radius + 1) + "' r='" + radius + "'");
-        svg.append(" stroke='black'");
+        if (this.getStroke() != "") {
+            svg.append(" stroke='");
+            svg.append(this.getStroke());
+            svg.append("'");
+        }
         svg.append(" fill='");
         svg.append(this.getFill());
         svg.append("'");

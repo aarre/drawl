@@ -90,11 +90,12 @@ public class LineEndingDrawingTestPublic {
         }
     }
 
-    @Test
     @DisplayName("When a LineEnding has been created, the user can set the fill color")
-    void whenALineEndingHasBeenCreatedThenTheUserCanSetTheFillColor() {
+    @ParameterizedTest
+    @EnumSource(LineEnding.Type.class)
+    void whenALineEndingHasBeenCreatedThenTheUserCanSetTheFillColor(LineEnding.Type type) {
         final Line line = new Line();
-        LineEnding lineEnding = LineEnding.newInstance();
+        LineEnding lineEnding = LineEnding.newInstance(type);
         lineEnding.setFill("red");
         line.addLineEnding(lineEnding);
 
@@ -104,6 +105,23 @@ public class LineEndingDrawingTestPublic {
         String svg = drawing.getSVG();
 
         then(svg).contains("fill='red'");
+    }
+
+    @DisplayName("When a LineEnding has been created, the user can set the stroke color")
+    @ParameterizedTest
+    @EnumSource(LineEnding.Type.class)
+    void whenALineEndingHasBeenCreatedThenTheUserCanSetTheStrokeColor(LineEnding.Type type) {
+        final Line line = new Line();
+        LineEnding lineEnding = LineEnding.newInstance(type);
+        lineEnding.setStroke("red");
+        line.addLineEnding(lineEnding);
+
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+
+        String svg = drawing.getSVG();
+
+        then(svg).contains("stroke='red'");
     }
 
     @DisplayName("when A LineEnding Is Constructed Then The Type Can Be Set")

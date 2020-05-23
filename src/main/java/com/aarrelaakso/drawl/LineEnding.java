@@ -40,7 +40,7 @@ public class LineEnding implements LineEndingInterface {
     public static EnumSet<Type> OpenType = EnumSet.of(Type.CIRCLE, Type.OPEN_DIAMOND, Type.OPEN_DOT);
     @NotNull
     private String fill = "black";
-    private final String stroke = "";
+    private String stroke = "";
     private double height = 1.0;
     private double width = 1.0;
     private String uniqueId;
@@ -226,6 +226,10 @@ public class LineEnding implements LineEndingInterface {
     public void setSize(double size) {
         this.height = size;
         this.width = size;
+    }
+
+    public void setStroke(String stroke) {
+        this.stroke = stroke;
     }
 
     public void setWidth(double width) {
