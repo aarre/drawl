@@ -152,6 +152,20 @@ image::https://raw.githubusercontent.com/aarre/drawl/master/src/main/java/com/aa
 Drawl's line endings are also parameterized, meaning that there are systematic ways to
 modify them.
 
+==== Line Ending Size
+
+The user can set the size of the line ending as a proportion relative to the default size, as well
+as set the height and width of the line ending independently.
+
+.Drawl code to demonstrate sizing line endings
+[source,java]
+----
+include::../../src/main/java/com/aarrelaakso/drawl/examples/LineEndingSizeExample.java[]
+----
+
+.The default line ending at various sizes
+image::https://raw.githubusercontent.com/aarre/drawl/master/src/main/java/com/aarrelaakso/drawl/examples/LineEndingSizeExample.svg[Line ending sizes,500,100]
+
 == Port
 
 The notion of a '''port''' in Drawl draws from similar notions in several other packages.
