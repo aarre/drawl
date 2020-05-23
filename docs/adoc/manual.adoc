@@ -246,6 +246,7 @@ most notable in the specification of colors.
 = Design Inspirations
 [partintro]
 --
+--
 
 == Arrows
 
