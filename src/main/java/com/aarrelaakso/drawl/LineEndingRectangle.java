@@ -15,8 +15,8 @@ public class LineEndingRectangle extends LineEnding {
     @Override
     protected String getSVG() {
         StringBuffer svg = new StringBuffer();
-        double height = 2.0 * sqrt(2.0);
-        double width = 2.0 * height;
+        double height = this.getHeight() * 2.0 * sqrt(2.0);
+        double width = this.getWidth() * 2.0 * height;
         svg.append(" viewBox='0 0 " + (width + 2) + " " + (height + 2) + "'");
         svg.append(" markerWidth='" + (width + 2) + "'");
         svg.append(" markerHeight='" + (height + 2) + "'");

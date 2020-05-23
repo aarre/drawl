@@ -85,6 +85,7 @@ public class LineEnding implements LineEndingInterface {
             case TRIANGLE:
                 return new LineEndingTriangle();
             case BAR:
+            case TEE:
                 return new LineEndingBar();
             case BOX:
             case SQUARE:
@@ -235,48 +236,46 @@ public class LineEnding implements LineEndingInterface {
      * Drawl defines many types of line endings.
      */
     public enum Type {
-        ARC_BARB,
+        //ARC_BARB,
         BAR,              /*!< A simple bar at the end of the line                                         */
         BOX,              /*!< A square (box) line ending. Synonyms: SQUARE */
-        BRACKET,          /*!< A line ending that looks like a square bracket at the end of the line.       */
-        BUTT_CAP,
+        //BRACKET,          /*!< A line ending that looks like a square bracket at the end of the line.       */
+        //BUTT_CAP,
         CIRCLE,           /*!< A circular line ending. Synonym: OPEN_DOT */
-        CLASSICAL_TIKZ_RIGHTARROW,
-        COMPUTER_MODERN_RIGHTARROW,
+        //CLASSICAL_TIKZ_RIGHTARROW,
+        //COMPUTER_MODERN_RIGHTARROW,
         CROW,              /*!< A synonym for STEALTH                                                       */
-        CURVE,
+        //CURVE,
         DEFAULT,           /*!< The default line ending. Synonyms: NORMAL, TRIANGLE.                        */
         DIAMOND,           /*!< A diamond-shaped line ending. Synonyms: RHOMBUS                             */
         DISK,              /*!< A disk-shaped line ending. Synonyms: DOT                                    */
         DOT,               /*!< A dot-shaped line ending. Synonyms: DISK                                    */
-        ELLIPSE,
-        FAST_ROUND,
-        FAST_TRIANGLE,
-        HOOKS,
+        //ELLIPSE,
+        //FAST_ROUND,
+        //FAST_TRIANGLE,
+        //HOOKS,
         INVERTED,           /*!< An inverted (reverse) version of the NORMAL line ending. Synonyms REVERSE  */
-        LATEX,
+        //LATEX,
         KITE,
         NORMAL,             /*!< The default line ending. Synonyms: DEFAULT, TRIANGLE.                      */
         OPEN_DIAMOND,       /*!< As a DIAMOND, but with fill='white' */
         OPEN_DOT,           /*!< A synonym for CIRCLE */
-        OPEN_ELLIPSE,
-        PARENTHESIS,
-        RAYS,
+        //OPEN_ELLIPSE,
+        //PARENTHESIS,
+        //RAYS,
         RECTANGLE,          /*!< A rectangle is a generalization of square that has different width and height */
         REVERSE,            /*!< A reverse (inverted) version of the NORMAL line ending. Synonyms: INVERTED */
         RHOMBUS,            /*!< A synonym for DIAMOND */
-        ROUNDED,
-        ROUND_CAP,
+        //ROUNDED,
+        //ROUND_CAP,
         SQUARE,             /*!< A synonym for BOX             */
-        STRAIGHT_BARB,
+        //STRAIGHT_BARB,
         STEALTH,            /*!< A synonym for CROW.                                                        */
         TEE,                /*!< A synonym for BAR.                                                         */
-        TEE_BARB,
+        //TEE_BARB,
         TRIANGLE,           /*!< The default line ending. Synonyms: DEFAULT, NORMAL                         */
-        TRIANGLE_CAP,
+        //TRIANGLE_CAP,
         TURNED_SQUARE,      /*!< A special case of the DIAMOND/RHOMBUS line ending in which the angles are all 90 degrees.*/
-
-        VEE
-
+        //VEE
     }
 }

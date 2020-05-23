@@ -12,7 +12,7 @@ public class LineEndingCircle extends LineEnding {
     @Override
     protected String getSVG() {
         StringBuilder svg = new StringBuilder();
-        double radius = 4 / sqrt(Math.PI);
+        double radius = this.getWidth() * 4.0 / sqrt(Math.PI);
         double diameter = 2 * radius;
         svg.append(" viewBox='0 0 " + (diameter + 2) + " " + (diameter + 2) + "'");
         svg.append(" markerWidth='" + (diameter + 2) + "' markerHeight='" + (diameter + 2) + "'");

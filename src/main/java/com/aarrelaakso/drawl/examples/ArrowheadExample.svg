@@ -8,7 +8,7 @@
 <line x1='211.53847' y1='538.46155' x2='288.46155' y2='538.46155' stroke='black' stroke-width='5' marker-end='url(#OPEN_DIAMOND-0)' />
 
 <defs>
-<marker id='BOX-1' orient='auto' viewBox='0 0 6 6' markerWidth='6' markerHeight='6' refX='3' refY='3'>
+<marker id='BOX-1' orient='auto' viewBox='0 0 6 6' markerWidth='6.0' markerHeight='6.0' refX='3' refY='3'>
 <path d='M1,1 L1,5 L5,5 L5,1 z' stroke='black' fill='black' />
 </marker>
 </defs>
@@ -40,8 +40,8 @@
 <line x1='211.53847' y1='76.92308' x2='288.46155' y2='76.92308' stroke='black' stroke-width='5' marker-end='url(#RECTANGLE-4)' />
 <text x='250' y='653.8461' dominant-baseline='middle' text-anchor='middle'>RECTANGLE</text><text x='250' y='500' dominant-baseline='middle' text-anchor='middle'>OPEN_DIAMOND</text>
 <defs>
-<marker id='KITE-5' orient='auto' viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>
-<path d='M1,4 L3,7 L7,4 L3,1 z' stroke='black' fill='black' />
+<marker id='KITE-5' orient='auto' viewBox='0 0 6.0 6.0' markerWidth='6.0' markerHeight='6.0' refX='3.0' refY='3.0'>
+<path d='M1,3.0 L3.0,5.0 L5.0,3.0 L3,1 z' stroke='black' fill='black' />
 </marker>
 </defs>
 
@@ -81,7 +81,7 @@
 <text x='250' y='576.9231' dominant-baseline='middle' text-anchor='middle'>INVERSE, REVERSE</text><text x='250' y='884.61536' dominant-baseline='middle' text-anchor='middle'>KITE</text>
 <defs>
 <marker id='STEALTH-10' orient='auto' viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>
-<path d='M1,1 L4,4 L1,7 L7,4 z' fill='black' />
+<path d='M1,1 L4,4 L1,5 L5,4 z' fill='black' />
 </marker>
 </defs>
 

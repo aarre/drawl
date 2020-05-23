@@ -15,8 +15,38 @@ public class LineEndingStealth extends LineEndingRectangle {
     @Override
     protected String getSVG() {
         StringBuilder svg = new StringBuilder();
-        svg.append(" viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>" + newLine);
-        svg.append("<path d='M1,1 L4,4 L1,7 L7,4 z'");
+        double height = 6.0 * this.getHeight();
+        double width = 6.0 * this.getWidth();
+        svg.append(" viewBox='0 0 ");
+        svg.append(new DrawlNumber(width + 2.0).toSVG());
+        svg.append(" ");
+        svg.append(new DrawlNumber(height + 2.0).toSVG());
+        svg.append("'");
+        svg.append(" markerWidth='");
+        svg.append(new DrawlNumber(width + 2.0).toSVG());
+        svg.append("'");
+        svg.append(" markerHeight='");
+        svg.append(new DrawlNumber(height + 2.0).toSVG());
+        svg.append("'");
+        svg.append(" refX='");
+        svg.append(new DrawlNumber(width / 2.0 + 1.0).toSVG());
+        svg.append("'");
+        svg.append(" refY='");
+        svg.append(new DrawlNumber(height / 2.0 + 1.0).toSVG());
+        svg.append("'>");
+        svg.append(newLine);
+        svg.append("<path d='M1,1");
+        svg.append(" L");
+        svg.append(new DrawlNumber(width / 2.0 + 1.0).toSVG());
+        svg.append(",");
+        svg.append(new DrawlNumber(height / 2.0 + 1.0).toSVG());
+        svg.append(" L1,");
+        svg.append(new DrawlNumber(height + 1.0).toSVG());
+        svg.append(" L");
+        svg.append(new DrawlNumber(width + 1.0).toSVG());
+        svg.append(",");
+        svg.append(new DrawlNumber(height / 2.0 + 1.0).toSVG());
+        svg.append(" z'");
         return svg.toString();
     }
 

@@ -19,8 +19,8 @@ public class LineEndingTurnedSquare extends LineEnding {
     @Override
     protected String getSVG() {
         StringBuilder svg = new StringBuilder();
-        double diagonal = 4 * sqrt(2);
-        double half_diag = diagonal / 2;
+        double diagonal = this.getWidth() * 4.0 * sqrt(2.0);
+        double half_diag = diagonal / 2.0;
         svg.append(" viewBox='0 0 " + (diagonal + 2) + " " + (diagonal + 2) + "'");
         svg.append(" markerWidth='" + (diagonal + 2) + "' markerHeight='" + (diagonal + 2) + "'");
         svg.append(" refX='" + (half_diag + 1) + "' refY='" + (half_diag + 1) + "'>" + newLine);

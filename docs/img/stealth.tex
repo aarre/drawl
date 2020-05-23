@@ -5,7 +5,9 @@
 
 \begin{document}
     \begin{tikzpicture}
-            \draw (0,0) --  (2,2) --   (0,4) --   (4,2) --  cycle;
-
+        \draw[help lines] (0,0) grid (8,8);
+        \draw [->,thick] (0,8) -- (0,0) node (yaxis) [below] {$y$};
+        \draw [->,thick] (0,8) -- (8,8) node (xaxis) [right] {$x$};
+        \draw (1,1) node [left] {$(1,7)$} -- (7,4) node [right] {$(7,4)$} -- (1,7) node [left] {$(1,1)$} -- (4,4) node [left] {$(4,4)$} -- cycle;
     \end{tikzpicture}
 \end{document}

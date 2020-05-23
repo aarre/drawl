@@ -12,8 +12,8 @@ public class LineEndingBar extends LineEnding {
     @Override
     protected String getSVG() {
         StringBuffer svg = new StringBuffer();
-        double height = 6.0;
-        double width = 1;
+        double height = 6.0 * this.getHeight();
+        double width = 1.0 * this.getHeight();
         svg.append(" viewBox='0 0 " + (width + 2) + " " + (height + 2) + "'");
         svg.append(" markerWidth='" + (width + 2) + "'");
         svg.append(" markerHeight='" + (height + 2) + "'");

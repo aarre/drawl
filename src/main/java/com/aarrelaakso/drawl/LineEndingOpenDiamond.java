@@ -13,8 +13,8 @@ public class LineEndingOpenDiamond extends LineEnding {
     @Override
     protected String getSVG() {
         StringBuilder svg = new StringBuilder();
-        double height = sqrt(32.0) / pow(3.0, 1.0 / 4.0);                       // Approx. 4.3
-        double width = sqrt(3.0) * height;                                      // Approx. 7.44
+        double height = this.getHeight() * sqrt(32.0) / pow(3.0, 1.0 / 4.0);                       // Approx. 4.3
+        double width = this.getWidth() * sqrt(3.0) * height;                                      // Approx. 7.44
         svg.append(" viewBox='0 0 " + (width + 2) + " " + (height + 2) + "'");
         svg.append(" markerWidth='" + (width + 2) + "' markerHeight='" + (height + 2) + "'");
         svg.append(" refX='" + (width / 2.0 + 1) + "' refY='" + (height / 2.0 + 1) + "'>" + newLine);

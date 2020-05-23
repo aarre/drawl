@@ -23,6 +23,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 
+import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.regex.MatchResult;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static org.assertj.core.api.BDDAssertions.then;
 
 /**
@@ -77,6 +83,33 @@ public class LineEndingDrawingTestPublic {
         then(svg).contains("fill='red'");
     }
 
+    @DisplayName("When a LineEnding is created, then the user can set the relative size")
+    @ParameterizedTest
+    @EnumSource(LineEnding.Type.class)
+    void whenALineEndingIsCreatedThenTheUserCanSetTheSize(LineEnding.Type type, BDDSoftAssertions softly) {
+        Line lineNormal = new Line();
+        Line lineScaled = new Line();
+        final LineEnding lineEndingNormal = LineEnding.newInstance(type);
+        final LineEnding lineEndingScaled = LineEnding.newInstance(type);
+        lineNormal.addLineEnding(lineEndingNormal);
+        lineScaled.addLineEnding(lineEndingScaled);
+        double size = ThreadLocalRandom.current().nextDouble(10);
+        lineEndingScaled.setSize(size);
+        Drawing drawingNormal = new Drawing();
+        drawingNormal.add(lineNormal);
+        Drawing drawingScaled = new Drawing();
+        drawingScaled.add(lineScaled);
+        String svgNormal = drawingNormal.getSVG();
+        LineEndingSVG lineEndingSVGNormal = new LineEndingSVG(svgNormal);
+        String svgScaled = drawingScaled.getSVG();
+        LineEndingSVG lineEndingSVGScaled = new LineEndingSVG(svgScaled);
+        softly.then(lineEndingSVGScaled.markerWidth).isNotEqualTo(lineEndingSVGNormal.markerWidth);
+        softly.then(lineEndingSVGScaled.markerHeight).isNotEqualTo(lineEndingSVGNormal.markerHeight);
+
+    }
+
+
+
     @Test
     @DisplayName("When a line has a BAR LineEnding, then it shows up in the SVG")
     void whenALineHasABarLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
@@ -103,19 +136,17 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>" + newLine)
-                .contains("<marker id='BOX-")
-                .contains("' orient='auto'")
-                .contains("viewBox='0 0 6 6'")
-                .contains("markerWidth='6'")
-                .contains("markerHeight='6'")
-                .contains("refX='3'")
-                .contains("refY='3'>")
-                .contains("<path d='M1,1 L1,5 L5,5 L5,1 z'")
-                .contains("stroke='black'")
-                .contains("fill='black' />")
-                .contains("</marker>")
-                .contains("</defs>");
+        LineEndingSVG lineEndingSVG = new LineEndingSVG(svg);
+        softly.then(lineEndingSVG.type).isEqualTo("BOX");
+        softly.then(lineEndingSVG.viewBoxX1).isEqualTo(0);
+        softly.then(lineEndingSVG.viewBoxY1).isEqualTo(0);
+        softly.then(lineEndingSVG.viewBoxX2).isEqualTo(6);
+        softly.then(lineEndingSVG.viewBoxY2).isEqualTo(6);
+        softly.then(lineEndingSVG.markerWidth).isEqualTo(6);
+        softly.then(lineEndingSVG.markerHeight).isEqualTo(6);
+        softly.then(lineEndingSVG.refX).isEqualTo(3);
+        softly.then(lineEndingSVG.refY).isEqualTo(3);
+        softly.then(lineEndingSVG.path).isEqualTo("<path d='M1,1 L1,5 L5,5 L5,1 z' stroke='black' fill='black' />");
     }
 
     @Test
@@ -127,12 +158,17 @@ public class LineEndingDrawingTestPublic {
         final Drawing drawing = new Drawing();
         drawing.add(line);
         final String svg = drawing.getSVG();
-        softly.then(svg).contains("<defs>" + newLine +
-                        "<marker id='STEALTH")
-                .contains("' orient='auto' viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>" + newLine +
-                        "<path d='M1,1 L4,4 L1,7 L7,4 z' fill='black' />" + newLine +
-                        "</marker>" + newLine +
-                        "</defs>");
+        LineEndingSVG lineEndingSVG = new LineEndingSVG(svg);
+        softly.then(lineEndingSVG.type).isEqualTo("STEALTH");
+        softly.then(lineEndingSVG.viewBoxX1).isEqualTo(0);
+        softly.then(lineEndingSVG.viewBoxY1).isEqualTo(0);
+        softly.then(lineEndingSVG.viewBoxX2).isEqualTo(8);
+        softly.then(lineEndingSVG.viewBoxY2).isEqualTo(8);
+        softly.then(lineEndingSVG.markerWidth).isEqualTo(8);
+        softly.then(lineEndingSVG.markerHeight).isEqualTo(8);
+        softly.then(lineEndingSVG.refX).isEqualTo(4);
+        softly.then(lineEndingSVG.refY).isEqualTo(4);
+        softly.then(lineEndingSVG.path).isEqualTo("<path d='M1,1 L4,4 L1,7 L7,4 z' fill='black' />");
     }
 
     @Test
