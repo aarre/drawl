@@ -1,97 +1,105 @@
-<?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='500' height='1000'><text x='250' y='269.23077' dominant-baseline='middle' text-anchor='middle'>DISK, DOT</text><text x='250' y='38.46154' dominant-baseline='middle' text-anchor='middle'>DEFAULT, NORMAL, TRIANGLE</text>
+<?xml version='1.0' standalone='no'?><svg xmlns='http://www.w3.org/2000/svg' width='500' height='1000'><text x='250' y='250' dominant-baseline='middle' text-anchor='middle'>DISK, DOT</text><text x='250' y='35.714287' dominant-baseline='middle' text-anchor='middle'>DEFAULT, NORMAL, TRIANGLE</text>
 <defs>
 <marker id='OPEN_DIAMOND-0' orient='auto' viewBox='0 0 9.444838872816796 6.298279727294168' markerWidth='9.444838872816796' markerHeight='6.298279727294168' refX='4.722419436408398' refY='3.149139863647084'>
-<path d='M1,3.149139863647084 L4.722419436408398,5.298279727294168 L8.444838872816796,3.149139863647084L4.722419436408398,1 z' stroke='black' fill='white' />
+<path d='M1,3.149139863647084 L4.722419436408398,5.298279727294168 L8.444838872816796,3.149139863647084L4.722419436408398,1 z' stroke='black' fill='black'' />
 </marker>
 </defs>
 
-<line x1='211.53847' y1='538.46155' x2='288.46155' y2='538.46155' stroke='black' stroke-width='5' marker-end='url(#OPEN_DIAMOND-0)' />
+<line x1='214.28572' y1='500' x2='285.7143' y2='500' stroke='black' stroke-width='5' marker-end='url(#OPEN_DIAMOND-0)' />
 
 <defs>
-<marker id='BOX-1' orient='auto' viewBox='0 0 6 6' markerWidth='6.0' markerHeight='6.0' refX='3' refY='3'>
-<path d='M1,1 L1,5 L5,5 L5,1 z' stroke='black' fill='black' />
+<marker id='BOX-1' orient='auto' viewBox='0 0 6 6' markerWidth='6' markerHeight='6' refX='3' refY='3'>
+<path d='M1,1 L1,5 L5,5 L5,1 z' stroke='black' fill='black'' />
 </marker>
 </defs>
 
-<line x1='211.53847' y1='153.84616' x2='288.46155' y2='153.84616' stroke='black' stroke-width='5' marker-end='url(#BOX-1)' />
-<text x='250' y='730.7692' dominant-baseline='middle' text-anchor='middle'>BAR</text>
+<line x1='214.28572' y1='142.85715' x2='285.7143' y2='142.85715' stroke='black' stroke-width='5' marker-end='url(#BOX-1)' />
+<text x='250' y='678.5714' dominant-baseline='middle' text-anchor='middle'>BAR</text>
 <defs>
 <marker id='REVERSE-2' orient='auto' viewBox='0 0 9.87195868506172 6.065061985236918' markerWidth='9.87195868506172' markerHeight='6.065061985236918' refX='4.93597934253086' refY='3.032530992618459'>
-<path d='M1,3.032530992618459L8.87195868506172,5.065061985236918 L8.87195868506172,1 z' stroke='black' fill='black' />
+<path d='M1,3.032530992618459L8.87195868506172,5.065061985236918 L8.87195868506172,1 z' stroke='black' fill='black'' />
 </marker>
 </defs>
 
-<line x1='211.53847' y1='615.38464' x2='288.46155' y2='615.38464' stroke='black' stroke-width='5' marker-end='url(#REVERSE-2)' />
+<line x1='214.28572' y1='571.4286' x2='285.7143' y2='571.4286' stroke='black' stroke-width='5' marker-end='url(#REVERSE-2)' />
 
 <defs>
 <marker id='CIRCLE-3' orient='auto' viewBox='0 0 6.51351666838205 6.51351666838205' markerWidth='6.51351666838205' markerHeight='6.51351666838205' refX='3.256758334191025' refY='3.256758334191025'>
-<circle cx='3.256758334191025' cy='3.256758334191025' r='2.256758334191025' stroke='black' fill='white' />
+<circle cx='3.256758334191025' cy='3.256758334191025' r='2.256758334191025' stroke='black' fill='black'' />
 </marker>
 </defs>
 
-<line x1='211.53847' y1='384.6154' x2='288.46155' y2='384.6154' stroke='black' stroke-width='5' marker-end='url(#CIRCLE-3)' />
-<text x='250' y='192.3077' dominant-baseline='middle' text-anchor='middle'>TURNED_SQUARE</text>
-<defs>
-<marker id='RECTANGLE-4' orient='auto' viewBox='0 0 10.87195868506172 6.065061985236918' markerWidth='10.87195868506172' markerHeight='6.065061985236918' refX='4.93597934253086' refY='3.032530992618459'>
-<path d='M1,1 L1,5.065061985236918 L8.87195868506172,3.032530992618459 z' stroke='black' fill='black' />
-</marker>
-</defs>
-
-<line x1='211.53847' y1='76.92308' x2='288.46155' y2='76.92308' stroke='black' stroke-width='5' marker-end='url(#RECTANGLE-4)' />
-<text x='250' y='653.8461' dominant-baseline='middle' text-anchor='middle'>RECTANGLE</text><text x='250' y='500' dominant-baseline='middle' text-anchor='middle'>OPEN_DIAMOND</text>
-<defs>
-<marker id='KITE-5' orient='auto' viewBox='0 0 6.0 6.0' markerWidth='6.0' markerHeight='6.0' refX='3.0' refY='3.0'>
-<path d='M1,3.0 L3.0,5.0 L5.0,3.0 L3,1 z' stroke='black' fill='black' />
-</marker>
-</defs>
-
-<line x1='211.53847' y1='923.0769' x2='288.46155' y2='923.0769' stroke='black' stroke-width='5' marker-end='url(#KITE-5)' />
-<text x='250' y='115.38461' dominant-baseline='middle' text-anchor='middle'>BOX, SQUARE</text><text x='250' y='807.6923' dominant-baseline='middle' text-anchor='middle'>STEALTH</text><text x='250' y='961.53845' dominant-baseline='middle' text-anchor='middle'></text>
-<defs>
-<marker id='DOT-6' orient='auto' viewBox='0 0 6.51351666838205 6.51351666838205' markerWidth='6.51351666838205' markerHeight='6.51351666838205' refX='3.256758334191025' refY='3.256758334191025'>
-<circle cx='3.256758334191025' cy='3.256758334191025' r='2.256758334191025' stroke='black' fill='black' />
-</marker>
-</defs>
-
-<line x1='211.53847' y1='307.69232' x2='288.46155' y2='307.69232' stroke='black' stroke-width='5' marker-end='url(#DOT-6)' />
+<line x1='214.28572' y1='357.14285' x2='285.7143' y2='357.14285' stroke='black' stroke-width='5' marker-end='url(#CIRCLE-3)' />
 
 <defs>
-<marker id='DIAMOND-7' orient='auto' viewBox='0 0 9.444838872816796 6.298279727294168' markerWidth='9.444838872816796' markerHeight='6.298279727294168' refX='4.722419436408398' refY='3.149139863647084'>
-<path d='M1,3.149139863647084 L4.722419436408398,5.298279727294168 L8.444838872816796,3.149139863647084 L4.722419436408398,1 z' stroke='black' fill='black' />
+<marker id='BRACKET-4' orient='auto' viewBox='0 0 5 8' markerWidth='5' markerHeight='8' refX='4' refY='4'>
+<path d='M1,1 L4,1 L4,7 L1,7' stroke='black' fill='black'' />
 </marker>
 </defs>
 
-<line x1='211.53847' y1='461.53845' x2='288.46155' y2='461.53845' stroke='black' stroke-width='5' marker-end='url(#DIAMOND-7)' />
+<line x1='214.28572' y1='928.5714' x2='285.7143' y2='928.5714' stroke='black' stroke-width='5' marker-end='url(#BRACKET-4)' />
+<text x='250' y='178.57143' dominant-baseline='middle' text-anchor='middle'>TURNED_SQUARE</text><text x='250' y='964.2857' dominant-baseline='middle' text-anchor='middle'></text>
+<defs>
+<marker id='RECTANGLE-5' orient='auto' viewBox='0 0 10.87195868506172 6.065061985236918' markerWidth='10.87195868506172' markerHeight='6.065061985236918' refX='4.93597934253086' refY='3.032530992618459'>
+<path d='M1,1 L1,5.065061985236918 L8.87195868506172,3.032530992618459 z' stroke='black' fill='black'' />
+</marker>
+</defs>
+
+<line x1='214.28572' y1='71.42857' x2='285.7143' y2='71.42857' stroke='black' stroke-width='5' marker-end='url(#RECTANGLE-5)' />
+<text x='250' y='607.1429' dominant-baseline='middle' text-anchor='middle'>RECTANGLE</text><text x='250' y='464.2857' dominant-baseline='middle' text-anchor='middle'>OPEN_DIAMOND</text>
+<defs>
+<marker id='KITE-6' orient='auto' viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>
+<path d='M1,4 L3,7 L7,4 L3,1 z' stroke='black' fill='black'' />
+</marker>
+</defs>
+
+<line x1='214.28572' y1='857.1429' x2='285.7143' y2='857.1429' stroke='black' stroke-width='5' marker-end='url(#KITE-6)' />
+<text x='250' y='107.14286' dominant-baseline='middle' text-anchor='middle'>BOX, SQUARE</text><text x='250' y='750' dominant-baseline='middle' text-anchor='middle'>STEALTH</text><text x='250' y='892.8571' dominant-baseline='middle' text-anchor='middle'>BRACKET</text>
+<defs>
+<marker id='DOT-7' orient='auto' viewBox='0 0 6.51351666838205 6.51351666838205' markerWidth='6.51351666838205' markerHeight='6.51351666838205' refX='3.256758334191025' refY='3.256758334191025'>
+<circle cx='3.256758334191025' cy='3.256758334191025' r='2.256758334191025' stroke='black' fill='black'' />
+</marker>
+</defs>
+
+<line x1='214.28572' y1='285.7143' x2='285.7143' y2='285.7143' stroke='black' stroke-width='5' marker-end='url(#DOT-7)' />
 
 <defs>
-<marker id='BAR-8' orient='auto' viewBox='0 0 3.0 8.0' markerWidth='3.0' markerHeight='8.0' refX='1.5' refY='4.0'>
-<path d='M1,1 L1,7.0 L2.0,7.0 L2.0,1 z' fill='black' />
+<marker id='DIAMOND-8' orient='auto' viewBox='0 0 9.444838872816796 6.298279727294168' markerWidth='9.444838872816796' markerHeight='6.298279727294168' refX='4.722419436408398' refY='3.149139863647084'>
+<path d='M1,3.149139863647084 L4.722419436408398,5.298279727294168 L8.444838872816796,3.149139863647084 L4.722419436408398,1 z' stroke='black' fill='black'' />
 </marker>
 </defs>
 
-<line x1='211.53847' y1='769.2308' x2='288.46155' y2='769.2308' stroke='black' stroke-width='5' marker-end='url(#BAR-8)' />
+<line x1='214.28572' y1='428.57144' x2='285.7143' y2='428.57144' stroke='black' stroke-width='5' marker-end='url(#DIAMOND-8)' />
 
 <defs>
-<marker id='TURNED_SQUARE-9' orient='auto' viewBox='0 0 7.656854249492381 7.656854249492381' markerWidth='7.656854249492381' markerHeight='7.656854249492381' refX='3.8284271247461903' refY='3.8284271247461903'>
-<path d='M3.8284271247461903,1 L6.656854249492381,3.8284271247461903 L3.8284271247461903,6.656854249492381 L1,3.8284271247461903 z' stroke='black' fill='black' />
+<marker id='BAR-9' orient='auto' viewBox='0 0 3.0 8.0' markerWidth='3.0' markerHeight='8.0' refX='1.5' refY='4.0'>
+<path d='M1,1 L1,7.0 L2.0,7.0 L2.0,1 z' fill='black'' />
 </marker>
 </defs>
 
-<line x1='211.53847' y1='230.76923' x2='288.46155' y2='230.76923' stroke='black' stroke-width='5' marker-end='url(#TURNED_SQUARE-9)' />
-<text x='250' y='576.9231' dominant-baseline='middle' text-anchor='middle'>INVERSE, REVERSE</text><text x='250' y='884.61536' dominant-baseline='middle' text-anchor='middle'>KITE</text>
+<line x1='214.28572' y1='714.2857' x2='285.7143' y2='714.2857' stroke='black' stroke-width='5' marker-end='url(#BAR-9)' />
+
 <defs>
-<marker id='STEALTH-10' orient='auto' viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>
-<path d='M1,1 L4,4 L1,5 L5,4 z' fill='black' />
+<marker id='TURNED_SQUARE-10' orient='auto' viewBox='0 0 7.656854249492381 7.656854249492381' markerWidth='7.656854249492381' markerHeight='7.656854249492381' refX='3.8284271247461903' refY='3.8284271247461903'>
+<path d='M3.8284271247461903,1 L6.656854249492381,3.8284271247461903 L3.8284271247461903,6.656854249492381 L1,3.8284271247461903 z' stroke='black' fill='black'' />
 </marker>
 </defs>
 
-<line x1='211.53847' y1='846.1539' x2='288.46155' y2='846.1539' stroke='black' stroke-width='5' marker-end='url(#STEALTH-10)' />
-<text x='250' y='346.15384' dominant-baseline='middle' text-anchor='middle'>CIRCLE, OPEN_DOT</text><text x='250' y='423.07693' dominant-baseline='middle' text-anchor='middle'>DIAMOND, RHOMBUS</text>
+<line x1='214.28572' y1='214.28572' x2='285.7143' y2='214.28572' stroke='black' stroke-width='5' marker-end='url(#TURNED_SQUARE-10)' />
+<text x='250' y='535.7143' dominant-baseline='middle' text-anchor='middle'>INVERSE, REVERSE</text><text x='250' y='821.4286' dominant-baseline='middle' text-anchor='middle'>KITE</text>
 <defs>
-<marker id='RECTANGLE-11' orient='auto' viewBox='0 0 7.656854249492381 4.82842712474619' markerWidth='7.656854249492381' markerHeight='4.82842712474619' refX='3.8284271247461903' refY='2.414213562373095'>
-<path d='M1,1 L1,3.8284271247461903 L6.656854249492381,3.8284271247461903 L6.656854249492381,1 z' stroke='black' fill='black' />
+<marker id='STEALTH-11' orient='auto' viewBox='0 0 8 8' markerWidth='8' markerHeight='8' refX='4' refY='4'>
+<path d='M1,1 L4,4 L1,7 L7,4 z' fill='black'' />
 </marker>
 </defs>
 
-<line x1='211.53847' y1='692.3077' x2='288.46155' y2='692.3077' stroke='black' stroke-width='5' marker-end='url(#RECTANGLE-11)' />
+<line x1='214.28572' y1='785.7143' x2='285.7143' y2='785.7143' stroke='black' stroke-width='5' marker-end='url(#STEALTH-11)' />
+<text x='250' y='321.42856' dominant-baseline='middle' text-anchor='middle'>CIRCLE, OPEN_DOT</text><text x='250' y='392.85715' dominant-baseline='middle' text-anchor='middle'>DIAMOND, RHOMBUS</text>
+<defs>
+<marker id='RECTANGLE-12' orient='auto' viewBox='0 0 7.656854249492381 4.82842712474619' markerWidth='7.656854249492381' markerHeight='4.82842712474619' refX='3.8284271247461903' refY='2.414213562373095'>
+<path d='M1,1 L1,3.8284271247461903 L6.656854249492381,3.8284271247461903 L6.656854249492381,1 z' stroke='black' fill='black'' />
+</marker>
+</defs>
+
+<line x1='214.28572' y1='642.8571' x2='285.7143' y2='642.8571' stroke='black' stroke-width='5' marker-end='url(#RECTANGLE-12)' />
 </svg>

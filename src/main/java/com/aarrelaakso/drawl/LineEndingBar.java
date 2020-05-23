@@ -20,6 +20,9 @@ public class LineEndingBar extends LineEnding {
         svg.append(" refX='" + (width / 2.0 + 1) + "'");
         svg.append(" refY='" + (height / 2.0 + 1) + "'>" + LineEnding.newLine);
         svg.append("<path d='M1,1 L1," + (height + 1) + " L" + (width + 1) + "," + (height + 1) + " L" + (width + 1) + ",1 z'");
+        svg.append(" fill='");
+        svg.append(this.getFill());
+        svg.append("'");
         return svg.toString();
     }
 }

@@ -42,6 +42,10 @@ public class LineEndingSquare extends LineEndingRectangle {
         svg.append(" L");
         svg.append(new DrawlNumber(width + 1.0).toSVG());
         svg.append(",1 z'");
+        svg.append(" stroke='black'");
+        svg.append(" fill='");
+        svg.append(this.getFill());
+        svg.append("'");
         return svg.toString();
     }
 

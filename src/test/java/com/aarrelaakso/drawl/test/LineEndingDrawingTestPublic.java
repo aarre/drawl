@@ -45,7 +45,7 @@ public class LineEndingDrawingTestPublic {
     @ParameterizedTest
     @EnumSource(LineEnding.Type.class)
     void whenAFilledLineEndingIsCreatedThenTheFillColorIsBlack(LineEnding.Type type) {
-        final LineEnding lineEnding = new LineEnding(type);
+        final LineEnding lineEnding = LineEnding.newInstance(type);
         final Line line = new Line();
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
@@ -54,7 +54,8 @@ public class LineEndingDrawingTestPublic {
             String svg = drawing.getSVG();
             if ((type == LineEnding.Type.CIRCLE) ||
                     (type == LineEnding.Type.OPEN_DIAMOND) ||
-                    (type == LineEnding.Type.OPEN_DOT)) {
+                    (type == LineEnding.Type.OPEN_DOT) ||
+                    (type == LineEnding.Type.BRACKET))  {
                 then(svg).contains("fill='white'");
                 then(svg).doesNotContain("fill='black'");
 
@@ -71,7 +72,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a LineEnding has been created, the user can set the fill color")
     void whenALineEndingHasBeenCreatedThenTheUserCanSetTheFillColor() {
         final Line line = new Line();
-        LineEnding lineEnding = new LineEnding();
+        LineEnding lineEnding = LineEnding.newInstance();
         lineEnding.setFill("red");
         line.addLineEnding(lineEnding);
 
@@ -128,7 +129,7 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
-    @DisplayName("When a line has a box LineEnding then it shows up in the SVG")
+    @DisplayName("When a line has a BOX LineEnding then it shows up in the SVG")
     void whenALineHasABoxLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
         final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.BOX);
@@ -147,6 +148,23 @@ public class LineEndingDrawingTestPublic {
         softly.then(lineEndingSVG.refX).isEqualTo(3);
         softly.then(lineEndingSVG.refY).isEqualTo(3);
         softly.then(lineEndingSVG.path).isEqualTo("<path d='M1,1 L1,5 L5,5 L5,1 z' stroke='black' fill='black' />");
+    }
+
+    @Test
+    @DisplayName("When a line has a BRACKET LineEnding, then it shows up in the SVG")
+    void whenALineHasABracketLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
+        final Line line = new Line();
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.BRACKET);
+        line.addLineEnding(lineEnding);
+        final Drawing drawing = new Drawing();
+        drawing.add(line);
+        final String svg = drawing.getSVG();
+        softly.then(svg).contains("<defs>" + newLine +
+                "<marker id='BRACKET")
+                .contains("' orient='auto' viewBox='0 0 5 8' markerWidth='5' markerHeight='8' refX='4' refY='4'>" + newLine +
+                        "<path d='M1,1 L4,1 L4,7 L1,7' stroke='black' fill='white' fill-opacity='0.0' />" + newLine +
+                        "</marker>" + newLine +
+                        "</defs>");
     }
 
     @Test
@@ -175,7 +193,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("whenALineHasADefaultLineEndingThenItShowsUpInTheSVG")
     void whenALineHasADefaultLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.DEFAULT);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.DEFAULT);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -184,7 +202,7 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
-    @DisplayName("When a line has a diamond LineEnding, then it shows up in the SVG")
+    @DisplayName("When a line has a DIAMOND LineEnding, then it shows up in the SVG")
     void whenALineHasADiamondLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
         final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.DIAMOND);
@@ -209,7 +227,7 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
-    @DisplayName("When a line has a disk LineEnding, then it shows up in the SVG")
+    @DisplayName("When a line has a DISK LineEnding, then it shows up in the SVG")
     void whenALineHasADiskLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
         final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.DISK);
@@ -234,7 +252,7 @@ public class LineEndingDrawingTestPublic {
     }
 
     @Test
-    @DisplayName("When a line has a dot LineEnding, then it shows up in the SVG")
+    @DisplayName("When a line has a DOT LineEnding, then it shows up in the SVG")
     void whenALineHasADotLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
         final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.DOT);
@@ -303,7 +321,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("whenALineHasANormalLineEndingThenItShowsUpInTheSVG")
     void whenALineHasANormalLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.NORMAL);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.NORMAL);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -381,7 +399,7 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("when A Line Has A triangle LineEndingThenItShowsUpInTheSVG")
     void whenALineHasATriangleLineEndingThenItShowsUpInTheSVG(BDDSoftAssertions softly) {
         final Line line = new Line();
-        final LineEnding lineEnding = new LineEnding(LineEnding.Type.TRIANGLE);
+        final LineEnding lineEnding = LineEnding.newInstance(LineEnding.Type.TRIANGLE);
         line.addLineEnding(lineEnding);
         final Drawing drawing = new Drawing();
         drawing.add(line);
@@ -418,11 +436,11 @@ public class LineEndingDrawingTestPublic {
     @DisplayName("When a line has an INVERTED line ending, then it is the same as a REVERSE line ending")
     void whenALineHasAnInvertedLineEndingThenItIsTheSameAsAReverseLineEnding() {
         final Line lineInverted = new Line();
-        final LineEnding lineEndingInverted = new LineEnding(LineEnding.Type.INVERTED);
+        final LineEnding lineEndingInverted = LineEnding.newInstance(LineEnding.Type.INVERTED);
         lineInverted.addLineEnding(lineEndingInverted);
 
         final Line lineReverse = new Line();
-        final LineEnding lineEndingReverse = new LineEnding(LineEnding.Type.REVERSE);
+        final LineEnding lineEndingReverse = LineEnding.newInstance(LineEnding.Type.REVERSE);
         lineReverse.addLineEnding(lineEndingReverse);
 
         final Drawing drawingInverted = new Drawing();
@@ -501,7 +519,7 @@ public class LineEndingDrawingTestPublic {
     @ParameterizedTest
     @EnumSource(LineEnding.Type.class)
     void whenAnLineEndingIsConstructedThenTheTypeCanBeSet(LineEnding.Type type) {
-        final LineEnding lineEnding = new LineEnding(type);
+        final LineEnding lineEnding = LineEnding.newInstance(type);
         then(lineEnding).isNotNull();
     }
 

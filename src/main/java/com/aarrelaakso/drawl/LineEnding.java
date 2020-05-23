@@ -39,7 +39,8 @@ public class LineEnding implements LineEndingInterface {
      */
     public static EnumSet<Type> OpenType = EnumSet.of(Type.CIRCLE, Type.OPEN_DIAMOND, Type.OPEN_DOT);
     @NotNull
-    private String fillColor = "black";
+    private String fill = "black";
+    private String stroke = "";
     private double height = 1.0;
     private double width = 1.0;
     private String uniqueId;
@@ -49,18 +50,18 @@ public class LineEnding implements LineEndingInterface {
     /**
      * Constructs a default line ending.
      */
-    public LineEnding() {
-
-    }
+    //public LineEnding() {
+    //
+    //}
 
     /**
      * Constructs a line ending of a particular type.
      *
      * @param type
      */
-    public LineEnding(@NotNull LineEnding.Type type) {
-        this.lineEndingType = type;
-    }
+    //public LineEnding(@NotNull LineEnding.Type type) {
+    //    this.lineEndingType = type;
+    //}
 
     public static String createID() {
         return String.valueOf(idCounter.getAndIncrement());
@@ -113,6 +114,8 @@ public class LineEnding implements LineEndingInterface {
                 return new LineEndingStealth();
             case KITE:
                 return new LineEndingKite();
+            case BRACKET:
+                return new LineEndingBracket();
             default:
                 throw new UnsupportedOperationException("Unknown type: " + type);
         }
@@ -121,6 +124,10 @@ public class LineEnding implements LineEndingInterface {
     protected double getHeight() {
         return this.height;
     }
+
+    protected String getFill() {return this.fill;}
+
+    protected String getStroke() {return this.stroke;}
 
     // TODO: Need a new constructor (or method/s) to allow for half arrows (right, left)
 
@@ -186,21 +193,9 @@ public class LineEnding implements LineEndingInterface {
         svg.append(this.getUniqueId());
         svg.append("' orient='auto'");
         svg.append(getSVG());
-        if ((this.getLineEndingType() != Type.BAR) &&
-        (this.getLineEndingType() != Type.STEALTH)){
-            svg.append(" stroke='black'");
-        }
-
-        // Fill color
-        svg.append(" fill='");
-        if ((this.getLineEndingType() == Type.CIRCLE) ||
-                (this.getLineEndingType() == Type.OPEN_DIAMOND)) {
-            this.fillColor = "white";
-        }
-        svg.append(fillColor);
 
         // Closing tags
-        svg.append("' />" + newLine);
+        svg.append(" />" + newLine);
         svg.append("</marker>" + newLine);
         svg.append("</defs>" + newLine);
 
@@ -218,8 +213,8 @@ public class LineEnding implements LineEndingInterface {
         return this.width;
     }
 
-    public void setFill(String fillColor) {
-        this.fillColor = fillColor;
+    public void setFill(String fill) {
+        this.fill = fill;
     }
 
     /**
@@ -237,9 +232,9 @@ public class LineEnding implements LineEndingInterface {
      */
     public enum Type {
         //ARC_BARB,
-        BAR,              /*!< A simple bar at the end of the line                                         */
-        BOX,              /*!< A square (box) line ending. Synonyms: SQUARE */
-        //BRACKET,          /*!< A line ending that looks like a square bracket at the end of the line.       */
+        BAR,              /*!< A simple bar at the end of the line                                          */
+        BOX,              /*!< A square (box) line ending. Synonyms: SQUARE                                 */
+        BRACKET,          /*!< A line ending that looks like a square bracket at the end of the line.       */
         //BUTT_CAP,
         CIRCLE,           /*!< A circular line ending. Synonym: OPEN_DOT */
         //CLASSICAL_TIKZ_RIGHTARROW,

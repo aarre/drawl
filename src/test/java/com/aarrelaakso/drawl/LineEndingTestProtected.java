@@ -19,7 +19,7 @@ public class LineEndingTestProtected {
     @ParameterizedTest
     @EnumSource(LineEnding.Type.class)
     void whenALineEndingIsCreatedThenTheUserCanSetTheSize(LineEnding.Type type) {
-        final LineEnding lineEnding = new LineEnding(type);
+        final LineEnding lineEnding = LineEnding.newInstance(type);
         double EXPECTED = ThreadLocalRandom.current().nextDouble(10);
         lineEnding.setSize(EXPECTED);
         double ACTUAL = lineEnding.getHeight();
@@ -31,7 +31,7 @@ public class LineEndingTestProtected {
     @EnumSource(LineEnding.Type.class)
     void whenALineEndingIsCreatedThenItHasAUniqueID(LineEnding.Type type) {
         HashSet<String> uniqueIds = new HashSet<String>();
-        final LineEnding lineEnding = new LineEnding(type);
+        final LineEnding lineEnding = LineEnding.newInstance(type);
         String uniqueId = lineEnding.getUniqueId();
         then(uniqueId).isNotIn(uniqueIds);
         uniqueIds.add(uniqueId);

@@ -1,22 +1,17 @@
 package com.aarrelaakso.drawl;
 
-/**
- * Represents a square (box) line ending.
- *
- * The area of this line ending is 16, so its sides are of length 4.
- */
-public class LineEndingStealth extends LineEndingRectangle {
+public class LineEndingBracket extends LineEnding {
 
     @Override
     protected Type getLineEndingType() {
-        return Type.STEALTH;
+        return Type.BRACKET;
     }
 
     @Override
     protected String getSVG() {
-        StringBuilder svg = new StringBuilder();
+        StringBuffer svg = new StringBuffer();
         double height = 6.0 * this.getHeight();
-        double width = 6.0 * this.getWidth();
+        double width = 3.0 * this.getHeight();
         svg.append(" viewBox='0 0 ");
         svg.append(new DrawlNumber(width + 2.0).toSVG());
         svg.append(" ");
@@ -29,28 +24,24 @@ public class LineEndingStealth extends LineEndingRectangle {
         svg.append(new DrawlNumber(height + 2.0).toSVG());
         svg.append("'");
         svg.append(" refX='");
-        svg.append(new DrawlNumber(width / 2.0 + 1.0).toSVG());
+        svg.append(new DrawlNumber(width + 1.0).toSVG());
         svg.append("'");
         svg.append(" refY='");
         svg.append(new DrawlNumber(height / 2.0 + 1.0).toSVG());
         svg.append("'>");
-        svg.append(newLine);
-        svg.append("<path d='M1,1");
-        svg.append(" L");
-        svg.append(new DrawlNumber(width / 2.0 + 1.0).toSVG());
-        svg.append(",");
-        svg.append(new DrawlNumber(height / 2.0 + 1.0).toSVG());
-        svg.append(" L1,");
-        svg.append(new DrawlNumber(height + 1.0).toSVG());
-        svg.append(" L");
+        svg.append(LineEnding.newLine);
+        svg.append("<path d='M1,1 L");
+        svg.append(new DrawlNumber(width + 1.0).toSVG());
+        svg.append(",1 L");
         svg.append(new DrawlNumber(width + 1.0).toSVG());
         svg.append(",");
-        svg.append(new DrawlNumber(height / 2.0 + 1.0).toSVG());
-        svg.append(" z'");
-        svg.append(" fill='");
-        svg.append(this.getFill());
+        svg.append(new DrawlNumber(height + 1.0).toSVG());
+        svg.append(" L1,");
+        svg.append(new DrawlNumber(height + 1.0).toSVG());
         svg.append("'");
+        svg.append(" stroke='black'");
+        svg.append(" fill='white'");
+        svg.append(" fill-opacity='0.0'");
         return svg.toString();
     }
-
 }

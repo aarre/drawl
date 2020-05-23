@@ -152,8 +152,19 @@ public class ArrowheadExample {
         drawing.add(text12);
         drawing.add(line12);
 
+        final Text text13 = new Text("BRACKET");
+        text13.setBelow(line12);
+        final Line line13 = new Line(Line.Orientation.HORIZONTAL);
+        line13.setWidth(textWidth);
+        line13.setThickness(5);
+        final LineEnding lineEnding13 = LineEnding.newInstance(LineEnding.Type.BRACKET);
+        line13.addLineEnding(lineEnding13);
+        line13.setBelow(text13);
+        drawing.add(text13);
+        drawing.add(line13);
+
         final Text bottomSpacer = new Text("");
-        bottomSpacer.setBelow(line12);
+        bottomSpacer.setBelow(line13);
         drawing.add(bottomSpacer);
 
         drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 500, 1000);

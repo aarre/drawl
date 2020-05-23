@@ -25,6 +25,10 @@ public class LineEndingTurnedSquare extends LineEnding {
         svg.append(" markerWidth='" + (diagonal + 2) + "' markerHeight='" + (diagonal + 2) + "'");
         svg.append(" refX='" + (half_diag + 1) + "' refY='" + (half_diag + 1) + "'>" + newLine);
         svg.append("<path d='M" + (half_diag + 1) + ",1 L" + (diagonal + 1) + "," + (half_diag + 1) + " L" + (half_diag + 1) + "," + (diagonal + 1) + " L1," + (half_diag + 1) + " z'");
+        svg.append(" stroke='black'");
+        svg.append(" fill='");
+        svg.append(this.getFill());
+        svg.append("'");
         return svg.toString();
     }
 

@@ -42,6 +42,10 @@ public class LineEndingKite extends LineEndingRectangle {
         svg.append(" L");
         svg.append(3);
         svg.append(",1 z'");
+        svg.append(" stroke='black'");
+        svg.append(" fill='");
+        svg.append(this.getFill());
+        svg.append("'");
         return svg.toString();
     }
 
