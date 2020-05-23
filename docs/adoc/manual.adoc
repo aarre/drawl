@@ -175,7 +175,7 @@ The notion of a '''port''' in Drawl draws from similar notions in several other 
 === Version 0.3.0 - June 1, 2020
 
 * Text
-* Lines and arrows
+* Lines and line endings
 
 === Version 0.2.0 - May 1, 2020
 
