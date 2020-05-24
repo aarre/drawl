@@ -7,6 +7,7 @@ public class LineEndingOpenDiamond extends LineEnding {
 
     LineEndingOpenDiamond() {
         this.setFill("white");
+        this.setStroke("black");
     }
 
     @Override

@@ -131,33 +131,7 @@ public class LineEnding implements LineEndingInterface {
      * @return the canonical representation of this line ending type.
      */
     protected Type getLineEndingType() {
-        if ((this.lineEndingType == Type.DEFAULT) ||
-                (this.lineEndingType == Type.NORMAL) ||
-                (this.lineEndingType == Type.TRIANGLE)) {
-            return Type.TRIANGLE;
-        } else if ((this.lineEndingType == Type.BOX) ||
-                (this.lineEndingType == Type.SQUARE)) {
-            return Type.BOX;
-        } else if (this.lineEndingType == Type.TURNED_SQUARE) {
-            return Type.TURNED_SQUARE;
-        } else if ((this.lineEndingType == Type.DIAMOND) ||
-                (this.lineEndingType == Type.RHOMBUS)) {
-            return Type.DIAMOND;
-        } else if ((this.lineEndingType == Type.DISK) ||
-                (this.lineEndingType == Type.DOT)) {
-            return Type.DOT;
-        } else if ((this.lineEndingType == Type.CIRCLE) ||
-                (this.lineEndingType == Type.OPEN_DOT)) {
-            return Type.CIRCLE;
-        } else if ((this.lineEndingType == Type.REVERSE) ||
-                (this.lineEndingType == Type.INVERTED)) {
-            return Type.REVERSE;
-        } else if ((this.lineEndingType == Type.BAR) ||
-                (this.lineEndingType == Type.TEE)) {
-            return Type.TEE;
-        } else {
             return this.lineEndingType;
-        }
     }
 
     // TODO: Need a new constructor (or method/s) to allow for half arrows (right, left)
