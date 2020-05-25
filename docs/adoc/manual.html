@@ -472,15 +472,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_circles">Circles</a></li>
 <li><a href="#_rectangles">Rectangles</a></li>
 <li><a href="#_text">Text</a></li>
+<li><a href="#_lines">Lines</a></li>
+<li><a href="#_line_endings">Line Endings</a></li>
 </ul>
 </li>
-<li><a href="#_line_endings">Line Endings</a>
+<li><a href="#_filling_and_stroking">Filling and Stroking</a></li>
+<li><a href="#_adjacency_and_non_adjacency">Adjacency and Non-Adjacency</a>
 <ul class="sectlevel2">
-<li><a href="#_line_ending_types">Line Ending Types</a></li>
-<li><a href="#_line_ending_parameters">Line Ending Parameters</a></li>
+<li><a href="#_adjacency">Adjacency</a></li>
+<li><a href="#_non_adjacency">Non-Adjacency</a></li>
 </ul>
 </li>
-<li><a href="#_port">Port</a></li>
+<li><a href="#_ports">Ports</a></li>
 <li><a href="#_version_history">Version History</a>
 <ul class="sectlevel2">
 <li><a href="#_version_0_3_0_june_1_2020">Version 0.3.0 - June 1, 2020</a></li>
@@ -689,28 +692,64 @@ public class CircleDemo
 </div>
 <div class="sect2">
 <h3 id="_rectangles">Rectangles</h3>
+<div class="paragraph">
+<p>Producing a rectangle is equally simple:</p>
+</div>
+<div class="listingblock">
+<div class="title">Listing 2. Drawl code to draw a rectangle</div>
+<div class="content">
+<pre class="prettyprint highlight"><code data-lang="java">package com.aarrelaakso.drawl.examples;
 
+import com.aarrelaakso.drawl.Drawing;
+import com.aarrelaakso.drawl.Rectangle;
+
+import java.io.IOException;
+
+/**
+ * Demonstrates using Drawl to draw a rectangle.
+ */
+public class RectangleExample
+{
+    /**
+     * Draws a rectangle.
+     */
+    public static void main(final String[] args) throws IOException {
+        Drawing drawing = new Drawing();
+        Rectangle rectangle = new Rectangle();
+        drawing.add(rectangle);
+        drawing.writeToFile("docs/adoc/images/Rectangle.svg", 100, 100);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/Circle.svg" alt="Circle" width="100" height="100">
+</div>
+<div class="title">Figure 2. A circle drawn by Drawl</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_text">Text</h3>
 
 </div>
+<div class="sect2">
+<h3 id="_lines">Lines</h3>
+
 </div>
-</div>
-<div class="sect1">
-<h2 id="_line_endings">Line Endings</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_line_endings">Line Endings</h3>
 <div class="paragraph">
 <p>Line endings in Drawl generalize the notion of arrowheads. They are, conceptually, anything
 one might use to decorate the beginning or end of a line.</p>
 </div>
-<div class="sect2">
-<h3 id="_line_ending_types">Line Ending Types</h3>
+<div class="sect3">
+<h4 id="_line_ending_types">Line Ending Types</h4>
 <div class="paragraph">
-<p>Drawl defines a large number of line ending types.</p>
+<p>Drawl provides many line ending types.</p>
 </div>
 <div class="listingblock">
-<div class="title">Listing 2. Drawl code to demonstrate line ending types</div>
+<div class="title">Listing 3. Drawl code to demonstrate line ending types</div>
 <div class="content">
 <pre class="prettyprint highlight"><code data-lang="java">package com.aarrelaakso.drawl.examples;
 
@@ -719,10 +758,16 @@ import com.aarrelaakso.drawl.*;
 import java.io.IOException;
 
 /**
- * Draws the different types of line endings available in Drawl.
+ * Demonstrates drawing the different types of line endings available in Drawl.
  */
 public class LineEndingExample {
 
+    /**
+     * Draws the different types of line endings available in Drawl.
+     *
+     * @param args no command line arguments.
+     * @throws IOException
+     */
     public static void main(final String[] args) throws IOException {
 
         final Drawing drawing = new Drawing();
@@ -894,23 +939,23 @@ public class LineEndingExample {
 <div class="content">
 <img src="https://raw.githubusercontent.com/aarre/drawl/master/src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg" alt="Arrowheads" width="500" height="100">
 </div>
-<div class="title">Figure 2. A selection of line ending types in Drawl</div>
+<div class="title">Figure 3. A selection of line ending types in Drawl</div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_line_ending_parameters">Line Ending Parameters</h3>
+<div class="sect3">
+<h4 id="_line_ending_parameters">Line Ending Parameters</h4>
 <div class="paragraph">
 <p>Drawl&#8217;s line endings are also parameterized, meaning that there are systematic ways to
 modify them.</p>
 </div>
-<div class="sect3">
-<h4 id="_line_ending_size">Line Ending Size</h4>
+<div class="sect4">
+<h5 id="_line_ending_size">Line Ending Size</h5>
 <div class="paragraph">
 <p>The user can set the size of the line ending as a proportion relative to the default size, as well
 as set the height and width of the line ending independently.</p>
 </div>
 <div class="listingblock">
-<div class="title">Listing 3. Drawl code to demonstrate sizing line endings</div>
+<div class="title">Listing 4. Drawl code to demonstrate sizing line endings</div>
 <div class="content">
 <pre class="prettyprint highlight"><code data-lang="java">package com.aarrelaakso.drawl.examples;
 
@@ -923,6 +968,12 @@ import java.io.IOException;
  */
 public class LineEndingSizeExample {
 
+    /**
+     * Draws line endings at different sizes.
+     *
+     * @param args no command line arguments.
+     * @throws IOException
+     */
     public static void main(final String[] args) throws IOException {
 
         final Drawing drawing = new Drawing();
@@ -996,14 +1047,34 @@ public class LineEndingSizeExample {
 <div class="content">
 <img src="https://raw.githubusercontent.com/aarre/drawl/master/src/main/java/com/aarrelaakso/drawl/examples/LineEndingSizeExample.svg" alt="Line ending sizes" width="500" height="100">
 </div>
-<div class="title">Figure 3. The default line ending at various sizes</div>
+<div class="title">Figure 4. The default line ending at various sizes</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_port">Port</h2>
+<h2 id="_filling_and_stroking">Filling and Stroking</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adjacency_and_non_adjacency">Adjacency and Non-Adjacency</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_adjacency">Adjacency</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_non_adjacency">Non-Adjacency</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ports">Ports</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The notion of a '''port''' in Drawl draws from similar notions in several other packages.</p>
@@ -1035,6 +1106,9 @@ public class LineEndingSizeExample {
 </li>
 <li>
 <p>Adjacency—left, right, above, below</p>
+</li>
+<li>
+<p>Non-adjacency</p>
 </li>
 <li>
 <p>Fill and stroke</p>
@@ -1260,7 +1334,7 @@ most notable in the specification of colors.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-24 07:41:28 -0400
+Last updated 2020-05-25 13:59:04 -0400
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
