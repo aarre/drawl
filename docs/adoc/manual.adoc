@@ -134,8 +134,8 @@ Producing a rectangle is equally simple:
 include::../../src/main/java/com/aarrelaakso/drawl/examples/RectangleExample.java[]
 ----
 
-.A circle drawn by Drawl
-image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/Circle.svg[Circle,100,100]
+.A rectangle drawn by Drawl
+image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/Rectangle.svg[Rectangle,100,100]
 
 
 === Text
