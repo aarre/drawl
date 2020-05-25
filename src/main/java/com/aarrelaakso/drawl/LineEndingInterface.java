@@ -1,5 +1,8 @@
 package com.aarrelaakso.drawl;
 
+/**
+ * Sets the public interface for line ending types.
+ */
 public interface LineEndingInterface {
 
     void setFill(String fillColor);

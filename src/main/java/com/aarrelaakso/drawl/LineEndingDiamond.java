@@ -4,7 +4,7 @@ import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
 /**
- * !< A diamond-shaped line ending. Synonyms: RHOMBUS
+ * Represents a diamond-shaped line ending. Synonyms: RHOMBUS
  * <p>
  * \image html rhombus.svg width=300
  * <p>

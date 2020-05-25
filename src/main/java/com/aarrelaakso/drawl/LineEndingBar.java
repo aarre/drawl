@@ -1,7 +1,8 @@
 package com.aarrelaakso.drawl;
 
-import static java.lang.Math.sqrt;
-
+/**
+ * Represents a line ending consisting of a bar at the end of the line.
+ */
 public class LineEndingBar extends LineEnding {
 
     @Override

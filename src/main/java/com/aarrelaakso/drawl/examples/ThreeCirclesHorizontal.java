@@ -17,10 +17,16 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 
 /**
- * Example of using Drawl to draw three adjacent circles oriented horizontally.
+ * Demonstrates using Drawl to draw three adjacent circles oriented horizontally.
  */
 public class ThreeCirclesHorizontal
 {
+    /**
+     * Draws three adjacent circles oriented horizontally.
+     *
+     * @param args no command line arguments.
+     * @throws IOException
+     */
     public static void main(final String[] args) throws IOException {
         @NotNull final Drawing drawing = new Drawing();
         @NotNull final Circle circle1 = new Circle();

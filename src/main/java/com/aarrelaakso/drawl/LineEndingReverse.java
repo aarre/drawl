@@ -2,6 +2,10 @@ package com.aarrelaakso.drawl;
 
 import static java.lang.Math.pow;
 
+/**
+ * Represents a line ending that is the reverse of the default (triangle) line ending.
+ * Reverse means that the line ending is reflected about the axis formed by the line.
+ */
 public class LineEndingReverse extends LineEnding {
 
 

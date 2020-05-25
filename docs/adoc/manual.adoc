@@ -124,35 +124,48 @@ include::../../src/main/java/com/aarrelaakso/drawl/adoc/CircleDemo.java[]
 .A circle drawn by Drawl
 image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/Circle.svg[Circle,100,100]
 
-
 === Rectangles
+
+Producing a rectangle is equally simple:
+
+.Drawl code to draw a rectangle
+[source,java]
+----
+include::../../src/main/java/com/aarrelaakso/drawl/examples/RectangleExample.java[]
+----
+
+.A circle drawn by Drawl
+image::https://raw.githubusercontent.com/aarre/drawl/master/docs/adoc/images/Circle.svg[Circle,100,100]
+
 
 === Text
 
-== Line Endings
+=== Lines
+
+=== Line Endings
 
 Line endings in Drawl generalize the notion of arrowheads. They are, conceptually, anything
 one might use to decorate the beginning or end of a line.
 
-=== Line Ending Types
+==== Line Ending Types
 
-Drawl defines a large number of line ending types.
+Drawl provides many line ending types.
 
 .Drawl code to demonstrate line ending types
 [source,java]
 ----
-include::../../src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.java[]
+include::../../src/main/java/com/aarrelaakso/drawl/examples/LineEndingExample.java[]
 ----
 
 .A selection of line ending types in Drawl
 image::https://raw.githubusercontent.com/aarre/drawl/master/src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg[Arrowheads,500,100]
 
-=== Line Ending Parameters
+==== Line Ending Parameters
 
 Drawl's line endings are also parameterized, meaning that there are systematic ways to
 modify them.
 
-==== Line Ending Size
+===== Line Ending Size
 
 The user can set the size of the line ending as a proportion relative to the default size, as well
 as set the height and width of the line ending independently.
@@ -166,7 +179,15 @@ include::../../src/main/java/com/aarrelaakso/drawl/examples/LineEndingSizeExampl
 .The default line ending at various sizes
 image::https://raw.githubusercontent.com/aarre/drawl/master/src/main/java/com/aarrelaakso/drawl/examples/LineEndingSizeExample.svg[Line ending sizes,500,100]
 
-== Port
+== Filling and Stroking
+
+== Adjacency and Non-Adjacency
+
+=== Adjacency
+
+=== Non-Adjacency
+
+== Ports
 
 The notion of a '''port''' in Drawl draws from similar notions in several other packages.
 
@@ -181,6 +202,7 @@ The notion of a '''port''' in Drawl draws from similar notions in several other 
 
 * Squares and rectangles
 * Adjacency—left, right, above, below
+* Non-adjacency
 * Fill and stroke
 
 === Version 0.1.0 - April 8, 2020

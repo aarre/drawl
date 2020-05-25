@@ -4,8 +4,17 @@ import com.aarrelaakso.drawl.*;
 
 import java.io.IOException;
 
+/**
+ * Demonstrates drawing line endings at different sizes.
+ */
 public class LineEndingSizeExample {
 
+    /**
+     * Draws line endings at different sizes.
+     *
+     * @param args no command line arguments.
+     * @throws IOException
+     */
     public static void main(final String[] args) throws IOException {
 
         final Drawing drawing = new Drawing();

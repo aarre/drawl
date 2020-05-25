@@ -1,7 +1,8 @@
 package com.aarrelaakso.drawl;
 
-import static java.lang.Math.sqrt;
-
+/**
+ * Represents an elliptical line ending.
+ */
 public class LineEndingEllipse extends LineEnding {
 
     public LineEndingEllipse() {

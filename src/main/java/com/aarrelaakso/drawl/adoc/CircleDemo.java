@@ -6,7 +6,7 @@ import com.aarrelaakso.drawl.Drawing;
 import java.io.IOException;
 
 /**
- * Example of using Drawl to draw a circle
+ * Demonstrates using Drawl to draw a circle
  */
 public class CircleDemo
 {

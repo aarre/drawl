@@ -2,6 +2,9 @@ package com.aarrelaakso.drawl;
 
 import static java.lang.Math.sqrt;
 
+/**
+ * Represents a line ending consisting of a circle at the end of a line.
+ */
 public class LineEndingCircle extends LineEnding {
 
     LineEndingCircle() {

@@ -19,10 +19,16 @@ import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 
 /**
- * Example of using Drawl to draw a series of shaded rectangles.
+ * Demonstrates using Drawl to draw a series of shaded rectangles.
  */
 public class ShadedRectangles
 {
+    /**
+     * Draws a series of shaded rectangles.
+     *
+     * @param args no command line arguments.
+     * @throws IOException
+     */
     public static void main(final String[] args) throws IOException
     {
         for (int k = 0; k < 20; k++)

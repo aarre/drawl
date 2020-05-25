@@ -3,6 +3,9 @@ package com.aarrelaakso.drawl;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
+/**
+ * Represents an open (unfilled) diamond-shaped line ending.
+ */
 public class LineEndingOpenDiamond extends LineEnding {
 
     LineEndingOpenDiamond() {

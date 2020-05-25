@@ -1,5 +1,8 @@
 package com.aarrelaakso.drawl;
 
+/**
+ * Represents a line ending consisting of a bracket at the end of the line.
+ */
 public class LineEndingBracket extends LineEnding {
 
     public LineEndingBracket() {

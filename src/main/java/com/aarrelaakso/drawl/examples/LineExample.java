@@ -18,9 +18,16 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 
 /**
- * Example of using Drawl to draw a line between two shapes.
+ * Demonstrates using Drawl to draw a line between two shapes.
  */
 public class LineExample {
+
+    /**
+     * Draws a line between two shapes.
+     *
+     * @param args no command line arguments.
+     * @throws IOException
+     */
     public static void main(final String[] args) throws IOException
     {
         @NotNull final Drawing drawing = new Drawing();

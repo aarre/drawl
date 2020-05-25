@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 public class Line extends Shape {
 
     /**
-     * How the line should be oriented.
+     * Sets options for how a line can be oriented.
      */
     public enum Orientation {
         HORIZONTAL,       /*!< Orient a Line horizontally. */
@@ -32,22 +32,25 @@ public class Line extends Shape {
     }
 
     /**
-     * What type of arrowhead should be on the line.
+     * Determines the type of arrowhead on a line.
      */
     @Nullable
     private LineEnding lineEnding;
 
+    /**
+     * Determines how a line should be oriented.
+     */
     @Nullable
     private Orientation orientation;
 
     /**
-     * The implicit coordinates of one end of this Line.
+     * Stores the implicit coordinates of one end of this Line.
      */
     @NotNull
     private Point point1Implicit = new Point(0, 0);
 
     /**
-     * The implicit coordinates of the other end of this this line.
+     * Stores the implicit coordinates of the other end of this this line.
      */
     @NotNull
     private Point point2Implicit = new Point(0, 0);
