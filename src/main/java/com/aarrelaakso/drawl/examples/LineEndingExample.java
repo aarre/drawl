@@ -4,8 +4,17 @@ import com.aarrelaakso.drawl.*;
 
 import java.io.IOException;
 
-public class ArrowheadExample {
+/**
+ * Demonstrates drawing the different types of line endings available in Drawl.
+ */
+public class LineEndingExample {
 
+    /**
+     * Draws the different types of line endings available in Drawl.
+     *
+     * @param args no command line arguments.
+     * @throws IOException
+     */
     public static void main(final String[] args) throws IOException {
 
         final Drawing drawing = new Drawing();
@@ -168,6 +177,6 @@ public class ArrowheadExample {
         bottomSpacer.setBelow(line14);
         drawing.add(bottomSpacer);
 
-        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/ArrowheadExample.svg", 500, 1000);
+        drawing.writeToFile("src/main/java/com/aarrelaakso/drawl/examples/LineEndingExample.svg", 500, 1000);
     }
 }
